@@ -1,0 +1,6 @@
+{
+  "name": "tax2-examiner",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" }
+}

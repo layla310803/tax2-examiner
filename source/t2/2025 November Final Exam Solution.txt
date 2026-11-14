@@ -1,0 +1,246 @@
+--- page 1 ---
+ACC3004W 2025 Final/Supp
+Suggested Solution
+Question 1
+1.1 Item  |  Reason/Working  |  Amount
+Remuneration excluding annual amounts
+Salary  |  Para (c ) of GI : 70 000 x 12  |  840 000
+Provident fund contribution  |  Para 12D (5% x 70 000 x 12)  |  42 000
+Medical aid contribution  |  Para 12A (3 000 x 12)  |  36 000
+MacBook right of use  |  Para 6 : Lower of cost (R20 000) or Market value (R21 000)
+15% x R20 000  |  3 000
+Right of use of Motor car  |  Para 7
+Business kms= 13 000/16 000 = 81.25%, therefore use 20% inclusion
+Determined value = R800 000 x 85%= R680 000
+Amount included= R680 000 x 3.25% x 12 x 20%  |  53 040
+No para 7(7) or 7(8) for employees tax
+Right of use of Residential accommodation  |  Para 16 - Benefit received by relative deemed to be that of employee
+Para 9- Rental value equal to formula as apartment is owned by employer
+A= 1 100 000
+B = R95 750
+C= 18
+D= 12
+Inclusion ((R1 100 000 - R95 750) x 18/100 x 12/12)
+Less rent paid by Sheldon R4 500 x 12  |  126 765
+Remuneration  |  1 100 805
+Allowable deductions
+s11F: Retirement fund contributions  |  (5% x R840 000 x 2 ) = R84 000
+RAF not taken into account by employer
+Limited to lesser of:
+1. 350 000
+2. 27.5% of remuneration (R1 100 805) = R302 378
+therefore full deduction  |  -  |  84 000
+1 016 805
+s18A  |  Total contribution= R6 000
+Limited to 5% x R1 016 805 = R50 840  |  -  |  6 000
+Balance of Remuneration excluding annual amounts  |  1 010 805
+Tax on annual equivalent excluding annual amounts  |   R251 258 + (41%)(R1 010 805 - R857 900)  |  313 949
+Primary rebate - s6  |  -  |  17 235
+Medical aid rebate - s6A  |  (R728 + R246 + R246) x 12  |  -  |  14 640
+s6B  |  Not applicable as Sheldon is not 65 years or older
+Tax liability  |  282 074
+Tax on normal amounts in December  |  R282 074/12  |  23 506
+--- page 2 ---
+Annual amounts
+Acquisition of asset - Batman  |  Para 5
+Bought specifically for Sheldon therefore cost to employer  |  3 000
+No long service reduction due to only being employed for 10 years (no initial unbroken period of 15
+years)
+Acquisition of asset- Briefcase  |  Value of benefit is the open market value = R3 200
+Bravery reduction - lesser of R5000 and cost of bravery award (R2 800)  |  400
+Cost= R2500
+Acquisition of asset- Work clothing  |  However, uniform exemption as coats have company branding and Sheldon is required to wear this to
+work
+Bonus  |  Variable remuneration- Paid in December  |  100 000
+Balance of Remuneration including annual amounts  |  1 114 205
+Tax on annual equivalent including annual amounts  |   R251 258 + (41%)(R1 114 205 -R 857 900)  |  356 343
+Primary rebate - s6  |  -  |  17 235
+Medical aid rebate - s6A  |  (R728 + R246 + R246) x 12  |  -  |  14 640
+Tax liability  |  324 468
+Tax on Annual amounts  |  R324 468 - R282 074  |  42 394
+Employees tax for December 2024 = R23 506 + R42 394  |  65 900
+Available
+Maximum
+1.2 On the date of death
+Sheldon will be deemed to have disposed of all his assets at the market value on the date of his death.
+Family home:
+The family home is deemed to be disposed of at its market value on the date of Sheldon's death, R4 900 000.
+The base cost of the property was the purchase price equal to 4 000 000.
+This results in a capital gain of R900 000
+This family home was Sheldon's primary residence, therefore he will be allowed a primary residence exclusion of R2 million, limited to the capital gain of R900 000. As a result, there will be no capital gain.
+Apartment in Johannesburg
+The apartment is bequeathed to his wife and is deemed to be disposed of for its base cost, therefore no capital gain or loss
+The base cost of the apartment is R1 200 000 plus the cost of the renovations (R220 000) = R1 420 000
+The annual exclusion is increased to R300 000 upon death.
+If Sheldon had any net capital gain, this would be included at 40%
+--- page 3 ---
+X1: Communication skills - clarity of expression
+Available
+Maximum
+1.3 Amy Cooper
+VAT
+There will be no VAT consequences as the supply of residential accommodation is an exempt supply.
+Normal Tax
+Amy will include R864 000 (R12 000 x 12 x 6) rental income into her gross income for 2025
+Amy will get a s24J interest deduction of R500 000 as these were incurred for trade and in the production of income
+Amy will get a s11(a) deduction relating to the levies and rates amounting to 150 000 as these were incurred for trade and in the production of income
+Amy will get a s11(d) deduction for the damage to the ground floor of the apartment. As there was damage
+which was then repaired equal to R330 000
+There will be no s13 sex allowance as the apartments were not new and unused
+Amy will be allowed a s11(a) deduction for the insurance premiums paid in the 2025 YOA, R14 500
+Amy will therefore have an assessed loss of R864 000 - R650 000 - R330 000 - R14 500 = - R130 500 with respects to rental trade in the 2025 YOA
+Therefore the requirements of s20A need to be considered to determine if the assessed loss should be ringfenced.
+Amy is in the maximum marginal tax bracket: R2 040 000 (R170 000 x 12) salary exceeds R1 817 000
+4/6= 67% of the tenants are not relatives, which means that Amy does not meet the requirement stating that at least 80% of the tenants must not be relatives. Therefore rental of residential accommodation
+is considered to be a suspect trade and the assessed loss from this trade will be ringfenced.
+The next step is to consider the facts and circumstances test. Amy only incurred the assessed loss due to the damage of the burst pipe and not having insurance.
+Amy has since taken out insurance policies and therefore in future, the costs incurred to repair the property would not be deducted as they
+would be insured losses and therefore prohibited. Resulting in possible taxable income arising in future
+The assessed loss for 2025 would therefore not be ringfenced and may be set off against other taxable income from her employment.
+Alternatively, Amy is not able to prove that there will be taxable income derived from the rental trade in the following year of assessment, therefore the assessed loss will be ringfenced.
+X1: Communication skills - critical thinking
+Available
+Maximum
+1.4 Item  |  Reason/Working  |  Amount
+Family home  |  4 900 000
+Apartment  |  2 300 000
+--- page 4 ---
+Insurance policy  |  600 000 - 70 000- 10 280  |  519 720
+Unlisted shares  |  Fair market value  |  100 000
+Cash  |  150 000
+Gross value of estate  |  7 969 720
+Less deductions:
+SA debts (including tax liabilities)  |  s4(b)  |  -  |  250 000
+Deathbed and funeral expense  |  s4(a)  |  -  |  60 000
+Executor fees  |  s4(c)  |  -  |  85 000
+Apartment and life insurance- bequeathed to spouse  |  s4(q) (2 300 000 + 519 720)  |  -  |  2 819 720
+Net value of estate  |  4 755 000
+Less: Abatement  |  -  |  3 500 000
+Dutiable Amount of the Estate  |  1 255 000
+Estate duty  |  R1 774 720 x 20%  |  251 000
+Available
+Maximum
+--- page 5 ---
+ACC3004W Final/Supp
+Suggested Solution
+Question 2
+The lease payments made by Pure Aura will be allowed a s11(a) deduction as they have been incurred in the production of income and are not of a capital nature.
+2.1
+November 2025 payment
+The amount paid in relation to the 2 months in the 2025 year of assessment will be deductible, R59 400 (R27 000 x 1.1 x 2)
+An assessment needs to be made as to whether the deduction of the prepaid expenditure will be prohibited in terms of s23H:
+The prepaid amount was R297 000 (R27 000 x 1.1 x 10) and this is greater than R100 000
+The benefit of the payment will also not be enjoyed within six months after the end of the 2025 year of assessment as it relates to 10 months into the following year of
+assessment (i.e 2026 YOA).
+The prepaid expenditure was not paid in respect of an unconditional liability to pay an amount imposed by legislation
+Therefore the deduction of the prepaid amount will be prohibited in terms of s23H in the 2025 year of assessment and will be deducted in the 2026 year of assessment
+November 2024 payment
+The amount prepaid in the 2024 year of assessment was R270 000 (R27 000 x 10) and would have been prohibited as a deduction in the 2024 year of assessment. The amount
+will be allowed as a s11(a) deduction in the 2025 year of assessment.
+Leased building
+Pure Aura will not be permitted a s13(1) allowance on the leased building as they did not incur the cost of constructing the building.
+Leasehold improvement
+The cost of the leasehold improvement will not be allowed a s11(g) deduction as the lessor will not include the amount in its gross income, the Western Cape Provincial
+Government is exempt from normal tax.
+Pure Aura will be deemed to be the owner of the leasehold improvement in terms of s12N due to the following reasons:
+Pure Aura holds a right of use of a building owned by the government and has incurred expenditure to effect an improvement on the building. Furthermore, the building will be
+used in the production of income, as it will be used to manufacture products that will be sold for profit.
+The company will therefore be able to claim a s13(1) allowance on the leasehold improvement as the expansion will be used in the process of manufacture.
+The allowance will be 5% of the cost incurred, R90 000 (R1 800 000 x 5%)
+X1: Communication skills - logical argument
+Available
+Maximum
+2.2 VAT
+Stolen Truck
+Supply
+There will be a deemed supply for the proceeds that were received from the insurance company for the loss of the delivery truck, in terms of s8(8).
+--- page 6 ---
+Section 8(8) will apply because although this was a total reinstatement of a vehicle, it was not input denied under s16(3) as it was not a motor car as defined.
+Time of supply
+The time of supply will be the date of receipt of the insurance proceeds, 30 June 2025.
+Value of supply
+The value of supply is the amount received from the insurer, R650 000 resulting in output VAT of R84 783 (R650 000 x 15/115)
+Pure Aura would also have been able to claim VAT input on the insurance premiums paid
+New Truck
+Pure Aura will be allowed to claim input on the purchase of the new delivery truck as it is not a motor car as defined.
+R1 150 000 x 15/115 = R150 000
+Normal Tax
+Old Truck
+As Pure Aura is a small business corporation as defined, the allowance claimed on the vehicles would have been in terms of s12E(1A), 50:30:20
+Therefore, the delivery truck would have been fully written off for tax purposes and there would be no further allowances to claim in the 2025 year of assessment.
+There would be a recoupment on the disposal of the delivery truck. The selling price is thus considered to be the proceeds received from the insurer, R565 217 (R650 000 x
+100/115).
+The tax value of the vehicle is nil as all the allowances on the vehicle have been fully claimed.
+Thus the recoupment on the vehicle is R565 217  |  R565 217 - R0
+The capital gains tax effects on the disposal would be as follows:
+Proceeds  |  (R565 217 - R565 217)  |  0
+Base Cost  |  (R646 957 - R646 957)  |  0
+Capital Gain  |  0
+Para 65 would apply to this disposal as the delivery truck was disposed of by way of theft (hijacking), proceeds accrued to the company (insurance proceeds were received from
+the insurer) and they are equal to or exceed the base cost of the truck. The proceeds were used to partly finance the acquisition of a replacement delivery truck, which was brought
+into use immediately.
+Only 50% of the recoupment will be included in Pure Aura's taxable income for the 2025 year of assessment, in line with the write off of the replacement vehicle.
+R565 217 x 50% = R282 609
+New Truck
+The replacement truck will be allowed a s12E(1A) allowance of 50% in the 2025 year of assessment.
+R1 150 000 x 100/115 x 50% = R500 000
+Y1: Integrative thinking
+Available
+Maximum
+--- page 7 ---
+2.3 VAT
+Description  |  Reason/Working  |  Input  |  Output
+Salary of in-house psychologist  |  No VAT - not in furtherance of enterprise
+No s18(3) deemed supply - no value fringe benefit
+ROU of motor car  |  s18(3) - deemed output
+DV - R737 391  |  (R848 000 x 100/115)
+(R737 391 x 0.3% x 12 x 15/115)  |  3 463
+No reduction for the 3 months that the director did not use the vehicle as he
+still had the right of use in this period (para 7(4) of Seventh Sch)
+No VAT adjustment on acquisition of the vehicle as motor car as defined,
+therefore input denied
+Employer contributions to pension fund  |  financial service - exempt
+Payment of bonuses  |  No VAT - not in furtherance of enterprise
+Nespresson machine  |  Input VAT denied - entertainment
+Normal Tax
+Salary of psychologist  |  s11(a)  |  -  |  600 000
+VAT on fringe benefit (ROU of motor vehicle)  |  s11(a) - amount from required 2.3  |  -  |  3 463
+Allowance on vehicle  |  s12E(1A)  |  R848 000 x 30%  |  -  |  254 400
+Employer contributions to pension fund  |  s11(l)  |  R950 000 x 2  |  -  |  1 900 000
+Bonuses  |  s7B - deducted when actually paid  |  R10 980 000 x 10%  |  -  |  1 098 000
+Nespresso machine  |  s11e  |  cost R6 700  |  -  |  6 700
+small asset, therefore fully deductible in 2025 YOA
+Available
+Maximum
+2.4 To:  |  Management of Pure Aura
+From:  |  Tax II Student
+Re:  |  Tax Consequences of Agreement with Content Creators
+Date:  |  Nov-25
+VAT
+There is a s18(1) change in use for the trading stock that is given to the content creators.
+--- page 8 ---
+The time of supply is the date when the trading stock is granted to the content creators
+The value of supply is the value of the trading stock given away, R9 000 x 25 x 15/115 = R29 348
+Normal Tax
+There will be a recoupment for the trading stock given away, as it has been disposed of in a manner that is not in the ordinary course of business (s22(8))
+The amount of the recoupment will be the market value of the trading stock given away, R9 000 x 25 x 100/115 = R195 652
+There is no s11(a) deduction as there was no expectation that the creators will advertise the products on their social media platforms
+Donations Tax
+There is a donation to the content creators of the trading stock at the market value, R195 652 (R9 000 x 25 - R29 348)
+There is no specific exemption, therefore the R10 000 general exemption is available for the company to apply against this donation
+The donations tax payable is R37 130 ((R195 652 - R10 000) x 20%)
+X1: Communication skills – logical argument, format and structure
+Available
+Maximum
+2.5 Ethical concerns
+The conduct of the management of Pure Aura would need to be assessed against the ethical framework of Good for self and good for others.
+The act of concealing the facts around the subquality product that has been sold to customers is not good for others as it exposes the customers to health issues.
+This response could be viewed as good for the company as the company will avoid financial losses from product recalls or refunds.
+The company would protect its reputation in the short term
+This could also have dire consequences for the company if it were to come out that the company hid this information from the public, there could potentially be lawsuits lodged
+against the company and this could cause severe reputational damage for the company.
+Furthermore, King IV requires that those who are charged with governance need to act with integrity, be responsible, transparent and accountable.
+The focus of the company should not only be on profit maximisation, but the other stakeholders also need to be considered.
+Any other valid point
+Available
+Maximum

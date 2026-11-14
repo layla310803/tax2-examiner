@@ -1,0 +1,233 @@
+--- page 1 ---
+ACC3004H ACC3004H - - November November final final exam exam suggested suggested solution solution
+Taxation Taxation II II (University (University of of Cape Cape Town) Town)
+Scan Scan to to open open on on Studocu Studocu
+--- page 2 ---
+ACC3004H September Test
+Suggested Solution - Question 1
+1.1
+Damages and compensation
+There is no specific deduction for damages and compensation therefore we would look to s11(a) read together with s23(g).
+The onus is on the taxpapyer, CT Glass, to prove the amount is deductible.
+The issue is whether the amount paid is in the production of income.
+An amount is incurred in the production of income if it is an inevitable concomitant of the taxpayer's income-earning activities or we ask "What
+action gave rise to the expenditure? Is this action so closely connected with the income earning activities of the taxpayer"
+The taxpayers income earning operations is the manufacturing of alimium products, it is highly likely that an accident of this nature could happen in
+this trade OR the action that gave rise to the expenditure is the employee being injured while on the job, this action is closely connected with the
+income earning operations of manufacturing of the products.
+Therefore the amount is in the production of income and deductible under s11(a).
+Legal expenses
+There is a specific deduction - s11(c) that deals with legal expenses actually incurred on any claim, dispute or action at law occuring as a result of or
+due to the ordinary operations of the taxpyer in the carrying on of his trade.
+The deduction under s11(c) follows the nature of the underlying claim and is therefore not capital in nature.
+The deduction for the compensation is allowed under s11(a) therefore the legal fees paid to the lawyer will be allowed under s11(c).
+Communication - logical argument
+1.2 Trading stock
+Supply
+There is a supply in terms of section 7(1)(b) of the VAT Act as goods have been imported into South Africa.
+Value of supply
+As the import is not from a BLNS country, the value of the supply in respect of goods imported is the customs duty value plus the customs duty
+levied plus 10% of the customs duty value.
+Therefore the value of the supply is 1 330 000 + (10% x 1 330 000) + 240 000 = R1 703 000
+And the imposition of VAT is 15% of this amount, which is R255 450
+Time of supply
+The time of supply is 30 November 2020 when it was released for home consumption.
+Input tax
+As CT Glass is going to use the goods to make taxable supplies, an input tax deduction claim be claimed equivalent to the VAT paid on importation.
+Vehicle
+CT glass purchased the vehicle for use to make taxable supplies and was charged output tax by the supplier.
+The double-cab meets the definition of a motor car, and therefore input denied. CT Glass is therefore denied an input tax deduction.
+The insurance proceeds were received as compensation for the bakkie which was input denied, therefore as it relates to a total reinstatement of
+goods where input tax was originally denied, there will be no output tax.
+Building
+The building was purchased from a non-vendor but it is second hand therefore the second hand goods rule applies
+The value of supply is the lower of consideration and open market value
+15/115 x 1 700 000 = R221 739
+As this is fixed property but the second hand goods rule applies, the time of supply is to the extent of payment, deferred to registration
+Therefore (1 750 000/2) x 15/115 = R114 130 can be claimed on 1 July 2020.
+The balance (221 739 - 114 130)= R107 611 can be claimed on 1 August 2020.
+Communication - logical argument
+1.3
+As the vehicle was acquired by a motor car dealership for taxable supplies, input would not have been denied in terms of s17(2)(c ) and Toyota
+could claim input on the acquisition of this second-hand good.
+Input tax of R84 783 (650 000 x 15/115) would be claimed
+The dealership would charge VAT on the supply of the bakkie of R87 378 (15/115 x 669 900)
+1.4
+--- page 3 ---
+Sales  |  Gross income - local sales  |  (15 650 000 x 100/115) * 75%  |  10 206 522
+Cash and credit included - (earlier or receipt or accrual)
+Gross income - export sales  |  (15 650 000 x 25%)  |  3 912 500
+Export sales are zero rated therefore no VAT removed
+Dividends  |  Gross income - para (k)  |  45 000
+Dividend exemption  |  s10(1)(k)  |  (35 000)
+s10B(3)(b) - owns less than 10% and company  |  (10 000 x 8/28)  |  (2 857)
+Purchases  |  s11(a)  |  (6 655 000)
+Import duties  |  s11(a)  |  (240 000)
+Opening stock  |  s22(1)  |  (3 440 000)
+Closing stock  |  s22(2)  |  2 250 000
+Recoupment  |  s22(8)  |  (8000 x 100/115)  |  6 957
+disposal of trading stock other than in the ordinary course for a consideration less than market value
+Salaries  |  s11(a)  |  (1 380 000)
+Pension fund contributions  |  s11(l)  |  (5% x 1 380 000)  |  (69 000)
+Transport expense  |  s11(a)  |  (10 000 x 12)  |  (120 000)
+Allowance for doubtful debts  |  s11(j) - opening balance  |  348 500
+s11(j) - closing balance  |  (500 000 x 100/115 x 40%)  |  (200 000)
+(975 000 - 500 000) x 100/115 x 25%  |  (118 750)
+Bad debts  |  s11(i)  |  (450 000)
+Legal expenses  |  s11(c)  |  (34 500)
+Compensation  |  s11(a)  |  (145 000)
+Capital allowances
+Machine A - grinding machine
+Used in the process of manufacture, therefore full write off in the 2020 YOA - s12E(1)  |  0
+Double cab bakkie  |  s12E(1A)(b) -lower of cost or market value
+- motor car as defined therefore no input tax claimed
+(665 000 x 30%)  |  (199 500)
+-not used in a process of manufacture
+Insurance proceeds received  |  s8(4)(k)  |  Proceeds  |  650 000
+Less: Tax value  |  133 000
+Cost  |  665 000
+2020:(50%)  |  (332 500)
+2021:(30%)  |  (199 500)
+Recoupment  |  517 000  |  517 000
+Capital gains tax  |  Proceeds  |  133 000
+Insurance proceeds  |  650 000
+Less: recoupment  |  (517 000)
+Base cost  |  137 900
+Actual cost  |  669 900
+Less: allowances  |  (532 000)
+Capital loss  |  -4 900 Carried forward
+Building  |  s13(1)  |  (1 750 000 - 221 740 + 33 750 ) x 5%  |  (78 101)
+Mainly used in a process of manufature
+Transfer duty (11 250 + 6%(1 750 000 - 1 375 000))
+33750
+4 118 771
+--- page 4 ---
+1.5 CT Glass
+Even though the payment to the government employee, would meet the requirements of s11(a), it is considered a bribe.
+There is a prohibited deduction in terms of s23(o) that prevents the deduction of any payments resulting from a corrupt activity. The bribe is a
+corrupt activity and therefore no deduction allowed.
+Government employee
+There is a special inclusion gross income paragraph (c) that deals with services rendered.
+The employee received the payment in return for making sure that CT Glass wins the tender, therefore there is a causal link.
+In determining whether an amount is income it is irrelevant that it was derived from an illegal or immoral activity.
+The employee intended to receive this money for their own benefit and therefore it will be included in their gross income.
+Ethical considerations
+Payment of a bribe cannot be considered to be ethical behaviour as it is not 'right, proper and just' behaviour
+Paying a bribe is a criminal offence, the employee should not accept bribes, this is unethical and illegal.
+Corruption is a huge problem in South Africa and the directors of CT Glass should know better than to add to the corruption issue.
+This is unethical leadership in the company as the directors are showing that they would do anything to win the tender.
+The directors should have considered whether the payment of the bribe would have been 'good for themselves' and 'good for others'
+There could have been other businesses who were more deserving of the tender and now won't get an opportunity
+As the directors are Chartered accountants, the CPC would be applicable to them. The directors are contravening integrity and professional behaviour
+Any other valid point
+Logical argument
+--- page 5 ---
+ACC3004H September Test
+Suggested Solution - Question 2
+2.1 Donations tax payable
+Donation to a PBO  |  Exempt - s56(1)(h)  |  -
+Donation of her handbags  |  90 000
+Less general exemption  |  (90 000)
+Donation to her mother  |  Exempt - s56(2)(c)  |  -
+Donation of her home to her children  |  8 000 000
+Less: general exemption (remaining)  |  (10 000)
+Total value of donations  |  7 990 000
+Donations tax payable  |  x20%  |  1 598 000
+The donations tax relating to the house would have been due by 31 January 2021 and therefore still been outstanding at her
+death.
+2.2 A donation is a disposal in terms of the eighth schedule and Sibu will therefore have CGT consequences on the donations.
+The donation of the cash to the PBO and her mother does not have CGT consequences as money is not an asset in the 8th schedule.
+The donation of her handbag is a personal use asset therefore the capital loss of (90000-120 000=R30 000) is disregarded
+Donation of her home
+The proceeds are equal to the market value at the date of the donation which is  |  8 000 000
+The base cost is the cost that she purchased it for of R5 500 000 plus the donations tax adjustment.  |  5 500 000
+The donations tax adjustment is R789 164.
+(Y= ((8000000-5500000)/8000000) x ((8000000-10000)x20%))  |  499 375
+This results in a capital gain of
+Capital gain  |  2 000 625
+The capital gain needs to be apportioned as she used a portion for trade for a few month
+Residential use  |  Trade use
+Trade use: 2 060 836 x 7% x 8/120  |  1 991 289  |  9 336,25
+Residential use: 2 000 625 - 9 414
+Primary residence exclusion  |  (2 000 000)  |  -
+Capital gain  |  -  |  9 336
+This will be aggregated with her other capital gains and losses from other disposals during the year.
+2.3
+Salary  |  Gross income - para (c)  |  (144 000 x 11)  |  1 584 000
+Travel allowance  |  Actual allowance received  |  99 000
+Reduced by the deemed method
+The actual method is not available as she didn't keep a record and the simplified method cannot be used as
+this is not a reimbursive allowance
+Fixed cost  |  (169 552/15 760 x 337/365) x 100  |  993,31
+Fuel cost  |  175,10
+--- page 6 ---
+Maintenance cost  |  96,90
+Total deemed cost  |  1 265,31
+Reduction  |  (1265,31/100 x 8700)  |  (110 082)  |  -
+limited to allowance
+Laptop fringe benefit  |  Gross income - para (i)  |  (35 000 x 15% x 122/365)  |  1 755
+No value doesn't apply as not mainly used for business
+Home office expenditure  |  s11(a)  |  (19 600)
+Capital gains tax consequences
+Deemed disposals on death
+Life insurance - disregarded para 55 of the 8th schedule  |  -
+Shares  |  Proceeds - MV  |  101 000
+Base cost  |  (65 000)
+Capital gain  |  36 000
+Apartment  |  Proceeds - MV  |  3 500 000
+Base cost  |  (1 500 000)
+2 000 000
+Total capital gains  |  (0+ 9336 + 36 000 + 2 000 000)  |  2 045 336
+Less annual exclusion on death  |  (300 000)
+Net capital gain  |  1 745 336
+x40%  |  698 135
+Taxable income before assessed loss:  |  2 264 289
+Less: assessed loss from Rugby Stars  |  (25 000)
+-Her taxable income before the assessed loss exceeds the maximum marginal rate of tax
+-This is not a suspect trade and she has only made losses two out of five years and therefore s20A
+is not applicable and her assessed loss can be set off
+Taxable income before 18A  |  2 239 289
+S18A donation  |  Actual  |  50 000  |  -50 000
+Limited to 10% x taxable income  |  223 929
+Taxable income  |  2 189 289
+Tax per the tables  |  (559 464 + 45% (2 965 555 - 1 577 300)  |  834 859
+Less: primary rebate  |  (14 958 x 11/12)  |  (13 712)
+Normal tax  |  821 148
+Less: employees tax  |  (585 197)
+Normal tax payable  |  235 951
+2.4
+VAT
+Since the laptop was purchased for the executives to use and the company makes both taxable and exempt supplies and
+therefore input tax would need to be apportioned
+Apportionement ratio = (21 892 410 + 15 540 000)/55 932 410 x 100 =67%
+Therefore input tax of (35 000 x 15/115 x 67%) = R3058 could be claimed on acquisition
+s18(3) deemed output on the fringe benefit requires apportionment and since she is involved in the company as a whole (to the
+extent used for taxable supplies)
+Output tax = 1 755 x 15/115 x 67%  |  153,371739
+Normal tax
+The company would be able to claim a s11(e) wear and tear allowance as the laptop is a moveable asset used in trade
+s11(e) is based on the lower of cost or market value (excluding actual VAT)/4
+--- page 7 ---
+s11(e) = (35 000-3058)/4
+The company would be able to claim a s11(a) on the irrecoverable VAT on this fringe benefit
+Communication mark - logical argument
+2.5 Estate Duty Payable
+Life Insurance Policy Proceeds (Bequeathed to spouse and children) -s3(3)(a)  |  7 500 000
+Not under an ante or post nuptial contract therefore deemed property
+Unlisted shares - valued at market value  |  45 000
+Listed shares - valued at
+price sold by executor  |  55 000
+Apartment in Zimbabwe  |  3 500 000
+Cash in bank accounts  |  1 250 000
+Less: allowable deductions
+Property left to surviving spouse - s4(q)  |  (3 750 000)
+(7 500 000 x 50%)
+Property outside the Republic, inherited from a person not resident - s4(e)  |  (3 500 000)
+Deathbed and funeral expenses - s4(a)  |  (90 000)
+Administration expenses - s4(c)  |  (75 000)
+Debts due - s4(b)
+Normal tax  |  (235 951)
+Donations tax - relating to her house  |  (1 598 000)
+Net value of estate  |  3 101 049
+Less: Abatement  |  (3 500 000 limited to value of estate)  |  (3 101 049)
+Dutiable amount of the estate  |  -

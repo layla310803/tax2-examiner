@@ -1,0 +1,241 @@
+--- page 1 ---
+ACC3004W - 2025 Final exam
+Question 1
+1.1 Printer
+VAT
+The sales of the coffee machine, accessories and coffe beans are taxable supplies.
+Interest income is a financial service and is therefore exempt from VAT.
+It follows that the printer is for making both taxable supplies and exempt supplies, and therefore the input claimed on the acquisition of the printer must be apportioned
+[(58 199 800+4 879 200+1 734 000)/70 250 000] x 100  |  92,26%
+As the taxable supplies are less than 95%, input tax needs to be apportioned
+Input VAT at acquisition
+45 000 x 15/115 x 92,26%  |  (5 415)
+Output VAT on disposal at 100%
+30 000 x 15/115  |  3 913
+As the output tax was charged at 100% but not the full input tax was claimed, there would be a s16(3)(h) adjustment
+Section 16(3)(h) adjustment  |  Lesser of the cost or OMV
+15/115 x 30 000 x 7,74%  |  (303)
+Normal tax
+Current year capital allowance - s11(e) as printer is not used directly in a process of manufacture
+((45000) - 5415)/4 x 4.5/12  |  (3 711)
+Recoupment/scrapping allowance
+Proceeds limited to cost  |  (30 000 x 100/115)  |  26 086,96
+Less tax value:  |  35 570,79
+Cost (45 000 - 5415)  |  39 585
+Allowances to date
+2025  |  (3 711)
+Section 16(3)(h) adjustment  |  (303)
+Scrapping allowance  |  (9 484)
+Capital gains tax
+Proceeds  |  26 087
+Selling price  |  26 087
+Less recoupment  |  -
+Base cost  |  26 087
+Cost  |  39 585
+Less allowances:  |  Capital allowance  |  (3 711)
+Scrapping allowance  |  (9 484)
+Less section s16(3)(h) adjustment  |  (303)
+Capital gain/loss  |  -
+Available marks
+Limited to
+1.2 Factory building
+VAT
+The building was purchased from a non vendor therefore no output tax was charged, however it is a second hand good that is used 100% for taxable supplies and therefore input VAT can be claimed
+Input VAT will be claimed on the lower of consideration (R5 500 000) or OMV (R5 300 000) therefore claimed on the 5 300 000
+As this is fixed property and second hand, the time of supply is earlier of payment or registration, deferred to registration (1 September 2024)
+1 September 2024 (date of registration)  |  (5 500 000/4 x 3 x 15/115)  |  (538 043)
+1 October 2024 (last payment)  |  (5 300 000 x 15/115) - 538 043  |  (153 261)
+Normal tax
+As this building is used in the process of manufacture, we would claim s13(1)
+S13(1) is based on the cost less the actual VAT claimed plus transfer duty
+Cost  |  5 500 000
+Less input tax  |  (691 304)
+Plus transfer duty (97 075+11% (5 500 000-2 722 500)  |  402 600
+5 211 296
+x 5%
+260 565
+Communication mark
+Available marks
+Limited to
+Bad debts written off and allowance for doubtful debts
+1.3 VAT consequences
+In terms of s22(1), since a part of the consideration becomes irrecoverable, Brew & Bean will account for an input tax on the bad debts written off.
+Movement in ADD  |  (R10 475 964 - R8 380 771)  |  2 095 193
+Bad debts excluding movement in ADD  |  (R10 354 666 - 2 059 193)  |  8 259 473
+Input tax deduction on actual bad debts  |  (8 259 473 x 15/100)  |  (1 077 323)
+There are no VAT consequences on the allowances for doubtful debts amounts, as the amounts are not yet irrecoverable.
+Normal tax consequences
+--- page 2 ---
+On the allowance of doubtful debt Brew & Bean will be entitled to a s11(j) deduction provided that such allowance was included in income of the taxpayer as follows:
+Section 11 (j) deduction relating to lifetime expected credit losses  |  (R10 475 964 x 20% x 40%)  |  (838 077)
+Section 11 (j) deduction relating to other  |  (R10 475 964 x 80% x 25%)  |  (2 095 193)
+The company would need to add back the prior year s11(j) deduction  |  2 346 616
+On the actual bad debts written off the company will be entitled to a s11(i) deduction for the bad debts that have actually being written off during the 2025 YOA provided that the amounts written off have previously
+been included in income which would be R8 259 473
+Available marks
+Limited to
+1.4 Demo models
+VAT
+The coffee machine was initially manufactured for the purposes of taxable supplies but was subsequently applied wholly for a purpose other than that initially intended (applied as a dividend in specie). This triggers a
+s18(1) change in use adjustment and the coffee machine is deemed to be supplied in terms of a taxable supply by Brew & Bean in the course of their enterprise.
+The time of the supply is the date of the change of use on 1 March 2025
+The value of the supply is the open market value of R20 500 which results in Output Tax of (R20 500 x 15/115 = 2 674)
+Normal tax
+Given that the coffee machine is an asset that was manufactured by Brew&Bean and is similar to coffee machines manufactured for sale. The demo model also constitutes trading stock as on sale of this asset, the
+proceeds would usually be included in gross income in terms of para jA of the definition.
+When the demo model is disposed of in the form of a dividend in specie, this will trigger a s22(8) recoupment at market value (R20 500 - R2 674)
+Donations made to the company
+VAT
+The company cannot claim any input VAT as no output was charged/no amount paid for the goods
+Normal tax
+It is SARS practice to allow a deduction equivalent to the market value of the coffee beans on the date of donation of R150 000.
+The stock will be included in closing stock at its market value at year end of R145 000 (i.e. the lower of the deemed cost of 150 000 and market value at year end) as SARS is in agreement with this write down.
+Communication mark
+Available marks
+Limited to
+Insurance
+1.5 VAT
+The company will be eligible to claim input VAT (25 000 + 15 000 x 15/115 = R5217) on the costs incurred to repair the van and install the tracker
+The company will be eligible to claim input VAT on insurance premiums paid each month (65 000 x 15/115 x 12 = 101 739)
+Insurance proceeds are a deemed supply, on which Brew & Bean will be obliged to pay output VAT (20 000 x 15/115 = 2 609)
+Normal tax
+The insurance premiums would be deductible in terms of section 11(a) (R65 000 x 100/115 x 12) R678 261
+Damages and compensation
+In order for an amount to be deductible in terms of s11(d), there must be damage to a subsidiary part of a whole and the intention must be to repair the
+asset.
+The car was damaged and the door of the car was replaced which is a subsidiary part of the whole and therefore can be deducted under s11(d)
+However, s23 (c) prohibits the deduction of these costs to the extent that they are recoverable from the insurer.
+The installation of the tracking system was not for damage and therefore is an improvement and not a repair.
+It follows that only (25 000 - 20 000 = 5 000) will be deductible in terms of s11(d)
+Communication mark
+Available marks
+Limited to
+Total marks
+--- page 3 ---
+ACC3004W - 2025 Final exam
+Question 2
+2.1 Error/Omission  |  Correct treatment
+Chiedza's medical aid contribution is deducted from her  |  The remuneration inclusion should be the full R55 000 per month as that is
+salary amount  |  the amount that has been received for her own benefit
+The medical cost of R10 000 covered by the employer should be included
+Medical costs covered were omitted from the calcuation. as a fringe benefit.
+The right of use was granted immediately after purchase so the
+Determined value was reduced by 15%  |  determined value should not be reduced by 15%.
+Chiedza still had the right to use the car, so the days should not be
+Right of use of car was apportioned for days.  |  apportioned (para 7(5))
+Value of private use should be included at 80% since Chiedza only used the
+Value of private use of the motor vehicle was included in full car 75% for business purposes.
+There is no private benefit component as she is taking the trip for business
+purposes and thus this amount should not be included in her
+Flight cost paid was included as a taxable benefit.  |  remuneration.
+Chiedza actually spent the night away, therefore the subsistence allowance
+Subsistence allowance was included in remuneration.  |  should not be included in remuneration.
+The full cost of the laptop should be included in remuneration as Chiedza
+Right to use the laptop was included at 15%  |  will use the laptop over its useful life.
+The C value in the residential accommodation valuation
+formula should not be 19 because the suite only has three
+rooms.  |  The value used should be 17 instead.
+The low interest loan is calculated using the incorrect interest The rate used should be the difference between the officiall interest rate of
+rate  |  6% and the interest paid by Chiedza of 3%
+The interest on the loan should be apportioned using days instead of
+The low interest loan has been apportioned by months  |  90/365
+Y5: Must have identified at least 2 errors
+Available marks
+Maximum marks
+2.2 Item  |  Reason/ Workings  |  Amount
+Remuneration  |  Given  |  1 000 000
+Right of use of a motor vehicle  |  Correct amount included in remuneration
+480 000 x 3.25% x 12 x 80%  |  149 760  |  -149 760
+Determined value  |  480 000
+Value of private use
+480 000 x 3.25% x 12  |  187 200
+Business use reduction 7th Schedule para 7(7)
+187 200 x 75%  |  -140 400
+Private use reduction 7th Schedule para 7(8)
+Insurance
+20 000 x 25%  |  -5 000
+Licencing
+500 x 25%  |  -125
+Fuel
+(211,8c x 46 000km x 25% )/ 100  |  -24 357
+Cash equivalent value  |  17 318  |  17 318
+Subsistence allowance  |  Would not have been included in remuneration
+Allowance received  |  15 000
+Accommodation  |  0
+Must use actual costs incurred for accommodation, no deemed cost reduction.
+Meals and incidentals
+Actual: 500 x 5 = 2500
+Deemed: 548 x 5 = 2 740  |  -2 740
+Therefore, use deemed as it would be a higher reduction
+12 260  |  12 260
+Sony Camera  |  s11(e)
+(25 000 / 4) x 6/12  |  -3 125
+Gift from various brands  |  Gifts are capital in nature  |  0
+Books4Bargain  |  Gross income definition includes amounts in cash or otherwise.
+Cash received  |  5 000
+Gift voucher  |  6 000
+11 000  |  11 000
+Subtotal 1  |  887 693
+Disposals on death  |  s9HA
+Rondebosch home  |  Proceeds (use base cost as house is left to her spouse)  |  2 500 000
+Base cost  |  -2 500 000
+Capital gain/loss  |  0
+Shares in DateLine  |  Proceeds  |  480 000
+Base cost  |  -200 000
+Capital gain/loss  |  280 000
+Krugerrands  |  Proceeds  |  450 000
+--- page 4 ---
+Base cost  |  -60 000
+Capital gain/loss  |  390 000
+Not personal use assets so capital gain is not disregarded.
+Carricklea castle  |  Proceeds  |  3 600 000
+Base cost (market value at inheritance plus lawyer costs) (3 500 000 + 200 0  |  -3 700 000
+-100 000
+Life insurance policy  |  Disregarded - para 55
+Aggregate capital gain  |  570 000
+Annual exclusion 300 000 ltd to actual gain  |  -300 000
+Taxable capital gain  |  270 000
+40% inclusion rate  |  108 000
+Taxable income  |  995 693
+Available marks
+Maximum marks
+2.3 Item  |  Reason/Working  |  Amount
+Property
+Rondebosch house  |  Value is included at market value on death s5(g)  |  4 000 000
+DateLine shares  |  Value is the amount realised on liquidation of estate s5(a)  |  370 000
+Krugerrands  |  Value is included at market value on death s5(g)  |  450 000
+Carricklea property  |  Resident therefore non SA property included  |  3 600 000
+Life insurance policy  |  3 000 000 - 900 000 - 146 550  |  1 953 450
+Value of property  |  10 373 450
+Reductions
+Normal tax liability  |  s4(b)  |  -250 000
+Loan owing to bank  |  s4(b)  |  -200 000
+Property to spouse  |  s4(q) (house and life insurance)  |  -5 953 450
+Property inherited from non-resident  |  s4(e)  |  -3 600 000
+Executor fees  |  s4(c)  |  -10 000
+Net value of property  |  3 970 000
+Abatement  |  s4A(1)  |  -3 500 000
+Dutiable amount  |  470 000
+Estate duty payable at 20%  |  94 000
+Available marks
+Maximum marks
+2.4 Employees tax must be withheld if the amount paid by Books4Bargain is remuneration.
+If Chiedza is an independent contractor, the amounts paid to her would not be remuneration as defined.
+Chiedza's work is subject to the supervision of the Books4Bargains social media manager.
+She is also working mainly at Bargain4Books' premises.
+She hasn't employed more than 3 employees who are not connected persons to her.
+Thus, Chiedza is not an independent contractor and the amount received by her from Books4Bargain will be remuneration.
+Books4Bargain will therefore have to withhold employees' tax on that amount.
+Available marks
+Maximum marks
+2.5 The provision of the right to use the motor vehicle is a deemed supply per s18(3) of the VAT Act.
+The time of supply is the end of the month in which the benefit was granted, therefore the 31st of January and 28th of February 2025.
+In calculating the consideration of this supply we must first find the determined value.
+The determined value is R417 391 (R480 000 x 100/115).
+The VW Tiguan is a motor car as defined and would have been input denied therefore a rate of 0.3% will be used in calculating the deemed consideration.
+Chiedza does not bear any costs of maintenance or repair, therefore there will be no reduction in the consideration
+Thus, consideration for each month would be R 1 252 (R417 391 x 0.3% )
+This would result in output for the VAT period ened 28 February 2025 of R327 (R1252 x 15/115 x 2)
+X1: Must discuss at minimum the supply, time of supply, and value of supply.
+Available marks
+Maximum marks

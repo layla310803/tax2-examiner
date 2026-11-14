@@ -1,0 +1,77 @@
+Required 1.1: Employees' tax withheld from Nomveliso Zungu (2025 year of assessment)
+Item  |  Reason/Working  |  Amount (R)  |  Mark
+Basic cash salary  |  Para (a) of "remuneration" (Fourth Schedule): R230 000 × 12  |  2 760 000  |  1
+Pension fund contributions  |  Employer contribution: taxable benefit (para 2(l)/para 12D Seventh Schedule), included in remuneration. R5 000 × 12  |  60 000  |  1
+  |  Deemed paid by the employee for s11F (s11F(4)).  |    |  0,5
+Medical scheme contributions  |  Employer contribution for her and her son: para 2(i)/para 12A, included in remuneration  |  69 000  |  1
+Unrecovered medical expenses  |  The employer may not take s6B into account for employees' tax unless the employee is 65+ or disabled (para 9(6) Fourth Schedule); Nomveliso is 55  |  0  |  1
+Son's school fees (Hilton College)  |  Payment of the employee's debt / free service: taxable benefit (para 2(h)).  |    |  0,5
+  |  s10(1)(q) bursary exemption for a relative is not available: remuneration proxy R2 750 000 exceeds R600 000.  |    |  1
+  |  R20 000 × 12  |  240 000  |  1
+Travel allowance  |  R6 000 × 12 = R72 000  |    |  0,5
+  |  Para (cA) of remuneration: 80% included unless the employer is satisfied that at least 80% of use is for business, then 20%.  |    |  1
+  |  16 000 / 20 000 km = 80% business, logbook checked monthly by employer.  |    |  0,5
+  |  R72 000 × 20%  |  14 400  |  1
+Company gym  |  Recreational facility at the employer's premises for employees in general: no value (para 10(2)(d))  |  0  |  1
+Relocation costs (Stuttafords Van Liners)  |  Transfer of the employee: transport of household goods paid by employer is exempt (s10(1)(nB))  |  0  |  1
+Purchased annuity and maintenance  |  Not paid by Uhuru; Uhuru does not withhold employees' tax on them  |  0  |  0,5
+Remuneration  |    |  3 143 400  |  0,5
+Less s11F  |  Lesser of R350 000, 27,5% of remuneration or actual contribution: R60 000  |  (60 000)  |  1
+Balance of remuneration  |    |  3 083 400  |  0,5
+Tax per tables  |  R644 489 + 45% × (R3 083 400 − R1 817 000)  |  1 214 369  |  1
+Primary rebate  |  Under 65  |  (17 235)  |  0,5
+Medical scheme fees tax credit s6A  |  (R364 + R364) × 12, taken into account by employer (para 9(6))  |  (8 736)  |  1
+Employees' tax withheld for the year  |  R1 214 369 − R17 235 − R8 736  |  1 188 398  |  1
+Available  |  18
+Maximum  |  16
+
+Required 1.2: Which restructuring option is more tax-beneficial in 2026
+Marking Point / Principle  |  Marks
+OPTION 1: right of use of the Toyota Corolla
+Right of use of a motor vehicle is a taxable benefit (para 2(b) Seventh Schedule).  |  0,5
+Determined value: cost to employer incl. VAT R322 900.  |  0,5
+Acquired 1 March 2023, granted 1 March 2025: two completed 12-month periods before the right of use.  |  0,5
+Reduced by 15% per completed year on the reducing balance: R322 900 × 0,85² = R233 295.  |  1
+No maintenance plan, so 3,5% per month (para 7(4)).  |  1
+Annual value: R233 295 × 3,5% × 12 = R97 984.  |  1
+Para 7(7) business reduction (logbook: 25 000 km total, 18 000 business): R97 984 × 18 000/25 000 = R70 548; private portion R27 436.  |  1
+Para 7(8) private fuel borne by employee: reduce further for private fuel (7 000 km); net taxable benefit roughly R14 556 to R24 076, taxed at 45%.  |  1
+OPTION 2: travel allowance increased to R9 000 per month
+Allowance R9 000 × 12 = R108 000 (s8(1)(b)).  |  0,5
+Deemed cost method; BMW cost R327 000: bracket R300 001 to R400 000.  |  0,5
+Fixed cost: R113 436 / 25 000 km × 100 = 453,74 c/km.  |  1
+Fuel cost 197,9 c/km (she bears fuel).  |  0,5
+Maintenance 0 c/km (vehicle has a maintenance plan).  |  1
+Total 651,64 c/km.  |  0,5
+Business deduction: 18 000 km × R6,5164 = R117 295.  |  1
+Limited to the allowance received; net taxable inclusion R0.  |  1
+Conclusion: Option 1 leaves a taxable benefit (at least R14 556, extra tax of about R6 550 at 45%); Option 2 gives a nil inclusion and R36 000 more cash a year. Advise Option 2.  |  1
+Available  |  13
+Maximum  |  12
+
+Required 1.3: VAT consequences for Uhuru (Pty) Ltd
+Marking Point / Principle  |  Marks
+Stuttafords Van Liners (R90 000 incl. VAT): transport of goods by road is a standard-rated supply (passenger transport is exempt, goods transport is not).  |  1
+The relocation is incurred in the course of Uhuru's enterprise (moving an employee to the Durban office), s17(1).  |  0,5
+Input tax may only be claimed with a valid tax invoice issued to the vendor (s16(2) read with s20(4)).  |  1
+Stuttafords invoiced Nomveliso personally, so Uhuru cannot claim input tax of R11 739 (R90 000 × 15/115) unless a tax invoice in Uhuru's name is obtained.  |  0,5
+Toyota Corolla: granting the right of use to an employee is a deemed supply under s18(3).  |  0,5
+Time of supply: end of each month in which the benefit is included in remuneration.  |  0,5
+The Corolla is a motor car as defined; input tax was denied on acquisition (s17(2)(c)).  |  0,5
+Deemed consideration: 0,3% per month of the determined value excl. VAT: R322 900 × 100/115 × 0,85² = R202 865; × 0,3% = R608,60 per month.  |  0,5
+Output tax: R608,60 × 15/115 = R79,38 per month (R952,56 a year). Uhuru may deduct the output tax under s11(a).  |  0,5
+Available  |  5
+Maximum  |  5
+
+Required 1.4: Normal tax consequences for Takunda Bhezuzi of the Westville lease payments
+Marking Point / Principle  |  Marks
+A non-resident is taxed only on amounts from a South African source; employment income is sourced where the services are rendered (originating cause: Lever Brothers).  |  1
+Takunda renders his services in South Africa, so the benefits are from a South African source.  |  0,5
+Accommodation leased by the employer is a taxable benefit: para (i) of gross income read with para 2(d) of the Seventh Schedule.  |  0,5
+Rented from a third party: value is the lower of the formula and the cost to the employer (R20 000 per month), para 9(3C).  |  0,5
+Para 9(7A): accommodation provided to an expatriate employee away from home for work has no value for the first two years if he was not in South Africa for more than 90 days in the prior year.  |  1
+Para 9(7B): the no-value rule applies only up to R25 000 per month.  |  0,5
+The rental of R20 000 per month is below R25 000, so the benefit has no value.  |  0,5
+Conclusion: nothing is included in Takunda's South African taxable income for the Westville lease.  |  0,5
+Available  |  5
+Maximum  |  4

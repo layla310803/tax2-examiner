@@ -1,0 +1,129 @@
+--- page 1 ---
+Rockit Backpackers  |  (41 MARKS, 62 MINUTES)
+Rockit Backpackers Ltd (‘Rockit’) is a category C Value-Added Tax vendor, and carries on
+the business of selling amateur and professional backpacks and climbing equipment. Rockit
+also recently won ‘Adventure Consultant of the Year’ for its work in providing top athletes
+with preparation consultation before they embark on technical mountain climbing journeys. In
+addition the company also provides transportation services to various hiking groups and
+climbers to the various adventure hotspots of the Western Cape area. Rockit provides this
+service with its company-owned mini-bus.
+Rockit is currently preparing its one-month VAT 201 return for the period ended 31 October
+2024, which is also its year-end. The company’s financial manager was recently invited to
+join an executive team on a once-in-a-lifetime trip to the base camp of Everest and was
+therefore unable to complete the VAT 201 return. As a result, Rockit has asked you assist
+with the preparation of the VAT 201 return and to assist them with certain VAT issues they
+are unfamiliar with.
+All amounts include VAT where appropriate, unless stated otherwise. Where applicable, VAT
+invoices are on hand.
+The following information has been provided to you:
+1. An extract from the Rockit Statement of Comprehensive Income for the one-month
+period ended 31 October 2024 reflects the following:
+Notes  |  R
+Revenue  |  a  |  5 380 000
+Cost of Sales  |  b  |  2 840 000
+a) Revenue includes the following:
+Sale of Hiking equipment:  |  R2 020 000
+Athlete Consulting:  |  R2 015 000
+Shuttle Service:  |  R1 345 000
+b) Cost of sales consists of the following:
+Opening Stock  |  R1 820 000
+Purchases during the month  |  R2 020 000
+Closing Stock  |  (R1 000 000)
+R2 840 000
+2. Purchase of Assets
+Rockit purchased a high-pressure climitisation chamber for their athlete consulting
+offering to help prepare hikers/climbers for the high altitudes they will reach while
+they are on a mountain climbing expedition. The invoice for the high-pressure
+chamber was received on 1 September 2024 for an amount of R430 000, but was
+only delivered to the company’s premises on 1 October 2024.
+--- page 2 ---
+3. Administration expenses
+During October 2024, Rockit incurred administration expenses of R284 000. These
+expenses included stationery, paper and Wifi charges, amongst others, and were
+used by administrative staff working in the hiking and athlete consulting division only.
+4. Vehicle purchases
+October was considered a month for capital investment. Rockit purchased two
+vehicles. One was a double-cab bakkie, which was used as a delivery vehicle for
+sales of its backpacks and climbing equipment. The second was a new 18-seater
+Volkswagen mini-bus kombi, which was used with in the transportation offering
+provided by Rockit. The two vehicles cost R640 000 and R750 000 respectively.
+5. Rockit sold a computer to L-Way (Pty) Ltd (‘L-Way’) for R16 000. L-Way is a
+backpack manufacturer and manufactures many of the products sold by Rockit. The
+computer will be used by L-Way to conduct all the administration activities of its
+business. Rockit had used the computer for the administration of product sales
+exclusively. The market value on 20 October 2024, the date of sale and on which
+payment was received, was R18 000.
+6. Salaries and wages of R373 000 were paid to employees for the month of October.
+7. Rockit Ltd purchased leather tags from a non-vendor for R1 500. These tags were
+actually off-cuts from the non-vendor’s trade and were considered used. The open
+market value on the day the tags were bought was R1 000. Rockit, in turn, sold the
+tags to Cape Union Tart (Pty) Ltd (‘CUT’). CUT will use the leather in its
+manufacturing process. The selling price was R2 000, when the open market value
+was R2 250. The transaction in respect of the purchase and sale of these tags took
+place on October 2024.
+8. One of the new assistant accountants at Rockit had completely forgotten his tax
+knowledge that he had acquired whilst at University and wanted to clarify the
+following point with you regarding the November 2024 VAT period:
+“I was just wondering how I would deal with the following from a VAT perspective. I
+am busy calculating the sales for the month of November for both consulting as well
+as the transportation offerings of our company. It seems like there was a large
+volume of credit sales for this month and most of them were with non-VAT vendors.
+Surely Rockit would not need to incur Output VAT on these sales as they have not
+been paid and the other party claimed no input. The value of sales on credit for
+consultancy and transport was R1 100 000 and R385 000 respectively before making
+any VAT adjustments. Please would you consider clearing all this up. All this coffee
+making has made my brain fuzzy.”
+--- page 3 ---
+Journal Entries
+Furthermore, the financial manager processed the following journal entries. However, the
+new assistant accountant is worried that these entries could be wrong and that he would
+be blamed for the errors. He suspects some adjusting entries are necessary but due to
+the stress he has asked you to help process these. The entries processed were:
+DR  |  CR
+1. Dr  |  Administration Costs  |  73 913,04
+Dr  |  VAT Input  |  11 086,96
+Cr  |  Bank  |  85 000
+This relates to the admin expenses relating solely to the transportation division of the
+company.
+2. Dr  |  Entertainment expense  |  5 217,39
+Dr  |  VAT Input  |  782,61
+Cr  |  Bank  |  6 000
+This payment relates to the costs incurred when a potential client was taken out for dinner.
+3. Dr  |  Petrol Expenses  |  434,78
+Dr  |  VAT Input  |  65,22
+Cr  |  Accounts Payable  |  500
+Fuel costs incurred on petrol in delivery vehicle.
+--- page 4 ---
+REQUIRED:
+QUESTION  |  MARKS
+Subtotal  |  Total
+1  |  Briefly explain when a person should register as a VAT
+vendor.  |  3  |  3
+2  |  Briefly explain the difference between direct and indirect
+taxes, giving an example of each.  |  2  |  2
+3  |  Discuss, with supporting calculations, what the VAT
+consequences would be for Rockit Backpackers Ltd relating
+to the purchase of the two vehicles in Note 4.  |  5
+Communication skills – logical argument  |  1  |  6
+4  |  Calculate, with reasons, the net VAT payable/receivable by
+Rockit Backpackers Ltd for the VAT period ending  |  16  |  16
+31 October 2024 relating to notes 1 – 7.
+Your solution must also include an explanation for any item
+mentioned in the scenario that you have specifically
+excluded from your calculation.
+5  |  Discuss, with supporting calculations, what the VAT
+consequences would be for Rockit Backpackers Ltd during
+the November 2024 VAT period under review of the
+transactions detailed in Note 8.  |  5
+Communication skills – logical argument  |  1  |  6
+6  |  Provide, with reasons, the correcting journal entries, if
+necessary, for the three journal entries the assistant
+accountant of Rockit Backpackers Ltd asked you to review.  |  8  |  8
+In answering this question:
+ Your solution must also include an explanation for
+any transactions that do not require a correcting
+journal entry.
+TOTAL MARKS  |  41  |  41
+Your solution to question 4 should be presented in the following format:
+Description  |  Reasons  |  VAT input  |  VAT output
+(Source: Tax I January 2018 Exam)

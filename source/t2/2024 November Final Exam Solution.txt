@@ -1,0 +1,235 @@
+--- page 1 ---
+ACC3004W - 2024 Final exam
+Question 1
+Part A
+To: The Financial Director, ClutterClear
+Solutions (Pty) Ltd
+From: A Tax Consultant
+Re: Deductibility of recall and rebranding
+1.1 expenses
+In order for the amount to be deductible, it must meet s11(a) read together with s23(g)  |  1
+The onus is on the taxpayer Clutter Clear (Pty) Ltd to prove the recall and rebranding expenses is deductible  |  1
+The issues are whether this amount paid is in the production of income and not of a capital nature  |  1
+Expenditure is in the production of income if it is an inevitable concomitant or if the action that gave rise to the expenditure is closely connected to the operations of the business  |  1
+The action that gave rise to the expenditure is the labelling error of a product and the operations of the business is the selling of containers so it is closely connected  |  1
+Therefore it is in the production of income
+Expenditure is capital in nature where it creates an enduring benefit or adds to the income earning structure of the business.  |  1
+One could argue that by incurring these costs now, you are protecting the company's reputation which would have an enduring benefit/once off expense.
+Alt: Company could argue that these expenses are part of the operating expenses therefore revenue in nature  |  1
+Therefore capital in nature and does not meet s11(a) and can't be deducted  |  1
+Alt: Therefore revenue in nature and does meet s11(a) and can be deducted
+Communication mark  |  1
+Available  |  9
+Limited  |  8
+1.2 Current year capital allowance
+s11(e) - the bakkie was used by the company for its trade
+For the 2024 year of assessment, the capital allowance would be based on the lower of cost or market value
+The single - cab bakkie is not a motor car as defined and therefore on acquisition the company would have claimed input tax of R47 334,78 (362 900 x 15/115)  |  1
+Cost  |  (362 900 - 47 334,78)  |  315 565,22  |  0,5
+Market value  |  (360 000 - 47 334,78)  |  312 665,22  |  0,5
+Capital allowance for the current year will be 312 665,22/4 x 7/12  |  45 597,01  |  1
+Recoupment/scrapping allowance
+Proceeds (365 000 x 100/115)  |  317 391
+Limited to the cost that allowances  |  1
+were based on  |  312 665
+Less: Tax value  |  149 819
+Cost that allowances were based on  |  312 665  |  0,5
+2022
+(312665,22/4 * 6/12)  |  39 083  |  0,5
+2023
+(312665,22/4)  |  78 166  |  0,5
+2024  |  45 597  |  0,5
+Recoupment  |  162 846
+CGT  |  Proceeds as defined  |  154 545
+Proceeds (365 000 x 100/115)  |  317 391  |  0,5
+Less recoupment  |  162 846  |  0,5
+Base cost as defined  |  152 718,75
+Actual cost  |  315 565,22  |  1
+Less allowances:  |  162 846  |  0,5
+Capital gain  |  1 826,08
+As this was an involuntary disposal, para 65 could apply. The bakkie was stolen, proceeds of R365 000 were received from the insurance by way of compensation, the proceeds (as
+above) exceed the base cost, an amount equal to the proceeds was used to buy a replacement asset, the replacement asset was bought within 12 months (one month) and brought
+into use within three years (one month).  |  3
+Therefore the recoupment and capital gain will be deferred in line with the new bakkie.
+New bakkie capital allowance
+The double - cab bakkie is a motor car as defined and therefore on acquisition the company would not be able to claim input tax  |  1
+Capital allowance for the current year will be 400 000/4 x 4/12  |  33 333,33  |  1
+The recoupment included in the current year would be (162 846 x 33 333,33/400 000)  |  13 570,54  |  1
+The capital gain to be aggregated with other capital gains/losses would be (1 826,08 x 33 333/400 000)  |  152,17  |  1
+Available  |  15,5
+Limited  |  15
+--- page 2 ---
+1.3 Supply
+The organisation services is a supply of goods/services by a vendor and therefore is a taxable supply.  |  1
+Value of supply
+The supply is made to a connected person as Amanda owns 50% of the shares in the company (i.e more than 10%)  |  1
+The services are provided at less than the market value as Amanda only paid R10 000 but the service would usually be R50 000  |  1
+Amanda is not a VAT vendor and therefore would not be able to claim any input tax  |  1
+Therefore connected person rule applies and VAT would be charged on the open market value of R50 000  |  1
+Output tax would be R50 000 x 15/115 = R6 522  |  1
+Time of supply
+The time of supply would be when the services are rendered which is August 2024.  |  1
+Available  |  7
+Limited  |  7
+1.4 Normal tax
+ClutterClear (Pty) Ltd is a South African resident and therefore taxed on its worldwide income.  |  1
+Whether the goods/services are sold/provided in South Africa or outside, the company will include it in its gross income.  |  1
+VAT
+The sale of the storage containers and the consulting services is a supply of goods/services by a vendor and therefore is a taxable supply.  |  1
+The sale of the storage containers however is an exported good and will be zero rated  |  1
+If the company provides the consultation services in Namibia, this is services rendered physically outside South Africa and will be zero rated in terms of s11(2)(k)  |  1
+If the consultation services are rendered in the Republic to the customers in Namibia (non- resident) and the services do not relate to land or movable property situated in South  |  1
+Africa then it would be zero rated (this is subject to the provisos)
+Therefore in both cases, the services would be exported services and zero rated therefore no difference in the VAT consequences for either option  |  1
+Communication mark  |  1
+Available  |  8
+Limited  |  8
+1.5 ClutterClear Solutions has taxable supplies of R550 000 before the additional transactions  |  1
+In adding the additional taxable supplies of the insurance proceeds and service provided to Amanda, the taxable supplies increase to R965 000 (R550 000 + R365 000 + R50 000)  |  1
+Therefore the total taxable supplies is less than R1m and ClutterClear could deregister as a VAT vendor  |  1
+However Clutter Clear should consider that there are very important business reasons as to why they should stay registered as a VAT vendor, such as:
+- Clients needing them to be VAT vendors so that they can claim input tax  |  1
+- If they are to start exporting, it means that they will pay output tax of zero percent but they would be able to claim input tax on their costs incurred on the goods and services that 1
+they export
+Any other valid reason
+Communication mark  |  1
+Available  |  6
+Limited  |  6
+Total marks (Part A)  |  44
+Part B
+2 Car
+The donation of the car is for the maintenance of her son and therefore would be exempt in terms of section 56(2)(c)  |  1
+The car disposal results in a capital loss of R150 000 (200 000-350 000)  |  1
+However the disposal of the car is a disposal of a personal use asset and therefore disregarded for CGT  |  1
+Apartment in Zimbabwe
+The donation of the apartment in Zimbabwe is exempt from donations tax in terms of section 56(1)(g)(ii) as it was inherited from her father who is a non-resident  |  1
+The disposal of the apartment will result in CGT as she is a resident and therefore taxed on her worldwide disposal of property  |  1
+The proceeds will be the market value at the date of the donation which is R3 200 000.  |  0,5
+The base cost will be the market value on the date that she inherited it which was R1 500 000.  |  0,5
+Therefore she has a capital gain of R1 700 000 on the apartment
+Laptop
+The donation of the laptop is exempt in terms of section 56(1)(h) as it was donated to a PBO  |  1
+The disposal of the laptop results in a capital loss of R4 500 (8 000 - 12 500)  |  1
+--- page 3 ---
+The disposal of the laptop is disposed to a PBO therefore disregarded for CGT (para 62)/personal use asset  |  1
+As she has made a donation to a PBO, she will get a deduction of the fair market value (R8 000) limited to 10% of her taxable income  |  1
+Kruger Rands
+The donation of the Kruger Rands is not specifically exempt and therefore will be included at the market value of R450 000  |  1
+She will be able to use the general exemption of R100 000 against this donation  |  1
+She will therefore pay donations tax of (450 000 - 100 000) x 20%  |  70 000  |  1
+The proceeds on the disposal of the Kruger Rand will be R450 000  |  0,5
+The base cost is the cost that she purchased it for of R340 000 plus an adjustment for the donations tax  |  0,5
+Donations tax adjustment  |  (450 000 - 340 000)/450 000 x 70 000  |  17 111  |  2
+Therefore she has a capital gain of R92 889
+As she is an individual, she will get an annual exclusion of R300 000 which results in a net capital gain of (1 700 000 + 92 889 - 300 000)  |  1492889 1
+This will be included in her taxable income at 40% (1 492 889 *40%)  |  597 156  |  1
+Communication mark  |  1
+Available  |  19
+Limited  |  18
+2 Item  |  Reasons  |  R
+Property
+Excluded - taken out by co-shareholder
+and none of the premiums were paid by
+deceased and it was taken out to
+purchase the deceased shares in the
+Insurance policy (taken out by co-shareholder) company  |  0  |  1
+Unlisted shares in ClutterClear  |  Always at fair market value  |  1 800 000  |  1
+Insurance policy (deemed property)  |  (3 000 000 - 500 000 - 81417)  |  2 418 583  |  1
+Primary residence  |  The value is the fair market value  |  5 600 000  |  1
+Holiday home  |  Sold therefore use selling price  |  2 500 000  |  1
+Gross Value of Estate  |  12 318 583
+Less Deductions:
+Normal tax liability  |  s4(b)  |  -437 550  |  0,5
+Donations tax  |  s4(b)  |  -70 000  |  0,5
+Deathbed and funeral expenses  |  s4(a)  |  -90 000  |  0,5
+Executor fees  |  S4(c)  |  -170 000  |  0,5
+s4(q)- the property accrues to the
+Insurance policy (deemed property) and  |  surviving spouse (2 418 583 + 5 600
+primary residence  |  000)  |  -8 018 583  |  1
+Net Value of Estate  |  3 532 450
+Less: Abatement  |  -3 500 000  |  1
+Dutiable Amount of the Estate  |  32 450
+Estate Duty  |  20% x 32 450  |  6 490  |  1
+Available  |  10
+Limited  |  10
+--- page 4 ---
+ACC3004W - 2024 Final exam
+Question 2
+2.1 In order for a taxpayer to get deductions, the taxpayer needs to be carrying on a trade. Those deductions need to meet s11(a) read together with s23 or a specific deduction  |  1
+Section 23(a)/(b) disallows the deduction of any costs incurred in relation to private expenses.  |  1
+Section 23(b) has a proviso that states if a part of the premises is specifically equipped for trade and regularly and exclusively used for trade then the taxpayer can get a deduction for  |  1
+that part
+As she has turned her guest room into her sewing room and it is equipped with everything she needs to carry on with her trade and she uses it every night and every weekend only for  |  1
+her trade, she can get a deduction for the 25% of some of her expenses
+Installment on her home mortgage - only the interest part can be deducted (10 946.11 x 25% x 12)  |  R32 838.33  |  1
+The other portion of the loan is not deductible as it is capital in nature  |  1
+Water and electricity - 25% can be deducted (7 500 x 12 x 25%)  |  R22 500  |  1
+The statement by her friend is therefore not true and if Saarah goes ahead with deducting the expenses and disguising it as business expenses, she will be committing tax evasion
+which is illegal and unethical.  |  1
+Communication mark  |  1
+Available  |  9
+Limited  |  7
+2.2 Salary  |  Gross income - para(c)/special inclusio (52000 x 12)  |  624 000 1
+Entertainment allowance  |  Actual amount received (5000 x 12)  |  60 000
+Amount accounted for  |  (57 500)
+Amount refunded  |  (2 500)
+-  |  -  |  1
+She was instructed by her employer, was required to provide proof and provided the proof  |  1
+Watch  |  Asset acquisition at less than actual value - gross income - para (i)
+Bought specifically for employee therefore use cost  |  7 500  |  1
+Long service award reduction - she has worked for more than 15 years  |  (5 000)  |  1
+2 500  |  2 500
+Medical aid contributions  |  Gross income - para (i)  |  (5 500 x 12)  |  66 000 1
+Pension fund contributions  |  Gross income - para (i)  |  (4 500 x 12)  |  54 000 1
+Right of use of residential accomodation Gross income - para (i)
+Rented by the employer therefore use
+the lower of:
+-Rent costs paid by employer  |  18 000  |  0,5
+-Formula  |  (A-B) x C/100 x D/12  |  7 351  |  7 351
+A: Remuneration proxy - given  |  560 000  |  0,5
+B:  |  95 750  |  0,5
+C:  |  19  |  0,5
+D:  |  1  |  0,5
+Bursary - free or cheap services  |  Gross income - para (i)  |  50 000  |  1
+Included in her gross income as it is a benefit received by her relative due to her employement  |  1
+Bursary exemption  |  Remuneration proxy (560 000) is less than R600 000 and university level 60 000 limited to inclusion  |  (50 000)  |  1,5
+Gross income from side trade  |  960 000  |  0,5
+Tax-deductible expenditure from side trade  |  (435 000)  |  0,5
+Sewing machine - s11(e)  |  Input VAT - second hand goods rule (lower of cost or OMV)  |  0,5
+(6 500 x 15/115)  |  847,83  |  1
+R5 652 (R6 500 - 847.83) - small asset (less than R7 000) therefore fully deducted in 2023 YOA  |  -  |  1
+Employee salary  |  s11(a)  |  (7500 x 12)  |  (90 000) 1
+Deductions from 2.1  |  (R32838,33+22500)  |  (55 338) 0,5
+Taxable income before s11F  |  1 133 512
+Section 11F
+Actual contributions (4 500 x 2 x 12)  |  108 000  |  (108 000) 0,5
+Limited to the lower of:
+-350 000  |  0,5
+-27.5% of the higher of:  |  311 716
+-Taxable income  |  1 133 512  |  0,5
+-Remuneration  |  753 851  |  2,5
+(624 000 + 2 500 + 66 000 + 54 000 + 7 422 )
+Taxable income  |  1 133 512  |  0,5
+Therefore fully deducted
+Taxable income  |  1 025 512
+Available  |  22,5
+--- page 5 ---
+Limited  |  22
+2.3 Lease
+The rental amount of R14 500 per month is deductible under section 11(a) as it is used for her trade and meets the requirements of s11(a)  |  1
+However it has been prepaid and therefore we need to consider section 23H  |  1
+The rental was paid for 12 months on 1 November 2024, therefore the expenditure related to the 4 months from 1 November 2024 to 28 February 2025 (R58 000) can be deducted in
+the 2025 year of assessment  |  1
+The prepaid rental is for 8 months and for a total amount of R116 000 (R174 000 * 8/12)  |  1
+This was not prepaid due to legislation, the prepaid rental is for greater than 6 months after year end and the prepaid rental is greater than R100 000  |  1
+Therefore the prepaid portion is deferred to the 2026 year of assessment and can't be deducted in the 2025 year of assessment.  |  1
+Leasehold improvement
+The leasehold improvement can be deducted under s11(g) as it was actually incurred, in terms of an obligation (lease agreement), the property is used for the production of income  |  2
+(to operate her business from) and it will constitute income for the lessor
+Even though she spent R170 000, the deduction is limited to the amount in the contract of R150 000  |  1
+The deduction will be written off from the date the improvements are completed (1 December 2024) for a period of 10 years.  |  1
+Section 11(g) for the current year: 150 000/(10 x 12 - 1) x 3  |  3 782  |  1
+There will be no s13(1) allowance for the excess R20 000 as this property is not used in the process of manufacture  |  1
+Communication mark  |  1
+Available  |  13
+Limited  |  12

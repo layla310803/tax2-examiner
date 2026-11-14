@@ -1,0 +1,161 @@
+--- page 1 ---
+QUESTION 1  |  (56 MARKS; 84 MINUTES)
+Stirology (Pty) Ltd (‘Stirology’ or ‘the company’) is a family-owned South African company that offers
+hands-on, interactive, and fun cooking classes with a bit of a difference. Participants are put into
+teams, and each team member is given a portion of the meal to prepare. The menu is revealed and
+issued to participants on the day and is largely determined by the availability of fresh, locally
+produced ingredients. Recipes, tools and guidance are also provided as needed but participants are
+always encouraged to improvise. Once the meal has been cooked, all participants then gather around
+the table to enjoy the meal they have prepared together.
+Jade Quin and her parents, John and Jenny Quin are the trio that founded Stirology in October 2008.
+Jade has remained very involved in the company’s operations since its incorporation; however, her
+parents have recently taken more of a backseat. On incorporation of the company, 10 000 equity
+shares were issued to Jade, John and Jenny for R5 each. There have been no transfers of these shares
+or issues of new shares since incorporation of the company. Jade does not hold any other equity
+shares. However, John and Jenny Quin have invested most of their pension in South African
+companies that are listed on the JSE.
+Stirology has a 31 October financial year-end and is a registered category A VAT vendor. The company
+has requested your assistance regarding various matters concerning its tax affairs in its current year of
+assessment.
+Stirology had correctly calculated gross income of R4 500 000 and tax-deductible expenditure of
+R850 000 before taking into account the below information:
+All amounts are inclusive of VAT where appropriate unless stated otherwise or shown by the
+context.
+1. Consumables
+Ingredients that are used and consumed in cooking classes are recognized as consumables. A
+review of Stirology's general ledger shows the following balances as it relates to consumables:
+--- page 2 ---
+Account  |  R
+Opening Balance  |  4 200
+Consumables purchased  |  800 000
+Closing Balance  |  2 100
+The following transaction has not been taken into account in the accounting records:
+• In order to limit Stirology’s waste, perishable ingredients are generally purchased as needed.
+Further to this, Jade generally cleans the fridge on a weekly basis and identifies any perishable
+ingredients that are not likely to be used in a cooking class before expiry. These ingredients
+are then donated to Food Secure, a registered public benefit organisation. Stirology donated
+ingredients that had been purchased for a total cost of R13 000 (excluding VAT) in 2025 to
+this organisation during the company’s 2025 financial year.
+2. Customer Settlement
+Jade generally requires that all customers who book with Stirology, provide her with a complete list
+of all dietary requirements and allergies of all participants that are included in the booking. On receipt
+of this list, she generally adapts existing recipe’s and ingredients purchased to suit the customers’
+requirements. Jade also makes sure to check the ingredient lists on the packaging of all items to be
+used and consumed by each group of participants to confirm that there are not traces of any specified
+allergens.
+On 20 March 2025, Jade received an email from a Riley Boysen, a customer that had attended a
+cooking class earlier that week, to notify her that she had had a very bad allergic reaction that
+required her to seek medical attention, soon after attending class. While Riley was unsure of the
+exact dish or ingredient that had caused her allergic reaction, she was of the belief that she had
+consumed some type of shellfish while at Stirology.
+After referring back to her emails, Jade was able to confirm that Riley had in fact specified this allergy
+when booking for the class, and although the menu issued to participants on the day that Jade
+attended the class did not seem to include any shellfish, on further investigation of the individual
+ingredients, Jade noted that the green curry paste that was used and consumed by participants
+contained traces of dried shrimp. Jade had unfortunately forgotten to check the ingredients listed on the
+packaging of all items used as Stirology happened to be short staffed on that particular day and Jade
+had been rushing to get things ready in time for the class.
+After realizing that she had made such a careless error, Jade replied to Riley’s email with a sincere
+apology on 24 March 2025. In her email, she also stated that Stirology had just paid an amount of
+R3 000 into Riley’s bank account to cover her medical costs. She also offered to allow Riley and ten
+friends to attend a Stirology cooking class at a future date of their choosing, provided that the
+--- page 3 ---
+booking is made within a period of 12 months. Riley graciously accepted Jades offer on the same day,
+but had not made a booking to attend the class by 31 October 2025.
+Customers are generally charged a fee of R500 per person when attending a Stirology class, however,
+the actual costs incurred by Stirology in providing the class amounts to a mere R100 per person.
+3. Employee Benefits
+In addition to Jade, Stirology employs four other full-time employees who are not connected persons to
+each other or the company. The company pays all of its employees a basic salary in addition to the
+additional benefits outlined below:
+• The latest cooking class that is offered by Stirology begins at 6pm and is expected to end well
+before 10pm. However, on some occasions, participants take longer than expected to cook
+the meal which can cause the event to run overtime. All Stirology employees that are on duty
+are then required to stay even later and clean up the premises after the event.
+In these instances, employees that are reliant on public transport or lift clubs are generally
+unable to get home. As a result, the company pays for these employees to stay in backpacking
+accommodation1 in Cape Town when cooking classes run past 10pm. During the 2025 year of
+assessment, the company incurred accommodation costs of R2 500 (excluding VAT) each for
+two of its employees. Neither of these two employees have stayed in the backpacking
+accommodation for more than one night at a time.
+• Jona Lee, the company booking and operations manager, was awarded an iPad Pro as a long
+service award on 31 October 2025. Jona has been employed in this position since Stirology
+was first incorporated. The iPad was purchased new for R15 000 at a ‘Christmas in July Special’
+on 31 July 2025. This was at a 10% discount to the usual selling price.
+4. Fixed Assets, Other Income and Expenditure
+The company owns the following assets:
+Business Premises
+Stirology operates from its business premises, a free-standing house located in Woodstock, Cape
+Town.
+In June 2024, the company purchased this two-bedroom house for R1 800 000 when the market value
+thereof amounted to R1 500 000. The premises was purchased from Thabo Tinto, who had previously
+1 Backpacking accommodation is inexpensive board and lodging that often consists of small furnished dorm rooms with
+4-8 beds shared by unrelated parties.
+--- page 4 ---
+lived in the house as his primary residence. Payment of the purchase price was made in two equal
+installments on 1 September 2024 and 1 November 2024, respectively. The property was registered in
+the deed’s office on 30 September 2024 and was brought into use immediately. Prior to this,
+Stirology operated out of the kitchen and dining area of the Quin family home.
+Stirology received a statement at the end of each month from the Cape Town Municipality detailing
+its monthly rates, water and electricity separately. The amount due is then paid immediately on
+receipt of the monthly statement. During the company’s 2025 year of assessment, R30 000 (excluding
+VAT) was paid to the municipality in settlement of these monthly statements, 50% of which were
+attributable to the property rates.
+Cooking Equipment
+Prior to the move to the new business premises, the company did not own its own cooking equipment
+and merely used what was available in the Quin family home. On 1 October 2024, a small business
+loan amounting to R100 000 was taken out to cover the costs of equipping the new premises with
+the necessary cooking equipment and utensils, some of which have been outlined below (e.g. The Ice
+Cream Machine). The loan attracted interest at a rate of 7% per annum. No capital repayments had
+been made in respect of this loan by the end of the 2025 year of assessment, while all interest
+payments had been made on a monthly basis as and when due.
+R20 000 of the loan amount had not been used by 31 March 2025. This excess amount was used to
+purchase more equity shares in Orange Inc, a company resident in the United States of America, after
+which, Stirology held 0.5% of the equity shares in the company. The company received dividends
+amounting to a rand equivalent of R588 000 into its bank account, after dividends withholdings tax
+was withheld at a rate of 30% in the USA.
+Ice Cream Machine
+On 15 October 2024, the company imported a new SnoMaster ice cream machine from a UK supplier
+and non-VAT vendor for a rand equivalent purchase price of R8 200. The machine arrived in Cape
+Town on 30 October 2024. Import duties of R600 were paid by Stirology, as well as VAT, and the
+machine was released by SARS customs and excise on 20 November 2024.
+Immediately after the machine had been delivered, Jade attended a short online training session that
+was offered by the UK supplier at an additional cost of R500. The machine was brought into use
+immediately thereafter on 30 November 2024.
+Portable Pizza Oven
+Mr Quin donated a portable Pizza oven to Stirology on 1 October 2025. He had initially purchased
+the pizza oven new for an amount of R5 500 (which was equivalent to its market value) in June
+2024 for home use but had not yet taken it out of the packaging. The pizza oven had a market value
+of R5 000 on the date of donation.
+--- page 5 ---
+Additional Information
+• Interpretation Note 47, read together with BGR 7, allows for a five-year write off period for
+all qualifying assets.
+• SARS does not consider Stirology (Pty) Ltd to be carrying on a process of manufacture.
+• Stirology (Pty) Ltd wishes to minimize its taxation position by taking advantage of any and all
+elective taxation provisions in any relevant Acts.
+--- page 6 ---
+REQUIRED
+QUESTION 1  |  MARKS
+Subtotal  |  Total
+1.1  |  Discuss whether Stirology (Pty) Ltd meets the requirements to be
+considered a ‘small business corporation’ as defined in the  |  8
+Income Tax Act (Act 58 of 1962).
+9
+Communication – Logical Argument  |  1
+In answering the following questions, you may assume that Stirology (Pty) Ltd is and has always
+been a small business corporation.
+1.2  |  Discuss, with reference to case law and the Income Tax Act (Act
+58 of 1962), whether the customer settlement outlined in Note  |  11
+2 may be claimed as a deduction by Stirology (Pty) Ltd.
+Communication – Logical Argument  |  1  |  12
+1.3  |  Calculate, with supporting reasons, all the VAT effects for
+Stirology (Pty) Ltd for the year ended 31 October 2025 relating
+to:
+• All employee benefits granted to the employees of
+Stirology (Pty) Ltd (Note 3)
+• All Fixed assets, other income and expenditure of  |  18  |  18
+Stirology (Pty) Ltd (Note 4)
+1.4  |  Calculate, with supporting reasons, Stirology’s taxable income
+for its year ended 31 October 2025.  |  17  |  17
+SOURCE: ACC3004H January 2022 Q1 supplementary exam

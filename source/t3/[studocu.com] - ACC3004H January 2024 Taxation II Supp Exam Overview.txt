@@ -1,0 +1,379 @@
+--- page 1 ---
+ACC3004H ACC3004H 2024 2024 January January supp supp exam exam
+Taxation Taxation II II (University (University of of Cape Cape Town) Town)
+Scan Scan to to open open on on Studocu Studocu
+--- page 2 ---
+TAXATION II
+(ACC3004H)
+JANUARY EXAM
+TUESDAY 16 JANUARY 2024
+(08:00 to 11:00)
+Marks: 113  |  Time: 3 hours
+PLEASE READ THE FOLLOWING INSTRUCTIONS CAREFULLY. STUDENTS MAY BE
+PENALISED FOR DISREGARDING THESE INSTRUCTIONS.
+• This paper consists of THREE questions.
+• Answer all parts of the questions.
+• There is 10 minutes reading time, no writing in the answer books is allowed during this time.
+• Answer each question in a separate answer booklet (i.e., THREE books).
+• Answers must be written in blue or black ink. Answers (including workings) may not be written in
+pencil and/or red or green ink.
+• No Tippex, correction fluid or tape is allowed.
+• All workings must be shown clearly and legibly and handed in with your answers.
+• No questions will be answered by invigilators during the assessment. Make whatever assumptions
+you deem appropriate and clearly state these in your answer books. Any reasonable assumption
+will be considered.
+• This is a limited open book exam. Students are allowed the following: A guide through IFRS Parts
+A to B2, SAICA Members’ Handbooks Vol 2 to 3 and SAICA Student Handbook Vol 1 to 3. No
+writing is allowed in the permitted texts, but students may flag the permitted texts.
+Suggested time
+Marks  |  (minutes)
+Reading time  |  10
+Question 1  |  43  |  65
+Question 2  |  36  |  54
+Question 3  |  34  |  51
+113  |  180
+THIS ASSESSMENT CONSISTS OF ELEVEN (11) NUMBERED PAGES (INCLUDING THIS COVER PAGE)
+--- page 3 ---
+QUESTION 1  |  (43 MARKS; 65 MINUTES)
+Dune Adventures (Pty) Ltd is a company that manufactures and sells sandboards and other
+sandboarding equipment and offers sandboarding1 in the Western Cape. The company was
+established by siblings, Rogan and Fatiema Malambe, in 2018 as they wanted to turn their passion
+into a business. Rogan is a 50% shareholder and is still involved in the day-to-day operations of the
+company whereas Fatiema is no longer involved in the operations but still owns 50% of the shares.
+The company has a 31 October year-end and has been registered as a Category B VAT vendor since
+it was incorporated in 2018.
+The company is based at the Atlantis Dunes in Atlantis, Western Cape. On the premises, the company
+has its retail shop and administration office. The manufacturing facility is also located in Atlantis.
+Due to the location of the sandboarding and many people not wanting to drive so far by themselves,
+the company also offers transport from Cape Town CBD to the dunes. This is an optional extra that
+customers pay for separately.
+The company requires your assistance with the finalisation of its tax returns. The following information
+is relevant:
+1. The company ordered a new sand board manufacturing machine from a company in Germany
+in August 2023 and it arrived in South Africa on 2 October 2023. The machine was only cleared
+for home consumption on 14 October 2023. The cost of the machine was R19 564 (correctly
+converted to Rands). Import duties of R3 913 was paid and the customs duty value was
+R22 000. The company paid a local delivery company R2 500 to deliver the machine to the
+manufacturing premises; it arrived on 20 October 2023, and it was brought into use on that
+same date.
+2. For the sandboarding activity, each participant is charged R995 for the half day activity. This
+price includes the sandboarding activity and a drink on arrival. There is no restaurant at the
+dunes, but there is a cash bar where customers can buy drinks and snacks. During the current
+year, 10 950 participants took part in the sandboarding activity. The total revenue received
+during this period from the cash bar was R4 700 000, the total costs of the drinks and snacks
+was R1 175 000, including the drink customers received on arrival.
+3. The company earned R5 475 000 during the period transporting customers from the CBD to
+the dunes and back to the CBD.
+4. The company employs 25 people in total who work in the different departments. Some assist
+with the driving to and from the dunes, the driving to the top of the dunes and helping
+customers with the gear and the activity on the day. Some staff work in the retail shop or the
+manufacturing department. One employee does the booking of the sandboarding activity and
+transport. The total salaries for the year of assessment amounted to R3 150 000.
+5. The company rents an office for R5 000 per month, where all the company’s administration is
+performed.
+6. The company has tax-deductible expenditure (correctly calculated) of R9 887 500.
+7. During the current year of assessment, the retail store was almost robbed. One of the
+employees, who only works in the retail store, managed to catch the robbers and locked them
+1 Sandboarding is a recreational activity where participants ride down sand dunes on a sandboard –
+a board designed for gliding over sand surfaces.
+--- page 4 ---
+up in the back room until the police arrived. For his bravery, the company gave him the latest
+edition sandboard, sandboarding boots and goggles which cost the company a total of R5 500
+to manufacture and it usually sells for R11 600. These items were manufactured in the 2022
+year of assessment and given to the employee on 1 October 2023. The cost of these items is
+included in the tax-deductible expenditure above. Nothing else related to this transaction is
+included in that amount.
+Journal entries
+The accountant prepared the following journal entries for the two-month VAT period ended
+31 December 2023.
+a)
+DR  |  Rates, water and electricity  |  R13 043
+DR  |  Input tax (15 000 x 15/115)  |  R1 957
+CR  |  Bank  |  R15 000
+Explanation:
+The company received a statement from the Atlantis Municipality detailing its monthly rates,
+water and electricity separately. For the two months November and December 2023, the total
+amount on the statement was R15 000, 60% of which relates to property rates.
+b)
+DR  |  Bank  |  R655 900
+CR  |  Output tax (655 900 x 15/115)  |  R85 552
+CR  |  Insurance income  |  R570 348
+Explanation:
+One of the mini buses that are used to transport the customers from the CBD to the Atlantis
+Dunes was involved in an accident and was completely written off. The insurance company
+paid out insurance proceeds to the value that it was insured for.
+c)
+DR  |  Bank  |  R3 000
+CR  |  Output tax (3 000 x 15/115)  |  R391
+CR  |  Sales income  |  R2 609
+Explanation:
+Fatiema purchased a sandboard from the company for R3 000 that usually sells for R7 700.
+--- page 5 ---
+Additional Information
+• All amounts include VAT where appropriate, unless stated otherwise or shown by the context.
+• All persons with whom Dune Adventures (Pty) Ltd transacts with are VAT vendors unless
+stated otherwise and all valid VAT invoices are on hand.
+• Interpretation Note 47, read together with BGR7, allows a five-year write off period for all
+qualifying assets.
+• Dune Adventures (Pty) Ltd is not a small business corporation as defined.
+• Rogan and Fatiema are not VAT vendors.
+• SARS considers the manufacturing of sandboards and other equipment a process of
+manufacture
+REQUIRED:
+MARKS
+QUESTION 1  |  Sub-
+Total
+total
+1.1 Discuss, with supporting calculations, the tax consequences for Dune
+Adventures (Pty) Ltd on the purchase of the machine from Germany for the year  |  11
+of assessment ended 31 October 2023.
+Communication – logical argument  |  1  |  12
+1.2 Discuss, with supporting calculations, the VAT consequences for Dune
+Adventures (Pty) Ltd on the award given to the employee for the 2023 year of  |  5  |  6
+assessment.
+Communication – logical argument  |  1
+1.3 Calculate, with supporting reasons, Dune Adventures (Pty) Ltd’s taxable
+income for the year ended 31 October 2023.  |  15  |  15
+Ignore the journal entries for this required.
+1.4 Critically evaluate the extracts from Dune Adventures (Pty) Ltd’s general journal
+for the company’s VAT period ended 31 December 2023.
+In answering this question:
+• Identify any errors, mistakes or issues in the journal entries provided;
+• Include a correcting journal entry for any journal entry that contains errors,
+mistakes or issues; and  |  9
+• Provide an explanation for all transactions.
+Communication – clarity of expression
+1  |  10
+TOTAL  |  43
+--- page 6 ---
+QUESTION 2  |  (36 marks; 54 minutes)
+Dylan Govender is a 54 year old South African resident who has been employed by Kim Golding (Pty)
+Ltd (“Kim Golding” or “the company”) as an estate manager. He started working for the company as
+an estate agent in 2007 and was promoted to estate manager in 2021 due to his impressive sales
+records.
+Dylan received the following amounts from his employment at Kim Golding:
+1. Dylan is paid a cash salary of R55 000 per month and earns commission income of 8% of the
+selling price of each property that he sells. During the 2023 year, he sold properties that amounted
+to a total of R27 980 000, and all his commission income was paid to him on 28 February 2023.
+2. Dylan contributes 6% of his cash salary to the Kim Golding Pension Fund and Kim Golding pays
+R3 500 per month towards the pension fund of each employee.
+3. Dylan was granted the right of use of the company yacht for 7 days in the month of November
+2022 as a token of appreciation for his dedication and service to the company. He took his family
+on the yacht and went on a cruise from Cape Town to Durban. The yacht had cost Kim Golding
+R2 400 000, the market value on the date that use was granted to Dylan was R2 650 000 and the
+market value at 28 February 2023 was R2 800 000.
+4. Dylan received an allowance of R30 000 during the 2023 year. The purpose of the allowance was
+to plan team building activities with the sales agents of the company. Dylan has been able to
+prove to the company that he is honest and trustworthy, and is thus not required to account or
+provide proof of how he spent the allowance. However, Dylan is very strict with finances and wants
+to be able to account for every Rand he spent and as a result kept all the receipts for the R30 000.
+5. Dylan enrolled for a Property Management Course with PropAcademy (a recognised educational
+institution) to further develop himself and ensure that he would excel at his managerial duties.
+Given that this was related to his employment, Kim Golding agreed to pay Dylan an amount of
+R25 000 to cover the cost of the course. The agreement between Dylan and the company was
+that Dylan would reimburse the company should he fail to complete the course.
+DWJ Crafts
+DWJ Crafts is a sole proprietorship that was established by Dylan during his varsity days. He wanted
+to explore his creative side and started designing jewellery pieces which he made and sold to his
+friends. His business grew and he started selling to other people on and off campus. He later ventured
+into the online space and hired a web developer to develop a website for his business so he could
+reach more clients.
+Below are the transactions of DWJ Crafts for the 2023 financial year:
+• The business earned revenue of R747 500, 50% of which related to credit sales.
+• There were two full time employees in the business and R150 000 in total was incurred for both
+their salaries. Furthermore, on 1 November 2022 two used laptops were purchased from Macer
+Inc. for a total of R14 950 and the use thereof was granted to the employees. The employees had
+exclusive use of these laptops for a four-year period and used them mainly for work purposes
+• The income statement had bad debts expense of R56 000 and this includes the movement in the
+allowance for doubtful debts.
+--- page 7 ---
+The allowance for doubtful debts balance recognised in the Statement of Financial Position was
+calculated as follows:
+2023  |  2022
+Lifetime expected credit losses  |  R80 000  |  R48 000
+Other allowances  |  R24 000  |  R30 000
+Allowance for doubtful debts  |  R104 000  |  R78 000
+The s11(j) allowance for doubtful debts deduction for the 2022 year of assessment amounted to
+R26 700.
+Remuneration Package
+Dylan is not entirely pleased with his current remuneration package from Kim Golding as he is using
+his vehicle for business related travels but is not being reimbursed by the company. He is in the
+process of renegotiating his remuneration package for the 2024 year of assessment and was
+presented with the two options below. During the 2023 year of assessment Dylan travelled 30 000km,
+22 000km of which were for business purposes and he expects that this will remain the same in the
+2024 year of assessment
+Option 1
+Kim Golding could arrange that he is granted a loan of R500 000 by Recovery Bank on 1 March 2023.
+This loan would be for the purpose of financing a new vehicle and would be charged an interest rate
+of 10% per annum. In terms of the arrangement, Kim Golding would pay 6% interest and Dylan would
+pay the remaining 4%.
+Option 2
+Dylan would use his currently-owned Mazda CX-3 and receive a travel allowance of R9 500 per month
+from Kim Golding. He will continue being responsible for the fuel and maintenance of the vehicle and
+will keep an accurate record of the expenditure and the logbook. The fuel and maintenance are
+estimated to be R28 800 and R19 500, respectively. Dylan purchased the car on 1 March 2019 and
+it cost him R419 900. The market value of the vehicle on 28 February 2023 is R251 940.
+Additional information
+• You may assume that the official interest rate will be 12% per annum throughout the 2024 year of
+assessment.
+• Dylan Govender and Macer Inc. are registered VAT vendors.
+• All amounts include VAT where appropriate, unless stated otherwise or shown by the context.
+• Interpretation Note 47 read together with BGR 7 allows for a five-year write-off period for all
+qualifying assets.
+--- page 8 ---
+REQUIRED:
+MARKS
+QUESTION 2  |  Sub-
+Total
+total
+2.1 Calculate Dylan Govender’s taxable income for the year ended 28 February
+2023.  |  20  |  20
+2.2 Discuss the normal tax consequences of option 1 and option 2, and advise
+Dylan Govender on which option he should choose when renegotiating his
+remuneration package for the 2024 year of assessment.
+In answering this question, you may assume that the tax legislation applicable  |  15
+to the 2023 year of assessment will remain unchanged for the 2024 year of
+assessment.
+Communication Skills – clarity of expression  |  1  |  16
+TOTAL  |  36
+--- page 9 ---
+QUESTION 3  |  (34 marks; 51 minutes)
+IGNORE VAT
+Unathi Bokveld is a South African resident aged 32 and is married to Lunga Bokveld out of community
+of property. They have one child together, Mpho Bokveld. Unathi is the CEO at Xcel (Pty) Ltd (“Xcel”
+or “the company”). After completing their BCom IT degrees at the University of Cape Town in 2010,
+Unathi and three of her varsity friends incorporated the company. They each have a 25% shareholding
+in the company.
+The following donations occurred during the 2023 year of assessment:
+1. Unathi is adamant that participating in the national elections by casting a vote is the responsible
+and patriotic thing to do. In preparation for the 2024 South African elections, Unathi donated
+R20 000 to Build One South Africa (“BOSA”), a political party registered in terms of section 15 of
+the Electoral Commission Act. She made this donation on 1 March 2023 to support the political
+party in its campaign for the elections.
+2. Unathi has a collection of Krugerrand coins which cost her R80 000 in total. On 31 March 2023
+she donated the coins to her niece as a graduation gift since she passed her Bachelor of Medicine
+and Surgery degree with distinction. The Krugerrand coins had a market value of R150 000 on
+the date that she donated them.
+3. At the last board meeting at Xcel on 30 June 2023, Unathi required the company to make a
+donation of 10 computers from its trading stock to Nyanga High School. The computers had cost
+the company R4 500 each when they were acquired and the market value on the date they were
+donated was R3 200.
+4. Unathi donated her Mercedes Benz C-class to Lunga on 24 September 2023 as a birthday gift.
+The vehicle had cost her R914 800 when she purchased it in 2021. The market value of the vehicle
+was R750 000 on the date she donated it.
+On 31 October 2023 Unathi was on her way to attend an IT conference at the Cape Town International
+Convention Centre when she was involved in a tragic car accident that claimed her life. The reading
+of Unathi’s will revealed that she had the following assets at the date of her death:
+5. A five-bedroom house in Pinelands, Cape Town. She inherited the house from her late father on
+15 November 2000. Unathi and Lunga considered the house to be their real home. The house
+had cost her late father R2 500 000 when he purchased it and the market value on 31 October
+2023 was R4 000 000. Unathi developed a keen interest in fashion. She started a business of
+making and selling items of clothing. She converted one of the bedrooms into a work area for her
+fashion business. She ran her business from the spare bedroom from 1 September 2020 until the
+date of her untimely death. This bedroom represented 15% of the surface area of the house.
+Unathi bequeathed the house to Mpho.
+6. Unathi’s mother took out a life insurance policy on Unathi’s life. In 2020, Unathi’s mother struggled
+to pay the premiums on the policy and requested that Unathi assist her. The policy paid out
+R1 500 000, half of which went to the mother and the other half went to Unathi’s niece, whom she
+had been taking care of while she was still alive. The total premiums on this policy amounted to
+R54 000, of which R10 000 was paid by Unathi. The interest on the premiums were R5 000.
+--- page 10 ---
+7. While she was alive, Unathi was always looking for ways to make an extra income. This led to her
+investing in the companies listed below, so as to be able to earn dividend income. All her shares
+were to be sold and the proceeds were to be paid out to Lunga.
+Shares held  |  Selling Price  |  Market value on 31 October
+Xcel (Pty) Ltd  |  R50 000  |  R65 000
+Boldvest Ltd  |  R150 000  |  R130 000
+Shares in listed UK company  |  R80 000  |  R100 000
+8. Unathi had cash in her bank accounts which amounted to R500 000 and this was to be paid to
+her husband after all the debts of winding up the estate had been settled.
+9. The executor’s fees amounted to R180 000.
+The executor of Unathi’s estate reached out to you and mentioned that he requires your assistance
+in winding up the estate.
+Additional information:
+• Prior to the current year donations, Unathi had made donations to the value of R300 000 (from
+1 March 2018).
+• The house in Pinelands had a market value of R3 120 000 and a TABC of R2 990 000 on
+1 October 2001.
+• Unathi owed SARS an amount of R330 000 for normal tax at the date of her death.
+REQUIRED:
+MARKS
+QUESTION 3  |  Sub-
+Total
+total
+3.1 Write a memo to the executor of Unathi Bokveld’s estate discussing the tax
+consequences in respect of the transactions above for the 2023 year of
+assessment.
+You are only required to discuss the following types of taxes:
+• Donations Tax  |  8
+• Normal Tax (only consider transactions 1 – 5)  |  15
+34
+• Estate Duty  |  10
+Communication – layout and structure  |  1
+TOTAL  |  34
+--- page 11 ---
+MONETARY CHANGES
+Applicable in respect of years of assessment commencing on or after 1 March 2022 (i.e.
+2023 year of assessment) – unless specifically stated otherwise
+REBATES (section 6)
+Primary rebate increases from R15 714 to R16 425;
+Secondary rebate increases from R8 613 to R9 000;
+Tertiary rebate increases from R2 871 to R2 997
+MEDICAL REBATES (section 6A)
+Benefits to the taxpayer: R347;
+Benefits to the taxpayer and one dependant: R694;
+Benefits to each additional dependant: R234
+RESIDENTIAL ACCOMMODATION (paragraph 9 of the Seventh Schedule)
+Symbol B of R87 300 increases to R91 250.
+RATES OF NORMAL TAX
+• In respect of the taxable income (excluding any retirement fund lump sum benefit,
+retirement fund lump sum withdrawal benefit or severance benefit) of natural persons,
+estates and special trusts
+Taxable Income (R)  |  Rate of Tax
+0 – 226 000  |  18% of taxable income
+226 001 – 353 100  |  40 680 + 26% of taxable income above 226 000
+353 101 – 488 700  |  73 726 + 31% of taxable income above 353 100
+488 701 – 641 400  |  115 762 + 36% of taxable income above 488 700
+641 401 – 817 600  |  170 734 + 39% of taxable income above 641 400
+817 601 – 1 731 600  |  239 452 + 41% of taxable income above 817 600
+1 731 601 and above  |  614 192 + 45% of taxable income above 1 731 600
+• In respect of the taxable income of any company which qualifies as a small business
+corporation as defined in section 12E of the Income Tax Act, in respect of any year of
+assessment ending on or after 1 April 2022.
+Taxable Income (R)  |  Rate of Tax
+0 – 91 250  |  0% of taxable income
+91 251 – 365 000  |  7% of the amount above R91 250
+365 001 – 550 000  |  R19 163 + 21% of the amount above R365 000
+550 001 and above  |  R58 013 + 28% of the amount above R550 000
+--- page 12 ---
+TRAVEL ALLOWANCE
+Value of the vehicle (R)  |  Fixed cost  |  Fuel cost  |  Maintenance
+cost
+(R p.a.)  |  (c/km)  |  (c/km)
+0 – 95 000  |  29 836  |  131.7  |  40.9
+95 001 - 190 000  |  52 889  |  147.0  |  51.1
+190 001 - 285 000  |  76 033  |  159.7  |  56.3
+285 001 - 380 000  |  94 197  |  171.8  |  61.5
+380 001 - 475 000  |  116 438  |  183.8  |  72.3
+475 001 - 570 000  |  137 735  |  210.8  |  84.9
+570 001 - 665 000  |  159 031  |  218.8  |  105.5
+more than 665 000  |  159 031  |  218.8  |  105.5
+Alternative fixed rate for certain reimbursive travel allowances: 418 cents per kilometer
+(previously 382 cents)
+SUBSISTENCE ALLOWANCE
+• Local travel:
+o  |  Allowance for incidental costs only – R152 (previously R139) for each day.
+o  |  Allowance for meals and incidental costs – R493 (previously R452) for each day.
+• Overseas travel:
+o  |  Actual accommodation plus a prescribed amount based on the relevant country
+(which amount will be provided in the ITC if it differs from the amount listed in the
+Regulation in the SAICA Student Handbook).
+TRANSFER DUTY (Section 2(1)(b) of the Transfer Duty Act)
+In respect of acquisition of property on or after 1 March 2020:
+Value of property (R)  |  Rate
+0 – 1 000 000  |  0%
+1 000 000 – 1 375 000  |  3% of the value above R1 000 000
+1 375 000 – 1 925 000  |  R11 250 + 6% of the value above R1 375 000
+1 925 000 – 2 475 000  |  R44 250 + 8% of the value above R1 925 000
+2 475 000 – 11 000 000  |  R88 250 + 11% of the value above R2 475 000
+11 000 000 and above  |  R1 026 000 + 13% of the value above R11 000 000

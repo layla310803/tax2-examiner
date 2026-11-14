@@ -1,0 +1,357 @@
+--- page 1 ---
+ACC3004H ACC3004H November November exam exam for for printing printing
+Taxation Taxation II II (University (University of of Cape Cape Town) Town)
+Scan Scan to to open open on on Studocu Studocu
+--- page 2 ---
+TAXATION II
+(ACC3004H)
+NOVEMBER EXAM
+MONDAY 15 NOVEMBER 2021
+(12:30 to 15:30)
+Marks: 120  |  Time: 3 hours
+PLEASE READ THE FOLLOWING INSTRUCTIONS CAREFULLY. STUDENTS MAY BE
+PENALISED FOR DISREGARDING THESE INSTRUCTIONS.
+• This paper consists of TWO questions.
+• Answer all parts of the questions.
+• Answers must be written in blue or black ink. Answers (including workings) may not be written in
+pencil and/or red or green ink.
+• No Tippex, correction fluid or tape is allowed.
+• All workings must be shown clearly and legibly and handed in with your answers.
+• Whilst there is no explicit reading time, the duration of the assessment includes appropriate
+reading time.
+• No questions will be answered by invigilators during the assessment. Make whatever assumptions
+you deem appropriate and clearly state these in your answer books. Any reasonable assumption
+will be considered.
+• This is a limited open book exam. Students are allowed the following: A guide through IFRS Parts
+A to B2, SAICA Members’ Handbooks Vol 2 to 3 and SAICA Student Handbook Vol 1 to 3. No
+writing is allowed in the permitted texts, but students may flag the permitted texts.
+• You will be asked to scan and upload a copy of your answer via Vula at the end of the exam.
+Please note the following regarding the submission:
+Your Solution
+o The name of the file and your solution must be your student number followed by ACC3004H. You
+must scan in your front cover.
+o You are required to write you EMPL ID at the top of every page in your answer book and it must
+be visible on every page of your scanned in script.
+o Your submission must then be submitted in PDF format as a single PDF file. It is your responsibility
+to ensure that after conversion, your submission is legible so it may be marked appropriately.
+Check on submission
+o You should be uploading one PDF file before submission.
+o You must submit before leaving the exam venue.
+THIS ASSESSMENT CONSISTS OF TEN (10) NUMBERED PAGES (INCLUDING THIS COVER PAGE)
+--- page 3 ---
+QUESTION 1 (65 MARKS; 98 MINUTES)
+CT Glass and Aluminium (Pty) Ltd (‘CT Glass’ or ‘the company’) is a South African manufacturer of
+aluminium and glass products. The company manufactures, supplies, and installs a wide range of
+products that include doors, windows, and shopfronts, amongst others. The company offers both
+standard products as well as custom designs to suit customers’ needs. Since 2018, the company has
+been exporting standard windows and doors to other African countries.
+CT Glass was founded by the Abrahams siblings in 2011 and has since operated as a family-run
+business. Each sibling has a 25% shareholding in the company, however, only the two brothers, Abdul
+and Yazied are involved in the operations of the company. Both brothers are Chartered Accountants
+(South Africa). CT Glass is a registered Category C VAT Vendor and has a 31 March financial year-
+end. The company is a small business corporation as defined in terms of s12E(4) of the Income Tax
+Act.
+The company has requested your assistance with regards to various matters concerning its tax affairs
+as the financial manager is on maternity leave.
+All amounts are inclusive of VAT where appropriate unless stated otherwise or shown by the
+context.
+Total sales for the financial year-end amounted to R15 650 000 (including VAT); of these total sales
+35% was cash sales and the remainder related to credit sales. 25% of the total sales relates to
+windows and doors that were exported to other African countries.
+An extract from the Statement of Comprehensive Income for the year ending 31 March 2021:
+Notes  |  R
+Dividend income  |  1  |  45 000
+Purchases  |  2  |  (6 655 000)
+Salaries  |  3  |  (1 380 000)
+Bad debts expense  |  4  |  (450 000)
+Legal expenses  |  5  |  (34 500)
+Compensation paid  |  5  |  (145 000)
+Depreciation  |  6  |  (450 000)
+An extract from the Statement of Financial Position as at 31 March 2021:
+Notes  |  R
+Allowance for doubtful debts  |  4  |  975 000
+Inventory  |  2  |  2 250 000
+Notes
+1. Gross dividends of R45 000 were declared to CT Glass during the current year. R35 000
+relates to dividends received from a JSE-listed South African company and R10 000 relates
+to dividends received from a foreign company where CT Glass owns 6% of the shares.
+2. The purchases relate to raw materials bought to be used in the manufacture of the glass and
+aliminium products. While CT Glass tries its best to buy locally, due to a lack of local supply,
+20% of the raw materials were sourced from a Chinese supplier. CT Glass paid import duties
+of R240 000 (excluding VAT) on the customs duty value of imports of R1 330 000 during the
+current year of assessment, which was not included in the purchases above. CT Glass only
+imports once a year. This year the imported goods were ordered on 1 July 2020, shipped on
+--- page 4 ---
+30 September 2020 with the terms Free-on-Board destination point, arrived in South Africa on
+23 November 2020, and were released for home consumption on 30 November 2020.
+Closing inventory per the statement of financial position at the end of the previous financial
+year amounted to R3 440 000.
+One of the shareholders who is not actively involved with the operations of the company is
+busy with home renovations and took five windows and two doors out of the inventory to use
+in his home. The total cost of the windows and doors are R5 000 and would usually be sold
+for its open market value of R8 000.
+3. The following additional employment costs have not been taken into account in the salaries
+figure:
+• CT Glass contributed 5% of total salaries to the CT Glass Pension Fund for the benefit of
+its employees.
+• CT Glass pays a transport company SIZAS (Pty) Ltd to transport its employees from home
+to work and back home every day. CT Glass pays an amount of R10 000 per month for
+this transportation service.
+4. The R450 000 relates to debts owed to the company (from sales) that have gone bad during
+the year.
+The IFRS 9 impairment allowance at the end of the previous year of assessment was
+R1 025 000 and the company had been allowed an income tax deduction of R348 500 in that
+year in relation to doubtful debts.
+In the current year of assessment, R500 000 of the allowance for doubtful debts relates to
+lifetime expected credit losses.
+5. During the current year of assessment, while an employee was using the grinding machine,
+the blade of the grinder shattered at high speed, and he sustained deep wounds to his upper
+lip and left cheek. He was rushed to hospital and needed to have plastic surgery as part of his
+treatment.
+The employee requested CT Glass to pay for his medical costs however the company refused
+to pay the employee any compensation for his medical costs and argued that he was operating
+the grinder at a speed above the maximum. The employee sued the company, and the
+company hired a lawyer to defend them. Upon investigation, it was found that the employee
+was using the grinder correctly and it was not the employee’s fault. CT Glass paid the
+compensation to the employee and the legal fees to its lawyer during February 2021.
+6. The depreciation expense relates to the following assets:
+a. Machine A – grinding machine
+This machine was purchased new on 15 June 2019 to be used in the manufacturing of the
+windows and doors. It was purchased for R15 450 when the market value was R15 600.
+b. Vehicle
+CT Glass purchased a secondhand Toyota Hilux double cab bakkie on 15 January 2020
+for R669 900 from a Toyota dealership and immediately brought it into use. The market
+--- page 5 ---
+value on the date of purchase was R665 000. The Toyota dealership bought the bakkie in
+December 2019 from a vendor for R650 000.
+On 16 February 2021, on the way back from installing windows at a client, the bakkie was
+involved in an accident. The bakkie was written off and insurance proceeds of R650 000
+were received for the bakkie.
+c. Building
+On 1 June 2020, the company purchased a building in Bellville, Cape Town. The building
+was purchased at a cost of R1 750 000 when the open market value was R1 700 000. The
+building was purchased from Cats Creations who had used it to manufacture boxes and
+who had been entitled to a 10% capital allowance on the building.
+The amount was payable by CT Glass in two equal instalments on 1 June 2020 and
+1 August 2020.
+The building was registered in the deed’s office on 1 July 2020.
+The building is comprised of three floors. The first and second floor is used by CT Glass
+for the manufacture of the products and the third floor is used as storage space and for
+the administration offices.
+All other assets have been fully written off for tax purposes.
+The Tender1
+The directors of CT Glass were informed there is a big project that will be starting in 2022 where
+windows of certain government schools were going to be replaced. The directors decided to tender
+for this project, but they knew it was very competitive. They knew someone who worked in the
+tendering department of the Government and paid them an amount of R150 000 in June 2021 to
+assist with winning the tender.
+Additional Information
+• SARS considers the manufacture of aluminium products to be a process of manufacture.
+• Interpretation Note 47, read together with BGR7, allows a four-year write off period for all
+qualifying assets.
+• Assume, unless the contrary is stated, that CT Glass and Aluminium (Pty) Ltd will make use
+of all possible tax benefits and will therefore elect any option available to it in terms of the
+Income Tax Act that will minimise its normal tax liability; or defer its normal tax liability.
+• All persons with whom CT Glass and Aluminium (Pty) Ltd has transacted are VAT vendors,
+except for Cats Creations.
+• Valid tax invoices are on hand for all transactions that have been entered into, where
+appropriate.
+1 Tendering usually refers to the process whereby government invites bids for large projects that must be submitted
+within a deadline
+--- page 6 ---
+REQUIRED
+MARKS
+QUESTION 1  |  Sub-
+Total
+total
+1.1 Discuss, with reference to legislation and case law, the normal tax
+consequences for CT Glass and Aluminium (Pty) Ltd during the current year
+of assessment relating to:
+• The medical costs paid to the employee  |  9
+• The related legal costs paid to the lawyer  |  10
+Communication – logical argument  |  1
+1.2 Discuss, with supporting calculations, the VAT consequences, if any, for CT
+Glass and Aluminium (Pty) Ltd of:
+• The purchase of trading stock from the Chinese supplier  |  6
+• The Toyota Hilux double cab bakkie  |  4  |  16
+• The building in Bellville  |  5
+Communication – logical argument  |  1
+1.3 Discuss, with supporting calculations, the VAT consequences, if any, for the
+Toyota dealership of the Hilux double cab bakkie.  |  3  |  3
+1.4 Calculate, with reasons, the taxable income of CT Glass and Aluminium
+(Pty) Ltd for the year ended 31 March 2021.  |  27  |  27
+1.5 Discuss, with reference to legislation and case law, the normal tax
+consequences for:
+• CT Glass and Aluminium (Pty) Ltd of the payment to the government
+employee.
+• The government employee of the receipt of the payment.  |  5
+In addition, discuss any ethical concerns that you have with the above
+transactions.  |  3
+Communication – logical argument  |  1  |  9
+TOTAL  |  65
+--- page 7 ---
+QUESTION 2  |  (55 MARKS; 82 MINUTES)
+Z PROP (Pty) Ltd (‘Z PROP’ or ‘the Company’) is a real estate development and property company.
+It develops, rents out and sells property units within the real estate sector of Cape Town. The company
+is a registered Category B VAT Vendor and has a February financial year-end.
+An extract from the notes to the Statement of Comprehensive Income for the current year of
+assessment:
+Revenue:
+R
+Sale of houses and apartments  |  21 892 410
+Rental of houses and apartments  |  18 500 000
+Rental of office space  |  15 540 000
+Total revenue  |  55 932 410
+Sibu Mpiti
+Sibu Mpiti, was the CEO of the company up until her death; she was diagnosed with an illness in 2020
+and unfortunately passed away on 31 January 2021. At the date of her death, she was 40 years old.
+She was born in Zimbabwe but moved to South Africa and became a South African tax resident in
+2008.
+Sibu earned a cash salary of R144 000 per month. In addition to her salary, she received the following:
+• A travel allowance of R9 000 per month from the company. Sibu drove an Audi which she
+bought in 2017 for R775 000. For the current year of assessment, her logbook showed that
+she drove a total of 15 760km of which 8 700km were for business purposes, travelled evenly
+throughout the period while she was alive. While she paid for all the fuel and maintenance
+costs, no record thereof was kept.
+• Sibu was also provided with the use of the company owned Macbook Pro laptop, which was
+purchased on 1 March 2020 for R35 000 (including VAT) and had an open market value of
+R35 500. It was given to Sibu on the day it was purchased. She used the Macbook Pro for
+business 30% of the time and the remainder of the time she used it for private purposes. She
+returned the laptop on 30 June 2020. The laptop was purchased for senior executives to use
+when needed.
+Sibu was married to Alex out of community of property (without accrual) and had two young children,
+Siliziwe and Hopewell. In 2019, she tried to find a pre-school rugby class for her children but couldn’t
+find one. She asked around and it became clear that many other people were looking for a similar
+rugby play programme for younger children, and she had spotted a very exciting gap in the child
+development sector.
+--- page 8 ---
+Rugby Stars
+In 2019, she therefore established “Rugby Stars” which she operates as a sole proprietorship. It is an
+afterschool rugby programme for children aged 2.5 years to 5 years. She had to hire coaches, pay
+rental for the use of fields or halls and she incurred other costs such as advertising and start-up costs.
+The business’ assessed losses incurred have been outlined below:
+2019  |  (75 000)
+2020  |  60 000
+2021 *  |  (25 000)
+* This loss was due to Rugby Stars not operating most of the year due to lockdown restrictions
+* Rugby Stars ceased operations upon her death
+Sibu made the following donations during the current year of assessment:
+• Sibu has always loved dogs but was never able to own one as she is allergic. She therefore
+donates R50 000 per year to the SPCA, a registered PBO and she received a valid s18A
+certificate on 16 June 2020 when she made the donation.
+• In July 2020, she donated her luxury handbags worth R90 000 to her sister which cost her
+R120 000.
+• She paid her mother, aged 70, a monthly maintenance payment of R10 000. The value of this
+annuity is R93 372.
+• She donated her home in Constantia to her two children in equal shares on 31 December
+2020. She had purchased the house for R5 500 000 on 1 January 2011 and had lived in it
+since then. Due to the Covid-19 national lockdown, she had worked from home from 1 April
+2020 to 30 November 2020 and had turned her spare room into her office which she
+exclusively and regularly used for her employment trade. She asked a tax consultant and they
+confirmed that she would be able to claim deductions for the home office. Her office made up
+7% of her home and the deduction she could claim for the current year of assessment was
+R19 600. The market value of the house on 31 December 2020 was R8 000 000.
+At the date of death, her executor found the following in her will:
+• The proceeds of her life insurance of R7 500 000 will go to her husband and two children. 50%
+to her husband and 25% to each child. Sibu paid total premiums of R600 000 (inclusive of
+interest at 6%) in respect of this policy over her lifetime. This policy was not taken out under
+any registered ante- or post nuptial contract.
+• Shares that she owned were to be sold and the proceeds were to be left to her mother. She
+owned shares in the following companies at the date of her death:
+Purchase price  |  Market value on 31  |  Proceeds on sale by
+January 2021  |  executor
+Z Prop (Pty) Ltd  |  R20 000  |  R45 000  |  R46 000
+BIC Ltd – listed on the R45 000  |  R56 000  |  R55 000
+JSE
+--- page 9 ---
+• An apartment in Zimbabwe was to be left to her children in equal shares. She had inherited
+the apartment from her father when he passed away and he was resident in Zimbabwe. At the
+date of her father’s death, the market value was R1 500 000 (correctly converted to Rands).
+The market value of the apartment at the date of her death was R3 500 000 (correctly
+converted to Rands).
+• The executors in Sibu’s estate paid out the following expenses out of cash in the estate:
+o Deathbed and funeral expenses  |  R90 000
+o Administration expenses  |  R75 000
+• Cash in her bank accounts totaled R1 250 000 and was to be left to her children in equal
+shares after any expenses were paid.
+Additional Information
+• Sibu Mpiti is not a VAT vendor
+• Employees’ tax correctly calculated for Sibu Mpiti for the current year of assessment is
+R585 197
+• Interpretation Note 47, read together with BGR7, allows a four year write off period for all
+qualifying assets
+REQUIRED
+MARKS
+QUESTION 2  |  Sub-
+Total
+total
+2.1 Calculate, with reasons, the donations tax payable by Sibu Mpiti.  |  7  |  7
+In answering this question, indicate when the donations tax would have been
+due to SARS.
+2.2 Discuss, with supporting calculations, the capital gains tax consequences of the
+donations Sibu Mpiti has made during the current year of assessment.  |  11  |  11
+2.3 Calculate with reasons Sibu Mpiti’s normal tax payable to SARS for the 2021  |  21  |  21
+year of assessment.
+2.4 Discuss the tax consequences for Z Prop (Pty) Ltd relating to the Macbook
+Pro laptop for the current year of assessment.  |  5
+Communication – logical argument  |  1  |  6
+2.5 Calculate, with reasons, the estate duty payable due to Sibu Mpiti’s death.  |  10  |  10
+TOTAL  |  55
+--- page 10 ---
+MONETARY CHANGES
+Applicable in respect of years of assessment commencing on or after 1 March 2020 (i.e.
+2021 year of assessment) – unless specifically stated otherwise
+REBATES (section 6)
+Primary rebate increases from R14 220 to R14 958;
+Secondary rebate increases from R7 794 to R8 199;
+Tertiary rebate increases from R2 601 to R2 736;
+MEDICAL REBATES (section 6A)
+Benefits to the taxpayer: R319;
+Benefits to the taxpayer and one dependant: R638;
+Benefits to each additional dependant: R215  |  .
+RESIDENTIAL ACCOMMODATION (paragraph 9 of the Seventh Schedule)
+Symbol B of R79 000 increases to R83 100.
+RATES OF NORMAL TAX
+• In respect of the taxable income (excluding any retirement fund lump sum benefit,
+retirement fund lump sum withdrawal benefit or severance benefit) of natural persons,
+estates and special trusts
+Taxable Income (R)  |  Rate of Tax
+0 – 205 900  |  18% of taxable income
+205 901 – 321 600  |  37 062 + 26% of taxable income above 205 900
+321 601 – 445 100  |  67 144 + 31% of taxable income above 321 600
+445 101 – 584 200  |  105 429 + 36% of taxable income above 445 100
+584 201 – 744 800  |  155 505 + 39% of taxable income above 584 200
+744 801 – 1 577 300  |  218 139+ 41% of taxable income above 744 800
+1 577 301 and above  |  559 464 + 45% of taxable income above 1 577 300
+--- page 11 ---
+TRAVEL ALLOWANCE
+Value of the vehicle (R)  |  Fixed cost  |  Fuel cost  |  Maintenance
+cost
+(R p.a.)  |  (c/km)  |  (c/km)
+0 – 95 000  |  31 332  |  105,8  |  37,4
+95 001 - 190 000  |  55 894  |  118,1  |  46,8
+190 001 - 285 000  |  80 539  |  128,3  |  51,6
+285 001 - 380 000  |  102 211  |  138,0  |  56,4
+380 001 - 475 000  |  123 955  |  147,7  |  66,2
+475 001 - 570 000  |  146 753  |  169,4  |  77,8
+570 001 - 665 000  |  169 552  |  175,1  |  96,6
+more than 665 000  |  169 552  |  175,1  |  96,9
+Alternative fixed rate for certain reimbursive travel allowances: 398 cents per kilometer
+(previously 361 cents)
+SUBSISTENCE ALLOWANCE
+• Local travel:
+o  |  Allowance for incidental costs only – R139 (previously R134) for each day.
+o  |  Allowance for meals and incidental costs – R452 (previously R435) for each day.
+• Overseas travel:
+o  |  Actual accommodation plus a prescribed amount based on the relevant country
+(which amount will be provided in the assessment if it differs from the amount listed
+in the Regulation in the SAICA Student Handbook).
+TRANSFER DUTY (Section 2(1)(b) of the Transfer Duty Act)
+In respect of acquisition of property on or after 1 March 2020:
+Value of property (R)  |  Rate
+0 – 1 000 000  |  0%
+1 000 000 – 1 375 000  |  3% of the value above R1 000 000
+1 375 000 – 1 925 000  |  R11 250 + 6% of the value above R1 375 000
+1 925 000 – 2 475 000  |  R44 250 + 8% of the value above R1 925 000
+2 475 000 – 11 000 000  |  R88 250 + 11% of the value above R2 475 000
+11 000 000 and above  |  R1 026 000 + 13% of the value above R11 000 000

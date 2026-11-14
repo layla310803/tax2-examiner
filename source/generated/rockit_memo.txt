@@ -1,0 +1,86 @@
+Required 1: Vendor Registration Requirements
+Marking Point / Principle  |  Marks
+In terms of section 23(1)(a) of the VAT Act, a person carrying on an enterprise is compulsorily liable to register as a VAT vendor at the end of any month where the total value of taxable supplies made in the 12 months ending at the end of that month has exceeded R1 million.  |  1
+Alternatively, in terms of section 23(1)(b), compulsory registration is required at the commencement of any month where there are reasonable grounds for believing that taxable supplies in the next 12 months will exceed R1 million in terms of a written contractual obligation.  |  1
+In terms of section 23(3)(b), a person may voluntarily register if taxable supplies made have exceeded R50 000 in the preceding 12-month period (or are reasonably expected to exceed R50 000 within 12 months).  |  0,5
+A person liable to register compulsorily must apply within 21 days of becoming liable (section 23(2)).  |  0,5
+Available  |  3
+Maximum  |  3
+
+Required 2: Direct vs. Indirect Taxes
+Marking Point / Principle  |  Marks
+Direct taxes are levied directly on the income, profits or wealth of a person who bears the ultimate legal and economic burden.  |  0,5
+Example of a direct tax: normal income tax, capital gains tax, donations tax or estate duty.  |  0,5
+Indirect taxes are levied on transactions, goods or services; the vendor collects and pays them over, but the economic burden is passed on to the final consumer.  |  0,5
+Example of an indirect tax: VAT, customs duty, excise duty or transfer duty.  |  0,5
+Available  |  2
+Maximum  |  2
+
+Required 3: VAT Consequences of Vehicle Purchases (Note 4)
+Marking Point / Principle  |  Marks
+Double-cab bakkie (R640 000):
+In terms of section 1 of the VAT Act, a "motor car" includes a double-cab light delivery vehicle.  |  1
+The double-cab bakkie therefore falls within the definition of a motor car.  |  0,5
+In terms of section 17(2)(c), input tax is denied on any motor car supplied to a vendor, unless acquired by a car dealer for resale, a car rental enterprise, etc.  |  1
+Even though the bakkie is used for deliveries of taxable sales, none of the exceptions apply; input tax is denied in full (input tax = R0).  |  0,5
+18-seater Volkswagen mini-bus kombi (R750 000):
+In terms of section 1, a minibus constructed to carry 16 or more persons is excluded from the definition of "motor car".  |  1
+Input tax is therefore not denied under section 17(2)(c).  |  0,5
+However, in terms of section 17(1), input tax may only be claimed to the extent goods are acquired for making taxable supplies.  |  1
+In terms of section 12(g), the transport by road of fare-paying passengers is an exempt supply.  |  1
+The minibus is used exclusively in the passenger transportation offering (exempt), so no input tax can be claimed (input tax = R0).  |  0,5
+Communication skill — logical argument  |  1
+Available  |  7
+Maximum  |  6
+
+Required 4: Net VAT Payable/Receivable for the Period Ended 31 October 2024 (Notes 1–7)
+Description  |  Reasons  |  VAT input (R)  |  VAT output (R)  |  Marks
+Note 1(a): Sale of hiking equipment  |  Standard-rated supply of goods (s7(1)(a)). R2 020 000 × 15/115  |    |  263 478,26  |  1
+Athlete consulting fees  |  Standard-rated supply of services (s7(1)(a)). R2 015 000 × 15/115  |    |  262 826,09  |  1
+Shuttle service revenue  |  Exempt supply, s12(g) transport of fare-paying passengers by road. No output tax.  |    |  0  |  1
+Note 1(b): Opening stock  |  Accounting balance, not a supply in this tax period; input claimed when purchased.  |  0  |    |  1
+Purchases during the month  |  Acquired wholly to make taxable supplies of hiking equipment (s17(1)), valid tax invoices held. R2 020 000 × 15/115  |  263 478,26  |    |  1
+Closing stock  |  Accounting adjustment, not a supply.  |  0  |    |  0,5
+Note 2: Climatisation chamber  |  Time of supply is the earlier of invoice or payment (s9(1)). Invoice received 1 September 2024, so input tax is claimed in the September 2024 period, not October.  |  0  |    |  1,5
+Note 3: Administration expenses  |  Used only by admin staff of the hiking and consulting divisions (taxable supplies), so no apportionment (s17(1)). R284 000 × 15/115  |  37 043,48  |    |  1,5
+Note 4: Double-cab bakkie  |  Motor car as defined, input tax denied s17(2)(c).  |  0  |    |  1
+Note 4: 18-seater mini-bus  |  Used only for exempt passenger transport (s12(g)); input denied by s17(1).  |  0  |    |  1
+Note 5: Sale of computer to L-Way  |  Taxable supply of an asset used in the enterprise (s7(1)(a)/s8(16)). L-Way could claim full input tax, so the s10(4) connected-person OMV rule would not apply even if connected; consideration R16 000 × 15/115  |    |  2 086,96  |  2
+Note 6: Salaries and wages  |  Services by employees are excluded from "enterprise" (proviso (iii)); outside the scope of VAT.  |  0  |    |  1
+Note 7: Purchase of leather tags  |  Second-hand goods from a non-vendor: notional input tax on the lower of consideration (R1 500) and OMV (R1 000) (s16(3)(a)(ii)). R1 000 × 15/115  |  130,43  |    |  1,5
+Note 7: Sale of tags to CUT  |  Standard-rated supply (s7(1)(a)) at consideration R2 000 × 15/115  |    |  260,87  |  1
+Subtotals  |    |  300 652,17  |  528 652,18
+Net VAT payable for October 2024  |  Output R528 652,18 less input R300 652,17  |    |  228 000,01  |  1
+Available  |  17
+Maximum  |  16
+
+Required 5: November 2024 Credit Sales (Note 8)
+Marking Point / Principle  |  Marks
+Rockit is a category C vendor accounting on the invoice basis (s15(1)).  |  0,5
+In terms of s9(1), the time of supply is the earlier of the date an invoice is issued or payment is received.  |  1
+That the sales are on credit and unpaid is irrelevant: output tax must be declared in the period the invoice is issued.  |  1
+Whether the customers are vendors (and can claim input tax) is irrelevant to Rockit's liability for output tax (s7(1)(a)).  |  1
+Consultancy credit sales (R1 100 000) are standard-rated services.  |  0,5
+Output tax in the November 2024 return: R1 100 000 × 15% = R165 000 (if exclusive) or R1 100 000 × 15/115 = R143 478 (if inclusive).  |  1
+Transport credit sales (R385 000) are passenger transport by road, an exempt supply (s12(g)).  |  0,5
+No output tax on the transport sales.  |  0,5
+Communication skill — logical argument  |  1
+Available  |  7
+Maximum  |  6
+
+Required 6: Correcting Journal Entries
+Marking Point / Principle  |  Marks
+Journal 1 (admin costs, transport division): the costs relate solely to exempt passenger transport (s12(g)).  |  0,5
+Input tax may only be claimed for taxable supplies (s17(1)), so no input tax may be claimed.  |  1
+The input tax claimed must be reversed to administration costs.  |  0,5
+Correcting entry: Dr Administration costs R11 086,96; Cr VAT input R11 086,96  |  1
+Journal 2 (client dinner): food and beverages for a potential client is "entertainment" as defined (s1).  |  0,5
+Input tax on entertainment is denied by s17(2)(a); no exception applies.  |  1
+The input tax claimed must be reversed to entertainment expense.  |  0,5
+Correcting entry: Dr Entertainment expense R782,61; Cr VAT input R782,61  |  1
+Journal 3 (petrol): fuel subject to the fuel levy is zero-rated (s11(1)(h)).  |  1
+No VAT was charged by the supplier on the petrol.  |  0,5
+Input tax of R65,22 was incorrectly claimed and must be reversed.  |  0,5
+Correcting entry: Dr Petrol expenses R65,22; Cr VAT input R65,22  |  1
+Available  |  8
+Maximum  |  8

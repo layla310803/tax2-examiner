@@ -1,0 +1,65 @@
+PART A: Gino Todd's normal tax for the year ended 28 February 2025
+Item  |  Reason/Working  |  Amount (R)  |  Mark
+Fixed cash salary  |  Para (c) of gross income: R32 000 × 12. Not split between spouses married in community of property as it is remuneration for his own services (s7(2)).  |  384 000  |  1
+Commission (Note 1)  |  Variable remuneration in terms of s7B(1).  |    |  1
+  |  s7B(2): deemed to accrue to the employee on the date it is actually paid.  |    |  1
+  |  Commission paid on 1 July 2024 (R550 000) falls in the 2025 year and is included in full.  |  550 000  |  1
+  |  Commission paid on 1 July 2025 (R585 000) accrues in the 2026 year and is excluded.  |  0  |  0,5
+Canal Walk gift voucher (Note 2)  |  A voucher is a taxable fringe benefit (para (i) of gross income read with para 2(a)/para 5 of the Seventh Schedule).  |    |  1
+  |  Valued at cost to the employer including VAT.  |  10 000  |  1
+  |  The s10(1)(nA) uniform exemption does not apply: not a distinctive uniform, employees choose any clothes.  |    |  1
+Entertainment allowance (Note 3)  |  Allowance where the employee is not required to account: included under s8(1)(a)(i). R3 500 × 12  |  42 000  |  1
+  |  No reduction for amounts spent: s23(m) prohibits deductions for an employee earning mainly remuneration; s8(1)(a)(ii) does not apply as he did not have to account.  |    |  1
+  |  Net inclusion R42 000.  |    |  0,5
+Motor vehicle leased to employer (Note 4)  |  Anti-avoidance rule s8(1)(b)(iv): vehicle owned by the employee/spouse leased to the employer and provided back for his use.  |    |  1
+  |  The rental received and the lease are ignored for gross income.  |  0  |  0,5
+  |  The right of use is ignored for para 7 of the Seventh Schedule.  |  0  |  0,5
+  |  The rental paid by the employer (R2 000 × 12) is deemed a travel allowance under s8(1)(b).  |  24 000  |  1
+  |  Logbook kept: total 36 000 km, business 22 000 km.  |    |  0,5
+  |  No actual cost records, so use the deemed cost method.  |    |  0,5
+  |  Vehicle value R255 000: bracket R200 001 to R300 000.  |    |  0,5
+  |  Fixed cost: R89 119 / 36 000 km × 100 = 247,55 c/km  |    |  1
+  |  Fuel cost 184,0 c/km (he bears all fuel)  |    |  0,5
+  |  Maintenance cost 63,5 c/km (he bears all maintenance)  |    |  0,5
+  |  Total deemed rate 495,05 c/km  |    |  0,5
+  |  Deemed business deduction: 22 000 km × R4,9505 = R108 911  |    |  1
+  |  Limited to the allowance received; net inclusion R0  |  (24 000)  |  1
+Residential accommodation (Note 5)  |  Taxable benefit under para 2(d) of the Seventh Schedule.  |    |  0,5
+  |  Owned by the employer, so use the para 9(3) formula (A − B) × C/100 × D/12.  |    |  1
+  |  A: remuneration proxy R986 000  |    |  0,5
+  |  B: R95 750  |    |  0,5
+  |  C: two-bedroom apartment (fewer than 4 rooms), therefore C = 17  |    |  1
+  |  D: 11 months (1 April 2024 to 28 February 2025)  |    |  0,5
+  |  (R986 000 − R95 750) × 17/100 × 11/12  |  138 724  |  1
+  |  Less consideration paid by employee: nil  |    |  0,5
+Taxable income  |    |  1 124 724  |  1
+Normal tax per tables  |  R251 258 + 41% × (R1 124 724 − R857 900)  |  360 656  |  1
+Primary rebate s6  |  Under 65  |  (17 235)  |  1
+Medical scheme fees tax credit s6A  |  (R364 + R364) × 12 for himself and Melissa  |  (8 736)  |  1
+Additional medical expenses tax credit s6B  |  Under 65, no disability: s6B(3)(c)  |    |  0,5
+  |  Contributions R2 600 × 12 = R31 200  |    |  0,5
+  |  Less 4 × s6A credit (R34 944): excess nil  |  0  |  1
+  |  Qualifying medical expenses actually paid by 28 Feb 2025: R23 000  |  23 000  |  1
+  |  Less 7,5% × taxable income R1 124 724 = R84 354  |  (84 354)  |  1
+  |  Negative, so s6B credit = R0  |  0  |  0,5
+Normal tax liability  |  R360 656 − R17 235 − R8 736  |  334 685  |  1
+Available  |  28
+Maximum  |  25
+
+PART B: Would providing his services through Gino's Consultancy (Pty) Ltd reduce employees' tax?
+Marking Point / Principle  |  Marks
+Para 1 of the Fourth Schedule: a personal service provider (PSP) is a company where a connected person personally renders services to a client on behalf of the company.  |  1
+Gino would be a shareholder (connected person) personally rendering the marketing services to Market-It.  |  1
+At least one of these must also apply: Gino would have been an employee of the client if he rendered the services directly; OR  |  1
+the duties are performed mainly at the client's premises and he is subject to the client's control or supervision; OR  |  1
+more than 80% of the company's income is from one client (or its associated institutions).  |  1
+Since he would serve his existing employer Market-It, these conditions will be met.  |  0,5
+The company is excluded only if it employs three or more full-time employees (not shareholders or connected persons) throughout the year; Gino's company will not meet this.  |  1
+A PSP is included in the definition of "employee" in para 1 of the Fourth Schedule.  |  0,5
+Market-It must withhold employees' tax from amounts paid to the company at a flat 27%.  |  1
+Section 23K limits the deductions of a PSP (essentially remuneration to employees, legal costs, bad debts, premises/assets used wholly for trade).  |  1
+Conclusion: setting up the company will not escape or reduce employees' tax; further tax (normal tax or dividends tax at 20%) arises when he extracts the profits.  |  1
+It also adds compliance costs, so it will not achieve his objective.  |  0,5
+Communication — logic and expression  |  1
+Available  |  11,5
+Maximum  |  9

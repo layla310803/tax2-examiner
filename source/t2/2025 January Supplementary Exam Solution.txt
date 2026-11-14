@@ -1,0 +1,233 @@
+--- page 1 ---
+ACC3004W Supp Exam
+Suggested Solution - Question 1
+1.1 Disposal of juicer
+The disposal of the juicer is a taxable supply in terms of s7(1)  |  1
+The time of supply is the earlier of invoice or payment,i.e. 30 September 2023  |  1
+The amount of output VAT payable is R6 600 (R50 600 x 15/115)  |  1
+Purchase of replacement juicer
+The juicer was a second hand good that was purchased from a non-vendor and it will be used for making taxable supplies, therefore the second hand goods rule would be applicable for
+the juicer  |  1
+The value of supply is the lower of consideration and open market value  |  1
+Consideration  |  R150 000
+Open market value  |  R135 000
+Therefore the input VAT claimable is R17 609 (R135 000 x 15/115)  |  1
+The time of supply is 1 October 2003, which is the date on which payment was made  |  1
+Contribution to pension fund
+There will be no VAT consequences on the contributions of Cold Press Nation to the pension fund as this is a financial service and is therefore an exempt supply  |  1
+Available  |  8
+Maximum  |  8
+1.2 Cold Press Nation will be subject to donations tax on the gratuitous dispositions that it made during the 2024 year of assessment, provided that none of the exemptions are applicable  |  1
+The donation of the fresh produce was to a PBO and will therefore be exempt in terms of s56(1)(h)  |  1
+The cash donation of R25 000 will be subject to donations tax  |  1
+There is no specific exemption for the donations tax, however CPN can utilise the general exemption of R10 000  |  1
+The donation of the trading stock to SolarFitness is not a donation as defined as there was no gratuitous disposal  |  1
+CPN will get advertising in return for the juices that were given to the local gym  |  1
+CPN will be subject to donations tax at 20% (R25 000 - R10 000) x 20% = R3 000  |  1
+Donations tax is payable at the end of the month following the month of the donation, 31 January 2024  |  1
+X1: Communication skills  |  1
+Available  |  9
+Maximum  |  9
+1.3 Description  |  Error/Omission  |  Reason/Working  |  Correct treatment
+100% of the revenue should be included in gorss income
+Revenue  |  Only including 80% of the revenue in the calculation  |  as CPN is unconditionally entitled to it  |  R1 550 500  |  2
+There is no deduction for cost of sales. Need to treat
+Cost of goods sold  |  Deducting cost of sales in terms of s11(a)  |  opening stock, purchases and closing stock separately  |  1
+Opening stock - s22(2)  |  -18000  |  0,5
+Purchases - s11(a)  |  -460000  |  0,5
+Closing stock - s22(1)  |  9500  |  0,5
+Including the proceeds from the disposal of a capital asset in The disposal of the juicer would have CGT effects as the
+Other income  |  gross income  |  proceeds are capital in nature  |  1
+Recoupment - s8(4)(a)
+Selling price (ltd to cost) R50 600 x 100/115 = R44 000
+Less Tax value R0
+Recoupment  |  The recoupment was omitted from the normal tax calculation Recoupment R44 000  |  1,5
+para 66 application R44 000 * 20%  |  8800  |  1
+CGT
+Proceeds  |  0
+Selling price  |  44000  |  0,5
+Recoupment  |  -44000  |  0,5
+Base Cost  |  0
+Cost  |  56522  |  0,5
+Allowances  |  56522  |  0,5
+Capital Gain  |  0
+The deduction should have been allowed in terms of
+Contributions to pension fund Deducting the contributions in terms of s11(a)  |  s11(l)  |  1
+This was correctly treated as the marketing expense was
+actually incurred in the production of income and is not
+Marketing costs  |  of a capital nature  |  0,5
+Bad debts expense  |  Stating that these are prohibited deductions  |  There is a specific deduction for bad debts - s11(i)  |  -40000  |  1
+s11(i) is only for the debts that actually went bad in the
+current YOA, therefore need to remove the movement in
+the allowance for doubtful debt
+R26 000 + R14 000 (R127 000 - R113 000) = R40 000  |  1,5
+Allowance for doubtful debts This was omitted from the calculation  |  Prior year deduction needs to be reversed - s11(j)  |  43300  |  1
+Closing balance to be determined as follows:
+Lifetime losses R95 000 x 40% = R38 000  |  1
+Other losses R18 000 x 25% = R4 500  |  1
+R38 000 + R4 500 = R42 500  |  -42500
+Stating that the wear and tear allowance is the same as the Juicer (disposed of) - s12C allowance
+Depreciation  |  accounting depreciation  |  R65 000 x 100/115 x 20% = R11 304  |  -11304  |  2
+--- page 2 ---
+Second-hand industrial juicer - s12C
+Based on the lower of
+Cost R150 000 - R17 609 = R132 391
+Market value R135 000 - R17 609 = R117 391
+R117 391 x 20% = R23 478  |  -23478  |  2
+Manufacturing plant - s13(1) as the building is used
+mainly in the process of manufacture (ie more than 50%)
+R2 500 000 x 100/115 x 5% = R108 696  |  -108696  |  2
+Donation  |  Omitting the recoupment of the trading stock donated  |  Donation of fresh produce - s22(8)(C)  |  5400  |  1
+Donation of juices - s22(8)  |  65000  |  1
+Proviso to s22(8) as the trading stock was used for trade
+purposes - marketing  |  -65000  |  1
+s18A is only for the donations made to a PBO
+The donation of trading stock to Feed the Nation
+Foundation will be at the lower of cost and market value,
+Donation  |  Deducting the donations that were not made to a PBO  |  R2 800  |  -2800  |  2
+The R3 600 should be added to the current year donation
+Not including the donation expense carried forward from the to the PBO
+prior year  |  Total donations R2 800 + R3 600 = R6 400  |  1
+Not applying the limit to the s18A deduction  |  The donation is limited to 10% of taxable income  |  1
+This will need to be recalculated based on the new
+Income tax expense  |  taxable income after the corrections are made  |  0,5
+Primary rebate  |  Including a primary rebate in the calculation  |  The primary rebate is only applicable for natural persons  |  1
+X1: Communication skills  |  2
+Available  |  33,5
+Maximum  |  33
+--- page 3 ---
+ACC3004W Supp Exam
+Suggested Solution - Question 2
+2.1 Description  |  Reason/Working  |  Amount
+para (c) of gross income /para (a) of remuneration
+Salary  |  (R68 000 x 12 = R816 000)  |  816 000  |  1
+para (i) of GI/para (c) of remunreation
+Employer contribution towards pension fund  |  (R6 700 x 2 x 12 = R160 800)  |  160 800  |  1
+Right of use of motor vehicle  |  para (i) of GI/para (cB) of remuneration
+Determined Value - (R369 900 x 0.85) = R314 415  |  0,5
+R314 415 x 3.5% x 12 = R132 054  |  1
+22 000km/26 500km = 83% kms relate to business travel, therefore use 20% inclusion into remuneration  |  1
+R132 054 x 20% = R26 411  |  26 411  |  0,5
+Right of use of asset (laptop)  |  No inclusion into remuneration as the laptop is used mainly for work purposes  |  -  |  1
+Interest paid by employer  |  para (i) of GI/para (b) of remuneration
+6% + 2% > 7% (official rate), therefore this is a subsidy  |  0,5
+Value of fringe benefit: (R150 000 x 6% = R9 000)  |  9 000  |  0,5
+Contributions towards medical aid  |  These contributions are not a fringe benefit as they are deducted from Lindela's salary  |  -  |  0,5
+Remuneration  |  1 012 211
+s11F  |  Contributions (R6 700 *12) + (R160 800) = R241 200  |  1
+Limited to the lower of :
+R350 000  |  0,5
+27,5% of Remuneration (R1 012 211) = R278 358  |  0,5
+The contributions are fully deductible  |  -  |  241 200  |  0,5
+Balance of remuneration excluding annual amounts  |  771 011
+Tax per tables  |  179 147 + 39% (771 011 - 673 000)  |  217 371  |  1
+Primary rebate  |  -  |  17 235  |  0,5
+Medical aid rebate  |  (728 + 246 + 246)*8  |  -  |  9 760  |  1
+Additional medical rebate  |  No s6B as Lindela is below the age of 65 years  |  -  |  0,5
+Employees Tax (excluding annual amount) (T2)  |  190 376
+Tax on normal amounts in January 2024  |  (R190 376 /12)  |  15 865  |  1
+Annual Amounts
+Cash Bonus  |  s7B - variable remuneration included when actually paid  |  100 000  |  1
+--- page 4 ---
+Bursary  |  Fringe benefit granted to relative is deemed to be a fringe benefit received by employee (Lindela)  |  65 000  |  1
+para (i) of GI /para (b) of remuneration
+Bursary exemption  |  s10(1)(q) is not available as Lindela's remuneration proxy for the 2024 YOA exceeds R600 000  |  -  |  1
+Subsistence allowance  |  No inclusion into remuneration as she actually went to the trip  |  -  |  1
+South African Airways flight  |  No inclusion into remuneration because it is not a fringe benefit - flight was for business purposes  |  0,5
+Uber vouchers  |  No inclusion into remuneration - uber vouchers were for business purposes, therefore not a fringe benefit  |  0,5
+Meals  |  No value as enjoyed during business hours/ Lindela entertaining clients on behalf of Total Fitness  |  0,5
+Balance of remuneration including annual amounts  |  936 011
+Tax per tables  |  (251 258 + 41% (936 011 - 857 900))  |  283 284  |  1
+Primary rebate  |  -  |  17 235
+Medical aid rebate  |  (728 + 246 + 246)*8  |  -  |  9 760
+Employees tax for the year (including annual amounts) (T1)  |  256 289
+Tax on Bonus  |  R256 289 - R190 376 = R65 912  |  65 912  |  1
+Employees Tax withheld in January 2024  |  R65 912 + R15 865 = R81 777  |  81 777  |  0,5
+Available  |  22
+Maximum  |  22
+2,2 Right of use of motor vehicle
+VAT
+There is a deemed output in terms of s18(3) for the right of use of motor vehicle granted to Lindela by Total Fitness  |  1
+The time of supply will be the end of the month during which the fringe benefit is included in remuneration  |  0,5
+The value of supply is determined as the deemed consideration multiplied by the tax fraction (15/115)
+The determined value of the vehicle is the cost of the vehicle, exclusive of VAT (R369 900 x 100/115 x 85% = R273 404)  |  1
+The determined value is multiplied by 0.3% per month as the vehicle is a motor car as defined and therefore input denied  |  1
+The deemed consideration is reduced by R85 per month because Lindela is responsible for all the maintenance costs relating to the vehicle.  |  1
+((R273 404 x 0.3%) - R85) x 12 x 15/115 = R1 151  |  1
+Normal Tax
+Total Fitness will be able to get a s11(a) deduction for the deemed output on the fringe benefit (R1 151)  |  1
+Total Fitness will also be entitled to a s11(e) allowance on the vehicle as it is the owner of the vehicle and the vehicle is being used for trade purposes.  |  0,5
+The allowance will be based on the lower of cost and market value  |  0,5
+--- page 5 ---
+Cost  |  R369 900
+Market Value  |  R372 000
+R369 900/5 = R73 980  |  0,5
+(NO VAT removed as this was a motor car as defined and is therefore input denied)
+Subsistence Allowance
+VAT
+There are no VAT consequences for the subsistence allowance as money is not a suppy of a good or service  |  1
+Normal Tax
+Total Fitness would be entitled to a s11(a) for the allowance paid to Lindela, R6 000 (R1 200 * 5 )  |  1
+Flight
+VAT
+The South African Airways flight is a standard rated supply and Total Fitness would be able to claim input  |  0,5
+The value of the supply would be the consideration that Total Fitness paid for the flight R470 (R3 600 * 15/ 115)  |  1
+The time of supply is the earlier of payment or invoice  |  0,5
+There is no deemed output in terms of s18(3) because the flight is not a fringe benefit  |  0,5
+Normal Tax
+Total Fitness would be entitled to a s11(a) deduction for the cost of the flight, R3 130 (R3 600 - R470)  |  1
+Uber vouchers
+VAT
+There are no VAT consequences for the uber vouchers as the transport of fare paying passengers is an exempt supply  |  1
+There is no deemed output in terms of s18(3) because the uber voucher is not a fringe benefit  |  0,5
+Normal Tax
+Total Fitness would be entitled to a s11(a) for the uber voucher of R850  |  0,5
+Restaurant bills
+VAT
+Input tax is not denied on the meals enjoyed by Lindela as she was required to spend at least one night away from her usual place of residence. Therefore Total Fitness will be able to claim
+input only on the portion of the costs that relates to Lindela - s17(2)(a)(ii)  |  1
+R91 (R1 500 - R800) * 15/115  |  1
+The restaurant bills that relate to the clients would be input denied in terms of s17(2)(a)  |  1
+There is no deemed output in terms of s18(3) as the fringe benefit had no value (enjoyed during normal or extended working hours)  |  1
+Normal Tax
+Total Fitness would be entitled to a s11(a) deduction for the restaurant bills paid for and the amount will be R1 409 (R1 500 - R91)  |  1
+X1: Communication skills  |  1
+Available  |  21,5
+--- page 6 ---
+Maximum  |  20
+2.3 Offshore Investment
+Lindela is a South African resident and is therefore taxed on her worldwide income  |  1
+The foreign interest of R34 000 will be included in her gross income in terms of the general gross income definition  |  1
+There is no exemption that is available for foreign interest  |  0,5
+Tax-Free Investment
+The interest of R28 000 from the tax-free investment will be included in Lindela's gross income  |  0,5
+She will be able to claim a full exemption for the interest terms of s12T  |  1
+Lindela made contributions in excess of R36 000 during the 2024 year of assessment, therefore she will be subject to normal tax on the excess contributions  |  1
+((R5 800 x 12) - R36 000) x 45% = R15 120  |  1
+Block of flats
+Lindela will include the rental income earned from the block of flats in her gross income during the current year of assessment R307 200 (3 200 *8*12)  |  1
+She purchased the block of flats new and unused from the property developer  |  1
+She owns eight units (i.e more than 5) and she uses them for trade purposes as she is renting them out  |  1
+Lindela will be able to claim a s13sex allowance because all the requirements have been met  |  1
+The units owned by Lindela may be considered low cost housing which would result in Lindela being able to claim an additional 5%
+Each unit has a cost of R337 500 (R2 700 000/8), which is less than R350 000  |  1
+The rental charged by Lindela is R3 200, which is less than 1% of the cost of the apartment (increased by 10% as the building was acquired in the prior year)  |  1
+(R337 500 * 1,1 * 1% = R3 713)  |  1
+The block of flats will therefore be considered low cost housing  |  1
+Therefore the s13sex allowance that can be claimed by Lindela will be as follows:
+R2 700 000 * 10% = R270 000  |  1
+X1: Communication skills  |  1
+Available  |  17
+Maximum  |  16
+2.4 Employees tax can only be withheld if there is an employee, an employer and remuneration  |  1
+The amount paid to Mhlengi is for the services him and his team have rendered to the accounting firm - para c of gross income definition and will be included in remuneration unless Mhlengi is
+carrying on a trade independently  |  1
+Mhlengi is under the control and supervision of the accounting firm, because him and his team are required to be at the business premises of the accounting firm from 8:30am to 5:30pm every
+weekday  |  1
+--- page 7 ---
+They are also required to perform their duties at the premises of the accounting firm as they have been given an office from which perform their duties  |  1
+Mhlengi does not employ at least 3 full time employees who are not connected persons to him because two of the three employees he has are his brothers (i.e connected persons to him)  |  1
+Therefore, Mhlengi is not carrying on a trade independently and the amount paid to him will be included in his remuneration  |  1
+Mhlengi is an employee as defined and the accounting is an employer, therefore the accounting firm is required to withhold employees tax and pay it to SARS on behalf of Mhlengi  |  0,5
+Available  |  6,5
+Maximum  |  5

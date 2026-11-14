@@ -1,0 +1,161 @@
+--- page 1 ---
+ACC3004W
+October Exam
+Suggested Solution: Question 1
+1,1 Steward Watson
+Normal Tax
+The hamper received is a taxable benefit in terms of para 2(a) of the 7th schedule as it is an asset received for
+less than actual value  |  1
+Given that the hamper is also Stacked's trading stock, it is valued at the lower of cost or market value.  |  1
+Steward will therefore have a para(i) inclusion of R250 in his gross income  |  1
+VAT
+An enterprise as defined in the VAT act excludes employees who earn remunerations
+This implies that Steward cannot be a VAT vendor and is not allowed to charge output VAT on services
+rendered to the company
+It follows that there are no VAT consequences for Steward on the hamper awarded to him  |  1
+Stacked (Pty) Ltd
+VAT
+Stacked would be able to claim input VAT of (250 x 15/115 = 33) on purchase of the hampers/inputs  |  2
+When Stacked awards fringe benefits, generally it would be a deemed supply on which output VAT is
+payable in terms of s18(3)  |  1
+The awarding of the hamper is however not a deemed supply as it is a supply of entertainment.  |  1
+It follows that no output VAT is payable  |  0,5
+Normal Tax
+The cost of the hamper excluding VAT (R250 X100/115) R217,39) will be deductible in terms of s11(a)
+when prepared and assembled.  |  1
+When the hamper is given to Steward, it would be classified as a disposal other than in the ordinary course of
+business. The open market value of R450 will be recouped in terms of s22(8)  |  1
+Given the awarding of the taxable benefit to an employee is a disposal of trading stock in the course of trade,
+the proviso to s22(8) applies and the R450 is then deductible in terms of s11(a)  |  1
+In terms of s22(8) the market value is recouped but in this case the open market value is equal to the market value as
+no output tax was paid
+Communication  |  1
+Available 12,5
+Maximum  |  11
+The Tips are received by Waiters from customers for services rendered, the requirements of para (c) must
+1,2 therefore be considered  |  1
+In order for an amount to be deemed to be received in respect of services rendered and included in the
+recipient gross income by virtue of para (c ), there must be a causal relationship between the amount
+received and the waiter service.  |  1
+--- page 2 ---
+Tipping is a well established practice in South Africa and both the customer and waiter are aware of this and
+the fact that the manner in which the waiter/recipient renders the service has a direct impact on whether a tip is
+received as well as the amount thereof.  |  1
+The tips received by waiters will be included in their gross income by virtue of para (c ) and the waiters will
+be subject to normal tax thereon  |  1
+While tips may constitute remuneration as defined, Stacked will not be liable to withhold employees tax
+thereon as it is not an employer in the context of the receipt of the tips.  |  2
+Communication  |  1
+Available  |  7
+Maximum  |  6
+1,3 Employees Tax withheld by Stacked
+Salary - gross income para(c)  |  (45 000 x 12)  |  540 000  |  1
+Bonus  |  Variable remuneration - s7B  |  80 000  |  1
+-  |  1
+Hotel accommodation is a taxable benefit but has no value as Katherine is away from her usual
+place of residence for the purposes of performing her duties of employment
+International Flights:
+The Benefit granted to Olivia is deemed to be a fringe benefit (Free or Cheap service) granted to
+Katherine. The flight is zero-rated as per s11(2)(a)(ii).  |  13 500  |  1
+Katherine's international flight is not a free or cheap service as there is no private benefit  |  -  |  1
+The subsistence allowance is not included in remuneration as Katherine has spent time away and
+used the allowance in the month it was received and is therefore excluded from the definition of
+remuneration  |  -  |  1
+>Katherine is required to wear the clearly distinguishable uniform that is purchased with the
+uniform allowance.  |  1
+>The uniform allowance is exempt in terms of s10(1)(nA) and is thus not income as defined  |  1
+> The uniform allowance is therefore not included in remuneration  |  0,5
+Remuneration  |  633 500
+Actual Contribution:  |  12% x 540 000 = 64 800  |  0,5
+The RAF contributions are not taken into account for employees tax purposes as Katherine does not
+provide proof of these contributions to Stacked  |  0,5
+Limited to the lower of:
+> 350 000  |  0,5
+> 27.5% of remuneration =  |  174 213  |  0,5
+-  |  64 800  |  0,5
+Balance of Remuneration  |  568 700
+--- page 3 ---
+Tax per tax tables  |  121 475 + 36% x (568 700 - 512 800)  |  141 599  |  1
+Primary Rebate  |  -  |  17 235  |  1
+Employees tax withheld by Stacked  |  124 364
+Employees tax withheld by RCS investments
+Monthly Annuity receipts  |  (12 000 x 7)  |  84 000  |  1
+Annuity receipt on commutation  |  180 000  |  0,5
+s10A
+A: 650 000
+B: 12 000 x 12 x 10 = 1 440 000
+C: 84 000
+650 000/ 1 440 000 x 84 000  |  -  |  37 917  |  1,5
+D: 650 000/1 440 000 x 12 000 x 8 x 12 = 520 000
+(650 000 - 520 000)  |  -  |  130 000  |  2
+Balance of remuneration  |  96 083
+Tax per tables  |  18% x 96083  |  17 295  |  1
+Primary Rebate  |  -  |  17 235  |  1
+Employees tax withheld by RCS  |  60
+Total employees tax withheld from Katherine  |  124 424
+Available  |  20
+Maximum  |  20
+Olivia is deemed to have disposed of all of her assets (subject to certain exceptions) at market value at the date of
+1.4. her death  |  1
+Primary residence
+Proceeds (1 800 000/2)  |  900 000  |  1
+Base Cost (1 800 000/2)  |  -  |  900 000  |  1
+Capital Gain  |  -
+Deemed disposal to spouse for proceeds equivalent to Base Cost - s9HA
+S9HA does not apply to long term insurance policies  |  1
+Shares
+Proceeds  |  580 000
+Base Cost  |  -  |  50 000
+530 000  |  1
+Tax free savings account
+Proceeds  |  1 340 000
+Base cost  |  -  |  450 000
+--- page 4 ---
+890 000  |  1
+Capital gain on tax free savings account is disregarded in terms of s12T  |  1
+Car
+Proceeds  |  250000
+Base Cost  |  -400000
+-  |  150 000  |  1
+Capital loss on the car is disregarded as it is a personal use asset  |  1
+Totals Capital Gain  |  530 000
+Annual Exclusion  |  -  |  300 000  |  1
+230 000
+230 000 x 40%  |  92 000  |  1
+Available  |  11
+Maximum  |  11
+1,5 Primary Rebate  |  17235 x 11/12  |  -  |  15 799  |  1
+s6A medical tax credit  |  (728 + 246) x 10 + (728 x 1)  |  -10468  |  1
+No value placed on medical aid contributions made by Stacked on behalf of Olivia after her retirement  |  1
+No value is placed on medical aid contributions made by Stacked on behalf of Olivia dependents after her death  |  1
+If no value is placed on the medical aid fringe benefit, it means that it is not a "deemed contribution" for the taxpayer
+and therefore no s6A rebate for those months when no value
+s6B
+Olivia's mothers disability does not affect Olivia's s6B rebate as this rebate would only be affected by a disability of
+the taxpayer, spouse or child.  |  1
+Medical aid contributions  |  (3 500 x 10) + ((1300 x 2) x 11)  |  63 600  |  2
+Deemed contribution is only what was included as a taxable benefit in Olivia's taxable income
+Less: 4 x s6A rebate  |  (4 x 10468)  |  -  |  41 872  |  1
+21 728
+Add qualifying medical expenditure (350 000/2)  |  175 000  |  1
+Less 7.5% of taxable income  |  (1 250 000 + 63 600 +92 000) *7.5%  |  -  |  105 420  |  2
+91 308
+25%  |  1
+-  |  22 827
+Available  |  12
+Maximum  |  11
+1.6. Primary residence  |  (3 750 000/2)  |  1 875 000  |  1
+Life Insurance Proceeds  |  (2 000 000 - 300 000)  |  1 700 000  |  1
+Unlisted shares  |  580 000  |  1
+Tax free investment  |  1 340 000  |  0,5
+Car  |  250 000  |  1
+Gross Value of the Estate  |  5 745 000
+--- page 5 ---
+s4(q) property bequeathed to spouse ( 1 875 000+1 700 000)  |  -  |  3 575 000  |  1
+s4(b) debts due by the deceased  |  (420 000 + 175 000)  |  -  |  595 000  |  2
+Net value of the estate  |  1 575 000
+s4A abatement  |  3 500 000 limited to  |  -  |  1 575 000  |  1
+Dutiable amount  |  0
+Estate Duty  |  20%  |  0
+Available  |  8,5
+Maximum  |  7

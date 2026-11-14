@@ -1,0 +1,425 @@
+--- page 1 ---
+TAXATION II
+(ACC3004W)
+FINAL EXAM
+14 NOVEMBER 2025
+(08:00- 11:00)
+Marks: 113  |  Time: 3 Hours
+PLEASE READ THE FOLLOWING INSTRUCTIONS CAREFULLY. STUDENTS MAY BE
+PENALISED FOR DISREGARDING THESE INSTRUCTIONS.
+• This paper consists of TWO questions.
+• Answer all parts of the question.
+• Answer each question in a separate answer booklet (i.e. TWO books)
+• Answers must be written in blue or black ink. Answers (including workings) may not be written in
+pencil and/or red or green ink.
+• No Tippex, correction fluid or tape is allowed.
+• All workings must be shown clearly and legibly and handed in with your answers.
+• Whilst there is no explicit reading time, the duration of the assessment includes appropriate
+reading time.
+• No questions will be answered by invigilators during the assessment. Make whatever
+assumptions you deem appropriate and clearly state these in your answer books. Any reasonable
+assumption will be considered.
+• This is a limited open book exam. Students are allowed the following: A guide through IFRS Parts
+A to B2, SAICA Members’ Handbooks Vol 2 to 3 and SAICA Student Handbook Vol 1 to 3. No
+writing is allowed in the permitted texts, but students may flag the permitted texts.
+Suggested time
+Marks  |  (minutes)
+Question 1  |  56  |  89
+Question 2  |  57  |  91
+113  |  180
+THIS ASSESSMENT CONSISTS OF FOURTEEN NUMBERED PAGES (INCLUDING THE COVER PAGE)
+1
+--- page 2 ---
+QUESTION 1  |  (56 marks: 89 minutes)
+Sheldon Cooper is a 48-year-old South African resident, married out of community of
+property to Amy Cooper (45 years old) and they have 2 children, Howard (15 years old)
+and Leonard (18 years old). Sheldon is employed full-time as a physicist at Big Bang (Pty)
+Ltd (“Big Bang” or “the company”), a private research lab in Cape Town. Amy is a resident
+for South African tax purposes.
+Sheldon has been working for Big Bang since 2015. Big Bang specialises in applied
+quantum mechanics, advanced materials testing, and energy systems research. The
+company undertakes many projects during the year and focuses on sustainable energy
+and technology. Big Bang is a category C VAT vendor with a 30 June year-end.
+1. Sheldon Cooper
+The following information relates to Sheldon’s 2025 year of assessment:
+a. Sheldon earns a cash salary of R70 000 per month, and he contributes 5% of this to
+his employer’s provident fund. Sheldon is also a member of the SaveMe Medical Aid
+Fund with his wife and two children as dependants and his contributions amount to
+R3 000 per month. Big Bang matches every employee’s contribution to both the
+provident fund and the medical aid fund.
+Sheldon further makes contributions to a retirement annuity fund (RAF) of R3 000 per
+month and keeps proof of the contributions. Big Bang elects not to deduct the RAF
+contributions of employees for employees’ tax purposes.
+b. Sheldon was granted the right to use a Macbook Pro owned by the company. The
+laptop was purchased by Big Bang for a cost of R20 000 on 1 March 2024 and was
+given to Sheldon to use on the same date. Sheldon used the laptop for the entire
+2025 year of assessment before returning it to the company on 1 March 2025. The
+open market value of the laptop on 1 March 2024 was R21 000. Sheldon owns a Dell
+laptop which he has been using for work purposes for the past three years. He
+continued using his Dell laptop for work even after receiving the right of use of the
+Macbook Pro from the company. He only used the company laptop when he wanted
+to watch movies. The Macbook Pro had an open market value of R17 500 on 28
+February 2025. Big Bang’s computer equipment have a useful life of five years.
+c. Sheldon always travelled to work using an uber as he had never learnt how to drive.
+However, he recently got his driver’s licence. From 1 March 2024, Big Bang granted
+Sheldon the right of use of a BMW M3. This vehicle was purchased by Big Bang from
+a second-hand car dealership on 31 December 2022 for R800 000. The vehicle was
+purchased with a maintenance plan. The fuel costs were covered by Big Bang.
+Sheldon kept an accurate logbook of his kilometres travelled during the 2025 year of
+assessment:
+2
+--- page 3 ---
+From home to the Big Bang offices and 2 000 kms
+back
+Visits to Big Bang clients  |  13 000 kms
+Sundry private travel  |  1 000 kms
+d. On 1 December 2024, Big Bang awarded Sheldon a limited-edition Batman action
+figure signed by Christian Bale. The Batman action figure was awarded to Sheldon
+due to his long service to the company. The company purchased the action figure for
+R3 000, for the purpose of gifting it to Sheldon. The open market value on the same
+day amounted to R3 500.
+e. Sheldon’s son Leonard commenced his studies at the University of Cape Town in
+2024 but was unable to secure accommodation within the university residences. Big
+Bang owns a fully furnished one-bedroom apartment in Rondebosch, Cape Town,
+which is typically leased to UCT students or young professionals at a monthly rental
+of R8 950, with tenants responsible for their own electricity costs. Big Bang granted
+Leonard the right to occupy and use the apartment at a reduced rental of R4 500 from
+1 January 2024 until he completes his studies at the end of 2027.
+f. In December 2024, Sheldon prevented a fire from breaking out in one of the labs
+containing very expensive machinery. Sheldon was awarded a leather briefcase due
+to his bravery. The briefcase had cost the company R2 800 and had an open market
+value of R3 700 when it was acquired on 1 June 2023. The open market value of the
+briefcase was R3 200 in December 2024 when it was awarded to Sheldon.
+g. In December 2024, Sheldon’s new manager had complained to HR that the clothing
+Sheldon wears for work was not suitable for the position he holds in the company.
+Sheldon often wears Superman and Flash superhero t-shirts to the office and avoids
+wearing lab coats. Big Bang provided Sheldon with three lab coats that he is required
+to wear to work. The lab coats were purchased from a local retailer and were further
+branded with the Big Bang logo. The total cost of the coats amounted to R2 500.
+h. In November 2024, Sheldon was awarded a Nobel Prize in physics for his latest paper
+on his string theory study. Big Bang rewards all winners of this prize with a cash
+reward of R100 000. Sheldon became eligible for the cash reward in November, and
+Big Bang paid the amount in December 2024.
+i. Big Bang encourages all employees to contribute to Feeding Young Scientists, a
+South African charity which sponsors meals to school children in the Cape Town
+townships. Feeding Young Scientists is a registered Public Benefit Organisation.
+Sheldon has been contributing R500 per month since joining Big Bang and has
+received a s18A certificate for all the donations he has made over the years. The
+contributed amount is withheld from his salary and paid over to the charity.
+On 28 February 2025, Sheldon was working late at the office when he forgot to turn off
+a gas switch, resulting in the release of harmful chemicals into the air. He subsequently
+took a nap and, as a result, was unable to smell the harmful chemicals. Approximately
+an hour later, the gas tank exploded, leading to Sheldon’s untimely death.
+3
+--- page 4 ---
+The reading of Sheldon’s last will and testament revealed the following information:
+• Sheldon owned a house in Cape Town which he considered to be his family home.
+He purchased the house in 2015 for R4 000 000, and they have lived there as a family
+ever since. The market value of the house on the date of his death was R4 900 000.
+The house was to be sold, and the proceeds split equally between his children.
+• Sheldon owned an apartment in Johannesburg. He purchased the apartment in 2005
+after receiving a cash lump sum from the passing of his grandfather. Sheldon
+purchased the apartment for R1 200 000, when its market value was R1 900 000. In
+2016, he made renovations to the apartment at a cost of R220 000. These were the
+only renovations Sheldon made during the time that he owned the apartment. The
+market value on 28 February 2025 was R2 300 000. This property was bequeathed
+to Amy.
+• The life insurance policy from Penny Life Ltd, taken out by Amy over Sheldon’s life,
+will be paid to Amy. All premiums relating to this policy were paid by Amy and
+amounted to R70 000. Interest calculated on the premiums at 6% per annum
+amounted to R10 280. The policy will pay out an amount of R600 000.
+In addition to the above, Sheldon held the following assets on the date of death:
+• Unlisted shares, which had cost R85 000. An independent valuation of these shares
+on 28 February indicated that they had a market value of R100 000. These shares
+were sold by the executor in the course of winding up the estate for R120 000. The
+proceeds from this sale were to be given to Sheldon’s children.
+• Cash in bank accounts amounting to R150 000.
+The executor of Sheldon’s estate paid the following expenses out of the cash in the estate:
+South African debts due (Including taxes)  |  R250 000
+Deathbed and Funeral expenses  |  R60 000
+Executor and Valuator fees  |  R85 000
+2. Amy Cooper
+Amy’s primary source of income is her gross salary of R170 000 per month. Amy works as
+a microbiologist. She also earns rental income from an apartment block that she purchased
+for R8 million on 1 December 2021. She purchased the apartment block from Stuart Bloom
+who was also renting the apartments out but became tired of the stress of collecting the
+rental payments from tenants. The apartment block is located in Newlands, Cape Town, and
+consists of six one-bedroom apartments. The apartment block was transferred into Amy’s
+name on 28 February 2022.
+On 1 March 2022, Amy entered into separate rental agreements with 6 students, all of whom
+were not related to her. From 1 March 2024, 2 tenants had moved out, and Amy’s younger
+4
+--- page 5 ---
+sister and her grandfather began renting from her. In terms of the lease agreements, a
+monthly rental of R12 000 per apartment was payable. The purchase of the apartment block
+was financed by a mortgage bond. During the 2025 year of assessment, a pipe burst
+underground, which resulted in Amy having to repave the entire ground floor. She had to
+pay for all the expenses relating to the damage as she had not yet finalized documents with
+her new insurance company at the time of the damage. The total cost amounted to
+R330 000. A week after the damage had occurred, Amy took out an insurance policy to
+protect her from events like these in the future. The insurance costs for the 2025 year of
+assessment amounted to R14 500.
+During the year of assessment ended 28 February 2025, interest paid on the bond amounted
+to R500 000. Rates and levies payable on this property amounted to R150 000 for the same
+period. There has not yet been a change in these annual costs or rental income received
+since the date the property was transferred into Amy’s name.
+Amy recorded the following gains and losses relating to the renting of the apartment block.
+Year of assessment  |  Gain/(Loss)
+2023  |  R 200 000
+2024  |  R 180 000
+2025  |  ?
+Additional Information:
+• You may assume that all amounts are inclusive of VAT unless otherwise stated
+or the context indicates otherwise.
+• Big Bang (Pty) Ltd only transacts with VAT vendors, unless otherwise stated
+or the context indicates otherwise, and is in possession of all valid tax
+invoices.
+• Amy Cooper is a registered VAT vendor.
+• Sheldon’s remuneration proxy for the 2025 year of assessment equals R1 100 000.
+5
+--- page 6 ---
+REQUIRED - QUESTION 1  |  MARKS
+Subtotal Total
+1.1 Calculate, with brief reasons, the employees’ tax that would have  |  30  |  30
+been withheld by Big Bang (Pty) Ltd from Sheldon Cooper’s salary
+for the month of December 2024.
+1.2 Discuss, with supporting calculations, the income tax consequences  |  6  |  7
+for Sheldon Cooper on the date of his death in relation to:
+• His family home in Cape Town and
+• His apartment in Johannesburg
+X1: Communication skills – clarity of expression  |  1
+1.3 Advise Amy Cooper, with supporting calculations, on the tax  |  11  |  12
+consequences relating to the apartments purchased and rented out
+and related costs for her year of assessment ended 28 February
+2025.
+1
+X1: Communication skills - critical thinking
+1.4 Calculate the Estate Duty that would be payable on Sheldon  |  7  |  7
+Cooper’s death.
+Total – Question 1  |  56
+6
+--- page 7 ---
+QUESTION 2  |  (57 marks: 91 minutes)
+Pure Aura (Pty) Ltd (‘Pure Aura’ or ‘the company’) is a company which manufactures
+beauty and skincare products. The company was founded by Phila Bhengu in 2010,
+together with his sisters, Linda and Grace Bhengu. Each of the three siblings holds an
+equal shareholding in the company. The company is a small business corporation as
+defined, is registered as a Category B VAT vendor and has a December financial year-
+end.
+1. Lease Agreement
+In 2024, Pure Aura required additional funding to support its expansion plans. In order to
+free up cash resources, the company disposed of its factory building and subsequently
+entered into a lease agreement with the Western Cape Provincial Government for the use
+of property that would serve as its new factory premises. The building to be leased was
+not as big as the factory building that Pure Aura previously owned. Pure Aura required
+more space in the factory, to ensure that the production levels would not decrease
+because of the new space. As part of the negotiations with the Western Cape Provincial
+Government, Pure Aura requested that the lease agreement include a clause requiring
+the company to undertake and finance expansions to the building to create the desired
+space to suit the company’s production plans. The terms of the lease agreement were as
+follows:
+Commencement date  |  1 November 2024
+Duration of lease  |  15 years
+Lease payments  |  (a)  |  R27 000 per month
+Lease payment increase  |  10% per annum
+Value of expansion to leased (b)  |  Not exceeding R1 500 000
+property
+Notes:
+(a) During the lease negotiations, representatives of the Western Cape Provincial
+Government indicated that if Pure Aura agreed to pay the lease amount annually
+in advance on 1 November each year, the monthly rental would be reduced from
+R33 000 to R27 000. Pure Aura accepted this arrangement and has paid all 12
+months in advance, since the commencement of the lease.
+7
+--- page 8 ---
+(b) Pure Aura hired a construction company to work on the expansion of the building.
+The expansion was completed on 1 February 2025, and Pure Aura was billed a
+total cost of R1.8 million (excluding VAT).
+2. Distribution Division
+Pure Aura has a distribution division that is responsible for delivering trading stock to
+clients once orders are completed. The division operates a fleet of delivery trucks, all of
+which are owned by the company. These delivery trucks can only accommodate the driver
+and one passenger as they are mainly meant to carry goods. On 31 March 2025, one of
+the trucks was hijacked as it was returning to the warehouse after delivering trading stock
+to clients. The delivery truck was acquired for R744 000 on 1 January 2021. The open
+market value of the truck was R552 000 on the day of the hijacking incident. The truck
+was not recovered. However, it was insured, and the company lodged a claim with its
+insurer, who paid out an amount of R650 000. On 30 June 2025, the same date the
+insurance proceeds were received, Pure Aura purchased a new delivery truck for
+R1 150 000, financed partly from the insurance payout. The new delivery truck was
+immediately brought into use.
+Fortunately, neither of the employees in the truck was physically harmed during the
+incident. They were encouraged to talk to the company psychologist to deal with the
+traumatic event and the impact it may have had on them.
+3. Pure Aura – Other Transactions
+The tax accountant at Pure Aura was in the process of finalising the company’s normal
+tax computation for the 2025 year of assessment when his wife gave birth earlier than the
+expected due date. As a result, he took paternity leave before completing the tax
+calculation. The following transactions had not yet been accounted for in the company’s
+tax records:
+• As a result of the hijacking incident, the management of the company thought it
+would be best to hire a company psychologist on a permanent basis to assist its
+employees in managing personal and work-related challenges. The psychologist
+was appointed on 1 May 2025 and is paid a monthly cash salary of R75 000.
+• The marketing director of the company has been granted the right of use of a
+company-owned Hyundai i30. The vehicle was acquired by Pure Aura on 1 March
+2024 for R848 000, and such right of use was granted immediately after the vehicle
+was purchased. The company is responsible for the repairs and maintenance of
+the vehicle. On 1 April 2025, the marketing director suffered a heart attack and was
+booked off work for three months following his surgery. Although he did not make
+8
+--- page 9 ---
+use of the vehicle during this period, the company continued to grant him the right
+of use of the vehicle.
+• Pure Aura (Pty) Ltd’s policy provides that the company matches the employees’
+contributions to the pension fund on a 1:2 ratio, where the company pays twice the
+employees’ own contributions. During the 2025 year of assessment, total
+employee contributions to the pension fund amounted to R950 000.
+• The company pays annual performance bonuses to its employees, determined as
+10% of the company’s gross sales for the year. For the 2025 year of assessment,
+Pure Aura’s Statement of Comprehensive Income indicated gross sales amounting
+to R11 546 230 (2024: R10 980 000) The bonuses are paid in January each year
+as that is when Pure Aura can accurately determine the gross sales that were
+made in the prior year.
+• The company acquired a Nespresso coffee machine for the employees to enjoy
+premium coffee at the office. The machine was acquired on 1 June 2025 for a cost
+of R6 700.
+4. Agreement with Content Creators
+Pure Aura has observed a growing trend among companies in the beauty industry where
+the companies partner up with social media content creators. The management of Pure
+Aura considered adopting a similar approach by gifting trading stock to selected
+influencers. The company selected 25 creators, and each creator was gifted a hamper
+with products with an open market value of R9 000. There was no expectation for the
+creators to post about the products on their social media platforms. The products in each
+hamper had cost the company R6 500. A concern was raised regarding the potential
+unintended tax consequences of this arrangement. The tax accountant was already on
+paternity leave when this transaction was concluded and was therefore not available to
+address management’s concerns.
+5. New Product Launch
+In October 2025, Pure Aura launched a new skincare product as part of its premium
+beauty range. Shortly after the product’s release, a customer experienced a severe
+allergic reaction after using it and was hospitalised for several days. The customer
+reported the incident to Pure Aura on 30 November 2025, prompting the company to seek
+legal advice. Following consultation with its legal advisors, Pure Aura agreed to settle the
+matter out of court and paid the customer an amount of R150 000 in compensation on 15
+9
+--- page 10 ---
+December 2025. As part of the settlement, the customer was made to sign a non-
+disclosure agreement that prohibited her from sharing any details of the incident publicly.
+Following an internal investigation lodged by the company, it was discovered that there
+were some steps in the quality control processes that were not fully adhered to as the
+company was in a rush to launch the new product. The company did not issue a media
+statement regarding the matter and none of the products that had already been sold to
+customers were recalled. The only corrective measure implemented by Pure Aura was to
+discontinue the manufacturing of the new product. The management of Pure Aura
+intended to preserve the company’s public image and reputation by hiding the details of
+the incident.
+Additional information
+• You may assume that all amounts are inclusive of VAT unless otherwise stated
+or the context indicates otherwise.
+• Pure Aura only transacts with VAT vendors, unless otherwise stated or the
+context indicates otherwise, and is in possession of all valid tax invoices.
+• The Western Cape Provincial Government is not a registered VAT vendor.
+• SARS considers the manufacture of skincare and make-up products to be a
+process of manufacture.
+• Interpretation Note 47 read together with BGR 7 allows a write-off period of five
+years for all qualifying assets.
+• Pure Aura wishes to minimize its taxation position by taking advantage of any and
+all elective taxation provisions in any relevant Acts.
+10
+--- page 11 ---
+REQUIRED - QUESTION 2  |  MARKS
+Subtotal Total
+2.1  |  Discuss the normal tax consequences for Pure Aura (Pty) Ltd for  |  10  |  11
+the lease of the building for the 2025 year of assessment.
+X1: Communication skills – logical argument  |  1
+2.2  |  Discuss all the tax implications for Pure Aura (Pty) Ltd for its 2025  |  16  |  17
+year of assessment in relation to the note “Distribution Division”.
+Y1: Integrative thinking  |  1
+2.3  |  Calculate, with brief reasons, the VAT and normal tax  |  17  |  17
+consequences of the other transactions in point 3 for Pure Aura
+(Pty) Ltd for the year of assessment ended 31 December 2025.
+2.4  |  Draft a memo advising the management of Pure Aura (Pty) Ltd on  |  6  |  7
+the tax implications for Pure Aura (Pty) Ltd of the agreement with
+the social media content creators for its year ended 31 December
+2025.
+1
+X1: Communication skills – logical argument, format and structure
+2.5  |  Explain to the management of Pure Aura (Pty) Ltd any ethical  |  5  |  5
+concerns you have in relation to management’s response to the
+incident detailed in the note relating to the “New Product Launch”.
+Total – Question 2  |  57
+11
+--- page 12 ---
+MONETARY CHANGES - 2025
+Applicable in respect of years of assessment commencing on or after 1 March 2024 (i.e.
+2025 year of assessment) – unless specifically stated otherwise
+REBATES (section 6)
+Primary rebate increases from R16 425 to R17 235;
+Secondary rebate increases from R9 000 to R9 444;
+Tertiary rebate increases from R2 997 to R3 145
+MEDICAL REBATES (section 6A)
+Benefits to the taxpayer: R364;
+Benefits to the taxpayer and one dependant: R728;
+Benefits to each additional dependant: R246
+RESIDENTIAL ACCOMMODATION (paragraph 9 of the Seventh Schedule)
+Symbol B of R91 250 increases to R95 750.
+RATES OF NORMAL TAX
+•  |  In respect of the taxable income (excluding any retirement fund lump sum
+benefit, retirement fund lump sum withdrawal benefit or severance benefit) of natural
+persons, estates and special trusts
+Taxable Income (R)  |  Rate of Tax
+0 – 237 100  |  18% of taxable income
+237 101 – 370 500  |  42 678 + 26% of taxable income above 237 100
+370 501 – 512 800  |  77 362 + 31% of taxable income above 370 500
+512 801 – 673 000  |  121 475 + 36% of taxable income above 512 800
+673 001 – 857 900  |  179 147 + 39% of taxable income above 673 000
+857 901 – 1 817 000  |  251 258 + 41% of taxable income above 857 900
+1 817 001 and above  |  644 489 + 45% of taxable income above 1 817 000
+•  |  In respect of the taxable income of any company which qualifies as a small
+business corporation as defined in section 12E of the Income Tax Act, in respect of
+any year of assessment ending any date between 1 April 2025 and 31 March 2026.
+12
+--- page 13 ---
+Taxable Income (R)  |  Rate of Tax
+0 – 95 750  |  0% of taxable income
+95 751 – 365 000  |  7% of the amount above R95 750
+365 001 – 550 000  |  R18 848 + 21% of the amount above R365 000
+550 001 and above  |  R57 698 + 27% of the amount above R550 000
+TRAVEL ALLOWANCE
+Where the value of the vehicle (R) -  |  Fixed  |  Fuel  |  Mainte
+cost  |  cost  |  nance
+cost
+(R p.a.)  |  (c/km  |  (c/km)
+)
+does not exceed R100 000  |  34 480  |  151.7  |  46.0
+exceeds R100 000 but does not exceed R200 000  |  61 770  |  169.4  |  57.6
+exceeds R200 000 but does not exceed R300 000  |  89 119  |  184.0  |  63.5
+exceeds R300 000 but does not exceed R400 000  |  113 436  |  197.9  |  69.3
+exceeds R400 000 but does not exceed R500 000  |  137 752  |  211.8  |  81.5
+exceeds R500 000 but does not exceed R600 000  |  163 178  |  243.0  |  95.6
+exceeds R600 000 but does not exceed R700 000  |  188 653  |  247.1  |  107.3
+exceeds R700 000 but does not exceed R800 000  |  215 447  |  251.2  |  118.9
+exceeds R800 000  |  215 447  |  251.2  |  118.9
+Alternative fixed rate for certain reimbursive travel allowances: 484 cents per kilometer
+(previously 464 cents)
+SUBSISTENCE ALLOWANCE
+• Local travel:
+o  |  Allowance for incidental costs only – R169 (previously R161) for each day.
+o  |  Allowance for meals and incidental costs – R548 (previously R522) for each day.
+• Overseas travel:
+Actual accommodation plus a prescribed amount based on the relevant country (which
+amount will be provided in the IAC if it differs from the amount listed in the Regulation in
+the SAICA Student Handbook).
+13
+--- page 14 ---
+TRANSFER DUTY (Section 2(1)(b) of the Transfer Duty Act)
+In respect of acquisition of property on or after 1 March 2020:
+Value of property (R)  |  Rate
+0 – 1 100 000  |  0%
+1 100 001 – 1 512 500  |  3% of the value above R1 100 000
+1 512 501 – 2 117 500  |  R12 375 + 6% of the value above R1 512 500
+2 117 501 – 2 722 500  |  R48 675 + 8% of the value above R2 117 500
+2 722 501 – 12 100 000  |  R97 075 + 11% of the value above R2 722 500
+12 100 001 and above  |  R1 128 600 + 13% of the value above R12 100 000
+14

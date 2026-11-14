@@ -1,0 +1,417 @@
+--- page 1 ---
+TAXATION II
+(ACC3004W)
+NOVEMBER EXAM
+WEDNESDAY 6 NOVEMBER 2024
+(12:30 to 15:30)
+Marks: 113  |  Time: 3 hours
+PLEASE READ THE FOLLOWING INSTRUCTIONS CAREFULLY. STUDENTS MAY BE
+PENALISED FOR DISREGARDING THESE INSTRUCTIONS.
+ This paper consists of TWO questions (Question 1 has two parts, Question 2 has one part).
+ Answer all parts of the questions.
+ Answer each PART in a separate answer booklet (i.e. THREE books).
+ Answers must be written in blue or black ink. Answers (including workings) may not be written in
+pencil and/or red or green ink.
+ No Tippex, correction fluid or tape is allowed.
+ All workings must be shown clearly and legibly and handed in with your answers.
+ No questions will be answered by invigilators during the assessment. Make whatever assumptions
+you deem appropriate and clearly state these in your answer books. Any reasonable assumption
+will be considered.
+ This is a limited open book exam. Students are allowed the following: A guide through IFRS Parts
+A to B2, SAICA Members’ Handbooks Vol 2 to 3 and SAICA Student Handbook Vol 1 to 3. No
+writing is allowed in the permitted texts, but students may flag the permitted texts.
+ This paper has been set and internally reviewed by the College of Accounting staff and approved
+by an independent external examiner with appropriate disciplinary experience
+Suggested time
+Marks  |  (minutes)
+Question 1  |  72  |  115
+Question 2  |  41  |  65
+113  |  180
+THIS ASSESSMENT CONSISTS OF TWELVE (12) NUMBERED PAGES (INCLUDING THIS COVER PAGE)
+©2024 UCT, All Rights Reserved  |  1
+--- page 2 ---
+QUESTION 1  |  (72 MARKS; 115 MINUTES)
+This question consists of two parts
+Part A
+ClutterClear Solutions (Pty) Ltd (‘ClutterClear’ or ‘the company’) is a professional home organisation
+company that specialises in decluttering and optimising spaces for both residential and commercial
+clients. It is a South African company and a registered category B VAT vendor. The company was
+founded in 2015 by two friends, Amanda Ngidi (age 45) and Tshifhiwa Malange (age 47), who both
+have a passion for creating functional, aesthetically pleasing environments. Amanda and Tshifhiwa
+each hold 50% of the shares in the company.
+The company offers a range of services including personalised consultations, hands-on organising
+and the sale of customised storage solutions. With a growing client base and a reputation for
+transforming untidy spaces into orderly, stress-free environments, the company has expanded its
+operations nationally.
+The company has a financial year ending 31 December and has already calculated its taxable income
+for the current year of assessment to be R263 000 and its taxable supplies to be R550 000. However,
+it has a number of outstanding transactions detailed below for finalisation and advice thereon which
+have not yet been taken into account in the calculation of the taxable income and taxable supplies
+above.
+Recall and rebranding
+During the current year of assessment, the company launched a new line of branded storage
+containers. However, due to a labeling error, the containers were branded with incorrect weight
+capacity limits. This mistake posed a risk to customers, as the containers could be overloaded and
+potentially be broken. To mitigate the risk, the company decided to recall the faulty containers and
+replace them with correctly labeled ones. The recall and rebranding came at a significant cost of
+R1 300 000 to the company during the current year of assessment, which included costs such as
+printing new labels, shipping the recalled containers back to the warehouse, disposal of the faulty
+containers and replacing the faulty containers.
+Theft of motor vehicle
+On 1 August 2024, one of the delivery vehicles was stolen while parked outside after making a
+delivery. It was a single-cab delivery vehicle that was purchased on 1 July 2022. It was purchased
+new at a cost of R362 900 when the open market value was R360 000. The single-cab bakkie was
+insured and the insurance paid out an amount of R365 000. While this amount was used to purchase
+a new double-cab light delivery vehicle, the company had to pay in extra as the cost of the double-
+cab light delivery vehicle was R400 000 (which was equal to the open market value). The new bakkie
+was bought and brought into use on 1 September 2024.
+Services provided to shareholders
+Amanda and Tshifhiwa have never used the services of the company in their own homes as they
+were always able to keep their own homes organised and decluttered. However, Amanda has moved
+homes and does not have time to do all the organisation herself. She has used the services of the
+company. Tshifhiwa has said that the company will do it at no charge. However, Amanda wants to
+pay to avoid any negative tax consequences. She paid R10 000 for the service, when it would usually
+©2024 UCT, All Rights Reserved  |  2
+--- page 3 ---
+be charged R50 000, due to the size of her house and the number of rooms she wants organised.
+The service was provided in August 2024.
+Expansion into other countries
+ClutterClear has received an enquiry from a potential client in Namibia who is not a resident of South
+Africa to provide consulting services on their home in Namibia. The company is considering this option
+and if it works out, it will also consider expanding its business internationally to more clients and more
+countries. This will be accomplished by exporting its line of storage containers to various countries
+and offering virtual home organisation consultations to clients located outside of South Africa.
+Before it enters into this transaction with the client in Namibia, the company must assess the tax
+consequences of the transaction.
+The company is deciding whether one of its employees will go over to Namibia and provide the service
+or to provide the services virtually from South Africa by doing a Zoom call where they can see the
+clients home and advise over Zoom.
+Additional Information
+ All amounts include VAT where appropriate, unless stated otherwise or shown by the context.
+ All persons with whom ClutterClear Solutions (Pty) Ltd transacts with are VAT vendors unless
+stated otherwise and all valid VAT invoices are on hand.
+ Amanda Ngidi and Tshifhiwa Malange are not registered VAT vendors
+ Interpretation Note 47, read together with BGR7, allows a four-year write-off period for all
+qualifying assets.
+ ClutterClear Solutions (Pty) Ltd wishes to minimize its taxation position by taking advantage
+of any and all elective taxation provisions in any relevant Acts.
+ ClutterClear Solutions (Pty) Ltd is not a Small Business Corporation as defined.
+ ClutterClear Solutions (Pty) Ltd does not carry on a process of manufacture.
+©2024 UCT, All Rights Reserved  |  3
+--- page 4 ---
+REQUIRED
+MARKS
+QUESTION 1 (part A)  |  Sub-
+Total
+total
+1.1 Write a memorandum to the financial director of ClutterClear Solutions (Pty) Ltd
+discussing whether the recall and rebranding expenses will be deductible for
+ClutterClear Solutions (Pty) Ltd for its year of assessment ending 31 December
+2024.  |  7
+Communication – layout and structure  |  1  |  8
+1.2 Calculate, with supporting reasons, the normal tax effects of the single cab
+delivery vehicle and the double cab light delivery vehicle for the year of
+assessment ending 31 December 2024.  |  15  |  15
+1.3 Discuss the VAT consequences for ClutterClear Solutions (Pty) Ltd for the
+service provided to Amanda on the organising of her home.  |  7  |  7
+1.4 Discuss whether there will be normal tax and VAT consequences on the goods
+sold outside South Africa and the services provided outside South Africa for
+ClutterClear Solutions (Pty) Ltd.
+Additionally, briefly explain to ClutterClear Solutions (Pty) Ltd whether there will
+be any difference on the VAT consequences if the company provides the
+services from South Africa or in Namibia.  |  7
+In answering this question, you may assume that the 2024 legislation
+remains the same for the 2025 year of assessment.  |  8
+In answering this question, you can ignore any double tax agreements.
+Communication – logical argument  |  1
+1.5 While ClutterClear Solutions (Pty) Ltd is a registered category B VAT vendor,  |  5
+discuss whether they would be allowed to, and whether they would want to,
+deregister for VAT purposes.
+6
+Communication – logical argument  |  1
+TOTAL – part A  |  44
+©2024 UCT, All Rights Reserved  |  4
+--- page 5 ---
+Part B
+(Ignore VAT)
+Tshifhiwa Malange recently heard on the radio that it was “The Wills Week Campaign” in South
+Africa where free will drafting services are offered to the public to ensure that individuals can
+safeguard their estate and ensure that their assets are properly managed and distributed after
+death.
+Tshifhiwa has been married to her husband out of community of property since 2002, and they have
+two children, aged 20 and 17, so she wanted to make sure that if anything happens to her, her
+family will be taken care of. She decided to make an appointment to draft her will and also get some
+advice on any estate planning that she should consider.
+After meeting with the consultant, she decided to donate some of her assets to her family. On 1 July
+2024, Tshifhiwa made the following donations. Prior to this, she has never donated anything before.
+ She donated her Toyota Corolla to her oldest child so that he had a car to get to university
+and not have to rely on her or her husband to drop him off. She had bought the car in 2019
+for R350 000 and the car had a market value of R200 000 on the date of the donation.
+ She donated an apartment situated in Zimbabwe to her children in equal shares. She had
+inherited the apartment from her late father (who was a resident of Zimbabwe) when he
+passed away in 2005. He had purchased the apartment in 2002 for R1 300 000. When she
+inherited it, the apartment had a market value of R1 500 000 (correctly translated) and at the
+date that she donated it, the value had increased to R3 200 000.
+ She donated her old laptop that she used for personal emails and watching series to a local
+orphanage, a registered Public Benefit Organisation. She bought the laptop for R12 500 in
+2020 and at the date of the donation it was worth R8 000.
+ She donated her collection of Kruger Rands worth R450 000 which she bought in 2014 for
+R340 000 to her mother.
+On 15 October 2024, Tshifhiwa was involved in a fatal accident on her way home from work. The
+following information relates to her estate:
+ Amanda Ngidi had taken out an insurance policy on Tshifhiwa’s life so that, in the event of
+her death, she could buy out Tshifhiwa’s shares in ClutterClear (Pty) Ltd. The policy paid out
+R1 000 000 to Amanda. Amanda had made all the contributions of R300 000 (inclusive of
+interest at 6% of R54 455) towards this policy and Tshifhiwa had never made any
+contributions.
+ The shares in ClutterClear (Pty) Ltd were to be sold to Amanda during the course of
+liquidation of the deceased estate. The shares had a market value of R1 800 000 at death
+and were sold to Amanda for R1 600 000.
+ Tshifhiwa and her husband took out a domestic life policy after entering into their marriage.
+The policy on her life paid out an amount of R3 000 000 to her husband after her death. Her
+husband paid all the premiums relating to this policy, amounting to R500 000. Interest
+calculated on the premiums at 6% amounted to R81 417.
+ Her primary residence, that she and her family had been living in for the past few years
+which was in Claremont Cape Town, was left to her husband. Tshifhiwa bought the house in
+2012 for R2 500 000 and at the date of her death it was valued at R5 600 000.
+ Her holiday home in Langebaan, Western Cape, was to be sold and the proceeds split
+equally between her two children. Tshifhiwa bought the house in 2017 for R3 200 000 and at
+the date of her death it was valued at R4 200 000. The executor sold it for R2 500 000 in the
+course of liquidation of her estate.
+©2024 UCT, All Rights Reserved  |  5
+--- page 6 ---
+ The executor of Tshifhiwa’s estate paid out the following expenses out of the cash in the
+estate:
+o South African debts due
+ Normal tax owing at the date of death – R437 550
+ Donations tax owing at the date of death – R70 000
+o Deathbed and Funeral expenses – R90 000
+o Executor and Valuator fees – R170 000
+REQUIRED
+MARKS
+QUESTION 1 (part B)  |  Sub-
+Total
+total
+1.6 Discuss, with supporting calculations, the tax consequences of the items that
+Tshifhiwa Malange donated during the current year of assessment.
+17
+In answering this question, you do not have to include when the tax is
+payable. You can also assume that these are the only disposals she made
+in the current year.  |  18
+Communication – logical argument
+1
+1.7 Calculate, with supporting reasons, the Estate Duty that would be payable to
+SARS due to Tshifhiwa Malange’s death.  |  10  |  10
+In answering this question, you can ignore capital gains tax
+consequences
+TOTAL – part B  |  28
+©2024 UCT, All Rights Reserved  |  6
+--- page 7 ---
+QUESTION 2  |  (41 MARKS; 65 MINUTES)
+Saarah Williams, aged 45, is a South African resident who has been employed as a departmental
+manager at the University in Cape Town (UCT). Saarah started working for this department in 2007
+as an administrative assistant and has worked her way up to departmental manager. Saarah is
+married out of community of property to Steven Williams and they have three children.
+The following information is relevant to Saarah’s employment at UCT for the 2024 year of assessment:
+Details  |  Monthly amount
+Salary  |  R52 000
+Allowance
+ One of the roles of being departmental manager is managing and R5 000
+overseeing all the administrative staff. Once a month, Saarah is
+responsible for doing something special for the administrative staff
+to show that they are appreciated. This could include going for
+lunch or doing team-building activities on or off campus.
+ In terms of her employment contract, she is required to organise
+these activities and let the head of department know in advance
+what activity she is planning, provide a budget and then to account
+for the activity after the activity has taken place.
+ During the current year of assessment, Saarah spent a total of
+R57 500 on these activities, she provided the receipts to the head
+of department and refunded the amount that she did not spend.
+Watch
+ In the current year, UCT gave all employees who have been
+working at the university for more than 10 years an Apple watch.
+Saarah received one as she has been working at the university ?
+since 2007. This was the first time that she had received a gift like
+this.
+ The watches were bought by UCT for the employees at a cost of
+R7 500 each. This amount is after UCT received a bulk discount
+on purchase. The watch is usually sold for R8 500.
+Membership of medical aid fund
+ All employees are required to be a part of the DiscoverMe Medical
+Aid Fund unless they are on their spouse’s medical aid  |  R5 500
+ Saarah’s contributions covered her, Steven and their children for
+the year
+ UCT matches employee contributions in a ratio of 1:1
+Sanlam pension fund contributions
+ Employees are required to belong to UCT’s pension fund  |  R4 500
+ The university matches employees’ contributions in a ratio of 1:1
+Rental of apartment
+ Saarah’s house was damaged during a storm; her bedroom and
+her kids’ bedrooms were flooded and they had to move out for one
+month while it was being repaired.  |  ?
+©2024 UCT, All Rights Reserved  |  7
+--- page 8 ---
+ To accommodate Saarah and her family, UCT rented a three-
+bedroom furnished apartment in Rondebosch for R18 000 for the
+month and allowed Saarah and her family to stay in the apartment
+rent free. The rent paid by the employer included the costs of water
+and electricity supplied to the apartment.
+Further studies
+ UCT allows employees, their spouses or their children to study for ?
+free at the University
+ Saarah’s oldest child started studying law at the university this
+year. The tuition fee is usually R50 000 for first year.
+ModestChic Designs
+Saarah has always had a passion for sewing and when she could not find affordable modest
+clothing in the shops, she decided to start sewing and making her own clothing. More and more
+people started asking her where she buys her clothes and thereafter, family and friends encouraged
+her to start her own clothing line. She launched her business as a sole proprietor, ModestChic
+Designs in 2022 and it has been growing since then. She is a registered category B VAT vendor.
+For the current year of assessment, she had gross income and tax-deductible expenditure of
+R960 000 and R435 000 respectively, before taking the below into account:
+1. On 1 August 2022, she bought a sewing machine from her friend (who is a non-vendor) for
+R6 500 and brought it into use on that date. As she bought it from her friend, her friend sold
+it to her for less than its open market value of R8 000. The sewing machine was in good
+condition and Saarah is still using the same sewing machine to date.
+2. Due to the demand of her clothes increasing, she was not able to do everything alone as she
+was also employed on a full time basis at another job. She has hired one employee, to assist
+her with the administration such as taking orders, packing the orders and shipping the orders
+however she still does the actual sewing herself at night and on the weekends. She pays the
+employee R7 500 per month.
+3. When she opened the business, she turned the guest room of her house into her sewing
+room. She equipped the guest room with two desks, one she uses for designing and cutting
+her patterns and the other she uses for her sewing machine. She hired a carpenter to put in
+built in cupboards where she can store the finished items before they get shipped. She has
+all her fabric and cutting tools in the room. She has an iron and ironing board to press seams
+and finish garments. She only uses this room for her sewing business. All this equipment
+has already been taken into account in the tax-deductible expenditure above. This room
+accounts for 25% of her house. Luckily this room was not damaged in the storm and Saarah
+could continue using it during the time they moved out of their home.
+4. She incurs the following expenses relating to her home and family:
+ Instalment on her home mortgage (R14 230.33 per month of which R10 946.11
+relates to interest).
+ Water and electricity (R7 500 per month).
+ Petrol expenses (R5 000 per month which is for dropping the kids at school, fetching
+the kids from school, going to do shopping and outings on the weekends).
+ Going out for family suppers once a week (R3 000 per month).
+ Everything else relating to her home and family are paid by her husband.
+©2024 UCT, All Rights Reserved  |  8
+--- page 9 ---
+Saarah was recently chatting to a friend who told her that she should take advantage of certain
+expenditure and “write it off” as tax deductions in her business to lower her taxable income. Her
+friend said she should deduct all the expenses and disguise it as business expenses as SARS
+would never know. Saarah does not know much about tax but to her, this did not sound right and so
+she has approached you as a tax consultant to ask whether she is allowed to do this.
+Growth of her business
+Effective 1 March 2024, Saarah resigned from her job at UCT to focus on growing ModestChic
+Designs. She needed bigger premises from which to operate. She saw a property on Prop25 that
+would be suitable. The rental for the property is R15 000 per month (excluding VAT). She has
+money saved up and the agent has agreed that she will get a discount of R500 per month
+(excluding VAT) if she pays upfront for the first year.
+She entered into the lease agreement on 1 November 2024 for 10 years and paid the full amount
+for one year of R174 000 on 1 November 2024. She will need to perform a few improvements to
+make the property suitable for her and this has been approved by inclusion in the lease agreement.
+The landlord and her have agreed on improvements of R150 000 (excluding VAT). The
+improvements were completed on 1 December 2024 at a cost of R170 000.
+Additional Information
+ All amounts include VAT where appropriate, unless stated otherwise or shown by the context.
+ All persons with whom Saarah Williams transacts with are VAT vendors unless stated
+otherwise and all valid VAT invoices are on hand.
+ Interpretation Note 47, read together with BGR7, allows a four-year write off period for all
+qualifying assets.
+ Saarah wishes to minimize her taxation position by taking advantage of any and all elective
+taxation provisions in any relevant Acts.
+ Sewing of clothes is not considered a process of manufacture by SARS.
+ Saarah’s remuneration proxy for the 2024 year of assessment is R560 000.
+©2024 UCT, All Rights Reserved  |  9
+--- page 10 ---
+REQUIRED
+QUESTION 2  |  MARKS
+Sub- Total
+total
+2.1  |  Explain to Saarah Williams, using taxation legislation in the Income Tax Act
+No. 58 of 1962, whether the statement from her friend is true and whether or  |  6
+not she will be able to deduct those expenses.
+1  |  7
+Communication – logical argument
+2.2  |  Calculate, with reasons, Saarah Williams’ taxable income for the 2024 year of
+assessment.  |  22  |  22
+2.3  |  Discuss, with supporting calculations, the normal tax effects of Saarah
+Williams entering into the lease agreement for the new property for her year
+of assessment ending 28 February 2025.  |  11
+In answering this question, you may assume that the 2024 legislation
+remains the same for the 2025 year of assessment.
+Communication – logical argument  |  1  |  12
+TOTAL – QUESTION 2  |  41
+©2024 UCT, All Rights Reserved  |  10
+--- page 11 ---
+MONETARY CHANGES - 2024
+Applicable in respect of years of assessment commencing on or after 1 March 2023 (i.e.
+2024 year of assessment) – unless specifically stated otherwise
+REBATES (section 6)
+Primary rebate increases from R16 425 to R17 235;
+Secondary rebate increases from R9 000 to R9 444;
+Tertiary rebate increases from R2 997 to R3 145
+MEDICAL REBATES (section 6A)
+Benefits to the taxpayer: R364;
+Benefits to the taxpayer and one dependant: R728;
+Benefits to each additional dependant: R246
+RESIDENTIAL ACCOMMODATION (paragraph 9 of the Seventh Schedule)
+Symbol B of R87 300 increases to R95 750.
+RATES OF NORMAL TAX
+ In respect of the taxable income (excluding any retirement fund lump sum benefit,
+retirement fund lump sum withdrawal benefit or severance benefit) of natural persons,
+estates and special trusts
+Taxable Income (R)  |  Rate of Tax
+0 – 237 100  |  18% of taxable income
+237 100 – 370 500  |  42 678 + 26% of taxable income above 237 100
+370 501 – 512 800  |  77 362 + 31% of taxable income above 370 500
+512 801 – 673 000  |  121 475 + 36% of taxable income above 512 800
+673 001 – 857 900  |  179 147 + 39% of taxable income above 673 000
+857 901 – 1 817 000  |  251 258 + 41% of taxable income above 857 900
+1 817 001 and above  |  644 489 + 45% of taxable income above 1 817 000
+ In respect of the taxable income of any company which qualifies as a small business
+corporation as defined in section 12E of the Income Tax Act, in respect of any year of
+assessment ending any date between 1 April 2023 and 31 March 2024.
+Taxable Income (R)  |  Rate of Tax
+0 – 95 750  |  0% of taxable income
+95 751 – 365 000  |  7% of the amount above R95 750
+365 001 – 550 000  |  R18 848 + 21% of the amount above R365 000
+550 001 and above  |  R57 698 + 27% of the amount above R550 000
+©2024 UCT, All Rights Reserved  |  11
+--- page 12 ---
+TRAVEL ALLOWANCE
+Where the value of the vehicle (R) -  |  Fixed cost  |  Fuel  |  Maintenanc
+cost  |  e cost
+(R p.a.)  |  (c/km)
+(c/km)
+does not exceed R100 000  |  33 760  |  141.5  |  43.8
+exceeds R100 000 but does not exceed R200 000  |  60 329  |  158.0  |  54.8
+exceeds R200 000 but does not exceed R300 000  |  86 958  |  171.7  |  60.4
+exceeds R300 000 but does not exceed R400 000  |  110 554  |  184.6  |  65.9
+exceeds R400 000 but does not exceed R500 000  |  134 150  |  197.6  |  77.5
+exceeds R500 000 but does not exceed R600 000  |  158 856  |  226.6  |  91.0
+exceeds R600 000 but does not exceed R700 000  |  183 611  |  230.5  |  102.1
+exceeds R700 000 but does not exceed R800 000  |  209 685  |  234.3  |  113.1
+exceeds R800 000  |  209 685  |  234.3  |  113.1
+Alternative fixed rate for certain reimbursive travel allowances: 464 cents per kilometer
+(previously 418 cents)
+SUBSISTENCE ALLOWANCE
+ Local travel:
+o  |  Allowance for incidental costs only – R161 (previously R152) for each day.
+o  |  Allowance for meals and incidental costs – R522 (previously R493) for each day.
+ Overseas travel:
+o  |  Actual accommodation plus a prescribed amount based on the relevant country
+(which amount will be provided in the ITC if it differs from the amount listed in the
+Regulation in the SAICA Student Handbook).
+TRANSFER DUTY (Section 2(1)(b) of the Transfer Duty Act)
+In respect of acquisition of property on or after 1 March 2020:
+Value of property (R)  |  Rate
+0 – 1 100 000  |  0%
+1 100 001 – 1 512 500  |  3% of the value above R1 100 000
+1 512 501 – 2 117 500  |  R12 375 + 6% of the value above R1 512 500
+2 117 501 – 2 722 500  |  R48 675 + 8% of the value above R2 117 500
+2 722 501 – 12 100 000  |  R97 075 + 11% of the value above R2 722 500
+12 100 001 and above  |  R1 128 600 + 13% of the value above R12 100 000
+©2024 UCT, All Rights Reserved  |  12

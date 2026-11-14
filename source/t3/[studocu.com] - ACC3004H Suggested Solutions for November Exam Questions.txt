@@ -1,0 +1,118 @@
+--- page 1 ---
+Z Z PROP PROP suggested suggested solution solution
+Taxation Taxation II II (University (University of of Cape Cape Town) Town)
+Scan Scan to to open open on on Studocu Studocu
+--- page 2 ---
+ACC3004H November exam
+Suggested Solution - Question 2
+2.1 Donations tax payable
+Donation to a PBO  |  Exempt - s56(1)(h)  |  -  |  1
+Donation of her handbags  |  90 000  |  1
+Less general exemption  |  (90 000)  |  0,5
+Donation to her mother  |  Exempt - s56(2)(c)  |  -  |  1
+Donation of her home to her children  |  8 000 000  |  1
+Less: general exemption (remaining)  |  (10 000)  |  0,5
+Total value of donations  |  7 990 000
+Donations tax payable  |  x20%  |  1 598 000  |  1
+The donations tax relating to the house would have been due by 31 January 2022 and therefore still been outstanding at her
+death.  |  1
+Available  |  7
+Limited to  |  7
+2.2 A donation is a disposal in terms of the eighth schedule and Sibu will therefore have CGT consequences on the donations.  |  1
+The donation of the cash to the PBO and her mother does not have CGT consequences as money is not an asset in the 8th schedule  |  1
+The donation of her handbag is a personal use asset therefore the capital loss of (90000-120 000=R30 000) is disregarded  |  2
+Donation of her home
+The proceeds are equal to the market value at the date of the donation which is  |  8 000 000  |  1
+The base cost is the cost that she purchased it for of R5 500 000 plus the donations tax adjustment.  |  5 500 000  |  1
+The donations tax adjustment is R789 164.
+(Y= ((8000000-5500000)/8000000) x ((8000000-10000)x20%))  |  499 375  |  2
+This results in a capital gain of
+Capital gain  |  2 000 625
+The capital gain needs to be apportioned as she used a portion for trade for a few month  |  1
+Residential use Trade use
+Trade use: 2 000 625 x 7% x 8/120  |  1 991 289  |  9 336,25  |  2
+Residential use: 2 000 625 - 9 336
+Primary residence exclusion  |  (2 000 000)  |  -  |  1
+Capital gain  |  -  |  9 336
+This will be aggregated with her other capital gains and losses from other disposals during the year.  |  1
+Available  |  13
+Limited to  |  13
+2.3
+Salary  |  Gross income - para (c)  |  (144 000 x 11)  |  1 584 000  |  1
+Travel allowance  |  Actual allowance received  |  99 000  |  1
+Reduced by the deemed method
+The actual method is not available as she didn't keep a record and the simplified method cannot be used as
+this is not a reimbursive allowance  |  1
+Fixed cost  |  (156 711/15 760 x 337/365) x 100  |  918,08  |  1,5
+Fuel cost  |  172,40  |  0,5
+--- page 3 ---
+Maintenance cost  |  99,60  |  0,5
+Total deemed cost  |  1 190,08
+Reduction  |  (1190,08/100 x 8700)  |  (103 537)  |  -  |  1
+limited to allowance
+Laptop fringe benefit  |  Gross income - para (i)  |  (35 000 x 15% x 122/365)  |  1 755  |  1
+No value doesn't apply as not mainly used for business  |  0,5
+Home office expenditure  |  s11(a)  |  (19 600)  |  0,5
+Capital gains tax consequences
+Deemed disposals on death
+Life insurance - disregarded para 55 of the 8th schedule  |  -  |  1
+Shares  |  Proceeds - MV (45 000 + 56 000)  |  101 000  |  1
+Base cost (20 000 + 45 000)  |  (65 000)  |  1
+Capital gain  |  36 000
+Apartment  |  Proceeds - MV  |  3 500 000  |  0,5
+Base cost  |  (1 500 000)  |  0,5
+2 000 000
+Total capital gains  |  (0+ 9336 + 36 000 + 2 000 000)  |  2 045 336
+Less annual exclusion on death  |  (300 000)  |  1
+Net capital gain  |  1 745 336
+x40%  |  698 135  |  1
+Taxable income before 18A  |  2 264 289
+S18A donation  |  Actual  |  50 000  |  -50 000  |  1
+Limited to 10% x taxable income  |  226 429
+Taxable income  |  2 214 289
+Tax per the tables  |  (587 593 + 45% (2 189 289 - 1 656 600)  |  838 553  |  1
+Less: primary rebate  |  (15714 x 11/12)  |  (14 405)  |  1
+Normal tax  |  824 149
+Less: employees tax  |  (585 197)  |  0,5
+Normal tax payable  |  238 952
+Available  |  18
+Limited to  |  18
+2.4 VAT
+Since the laptop was purchased for the executives to use and the company makes both taxable and exempt supplies, the input tax
+would need to be apportioned
+Apportionement ratio = (21 892 410 + 15 540 000)/55 932 410 x 100 =67%  |  1
+Therefore input tax of (35 000 x 15/115 x 67%) = R3058 could be claimed on acquisition  |  0,5
+s18(3) deemed output on the fringe benefit requires apportionment and since she is involved in the company as a whole (to the
+extent used for taxable supplies)  |  0,5
+Output tax = 1 755 x 15/115 x 67%  |  153,371739  |  0,5
+Normal tax
+The company would be able to claim a s11(e) wear and tear allowance as the laptop is a moveable asset used in trade
+s11(e) is based on the lower of cost or market value (excluding actual VAT)/4  |  0,5
+s11(e) = (35 000-3058)/4  |  1
+The company would be able to claim a s11(a) on the irrecoverable VAT on this fringe benefit  |  1
+Communication mark - logical argument  |  1
+Available  |  6
+Limited to  |  6
+2.5 Estate Duty Payable
+--- page 4 ---
+Life Insurance Policy Proceeds (Bequeathed to spouse and children) -s3(3)(a)  |  7 500 000  |  1
+Not under an ante or post nuptial contract therefore deemed property
+Unlisted shares - valued at market value  |  45 000  |  1
+Listed shares - valued at
+price sold by executor  |  55 000  |  1
+Apartment in Zimbabwe  |  3 500 000 0,5
+Cash in bank accounts  |  1 250 000 0,5
+Less: allowable deductions
+Property left to surviving spouse - s4(q)  |  (3 750 000)  |  1
+(7 500 000 x 50%)
+Property outside the Republic, inherited from a person not resident - s4(e)  |  (3 500 000)  |  1
+Deathbed and funeral expenses - s4(a)  |  (90 000)  |  0,5
+Administration expenses - s4(c)  |  (75 000)  |  0,5
+Debts due - s4(b)
+Normal tax  |  (238 952)  |  1
+Donations tax - relating to her house  |  (1 598 000)  |  1
+Net value of estate  |  3 098 048
+Less: Abatement  |  (3 500 000 limited to value of estate)  |  (3 098 048)  |  1
+Dutiable amount of the estate  |  -
+Available  |  10
+Limited to  |  10

@@ -1,0 +1,53 @@
+QUESTION 1  |  (56 MARKS; 89 MINUTES)
+Brew & Bean (Pty) Ltd ('Brew & Bean' or 'the company') is a South African manufacturer of coffee machines, accessories and coffee beans. The company was incorporated in South Africa in 2014 and has since grown to become one of the largest manufacturers and distributors of coffee machines, accessories and coffee beans. The company has a 30 June year-end and is a registered category C VAT vendor. Zaid Dawood and Ibrahim Mahmood are the co-founders of the company, who met while studying Business Science at UCT and turned their shared love of coffee into Brew & Bean.
+
+Before incorporation of the company and while doing the research about the industry, the founders noticed that many aspiring baristas who wanted to start their own coffee businesses struggled to obtain financing to purchase commercial coffee machines or set up their businesses. To address this gap, Brew & Bean established a division to assist such start-ups by offering small business loans at affordable interest rates.
+
+Revenue Recognition (excluding VAT)
+Brew & Bean's revenue is made up of the following revenue streams for the current year of assessment:
+Sales of coffee machines  |  R58 199 800
+Sales of coffee machine accessories  |  R4 879 200
+Sales of coffee beans  |  R1 734 000
+Interest income on loans offered  |  R5 437 000
+Total  |  R70 250 000
+Brew & Bean sells its items for cash and on credit; however, it does not charge any interest income on the credit sales. The interest income earned relates solely to the loans given to small businesses. 75% of the sales made are on credit.
+
+The accountant has started with the tax return for the 2025 year of assessment but needs some assistance with the transactions below:
+
+Trade receivables and Allowance for Doubtful Debts
+The trade receivables balance as per the statement of financial position:
+  |  30 June 2025 (R)  |  30 June 2024 (R)
+Trade receivables  |  R34 919 880  |  R27 935 904
+Allowance for doubtful debts  |  R10 475 964  |  R8 380 771
+Of the total outstanding debts as at 30 June 2025, 30% was considered to be doubtful, of which 20% related to lifetime expected credit losses.
+The bad debts per the statement of comprehensive income for 2025 is R10 354 666. This includes the movement in allowance for doubtful debts.
+In the prior year of assessment, the company claimed a deduction of R2 346 616 relating to the allowance for doubtful debts.
+
+Assets
+New multifunction printer
+• On 1 February 2025, the company purchased a new multifunction printer and scanner for R45 000, which was the open market value at that date. The printer was brought into use on the same day and was used in the administration department of the company. After several weeks of ongoing technical issues, the company decided to sell the printer. The printer was sold on 15 June 2025 for R30 000, which was the open market value at that date. The company decided not to replace the printer as it still had its old printer, which could be used.
+
+Purchase of factory building
+• During the current year of assessment, the company needed to purchase another factory as the company was growing. The factory was purchased on 1 July 2024 for R5 500 000 when the open market value was R5 300 000. The reason that the company was willing to pay more than the open market value was that the factory was in the same area as the other factory. The factory was purchased from Premium Global Brands (a non-VAT vendor), which claimed an allowance of 10%. The company paid the total cost in 4 equal monthly instalments starting on 1 July 2024. The factory was registered in the deeds office on 1 September 2024 and was brought into use on the same date. The factory was used entirely for the manufacture of goods, as the administration department was located in another building.
+
+Trading stock
+Demo models
+• A few of the coffee machines manufactured each year are used as demo models, where customers can come and test out the models before purchasing a new one. The demo models are used for that purpose for 6 months and sold thereafter. On 1 March 2025, one of the demo coffee machines was distributed to one of the shareholders, Zaid Dawood, as a dividend in specie. The coffee machine was manufactured at a total cost of R4 600 during the 2024 year of assessment and had an open market value of R20 500 at the date the dividend was declared.
+
+Donations made to the company
+• On 20 June 2025, a new local coffee bean supplier donated a batch of premium beans to the company to test whether it would be a new product that the company could sell. The open market value of the beans at the date of the donation was R150 000, and it had cost the supplier R70 000. None of the beans were sold by the end of the year of assessment and had an open market value of R145 000 at year-end. SARS was in agreement with the write-down.
+
+Insurance
+Brew & Bean insures all its business assets (including vehicles, coffee equipment, office equipment and inventory) under a comprehensive business insurance policy. The company pays a monthly premium of R65 000 which covers loss or damage to these assets.
+On 10 November 2024, one of Brew & Bean's branded single-cab bakkies that was used for delivery was involved in an accident after dropping coffee beans off at a client. The delivery van had originally been purchased new on 1 October 2022 for R380 000.
+Due to the accident, the delivery van's left door was severely damaged and had to be replaced. The total cost to fix the vehicle amounted to R25 000, of which R18 000 related to the replacement door and R7 000 to spray painting and labour. While the van was at the mechanic, the company decided to install an upgraded tracking and security system at a cost of R15 000.
+The insurance company paid out R20 000 as compensation for the accident.
+
+Additional Information
+• All amounts include VAT where appropriate, unless stated otherwise or shown by the context.
+• All persons with whom Brew & Bean (Pty) Ltd transacts are VAT vendors unless stated otherwise, and all valid VAT invoices are on hand.
+• Zaid Dawood and Ibrahim Mahmood are not registered VAT vendors.
+• Interpretation Note 47, read together with BGR7, allows a four-year write-off period for all qualifying assets.
+• Brew & Bean (Pty) Ltd wishes to minimise its taxation position by taking advantage of any and all elective taxation provisions in any relevant Acts.
+• Brew & Bean (Pty) Ltd is not a Small Business Corporation as defined.
+• The manufacture of coffee machines, accessories and coffee beans is considered to be a process of manufacture.
