@@ -145,6 +145,10 @@ textarea#answer{background-image:repeating-linear-gradient(transparent 0 23px,va
 .opt{display:flex;gap:8px;align-items:baseline;padding:5px 8px;border-radius:6px;cursor:pointer}
 .opt.ok{background:var(--good-soft);color:var(--good)} .opt.bad{background:var(--pen-soft);color:var(--pen)}
 .quiz .why{margin-top:8px;font-size:14px;color:var(--muted)}
+.quiz .qa{width:100%;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);color:inherit;font:inherit}
+.quiz .yours{padding:6px 10px;border-radius:6px}
+.quiz .yours.ok{background:var(--good-soft);color:var(--good)} .quiz .yours.bad{background:var(--pen-soft);color:var(--pen)}
+.quiz .flip{margin-top:8px}
 .hint{font-size:13px;color:var(--muted)}
 dialog#keyDlg{border:1px solid var(--rule);border-radius:12px;background:var(--sheet);color:var(--ink);max-width:520px;width:calc(100% - 32px);padding:20px 22px}
 dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
@@ -231,6 +235,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 <script>
 const PAPERS = /*__DATA__*/null;
 const TOPICS = /*__TOPICS__*/null;
+const QUIZ = /*__QUIZ__*/null;   // quick-quiz question bank, by section id (source/quiz_bank.py)
 const topicName = id => (TOPICS.find(x => x.id === id) || {}).name || id;
 function topicItems(tid){ const out = []; PAPERS.forEach(p => p.questions.forEach((q, qi) => q.parts.forEach((pt, pi) => { if ((pt.topics || []).includes(tid)) out.push({ p, qi, pi, pt }); }))); return out; }
 // Section test order: shortest required first, building up to the longest
@@ -281,7 +286,6 @@ const onWeb = /^https?:$/.test(location.protocol) && !window.claude;
   if (!onWeb) { try { if (window.claude?.use) sample = await window.claude.use("sample"); } catch { sample = null; } }
   sampleReady = true; $("#keyBtn").hidden = !!sample;
   if (view.paper && document.getElementById("right")) renderRight();
-  else if (view.quiz) renderQuiz(view.quiz);
 })();
 const backend = () => sample ? "claude-artifact" : byok ? "byok" : api ? "api" : null;
 const canMark = () => !!backend();
@@ -497,7 +501,7 @@ function renderHome(){
     ${weakHTML()}
     <section class="topics" aria-labelledby="topicsH">
       <h2 id="topicsH">Practise by section</h2>
-      <div class="hint">Pick a section for a quick quiz, then every required on it across all the papers, shortest first.</div>
+      <div class="hint">Pick a section for a quick quiz on the rules, then every required on it across all the papers, shortest first.</div>
       <div class="topicgrid">${TOPICS.map(tp => { const items = topicItems(tp.id); const done = items.filter(x => best(x.p, x.pt) !== null).length;
         return `<button class="tbtn" data-t="${tp.id}">${esc(tp.name)} <span class="n">${done}/${items.length}</span></button>`; }).join("")}</div>
     </section>
@@ -543,7 +547,7 @@ function renderTopic(tid){
   $("#app").innerHTML = `<div class="home">
     <div><h2 class="sec">${esc(topicName(tid))}</h2>
       <div class="hint">${items.length} requireds · ${tot} marks · best so far <span class="mono">${fmt(got)} / ${tot}</span>. ${(s => s.pct === null ? "" : ` Section score <span class="mono">${Math.round(s.pct * 100)}%</span>.`)(topicStats(tid))}</div>
-      <div class="hint">Section test: start with the quick quiz, then work up from the shortest required to the longest. Or pick any required below.</div></div>
+      <div class="hint">Section test: start with the quick quiz (short type-in questions on the rules, not taken from the papers), then work up from the shortest required to the longest. Or pick any required below.</div></div>
     <div class="row"><button class="btn primary" id="tquiz">Quick quiz</button><button class="btn" id="tlong">Longer questions, shortest first</button><button class="btn" id="tstart">Paper order</button><button class="btn" id="tback">All sections</button></div>
     <div class="tlist">${items.map((x, i) => { const b = best(x.p, x.pt);
       return `<button class="titem" data-i="${i}"><span class="src">${esc(x.p.short)} · ${esc(x.pt.id)}</span><span class="req">${esc(x.pt.required.replace(/\s*\n\s*/g, " "))}</span>
@@ -558,96 +562,75 @@ function renderTopic(tid){
   $("#tback").onclick = () => go("");
 }
 
-/* ---------- quick quiz ---------- */
-let quizBusy = false;
-const QUIZ_ERR = {
-  rate_limited: "You've hit a usage limit. Wait a bit, then try again.",
-  invalid_json: "The quiz came back garbled. Try again.",
-  access_code: "That access code was wrong. Try again and re-enter it.",
-  bad_key: "Your AI key was rejected. Open AI key (top right) and check it.",
-  not_granted: "Claude wasn't allowed to write a quiz on this page.",
-};
-function quizPrompt(tid){
-  let src = "";
-  for (const x of topicItems(tid).slice().sort(() => Math.random() - .5)){
-    const block = `--- ${x.p.short} ${x.pt.id} (${x.pt.marks} marks) ---\nREQUIRED: ${x.pt.required}\nSUGGESTED SOLUTION:\n${x.pt.memo}\n\n`;
-    if (src && src.length + block.length > 45000) break;
-    src += block;
-  }
-  return `You are setting a quick revision quiz for a University of Cape Town student preparing for ACC3004W Taxation II (South African tax).
-
-Section being tested: ${topicName(tid)}
-
-Below are past exam requireds and their suggested solutions that touch this section. Use them as your source for what gets examined and for the correct South African tax treatment. Some solutions also cover other sections; ignore those parts.
-
-Write 8 multiple-choice questions on this section only. Each question tests one rule, rate, threshold, definition or treatment that the solutions rely on, and has to make sense by itself: put any facts and amounts it needs inside the question, and never refer to "the scenario", a paper, or a person or company from the sources. Mix quick recall questions with a few short applications or one-step calculations. Each question has exactly 4 options with one correct answer; make the wrong options the mistakes students commonly make, and vary which position holds the correct answer. If the sources don't settle a point, leave that point out rather than guess.
-
-Reply with JSON only, in this shape:
-{"questions":[{"q":"question text","options":["...","...","...","..."],"answer":0,"why":"one or two sentences explaining the correct answer, naming the section of the Act where the sources give it"}]}
-"answer" is the index (0 to 3) of the correct option.
-
-SOURCES
-${src}`;
+/* ---------- quick quiz: short type-in questions from the question bank ---------- */
+const QUIZ_LEN = 8;
+// Every number in a typed answer: "R17 235", "17,235", "27,5%", "R1.25 million" (million/m/k only when a large answer is expected)
+function numsIn(text, big){
+  const t = String(text).replace(/(\d)\s+(?=\d{3}(?!\d))/g, "$1").replace(/(\d),(?=\d{3}(?!\d))/g, "$1").replace(/(\d),(\d)/g, "$1.$2");
+  const out = [...t.matchAll(/(\d+(?:\.\d+)?)\s*(million|mil\b|m\b|k\b)?/gi)].map(m =>
+    parseFloat(m[1]) * (!big || !m[2] ? 1 : /^k$/i.test(m[2]) ? 1e3 : 1e6));
+  ["zero|nil|none|nothing", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"].forEach((w, n) => { if (new RegExp("(^|[^a-z])(" + w + ")([^a-z]|$)", "i").test(t)) out.push(n); });
+  return out;
 }
-async function genQuiz(tid){
-  if (backend() === "api" && api.codeRequired && !getCode()){
-    $("#qzMsg").innerHTML = `<div class="fb"><div>This site's AI is protected by an access code (the ACCESS_CODE you set in Vercel).</div>
-      <div class="selfmark"><label for="codeIn">Access code</label><input id="codeIn" type="password" style="width:180px" value=""><button class="btn small primary" id="codeSave">Save</button></div></div>`;
-    $("#codeSave").onclick = () => { setCode($("#codeIn").value.trim()); if (getCode()) genQuiz(tid); };
-    return;
-  }
-  quizBusy = true; renderQuiz(tid);
-  let err = "";
-  try {
-    const f = await markJSON(quizPrompt(tid));
-    const qs = (Array.isArray(f?.questions) ? f.questions : []).filter(q => q && typeof q.q === "string" && Array.isArray(q.options) && q.options.length === 4
-      && Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 4).slice(0, 8).map(q => ({ q: q.q, options: q.options.map(String), answer: q.answer, why: String(q.why || "") }));
-    if (qs.length < 4) throw { code: "invalid_json" };
-    quizRec(tid).set = { qs, picks: [], done: false }; save();
-  } catch (e) {
-    err = QUIZ_ERR[e?.code] || `Couldn't write the quiz${e?.message ? ": " + e.message : " (connection or service problem)"}. Try again.`;
-    if (e?.code === "access_code") setCode("");
-    if (e?.code === "not_granted") sample = null;
-  }
-  quizBusy = false;
-  if (view.quiz !== tid) return;
-  renderQuiz(tid);
-  if (err && $("#qzMsg")) $("#qzMsg").innerHTML = `<div class="notice">${esc(err)}</div>`;
+function autoMark(item, ans){
+  const a = String(ans || "").trim();
+  if (!a) return false;
+  if (item.n === undefined) return item.k.every(p => new RegExp(p, "i").test(a));
+  const tol = item.n >= 10000 ? item.n * 0.001 : 0.0011;
+  return numsIn(a, item.n >= 1e6).some(x => Math.abs(x - item.n) <= tol);
+}
+function newQuiz(tid){
+  const rec = quizRec(tid), seen = rec.seen || (rec.seen = {});
+  const rank = i => seen[i] === undefined ? 0 : seen[i] ? 2 : 1;   // not yet asked first, then last answered wrong, then right
+  const ids = (QUIZ[tid] || []).map((_, i) => i).sort(() => Math.random() - .5).sort((a, b) => rank(a) - rank(b)).slice(0, QUIZ_LEN);
+  rec.set = { ids, ans: [], ok: [], done: false }; save();
 }
 function renderQuiz(tid){
   view.quiz = tid; view.byMarks = false;
   $("#homeBtn").hidden = false; $("#crumb").textContent = topicName(tid) + " · quick quiz"; applyLayout();
   $("#app").className = "";
-  const rec = quizRec(tid), set = rec.set;
+  const bank = QUIZ[tid] || [], rec = quizRec(tid);
+  if (rec.set && (!Array.isArray(rec.set.ids) || rec.set.ids.some(i => !bank[i]))) rec.set = null;   // older or stale quiz
+  if (!rec.set && bank.length) newQuiz(tid);
+  const set = rec.set, known = Object.values(rec.seen || {}).filter(Boolean).length;
   const nav = `<button class="btn" id="qzLong">Longer questions, shortest first →</button><button class="btn" id="qzBack">Back to section</button>`;
   let body;
-  if (quizBusy) body = `<div class="fb"><div class="busy"><span class="dot"></span><span>Writing your quiz… this usually takes 20 to 60 seconds.</span></div></div>`;
-  else if (!set) body = !sampleReady ? "" : canMark()
-    ? `<div class="row"><button class="btn primary" id="qzNew">Write me a quiz</button>${nav}</div><div id="qzMsg"></div>`
-    : `<div class="notice">The quick quiz is written by the AI marker, which isn't available here. Open the site version, or add an AI key (top right). You can still do the longer questions.</div><div class="row">${nav}</div>`;
+  if (!set) body = `<div class="notice">There are no quick-quiz questions for this section yet.</div><div class="row">${nav}</div>`;
   else {
-    const right = set.qs.filter((q, i) => set.picks[i] === q.answer).length;
-    body = `${set.done ? `<div class="row"><span class="pill ${band(right, set.qs.length)}">${right} / ${set.qs.length}</span><span>${right === set.qs.length ? "Full marks. Try the longer questions next." : "Read the explanations below, then try the longer questions or a new quiz."}</span></div>` : ""}
-    <ol class="quiz">${set.qs.map((q, i) => `<li><div class="qq">${esc(q.q)}</div>${q.options.map((o, j) => {
-      const cls = !set.done ? "" : j === q.answer ? "ok" : set.picks[i] === j ? "bad" : "";
-      return `<label class="opt ${cls}"><input type="radio" name="qz${i}" value="${j}" ${set.picks[i] === j ? "checked" : ""} ${set.done ? "disabled" : ""}><span>${esc(o)}</span></label>`; }).join("")}
-      ${set.done ? `<div class="why"><strong>${set.picks[i] === q.answer ? "Correct." : "Not quite."}</strong> ${esc(q.why)}</div>` : ""}</li>`).join("")}</ol>
-    <div class="row">${set.done ? `<button class="btn primary" id="qzNew">New quiz</button>` : `<button class="btn primary" id="qzCheck">Check my answers</button>`}${nav}</div><div id="qzMsg"></div>`;
+    const right = set.ok.filter(Boolean).length, n = set.ids.length;
+    body = `${set.done ? `<div class="row"><span class="pill ${band(right, n)}">${right} / ${n}</span><span>Check the model answers. If the automatic marking got one wrong, change it with the button under that question.</span></div>` : ""}
+    <ol class="quiz">${set.ids.map((id, i) => { const it = bank[id], a = set.ans[i] || "";
+      return `<li><div class="qq">${esc(it.q)}</div>${!set.done
+        ? `<input class="qa" data-i="${i}" type="text" autocomplete="off" placeholder="Type your answer" aria-label="Answer ${i + 1}" value="${esc(a)}">`
+        : `<div class="yours ${set.ok[i] ? "ok" : "bad"}">${a.trim() ? "Your answer: " + esc(a) : "No answer"}</div>
+           <div class="why"><strong>${set.ok[i] ? "Correct." : "Not quite."}</strong> ${esc(it.a)}</div>
+           <button class="btn small flip" data-flip="${i}">${set.ok[i] ? "Mark as wrong" : "Mark as right"}</button>`}</li>`; }).join("")}</ol>
+    <div class="row">${set.done ? `<button class="btn primary" id="qzNew">New quiz</button>` : `<button class="btn primary" id="qzCheck">Check my answers</button>`}${nav}</div>`;
   }
   $("#app").innerHTML = `<div class="home"><div><h2 class="sec">${esc(topicName(tid))}: quick quiz</h2>
-    <div class="hint">Eight short questions written by the AI from the suggested solutions for this section. Your result feeds into your weakest sections.</div></div>${body}</div>`;
-  document.querySelectorAll(".quiz input").forEach(r => r.onchange = () => { set.picks[+r.name.slice(2)] = +r.value; save(); });
-  const on = (id, fn) => { const el = $(id); if (el) el.onclick = fn; };
-  on("#qzNew", () => genQuiz(tid));
+    <div class="hint">Short type-in questions on the rules and how to apply them. They are not taken from the past papers. ${bank.length ? `You have ${known} of the ${bank.length} questions in this section right so far; each quiz starts with the ones you haven't seen or got wrong.` : ""}</div></div>${body}</div>`;
+  const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
   on("#qzLong", () => startLong(tid));
   on("#qzBack", () => go("topic/" + tid));
+  on("#qzNew", () => { newQuiz(tid); renderQuiz(tid); window.scrollTo(0, 0); });
   on("#qzCheck", () => {
-    const left = set.qs.filter((q, i) => !Number.isInteger(set.picks[i])).length;
-    if (left){ $("#qzMsg").innerHTML = `<div class="notice">${left} question${left === 1 ? " is" : "s are"} still unanswered. Pick your best guess.</div>`; return; }
+    set.ok = set.ids.map((id, i) => autoMark(bank[id], set.ans[i]));
     set.done = true;
-    rec.runs.push({ at: Date.now(), right: set.qs.filter((q, i) => set.picks[i] === q.answer).length, n: set.qs.length });
+    set.ids.forEach((id, i) => { rec.seen[id] = set.ok[i]; });
+    rec.runs.push({ at: Date.now(), right: set.ok.filter(Boolean).length, n: set.ids.length });
     rec.runs = rec.runs.slice(-10); save();
     renderQuiz(tid); window.scrollTo(0, 0);
+  });
+  const inputs = [...document.querySelectorAll(".quiz .qa")];
+  inputs.forEach((el, i) => {
+    el.oninput = () => { set.ans[+el.dataset.i] = el.value; save(); };
+    el.onkeydown = e => { if (e.key === "Enter"){ e.preventDefault(); (inputs[i + 1] || $("#qzCheck")).focus(); } };
+  });
+  document.querySelectorAll(".quiz .flip").forEach(b => b.onclick = () => {
+    const i = +b.dataset.flip;
+    set.ok[i] = !set.ok[i]; rec.seen[set.ids[i]] = set.ok[i];
+    if (rec.runs.length) rec.runs[rec.runs.length - 1].right = set.ok.filter(Boolean).length;
+    save(); renderQuiz(tid);
   });
 }
 function topicNav(){

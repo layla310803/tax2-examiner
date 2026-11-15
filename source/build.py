@@ -299,29 +299,31 @@ tpl = open(os.path.join(TOOLS, "template.html"), encoding="utf-8").read()
 
 # ================= topic tags (for "Practise by topic") =================
 TOPICS = [
-  ("emp", "Employees' tax (PAYE)"),
-  ("fringe", "Fringe benefits (Seventh Schedule)"),
   ("ind", "Individuals: taxable income & normal tax"),
-  ("co", "Companies: deductions & taxable income"),
-  ("cap", "Capital allowances & recoupments"),
+  ("emp", "Employees' tax (PAYE)"),
+  ("loss", "Assessed losses"),
+  ("ed", "Estate duty"),
   ("vat", "VAT"),
+  ("cap", "Capital allowances & recoupments"),
+  ("lease", "Leases: premiums & improvements"),
+  ("fringe", "Fringe benefits (Seventh Schedule)"),
+  ("co", "Companies: deductions & taxable income"),
   ("cgt", "Capital gains tax"),
   ("don", "Donations tax"),
-  ("ed", "Estate duty"),
   ("intl", "Residence & foreign income"),
   ("eth", "Ethics & tax avoidance"),
 ]
 TAGS = {
-  "nov2025": {"1.1": "emp fringe", "1.2": "cgt ind", "1.3": "ind vat", "1.4": "ed", "2.1": "co", "2.2": "vat co cap",
+  "nov2025": {"1.1": "emp fringe", "1.2": "cgt ind", "1.3": "ind vat loss", "1.4": "ed", "2.1": "co lease", "2.2": "vat co cap",
               "2.3": "vat co fringe", "2.4": "vat co don", "2.5": "eth"},
   "jan2026": {"1.1": "vat co cap", "1.2": "vat cap", "1.3": "vat co", "1.4": "vat co", "1.5": "vat co cap",
               "2.1": "emp fringe", "2.2": "ind", "2.3": "ed", "2.4": "emp", "2.5": "vat fringe"},
   "stacked": {"1.1": "fringe co", "1.2": "ind emp", "1.3": "emp fringe", "1.4": "cgt", "1.5": "ind", "1.6": "ed"},
   "nov2024": {"1.1": "co", "1.2": "cap", "1.3": "vat", "1.4": "intl vat co", "1.5": "vat", "1.6": "don cgt", "1.7": "ed",
-              "2.1": "ind", "2.2": "ind", "2.3": "ind"},
+              "2.1": "ind", "2.2": "ind", "2.3": "ind lease"},
   "jan2025": {"1.1": "vat", "1.2": "don", "1.3": "co cap", "2.1": "emp fringe", "2.2": "vat fringe co", "2.3": "ind intl", "2.4": "emp"},
   "nov2021": {"1.1": "co", "1.2": "vat", "1.3": "vat", "1.4": "co cap", "1.5": "co eth", "2.1": "don", "2.2": "cgt",
-              "2.3": "ind", "2.4": "fringe vat co", "2.5": "ed"},
+              "2.3": "ind loss", "2.4": "fringe vat co", "2.5": "ed"},
   "rockit": {k: "vat" for k in ["1", "2", "3", "4", "5", "6"]},
   "gino": {"A": "ind fringe", "B": "emp"},
   "uhuru": {"1.1": "emp fringe", "1.2": "fringe ind", "1.3": "vat fringe", "1.4": "intl"},
@@ -335,8 +337,26 @@ for _p in papers:
             assert _tags, f"untagged {_p['id']} {_pt['id']}"
             assert set(_tags) <= _valid, _tags
             _pt["topics"] = _tags
+
+# ================= quick-quiz question bank =================
+import sys
+sys.path.insert(0, HERE)
+from quiz_bank import BANK
+assert set(BANK) <= _valid, set(BANK) - _valid
+def _q(item):
+    q, a, chk = item
+    out = {"q": q, "a": a}
+    if isinstance(chk, (int, float)): out["n"] = chk
+    else:
+        pats = [chk] if isinstance(chk, str) else list(chk)
+        for pat in pats: re.compile(pat)
+        out["k"] = pats
+    return out
+QUIZ_JSON = json.dumps({k: [_q(x) for x in v] for k, v in BANK.items()}, ensure_ascii=False).replace("</", "<\\/")
+print("quiz bank:", {k: len(v) for k, v in BANK.items()}, "total", sum(len(v) for v in BANK.values()))
+
 TOPICS_JSON = json.dumps([{"id": k, "name": n} for k, n in TOPICS], ensure_ascii=False)
 
 data = json.dumps(papers, ensure_ascii=False).replace("</", "<\\/")
-open(out, "w", encoding="utf-8").write(tpl.replace("/*__DATA__*/null", data).replace("/*__TOPICS__*/null", TOPICS_JSON))
+open(out, "w", encoding="utf-8").write(tpl.replace("/*__DATA__*/null", data).replace("/*__TOPICS__*/null", TOPICS_JSON).replace("/*__QUIZ__*/null", QUIZ_JSON))
 print("wrote", out, os.path.getsize(out))

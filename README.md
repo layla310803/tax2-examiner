@@ -31,6 +31,17 @@ An interactive past-paper examiner for UCT ACC3004W Taxation II. Pick a paper, a
 
 The past papers are UCT/Studocu material. Keep this repo private, and don't share the Vercel URL publicly.
 
+## Section tests and weakest sections
+
+Each section (Individuals, Employees' tax, Assessed losses, Estate duty, VAT, Capital allowances, Leases and the rest) has:
+
+- **Quick quiz:** eight short type-in questions on the rules and how to apply them. They come from the question bank in `source/quiz_bank.py`, not from the past papers, and work without any AI. Numbers are marked automatically; you can overrule the marking on any question.
+- **Longer questions, shortest first:** every past-paper required on that section, in order of marks.
+
+The home page ranks your sections weakest first, from your quiz results and your best mark on each required.
+
+The question bank uses the rates and thresholds for the 2025 and 2026 years of assessment. Update `source/quiz_bank.py` when they change, then rebuild.
+
 ## Rebuilding / adding papers
 
 Paper content lives in `source/` (`build.py`, `template.html`, the extracted paper texts and the generated memos in `source/generated/`).
