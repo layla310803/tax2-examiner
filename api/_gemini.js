@@ -12,6 +12,14 @@ export async function getModel() {
     .map(m => m.name.replace(/^models\//, "")).filter(n => /^gemini-[\d.]+-flash$/.test(n) || n === "gemini-flash-latest")
     .sort((a, b) => ver(b) - ver(a));
   list = names.length ? names : ["gemini-flash-latest"];
+  // Some listed models hang or are overloaded for a given key, so ping the newest few and keep the ones that answer.
+  const ping = m => fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`, {
+      method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": key },
+      body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: "Reply OK" }] }] }), signal: AbortSignal.timeout(12000) })
+    .then(r => r.ok).catch(() => false);
+  const cand = list.slice(0, 5), okv = await Promise.all(cand.map(ping));
+  const working = cand.filter((m, i) => okv[i]);
+  if (working.length) list = [...working, ...list.filter(m => !working.includes(m))];
   picked = list[0];
   return picked;
 }

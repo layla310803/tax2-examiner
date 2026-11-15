@@ -262,7 +262,16 @@ async function pickGeminiModel(key){
   const ver = n => parseFloat((n.match(/gemini-([\d.]+)/) || [])[1] || "0");
   names.sort((a, b) => ver(b) - ver(a));
   if (!names.length) throw { code: "upstream_error", message: "No Gemini Flash model is available to this key." };
-  return names[0];
+  // Some listed models hang or are overloaded for a given key: ping the newest few and use the newest that answers.
+  const ping = m => { const c = new AbortController(); const tm = setTimeout(() => c.abort(), 12000);
+    return fetch(`https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent`, { method: "POST", signal: c.signal,
+      headers: { "Content-Type": "application/json", "x-goog-api-key": key },
+      body: JSON.stringify({ contents: [{ role: "user", parts: [{ text: "Reply OK" }] }] }) })
+      .then(r => r.ok).catch(() => false).finally(() => clearTimeout(tm)); };
+  const cand = names.slice(0, 5), okv = await Promise.all(cand.map(ping));
+  const m = cand.find((x, i) => okv[i]);
+  if (!m) throw { code: "upstream_error", message: "Gemini didn't answer on any model just now (busy). Try again in a minute." };
+  return m;
 }
 async function byokCall(turns, { json = false, signal } = {}){
   const b = byok;
