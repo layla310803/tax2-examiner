@@ -31,6 +31,10 @@ An interactive past-paper examiner for UCT ACC3004W Taxation II. Pick a paper, a
 
 The past papers are UCT/Studocu material. Keep this repo private, and don't share the Vercel URL publicly.
 
+### Where the site deploys from
+
+The code lives in two private repos: `layla310803/tax2-examiner` and `YLP-Games/tax2-examiner`. Vercel deploys from the personal one, so push there for a change to reach the site. They do not sync on their own.
+
 ## Section tests and weakest sections
 
 Each section (Individuals, Employees' tax, Assessed losses, Estate duty, VAT, Capital allowances, Leases and the rest) has:
