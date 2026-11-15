@@ -296,6 +296,47 @@ for p in papers:
 
 out = sys.argv[1]
 tpl = open(os.path.join(TOOLS, "template.html"), encoding="utf-8").read()
+
+# ================= topic tags (for "Practise by topic") =================
+TOPICS = [
+  ("emp", "Employees' tax (PAYE)"),
+  ("fringe", "Fringe benefits (Seventh Schedule)"),
+  ("ind", "Individuals: taxable income & normal tax"),
+  ("co", "Companies: deductions & taxable income"),
+  ("cap", "Capital allowances & recoupments"),
+  ("vat", "VAT"),
+  ("cgt", "Capital gains tax"),
+  ("don", "Donations tax"),
+  ("ed", "Estate duty"),
+  ("intl", "Residence & foreign income"),
+  ("eth", "Ethics & tax avoidance"),
+]
+TAGS = {
+  "nov2025": {"1.1": "emp fringe", "1.2": "cgt ind", "1.3": "ind vat", "1.4": "ed", "2.1": "co", "2.2": "vat co cap",
+              "2.3": "vat co fringe", "2.4": "vat co don", "2.5": "eth"},
+  "jan2026": {"1.1": "vat co cap", "1.2": "vat cap", "1.3": "vat co", "1.4": "vat co", "1.5": "vat co cap",
+              "2.1": "emp fringe", "2.2": "ind", "2.3": "ed", "2.4": "emp", "2.5": "vat fringe"},
+  "stacked": {"1.1": "fringe co", "1.2": "ind emp", "1.3": "emp fringe", "1.4": "cgt", "1.5": "ind", "1.6": "ed"},
+  "nov2024": {"1.1": "co", "1.2": "cap", "1.3": "vat", "1.4": "intl vat co", "1.5": "vat", "1.6": "don cgt", "1.7": "ed",
+              "2.1": "ind", "2.2": "ind", "2.3": "ind"},
+  "jan2025": {"1.1": "vat", "1.2": "don", "1.3": "co cap", "2.1": "emp fringe", "2.2": "vat fringe co", "2.3": "ind intl", "2.4": "emp"},
+  "nov2021": {"1.1": "co", "1.2": "vat", "1.3": "vat", "1.4": "co cap", "1.5": "co eth", "2.1": "don", "2.2": "cgt",
+              "2.3": "ind", "2.4": "fringe vat co", "2.5": "ed"},
+  "rockit": {k: "vat" for k in ["1", "2", "3", "4", "5", "6"]},
+  "gino": {"A": "ind fringe", "B": "emp"},
+  "uhuru": {"1.1": "emp fringe", "1.2": "fringe ind", "1.3": "vat fringe", "1.4": "intl"},
+  "stirology": {"1.1": "co", "1.2": "co", "1.3": "vat fringe", "1.4": "co cap"},
+}
+_valid = {k for k, _ in TOPICS}
+for _p in papers:
+    for _q in _p["questions"]:
+        for _pt in _q["parts"]:
+            _tags = TAGS.get(_p["id"], {}).get(_pt["id"], "").split()
+            assert _tags, f"untagged {_p['id']} {_pt['id']}"
+            assert set(_tags) <= _valid, _tags
+            _pt["topics"] = _tags
+TOPICS_JSON = json.dumps([{"id": k, "name": n} for k, n in TOPICS], ensure_ascii=False)
+
 data = json.dumps(papers, ensure_ascii=False).replace("</", "<\\/")
-open(out, "w", encoding="utf-8").write(tpl.replace("/*__DATA__*/null", data))
+open(out, "w", encoding="utf-8").write(tpl.replace("/*__DATA__*/null", data).replace("/*__TOPICS__*/null", TOPICS_JSON))
 print("wrote", out, os.path.getsize(out))

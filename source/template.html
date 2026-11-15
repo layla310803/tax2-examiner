@@ -71,6 +71,22 @@ h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:
 .card ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
 .meter{height:6px;border-radius:3px;background:var(--rule);overflow:hidden}
 .meter>i{display:block;height:100%;background:var(--accent)}
+.topics h2,.home h2.sec{font-family:var(--font-display);font-size:20px;margin:0 0 4px}
+.topicgrid{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tbtn{border:1px solid var(--rule);background:var(--sheet);border-radius:999px;padding:7px 14px;cursor:pointer;font-size:14px;display:inline-flex;gap:8px;align-items:center}
+.tbtn:hover{border-color:var(--accent);color:var(--accent)}
+.tbtn .n{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.tlist{display:grid;gap:8px}
+.titem{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;cursor:pointer;text-align:left;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
+.titem:hover{border-color:var(--accent)}
+.titem .src{font-weight:600;white-space:nowrap}
+.titem .req{color:var(--muted);font-size:14px;grid-column:2;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.titem .sc{font-family:var(--font-mono);font-size:13px;white-space:nowrap}
+.titem .tags{grid-column:2;font-size:12px;color:var(--muted)}
+.topicbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 12px;margin-bottom:10px;border:1px solid var(--accent);background:var(--accent-soft);border-radius:8px;font-size:13px}
+.topicbar strong{color:var(--accent)}
+.tagline{font-size:12px;color:var(--muted);margin:-4px 0 8px}
+.sc .g{color:var(--good)} .sc .w{color:var(--warn)} .sc .c{color:var(--pen)}
 .status-line{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
 
 /* exam layout */
@@ -201,6 +217,9 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 
 <script>
 const PAPERS = /*__DATA__*/null;
+const TOPICS = /*__TOPICS__*/null;
+const topicName = id => (TOPICS.find(x => x.id === id) || {}).name || id;
+function topicItems(tid){ const out = []; PAPERS.forEach(p => p.questions.forEach((q, qi) => q.parts.forEach((pt, pi) => { if ((pt.topics || []).includes(tid)) out.push({ p, qi, pi, pt }); }))); return out; }
 const MIN_PER_MARK = 180/113;
 const $ = (s, el=document) => el.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -385,9 +404,15 @@ function renderDoc(text){
 /* ---------- routing / views ---------- */
 function go(hash){ if (location.hash !== "#" + hash) location.hash = hash; else route(); }
 function route(){
-  const id = location.hash.slice(1);
-  const paper = PAPERS.find(p => p.id === id);
-  if (!paper){ view.paper = null; renderHome(); return; }
+  const parts = location.hash.slice(1).split("/");
+  if (parts[0] === "topic" && TOPICS.some(x => x.id === parts[1])){ view.paper = null; view.topic = parts[1]; renderTopic(parts[1]); return; }
+  const paper = PAPERS.find(p => p.id === parts[0]);
+  if (!paper){ view.paper = null; view.topic = null; renderHome(); return; }
+  if (parts.length === 3){
+    const qi = +parts[1], pi = +parts[2];
+    if (paper.questions[qi]?.parts[pi]){ const moved = view.paper !== paper || view.q !== qi || view.p !== pi; view.paper = paper; view.q = qi; view.p = pi; if (moved){ view.tab = "scenario"; resetTimer(); } renderExam(); return; }
+  }
+  view.topic = null;
   if (view.paper !== paper){
     view.paper = paper; view.tab = "scenario";
     // resume at first part without an attempt
@@ -440,6 +465,13 @@ function renderHome(){
       <p>Pick a paper. You get <strong>one required at a time</strong>, with the full scenario beside it. Type your answer the way you would in the exam script, then submit it. The examiner marks it against the official memo, shows <strong>where you lost marks and why</strong>, and tells you which section to revise. You can then fix your answer and resubmit, or ask follow-up questions about the feedback.</p>
       <p>Your answers and scores are saved in this browser.</p>
     </div>
+    <section class="topics" aria-labelledby="topicsH">
+      <h2 id="topicsH">Practise by topic</h2>
+      <div class="hint">Every required on that topic, across all the papers.</div>
+      <div class="topicgrid">${TOPICS.map(tp => { const items = topicItems(tp.id); const done = items.filter(x => best(x.p, x.pt) !== null).length;
+        return `<button class="tbtn" data-t="${tp.id}">${esc(tp.name)} <span class="n">${done}/${items.length}</span></button>`; }).join("")}</div>
+    </section>
+    <h2 class="sec">Full papers</h2>
     <div class="cards">${PAPERS.map(p => {
       const pr = paperProgress(p);
       return `<button class="card" data-id="${p.id}">
@@ -451,6 +483,45 @@ function renderHome(){
       </button>`;}).join("")}</div>
   </div>`;
   document.querySelectorAll(".card").forEach(c => c.onclick = () => go(c.dataset.id));
+  document.querySelectorAll(".tbtn").forEach(b => b.onclick = () => go("topic/" + b.dataset.t));
+}
+
+function renderTopic(tid){
+  $("#homeBtn").hidden = false; $("#crumb").textContent = topicName(tid); applyLayout();
+  $("#app").className = "";
+  const items = topicItems(tid);
+  const got = items.reduce((a, x) => a + (best(x.p, x.pt) ?? 0), 0), tot = items.reduce((a, x) => a + x.pt.marks, 0);
+  $("#app").innerHTML = `<div class="home">
+    <div><h2 class="sec">${esc(topicName(tid))}</h2>
+      <div class="hint">${items.length} requireds · ${tot} marks · best so far <span class="mono">${fmt(got)} / ${tot}</span>. Pick one, or start at the first you haven't done; "Next in topic" then takes you through the rest.</div></div>
+    <div class="row"><button class="btn primary" id="tstart">Start practising</button><button class="btn" id="tback">All topics</button></div>
+    <div class="tlist">${items.map((x, i) => { const b = best(x.p, x.pt);
+      return `<button class="titem" data-i="${i}"><span class="src">${esc(x.p.short)} · ${esc(x.pt.id)}</span><span class="req">${esc(x.pt.required.split("\n")[0])}</span>
+        <span class="sc">${b === null ? `${x.pt.marks} marks` : `<span class="${band(b, x.pt.marks)}">${fmt(b)}</span> / ${x.pt.marks}`}</span>
+        <span class="tags">${x.pt.topics.filter(t => t !== tid).map(topicName).map(esc).join(" · ")}</span></button>`; }).join("")}</div>
+  </div>`;
+  const open = x => go(`${x.p.id}/${x.qi}/${x.pi}`);
+  document.querySelectorAll(".titem").forEach(b => b.onclick = () => { view.topic = tid; open(items[+b.dataset.i]); });
+  $("#tstart").onclick = () => { view.topic = tid; open(items.find(x => best(x.p, x.pt) === null) || items[0]); };
+  $("#tback").onclick = () => go("");
+}
+function topicNav(){
+  if (!view.topic || !view.paper) return "";
+  const items = topicItems(view.topic), i = items.findIndex(x => x.p === view.paper && x.qi === view.q && x.pi === view.p);
+  if (i < 0) return "";
+  return `<div class="topicbar"><span>Topic: <strong>${esc(topicName(view.topic))}</strong> · ${i + 1} of ${items.length}</span><span style="flex:1"></span>
+    <button class="btn small" id="tprev" ${i <= 0 ? "disabled" : ""}>← Previous in topic</button>
+    <button class="btn small" id="tnext" ${i >= items.length - 1 ? "disabled" : ""}>Next in topic →</button>
+    <button class="btn small" id="tlist">Topic list</button></div>`;
+}
+function wireTopicNav(){
+  if (!view.topic) return;
+  const items = topicItems(view.topic), i = items.findIndex(x => x.p === view.paper && x.qi === view.q && x.pi === view.p);
+  const to = x => { if (x) go(`${x.p.id}/${x.qi}/${x.pi}`); };
+  const a = $("#tprev"), b = $("#tnext"), c = $("#tlist");
+  if (a) a.onclick = () => to(items[i - 1]);
+  if (b) b.onclick = () => to(items[i + 1]);
+  if (c) c.onclick = () => go("topic/" + view.topic);
 }
 
 function fmt(n){ return (Math.round(n*10)/10).toString().replace(/\.0$/, ""); }
@@ -458,7 +529,7 @@ function cur(){ const q = view.paper.questions[view.q]; return {q, pt: q.parts[v
 
 function renderExam(){
   const paper = view.paper;
-  $("#homeBtn").hidden = false; $("#crumb").textContent = paper.title;
+  $("#homeBtn").hidden = false; $("#crumb").textContent = view.topic ? `${topicName(view.topic)} · ${paper.short}` : paper.title;
   $("#app").className = "exam";
   $("#app").innerHTML = `<section class="pane left" id="left" aria-label="Question paper"></section><div class="split" id="split" role="separator" aria-orientation="vertical" aria-label="Resize scenario panel" tabindex="0"></div><section class="pane right" id="right" aria-label="Answer"></section>`;
   renderLeft(); renderRight(); applyLayout(); wireSplit();
@@ -489,13 +560,14 @@ function renderRight(){
   const mins = Math.round(pt.marks * MIN_PER_MARK);
   const last = s.attempts[s.attempts.length - 1];
 
-  $("#right").innerHTML = `
+  $("#right").innerHTML = `${topicNav()}
     <nav class="partnav" aria-label="Requireds">${all.map(x => {
       const b = best(paper, x.pp); const cls = (x.qi===view.q && x.pi===view.p) ? "cur" : b===null ? "" : band(b, x.pp.marks);
       return `<button class="chip ${cls}" data-qi="${x.qi}" data-pi="${x.pi}" title="${b===null ? "Not attempted" : "Best: " + fmt(b) + "/" + x.pp.marks}">${esc(x.pp.id)}</button>`;}).join("")}</nav>
     <div class="qhead"><h2>Required ${esc(pt.id)}</h2><span class="marks">${pt.marks} marks · ${mins} min</span></div>
+    <div class="tagline">Topics: ${(pt.topics || []).map(topicName).map(esc).join(" · ")}</div>
     <div class="required">${esc(pt.required)}</div>
-    <label for="answer" class="hint">Your answer. Set calculations out like the exam: <span class="mono">Item | Reason/working | Amount</span>, one line each.</label>
+    <label for="answer" class="hint">Your answer.${prefs.markLayout ? ` Set calculations out like the exam: <span class="mono">Item | Reason/working | Amount</span>, one line each.` : ""}</label>
     ${prefs.markLayout ? "" : `<div class="hint" style="margin-bottom:6px">Content-only marking: write it any way you like (lines, bullets, shorthand). Layout isn't marked.</div>`}
     <textarea id="answer" spellcheck="true" placeholder="Start writing…">${esc(s.answer)}</textarea>
     <div class="row">
@@ -519,6 +591,7 @@ function renderRight(){
   wireFeedback();
   const cb = $("#codeBtn"); if (cb) cb.onclick = askCode;
   const kb = $("#keyBtn2"); if (kb) kb.onclick = openKeyDlg;
+  wireTopicNav();
   tickTimer(mins);
 }
 function move(i, all){ const x = all[i]; if (!x) return; view.q = x.qi; view.p = x.pi; view.tab = "scenario"; resetTimer(); renderLeft(); renderRight(); $("#right").scrollTop = 0; $("#left").scrollTop = 0; }
