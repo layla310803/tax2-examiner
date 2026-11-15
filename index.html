@@ -182,6 +182,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <span class="spacer"></span>
   <button class="btn small toggle" id="paperBtn" hidden aria-pressed="true">Scenario panel</button>
   <button class="btn small toggle" id="timerBtn" hidden aria-pressed="false">Timer</button>
+  <button class="btn small toggle" id="layoutBtn" hidden aria-pressed="false" title="When off, only the tax content is marked: any format is fine and communication marks are given automatically.">Mark layout</button>
   <button class="btn small" id="keyBtn" hidden>AI key</button>
   <button class="btn small" id="homeBtn" hidden>All papers</button>
 </header>
@@ -210,6 +211,7 @@ let store = {};
 try { store = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch { store = {}; }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch {} }
 const prefs = store._prefs || (store._prefs = { timer: false, showPaper: true, leftw: 50 });
+if (prefs.markLayout === undefined) prefs.markLayout = false;
 const pkey = (paper, part) => paper.id + ":" + part.id;
 function st(paper, part){ const k = pkey(paper, part); return store[k] || (store[k] = {answer:"", attempts:[]}); }
 function best(paper, part){ const a = st(paper, part).attempts; return a.length ? Math.max(...a.map(x => +x.score || 0)) : null; }
@@ -400,10 +402,12 @@ function route(){
 window.addEventListener("hashchange", route);
 $("#homeBtn").onclick = () => go("");
 $("#paperBtn").onclick = () => { prefs.showPaper = !prefs.showPaper; save(); applyLayout(); };
+$("#layoutBtn").onclick = () => { prefs.markLayout = !prefs.markLayout; save(); applyLayout(); if (view.paper) renderRight(); };
 $("#timerBtn").onclick = () => { prefs.timer = !prefs.timer; save(); if (!prefs.timer) resetTimer(); applyLayout(); if (view.paper) tickTimer(Math.round(cur().pt.marks * MIN_PER_MARK)); };
 function applyLayout(){
   const app = $("#app"); const inExam = !!view.paper;
-  $("#paperBtn").hidden = !inExam; $("#timerBtn").hidden = !inExam;
+  $("#paperBtn").hidden = !inExam; $("#timerBtn").hidden = !inExam; $("#layoutBtn").hidden = !inExam;
+  $("#layoutBtn").setAttribute("aria-pressed", String(!!prefs.markLayout));
   $("#paperBtn").setAttribute("aria-pressed", String(prefs.showPaper));
   $("#timerBtn").setAttribute("aria-pressed", String(prefs.timer));
   if (!inExam) return;
@@ -492,6 +496,7 @@ function renderRight(){
     <div class="qhead"><h2>Required ${esc(pt.id)}</h2><span class="marks">${pt.marks} marks · ${mins} min</span></div>
     <div class="required">${esc(pt.required)}</div>
     <label for="answer" class="hint">Your answer. Set calculations out like the exam: <span class="mono">Item | Reason/working | Amount</span>, one line each.</label>
+    ${prefs.markLayout ? "" : `<div class="hint" style="margin-bottom:6px">Content-only marking: write it any way you like (lines, bullets, shorthand). Layout isn't marked.</div>`}
     <textarea id="answer" spellcheck="true" placeholder="Start writing…">${esc(s.answer)}</textarea>
     <div class="row">
       <button class="btn primary" id="submit">${s.attempts.length ? "Re-mark my revised answer" : "Submit for marking"}</button>
@@ -561,7 +566,7 @@ MARKING RULES
 - Award marks for valid alternative treatments and reasonable stated assumptions, even if the memo took another route.
 - Apply carry-forward (method) marks: if the student used an earlier wrong figure correctly later on, give the later mark and penalise the error only once.
 - No marks for vague statements, a section number with no application to the facts, or a correct number with no reason when the required says "with reasons".
-- Communication/critical thinking marks (X1, Y1, etc.) are awarded only if the answer is well structured and argued as the required asks (e.g. memo format, a table layout).
+${prefs.markLayout ? `- Communication/critical thinking marks (X1, Y1, etc.) are awarded only if the answer is well structured and argued as the required asks (e.g. memo format, a table layout).` : `- CONTENT-ONLY MARKING (the student chose this): mark only the tax substance: the correct treatment, amounts, workings, sections and the reason for each item, and conclusions. Accept ANY format: plain lines, bullet points, shorthand, abbreviations, no tables, no columns, no headings, no letter/memo/report format. A short reason in any form counts as the reason. Never deduct for layout, presentation, structure or format, even if the required asks for a specific layout.\n- Award communication/critical thinking/presentation marks (X1, Y1, etc.) in full automatically, as long as the answer makes a genuine attempt at the content.\n- Do not mention layout, format or presentation anywhere in the feedback or the exam tip.`}
 - This memo is a suggested solution${paper.unofficial ? " from an unofficial source and may contain errors" : ""}. If the memo is clearly wrong in law or arithmetic, mark according to the correct law and say so in your feedback.
 - Be strict but fair. Half marks are allowed.
 
