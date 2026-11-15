@@ -1,5 +1,5 @@
 // Shared helper: calls the Gemini API with the key stored in Vercel env vars.
-export const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+export const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 
 export function checkAccess(req, res) {
   const code = process.env.ACCESS_CODE;

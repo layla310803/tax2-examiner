@@ -26,7 +26,7 @@ An interactive past-paper examiner for UCT ACC3004W Taxation II. Pick a paper, a
 2. In Project → Settings → Environment Variables, add:
    - `GEMINI_API_KEY`: a key from Google AI Studio (aistudio.google.com → Get API key).
    - `ACCESS_CODE` (recommended): any password. The site asks for it once per browser, so strangers can't use up your Gemini quota.
-   - `GEMINI_MODEL` (optional): defaults to `gemini-2.5-flash`. Use `gemini-2.5-pro` for stricter marking if your quota allows.
+   - `GEMINI_MODEL` (optional): defaults to `gemini-3.8-flash`. Use `gemini-2.5-pro` for stricter marking if your quota allows.
 3. Redeploy. Open `/api/health` to check: `keySet` should be `true`.
 
 The past papers are UCT/Studocu material. Keep this repo private, and don't share the Vercel URL publicly.
