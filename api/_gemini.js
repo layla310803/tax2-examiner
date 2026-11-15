@@ -1,6 +1,7 @@
 // Shared helper: calls the Gemini API with the key stored in Vercel env vars.
 let picked = process.env.GEMINI_MODEL || "", list = null;
 // If GEMINI_MODEL isn't set, ask Google which Flash models this key can use and take the newest.
+export const allModels = () => list;
 export async function getModel() {
   if (picked) return picked;
   const key = process.env.GEMINI_API_KEY;
