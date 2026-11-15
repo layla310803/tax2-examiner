@@ -1,5 +1,18 @@
 // Shared helper: calls the Gemini API with the key stored in Vercel env vars.
-export const MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
+let picked = process.env.GEMINI_MODEL || "";
+// If GEMINI_MODEL isn't set, ask Google which Flash models this key can use and take the newest.
+export async function getModel() {
+  if (picked) return picked;
+  const key = process.env.GEMINI_API_KEY;
+  const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200", { headers: { "x-goog-api-key": key }, signal: AbortSignal.timeout(10000) });
+  const d = await r.json().catch(() => ({}));
+  const ver = n => parseFloat((n.match(/gemini-([\d.]+)/) || [])[1] || "0");
+  const names = (d.models || []).filter(m => (m.supportedGenerationMethods || []).includes("generateContent"))
+    .map(m => m.name.replace(/^models\//, "")).filter(n => /^gemini-[\d.]+-flash$/.test(n) || n === "gemini-flash-latest")
+    .sort((a, b) => ver(b) - ver(a));
+  picked = names[0] || "gemini-flash-latest";
+  return picked;
+}
 
 export function checkAccess(req, res) {
   const code = process.env.ACCESS_CODE;
@@ -12,7 +25,7 @@ export function checkAccess(req, res) {
 export async function gemini({ contents, json = false, temperature = 0.2 }) {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw Object.assign(new Error("GEMINI_API_KEY is not set in Vercel"), { status: 500 });
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${await getModel()}:generateContent`;
   const body = {
     contents,
     generationConfig: { temperature, ...(json ? { responseMimeType: "application/json" } : {}) },
@@ -21,7 +34,8 @@ export async function gemini({ contents, json = false, temperature = 0.2 }) {
     method: "POST",
     headers: { "Content-Type": "application/json", "x-goog-api-key": key },
     body: JSON.stringify(body),
-  });
+    signal: AbortSignal.timeout(55000),
+  }).catch(e => { throw Object.assign(new Error(e.name === "TimeoutError" ? "Gemini took too long to answer" : "Could not reach Gemini"), { status: 504 }); });
   const data = await r.json().catch(() => ({}));
   if (!r.ok) throw Object.assign(new Error(data?.error?.message || `Gemini error ${r.status}`), { status: r.status === 429 ? 429 : 502 });
   const text = (data?.candidates?.[0]?.content?.parts || []).map(p => p.text || "").join("");
