@@ -496,7 +496,7 @@ function renderTopic(tid){
       <div class="hint">${items.length} requireds · ${tot} marks · best so far <span class="mono">${fmt(got)} / ${tot}</span>. Pick one, or start at the first you haven't done; "Next in topic" then takes you through the rest.</div></div>
     <div class="row"><button class="btn primary" id="tstart">Start practising</button><button class="btn" id="tback">All topics</button></div>
     <div class="tlist">${items.map((x, i) => { const b = best(x.p, x.pt);
-      return `<button class="titem" data-i="${i}"><span class="src">${esc(x.p.short)} · ${esc(x.pt.id)}</span><span class="req">${esc(x.pt.required.split("\n")[0])}</span>
+      return `<button class="titem" data-i="${i}"><span class="src">${esc(x.p.short)} · ${esc(x.pt.id)}</span><span class="req">${esc(x.pt.required.replace(/\s*\n\s*/g, " "))}</span>
         <span class="sc">${b === null ? `${x.pt.marks} marks` : `<span class="${band(b, x.pt.marks)}">${fmt(b)}</span> / ${x.pt.marks}`}</span>
         <span class="tags">${x.pt.topics.filter(t => t !== tid).map(topicName).map(esc).join(" · ")}</span></button>`; }).join("")}</div>
   </div>`;
