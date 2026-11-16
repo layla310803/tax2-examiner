@@ -1,0 +1,151 @@
+{
+ "id": "b-ws3",
+ "title": "Workshop 3: Risk Management for Banks (2026)",
+ "short": "WS3 Risk",
+ "kind": "workshop",
+ "minutes": 49,
+ "unofficial": false,
+ "memoNote": "Lecturer's own Workshop 3 Solution (2026); the workshop gives no marks, so marks (1 per expected point or step, 1.2 minutes a mark) were assigned by the converter.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1: Linear probability and logit models",
+   "marks": 9,
+   "scenario": "FTX4087S - Risk Management for Banks Workshop (2026). We are currently using three financial ratios to evaluate the probability of default for loan applicants, namely the debt-equity ratio (D/E), the sales / total asset ratio (S/A) and the retained earnings / total assets ratio (RE/A).",
+   "parts": [
+    {
+     "id": "1a",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Using a linear probability model given by:\n\nPD_i = X1 (D/E)_i + X2 (S/A)_i + X3 (RE/A)_i\n\nwe estimated the following coefficient values for each financial ratio using past loan behaviour of borrowers: X1 = 0.021; X2 = 0.046; X3 = 0.013.\n\nDetermine the probability of default for the given loan applicant with the following ratios: D/E = 1.12; S/A = 1.35; and RE/A = 0.37.",
+     "memo": "PD = 0.021(1.12) + 0.046(1.35) + 0.013(0.37) = 0.0235 + 0.0621 + 0.0048 = 0.0904\n\nHence, the probability of default for the loan applicant is 9.04%."
+    },
+    {
+     "id": "1b",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Suppose we also estimated a logit model given by:\n\nY_i = X1 (D/E)_i + X2 (S/A)_i + X3 (RE/A)_i\n\nPD_i = 1 / (1 + exp(-Y))\n\nWe estimated a new set of coefficients for each financial ratio: X1 = 0.41; X2 = -2.11; X3 = -3.12.\n\nDetermine the probability of default given the same loan applicant as in 1a above.",
+     "memo": "Y = 0.41(1.12) - 2.11(1.35) - 3.12(0.37) = 0.4592 - 2.8485 - 1.1544 = -3.5437\n\nPD = 1 / (1 + exp(-[-3.5437])) = 1 / (1 + exp(3.5437)) = 0.0281\n\nThe probability of default is 2.81%."
+    },
+    {
+     "id": "1c",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Interpret the results from (1a) and (1b) above. Discuss which model is likely to provide a more accurate description of the potential client's risk profile?",
+     "memo": "The linear probability model is more prone to errors in its modelling, since it allows for values outside of the range [0,1], which becomes meaningless from the perspective of probability. The logit model on the other hand restricts the final PD estimation to be between 0 and 1, which prevents an outcome that is meaningless, while accounting for the entire set of outcomes for PD. Hence, the logit model is likely to provide a more accurate description of the potential client's risk profile.\n\nOur results also demonstrated that the two models can produce very different probability of default results (9.04% versus 2.81%). It is likely in our scenario that the linear probability model may have overstated the potential client's probability of default."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2: Altman z-score",
+   "marks": 5,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "2",
+     "marks": 5,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Uthingo Manufacturing is looking to apply for financing. You have been tasked to evaluate whether the firm is too risky, and the loan application denied. Given the following information regarding the loan applicant:\n\nTotal Assets  |  500\nWorking Capital (current assets - current liabilities)  |  75\nRetained earnings  |  125\nEBIT  |  60\nMarket value of equity  |  600\nTotal liabilities  |  300\nSales  |  550\n\nUse the Altman z-score model to evaluate the risk profile of the loan applicant.",
+     "memo": "Z = 1.2 X1 + 1.4 X2 + 3.3 X3 + 0.6 X4 + 1.0 X5, where X1 = net working capital / total assets; X2 = retained earnings / total assets; X3 = earnings before interest and taxes / total assets; X4 = market value of equity / book value of total liabilities; X5 = sales / total assets.\n\nX1 = 75/500 = 0.15; X2 = 125/500 = 0.25; X3 = 60/500 = 0.12; X4 = 600/300 = 2; X5 = 550/500 = 1.1\n\nZ = 1.2(0.15) + 1.4(0.25) + 3.3(0.12) + 0.6(2) + 1.0(1.1) = 0.18 + 0.35 + 0.396 + 1.2 + 1.1 = 3.23\n\nInterpretation zones: above 2.99 is \"safe\", 1.81 to 2.99 is the \"grey zone\", and below 1.81 is \"distress\". This company scores 3.23, so it lands in the safe zone."
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Question 3: Qualitative credit risk factors",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "3",
+     "marks": 6,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Identify and define the borrower-specific and market-specific factors that enter the credit decision for a qualitative credit risk model. What is the impact of each type of factor on the risk premium.",
+     "memo": "Borrower-specific factors:\n- Reputation: based on the lending history of the borrower. It covers how reliably past loans were repaid over the life of the relationship. Hence, better reputation implies a lower risk premium.\n- Leverage: the borrower's capital structure, measured by the debt-to-equity ratio (i.e. a measure of the existing debt of the borrower). Higher leverage raises interest obligations and the probability of default. Thus, the larger the debt, the higher the risk premium.\n- Volatility of earnings: the variability of the borrower's earnings and cash flows over time. More volatile earnings make it more likely that cash flow will fall short of debt obligations. The more stable the earnings, the lower the risk premium.\n- Collateral: specific assets pledged to secure the loan, which the lender can claim on default. A secured loan reduces the loss if default occurs, so it carries a lower risk premium than an unsecured loan. The quality and liquidity of the collateral matter. If collateral is offered, the risk premium is lower.\n\nMarket-specific factors:\n- Business cycle: lenders are less likely to lend if a recession is forecasted. In a recession, default probabilities rise, especially in cyclical industries such as durable goods, construction and retail. Risk premiums therefore rise and credit standards tighten. In an expansion, premiums fall.\n- Level of interest rates: the general level of market interest rates, often reflecting monetary policy. High rates usually signal restrictive monetary policy and a slowing economy. They also raise borrowers' debt-service burden, which increases default risk. Hence, a higher level of interest rates may lead to higher default rates, so lenders are more reluctant to lend under such conditions.\n\nFactor  |  Condition  |  Effect on risk premium\nReputation  |  Good, long relationship  |  down\nLeverage  |  Higher  |  up\nEarnings volatility  |  Higher  |  up\nCollateral  |  Secured / high-quality  |  down\nBusiness cycle  |  Recession  |  up (expansion: down)\nInterest rate level  |  High  |  up (low: down)"
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "title": "Question 4: Collateral",
+   "marks": 5,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "4",
+     "marks": 5,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Why is the degree of collateral as specified in the loan agreement of importance to a lender? If the book value of the collateral is greater than or equal to the amount of the loan, is the credit risk of a lender fully covered? Why or why not?",
+     "memo": "Collateral is the set of specific assets pledged by the borrower that the lender can claim if the borrower defaults. Its importance comes from three effects:\n1) It reduces loss given default. If the borrower fails to repay, the lender can seize and sell the collateral to recover some or all the amount owed.\n2) It gives the lender priority. A secured lender has a claim on specific assets that ranks ahead of unsecured creditors in bankruptcy or liquidation.\n3) It improves the borrower's incentives. A borrower who stands to lose pledged assets has more reason to repay and less reason to take excessive risks. This reduces moral hazard. Willingness to post collateral also signals the borrower's confidence in the project, which reduces adverse selection.\n\nFor these reasons, a loan secured by more and better collateral carries a lower risk premium.\n\nHowever, credit risk is not fully covered. Collateral has value only to the extent of its market value, and thus a loan fully collateralised at book value may not be fully collateralised at market value. Further, errors in the recording of collateralised positions may limit or severely reduce the protected positions of a lender. Collateral values tend to fall when defaults occur - borrowers usually default during economic downturns or industry-specific declines, which are exactly the conditions in which asset prices fall. The collateral is therefore likely to be worth least when the lender needs it most. Forced sales happen at a discount - seized assets are often sold quickly, which can mean fire-sale prices well below fair value. Illiquid assets are particularly prone to this (link to the Orange County Investment Pool case)."
+    }
+   ]
+  },
+  {
+   "id": "Q5",
+   "title": "Question 5: Capital at risk and RAROC",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "5",
+     "marks": 6,
+     "topics": [
+      "b-risk",
+      "b-credit"
+     ],
+     "required": "Zenzele Bank wants to evaluate the credit risk of a R5 million loan with a duration of 4.3 years to a AAA borrower. There are currently 500 publicly traded bonds in that class (i.e., bonds issued by firms with a AAA rating). The current average level of rates (R) on AAA bonds is 8%. The largest increase in credit risk premiums on AAA loans, the 99% worst-case scenario, over the last year was equal to 1.2% (i.e., only 6 bonds out of 500 had risk premium increases exceeding the 99% worst case). The projected (one-year) spread on the loan is 0.3% and the FI charges 0.25% of the face value of the loan in fees. Calculate the capital at risk and the RAROC on this loan.",
+     "memo": "Modified duration = D / (1 + R) = 4.3 / 1.08 = 3.98 years\n\nCapital at risk = change in L = -D* x L x change in R = -3.98 x R5m x 0.012 = -R238,889, i.e. in the 99% worst-case year, the loan's value could fall by about R238,889. That is the capital the bank needs to hold against it.\n\nOne-year net income = (Spread + Fees) x L = (0.003 + 0.0025) x R5m = R27,500\n\nRAROC = Net income / Capital at risk = R27,500 / R238,889 = 11.51%\n\nHence, the loan should be approved only if 11.5% exceeds Zenzele Bank's hurdle rate (its cost of equity or target ROE). If it doesn't, the bank could raise the spread or fees to lift the numerator.\n\nNote: The 1.2% is the 99th-percentile increase: only 6 of 500 bonds, about 1%, saw bigger jumps. That's why it's used as the worst-case change in R."
+    }
+   ]
+  },
+  {
+   "id": "Q6",
+   "title": "Question 6: Hedging a bond with a forward contract",
+   "marks": 7,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "6",
+     "marks": 7,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Awethu Bank currently holds a 15-year, R10 million par value bond that is priced at R104 with a yield to maturity of 7%. The bond has a duration of eight years and the bank plans to sell it after two months. The bank's market analyst predicts that interest rates will be 8% at the time of the desired sale. Because most other analysts are predicting no change in rates, two-month forward contracts for 15-year bonds are available at R104. The bank would like to hedge against the expected change in interest rates with an appropriate position in a forward contract. What will this position be? Show that if rates rise 1% as forecasted, the hedge will protect Awethu Bank from loss.",
+     "memo": "The expected change in the spot position is: -8 x R10,400,000 x (0.01 / 1.07) = -R777,570\n\nThis would mean a price change from 104 to 96.2243 per R100 face value of bonds.\n\nBy entering into a two-month forward contract to sell R10,000,000 of 15-year bonds at 104, Awethu Bank will have hedged its spot position.\n\nIf rates rise by 1%, and the bond value falls by R777,570, the bank can close out its forward position by receiving 104 for bonds that are now worth 96.2243 per R100 face value. The profit on the forward position will offset the loss in the spot market. The actual transaction to close the forward contract may involve buying the bonds in the market at 96.2243 and selling the bonds to the counterparty at 104 under the terms of the forward contract. Note that if a futures contract were used, closing the hedge position would involve buying a futures contract through the exchange with the same maturity date and dollar amount as the initial opening hedge contract.\n\nWith a credit forward contract instead, Awethu Bank receives: (change in rate) x D* x A = (0.01) x (8 / 1.07) x R10,400,000 = R777,570"
+    }
+   ]
+  },
+  {
+   "id": "Q7",
+   "title": "Question 7: Market risk and market value risk",
+   "marks": 3,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "7",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-mkt"
+     ],
+     "required": "What is the difference between \"market risk\" and \"market value risk\"?",
+     "memo": "Market risk affects assets in the trading portfolio while market value risk is a form of interest rate risk that affects rate sensitive assets and liabilities, all of which are part of the banking book of the bank (loans, deposits). Market risk influences the trading income/profit, and it directly affects the earnings of a bank. Market value risk directly affects a bank's capital or net worth position. Market risk is driven by changes in market conditions such as the price of an asset, interest rates, market volatility, and market liquidity. On the other hand, market value risk is driven by interest rate fluctuations only."
+    }
+   ]
+  }
+ ],
+ "marks": 41
+}

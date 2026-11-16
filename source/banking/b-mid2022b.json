@@ -1,0 +1,101 @@
+{
+ "id": "b-mid2022b",
+ "title": "2022 Mid-Term Test 2 (4 October 2022)",
+ "short": "Mid 2022 (2nd)",
+ "kind": "test",
+ "marks": 70,
+ "minutes": 90,
+ "unofficial": true,
+ "memoNote": "The lecturer's completed ratio table and marking comments are printed in the paper; the detailed workings and a few clarifications come from the student Q&A compilation and are labelled as supplements.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1 — Willow Bank financial analysis",
+   "marks": 61,
+   "scenario": "Financial statement information has been provided for Willow Bank for the last five years, in the appendix attached at the end of your paper. You are required to use this information in answering the following questions.\n\nAppendix 1: Willow Bank's Income Statement\n\nIncome Statement  |  2018  |  2019  |  2020  |  2021  |  2022\nInterest Income  |  75941  |  83680  |  72300  |  65772  |  78094\nInterest Expense  |  -47122  |  -53513  |  -42219  |  -33272  |  -47316\nNet Interest Income  |  28819  |  30167  |  30081  |  32500  |  30779\nNon-Interest Revenue  |  25976  |  25997  |  24140  |  25027  |  25778\nOperating Income  |  54795  |  56164  |  54221  |  57527  |  56556\nCredit Impairments  |  -3688  |  -6129  |  -13127  |  -6534  |  -7649\nOperating Expenses  |  -31632  |  -32179  |  -31772  |  -33639  |  -32803\nOperating Profit  |  19475  |  17856  |  9322  |  17354  |  16105\nShare of results of associates and joint ventures  |  528  |  793  |  -76  |  786  |  810\nOther Gains and Losses  |  -1106  |  -2043  |  -2915  |  -1710  |  -1955\nProfit before income tax  |  18897  |  16606  |  6331  |  16430  |  14959\nIncome tax expense  |  -4762  |  -3796  |  -1877  |  -4043  |  -3826\nNet Income  |  14135  |  12810  |  4454  |  12387  |  11133\n\nAppendix 2: Willow Bank's Balance Sheet\n\nBalance Sheet  |  2018  |  2019  |  2020  |  2021  |  2022\nAssets\nCash and cash equivalents*  |  12 858  |  13 599  |  13 783  |  14 644  |  14 405\nCash balances with central banks  |  21 933  |  24 036  |  27 599  |  29 942  |  28 810\nGovernment and other securities  |  74 155  |  100 557  |  132 221  |  150 498  |  150 498\nCurrent taxation assets  |  186  |  281  |  164  |  124  |  128\nDerivative financial assets  |  22 692  |  35 243  |  80 325  |  39 179  |  40 354\nOther short-term securities  |  79 362  |  64 451  |  52 605  |  60 037  |  61 838\nLoans and advances to customers  |  758 941  |  824 786  |  843 303  |  831 735  |  856 687\nInvestments in associates and joint ventures  |  4 041  |  3 917  |  3 322  |  3 395  |  3 497\nProperty and equipment  |  9 371  |  11 977  |  11 334  |  10 739  |  11 061\nInvestment properties  |  -  |  56  |  -  |  28  |  29\nDeferred income tax assets  |  254  |  389  |  657  |  889  |  916\nOther assets  |  19 836  |  15 393  |  16 802  |  33 877  |  34 893\nInvestment securities  |  22 404  |  28 961  |  26 425  |  25 498  |  26 263\nNon-current assets held for sale  |  305  |  735  |  69  |  638  |  -\nLong-term employee benefit assets  |  4 966  |  5 602  |  5 777  |  6 610  |  6 808\nIntangible assets  |  12 608  |  13 366  |  13 751  |  13 221  |  13 618\nTotal Assets  |  1 043 912  |  1 143 349  |  1 228 137  |  1 221 054  |  1 249 805\n\n* The central bank does pay interest on regulatory deposits\n\nLiabilities  |  2018  |  2019  |  2020  |  2021  |  2022F\nLong-term debt instruments  |  55 587  |  59 713  |  59 770  |  58 159  |  88 124\nDerivative financial liabilities  |  20 003  |  27 991  |  65 130  |  36 042  |  38 735\nDeposits  |  871 441  |  952 250  |  998 287  |  1 013 205  |  1 002 983\nCurrent tax liabilities  |  363  |  161  |  590  |  330  |  339,90\nNon-current liabilities held for sale  |    |  598  |    |  80  |  -\nDeferred taxation liabilities  |  669  |  939  |  390  |  458  |  471,74\nLong-term employee benefit liabilities  |  2 749  |  2 533  |  2 604  |  2 427  |  2 499,81\nInsurance contract liabilities  |  1 829  |  715  |  922  |  842  |  867,26\nTotal Liabilities  |  952 641  |  1 044 900  |  1 127 693  |  1 111 543  |  1 134 020\n\nEquity  |  2018  |  2019  |  2020  |  2021  |  2022F\nShare capital  |  477  |  481  |  484  |  486  |  486\nOrdinary share premium  |  17 315  |  18 096  |  18 583  |  18 768  |  18 768\nPreference Shares  |  3 222  |  3 222  |  3 164  |  59  |  59\nRetained Income  |  65 986  |  69 020  |  69 925  |  80 259  |  86 532\nCapital Reserve  |  3 397  |  6 850  |  7 822  |  9 319  |  9 319\nNon-Controlling Interests  |  874  |  780  |  466  |  620  |  620\nTotal Equity  |  91 271  |  98 449  |  100 444  |  109 511  |  115 784\nTotal Equity and Liabilities  |  1 043 912  |  1 143 349  |  1 228 137  |  1 221 054  |  1 249 805\n\nAppendix 3: Willow Bank's Financial Ratios\n\n|  2018  |  2019  |  2020  |  2021  |  2022\nNIM  |  3,0%  |  2,8%  |  2,6%  |  ?  |  ?\nROA  |  1,4%  |  1,1%  |  0,4%  |  ?  |  ?\nProfit Margin  |  25,8%  |  22,8%  |  8,2%  |  ?  |  ?\nAsset Utilization  |  5,2%  |  4,9%  |  4,4%  |  ?  |  ?\nLeverage  |  11,44  |  11,61  |  12,23  |  ?  |  ?\nROE  |  15,5%  |  13,0%  |  4,4%  |  ?  |  ?\nCost-to-Income  |  57,7%  |  57,3%  |  58,6%  |  ?  |  ?\nJAWs Ratio  |    |  0,8%  |  -2,2%  |  ?  |  ?\nLoan to Deposits  |  87,1%  |  86,6%  |  84,5%  |  ?  |  ?\nCredit Loss Ratio  |  0,5%  |  0,7%  |  1,6%  |  ?  |  ?",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 32,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Complete the missing ratios indicated by the question marks in the table provided in Appendix 3. Show all your workings. You do not need to number your ratios but please clearly indicate which ratio and which year you are providing for each calculation.",
+     "memo": "Lecturer's marking guide: 2,5 marks per NIM figure, 1,5 marks for each other figure.\n\nLecturer's completed table:\n\n|  2018  |  2019  |  2020  |  2021  |  2022\nNIM  |  2,96%  |  2,82%  |  2,61%  |  2,89%  |  2,67%\nROA  |  1,4%  |  1,1%  |  0,4%  |  1,01%  |  0,89%\nProfit Margin  |  25,8%  |  22,8%  |  8,2%  |  21,53%  |  19,68%\nAsset Utilization  |  5,2%  |  4,9%  |  4,4%  |  4,71%  |  4,53%\nLeverage  |  11,44  |  11,61  |  12,23  |  11,15  |  10,79\nROE  |  15,5%  |  13,0%  |  4,4%  |  11,3%  |  9,6%\nCost-to-Income  |  57,7%  |  57,3%  |  58,6%  |  58,5%  |  58,0%\nLoan to Deposits  |  87,1%  |  86,6%  |  84,5%  |  82,1%  |  85,4%\nCredit Loss Ratio  |  0,5%  |  0,7%  |  1,6%  |  0,8%  |  0,9%\nJAWs Ratio  |    |  0,8%  |  -2,2%  |  0,2%  |  0,8%\n\nSupplement (from the compiled Q&A, not the lecturer's): workings for 2021 and 2022. NIM = NII / earning assets (the memo's earning-asset set is cash and cash equivalents + government securities + derivatives + other short-term securities + loans + associates + investment securities = 1 124 986 and 1 153 542): 32 500 / 1 124 986 = 2,89%; 30 779 / 1 153 542 = 2,67%. ROA = net income / total assets: 12 387 / 1 221 054 = 1,01%; 11 133 / 1 249 805 = 0,89%. Profit margin = net income / operating income: 12 387 / 57 527 = 21,53%; 11 133 / 56 556 = 19,68%. Asset utilisation = operating income / total assets: 57 527 / 1 221 054 = 4,71%; 56 556 / 1 249 805 = 4,53%. Leverage = total assets / equity: 1 221 054 / 109 511 = 11,15; 1 249 805 / 115 784 = 10,79. ROE = net income / equity: 12 387 / 109 511 = 11,3%; 11 133 / 115 784 = 9,6%. Cost-to-income = operating expenses / operating income: 33 639 / 57 527 = 58,5%; 32 803 / 56 556 = 58,0%. JAWS = income growth - expense growth: 2021 = 6,10% - 5,88% = 0,2%; 2022 = -1,69% - (-2,49%) = 0,8%. Loans-to-deposits = loans / deposits: 831 735 / 1 013 205 = 82,1%; 856 687 / 1 002 983 = 85,4%. Credit loss ratio = impairments / loans: 6 534 / 831 735 = 0,79%; 7 649 / 856 687 = 0,89%. The memo also recomputes the 2018-2020 NIM as 2,96%, 2,82% and 2,61%."
+    },
+    {
+     "id": "1.2a",
+     "marks": 8,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Provide an analysis of the following areas of the bank's performance from 2018 to 2022 based on the information in the appendices (including your calculations above).\n\na. The bank's profitability",
+     "memo": "Lecturer's answer. NIM has been declining steadily over time. There was a brief bounce-back in 2021 as the effects of the pandemic were reversed but 2022 performance is in line with that last seen in 2020 during the initial lockdown problems. The issue in the most recent period has been declining NII brought about by interest expense increasing more than interest income. This would seem to indicate that the spread between the two has shrunk in the most recent period.\n\nROA is also declining steadily over time and is now at its lowest level in 5 years (apart from the obvious issues in 2020 thanks to lockdown). This is a consequence of both profit margin and asset utilization declining. This is in line with the shrinking spread between interest income and expense coupled with increasing assets.\n\nCoupled with all of the above, the leverage has also declined over time, quite significantly. While this lowers the bank's risk, it also means that their ROE is lower as a result. Clearly, all the performance metrics for the bank have declined over time and are concerning."
+    },
+    {
+     "id": "1.2b",
+     "marks": 5,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Provide an analysis of the following areas of the bank's performance from 2018 to 2022 based on the information in the appendices (including your calculations above).\n\nb. The bank's cost efficiencies",
+     "memo": "Lecturer's answer. The bank's cost-to-income ratio has been quite consistent over the past few years at roughly 58%. This is higher than the ideal ratio of 50% but not so high as to be concerning. If this was a South African bank, for example, this would be roughly on par with what is expected. The bank's operating expenses have actually decreased in the most recent period but the declining profits mean the measure has worsened overall.\n\nThe JAWS ratio of the bank has generally been positive which shows that income is growing faster than expenses. The exception was 2020 during lockdown, which makes sense. Having said that, the JAWS ratio has consistently been only slightly positive showing that income hasn't been growing significantly faster than expenses and this might be a cause for concern for the bank."
+    },
+    {
+     "id": "1.2c",
+     "marks": 4,
+     "topics": [
+      "b-fin",
+      "b-credit"
+     ],
+     "required": "Provide an analysis of the following areas of the bank's performance from 2018 to 2022 based on the information in the appendices (including your calculations above).\n\nc. The bank's risk",
+     "memo": "Lecturer's answer. The credit loss ratio of the bank has consistently been in the ideal band of 1-3%, even during 2020. This speaks to the quality of the bank's loan book. Having said that, there might be a question of whether the bank is not being overly conservative in its lending as it may be able to improve its margins by lending out to slightly higher risk clients at higher rates.\n\nThe loan-to-deposit ratio of the bank has also consistently been in the ideal band of 80% to 90%. This suggests the bank is deriving the bulk of its earnings from loans with only a small portion of its deposit funds invested in other assets.\n\nFinally, the bank's leverage as indicated earlier is quite low with quite a big decline in the most recent period. While this is positive from a risk perspective, it does mean that the bank is missing out on the benefits of leverage at a time when its performance could use improvement.\n\nSupplement (from the compiled Q&A, not the lecturer's): the memo slip: the credit loss ratio was in fact below 1% in every year except 2020 (1,6%): 0,5%-0,9%. The conclusion (good loan quality) is unchanged."
+    },
+    {
+     "id": "1.3a",
+     "marks": 7,
+     "topics": [
+      "b-val"
+     ],
+     "required": "Assume you had to conduct a valuation of Willow Bank.\n\na. Briefly discuss the reasons a free cash flow valuation would not be appropriate.",
+     "memo": "Lecturer's answer. Any of the points from the slides would be appropriate here - issues around debt being hard to define for a bank, working capital not really having any meaning, capex not being a driver of growth, depreciation not being significant, etc.\n\nSupplement (from the compiled Q&A, not the lecturer's): debt is hard to define for a bank (treating deposits as debt would overstate free cash flow); interest is part of operations, so operating and financing cash flows cannot be separated; working capital has no real meaning because almost all of the balance sheet is current; capex is not the driver of growth and depreciation is insignificant; high leverage; regulatory capital constraints on growth."
+    },
+    {
+     "id": "1.3b",
+     "marks": 5,
+     "topics": [
+      "b-val"
+     ],
+     "required": "Assume you had to conduct a valuation of Willow Bank.\n\nb. If you had the option of valuing the bank using a relative valuation (multiples) method approach, would you prefer to use the price-to-book ratio or price-to-earnings ratio as your multiple? Why?",
+     "memo": "Lecturer's answer. Price-to-book would be preferred as bank's mark to market daily and there is therefore a strong link between the bank's market price and its book value of equity. The issue with using PE ratio is that banks are able to smooth their earnings using their credit impairments. This leaves PE ratio open to manipulation and makes it harder to use as a relative valuation measure."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2 — Working capital",
+   "marks": 9,
+   "scenario": "You have been provided the following financial data about a firm:\n\nCredit Sales – R15000\nCost of Sales – R12000\nAverage Accounts Receivable – R1800\nAverage Accounts Payable – R1200\nBeginning Inventory Balance – R1650\nEnding Inventory Balance – R1400",
+   "parts": [
+    {
+     "id": "2.1",
+     "marks": 6,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "Calculate the operating cycle of the firm.",
+     "memo": "Lecturer's answer. Operating cycle = No. of days of inventory + No. of days of receivables.\n\nAverage Inventory = (1,650 + 1,400) / 2 = 1,525\n\nNo. of days of inventory = 1,525 / (12,000 / 365) = 46.37 days [3 marks]\n\nNo. of days of receivables = 1,800 / (15,000 / 365) = 43.8 days [2 marks]\n\nTherefore, Operating cycle = 46.37 days + 43.8 days = 90.17 days [1 mark]\n\nSupplement (from the compiled Q&A, not the lecturer's): 1 525 x 365 / 12 000 is 46,39 days, so the memo's 46,37 is a small rounding slip; the operating cycle is about 90,2 days. Payables (R1 200) are not used: they belong to the cash conversion cycle, not the operating cycle."
+    },
+    {
+     "id": "2.2",
+     "marks": 3,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "How could the firm improve its operating cycle?",
+     "memo": "Lecturer's answer. Anything here that would improve either DSO or DIO. Note that DPO is not appropriate given that it is not part of the operating cycle calculation.\n\nSupplement (from the compiled Q&A, not the lecturer's): to cut DIO: just-in-time or consignment stock, better forecasting, removing slow-moving lines. To cut DSO: tighter credit terms, early-payment discounts, prompt invoicing and collection, factoring."
+    }
+   ]
+  }
+ ]
+}

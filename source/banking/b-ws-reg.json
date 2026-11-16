@@ -1,0 +1,251 @@
+{
+ "id": "b-ws-reg",
+ "title": "Bank Regulation and Failure Workshop (student notes, Phillip section)",
+ "short": "Reg WS (notes)",
+ "kind": "workshop",
+ "minutes": 79,
+ "unofficial": true,
+ "memoNote": "Questions and answers are taken from a student's (Irshaad's) notes of the regulation workshop, not from the lecturer; marks were assigned by the converter (about 1 per expected point, 1.2 minutes a mark), and a few answers were completed from the course notes where the student's notes were brief.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1: Bank regulation, money and monetary policy",
+   "marks": 40,
+   "scenario": "These questions are taken from a student's notes of the Bank Regulation and Failure workshop (Phillip section). The notes record the questions asked in the session and the answers discussed; the wording of the questions is therefore the student's paraphrase and the answers are unofficial.",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 4,
+     "topics": [
+      "b-reg",
+      "b-treas"
+     ],
+     "required": "You work in the treasury of a non-bank corporate that has excess liquidity. The company does not want to invest it but wants to keep it at its disposal for short-term emergencies. If you decide to put the funds in a fixed deposit, should you choose the bank according to interest rates only, or should you consider other things?",
+     "memo": "You have to consider other things and not only returns or interest rates.\n\n- If the deposit amount is less than R100 000 (the deposit insurance limit), you can maximise the interest rate because the deposit is insured. The R100 000 limit is low, so it is more of a worry if treasury works globally with large amounts.\n- Has the bank had a share issue recently? A share issue can be an indication of a problem (African Bank share issue; the Swiss bank case).\n- If the bank is a G-SIB (globally systemically important bank), it is large globally, so your money is safe because it will not be allowed to fail. Likewise, if it is the largest in South Africa, the SARB will not allow a large South African bank to fail, so you can still maximise return.\n- If the financial statements look low risk on liquidity and solvency but there are rumours in the market of bad loans that will not be repaid or of activities the bank should not be conducting, you could probably avoid the bank, as the information may not yet show in the statements.\n- If a big bank gets into trouble, government contributes and taxpayers are pulled in."
+    },
+    {
+     "id": "1.2",
+     "marks": 3,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "A previous-year question: explain why an increase in the minimum capital level can be seen as a transfer of shareholder wealth to depositors.",
+     "memo": "Shareholders pay their contribution of extra capital, but their own position does not improve; the safer bank benefits depositors. Any limited-liability corporate form has this problem: when capital levels are low and the entity fails, the cost of failure falls on depositors and creditors, because shareholders are protected by limited liability. Higher required capital means shareholders have more at stake (a bigger buffer absorbs losses before depositors), so value moves from shareholders to depositors (and to taxpayers, who would otherwise be pulled in when a big bank gets into trouble)."
+    },
+    {
+     "id": "1.3",
+     "marks": 4,
+     "topics": [
+      "b-money",
+      "b-reg"
+     ],
+     "required": "A bank holds R100 million in its account at the SARB. Explain how the average interest rate the bank earns on this balance is determined under the SARB's surplus system (minimum reserve balance, quota and the amount above the quota), and what incentive this creates for the bank and for the SARB.",
+     "memo": "Under the new (surplus) system the bank deposits with the SARB, whereas under the old shortage system it borrowed from the SARB (at the repo rate, giving government bonds as security).\n\nThe balance at the SARB is split: the first part is the minimum reserve balance (given in the question, not to be calculated); the quota is a limit per bank set by the SARB (also given), and the amount within the quota earns the repo rate; anything above the quota earns repo minus 1%. The average rate is therefore the weighted average of these rates over the R100 million.\n\nIncentive for the bank: money above quota earns less, so banks have an incentive to lend to other financial institutions (interbank lending), where returns are generally higher than repo (most South African interbank lending takes place with no risk adjustment). Incentive for the SARB: under the old shortage system a global shock (e.g. Covid) made it hard to supply liquidity; with the surplus system it can deal better with a crisis, and banks seldom need to borrow from it.\n\nSource for the rates in the SARB's own financial statements: the difference between the three types of reserves."
+    },
+    {
+     "id": "1.4",
+     "marks": 3,
+     "topics": [
+      "b-money",
+      "b-reg"
+     ],
+     "required": "What is the relationship between bank reserves and bank capital?",
+     "memo": "Suggested solution: bank reserves are the reserve deposits that banks hold in their accounts at the SARB. Reserves are seen as liquid assets and are an important form of liquidity in the system. Capital is the regulator-allowed excess of assets over liabilities of a bank (an adjusted accounting equity, total assets minus total liabilities, and a cumulative concept). Reserves are part of the total asset base that should exceed liabilities but are not capital."
+    },
+    {
+     "id": "1.5",
+     "marks": 4,
+     "topics": [
+      "b-money"
+     ],
+     "required": "If you evaluate the South African monetary system, is it a commodity money system or a credit/debt money system? Explain.",
+     "memo": "It is a debt (credit) money system. Only about 3% of money has a commodity (physical cash) base and the rest is debt. Physical money is only a symbol, not a commodity. In a debt system, when a new loan is granted, the money to fund that loan is created at the same time (credit is advanced now and repaid in future, like a farmer who buys seed on credit and repays after harvest). In a commodity system (e.g. gold coins), if you deposited with a central bank institution it would have a liability to you, with a paper document as proof, which later becomes paper money."
+    },
+    {
+     "id": "1.6",
+     "marks": 3,
+     "topics": [
+      "b-money"
+     ],
+     "required": "In Zimbabwe they are not using electronic means of payment. What are they missing out on by not using electronic payment?",
+     "memo": "Under a paper (cash) money system, if you have large capital needs, you first have to save up US dollars and can only spend once you have accumulated them. In a banking system you do not need a deposit first: banks can lend (create money) without waiting for savings to accumulate. The disadvantage of bank-created money is that if politicians abuse it, you get inflation. In Zimbabwe there is a shortage of capital and so a lack of maintenance of infrastructure, since they do not print US dollars. It is also difficult to split into small transactions with a cash system, as no change is available."
+    },
+    {
+     "id": "1.7",
+     "marks": 4,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "What are the main things that bank regulation aims to ensure?",
+     "memo": "- Banks have sufficient capital (the main point): a buffer in case of an emergency, not for everyday use. A bank that anticipates a problem should not use capital to cover up losses. Basel III required more capital and minimum levels of liquidity.\n- Not everyone can be a banker: regulators look at the conduct, experience and education of senior managers.\n- Not everyone can start a bank: regulators examine plans, strategies, technology and ideas to keep the bank running.\n- The type of lending banks do: e.g. a minimum 10% deposit for a home loan; whether the bank is engaged in productive lending that puts the borrower in a better position to repay, rather than lending for speculative purposes, which causes asset price booms (some banks account for speculative lending, but there is a trade-off)."
+    },
+    {
+     "id": "1.8",
+     "marks": 2,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "What does the liquidity coverage ratio (LCR) under Basel III measure, and how do you interpret a ratio of 100%?",
+     "memo": "Basel III was worried about liquidity. The LCR compares a bank's high-quality liquid assets with its expected net cash outflows over a 30-day stress period; if the bank has sufficient liquid assets to cover 30 days the ratio is 100%."
+    },
+    {
+     "id": "1.9",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "Explain how the CET1, AT1 and total capital ratios and the leverage ratio are calculated.",
+     "memo": "CET1, AT1 and total capital ratios all have the same denominator, risk-weighted assets (which is given in the question); the numerator differs between the three (CET1 capital, Tier 1 capital = CET1 + AT1, and total capital = Tier 1 + Tier 2). CET1 is the best form of capital ratio.\n\nLeverage ratio = Tier 1 capital / (on-balance sheet exposure plus off-balance sheet exposure). There is no risk weighting in the leverage ratio. If calculated from a balance sheet: numerator = total shareholders' equity less goodwill and intangible assets; denominator = total assets less goodwill and intangible assets, adjusted for off-balance sheet exposure. Do not adjust risk-weighted assets."
+    },
+    {
+     "id": "1.10",
+     "marks": 3,
+     "topics": [
+      "b-money"
+     ],
+     "required": "The repo rate changes to 8%. What is the difference between the repo rate and the prime rate, what is the prime rate now, and how would you work out the monthly rate on a prime-linked loan?",
+     "memo": "Prime is 3.5 percentage points higher than repo, so the prime rate is 8% + 3.5% = 11.5%. Prime is a nominal annual rate compounded monthly, so the monthly rate is found by dividing by 12: 11.5% / 12 = 0.958% per month."
+    },
+    {
+     "id": "1.11",
+     "marks": 3,
+     "topics": [
+      "b-money",
+      "b-fin"
+     ],
+     "required": "Explain the three channels through which a decrease in interest rates affects bank profitability.",
+     "memo": "1. Margin compression (negative): the bank charges less on loans, so profitability falls and margins are compressed in the short term.\n2. Higher loan volumes (positive): more people can afford loans, so loan volume grows and profitability increases.\n3. Lower bad debts (positive): people can afford repayments more easily, so bad debts decrease and profitability increases."
+    },
+    {
+     "id": "1.12",
+     "marks": 2,
+     "topics": [
+      "b-money"
+     ],
+     "required": "With a decrease in interest rates, what is the SARB trying to achieve?",
+     "memo": "Lower rates support economic activity and borrowing, but if rates are too low inflation will rise. The SARB wants rates as low as possible without inflation becoming high: maximum economic activity while inflation is kept under control (i.e. the SARB is balancing activity against its inflation objective)."
+    },
+    {
+     "id": "1.13",
+     "marks": 2,
+     "topics": [
+      "b-intro"
+     ],
+     "required": "Give two scenarios in which you can use your banking knowledge for your employer if you do not work for a bank.",
+     "memo": "- Negotiating with a bank: you always negotiate with a bank at some point; understand what motivates the opposing party, how a bank works and what capital and liquidity requirements it faces.\n- Sweeping accounts (cash pooling): treat multiple accounts as a single account to obtain better interest rates."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2: Loan pricing, ROE and regulation",
+   "marks": 13,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "2.1",
+     "marks": 6,
+     "topics": [
+      "b-fin",
+      "b-reg"
+     ],
+     "required": "What average interest rate on loans should a bank charge if it targets an ROE of 15%, has an effective tax rate of 27%, a leverage ratio of 12.5 (assets / equity: the traditional measure, not the Basel one; equivalently a simple capital ratio of 1/12.5 = 8%), a cost of funds before bad debts of 9%, expected bad debts of 0.8% of total assets, other income of 2% and operating costs of 3%? Assume all assets are loans.",
+     "memo": "Let X = average % charged on loans.\n\nROE = ROA x leverage, so 15% = ROA x 12.5, giving an after-tax ROA = 1.2%. [2]\n\nThe loan rate is before tax, so ROA before tax = 1.2% / (1 - 27%) = 1.64%. [1]\n\n1.64% = X (assuming all assets are loans) - 9% (cost of funding) - 0.8% (bad debts) + 2% (other income) - 3% (operational costs). [2]\n\nX = 1.64% + 9% + 0.8% - 2% + 3% = 12.44%. If the bank charges this on its loans, and all costs are as expected, it will reach its target ROE. [1]\n\n(More bad debts expected means a higher interest rate; a lower tax rate means lower interest rates can be charged; private property rights influence bad debts.)"
+    },
+    {
+     "id": "2.2",
+     "marks": 5,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "What should happen to the average interest rate charged on loans (increase, decrease or stay the same) if each of the following happens independently?\n(a) Basel III is implemented.\n(b) Private property rights are weakened.\n(c) More bank reserves are required to be held.\n(d) The income tax rate drops.\n(e) ROE is capped at a maximum percentage by the regulator.",
+     "memo": "(a) Increase: more capital and less leverage means the ROA needed for the target ROE is higher, so higher interest rates.\n(b) Increase: weaker property rights mean higher bad debts, so higher interest rates.\n(c) Increase: more liquidity must be held on the account at the reserve bank, which earns little or no interest, so the bank must charge more on its other assets.\n(d) Decrease: a lower tax rate means a lower pre-tax ROA is needed, so lower interest rates can be charged.\n(e) Decrease: the bank can charge lower interest rates. (Politicians could create a law to lower ROE. Bankers run a business and know that risk and return are two sides of the coin: if return is lowered, risk is increased, all else equal.)"
+    },
+    {
+     "id": "2.3",
+     "marks": 2,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "Name two trade-offs that emerge from bank regulation and bank failures.",
+     "memo": "- Risk and return (profitability).\n- A safe bank is not a profitable bank (safety versus profitability)."
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Question 3: Bank failure",
+   "marks": 9,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "3.1",
+     "marks": 3,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "Distinguish between insolvency and illiquidity as causes of bank failure.",
+     "memo": "Insolvency: assets are less than liabilities. Illiquidity (debatable): the bank cannot pay depositors and creditors. It is debatable because no bank can pay all its depositors at once; the central bank has to come in as these are abnormal operating conditions. If a bank cannot pay under normal operating conditions it does not know how to function. The result of illiquidity and insolvency is curatorship (the bank's licence can be taken away due to insolvency); you do not have a bank failure until there is a bank run."
+    },
+    {
+     "id": "3.2",
+     "marks": 4,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "Looking at the failure of Silicon Valley Bank (SVB), which South African bank failure is similar to it? On what aspect is it dissimilar?",
+     "memo": "African Bank is similar: it had a solvency problem, was closed down (with a 10% haircut) and its lending was unsecured, to workers in the mining sector who cannot pay their loans in a bad cycle. It is dissimilar in size: SVB was much bigger than Standard Bank. The regulator split African Bank into a good and a bad bank, and one would still do business with African Bank as it is now only the good bank, which is better than before.\n\nVBS also had a solvency problem, but due to fraud, and was a small regional bank, so it is not comparable to SVB."
+    },
+    {
+     "id": "3.3",
+     "marks": 2,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Why is ROE a good measure for a bank?",
+     "memo": "A bank is about allocating capital. ROE measures the return relative to the investment (capital) made."
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "title": "Question 4: Short questions",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "4.1",
+     "marks": 1,
+     "topics": [
+      "b-money"
+     ],
+     "required": "Describe an inverted yield curve.",
+     "memo": "An inverted yield curve has high returns (interest rates) on short-term bonds and lower returns on long-term bonds."
+    },
+    {
+     "id": "4.2",
+     "marks": 2,
+     "topics": [
+      "b-intro",
+      "b-reg"
+     ],
+     "required": "Why is SA Home Loans not a bank?",
+     "memo": "It cannot take deposits: it funds itself by issuing bonds."
+    },
+    {
+     "id": "4.3",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "What is the role of banks in intermediating funds and cash?",
+     "memo": "Banks intermediate funds between savers and borrowers, and receive paper money from the SARB and give it to people."
+    }
+   ]
+  }
+ ],
+ "marks": 66
+}

@@ -1,0 +1,172 @@
+{
+ "id": "b-ws-risk2024",
+ "title": "Risk Management Workshop (2024)",
+ "short": "Risk WS 2024",
+ "kind": "workshop",
+ "minutes": 42,
+ "unofficial": false,
+ "memoNote": "Lecturer's own Workshop Solution (2024) slides; the workshop gives no marks, so marks (about 1 per expected point or step, 1.2 minutes a mark) were assigned by the converter, and some workings (standard deviation table, portfolio variance) were added from the slide figures.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1: Modern portfolio theory (MPT)",
+   "marks": 16,
+   "scenario": "Share A  |  Probability  |  Historical Return\nRecession  |  0,25  |  -23,00%\nSlow growth  |  0,25  |  1,00%\nNormal growth  |  0,25  |  6,00%\nEconomic boom  |  0,25  |  18,00%\n\nShare B  |  Probability  |  Historical Return\nRecession  |  0,25  |  -5,00%\nSlow growth  |  0,25  |  2,00%\nNormal growth  |  0,25  |  4,00%\nEconomic boom  |  0,25  |  9,00%\n\nGiven the data in the table above, answer the questions to follow. Please round only the final answer to two decimal places. Please show all your workings.",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Expected return for both shares.",
+     "memo": "Expected return = sum of probability x return.\n\nShare A = 0,25(-23%) + 0,25(1%) + 0,25(6%) + 0,25(18%) = 0,50%\nShare B = 0,25(-5%) + 0,25(2%) + 0,25(4%) + 0,25(9%) = 2,5%"
+    },
+    {
+     "id": "1.2",
+     "marks": 4,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Expected risk (standard deviation) for both shares.",
+     "memo": "Standard deviation = square root of the sum of p x (return - expected return)^2.\n\nScenario  |  p  |  A: p x R  |  A: p(R - E)^2  |  B: p x R  |  B: p(R - E)^2\nRecession  |  0,25  |  -0.0575  |  0.0138  |  -0.0125  |  0.0014\nSlow growth  |  0,25  |  0.0025  |  0.0000  |  0.0050  |  0.0000\nNormal growth  |  0,25  |  0.0150  |  0.0008  |  0.0100  |  0.0001\nEconomic boom  |  0,25  |  0.0450  |  0.0077  |  0.0225  |  0.0011\nTotal  |  1  |  0.0050  |  0.0222  |  0.0250  |  0.0025\n\nShare A: variance = 0.0222; standard deviation = 14,91%\nShare B: variance = 0.0025; standard deviation = 5,02%"
+    },
+    {
+     "id": "1.3",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Coefficient of Variation for both shares.",
+     "memo": "CV = standard deviation / expected return.\n\nShare A = 14,91% / 0,50% = 29,82\nShare B = 5,02% / 2,5% = 2,01\n\nSide note: CV can be expressed as a % or as a number; if you express it as a % you need to multiply it by 100 (2 982% for Share A and about 201% for Share B). It is best to express it as a number, so the CV for Share A is 29,82, not 29,82%."
+    },
+    {
+     "id": "1.4",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Interpret the answers (expected return, risk and coefficient of variation) for a risk averse investor and for a risk seeker.",
+     "memo": "For a risk averse investor choose Share B, because the standard deviation (risk) is lower (and its CV is much lower, 2,01 against 29,82, i.e. less risk per unit of return). Meaning the investor has an expected return anywhere between 7,52% and -2,52% (2,5% +/- 5,02%).\n\nFor a risk seeker choose Share A, because the standard deviation (risk) is higher. Meaning the investor has an expected return anywhere between 15,41% and -14,41% (0,5% +/- 14,91%)."
+    },
+    {
+     "id": "1.5",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Calculate the expected return of a portfolio made up of 25% in Share A and 75% in Share B. The total value of your portfolio is R150 000.",
+     "memo": "Portfolio weights: A = 25% x R150 000 = R37 500; B = 75% x R150 000 = R112 500.\n\nExpected portfolio return = 0,25(0,50%) + 0,75(2,5%) = 2,00%"
+    },
+    {
+     "id": "1.6",
+     "marks": 4,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Calculate the expected risk (standard deviation) of the same portfolio.",
+     "memo": "Covariance(A,B) = sum of p x (R_A - E_A)(R_B - E_B) = 0.007450\nCorrelation = covariance / (sd_A x sd_B) = 0.007450 / (0,1491 x 0,0502) = 0.9945\n\nPortfolio variance = wA^2 sdA^2 + wB^2 sdB^2 + 2 wA wB cov = (0,25)^2(0.0222) + (0,75)^2(0.0025) + 2(0,25)(0,75)(0.007450) = 0.00560\n\nPortfolio standard deviation = square root of 0.00560 = 7,49%"
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2: Macaulay's duration",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "2",
+     "marks": 6,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Suppose a bond matures in six years, with a coupon rate of 7.5%, a yield to maturity of 14%, and a face value of R 1 250. The bond pays coupons annually. Make use of the Macaulay's formula to calculate the duration of the bond.",
+     "memo": "Annual coupon = 7,5% x R1 250 = R93,75; in year 6 the cash flow is R1 250 + R93,75 = R1 343,75. Discount factor = 1/(1+14%)^t.\n\nt  |  CFt  |  DFt = 1/(1.14)^t  |  CF x DF  |  CF x DF x t\n1  |  R93.75  |  0.88  |  R82.24  |  R82.24\n2  |  R93.75  |  0.77  |  R72.14  |  R144.28\n3  |  R93.75  |  0.67  |  R63.28  |  R189.84\n4  |  R93.75  |  0.59  |  R55.51  |  R222.03\n5  |  R93.75  |  0.52  |  R48.69  |  R243.45\n6  |  R1,343.75  |  0.46  |  R612.19  |  R3,673.17\nSum  |    |    |  R934.05  |  R4,555.00\n\nDuration = sum of (CF x DF x t) / sum of (CF x DF) = R4 555,00 / R934,05 = 4,877 years (NOT 5 years)."
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Question 3: RAROC",
+   "marks": 5,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "3",
+     "marks": 5,
+     "topics": [
+      "b-risk",
+      "b-credit"
+     ],
+     "required": "Suppose a bank wants to evaluate the credit risk of a R2.5 million loan with a duration of 4.5 years to a AAA borrower. Assume there are currently 550 publicly traded bonds in that class. The expected minimum change in the loan rate is 1.4% while the current average level of rates on AAA bonds is 4.9%. Given a projected spread of 0.3% and fees of 0.2%, calculate the risk adjusted return on capital (RAROC) for the loan.",
+     "memo": "Numerator (net income) = (0.3% x R2.5m) + (0.2% x R2.5m) = R7 500 + R5 000 = R12 500\n\nDenominator (capital at risk) = -(4.5 x R2.5m) x (1.4% / (1 + 4.9%)) = -R150,142.99\n\nRAROC = R12 500 / R150,142.99 = 8.33%\n\nSide note: although the denominator will be negative, the answer should always be positive so remember to convert it to a positive number.\n\nIf we assumed an ROE of 6%, we would accept; if the ROE was 9%, we would reject."
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "title": "Question 4: Credit risk",
+   "marks": 8,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "4.1",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Provide an explanation for why linear regression is not suitable for modelling binary outcome data.",
+     "memo": "Linear regression assumes that the relationship between the independent variable and the dependent variable is linear and that the dependent variable is continuous, meaning it can take on any real number. However, binary outcome data is categorical and only takes on two values 0 and 1 (default or not default), which does not support a continuous or linear relationship, making linear regression unsuitable for modeling such data."
+    },
+    {
+     "id": "4.2",
+     "marks": 1,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Identify the most appropriate statistical model to analyse binary outcome data, particularly in the context of default prediction.",
+     "memo": "Multivariate Logistic Regression (not Logistic Regression)."
+    },
+    {
+     "id": "4.3",
+     "marks": 1,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "In a model designed to estimate the probability of default, what does the slope coefficient represent?",
+     "memo": "The slope coefficient represents a change in logit corresponding to a one unit change in the independent variable(s)."
+    },
+    {
+     "id": "4.4",
+     "marks": 1,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "What is the primary objective when fitting a model to predict the probability of default based on binary data?",
+     "memo": "Fitting the best model to describe the relationship between one or more variables."
+    },
+    {
+     "id": "4.5",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Identify and explain a key limitation associated with the model used for predicting binary outcomes. How could this limitation impact the analysis?",
+     "memo": "It assumes the past is an accurate prediction of the future and makes no provision for a financial crisis or an epidemic. This limitation has the impact of not making enough provision for UL (unexpected loss)."
+    },
+    {
+     "id": "4.6",
+     "marks": 1,
+     "topics": [
+      "b-credit",
+      "b-risk"
+     ],
+     "required": "Suggest a solution to this problem.",
+     "memo": "Stress testing (assuming we are not using a more robust or complex calculation)."
+    }
+   ]
+  }
+ ],
+ "marks": 35
+}

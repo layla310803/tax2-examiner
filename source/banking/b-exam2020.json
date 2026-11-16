@@ -1,0 +1,452 @@
+{
+ "id": "b-exam2020",
+ "title": "2020 Final Exam",
+ "short": "Exam 2020",
+ "kind": "exam",
+ "marks": 145,
+ "minutes": 180,
+ "unofficial": true,
+ "memoNote": "Lecturer's memo printed in the paper for every question except Section A Question 2 (the lecturer says there is no set answer), which has a suggested answer written from the course notes; the paper's cover total of 140 does not match its question marks (see report).",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Section A, Question 1 — Banks A and B, 2016 to 2019",
+   "marks": 44,
+   "scenario": "You have been provided with the financials and key ratios for two banks, A and B.\n\nBank A  |  2019  |  2018  |  2017  |  2016\nNIM  |  3,8%  |  3,8%  |  4,1%  |  4,0%\nROA  |  1,48%  |  1,52%  |  1,52%  |  1,43%\nROE  |  15,4%  |  15,8%  |  15,6%  |  15,2%\nProfit Margin  |  24,6%  |  24,5%  |  23,6%  |  22,1%\nAsset Utilization  |  6,0%  |  6,2%  |  6,43%  |  6,47%\nJAWS  |  1,1%  |  -2,4%  |  1,0%  |\nLoans-to-Deposits  |  82%  |  82%  |  83%  |  87%\nCredit Loss Ratio  |  0,67%  |  0,58%  |  0,90%  |  0,89%\nCET1 Ratio  |  11,5%  |  11,5%  |  10%  |  10%\nCost of Equity  |  13,3%  |    |    |\nNet interest income  |  62919  |  59505  |  60125  |  56892\nNon-interest revenue  |  47542  |  45826  |  43037  |  42965\nTotal Income  |  110461  |  105331  |  103162  |  99857\nOperating Expenses  |  62335  |  60084  |  57512  |  56235\nStaff Costs  |  34554  |  33773  |  31672  |  30976\nOther operating expenses  |  27781  |  26311  |  25840  |  25259\nCredit Impairment Charges  |  7964  |  6489  |  9410  |  9533\nCash and balances with central banks  |  75288  |  85145  |  75310  |  77474\nDerivative assets  |  66825  |  48429  |  72629  |  61752\nTrading assets  |  220409  |  178327  |  159798  |  128098\nPledged assets  |  17800  |  7218  |  8879  |  3313\nFinancial investments  |  204703  |  206501  |  180104  |  154630\nCurrent tax assets  |  1192  |  0  |  1773  |  2109\nLoans and advances  |  1181067  |  1119547  |  1048027  |  1065628\nOther assets  |  25546  |  17531  |  12995  |  12530\nInterest in associates and joint ventures  |  2502  |  2122  |  1816  |  1489\nProperty and equipment  |  19608  |  16509  |  13539  |  13450\nGoodwill and other intangible assets  |  21712  |  23006  |  23098  |  23285\nTotal Assets  |  1836652  |  1704335  |  1597968  |  1543758\nEquity  |  176521  |  163429  |  155233  |  145319\nDerivative liabilities  |  64724  |  49586  |  73657  |  68037\nTrading liabilities  |  83717  |  61267  |  63577  |  48109\nDeposits  |  1446080  |  1371919  |  1258359  |  1228993\nSubordinated debt  |  23319  |  20819  |  18966  |  22138\nProvisions and other liabilities  |  42291  |  37315  |  28176  |  31162\nTotal Liabilities  |  1660131  |  1540906  |  1442735  |  1398439\n\nBank B  |  2019  |  2018  |  2017  |  2016\nNIM  |  3,1%  |  3,3%  |  3,0%  |  3,3%\nROA  |  1,07%  |  0,99%  |  1,04%  |  0,95%\nROE  |  12,57%  |  11,60%  |  12,49%  |  11,79%\nProfit Margin  |  23,28%  |  20,95%  |  23,09%  |  21,55%\nAsset Utilization  |  4,6%  |  4,7%  |  4,5%  |  4,4%\nJAWS  |  -1,0%  |  7,8%  |  13,9%  |\nLoans-to-Deposits  |  70%  |  72%  |  69%  |  65%\nCredit Loss Ratio  |  0,27%  |  0,18%  |  0,18%  |  0,40%\nCET1 Ratio  |  12%  |  12%  |  13,5%  |  13,5%\nCost of Equity  |  15,2%  |    |    |\nNet interest income  |  60924  |  60978  |  56352  |  59626\nNon-interest revenue  |  51272  |  46582  |  46538  |  36306\nTotal Income  |  112196  |  107560  |  102890  |  95932\nOperating Expenses  |  57225  |  54315  |  56140  |  60118\nStaff Costs  |  28875  |  26554  |  27256  |  28523\nOther operating expenses  |  28350  |  27762  |  28884  |  31595\nCredit Impairment Charges  |  2756  |  1767  |  1769  |  3400\nCash and balances with central banks  |  154099  |  162843  |  180624  |  128009\nDerivative assets  |  242995  |  207825  |  219818  |  288476\nTrading assets  |  254271  |  238130  |  287995  |  235125\nPledged assets  |  69203  |  72167  |  90393  |  88126\nFinancial investments  |  443312  |  407433  |  389076  |  436797\nLoans and advances  |  1036743  |  981696  |  962964  |  851504\nOther assets  |  46008  |  40823  |  31976,8  |  29764,6\nInterest in associates and joint ventures  |  57510  |  51028,75  |  39971  |  37205,75\nProperty and equipment  |  80514  |  71440,25  |  55959,4  |  52088,05\nGoodwill and other intangible assets  |  41407,2  |  36740,7  |  28779,12  |  26788,14\nDeferred tax assets  |  4600,8  |  4082,3  |  3197,68  |  2976,46\nTotal Assets  |  2430663  |  2274209  |  2290754  |  2176860\nEquity  |  192668  |  194249  |  190250  |  175386\nDerivative liabilities  |  239470  |  205835  |  216821  |  279819\nTrading liabilities  |  223514  |  250315  |  314363  |  242649\nDeposits  |  1475580  |  1370893  |  1391084  |  1303496\nSubordinated debt  |  104555  |  85342  |  64546  |  65915\nProvisions and other liabilities  |  194876  |  167575  |  113690  |  109595\nTotal Liabilities  |  2237995  |  2079960  |  2100504  |  2001474",
+   "parts": [
+    {
+     "id": "Q1a1",
+     "marks": 15,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "You have been provided with the financials and key ratios for two banks, A and B.\na) Provide a full comparative analysis of their performance over the four-year period 2016 to 2019. Your discussion should focus on trends in the ratios over time and whatever additional insights you can provide using the information provided. You may provide your own calculations in order to add additional context to your discussion.\nYour response should address all of the following areas of performance:\n\n1) Bank profitability  [15]",
+     "memo": "I'm looking for analysis similar to the below although there is quite a bit of flexibility in terms of how you choose to structure your responses.\n\nNIM: Both banks have shown volatility in their NIM over time with both showing a decrease in NIM from 2016 to 2019. For Bank A this is due to earning assets growing faster than NII while for Bank B it's a combination of almost-stagnant NII and the growth in earning assets over time. Obviously this is a concern for both banks as NII is the key component of bank earnings and an improving NIM is a sign of more efficient NII generation. The fact that it is decreasing for both banks is therefore worrying. (3 marks)\n\nROA: We know that bank ROAs tend to be low and Bank B has significantly lower ROA than bank A. If we look at the total asset base for both banks, Bank B is clearly larger. However, the fact that its ROA is smaller suggests that it is earning less profit relative to assets than A. On the positive side, the ROA for both banks has improved over time barring a small dip in 2018. (3 marks)\n\nBreaking the ROA down into profit margin and asset utilization, Bank A's superior performance comes through in both measures. It has both higher profit margins and more efficient asset utilization than B. Having said that, while Bank A's profit margin has improved over the period its asset utilization has worsened. This suggests A is generating less total income relative to assets over time. Bank B, on the other hand, has shown improvements in both profit margin and asset utilization, although the latter has been marginal and is actually down in 2019 relative to 2018. (3 marks)\n\nFinally, when looking at leverage (you need to calculate this as it's not provided), we note that Bank B is more leveraged than Bank A. This is often the case where ROA is low as it enables the bank to lever its ROA more to achieve a better ROE. Both Bank A and Bank B's leverage has decreased over time. Bank B's ROE has improved marginally over time while A's has been largely static and moving in a narrow band. While B's is lower than A, it has been improved significantly by its higher leverage. In fairness to B, the real driver of its improved ROE over time though has been its improving profit margin which is a strong positive. (6 marks, additional marks for calculating leverage)"
+    },
+    {
+     "id": "Q1a2",
+     "marks": 6,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "You have been provided with the financials and key ratios for two banks, A and B.\na) Provide a full comparative analysis of their performance over the four-year period 2016 to 2019. Your discussion should focus on trends in the ratios over time and whatever additional insights you can provide using the information provided. You may provide your own calculations in order to add additional context to your discussion.\nYour response should address all of the following areas of performance:\n\n2) Efficiency  [6]",
+     "memo": "In terms of JAWs, B is definitely having an issue relative to A. B's JAWS have been decreasing markedly over time and are now negative which could suggest a very worrying inability to limit the growth of costs over time. A on the other hand has shown positive JAWS in 2019 after having had negative JAWs in 2018. (2 marks)\n\nStill, if we look at the cost-to-income ratio (which you would again have to calculate yourselves), B's ratio is far closer to the ideal target of 50% than A's. B has shown clear improvement over time whereas A's has been stuck in a very narrow band. From a cost perspective, B is in an ideal spot as long as it is able to get control of its growing cost base relative to its income. (4 marks, additional marks for calculating ratios)"
+    },
+    {
+     "id": "Q1a3",
+     "marks": 5,
+     "topics": [
+      "b-fin",
+      "b-credit"
+     ],
+     "required": "You have been provided with the financials and key ratios for two banks, A and B.\na) Provide a full comparative analysis of their performance over the four-year period 2016 to 2019. Your discussion should focus on trends in the ratios over time and whatever additional insights you can provide using the information provided. You may provide your own calculations in order to add additional context to your discussion.\nYour response should address all of the following areas of performance:\n\n3) Asset Quality  [5]",
+     "memo": "The loans-to-deposits ratios paint an interesting picture. The ratio for Bank A is well within the established target ratio of 80% to 90%. Bank B, on the other hand is well below this. This suggests that it is using a greater proportion of its deposits to fund trading investments instead of loans. This is clear in the breakdown of its assets provided. This should come with higher returns but also higher risk. Given its performance, however, it should be questioned whether this higher return is actually being realised in its bottom line. (3 marks)\n\nFinally, from a loan quality perspective, even though B is using a smaller proportion of its deposits to fund loans, the quality of its loans does appear to be better than those for A given its lower credit loss ratio. Having said that, the ratio for both banks is well below the 1% to 3% range which is generally considered to be ideal so neither should be overly concerned at this stage. (2 marks)"
+    },
+    {
+     "id": "Q1a4",
+     "marks": 4,
+     "topics": [
+      "b-fin",
+      "b-reg"
+     ],
+     "required": "You have been provided with the financials and key ratios for two banks, A and B.\na) Provide a full comparative analysis of their performance over the four-year period 2016 to 2019. Your discussion should focus on trends in the ratios over time and whatever additional insights you can provide using the information provided. You may provide your own calculations in order to add additional context to your discussion.\nYour response should address all of the following areas of performance:\n\n4) Risk (Capital risk and anything else you can infer from the information provided)  [4]",
+     "memo": "With regards to capital risk, both banks have CET1 ratios that are well above the requirements. Bank B has a higher ratio which implies less risk but the difference that must be noted between them is that bank B's ratio has decreased slightly in recent years while A's has improved. B's decreasing ratio could speak to its need to take on higher risk with lower quality assets (RWA) in order to chase higher returns. Of note as well is the consistency in their ratios between years indicating the effort from both banks to target what they consider to be optimal ratios at the time. (4 marks)"
+    },
+    {
+     "id": "Q1b",
+     "marks": 14,
+     "topics": [
+      "b-val",
+      "b-fin"
+     ],
+     "required": "b) Assuming that net income for both banks is expected to grow in perpetuity at the same rate as for the most recent period (2018/2019), calculate the implied P/BV ratio for Bank A and B. Based on your calculations, are either of these banks expected to create value in future? Why or why not?  [14]",
+     "memo": "First, we need the Net Income for 2018 and 2019 to calculate the growth rates:\n\nROE = NI/Equity so NI = ROE x Equity\n\nNet Income for Bank A: 2018: R25822 and 2019: R27184 therefore growth = 5,3% (3 marks)\n\nNet Income for Bank B: 2018: R22533 and 2019: R24218 therefore growth = 7,5% (3 marks)\n\nTarget P/BV = (ROE1 - NI growth rate)/(Cost of Equity - NI growth rate)\n\nRemember that the equation uses ROE in the next period, so we need to grow it by the growth rates calculated:\n\nFor Bank A = [(0,154 x 1,053) - 0,053]/(0,133 - 0,053)\n= (0,1622 - 0,053)/(0,133 - 0,053)\n= 1,36 (3 marks)\n\nFor Bank B = [(12,57% x 1,075) - 0,075]/(0,152 - 0,075)\n= (0,1351 - 0,075)/(0,152 - 0,075)\n= 0,78 (3 marks)\n\nBank A has a positive implied P/BV ratio indicating that ROE exceeds cost of equity, and it should therefore be creating value in future. Bank B, however, has an implied P/BV ratio less than one indicating that it is not generating sufficient returns to covers its cost of equity and it is therefore destroying value. (2 marks)"
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Section A, Question 2 — The three greatest risks facing South African banks",
+   "marks": 11,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q2",
+     "marks": 11,
+     "topics": [
+      "b-intro",
+      "b-risk"
+     ],
+     "required": "Based on the research you conducted on the South African banking environment this year, what do you believe are the three greatest risks facing South African banks? Briefly discuss each of these risks and motivate why you believe they are important.  [11]",
+     "memo": "Suggested answer (not an official memo): the lecturer's note on this question says there is no set answer (\"This question just allows you to synthesize the work you've done in your research project this year. I'm not looking for a specific answer here - more for your ability to show why you believe those risks are key given the current conditions in the banking environment.\"). Marks go for choosing three relevant risks and explaining why each matters now. A strong answer could use:\n\n1. Competition from digital banks and the need to digitalise. New entrants (for example TymeBank, Discovery Bank, Bank Zero) have no branches, fewer staff and fewer non-earning assets, so they can charge low or no fees. Traditional banks carry legacy branches and property, which drag on asset utilisation and push the cost-to-income ratio above 50%, and they must invest heavily in IT to keep customers, which raises costs in the short run.\n\n2. Pressure on net interest income. NII is the main source of bank revenue. When the SARB cuts the repo rate (as in 2020) the spread between lending and deposit rates narrows and NIM falls, and non-interest revenue (fees) also falls when customers transact less. Banks must grow non-interest revenue or cut costs to protect ROE.\n\n3. Credit risk in a weak economy. Low growth and unemployment (and later high interest rates) raise defaults. Credit impairments jump (as in 2020 with Covid), which cuts the profit margin and ROE and can push the credit loss ratio above the 1% to 3% band.\n\nOther acceptable risks: cyber and IT-system risk as banking moves online; regulatory pressure (Basel III capital and liquidity requirements limit leverage and returns); reputational risk; political and sovereign risk (a ratings downgrade raises banks' funding costs)."
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Section B, Question 3 — RWA, Tier 1, CET1 and excess liquidity of Bank X",
+   "marks": 20,
+   "scenario": "Information on Bank X:\n\nASSETS  |    |  LIABILITIES & EQUITY  |\nCash and cash equivalents  |  15 968  |  Derivative financial instruments  |  63 288\nDerivative financial instruments  |  76 799  |  Amounts owed to depositors  |  894 011\nGovernment securities  |  109 057  |  Provisions and other liabilities  |  23 811\nLoans and advances to clients  |  850 843  |  Long-term debt instruments  |  42 234\nTaxation assets*  |  1 100  |  TOTAL LIABILITIES  |  1 023 344\nInvestment securities  |  11 834  |  Ordinary share capital  |  484\nMandatory reserve deposits with central banks  |  22 412  |  Ordinary share premium  |  18 582\nIntangible assets  |  13 696  |  Reserves  |  47 577\n  |    |  Holders of preference shares  |  4 872\n  |    |  Holders of additional tier 1 capital instruments  |  6 850\n  |    |  TOTAL EQUITY  |  78 365\nTOTAL  |  1 101 709  |  TOTAL  |  1 101 709\n\nOther information:\n- 50% of the item \"Taxation assets\" relates to money owed to Bank X by the Receiver of Revenue and the other 50% relates to a deferred tax asset that is dependent on future taxable income for realisation;\n- Risk-weighted assets can by calculated by treating all government related balance sheet items as carrying 0% risk; treating the item \"Derivative financial instruments\" as carrying 120% risk; treating \"Loans and advances to clients\" as carrying 60% risk and treating \"Investment securities\" as carrying 100% risk. Off-balance-sheet items contribute 90 567 to risk-weighted assets.",
+   "parts": [
+    {
+     "id": "Q3a",
+     "marks": 7,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "a) Calculate the total risk-weighted asset number for Bank X.  [7]",
+     "memo": "\"Cash and cash equivalents\", \"Government securities\", \"Taxation assets\" and \"Mandatory reserve deposits with central banks\" are all ignored in the calculation to follow as nil given that they are government related. \"Intangible assets\" are treated as nil because they are excluded from the calculation;\n\nDerivative financial instruments  |  120% x 76 799 =  |  92 159\nLoans and advances to clients  |  60% x 850 843 =  |  510 506\nInvestment securities  |    |  11 834\n  |    |  614 499\nOff-balance-sheet items  |    |  90 567\nTotal risk-weighted assets  |    |  705 066"
+    },
+    {
+     "id": "Q3b",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "b) Calculate the Tier 1 capital available. Start with \"Total Equity\".  [3]",
+     "memo": "Total Equity  |  78 365\nLess portion of \"Taxation assets\" that depends on future income 1100 x 50% = 550  |  550\nLess \"Intangible assets\"  |  13 696\nTier 1 capital  |  64 119"
+    },
+    {
+     "id": "Q3c",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "c) Calculate the Common Equity Tier 1 (CET1) capital available. Start with your answer in b) above.  [3]",
+     "memo": "Answer in b) above  |  64 119\nLess \"Holders of preference shares\"  |  4 872\nLess \"Holders of additional tier 1 capital instruments\"  |  6 850\nCET1 capital  |  52 397"
+    },
+    {
+     "id": "Q3d",
+     "marks": 2,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "d) Calculate the CET1 capital ratio.  [2]",
+     "memo": "52 397 / 705 066 * 100 = 7.43%"
+    },
+    {
+     "id": "Q3e",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-treas"
+     ],
+     "required": "e) Calculate the excess liquidity held by Bank X if it is given that Bank X has a minimum reserve ratio of 2.5%.  [3]",
+     "memo": "(2.5% x 1 023 344) - 15 968 - 22 412 = 12 796 excess\n\n(Note: the memo takes the 2.5% requirement of R25 584 against cash of R38 380 held, i.e. R12 796 above the requirement.)"
+    },
+    {
+     "id": "Q3f",
+     "marks": 2,
+     "topics": [
+      "b-reg",
+      "b-treas"
+     ],
+     "required": "f) Liquid assets pay no or little interest. Give two possible reasons for Bank X having excess liquidity despite it being a drag on profitability.  [2]",
+     "memo": "Bank X is perhaps expecting difficult economic times with abnormal withdrawals\n\nMinimum reserves are not the only liquidity requirement under Basel 3. What about LCR and NSFR? Perhaps they are the binding constraints.\n\nAny other logical answer"
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "title": "Section B, Question 4 — Politics, ownership and cost of capital",
+   "marks": 10,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q4a",
+     "marks": 4,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Clearly explain how politics in South Africa can lead to banks charging higher interest rates on loans. Two arguments are required with a suggested paragraph per argument.  [4]",
+     "memo": "1 mark for point raised that with some thought on the side of the examiner might be valid. Examples:\n- Bribes/irrecoverable loans imply that banks must charge higher rates on other productive loans to make up for the losses suffered;\n- Economic uncertainty implies higher future losses through potential bad debts that must be recouped through higher interest rates;\n- Land is often the security for bank loans. If ownership is uncertain then security is uncertain and higher interest rates called for;\n- Modern monetary theory, as called for by many radical economists, imply the potential for higher inflation that is a critical component of interest rates;\n\n2 marks if a valid point is raised and well explained. No thinking/guessing is required on the part of the examiner."
+    },
+    {
+     "id": "Q4b",
+     "marks": 4,
+     "topics": [
+      "b-intro",
+      "b-fail"
+     ],
+     "required": "b) Explain why the shareholders of a bank do not own the bank?  [4]",
+     "memo": "Shareholders do not own firms but rather own shares (1). The shares give them certain rights such as the right to a dividend, once declared, and the right to vote at the AGM (1). Some agency theorists argue that these rights imply that shareholders thus own firms and that the firms should be run to the betterment of the owners/shareholders. The rights of the shareholders (especially minority shareholders) are not equivalent to ownership rights, although it is sometimes a useful thinking shortcut to think of those rights as ownership rights. The rights of bank shareholders are less than those of regular firm shareholders as banks are tightly regulated (1). By implication, the rights of other stakeholder groups are more important in banking, leaving shareholders with less than ownership (1). It is perhaps better to think about bank as public utilities (1)."
+    },
+    {
+     "id": "Q4c",
+     "marks": 2,
+     "topics": [
+      "b-intro",
+      "b-val"
+     ],
+     "required": "c) It is given that a systemically important bank will likely always be bailed out of trouble by the central bank. Should the cost of capital of such a bank then be further away from the risk-free rate or be closer to the risk-free rate than a comparable non-bank listed firm? Explain.  [2]",
+     "memo": "It should be closer to the risk-free rate. This is because its risk, from the perspective of a shareholder, is lower."
+    }
+   ]
+  },
+  {
+   "id": "Q5",
+   "title": "Section B, Question 5 — Definitions of bank failure",
+   "marks": 10,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q5",
+     "marks": 10,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "The definition of what constitutes bank failure is under debate. Give and explain three different definitions of bank failure. Do indicate any relationships between the different definitions. Also, provide an example of each type of bank failure.  [10]",
+     "memo": "The classic definition of bank failure is that of insolvency: when the liabilities of the bank exceed the assets of the bank (2). Insolvency can result from liquidity problems when a bank is forced to sell assets at fire sale values (1). An example is that of VBS Mutual Bank (1).\n\nIt can also be argued that a bank fails if it is unable to pay its creditors in the ordinary course of business (even if it is solvent), i.e. a liquidity problem (2). This definition is not broadly accepted as banks, by design, cannot pay all its depositors at once. For that reason, it is usually assumed that the central bank will provide emergency liquidity for all solvent banks (1). A good example here is that of Saambou (1).\n\nIt can also be argued that a bank fails when it is placed under curatorship by the bank regulator. This is usually the result of liquidity problems or other issues such as fraud (2). African Bank is an example (1)."
+    }
+   ]
+  },
+  {
+   "id": "Q6",
+   "title": "Section C, Question 6 — Repricing gap",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q6a",
+     "marks": 2,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Qwet Bank Ltd obtained a 1-year fixed deposit of R200,000 from a depositor. This deposit, together with equity of R50,000 were used to fund a 2-year fixed-rate loan for R250,000. Using the repricing model, (a) determine the bank's repricing gap, use a 1-year maturity bucket, and (b) determine the impact of a 1% decrease in interest rates on the bank's annual net interest income?\n\n(a) Repricing gap  [2]",
+     "memo": "GAP = RSA - RSL (repriced within 1 year)\nGAP = 0 - R200,000 = -R200,000  [2]"
+    },
+    {
+     "id": "Q6b",
+     "marks": 2,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Qwet Bank Ltd obtained a 1-year fixed deposit of R200,000 from a depositor. This deposit, together with equity of R50,000 were used to fund a 2-year fixed-rate loan for R250,000. Using the repricing model, (a) determine the bank's repricing gap, use a 1-year maturity bucket, and (b) determine the impact of a 1% decrease in interest rates on the bank's annual net interest income?\n\n(b) Impact of a 1% decrease in interest rates  [2]",
+     "memo": "The impact of a 1% decrease in interest rates on the net interest income: change in NII = GAP x change in R = -200,000 x -0.01 = R2,000  [2]\n(net interest income will increase by R2,000)"
+    }
+   ]
+  },
+  {
+   "id": "Q7",
+   "title": "Section C, Question 7 — Leverage adjusted duration gap",
+   "marks": 3,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q7",
+     "marks": 3,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Seta Bank Ltd extended a car loan for R500,000 to Luthando. The loan matures in 2 years and it has a duration of 1.92 years. The loan was funded by a fixed deposit of R400,000 and R100,000 equity. The fixed deposit is for 1-year and it will be repaid to the depositor as a lump sum. What is the leveraged adjusted duration gap of this position?  [3]",
+     "memo": "Leveraged adjusted duration gap = DA - DL x k = 1.92 - 1 x (400,000 / 500,000) = 1.12 years  [3]"
+    }
+   ]
+  },
+  {
+   "id": "Q8",
+   "title": "Section C, Question 8 — Altman Z-score",
+   "marks": 3,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q8",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "You sit on the Credit Committee (CredCo) for HYT Bank. The CredCo is currently discussing a prospective borrower with an Altman Z-score of 1.78. Based on the results of the Altman Z-score model, would you support the proposal to lend the money to this borrower, justify your answer?  [3]",
+     "memo": "Based on the Z-score model, a score below 1.81 is classified as high credit risk. The score for this prospective borrower is 1.78, which places them in high credit risk category. Therefore, it makes sense not to support the proposal if you are using the Altman Z-score model"
+    }
+   ]
+  },
+  {
+   "id": "Q9",
+   "title": "Section C, Question 9 — Volatility and default risk",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q9",
+     "marks": 4,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "You are a credit analyst for Jack Bank Ltd. You are evaluating a prospective borrower, Sharpu Ltd Their current financials are strong but their earnings and cash flows are very volatile because of the nature of the industry they operate in. Despite the good financials, members of the Credit Committee rejected their loan application because of the high volatility of earnings and cash flows. Explain why the volatility of earnings and cash flows is an important factor in determining default risk.  [4]",
+     "memo": "The volatility of earnings/cashflows is the extent to which the earnings/cashflows fluctuate or deviate from the average. These two (earnings and cashflows) determine the borrower's ability to pay their debts, hence their level of volatility indicate the riskiness of the borrower. High earnings/cashflows volatility implies high risk of default. If the earnings/cashflows are highly fluctuating, there is a chance that, in one period, they will fall to a point where they will not be enough to meet the obligations. However, when earnings are less volatile there is less likelihood of the earnings dropping and failing to cover the interest payments, so the risk of default is lower."
+    }
+   ]
+  },
+  {
+   "id": "Q10",
+   "title": "Section C, Question 10 — Logit versus linear probability model",
+   "marks": 3,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q10",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "The logit model is used to measure credit risk. However, it is applied as an extension of the linear probability model. What is the relevance of the logit model in relation to the linear probability model? Put differently, what value does the logit model add to the linear probability model as far measuring credit risk is concerned.  [3]",
+     "memo": "A major weakness of the linear probability model is that the estimated probabilities of default can lie outside the interval of 0 to 1, which does not make economic or statistical sense and it is difficult to interpret if you are evaluating one borrower. The logit model overcomes this weakness by restricting the estimated range of default probabilities from the linear regression model to lie between 0 and 1. The logit model utilises the probability of default derived from the linear probability model"
+    }
+   ]
+  },
+  {
+   "id": "Q11",
+   "title": "Section C, Question 11 — Term structure of credit risk",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q11",
+     "marks": 4,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "What is the key assumption behind the term structure of credit risk approach? How do you determine the probability of default of a 2-year loan using the term structure of credit risk approach?  [4]",
+     "memo": "The model assumes the difference between the corporate and government bonds yield is solely driven by default risk (or by the fact that corporate bonds have higher default risk than government bonds) [1]. If you have a two-year bond, you find the product of the probability of repayment for year one and the probability of repayment for year two. To find the probability of default for year one, you use the one-year spot rates for corporates and the government bonds. You divide 1 plus the government bond yield by 1 plus the corporate bond yield. To find the probability of default for year 2, you determine the 1-year forward rate in year two for the corporate bond yield curve and for the government bond yield curve. You then divide the 1 plus the 1-year forward rate for the government bond yield curve by 1 plus the 1-year forward rate for the corporate yield curve. [3]"
+    }
+   ]
+  },
+  {
+   "id": "Q12",
+   "title": "Section C, Question 12 — Credit forward versus digital default option",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q12",
+     "marks": 4,
+     "topics": [
+      "b-credit",
+      "b-risk"
+     ],
+     "required": "You are considering using either a credit forward or a digital default option to manage credit risk. Explain how these two techniques differ in terms of how they protect a lender from credit risk.  [4]",
+     "memo": "With a credit forward, the lender is hedged against the change in default risk, specifically the increase in default risk, as measured by the increase default spread or yield spread - it does not protect against complete default on the principal and interest payments. The increase in default risk that it hedges is measured as the product of the change in yield and the value of the loan. On the other hand a digital default option pays a stated amount in the event of a loan default. It can pay the face value of the loan in the event of default."
+    }
+   ]
+  },
+  {
+   "id": "Q13",
+   "title": "Section C, Question 13 — Refinancing risk",
+   "marks": 7,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q13",
+     "marks": 7,
+     "topics": [
+      "b-irr",
+      "b-risk"
+     ],
+     "required": "State two circumstances that give rise to refinancing risk. For each circumstance that you state, explain how refinancing risk arises (focus on how the interest income of a bank will decrease under those circumstances).  [7]",
+     "memo": "- Refinancing risk arises when (i) rate sensitive liabilities are greater than the rate sensitive assets and (ii) when the maturity of the rate sensitive assets is longer than the maturity of rate sensitive liabilities [2]\n- When the rate sensitive liabilities are greater than the rate sensitive assets, an increase in interest rates will result in a big jump in the interest expense relative to the interest rate income, this decreases the interest income. [2]\n- When the maturity of rate sensitive assets is longer than the liabilities; because the liabilities have shorter time to maturities they will need to be replaced or to be rolled over before the assets they bought have matured. So an increase in interest rates will result in the liabilities being rolled over at a higher interest rate while the assets are locked at the same interest rate - this will result in a reduction in net interest income. [3]"
+    }
+   ]
+  },
+  {
+   "id": "Q14",
+   "title": "Section C, Question 14 — Negative duration gap",
+   "marks": 3,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q14",
+     "marks": 3,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Jack Bank Ltd has a duration gap of -R18.25million (minus R18.25million). Given this gap, what is the bank's exposure or under what circumstances will the bank's capital decrease, justify your answer.  [3]",
+     "memo": "A negative duration gap means liabilities have a higher duration and they are more sensitive to interest rate changes. Therefore the bank is exposed to an interest rate decrease. A decrease in interest rates will result in value of the liabilities increasing higher/faster than the assets, which consequently result in capital decreasing. [3]"
+    }
+   ]
+  },
+  {
+   "id": "Q15",
+   "title": "Section C, Question 15 — Interest rate changes and bank equity",
+   "marks": 3,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q15",
+     "marks": 3,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Specify three factors that affect the impact of interest rate changes on a bank's equity or net worth.  [3]",
+     "memo": "- The leverage adjusted duration gap\n- The size of the bank or the bank's assets.\n- The size of the interest rate shock"
+    }
+   ]
+  },
+  {
+   "id": "Q16",
+   "title": "Section C, Question 16 — Commitments to lend",
+   "marks": 5,
+   "scenario": "In the table below you are presented with a ratio for Bank Zutz and Bank Yets.\n\n  |  Bank Zutz  |  Bank Yets\nCommitment to lend to total assets  |  17%  |  37%",
+   "parts": [
+    {
+     "id": "Q16a",
+     "marks": 2,
+     "topics": [
+      "b-risk",
+      "b-treas"
+     ],
+     "required": "a) Given the information presented in the table above, which bank has lower exposure to liquidity risk, justify your answer.  [2]",
+     "memo": "Bank Zutz has a lower exposure to liquidity risk, it has a lower commitments to lend, it has less risk of drawdowns that may squeeze their cashflows.[2]"
+    },
+    {
+     "id": "Q16b",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-treas"
+     ],
+     "required": "b) From a liquidity risk point of view, what are the implications of having a high commitment to lend to total assets ratio for a bank.  [3]",
+     "memo": "A high ratio of loan commitments to assets exposes a bank to liquidity risk. A high ratio means the bank has huge commitments to fund possible drawdowns. So the bank needs to have a high degree of liquidity to fund any unexpected takedowns of these high commitments to lend. If those drawdowns happen at a time when the bank has no funding then they will hit a liquidity crunch.[3]"
+    }
+   ]
+  },
+  {
+   "id": "Q17",
+   "title": "Section C, Question 17 — Components of DEAR",
+   "marks": 3,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q17",
+     "marks": 3,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "With the RiskMetrics model, market risk is measured in terms of the daily earnings at risk (DEAR). What are three components of the DEAR?  [3]",
+     "memo": "- The value of the position [1]\n- The sensitivity of the asset to changes in market conditions. [1]\n- The extent to which the market changes or the potential adverse move in market conditions [1]"
+    }
+   ]
+  },
+  {
+   "id": "Q18",
+   "title": "Section C, Question 18 — Market risk versus market value risk",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "Q18",
+     "marks": 4,
+     "topics": [
+      "b-mkt",
+      "b-irr"
+     ],
+     "required": "It is easy to confuse market risk and market value risk. However, the two are different. What are the differences between these two forms of risk, state two points?  [4]",
+     "memo": "Any of these two points.\n\nMarket risk affects assets in the trading portfolio while market value risk is a form of interest rate risk that affects rate sensitive assets and liabilities, all of which are part of the banking book of the bank (loans, deposits). [2]\n\nMarket risk has an effect on the trading income/profit and it directly affects the earnings of a bank. Market value risk has a direct effect on a bank's capital or net worth position. [2]\n\nMarket risk is driven or caused by changes, particularly extreme changes, in market conditions such as the price of an asset, interest rates, market volatility, and market liquidity. On the other hand market value risk is driven by interest rate fluctuations only."
+    }
+   ]
+  }
+ ]
+}

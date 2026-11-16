@@ -1,0 +1,109 @@
+{
+ "id": "b-makeup2025",
+ "title": "2025 Make-Up Test",
+ "short": "Make-up 2025",
+ "kind": "test",
+ "marks": 70,
+ "minutes": 90,
+ "unofficial": false,
+ "memoNote": "The lecturer's own memo, printed in the paper.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1",
+   "marks": 50,
+   "scenario": "You have been provided with the financial information and excerpts for Bank XYZ in the appendixes. You may assume that the bank receives interest on balances they hold with their central bank. Use the information provided to answer the following questions and make use of appropriate benchmarks to provide context in your ratio analysis.\n\nAppendix 1: Key ratios and other information for Bank XYZ (for the year ended 31 December)  |  2024 Rm  |  2023 Rm  |  2022 Rm\nCredit loss ratio (%)  |  0,83  |  1,08  |  0,84\nCost-to-income ratio (%)  |  56,9  |  55,0  |  56,6\nReturn on ordinary shareholders’ equity (%)  |  15,0  |  16,1  |  12,7\nInterest-earning assets (Rm)  |  1 261 096  |  1 155 517  |  1 122 844\nReturn on total assets (%)  |  1,19  |  1,32  |  1,07\nCommon equity tier 1 Ratio (%)  |  12,2  |  12,1  |  12,4\nLiquidity Coverage Ratio  |  1,05  |  1,2  |  1,44\nCost of Equity (%)  |  15,50  |  15,90  |  16,35\nNumber of shares in issue: Ordinary shares (m)  |  28,1  |  28,1  |  28,1\n\nAppendix 2: CONSOLIDATED STATEMENT OF COMPREHENSIVE INCOME FOR THE YEAR ENDED 31 DECEMBER  |  2024 Rm  |  2023 Rm  |  2022 Rm\nInterest and similar income  |  125 015  |  116 915  |  82 104\nInterest expense and similar charges  |  83 209  |  75 445  |  45 827\nNet interest income  |  41 806  |  41 470  |  36 277\nNon-Interest Revenue  |  30 412  |  27709  |  26171\nTotal operating income  |  72218  |  69179  |  62448\nShare of gains of associate companies  |  1 313  |  1449  |  879\nTotal net income before impairment charges  |  73 531  |  70 628  |  63 327\nImpairments charge on financial instruments  |  7 997  |  9 605  |  7 381\nTotal net income  |  65 534  |  61 023  |  55 946\nTotal operating expenses  |  41 074  |  38 059  |  35 329\nIndirect taxation  |  1084  |  1 129  |  1 102\nOther gains and losses  |  158  |  403  |  -245\nProfit before direct taxation  |  23 218  |  21 432  |  19 760\nDirect taxation  |  4 746  |  4 432  |  4 330\nProfit for the year  |  18 472  |  17 000  |  15 430\nOther comprehensive income (OCI) net of taxation  |  -1653  |  338  |  -2076\nTotal comprehensive income for the year  |  16 819  |  17 338  |  13 354\n\nCONSOLIDATED STATEMENT OF FINANCIAL POSITION AT 31 DECEMBER  |  2024 Rm  |  2023 Rm  |  2022 Rm\nAssets  |    |    |  \nCash and cash equivalents  |  55 146  |  52 082  |  45 618\nOther short-term securities  |  82 896  |  87 769  |  70 661\nDerivative financial instruments  |  17 072  |  13 812  |  9 101\nGovernment and other securities  |  198 522  |  170 717  |  160 495\nLoans and advances  |  962 184  |  891 619  |  882 165\nOther assets  |  38 187  |  35 575  |  27 827\nCurrent taxation assets  |  578  |  534  |  303\nInvestment securities  |  28 172  |  27 287  |  25 465\nNon-current assets held for sale  |  182  |  493  |  244\nInvestments in associate companies  |  2 486  |  2 489  |  2 496\nDeferred taxation assets  |  554  |  921  |  709\nProperty and equipment  |  14 422  |  11 284  |  11 064\nLong-term employee benefit assets  |  5 484  |  4 849  |  4 107\nIntangible assets  |  12 652  |  11 977  |  12 649\nTotal assets  |  1 418 537  |  1 311 408  |  1 252 904\nEquity and liabilities  |    |    |  \nOrdinary share capital  |  467  |  465  |  487\nOrdinary share premium  |  14 351  |  14 332  |  19 208\nReserves  |  97 446  |  92 952  |  85 281\nEquity attributable to ordinary shareholders  |  112 264  |  107 749  |  104 976\nHolders of participating preference shares  |  103  |  106  |  51\nHolders of additional tier 1 capital instruments  |  12 798  |  10 469  |  10 219\nNon-controlling interest attributable to ordinary shareholders  |  921  |  887  |  698\nTotal equity  |  126 086  |  119 211  |  115 944\nDerivative financial instruments  |  11 623  |  14 141  |  9 738\nAmounts owed to depositors  |  1 174 691  |  1 087 645  |  1 039 622\nProvisions and other liabilities  |  36 369  |  22 715  |  16 722\nCurrent taxation liabilities  |  324  |  313  |  322\nDeferred taxation liabilities  |  778  |  507  |  533\nLong-term employee benefit liabilities  |  47  |  43  |  6\nInvestment contract liabilities  |  17484  |  17512  |  16832\nInsurance contract liabilities  |  1354  |  1544  |  1282\nLong-term debt instruments  |  49 781  |  47 777  |  51 903\nTotal liabilities  |  1 292 451  |  1 192 197  |  1 136 960\nTotal equity and liabilities  |  1 418 537  |  1 311 408  |  1 252 904",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 5,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.1 Calculate the NIM for Bank A over the three years and discuss what is driving the changes in the ratio over time.",
+     "memo": "You are provided with the earning assets in Appendix 1 so you just have to perform the NIM calculations:\n\n  |  2024  |  2023  |  2022\nNIM  |  3,32%  |  3,59%  |  3,23%\n\nThe NIM has fluctuated over the three years, having increased significantly between 2022 and 2023, before decreasing again in 2024. The increase in 2023 was due to a 14% increase in NII in that year which significantly outpaced the growth in earning assets (3%) whereas NII in 2024 was mostly flat despite earning assets increasing by 9%."
+    },
+    {
+     "id": "1.2",
+     "marks": 28,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.2 Critically discuss the key performance metrics from Appendix 1. What is driving the bank’s performance over the three years? Provide any additional calculations required to motivate your answer.",
+     "memo": "You are provided with ROA and ROE so the ratios still to be calculated are their drivers: Profit Margin, Asset Utilization and Leverage:\n\n  |  2024  |  2023  |  2022\nProfit Margin  |  23,29%  |  25,06%  |  21,38%\nAsset Utilization  |  5,09%  |  5,28%  |  4,98%\nLeverage  |  12,64  |  12,17  |  11,94\n\n(9 marks, 1 mark each)\n\nROE has followed the same pattern as NIM over the three years, increasing significantly in 2023 before dropping again in 2024. This is driven by a significant increase in profits in 2023 followed by a drop in 2024, while equity has shown consistent increases over the three years. The biggest drivers of the drop in profit appears to be a combination of the slower growth in operating income (driven by the issues with NII growth identified in 1.1), the sharp increase in operating costs and the big OCI charge in 2023.\n\nLooking at ROA, we observe that ROA follows the same pattern as ROE. This suggests that the issues in the underlying performance are not due to leverage but instead due to operating issues – either profit margins or asset utilisation. Given that ROA has the same numerator as ROE, the change in profits for each year are the same (a sharp increase in 2023 followed by a drop in 2024) but in this case the denominator is total assets. The total assets line item has shown much greater growth in 2023 and 2024 (4,7% and 8,2%, respectively) so the impact is even greater than the growth in equity was for the ROE calculation.\n\nIn terms of profit margins, we see the same pattern here as with ROE and ROA – an increase in 2023 before a decrease in 2024. This is a combination of the change we observed in the profit margin, already discussed above plus the change in operating income. NIR increased consistently over the three years so the biggest impact on the operating income has been the big increase in NII in 2023 and the subsequent decline in 2024. The increasing NII would have been due to banks taking advantage of higher rates in global markets due to central banks increasing rates to combat inflation. The declining NII is likely a consequence of central banks reducing rates in 2024 as inflation cooled, resulting in bank spreads being squeezed and NII declining. Given that NII is likely to be under pressure for a while, the bank is going to need to compensate for this by either prioritizing and increase NIR or else finding ways to control costs better. Profit margin was the biggest contributor to the changes in both ROA and ROE with an increase of 17,2% in 2023 and a decline of 7,1% in 2024.\n\nOn the asset utilization side, we observe the same pattern of the increase in 2023 and the decrease in 2024. This is partly driven by the changes in NII detailed above plus the change in the bank’s total assets over the three years. While NII has fluctuated over the three years, total assets have increased consistently as shown in the ROA discussion above, with the growth accelerating in 2024. The upshot of this was an improvement in asset utilization in 2023 followed by a decrease in 2024 by almost the same margin. For the bank to improve its asset utilization it will either need to change its mix of earning assets to yield a higher NII or else it will need to find ways to reduce its non-earning assets. Based on the figures provided in Appendix 1, the latter will be difficult, however, as the bank’s earning assets make up almost 90% of its total assets in each year.\n\nFinally, the bank’s leverage has increased marginally but consistently over the period. This represents slightly higher risk but also potentially higher returns for the bank. We should note that while banks can adjust their leverage, its very seldom a conscious decision and is often more a factor of their capital requirements and regulatory concerns. Having said that, the increases in leverage have been marginal (2% and 3,8% in 2023 and 2024, respectively) and much smaller than the changes in both profit margin and asset utilization.\n\nOverall, the bank’s performance in 2024 is worrying. Both ROA and ROE are declining and the change appears to be driven primarily by the worsening profit margin. Given that this was a factor of both flattening NII and increasing costs, there are some significant issues for the bank to address."
+    },
+    {
+     "id": "1.3",
+     "marks": 9,
+     "topics": [
+      "b-fin",
+      "b-reg"
+     ],
+     "required": "1.3 Critically discuss the key risk metrics from Appendix 1. What are the areas of concern for the bank?",
+     "memo": "They key risk metrics provided are CET1 ratio, LCR and credit loss ratio.\n\nThe credit loss ratio showed an increase in 2023 followed by a decrease in 2024. This follows the pattern in NIM we discussed earlier and the two are linked. When inflation and interest rates were high in 2023, banks were earning more interest income due to their spreads being wider. However, this higher interest income came at the cost of higher impairments due to clients struggling with the higher interest costs. As a result, the credit loss ratio was higher. As interest rates have come down, pressure on customers has decreased and therefore the rate of defaults has come down – the result is the lower credit loss ratio. The current ratio is well below the 1% to 3% average expected for the average bank, so the risk is low.\n\nThe bank’s CET1 ratio is a measure of capital adequacy, representing a buffer against unexpected losses. The ratio should be at least 6,5% (at a simple level) and the bank’s ratio is well above this at almost double. This represents very strong capital adequacy and low risk but also represents a potential loss of earnings potential for the bank.\n\nFinally, the LCR is a measure of 30-day liquidity for the bank, and the benchmark should be at least 1 or above. The bank’s ratio is above this benchmark but is declining consistently every year which is a potential cause for concern. Having said that, a ratio well above 1 would result in a similar potential loss of earnings as the high CET1 ratio discussed above, so the decline could potentially just be the bank reducing this excess liquidity in favour of earning higher returns."
+    },
+    {
+     "id": "1.4",
+     "marks": 4,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.4  Discuss the trend in an appropriate efficiency ratio from Appendix 1. Is the bank performing well in this regard? Why or why not?",
+     "memo": "The appropriate ratio here is the cost-to-income ratio. We observe that the bank’s cost-to-income ratio has shown a slight increase from 2022. This is a factor of the flattening NII resulting in lower operating income while operating costs have increased by about 8% each year. This has been mostly offset by the increase in NIR resulting in the largely flat ratio. As it stands, the ratio is above 50%, which is the optimal benchmark, so the bank still has work to do in improving the ratio going forward."
+    },
+    {
+     "id": "1.5",
+     "marks": 4,
+     "topics": [
+      "b-val"
+     ],
+     "required": "1.5 When the bank presented its most recent financial results to investors, it highlighted that \"We are aware of investor concerns regarding value creation over recent periods, but we wish to assure you that we are working on balancing returns and costs, and we believe we are moving in the right direction.\"\n\nCritically discuss the bank’s value creation over the past three years. Do you agree with the statement made? Why or why not?",
+     "memo": "The easiest way to assess the bank’s value creation is to compare its ROE to its cost of Equity. The bank’s ROE has exceeded the cost of equity only in 2023. In 2022, it was significantly below cost of equity while in 2023 it was marginally so. As discussed in 1.2, the primary issues are the flattening NII and increasing costs (as well as the big OCI adjustment in 2024). In the absence of the OCI adjustment, the bank is actually creating value in 2024. So, the question is to what extent the OCI will impact on profits going forward and also whether the bank can address the issues it faces in terms of its NII and cost controls. On the positive side, the cost of equity has been coming down over time which means the bank should find it easier to create value in future."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2",
+   "marks": 7,
+   "scenario": "Company XYZ had sales of R2 million in 2025, and cost of goods sold of R1,8 million. A simplified partial balance sheet for the firm appears below:\n\nCurrent Assets (R '000)  |  2025  |  2024  |  Current Liabilities (R '000)  |  2025  |  2024\nCash  |  R250  |  R180  |  Accounts Payable  |  R150  |  R90\nAccounts Receivable  |  R180  |  R90  |  Deferred Tax Liabilities  |  R170  |  R220\nInventory  |  R250  |  R150  |  Pension Fund Liabilities  |  R720  |  R650\nTotal current assets  |  R680  |  R420  |  Total Current Liabilities  |  R1040  |  R960",
+   "parts": [
+    {
+     "id": "2.1",
+     "marks": 7,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "2.1 Calculate the operating cycle of XYZ in 2025.",
+     "memo": "The operating cycle is just the DSO and DIO:\n\nDSO = (180+90)/2000/2*365 = 25 days\nDIO = (250+150)/2/1800*365 = 41 days\n\nTherefore, the operating cycle is = 66 days"
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Question 3",
+   "marks": 13,
+   "scenario": "Transnational Ltd. is a multinational company headquartered in South Africa, with operations in the US, the UK and China. Assume that the company wished to repatriate funds from its foreign branches back to South Africa.",
+   "parts": [
+    {
+     "id": "3.1",
+     "marks": 8,
+     "topics": [
+      "b-mnc"
+     ],
+     "required": "3.1 Discuss the primary challenges they may encounter in attempting to reposition their funds back to South Africa.",
+     "memo": "Straight from the slides. I accepted anything related to the below:\n\nPolitical constraints: Political constraints can block the transfer of funds either overtly or covertly. Overt blockage occurs when a currency becomes inconvertible or is subject to government exchange controls that prevent its transfer at reasonable exchange rates. Covert blockage occurs when dividends or other forms of fund remittances are severely limited, heavily taxed, or excessively delayed by the need for bureaucratic approval.\n\nTax Constraints: Tax constraints arise because of the complex and possibly contradictory tax structures of various national governments through whose jurisdiction’s funds might pass. A firm does not want funds in transit eroded by a sequence of nibbling tax collectors in every jurisdiction through which such funds might flow.\n\nTransaction Costs: Foreign exchange transaction costs are incurred when one currency is exchanged for another. These costs, in the form of fees and/or the difference between bid and offer quotations, are usually a small percentage of the amount of money exchanged, but become significant for large or frequent transfers. Practices like \"netting\", while simple, can be extremely beneficial to a MNC in terms of saving on unnecessary costs."
+    },
+    {
+     "id": "3.2",
+     "marks": 5,
+     "topics": [
+      "b-mnc"
+     ],
+     "required": "3.2 One of the options Transnational is considering is paying dividends from its foreign subsidiaries to the parent company. What are the issues it needs to be mindful of if it does so?",
+     "memo": "Dividends are after-tax payments and are therefore not as tax efficient as other options. Countries such as South Africa tax retained earnings at one rate while taxing distributed earnings at a lower rate. Most countries levy withholding taxes on dividends paid to foreign parent firms and investors. Again, most (but not all) parent countries levy a tax on foreign dividends received but allow a tax credit for foreign taxes already paid on that income stream. Dividends remain the most tax inefficient method for repatriating funds because they are distributed on an after-tax basis."
+    }
+   ]
+  }
+ ]
+}

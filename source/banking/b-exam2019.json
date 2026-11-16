@@ -1,0 +1,414 @@
+{
+ "id": "b-exam2019",
+ "title": "2019 Final Exam",
+ "short": "Exam 2019",
+ "kind": "exam",
+ "marks": 140,
+ "minutes": 180,
+ "unofficial": true,
+ "memoNote": "Lecturer's memo printed in the paper for everything except Section B Question 1 d) and e) (RAROC, which the paper cancelled), where the answer is my own suggested answer from the formula sheet; the paper's printed answers to Section D Question 8 contain slips that are flagged in the memo.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Section A — Multiple Choice (1–2)",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "A1",
+     "marks": 3,
+     "topics": [
+      "b-treas",
+      "b-intro"
+     ],
+     "required": "1. To constitute a true L/C transaction, all of the following elements must be present with respect to the issuing bank except:\n\na) The issuing bank must receive a fee or other valid business consideration for issuing the L/C.\nb) The bank's L/C may be open-ended with regards to the contract date by agreement of both parties.\nc) The bank's commitment must have a stated maximum amount of money.\nd) The bank's obligation to pay must arise only on the presentation of specific documents, and the bank must not be called on to determine disputed questions of fact or law.",
+     "memo": "b) The bank's L/C may be open-ended with regards to the contract date by agreement of both parties. (3 marks)\n\nWhy: a letter of credit must carry a specified expiry date or definite maturity; it can never be open-ended. (a), (c) and (d) are required elements: a fee or consideration, a stated maximum amount, and an obligation to pay only against specified documents."
+    },
+    {
+     "id": "A2",
+     "marks": 3,
+     "topics": [
+      "b-intro"
+     ],
+     "required": "2. All of the following are characteristics of mutual banks except:\n\na) Mutual banks are regulated by the SARB.\nb) Like commercial banks, mutual banks have a board of directors and can be capitalised by other juristic persons.\nc) Mutual banks are constituted according to a common bond between members rather than for profit maximisation.\nd) Mutual banks tend to focus mostly on savings and many don't offer credit facilities.",
+     "memo": "c) Mutual banks are constituted according to a common bond between members rather than for profit maximisation. (3 marks)\n\nWhy: the memo's key is (c). A common bond between members is the defining feature of a co-operative bank (the course slides show \"common bond\" for co-operative banks and \"no common bond\" for mutual banks). (a), (b) and (d) are true of mutual banks: SARB regulation, a board of directors and capitalisation by juristic persons, and a focus on savings with limited credit."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Section A — Multiple Choice (3–5): Bank X",
+   "marks": 9,
+   "scenario": "Use the following information to answer questions 3 through 5.\n\nASSETS  |    |  LIABILITIES & EQUITY  |\nCash in vaults  |  11 222  |  Derivative financial instruments  |  29 567\nBalance at SARB  |  5 673  |  Deposits  |  691 923\nDerivative financial instruments  |  28 059  |  Sub-ordinated debt instruments that are Basel 3 compliant  |  2 689\nLoans granted  |  750 843  |  Long-term debt instruments  |  53 890\nFixed property  |  8 978  |  TOTAL LIABILITIES  |  778 069\nDeferred tax asset*  |  530  |  Share capital including premium  |  20 458\nGoodwill  |  2 350  |  Reserves  |  6 983\n  |    |  Preference share capital  |  2 145\n  |    |  TOTAL EQUITY  |  29 586\nTOTAL  |  807 655  |  TOTAL  |  807 655\n\n- The total risk-weighted assets number, calculated for Bank X, is R500 489;\n- * - 90% of the 'Deferred tax asset' is dependent on future taxable income for realisation;\n- Bank X has a committed overdraft facility at the SARB for R1 000.",
+   "parts": [
+    {
+     "id": "A3",
+     "marks": 3,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "3. What is the CET1 capital ratio of Bank X according to Basel 3?\n\na) (11 222 + 5 673 + 29 586) / 500 489 = 9.3%\nb) (29 586 - 2 350 - 90%*530) / 500 489 = 5.4%\nc) (29 586 - 2 145 - 2 350 - 90%*530) / 500 489 = 4.9%\nd) (11 222 + 5 673) / 778 069 = 2.2%",
+     "memo": "c) (29 586 - 2 145 - 2 350 - 90%*530) / 500 489 = 4.9% (3 marks)\n\nWhy: CET1 is total equity less the preference shares (2 145, which are not common equity), goodwill (2 350) and the part of the deferred tax asset that depends on future profits (90% x 530 = 477), divided by risk-weighted assets: 24 614 / 500 489 = 4.9%. (b) forgets the preference shares, (a) uses liquid assets and (d) is a cash reserve ratio."
+    },
+    {
+     "id": "A4",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-treas"
+     ],
+     "required": "4. What is the reserve ratio of Bank X calculated according to the SARB's method (as indicated on the class handout)?\n\na) (29 586 - 2 350 - 90%*530 + 2 689) / 500 489 = 5.9%\nb) (11 222 + 5 673) / 778 069 = 2.2%\nc) 807 655 / 691 923 = 116.7%\nd) (11 222 + 5 673) / 807 655 = 2.0%",
+     "memo": "b) (11 222 + 5 673) / 778 069 = 2.2% (3 marks)\n\nWhy: the SARB method divides cash resources (vault cash plus the balance at the SARB) by total liabilities, not by total liabilities and equity. (a) is a total capital ratio and (c) is not a reserve measure."
+    },
+    {
+     "id": "A5",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-treas"
+     ],
+     "required": "5. What is the liquidity coverage ratio of Bank X if the estimated cash outflow over 30 days of stress is R15 899?\n\na) 15 899 / 500 489 = 3.2%\nb) (11 222 + 5 673 + 1 000) / 15 899 = 112.6%\nc) 15 899 / 11 222 = 141.7%\nd) 15 899 / 807 655 = 19.7%",
+     "memo": "b) (11 222 + 5 673 + 1 000) / 15 899 = 112.6% (3 marks)\n\nWhy: LCR = HQLA / net cash outflows over 30 days of stress. HQLA is cash (11 222), the balance at the SARB (5 673) and the committed SARB overdraft facility (1 000). The ratio is above 100%, so the Basel III minimum is met."
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Section A — Multiple Choice (6–10)",
+   "marks": 15,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "A6",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-intro"
+     ],
+     "required": "6. The following is likely false, all else equal:\n\na) Bank management, excluding motivation derived from regulation, is motivated to hold higher reserves at the South African Reserve Bank\nb) Holding higher reserves implies higher profitability\nc) Shareholders prefer a bank with less equity capital, even if some argue that capital would 'belong' to them\nd) Holding less capital implies slightly lower profitability due to the cost of debt capital",
+     "memo": "c) Shareholders prefer a bank with less equity capital, even if some argue that capital would 'belong' to them (3 marks)\n\nWhy: the memo's key is (c). Note that on a standard reading (b) also looks false, because reserves at the SARB earn little or no interest, so holding more of them lowers profitability; write (c) because that is the memo's answer."
+    },
+    {
+     "id": "A7",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-credit"
+     ],
+     "required": "7. What is the essential idea behind the Risk-adjusted return on capital (RAROC) model? (this is the RAROC for a loan in credit risk management).\n\nDr. Majoni has indicated that can ignore question 7.\n\na) Evaluating the actual or contractually promised annual ROA on a loan.\nb) Analyzing historic or past default risk experience.\nc) Balancing expected interest and fee income less the cost of funds against the loan's expected risk.\nd) Dividing net interest and fees by the amount lent.",
+     "memo": "c) Balancing expected interest and fee income less the cost of funds against the loan's expected risk. (3 marks)\n\nWhy: RAROC divides the loan's expected net income (fees and spread over the cost of funds) by the capital at risk, so return is weighed against risk. (a) and (d) describe the ROA on a loan, which ignores risk, and (b) describes historical default models. (The lecturer told the 2019 class to ignore this question.)"
+    },
+    {
+     "id": "A8",
+     "marks": 3,
+     "topics": [
+      "b-treas",
+      "b-risk"
+     ],
+     "required": "8. A bank has the following; R5 million in cash reserves - the money is held at the Reserve bank as excess of its reserve requirements; R5 million in Treasury-Bills, and a credit facility to borrow R10 million on the inter-bank market. It currently has lent R2 million to another bank and it has borrowed R1 million from the interbank market to meet its seasonal needs. What is the net liquidity amount of the bank?\n\na) R7 million\nb) R12 million\nc) R17 million\nd) R21 million",
+     "memo": "d) R21 million (3 marks)\n\nWhy: sources of liquidity are excess reserves 5 + Treasury bills 5 + the interbank facility 10 + the R2 million lent to another bank (which can be called back) = R22 million; less the R1 million already borrowed on the interbank market gives a net liquidity position of R21 million."
+    },
+    {
+     "id": "A9",
+     "marks": 3,
+     "topics": [
+      "b-mkt",
+      "b-irr"
+     ],
+     "required": "9. City bank has a six-year zero coupon bond with a total face value of R20 million. The current yield-to-maturity on the bond is 10%. What is the daily earnings at risk (DEAR) of this bond portfolio if the maximum potential adverse move in yields is estimated at 20 basis points (0.2%)? (choose the closest answer)\n\na) -R246,111\nb) -R218,180\nc) -R135,474\nd) -R149,021",
+     "memo": "b) -R218,180 (3 marks)\n\nWhy: DEAR = value of the position x modified duration x adverse yield move. The memo uses the R20 million face value and modified duration = 6 / 1.10 = 5.4545: 20 000 000 x 5.4545 x 0.002 = R218 182. (Valuing the position at its market value, 20m / 1.1^6, would give a smaller figure, but the memo's answer is (b).)"
+    },
+    {
+     "id": "A10",
+     "marks": 3,
+     "topics": [
+      "b-credit",
+      "b-risk"
+     ],
+     "required": "10. A credit forward is a forward agreement that\n\na) hedges against a decrease in default risk on a loan after the loan rate is determined and the loan issued.\nb) hedges against an increase in default risk on a loan before the loan rate is determined and the loan issued.\nc) hedges against an increase in default risk on a loan after the loan rate is determined and the loan issued.\nd) hedges against an increase in default risk on a loan after the loan rate is determined and before the loan is issued.",
+     "memo": "c) hedges against an increase in default risk on a loan after the loan rate is determined and the loan issued. (3 marks)\n\nWhy: once the loan is made at a fixed rate the lender is exposed to the borrower's credit quality worsening (the spread widening); the credit forward pays out when the spread rises above the agreed level. (a) has the direction wrong and (b) and (d) have the timing wrong."
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "title": "Section B, Question 1 — Abacus Bank",
+   "marks": 24,
+   "scenario": "Appendix: Abacus Bank Income Statement and Balance Sheet\n\nConsolidated Income Statement\n\n  |  2018 (Rm)  |  2017 (Rm)  |  2016 (Rm)\nNet interest income  |  30 489  |  28 176  |  29 813\nNon-interest revenue  |  23 291  |  23 269  |  18 153\nTotal income  |  53 780  |  51 445  |  47 966\nCredit impairment charges  |  (1 767)  |  (1 769)  |  (3 400)\nNet income before operating expenses  |  52 013  |  49 676  |  44 566\nOperating expenses  |  (34 659)  |  (34 884)  |  (39 808)\nStaff costs  |  (17 373)  |  (17 315)  |  (18 089)\nDepreciation  |  (1 119)  |  (1 166)  |  (1 229)\nOther operating expenses  |  (16 167)  |  (16 403)  |  (20 490)\nNet income before non-trading and capital related items  |  17 354  |  14 792  |  4 758\nShare of profit from associates and joint ventures  |  2 536  |  2 375  |  2 354\nProfit before tax  |  19 890  |  17 167  |  7 112\nTax expense  |  (4 865)  |  (5 288)  |  (3 666)\nProfit for the year  |  15 025  |  11 879  |  3 446\n\nConsolidated Statement of Financial Position\n\n  |  2018 (Rm)  |  2017 (Rm)  |  2016 (Rm)\nAssets  |    |    |\nCash and balances with central banks  |  162 843  |  180 624  |  128 009\nTrading assets  |  238 130  |  287 995  |  235 125\nDerivative Assets  |  207 825  |  219 818  |  290 872\nFinancial investments  |  407 433  |  389 076  |  436 797\nLoans and advances  |  1 053 863  |  1 053 357  |  949 630\nLoans and advances to banks  |  72 167  |  90 393  |  88 126\nLoans and advances to customers  |  981 696  |  962 964  |  861 504\nOther assets  |  204 115  |  159 884  |  148 823\nGoodwill and other intangible assets  |  242 804  |  201 553  |  160 974\nProperty and equipment  |  41 111  |  29 464  |  24 756\nTotal assets  |  2 558 124  |  2 521 771  |  2 374 986\nEquity  |  194 249  |  197 871  |  182 578\nEquity attributable to ordinary shareholders  |  186 253  |  190 250  |  175 386\nEquity attributable to non-controlling interests  |  7 996  |  7 621  |  7 192\nLiabilities  |  2 363 875  |  2 323 900  |  2 192 408\nDerivative liabilities  |  205 835  |  216 821  |  279 819\nTrading liabilities  |  250 315  |  314 363  |  242 649\nFinancial Liabilities  |  148 505  |  94 429  |  86 832\nDeposits and debt funding  |  1 418 974  |  1 434 384  |  1 332 325\nDeposits from banks  |  56 331  |  69 922  |  59 939\nDeposits from customers  |  1 362 643  |  1 364 462  |  1 272 386\nSubordinated debt  |  85 342  |  64 546  |  65 915\nProvisions and other liabilities  |  87 330  |  85 667  |  75 273\nOther Liabilities  |  167 574  |  113 690  |  109 595\nTotal equity and liabilities  |  2 558 124  |  2 521 771  |  2 374 986\n\nFormula sheet (extract):\nROE = (Net Profit after taxes / (NII + NIR)) x ((NII + NIR) / Earning Assets) x (Earning Assets / Bank Capital)\nRAROC = (ROA - Expected Loss / Earning Assets) x (Earning Assets / Total Assets) x (Total Assets / Risk-Required Capital)",
+   "parts": [
+    {
+     "id": "B1a",
+     "marks": 3,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Consider the financial statement information provided in the appendices for Abacus Bank. You are required to analyse the information presented and provide a critical assessment of the bank's performance in each of the following areas:\n\na) Calculate the bank's earning assets for each period provided.  [3]",
+     "memo": "|  2018 (Rm)  |  2017 (Rm)  |  2016 (Rm)\nTrading assets  |  238 130  |  287 995  |  235 125\nDerivative Assets  |  207 825  |  219 818  |  290 872\nFinancial investments  |  407 433  |  389 076  |  436 797\nLoans and advances  |  1 053 863  |  1 053 357  |  949 630\nLoans and advances to banks  |  72 167  |  90 393  |  88 126\nLoans and advances to customers  |  981 696  |  962 964  |  861 504\nTotal (earning) assets  |  1 907 251  |  1 950 246  |  1 912 424"
+    },
+    {
+     "id": "B1b",
+     "marks": 4,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Consider the financial statement information provided in the appendices for Abacus Bank. You are required to analyse the information presented and provide a critical assessment of the bank's performance in each of the following areas:\n\nFor questions b) and c), you should select and calculate the trend in one ratio that addresses that area of performance required and provide a brief analysis of that measure for the bank.\n\nb) Efficiency.  [4]",
+     "memo": "Cost-to-Income Ratio (Efficiency Ratio) = Non-Interest Expense / (NII + NIR)\n\nCIR 2016 = R39 808 / R47 966 = 83% [1]\nCIR 2017 = R34 884 / R51 445 = 67,8% [1]\nCIR 2018 = R34 659 / R53 780 = 64,4% [1]\n\nThe bank's CIR has shown a steady improvement over the 3 years (with a significant drop in 2017). This ratio should ideally be as low as possible, although a ratio of about 50% is considered optimal before any further cost efficiencies may begin to start having knock-on effects with regards to service levels. There is therefore still a lot of scope for further improvements in future. [1]"
+    },
+    {
+     "id": "B1c",
+     "marks": 4,
+     "topics": [
+      "b-fin",
+      "b-reg"
+     ],
+     "required": "Consider the financial statement information provided in the appendices for Abacus Bank. You are required to analyse the information presented and provide a critical assessment of the bank's performance in each of the following areas:\n\nFor questions b) and c), you should select and calculate the trend in one ratio that addresses that area of performance required and provide a brief analysis of that measure for the bank.\n\nc) Solvency.  [4]",
+     "memo": "Loans to Deposits = Total Loans / Total Deposits\n\nLtD 2016 = R949 630 / R1 332 325 = 71,28% [1]\nLtD 2017 = R1 053 357 / R1 434 384 = 73,44% [1]\nLtD 2018 = R1 053 863 / R1 418 974 = 74,27% [1]\n\nThe LtD ratio should ideally be between 80% and 90% since banks generate the largest proportion of their revenue from loans. Abacus Bank's ratio is below this, indicating that it is using a significant proportion of its deposits to invest in other assets instead. This is not necessarily a problem but the risk of these other investments relative to the bank's loan portfolio should be monitored to ensure that they earn commensurate returns. [1]"
+    },
+    {
+     "id": "B1d",
+     "marks": 6,
+     "topics": [
+      "b-risk",
+      "b-fin"
+     ],
+     "required": "Consider the financial statement information provided in the appendices for Abacus Bank. You are required to analyse the information presented and provide a critical assessment of the bank's performance in each of the following areas:\n\nd) Assume that the firm's risk-required capital is 80% of total equity in each year and that the expected loss on the loan book was R1 550 000 for 2017 and R1 890 000 for 2018. Calculate the RAROC for 2017 and 2018 (provide a full breakdown including asset quality, asset efficiency and risk-normed leverage).  [6]\n\n(Lecturer's note in the 2019 paper: please ignore questions d) and e). We did not cover RAROC this year.)",
+     "memo": "Suggested answer (not an official memo): the 2019 paper cancelled this part and gave no memo, so this is worked from the formula sheet.\n\nRAROC = (ROA - Expected Loss / Earning Assets) x (Earning Assets / Total Assets) x (Total Assets / Risk-Required Capital), taking ROA as profit for the year / earning assets (the formula sheet's ROE decomposition is built on earning assets).\n\nInputs (Rm): profit 2017 = 11 879 and 2018 = 15 025; earning assets (from a) 1 950 246 and 1 907 251; total assets 2 521 771 and 2 558 124; equity 197 871 and 194 249; expected loss 1.55 and 1.89; risk-required capital = 80% x equity = 158 296.8 and 155 399.2.\n\n  |  2017  |  2018\nROA (profit / earning assets)  |  0.6091%  |  0.7878%\nExpected loss / earning assets  |  0.0001%  |  0.0001%\nAsset quality: ROA - EL / EA  |  0.6090%  |  0.7877%\nAsset efficiency: EA / TA  |  77.34%  |  74.56%\nRisk-normed leverage: TA / risk-required capital  |  15.93  |  16.46\nRAROC  |  7.50%  |  9.67%\n\n(The product simplifies to (profit - EL) / risk-required capital: 11 878.45 / 158 296.8 = 7.50% and 15 023.11 / 155 399.2 = 9.67%. If the expected loss was meant to be R1 550 million and R1 890 million, RAROC would be 6.53% and 8.45%.)"
+    },
+    {
+     "id": "B1e",
+     "marks": 7,
+     "topics": [
+      "b-risk",
+      "b-fin"
+     ],
+     "required": "Consider the financial statement information provided in the appendices for Abacus Bank. You are required to analyse the information presented and provide a critical assessment of the bank's performance in each of the following areas:\n\ne) Discuss the changes in the underlying factors and how they impacted on your RAROC calculations in d) above.  [7]\n\n(Lecturer's note in the 2019 paper: please ignore questions d) and e). We did not cover RAROC this year.)",
+     "memo": "Suggested answer (not an official memo): RAROC improved from 7.50% in 2017 to 9.67% in 2018. Three factors drove it:\n\n1. Asset quality improved (0.609% to 0.788%). Profit rose 26.5% (11 879 to 15 025) because total income grew 4.5% while operating expenses fell 0.6% (a cost-to-income ratio improvement from 67.8% to 64.4%) and the effective tax rate fell from about 30.8% to 24.5%. Expected loss is tiny relative to earning assets, so it barely changes the result. This is the main driver of the higher RAROC.\n\n2. Asset efficiency worsened (77.3% to 74.6%). Earning assets fell 2.2% (1 950 246 to 1 907 251) while total assets grew 1.4%, because non-earning assets grew quickly (goodwill and intangibles up 20.5% and property and equipment up 39.5%). This pulled RAROC down.\n\n3. Risk-normed leverage increased (15.93 to 16.46). Equity, and so risk-required capital, fell 1.8% while total assets grew, so each rand of capital supports more assets. This pushed RAROC up but also means the bank is slightly more leveraged against its risk capital.\n\nNet effect: the large improvement in asset quality (profitability) outweighed the small fall in asset efficiency, and leverage added a little, so RAROC rose by about 2.2 percentage points."
+    }
+   ]
+  },
+  {
+   "id": "Q5",
+   "title": "Section B, Question 2 — Cash conversion cycle of AP",
+   "marks": 12,
+   "scenario": "AP wishes to evaluate its cash conversion cycle (CCC). Research by one of the firm's financial analysts indicates that on average the firm holds items in inventory for 65 days, pays its suppliers 35 days after purchase, and collects its receivables after 55 days. The firm's annual sales (all on credit) are about R2.1 billion, its cost of goods sold represent about 67 percent of sales, and purchases represent about 40 percent of cost of goods sold. Assume a 365-day year.",
+   "parts": [
+    {
+     "id": "B2a",
+     "marks": 1,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "a) What is AP's cash conversion (CCC)?  [1]",
+     "memo": "Cash conversion cycle = DSO + DIO - DPO = 55 + 65 - 35 days = 85 days"
+    },
+    {
+     "id": "B2b",
+     "marks": 7,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "b) How many rands did AP have invested on average during the year in (1) inventory, (2) accounts receivable, (3) accounts payable, and (4) the total CCC?  [7]",
+     "memo": "Remember that Days Inventory Outstanding (DIO) = Avg Inventory over period / Cost of Sales for period x # days in period.\n\nTherefore Avg Inventory = Cost of Sales x DIO / # days in period\n\nInventory = (R2.1 billion x 67%) x (65/365) = R250.6 million [2]\n\nThe calculations for AR and AP are based on the same principle:\n\nAccounts receivable = (R2.1 billion) x (55/365) = R316.4 million [2]\n\nAccounts payable = (R2.1 billion x 67% x 40%) x (35/365) = R54 million [2]\n\nTotal invested = R250.6 million + R316.4 million - R54 million = R513.0 million [1]"
+    },
+    {
+     "id": "B2c",
+     "marks": 4,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "c) If AP could shorten its cash conversion cycle by reducing its inventory holding period by 5 days, what effect would this have on its investment in inventory found in part b)?  [4]",
+     "memo": "New inventory investment = (R2.1 billion x 67%) x [(65 - 5)/365] = R231.3 million\n\nChange in inventory investment = R231.3 million - R250.6 million = -R19.3 million. The total investment would be reduced by R19.3 million."
+    }
+   ]
+  },
+  {
+   "id": "Q6",
+   "title": "Section B, Question 3 — MNC working capital challenges",
+   "marks": 8,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "B3",
+     "marks": 8,
+     "topics": [
+      "b-mnc",
+      "b-treas"
+     ],
+     "required": "MNCs face the same challenges with regards to working capital that domestic firms do. Briefly discuss any additional challenges they face with regards to the management of accounts receivable and inventory due to trading across borders.  [8]",
+     "memo": "Management of accounts receivable from non-domestic independent customers raises questions around what currency the transaction should be denominated in, and what should be the terms of payment? i.e. should the export sales be denominated in the currency of the exporter, the currency of the buyer, or a third-country currency? The seller will prefer to price and to invoice in the strongest currency, however an informed buyer prefers to pay in the weakest currency.\n\nPayment terms are also a key negotiation. Receivables from sales in weak currencies should be collected as soon as possible to minimize loss of exchange value between sales date and collection date. Accounts receivable resulting from sales in hard currencies may be allowed to remain outstanding longer.\n\nFor inventory, the MNC has to maintain inventory simultaneously in different countries, transit time is typically longer across borders, customs procedures are quite lengthy and political and exchange rate risk are ever-present.\n\nIn the case of a domestic company, inventory level is decided in such a way that both carrying costs and stock out costs are minimised. But in case of a MNC, difference in the costs of production and storage in different countries allow the MNC to maintain more flexible inventory policies. For example, an MNC can get the benefit of cheaper costs that may exist in a particular country by shifting its production or storage function to that country.\n\nHowever, many companies that rely on imported inventories maintain over-stocked inventory accounts due to fears of inflation, shortages of raw-materials, and a number of other environmental constraints.\n\nThe additional environmental constraints include anticipated import bans in foreign countries, anticipated delivery delays caused by strikes and slowdowns, the lack of sophisticated production and inventory control systems and increased difficulty in obtaining foreign exchange for inventory purchases."
+    }
+   ]
+  },
+  {
+   "id": "Q7",
+   "title": "Section C, Question 4 — Bank regulation, pricing and failure",
+   "marks": 28,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "C4.1",
+     "marks": 4,
+     "topics": [
+      "b-intro",
+      "b-reg"
+     ],
+     "required": "1. Explain what makes banks so different from other firms and so important for the economy that they require special regulation?  [4]",
+     "memo": "- Money creation;\n- Save wealth;\n- Transfer wealth;\n- Economies of scale in terms of credit information gathering and monitoring;\n- Economies of scale in transaction costs;\n- Maturity transformation;\n- Liquidity transformation;\n- Credit transformation;\n- Other valid points."
+    },
+    {
+     "id": "C4.2",
+     "marks": 10,
+     "topics": [
+      "b-intro",
+      "b-fin"
+     ],
+     "required": "2. Calculate the average interest rate a bank should charge if the following is known:\n- The target Return on Equity (ROE) is 20%;\n- 2% of total assets will be cash and the rest can be assumed as the loan portfolio;\n- Expected bad debts on the loan portfolio are 0.5%;\n- The overall average cost of capital is estimated at 6.5%;\n- Total operating costs of the bank will amount to 3% on total assets;\n- The bank targets a leverage ratio of 10%;\n- Taxation is at 28%; and\n- ROE = return on assets x leverage.\n\nPlease note: some marks are rewarded for formulas and clearly setting out what you are doing.  [10]",
+     "memo": "Return on assets = [(Return on loan portfolio) + (Return on cash) - cost of capital - operating costs] x (1 - tax rate)\n\n= [(98% x X - 98% x 0.5%) + 0% - 6.5% - 3%] x 72%\n= [0.98X - 9.99%] x 72%\n= 0.7056X - 7.1928%\n\nROE = 20% = (0.7056X - 7.1928%) x 10\n\n2% = 0.7056X - 7.1928%\n\nX = 13.028% is the average interest rate to be charged on the loan portfolio to realise a ROE of 20% given the other information."
+    },
+    {
+     "id": "C4.3",
+     "marks": 5,
+     "topics": [
+      "b-intro",
+      "b-fail"
+     ],
+     "required": "3. Consider the following three bank stakeholder groups: management, shareholders and depositors. Use agency theory to explain how the three groups are likely to compete and to cooperate in the running of a bank.  [5]",
+     "memo": "Traditional agency theory (1) argues that shareholders own firms and that the firms should be run for their ultimate benefit. Unfortunately, management looks after themselves first and might not look after the shareholder's interests unless incentivised to do so. With certain remuneration structures like bonuses and share options this incentivisation can be achieved. Shareholders and management now work together for their best. But, in a bank only a small portion of funding is from shareholders, most is from depositors. Limited liability combined with this fact creates the incentive for shareholders to gamble with the money of depositors (agency theory 3), supported by management. If a gamble pays off, shareholders and management gain and if a gamble fails then the depositors and society via bank rescues are left holding the can."
+    },
+    {
+     "id": "C4.4",
+     "marks": 5,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "4. Critically discuss whether African Bank was an example of a bank failure?  [5]",
+     "memo": "- The question pivots on the definition of bank failure: is it insolvency, or illiquidity or curatorship?\n- African Bank had some solvency issues (10% haircut for bondholders and no likely value for shareholders when bank is eventually wound up); some liquidity issues as ability to sell bonds at auction was getting limited (higher interest rates, etc.) and was taken over by a curator.\n- However, the African Bank brand still exists today, housed within a new legal entity.\n- The old African Bank legal entity is still under curatorship and shareholders likely lost everything when considering the latest financial statements.\n- Thus, African Bank is an example of bank failure based on both the insolvency definition and the curatorship definition.\n- A question that remains is whether African Bank would have been insolvent if it was never placed under curatorship; no clear answer.\n- Marks to be awarded for other comments that make sense."
+    },
+    {
+     "id": "C4.5",
+     "marks": 4,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "5. Argue how you would have managed Saambou Bank differently, with the objective of keeping it out of eventual curatorship, if you took over as CEO six months before February 2002? You have perfect hindsight.  [4]",
+     "memo": "- Saambou was taken into curatorship due to liquidity problems, especially coming from wholesale deposits;\n- A source of liquidity in a banking crisis is usually the reserve bank. In the case of Saambou this did not happen. One approach I would have had would be to have a better relationship with the SARB.\n- I would have arranged more lines of credit with other banks, especially foreign banks, before the crisis. Like what Investec had during the GFC.\n- I would have relied less on wholesale deposits that are risky by taking more retail deposits or by issuing bonds as funding mechanism.\n\nMarks to be awarded for other comments that make sense keeping in mind that the key problem was liquidity."
+    }
+   ]
+  },
+  {
+   "id": "Q8",
+   "title": "Section D, Question 5 — Loan pricing and credit decision for Unathi Ltd",
+   "marks": 9,
+   "scenario": "DDT is a South African bank. It charges a loan origination fee of 0.8% of the total loan amount. The bank must hold 2.5% reserve requirements at the Reserve Bank of South Africa.\n\nThe bank is evaluating a loan application proposal by a company called Unathi Ltd. Unathi Ltd operates in the mining sector and they would like to borrow R10 million. The loan will be repaid in equal monthly instalments over 12-years.\n\nHistorical records show that Unathi Ltd has a history of defaulting and they have a high debt ratio of 92%.\n\nYou observe the following interest rates; the 12-month JIBAR is at 7.67%, the prime rate is 10% and the repo rate is 6.5%. The return on equity for the bank is 15%.",
+   "parts": [
+    {
+     "id": "D5.1",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "1. If DDT bank is to approve this loan to Unathi Ltd, what interest rate should they charge? Show your workings.  [3]",
+     "memo": "Interest rate = (10% + (0.8% + 4%)) / (1 - 2.5%) = 15.18% [3]\n\n- It's a long-term loan, use the prime as the base lending rate\n- It's a risky borrower, hence students should make an adjustment for a credit risk premium, any basis points of their choice."
+    },
+    {
+     "id": "D5.2",
+     "marks": 6,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "2. State and explain three factors (two borrower specific factors and one market-specific factor) that DDT bank may need to consider in making this credit decision for Unathi.  [6]",
+     "memo": "Reputation: a reputation for prompt and timely repayment implies low default risk - it shows that, historically, the borrower can pay their debts. If the borrower has a history of late payments, then default risk is high, a history of late payments implies poor financial condition for the borrower and or lack of willingness to pay. [2]\n\nLeverage: here you are measuring the default risk by looking at the borrower's leverage position or by analysing leverage ratios. A high debt ratio could be viewed as an indication of high default risk. Large amounts of debt increase the borrower's interest charges and pose a significant claim on its cash flows. [2]\n\nOther points to consider include, volatility of earnings and collateral.\n\nMarket specific factors: business cycles; recessions are associated with higher default risk while booms are associated with lower default risk. In general, during recessions consumers cut back on expenditure, which means companies experience less demand, less sales and less cash to pay interest payments. During a boom consumer are more willing to spend, hence more sales, profits and cash for borrowers to meet the interest payments. [2]\n\nOther points include, the level of interest rates."
+    }
+   ]
+  },
+  {
+   "id": "Q9",
+   "title": "Section D, Question 6 — Market-implied probability of default",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D6.1",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "1. Suppose the interest rates in the market for 1-year zero-coupon Treasury strips and for 1-year, zero-coupon corporate bonds are, respectively: i=3.55%, k=6.60%. Determine the probability of default, predicated by the market, on the corporate bond.  [3]",
+     "memo": "The probability of repayment perceived by the market is:\n\np = (1 + i) / (1 + k) = 1.0355 / 1.066 = 0.9714 [2]\n\nThe implied probability of default is (1 - p) = 0.0286 [1]"
+    },
+    {
+     "id": "D6.2",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "2. Determine the cumulative probability of default, for the corporate bond, over a two-year period. Assume the probability of repayment in the second year is 0.77.  [3]",
+     "memo": "The probability of repayment over the two-year period:\n\np1 x p2 = (0.9714)(0.77) = 0.748. [2]\n\nProbability of defaulting: Cp = 1 - 0.748 = 0.252. [1]\n\n25.2% is the probability of default over this 2-year period."
+    }
+   ]
+  },
+  {
+   "id": "Q10",
+   "title": "Section D, Question 7 — Liquidity risk",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D7.1",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-treas"
+     ],
+     "required": "1. What is your understanding of liquidity risk? Specify two reasons/circumstances that give rise to liquidity risk.  [3]",
+     "memo": "Liquidity risk is the possibility that a bank will be unable to meet its contractual and contingent obligations [1]. Two reasons:\n\n- The liability-side reason; when a bank's liability holders, such as depositors, seek to cash in their financial claims immediately. [1]\n- Asset-side liquidity risk; when holders of off-balance sheet loan commitment (credit cards, credit lines) suddenly exercise their right to borrow. [1]"
+    },
+    {
+     "id": "D7.2",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-treas"
+     ],
+     "required": "2. Suppose a bank has two assets (corporate bonds and loans) with a total face value of R25 billion. The loans have a face value of R20 billion while the corporate bonds have a face value of R5 billion. If the bank is to face a sudden withdrawal of deposits, it can liquidate the bonds and realise 75% of the face value while the loans can be liquidated at 80% of the face value. However, if the bank was to wait for 6-months it would be able to liquidate the two assets and receive 100% of the face value.\n\nDetermine the six-month liquidity index value for this bank's asset portfolio.  [3]",
+     "memo": "Liquidity index: I = sum of w_i x (P_i / P*_i) [1]\n\nI = (0.80 x (0.80 x R20 billion / R20 billion)) + (0.20 x (0.75 x R5 billion / R5 billion)) = 0.79 [2]"
+    }
+   ]
+  },
+  {
+   "id": "Q11",
+   "title": "Section D, Question 8 — Sharp Bank: duration gap and repricing gap",
+   "marks": 17,
+   "scenario": "The following balance sheet information is available for Sharp Bank:\n\nAssets  |  Amount (R million)  |  Duration (years)  |  Liabilities and equity  |  Amount (R million)  |  Duration (years)\nLoans  |  9  |  4  |  Core Deposits  |  54  |  5\nTreasury Bills  |  42  |  0.75  |  Reserve bank funds  |  6  |  0.01\nCorporate Bonds  |  15  |  ?  |  Equity  |  16  |\nGovernment bonds  |  10  |  ?  |    |    |\nTotal Assets  |  76  |    |  Total equity and liabilities  |  76  |\n\nThe corporate bonds mature after 3-years, have a face value of R8 million, and they do not pay coupons. The government bonds mature after 8-years, they have a face value of R12 million, coupon rate of 7% and they are trading at par. The treasury bills have a maturity period of 9-months. The reserve bank funds are borrowed on an overnight basis and they are rolled over daily.\n\nFormula sheet (extract): duration of a par bond D = ((1 + y) / y) x (1 - 1 / (1 + y)^T)",
+   "parts": [
+    {
+     "id": "D8.1",
+     "marks": 10,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "1. Determine the leverage adjusted duration gap for Sharp Bank.  [10]",
+     "memo": "Duration gap = DA - DL x k [1]\n\nDuration of the assets: loan = 4 years, Treasury bill = 0.75 years, Corporate bonds = 3 years [1], government bonds = ?\n\nCalculate the duration for government bonds:\nD(par) = ((1 + y) / y) x [1 - 1 / (1 + y)^T] = ((1 + 7%) / 7%) x [1 - 1 / (1 + 7%)^8] = 6.39 years [2]\n\nDuration of assets = (9/76 x 4) + (42/76 x 0.75) + (15/76 x 3) + (10/76 x 6.39) = 2.32 years [2]\n\nDuration of liabilities = (54/60 x 5) + (6/60 x 0.01) = 3.55 years [2]\n\nDuration gap = 2.32 - (3.55 x 60/76) = -0.48 [2]\n\nNote: the printed memo's liabilities duration does not follow from its own formula: (54/60 x 5) + (6/60 x 0.01) = 4.50 years, and 4.50 x 60/76 = 3.55, so the 3.55 already includes the leverage factor k = 60/76 and the memo applies it twice. Done once, the leverage adjusted duration gap = 2.32 - (4.50 x 60/76) = 2.32 - 3.55 = -1.23 years. The sign, and so the conclusion in 8.2, is the same."
+    },
+    {
+     "id": "D8.2",
+     "marks": 3,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "2. Based on the leverage adjusted duration gap, what is the interest rate risk exposure for this bank? (i.e. is the bank exposed to an interest rate increase/decrease?). Justify your answer.  [3]",
+     "memo": "The duration gap is negative, so the bank is exposed to a decrease in interest rates [1]. If the duration gap is negative it means the duration of the liabilities is higher than the duration of the assets, so a decrease in interest rates will result in the bank's liabilities growing faster than the assets, which negatively affects the bank's net worth position [2]."
+    },
+    {
+     "id": "D8.3",
+     "marks": 4,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "3. Determine the repricing gap for Sharp Bank, assume a planning period of 365 days. Determine the change in net interest income if short term interest rates decrease by 0.2%.  [4]",
+     "memo": "365 day repricing gap = RSA - RSL [1]\n\nRepricing gap = R42 - R6 = R36 [2] (rate sensitive assets are the 9-month Treasury bills of 42; rate sensitive liabilities are the overnight reserve bank funds of 6)\n\nNet interest income will decrease by: R36 x 0.002 [1]\n\nPrinted memo: R36 billion x 0.002 = R72,000,000. Note: the balance sheet is stated in R million, so the gap is R36 million and the fall in net interest income is R36 million x 0.002 = R72 000."
+    }
+   ]
+  }
+ ]
+}

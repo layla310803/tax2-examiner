@@ -53,3 +53,12 @@ Paper content lives in `source/` (`build.py`, `template.html`, the extracted pap
 ```bash
 python source/build.py index.html
 ```
+
+## Courses
+
+The site opens on a course picker. Each course has its own papers, sections, quick quizzes and weakest-sections list; they share one page and one saved-progress store.
+
+- **Tax II (ACC3004W)**: papers are defined in `source/build.py`, quiz questions in `source/quiz_bank.py`.
+- **Banking (FTX4087S)**: everything is in `source/banking/`. One `b-*.json` file per paper (`kind` is `test`, `exam` or `workshop`), `formula_sheet.txt` (shown as the "Formula sheet" tab) and `quiz_bank.py`. To add a paper, drop in another JSON file with the same shape and rebuild.
+
+Papers marked `"unofficial": true` have a memo that is partly from a student compilation or a suggested answer, not the lecturer. To add another course, add its entry to the `courses` list at the end of `source/build.py`; paper and section ids must be unique across courses.

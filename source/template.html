@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tax II Past Paper Examiner</title>
+<title>Past Paper Examiner</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -210,12 +210,12 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 </head>
 <body>
 <header class="bar">
-  <h1>Tax II Examiner</h1>
-  <span class="crumb" id="crumb">ACC3004W past papers</span>
+  <h1 id="appName">Examiner</h1>
+  <span class="crumb" id="crumb">Pick a course</span>
   <span class="spacer"></span>
   <button class="btn small toggle" id="paperBtn" hidden aria-pressed="true">Scenario panel</button>
   <button class="btn small toggle" id="timerBtn" hidden aria-pressed="false">Timer</button>
-  <button class="btn small toggle" id="layoutBtn" hidden aria-pressed="false" title="When off, only the tax content is marked: any format is fine and communication marks are given automatically.">Mark layout</button>
+  <button class="btn small toggle" id="layoutBtn" hidden aria-pressed="false" title="When off, only the content is marked: any format is fine and communication marks are given automatically.">Mark layout</button>
   <button class="btn small" id="keyBtn" hidden>AI key</button>
   <button class="btn small" id="homeBtn" hidden>All papers</button>
 </header>
@@ -233,15 +233,20 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 <main id="app"></main>
 
 <script>
-const PAPERS = /*__DATA__*/null;
-const TOPICS = /*__TOPICS__*/null;
-const QUIZ = /*__QUIZ__*/null;   // quick-quiz question bank, by section id (source/quiz_bank.py)
+const COURSES = /*__COURSES__*/null;   // every course: {id, name, code, crumb, subject, papers, topics, quiz, minPerMark, tablesLabel} (source/build.py)
+let COURSE = COURSES[0], PAPERS = COURSE.papers, TOPICS = COURSE.topics, QUIZ = COURSE.quiz, MIN_PER_MARK = COURSE.minPerMark;
+function setCourse(c){ COURSE = c; PAPERS = c.papers; TOPICS = c.topics; QUIZ = c.quiz; MIN_PER_MARK = c.minPerMark; document.getElementById("appName").textContent = c.name + " Examiner"; }
+const courseOfTopic = tid => COURSES.find(c => c.topics.some(x => x.id === tid));
+const courseOfPaper = pid => COURSES.find(c => c.papers.some(p => p.id === pid));
+const paperMins = p => p.minutes || Math.round(p.marks * MIN_PER_MARK);
+function setHome(label, target){ const b = document.getElementById("homeBtn"); b.hidden = !label; b.textContent = label || ""; b.dataset.go = target || ""; }
+const KINDS = [["test", "Tests"], ["exam", "Exams"], ["workshop", "Workshops and section practice"]];
+function paperGroups(){ return PAPERS.some(p => p.kind) ? KINDS.map(([k, l]) => [l, PAPERS.filter(p => p.kind === k)]).filter(g => g[1].length) : [["Full papers", PAPERS]]; }   // quick-quiz question bank, by section id (source/quiz_bank.py)
 const topicName = id => (TOPICS.find(x => x.id === id) || {}).name || id;
 function topicItems(tid){ const out = []; PAPERS.forEach(p => p.questions.forEach((q, qi) => q.parts.forEach((pt, pi) => { if ((pt.topics || []).includes(tid)) out.push({ p, qi, pi, pt }); }))); return out; }
 // Section test order: shortest required first, building up to the longest
 function testItems(tid){ return topicItems(tid).slice().sort((a, b) => a.pt.marks - b.pt.marks); }
 function navItems(){ return view.byMarks ? testItems(view.topic) : topicItems(view.topic); }
-const MIN_PER_MARK = 180/113;
 const $ = (s, el=document) => el.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
@@ -437,10 +442,12 @@ function go(hash){ if (location.hash !== "#" + hash) location.hash = hash; else 
 function route(){
   const parts = location.hash.slice(1).split("/");
   view.quiz = null;
+  if (parts[0] === "c"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderHome(); return; }
+  { const c = (parts[0] === "quiz" || parts[0] === "topic") ? courseOfTopic(parts[1]) : courseOfPaper(parts[0]); if (c) setCourse(c); }
   if (parts[0] === "quiz" && TOPICS.some(x => x.id === parts[1])){ view.paper = null; view.topic = parts[1]; renderQuiz(parts[1]); return; }
   if (parts[0] === "topic" && TOPICS.some(x => x.id === parts[1])){ view.paper = null; view.topic = parts[1]; renderTopic(parts[1]); return; }
   const paper = PAPERS.find(p => p.id === parts[0]);
-  if (!paper){ view.paper = null; view.topic = null; renderHome(); return; }
+  if (!paper){ view.paper = null; view.topic = null; renderCourses(); return; }
   if (parts.length === 3){
     const qi = +parts[1], pi = +parts[2];
     if (paper.questions[qi]?.parts[pi]){ const moved = view.paper !== paper || view.q !== qi || view.p !== pi; view.paper = paper; view.q = qi; view.p = pi; if (moved){ view.tab = "scenario"; resetTimer(); } renderExam(); return; }
@@ -458,7 +465,7 @@ function route(){
   renderExam();
 }
 window.addEventListener("hashchange", route);
-$("#homeBtn").onclick = () => go("");
+$("#homeBtn").onclick = () => go($("#homeBtn").dataset.go || "");
 $("#paperBtn").onclick = () => { prefs.showPaper = !prefs.showPaper; save(); applyLayout(); };
 $("#layoutBtn").onclick = () => { prefs.markLayout = !prefs.markLayout; save(); applyLayout(); if (view.paper) renderRight(); };
 $("#timerBtn").onclick = () => { prefs.timer = !prefs.timer; save(); if (!prefs.timer) resetTimer(); applyLayout(); if (view.paper) tickTimer(Math.round(cur().pt.marks * MIN_PER_MARK)); };
@@ -490,12 +497,33 @@ function paperProgress(paper){
   return {got, done, n};
 }
 
+function renderCourses(){
+  setHome("", ""); $("#crumb").textContent = "Pick a course"; $("#appName").textContent = "Examiner"; applyLayout();
+  $("#app").className = "";
+  $("#app").innerHTML = `<div class="home">
+    <div class="intro"><p>Pick a course. Each one has its past papers to work through one required at a time, quick quizzes on the theory, and a list of your weakest sections.</p></div>
+    <h2 class="sec">Courses</h2>
+    <div class="cards">${COURSES.map(c => {
+      let got = 0, tot = 0, done = 0, n = 0;
+      c.papers.forEach(p => p.questions.forEach(q => q.parts.forEach(pt => { n++; tot += pt.marks; const b = best(p, pt); if (b !== null){ done++; got += b; } })));
+      const nq = Object.values(c.quiz).reduce((a, v) => a + v.length, 0);
+      return `<button class="card" data-c="${c.id}">
+        <div class="status-line"><span>${esc(c.code)}</span><span>${done}/${n} answered</span></div>
+        <h2>${esc(c.name)}</h2>
+        <ul><li>${c.papers.length} papers · ${n} requireds</li><li>${c.topics.length} sections · ${nq} quick-quiz questions</li></ul>
+        <div class="meter" aria-hidden="true"><i style="width:${(tot ? got / tot * 100 : 0).toFixed(1)}%"></i></div>
+        <div class="status-line"><span>Best marks so far</span><span class="mono">${fmt(got)} / ${tot}</span></div>
+      </button>`; }).join("")}</div>
+  </div>`;
+  document.querySelectorAll(".card").forEach(b => b.onclick = () => go("c/" + b.dataset.c));
+}
+
 function renderHome(){
-  $("#homeBtn").hidden = true; $("#crumb").textContent = "ACC3004W past papers"; applyLayout();
+  setHome("All courses", ""); $("#crumb").textContent = COURSE.crumb; applyLayout();
   $("#app").className = "";
   $("#app").innerHTML = `<div class="home">
     <div class="intro">
-      <p>Pick a paper. You get <strong>one required at a time</strong>, with the full scenario beside it. Type your answer the way you would in the exam script, then submit it. The examiner marks it against the official memo, shows <strong>where you lost marks and why</strong>, and tells you which section to revise. You can then fix your answer and resubmit, or ask follow-up questions about the feedback.</p>
+      <p>Pick a paper. You get <strong>one required at a time</strong>, with the full scenario beside it. Type your answer the way you would in the exam script, then submit it. The examiner marks it against the memo, shows <strong>where you lost marks and why</strong>, and tells you which section to revise. You can then fix your answer and resubmit, or ask follow-up questions about the feedback.</p>
       <p>Your answers and scores are saved in this browser.</p>
     </div>
     ${weakHTML()}
@@ -505,16 +533,16 @@ function renderHome(){
       <div class="topicgrid">${TOPICS.map(tp => { const items = topicItems(tp.id); const done = items.filter(x => best(x.p, x.pt) !== null).length;
         return `<button class="tbtn" data-t="${tp.id}">${esc(tp.name)} <span class="n">${done}/${items.length}</span></button>`; }).join("")}</div>
     </section>
-    <h2 class="sec">Full papers</h2>
-    <div class="cards">${PAPERS.map(p => {
+    ${paperGroups().map(([label, ps]) => `<h2 class="sec">${label}</h2>
+    <div class="cards">${ps.map(p => {
       const pr = paperProgress(p);
       return `<button class="card" data-id="${p.id}">
-        <div class="status-line"><span>${esc(p.marks)} marks · ${Math.round(p.marks*MIN_PER_MARK)} min</span><span>${pr.done}/${pr.n} answered</span></div>
+        <div class="status-line"><span>${esc(p.marks)} marks · ${paperMins(p)} min</span><span>${pr.done}/${pr.n} answered</span></div>
         <h2>${esc(p.title)}</h2>
         <ul>${p.questions.map(q => `<li>${esc(q.title)} (${q.marks})</li>`).join("")}</ul>
         <div class="meter" aria-hidden="true"><i style="width:${(pr.got/p.marks*100).toFixed(1)}%"></i></div>
         <div class="status-line"><span>Best marks so far</span><span class="mono">${fmt(pr.got)} / ${p.marks}</span></div>
-      </button>`;}).join("")}</div>
+      </button>`;}).join("")}</div>`).join("")}
   </div>`;
   document.querySelectorAll(".card").forEach(c => c.onclick = () => go(c.dataset.id));
   document.querySelectorAll(".tbtn, .wrow").forEach(b => b.onclick = () => go("topic/" + b.dataset.t));
@@ -540,7 +568,7 @@ function startLong(tid){
 
 function renderTopic(tid){
   view.byMarks = false;
-  $("#homeBtn").hidden = false; $("#crumb").textContent = topicName(tid); applyLayout();
+  setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = topicName(tid); applyLayout();
   $("#app").className = "";
   const items = topicItems(tid);
   const got = items.reduce((a, x) => a + (best(x.p, x.pt) ?? 0), 0), tot = items.reduce((a, x) => a + x.pt.marks, 0);
@@ -559,7 +587,7 @@ function renderTopic(tid){
   $("#tstart").onclick = () => { view.topic = tid; open(items.find(x => best(x.p, x.pt) === null) || items[0]); };
   $("#tquiz").onclick = () => go("quiz/" + tid);
   $("#tlong").onclick = () => startLong(tid);
-  $("#tback").onclick = () => go("");
+  $("#tback").onclick = () => go("c/" + COURSE.id);
 }
 
 /* ---------- quick quiz: short type-in questions from the question bank ---------- */
@@ -587,7 +615,7 @@ function newQuiz(tid){
 }
 function renderQuiz(tid){
   view.quiz = tid; view.byMarks = false;
-  $("#homeBtn").hidden = false; $("#crumb").textContent = topicName(tid) + " · quick quiz"; applyLayout();
+  setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = topicName(tid) + " · quick quiz"; applyLayout();
   $("#app").className = "";
   const bank = QUIZ[tid] || [], rec = quizRec(tid);
   if (rec.set && (!Array.isArray(rec.set.ids) || rec.set.ids.some(i => !bank[i]))) rec.set = null;   // older or stale quiz
@@ -657,7 +685,7 @@ function cur(){ const q = view.paper.questions[view.q]; return {q, pt: q.parts[v
 
 function renderExam(){
   const paper = view.paper;
-  $("#homeBtn").hidden = false; $("#crumb").textContent = view.topic ? `${topicName(view.topic)} · ${paper.short}` : paper.title;
+  setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = view.topic ? `${topicName(view.topic)} · ${paper.short}` : paper.title;
   $("#app").className = "exam";
   $("#app").innerHTML = `<section class="pane left" id="left" aria-label="Question paper"></section><div class="split" id="split" role="separator" aria-orientation="vertical" aria-label="Resize scenario panel" tabindex="0"></div><section class="pane right" id="right" aria-label="Answer"></section>`;
   renderLeft(); renderRight(); applyLayout(); wireSplit();
@@ -667,7 +695,7 @@ function renderLeft(){
   const paper = view.paper, {q, pt} = cur();
   const s = st(paper, pt);
   const memoOpen = s.attempts.length > 0 || s.memoUnlocked;
-  const tabs = [["scenario","Scenario"],["tables","Tax tables"],["memo","Memo " + pt.id]];
+  const tabs = [["scenario","Scenario"], ...(paper.tables ? [["tables", COURSE.tablesLabel]] : []), ["memo","Memo " + pt.id]];
   let body = "";
   if (view.tab === "scenario") body = `<div class="qtitle">${esc(q.title)} · ${q.marks} marks</div>` + renderDoc(q.scenario);
   else if (view.tab === "tables") body = renderDoc(paper.tables);
@@ -757,7 +785,51 @@ function wireFeedback(){
 }
 
 /* ---------- marking ---------- */
+function genericPrompt(paper, q, pt, answer){
+  return `You are an experienced examiner marking a ${COURSE.subject} script. Mark the student's answer to ONE required against the suggested solution, the way a real UCT marker would, then give feedback that teaches.
+
+MARKING RULES
+- Total for this required: ${pt.marks} marks. Never award more than ${pt.marks}.
+- Where the memo shows mark allocations, follow them. Where it shows none, award about 1 mark per distinct correct point (a correct figure with its working, or a correct statement with its explanation), half a mark for partly correct workings.
+- Multiple-choice required: full marks for the correct option, zero otherwise. Still explain why the right option is right and why the student's choice (if wrong) is wrong.
+- Calculations: give method marks for a correct formula and correct steps even if a number slips, and penalise an error only once (carry the student's own wrong figure forward).
+- Discussion questions: award marks for valid points that the memo does not list if they are correct, relevant and applied to the facts given. No marks for vague statements or theory that is not applied to the case.
+- Accept any layout: bullet points, shorthand and abbreviations are fine.
+- This memo is a suggested solution${paper.unofficial ? " that is partly or wholly unofficial and may contain errors" : ""}. If it is clearly wrong in theory or arithmetic, mark according to the correct answer and say so in your feedback.
+- Be strict but fair. Half marks are allowed.
+
+FEEDBACK RULES
+- "errors": things the student did that are WRONG. Quote or paraphrase what they did, give the correct answer with the correct figure, and say why.
+- "missed": memo points the student did not address, each with the marks it carried.
+- "correct": short list of points that earned marks.
+- "revise": 2-5 specific topics to revise from their notes, phrased like "Repricing gap: effect of a rate rise on NII when the gap is negative".
+- "examTip": one practical exam-technique tip based on this script.
+- If the answer is blank or irrelevant, score 0 and explain what the required wanted.
+- Plain language. Rands written like R12 345.
+
+=== ${paper.title} — ${q.title} ===
+SCENARIO:
+${q.scenario || "(none)"}
+${paper.tables ? `
+${COURSE.tablesLabel.toUpperCase()} PROVIDED:
+${paper.tables}
+` : ""}
+REQUIRED ${pt.id} (${pt.marks} marks):
+${pt.required}
+
+SUGGESTED SOLUTION (memo) FOR ${pt.id}:
+${pt.memo}
+
+STUDENT'S ANSWER:
+<<<
+${answer}
+>>>
+
+Reply with only one JSON object in exactly this shape:
+{"score": number, "overall": "2-3 sentence verdict", "errors": [{"what": "...", "fix": "...", "why": "..."}], "missed": [{"point": "...", "marks": number}], "correct": ["..."], "revise": ["..."], "examTip": "..."}`;
+}
 function markingPrompt(paper, q, pt, answer){
+  if (COURSE.id !== "tax2") return genericPrompt(paper, q, pt, answer);
   return `You are an experienced examiner marking a UCT ACC3004W Taxation II (South African tax) exam script. Mark the student's answer to ONE required against the suggested solution, the way a real UCT marker would, then give feedback that teaches.
 
 MARKING RULES
@@ -868,11 +940,11 @@ function openChat(){
   const draw = () => {
     box.innerHTML = ch.map(m => `<div class="msg ${m.role === "user" ? "u" : "a"}">${esc(m.content)}</div>`).join("") +
       `<label class="hint" for="askIn">Ask about your mark, a section, or why the memo treats something a certain way.</label>
-       <textarea id="askIn" placeholder="e.g. Why is para 7(7) not applied for employees' tax?"></textarea>
+       <textarea id="askIn" placeholder="${COURSE.id === "tax2" ? "e.g. Why is para 7(7) not applied for employees' tax?" : "e.g. Why does a negative gap hurt NII when rates rise?"}"></textarea>
        <div class="row"><button class="btn primary small" id="askSend">Ask</button></div>`;
     $("#askSend").onclick = send;
   };
-  const rules = `You are the UCT ACC3004W Taxation II examiner who just marked this student's answer. Answer their follow-up questions about the marking and the tax law involved: concise, specific to this scenario, cite the relevant section/paragraph, and use worked figures where helpful. If they argue for a mark, judge it fairly against the memo and law.
+  const rules = `You are the ${COURSE.subject} examiner who just marked this student's answer. Answer their follow-up questions about the marking and the ${COURSE.id === "tax2" ? "tax law involved: concise, specific to this scenario, cite the relevant section/paragraph" : "theory and calculations involved: concise, specific to this scenario"}, and use worked figures where helpful. If they argue for a mark, judge it fairly against the memo${COURSE.id === "tax2" ? " and law" : ""}.
 
 SCENARIO:\n${q.scenario}\n\nREQUIRED ${pt.id} (${pt.marks} marks):\n${pt.required}\n\nMEMO:\n${pt.memo}\n\nSTUDENT'S ANSWER:\n${a?.answer || s.answer}\n\nYOUR MARKING (score ${a?.score}/${pt.marks}):\n${JSON.stringify(a?.feedback || {})}`;
   async function send(){

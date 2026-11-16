@@ -1,0 +1,587 @@
+{
+ "id": "b-exam2023",
+ "title": "2023 Final Exam",
+ "short": "Exam 2023",
+ "kind": "exam",
+ "marks": 140,
+ "minutes": 180,
+ "unofficial": false,
+ "memoNote": "Lecturer's memo printed in the paper (red answer key for the MCQs, worked answers for Sections B to D); the 'Why:' reasons for the MCQs, short workings and the corrected Question 7.2/7.3 figures were added from the course slides and recomputation.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Section A — Multiple Choice (1–4)",
+   "marks": 12,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "A1",
+     "marks": 3,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1. Which of the following statements regarding the cost-to-income ratio is false?\n\na) Cost-to-income ratio tends to decrease as bank size increases.\nb) Banks are struggling to control their cost-to-income ratios due to increased focus on digitalisation.\nc) Cost-to-income ratios for digital firms tend to be larger than those for traditional banks.\nd) Cost-to-income ratios for Chinese banks tend to be significantly lower than for other banks.",
+     "memo": "c) Cost-to-income ratios for digital firms tend to be larger than those for traditional banks. (3 marks)\n\nWhy: digital banks have fewer branches, less staff and lower overheads, so their cost-to-income ratios tend to be lower, not larger. The other three statements are true: ratios fall with scale, IT spend on digitalisation keeps traditional banks' ratios high, and the big Chinese banks run at roughly 28%-38% against 50%-63% for SA, US, UK and Japanese banks."
+    },
+    {
+     "id": "A2",
+     "marks": 3,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "2. The following is (are) considered to be levers for bank ROE\n\na) Increasing profit margins without experiencing a negative impact on revenue.\nb) Generating economies of scale which enable the bank to generate more revenue using less earning assets.\nc) Taking on more risk without negatively impacting solvency and stability.\nd) All of the above",
+     "memo": "d) All of the above (3 marks)\n\nWhy: ROE = profit margin x asset utilisation x leverage. (a) is the profit-margin lever, (b) is the asset-utilisation lever (more income per rand of assets) and (c) is the leverage lever (more risk/leverage lifts ROE as long as solvency and stability are kept)."
+    },
+    {
+     "id": "A3",
+     "marks": 3,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3. Which of the following has never been used as money?\n\na) Gold.\nb) Central bank deposits.\nc) Commercial bank deposits\nd) Loans",
+     "memo": "d) Loans (3 marks)\n\nWhy: gold (commodity money), central bank deposits (reserves, base money) and commercial bank deposits (the biggest part of the money supply) have all functioned as money. A loan is a credit contract; lending creates deposit money but the loan itself is never used as a means of payment."
+    },
+    {
+     "id": "A4",
+     "marks": 3,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "4. Which of the following is not a function of a Treasury department?\n\na) Net present value project evaluation.\nb) Short-term funding.\nc) Cash flow management.\nd) Risk management.",
+     "memo": "a) Net present value project evaluation. (3 marks)\n\nWhy: NPV project evaluation is capital budgeting, done by corporate finance or the business units. Treasury procures funding (b), manages cash and liquidity (c) and manages interest rate, currency and commodity risk (d)."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Section A — Multiple Choice (5–6): Bank X",
+   "marks": 6,
+   "scenario": "For questions 5 and 6, consider the following information available on Bank X.\n\nASSETS  |  RANDS\nCash and cash equivalents  |  17 983\nDerivative financial instruments  |  66 799\nMandatory reserve deposits with central banks  |  25 676\nGovernment securities  |  103 464\nLoans and advances to clients  |  876 441\nTaxation assets  |  2 330\nInvestment securities  |  22 412\nProperty and physical assets  |  8 450\nCapitalised software expenses  |  10 232\nGoodwill  |  5 786\nTOTAL  |  1139 573\n  |\nLIABILITIES & EQUITY  |  RANDS\nDerivative financial instruments  |  65 670\nAmounts owed to depositors  |  907 678\nProvisions and other liabilities  |  23 811\nSub-ordinated debt instruments that are Basel 3 compliant  |  1234\nLong-term debt instruments  |  55 970\nTOTAL LIABILITIES  |  1054 363\nOrdinary share capital  |  789\nOrdinary share premium  |  18 582\nRetained income  |  39835\nCash flow hedging reserve  |  5 337\nOther reserves  |  8945\nHolders of perpetual preference shares  |  4872\nHolders of additional tier 1 capital instruments  |  6 850\nTOTAL EQUITY  |  85210\nTOTAL  |  1139 573\n\nThe total risk-weighted assets number, correctly calculated for Bank X, is R500 489.\n80% of the deferred tax asset is due to temporary tax differences and is allowed as capital.",
+   "parts": [
+    {
+     "id": "A5",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "5. What is the CET1 ratio for Bank X?\n\na) 85 210/1139 573*100 = 7.48\nb) (85 210-5 337-4 872-6 850-20%*2 330-10 232-5 786)/500 489*100 = 10.32\nc) (85 210-5 337-20%*2 330-10 232-5 786)/500 489*100 = 12.67\nd) (85 210-5 337+1 234-20%*2 330-10 232-5 786)/500 489*100 = 12.91",
+     "memo": "b) (85 210-5 337-4 872-6 850-20%*2 330-10 232-5 786)/500 489*100 = 10.32 (3 marks)\n\nWhy: CET1 is ordinary equity less deductions, so from total equity (85 210) remove the cash flow hedging reserve (5 337), the perpetual preference shares (4 872), the additional tier 1 instruments (6 850), the 20% of the deferred tax asset not allowed (20% x 2 330 = 466) and the intangibles (capitalised software 10 232 and goodwill 5 786). CET1 capital = 51 667; 51 667 / 500 489 = 10.32%. (a) is equity over total assets, (c) forgets to remove the preference shares and AT1 instruments, and (d) also wrongly adds back Tier 2 sub-debt."
+    },
+    {
+     "id": "A6",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "6. Using the information provided in question 5, what is the Basel 3 leverage ratio for Bank X?\n\na) (85 210-5 337-20%*2 330-10 232-5 786)/(1139 573-20%*2 330-10 232-5 786)*100 = 5.64\nb) (85 210-5 337-20%*2 330-10 232-5 786)/5.561139 573*100 = 5.64\nc) 1139 573/85 210 = 13.37\nd) (85 210-5 337+1234-20%*2 330-10 232-5 786)/500 489*100 = 12.91",
+     "memo": "a) (85 210-5 337-20%*2 330-10 232-5 786)/(1139 573-20%*2 330-10 232-5 786)*100 = 5.64 (3 marks)\n\nWhy: the leverage ratio is Tier 1 capital over the total (not risk-weighted) exposure measure, with the same deductions taken from both. Tier 1 = 85 210 - 5 337 - 466 - 10 232 - 5 786 = 63 389 (preference shares and AT1 stay in Tier 1); exposure = 1 139 573 - 466 - 10 232 - 5 786 = 1 123 089; 63 389 / 1 123 089 = 5.64%. (c) is the equity multiplier and (d) is a risk-weighted capital ratio that adds Tier 2 sub-debt."
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Section A — Multiple Choice (7–10)",
+   "marks": 12,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "A7",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-credit",
+      "b-mkt"
+     ],
+     "required": "7. Which of the following statements are true?\n\ni. Legal risk is a type of operational financial risk.\nii. Unexpected losses that pertain to credit risk cannot be made provision for, since it's outside the control of the bank.\niii. Banks make provision for expected losses by means using multivariate logistic regression.\niv. Market risk is risk incurred when market variables, such as interest rates and commodity prices, change when trading assets and liabilities.\n\nOPTIONS\na) i, ii, iii\nb) i, iii, iv\nc) i, iii\nd) i, iv",
+     "memo": "d) i, iv (3 marks)\n\nWhy: (i) is true because the Basel definition of operational risk includes legal risk; (iv) is the definition of market risk. (ii) is false because unexpected losses are covered by capital, not because they are uncontrollable. (iii) is false because logistic regression estimates a borrower's probability of default; expected losses are provided for through loan pricing and impairment provisions."
+    },
+    {
+     "id": "A8",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-risk",
+      "b-irr"
+     ],
+     "required": "8. Which of the following statements are false?\n\ni. A person deliberately causing damage to a company's reputation is an example of operational risk.\nii. A bank is required by the Basel Committee on Banking Supervision, by means of the Basel III Capital Accord, to have sufficient High Quality Liquidity Assets to survive a stress scenario of 25 days.\niii. When interest rates rise above a certain level, the additional expected return earned by a bank will be offset by a higher probability of default on loans.\niv. In terms of interest rate risk, a feature of Duration as a method of calculating cash flows, is that Duration decreases as the coupon- or interest payment increases.\n\nOPTIONS\na) i, ii\nb) ii, iii, iv\nc) ii, iv\nd) i, ii, iii",
+     "memo": "a) i, ii (3 marks)\n\nWhy: (i) is false because the Basel definition of operational risk excludes reputational risk. (ii) is false because the LCR stress scenario is 30 days, not 25. (iii) is true (backward-bending loan supply curve: adverse selection and moral hazard) and (iv) is true (a higher coupon returns value earlier, so duration falls)."
+    },
+    {
+     "id": "A9",
+     "marks": 3,
+     "topics": [
+      "b-irr",
+      "b-mkt"
+     ],
+     "required": "9. Which of the following statements are false?\n\ni. The interest elasticity of a security's price to small interest rate changes is viewed as a definition of Duration.\nii. Relative Value at Risk, as one of three related Value at Risk calculations for market risk, is relevant to investment managers and mutual funds as their performance is often compared to a target benchmark.\niii. The main difference between the Monte Carlo simulation method and the Historical simulation method as a methodology to measure market risk, is that Monte Carlo simulation takes actual past movements, while the Historical simulation method generates random hypothetical scenarios.\niv. There are four parameters to specify before calculating Value at Risk for market risk. These include the confidence level, the forecast horizon, the base currency, and the volatility.\n\nOPTIONS\na) i, ii\nb) ii, iii, iv\nc) iii, iv\nd) i, ii, iv",
+     "memo": "c) iii, iv (3 marks)\n\nWhy: (iii) has the two methods swapped: Historical simulation uses actual past movements (\"reliving history\") and Monte Carlo generates random hypothetical scenarios. (iv) is false because volatility is estimated from the data rather than chosen beforehand. (i) and (ii) are true."
+    },
+    {
+     "id": "A10",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-mkt"
+     ],
+     "required": "10. Which of the following statements are false?\n\ni. The fundamental problem with the definition of operational risk according to the Basel III Capital Accord, is that is does not make provision for damage to physical property.\nii. Relative Value at Risk as one of three related Value at Risk calculations for market risk, is relevant to investment managers and mutual funds as their performance is often compared to a target benchmark.\niii. Macro-prudential stress testing is one of the monitoring tools that the South African Reserve Bank uses to assess the financial system's resilience to unexpected disruptions resulting from operational risk.\niv. The Advanced Measurement Approach, as prescribed by the Basel III Capital Accord, was criticised for being too complex and reliant on statistical models.\n\nOPTIONS\na) i\nb) ii\nc) iii\nd) iv",
+     "memo": "a) i (3 marks)\n\nWhy: the Basel operational risk definition (failed internal processes, people, systems or external events) does cover damage to physical assets; what it leaves out is reputational and strategic risk. (ii), (iii) and (iv) are true."
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "title": "Section B, Question 1 — Free cash flow valuation of banks",
+   "marks": 8,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "B1",
+     "marks": 8,
+     "topics": [
+      "b-val"
+     ],
+     "required": "Discuss the main reasons that free cash flow valuations cannot be used when valuing a bank.  [8]",
+     "memo": "EBITDA loses its meaning as interest is a contributor to both revenue and expenses.\n\nThe balance sheet drives value - banks' growth is driven by loans (interest-earning) and deposits (interest-bearing) rather than sales (income statement driven).\n\nDifferentiating between operating and financing activities is complicated because interest and debt are related to the company's operations (i.e. they're not purely financing activities). This means \"working capital\" and \"free cash flow\" are no longer applicable.\n\nFor banks, debt is really a raw material, a tool to generate profit (as it finances their loans). Defining debt is also harder for banks; e.g. are deposits by customers into their cheque accounts debt? If so, the operating cash flows of the bank should be measured prior to the interest paid on these accounts as per FCF valuation methods; but this interest expense is usually the single biggest expense item for a bank (i.e. you would be overstating your cash flows using FCF). Banks tend to have more debt by nature than normal firms and therefore significantly higher leverage; this means that small changes in assets can have much bigger impacts on equity. Because of the issues around debt, Equity Value is more meaningful than Enterprise Value (Debt + Equity).\n\nFI firms mark-to-market daily - this has implications for things like book value.\n\nRegulatory requirements mean banks must maintain minimum amounts of capital at all times and this creates constraints when forecasting within the valuation model.\n\nBasically, the first 6 slides of Topic 3 - Valuations."
+    }
+   ]
+  },
+  {
+   "id": "Q5",
+   "title": "Section B, Question 2 — Smartphone company: operating cycle",
+   "marks": 16,
+   "scenario": "A smartphone company implemented a new marketing strategy in 2023 and wants to know whether it successfully improved their operating cycle and specifically their inventory days.\n\nExamining the company's financial statements, you have found that in the current year they had credit sales of R950 000 and R1 500 000 in Cost of Sales. You also note that their inventory increased from R450 000 to R520 000 this year; their Accounts Receivable dropped from R200 000 to R190 000; and their Accounts Payable jumped from R800 000 to R900 000.",
+   "parts": [
+    {
+     "id": "B2a",
+     "marks": 7,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "a) Calculate the company's operating cycle - show your calculations for each of the relevant days calculations.  [7]",
+     "memo": "Average inventory = (450 000 + 520 000) / 2 = R485 000\nAverage accounts receivable = (200 000 + 190 000) / 2 = R195 000\n\nCredit Sales  |  950000\nCost of Sales  |  1500000\nAverage Inventory  |  485000\nAccounts Receivable (average)  |  195000\nDSO  |  74,92\nDIO  |  118,02\nOperating Cycle  |  193\n\nDSO = 195 000 / 950 000 x 365 = 74.92 days\nDIO = 485 000 / 1 500 000 x 365 = 118.02 days\nOperating cycle = DSO + DIO = 193 days (payables are not part of the operating cycle; they only enter the cash conversion cycle)."
+    },
+    {
+     "id": "B2b",
+     "marks": 4,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "b) If the company was able to reduce its days inventory outstanding (DIO) by 16 days, how much cash would it be free up?  [4]",
+     "memo": "Memo: Potential cash freed up = average inventory - (cost of goods sold x 16 days) / 365 = R419 246,60\n\nNote: the printed memo's R419 246.60 is the resulting lower inventory balance (485 000 - 65 753.42), not the cash released. The cash freed up is the reduction in inventory: 1 500 000 x 16 / 365 = R65 753.42."
+    },
+    {
+     "id": "B2c",
+     "marks": 5,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "c) Suggest ways in which the company could improve their operating cycle.  [5]",
+     "memo": "Any general points about improving DSO and DIO would be fine here. All straight from the slides.\n\nFor example: reduce DIO through better demand forecasting, just-in-time delivery or consignment stock, fewer slow-moving models and clearing old stock quickly; reduce DSO through tighter credit vetting and terms, prompt invoicing and chasing of overdue accounts, early-payment discounts, and invoice discounting or factoring. Weigh these against the risk of lost sales."
+    }
+   ]
+  },
+  {
+   "id": "Q6",
+   "title": "Section C, Question 3 — Money, the repo rate and SARB liquidity",
+   "marks": 16,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "C3.1",
+     "marks": 1,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3.1 What is the name of the stone money used in the Yap Island group?  [1]",
+     "memo": "Rai stones."
+    },
+    {
+     "id": "C3.2",
+     "marks": 1,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3.2 What is the name of the benchmark interest rate set by the SARB?  [1]",
+     "memo": "Repo rate."
+    },
+    {
+     "id": "C3.3",
+     "marks": 1,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3.3 Is this benchmark interest rate an interest rate paid on deposits at the SARB or an interest rate paid on loans from the SARB or both?  [1]",
+     "memo": "It is both."
+    },
+    {
+     "id": "C3.4",
+     "marks": 2,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3.4 Explain what the SARB sees as a well-functioning monetary policy transmission mechanism?  [2]",
+     "memo": "The SARB wants their repo interest rate to be the benchmark interest rate in the money market, i.e. when they adjust the repo rate they want all other interest rates to adjust in lock step."
+    },
+    {
+     "id": "C3.5",
+     "marks": 5,
+     "topics": [
+      "b-money",
+      "b-reg"
+     ],
+     "required": "3.5 Please provide the maximum amount of liquidity that a bank can raise from the SARB, given the following information?  [5]\n\nSARB's market value adjustment table:\nDESCRIPTION  |  FACTOR\nBonds with residual maturity > 10 years  |  1.035\nBonds with residual maturity between 1 and 10 years  |  1.025\nBonds, debentures, and Treasury Bills with residual maturity < 10 years  |  1.010\n\nThe bank has available R100 million market value of R2030 (will mature in 2030) government bonds to give as security for a three-day loan at the benchmark interest rate of 8.25%.",
+     "memo": "Value of security after haircut: R100m / 1.025 (bond has seven years of maturity left) = 97.560976m\n\nFormula: X.(1 + 8.25/12/100 x 3/30) = 97.560976 for rest of formula\n\nSolve: X = R97.4939485202m liquidity can be raised."
+    },
+    {
+     "id": "C3.6",
+     "marks": 1,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3.6 How much interest would be paid on the deal in Rands?  [1]",
+     "memo": "97 560 975.61 - 97 493 948.52 = R67 027.09 interest paid."
+    },
+    {
+     "id": "C3.7",
+     "marks": 2,
+     "topics": [
+      "b-money",
+      "b-irr"
+     ],
+     "required": "3.7 Explain why is the adjustment factor for longer maturity instruments larger than the factor for shorter maturity instruments?  [2]",
+     "memo": "The SARB is using the adjustment factor to reduce or haircut the value of the security in case markets move in the few days that the loan is outstanding, and the market movement causes the security value to adjust, and it is no longer enough. Long maturity instruments have more duration/their value is more sensitive to market movements and, therefore, the haircut applied to them should be larger."
+    },
+    {
+     "id": "C3.8",
+     "marks": 3,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3.8 Explain the economic logic of what the SARB is trying to achieve by adjusting interest rates upwards.  [3]",
+     "memo": "The SARB is primarily worried about inflation. If inflation is too high and they adjust interest rates upwards then those with debt have less money to spend and demand in the economy is lower as a result, all else equal, leading to less pressure on prices."
+    }
+   ]
+  },
+  {
+   "id": "Q7",
+   "title": "Section C, Question 4 — The interest rate premium on loans",
+   "marks": 15,
+   "scenario": "Banks are profit-seeking organisations, and the interest rate premium that they earn is a primary source of profitability.",
+   "parts": [
+    {
+     "id": "C4.1",
+     "marks": 8,
+     "topics": [
+      "b-money",
+      "b-intro"
+     ],
+     "required": "4.1 What is the average interest rate on loans that a bank should charge if it targets a ROE of 20%, the effective tax rate is 27%, the minimum capital ratio is 10% of total assets, the cost of all funds before bad debt is 6%, bad debt is expected to be 1% of loans, other income, such as bank charges, brings in 2% of total assets, and operational costs are expected to be 3% of total assets. You can assume that the bank has only two asset types: 95% loans that bring in the average interest rate and 5% liquid assets that bring in no revenue. Use only the information given.  [8]",
+     "memo": "ROE = ROA x leverage\n\n20% = ROA x 1/10%  (for correct formula)\n\nROA = 2% after tax.\n\nROA = 2.739726% before tax (divided by 1 - tax rate).\n\n2.739726 = 0.95.X - 6 - 0.95.1 + 2 - 3\n\nX = 11.2523431579%"
+    },
+    {
+     "id": "C4.2i",
+     "marks": 1,
+     "topics": [
+      "b-money",
+      "b-intro"
+     ],
+     "required": "4.2 What should happen to the average interest rate charged on loans (increase, decrease, the same) if the following take place.  [6 X 1 mark]\n\ni. The credit risk of the average loan is higher than previously thought.",
+     "memo": "Increase"
+    },
+    {
+     "id": "C4.2ii",
+     "marks": 1,
+     "topics": [
+      "b-money",
+      "b-intro"
+     ],
+     "required": "4.2 What should happen to the average interest rate charged on loans (increase, decrease, the same) if the following take place.  [6 X 1 mark]\n\nii. Political uncertainty in South Africa reduces.",
+     "memo": "Decrease"
+    },
+    {
+     "id": "C4.2iii",
+     "marks": 1,
+     "topics": [
+      "b-money",
+      "b-intro"
+     ],
+     "required": "4.2 What should happen to the average interest rate charged on loans (increase, decrease, the same) if the following take place.  [6 X 1 mark]\n\niii. The tax rate stays the same but fewer deductions are allowed.",
+     "memo": "Increase"
+    },
+    {
+     "id": "C4.2iv",
+     "marks": 1,
+     "topics": [
+      "b-money",
+      "b-intro"
+     ],
+     "required": "4.2 What should happen to the average interest rate charged on loans (increase, decrease, the same) if the following take place.  [6 X 1 mark]\n\niv. The average length/maturity of loans is increased.",
+     "memo": "The same"
+    },
+    {
+     "id": "C4.2v",
+     "marks": 1,
+     "topics": [
+      "b-money",
+      "b-intro"
+     ],
+     "required": "4.2 What should happen to the average interest rate charged on loans (increase, decrease, the same) if the following take place.  [6 X 1 mark]\n\nv. Government removes legislation that weakens individual property rights.",
+     "memo": "Decrease"
+    },
+    {
+     "id": "C4.2vi",
+     "marks": 1,
+     "topics": [
+      "b-money",
+      "b-intro"
+     ],
+     "required": "4.2 What should happen to the average interest rate charged on loans (increase, decrease, the same) if the following take place.  [6 X 1 mark]\n\nvi. The current problems at the property deeds office are solved by the hard work of dedicated civil servants.",
+     "memo": "Decrease"
+    },
+    {
+     "id": "C4.3",
+     "marks": 1,
+     "topics": [
+      "b-intro"
+     ],
+     "required": "4.3 Should a bank charge an interest rate higher than what is needed on a specific loan from a risk/return perspective if the client is willing to pay?  [1]",
+     "memo": "Mark for yes and no. Yes, as the bank looks for profit and the client might be willing to pay for other reasons than risk/return. No, as this is abuse of the client and when they figure it out, they will leave the bank as client."
+    }
+   ]
+  },
+  {
+   "id": "Q8",
+   "title": "Section C, Question 5 — Liquidity, reserves and bank failure",
+   "marks": 12,
+   "scenario": "Some argue that the art of banking is to synchronise the payments in and out of the balance sheet of the bank. For example, if more payments flow out on average than flows in, then soon the bank will have liquidity problems.",
+   "parts": [
+    {
+     "id": "C5.1",
+     "marks": 5,
+     "topics": [
+      "b-treas",
+      "b-reg"
+     ],
+     "required": "5.1 Where would you, as treasury manager for Bank X, source liquidity from if:\n- The liquidity shortage is small and completely predictable.\n- The liquidity shortage is large and unexpected.\n- The liquidity shortage is structural, i.e. it results from how the bank does its business.\n\n(For each case, explain where you would source liquidity from and why? It is necessary for each answer that the given source of liquidity is likely to provide the required liquidity under the circumstances.)  [5]",
+     "memo": "If the liquidity shortage is small and predictable then it should be sourced from the cheapest source available and that is usually retail deposits. Offer retail depositors a slightly higher interest rate than before.\n\nIf the shortage is large and unexpected then the bank is in a potential crisis. Approach the SARB for emergency and expensive funding. Perhaps you should try other banks before the SARB as that might be cheaper but can also lead to contagion. Thus, do both.\n\nIf the shortage is structural then the business plan needs to be changed to compensate for it."
+    },
+    {
+     "id": "C5.2",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-money"
+     ],
+     "required": "5.2 What is the relationship between bank reserves and bank capital?  [3]",
+     "memo": "Bank reserve are balances held by banks at the central bank on account (1 mark). Bank capital is the regulator allowed excess of assets over liabilities of a bank (1 mark). Thus, reserves are part of the total asset base that should exceed liabilities but is not capital (1 mark). Reserves are usually seen as liquid assets (1 mark)."
+    },
+    {
+     "id": "C5.3",
+     "marks": 2,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "5.3 Did VBS Bank have a solvency problem first and then a liquidity problem or the other way round? Explain.  [2]",
+     "memo": "VBS Bank grew too fast due to making loans that were not going to be repaid, a solvency problem. Eventually depositors lost faith in the bank and liquidity issues followed."
+    },
+    {
+     "id": "C5.4",
+     "marks": 2,
+     "topics": [
+      "b-intro"
+     ],
+     "required": "5.4 Give two scenarios in which you can use your knowledge of banks and banking to your employer's advantage. Assume you do not work for a bank.  [2]",
+     "memo": "Any reasonable two answers. Be lenient."
+    }
+   ]
+  },
+  {
+   "id": "Q9",
+   "title": "Section D, Question 6 — Credit risk models, stress testing and operational risk",
+   "marks": 15,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D6.1",
+     "marks": 4,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "6.1 Explain, by means of a graph, why it is impractical to fit a linear regression model to the binary data when calculating unexpected loss (UL) for credit risk.  [4]",
+     "memo": "When using Linear Regression, the output will provide data which is to be used to fit a straight line through to determine if there is any correlation or relationship, however with binary data, there would only be two possible outcomes, and fitting a straight line through the data would be impossible.\n\nGraph guidance: plot the binary outcome (default = 1, no default = 0) against an explanatory variable such as the debt ratio, so all points sit on two horizontal lines; a straight line through them breaks out of the 0 to 1 range, so fitted probabilities can be below 0 or above 1."
+    },
+    {
+     "id": "D6.2",
+     "marks": 1,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "6.2 Which model will best fit binary data when calculating UL for credit risk.  [1]",
+     "memo": "Multivariate Logistic Regression Model"
+    },
+    {
+     "id": "D6.3",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "6.3 When fitting the correct model binary data when calculating UL for credit risk, explain what the slope coefficient represents.  [2]",
+     "memo": "The slope coefficient represents a change in logit corresponding to a one unit change in the independent variable(s)."
+    },
+    {
+     "id": "D6.4",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "6.4 What is the ultimate goal, given binary data and calculating UL for credit risk, of fitting the best model?  [2]",
+     "memo": "Fitting the best model to describe the relationship between one or more variables."
+    },
+    {
+     "id": "D6.5",
+     "marks": 1,
+     "topics": [
+      "b-mkt",
+      "b-risk"
+     ],
+     "required": "6.5 Name one drawback of using the Monte Carlo simulation as a method of stress testing.  [1]",
+     "memo": "It assumes the past is an accurate prediction of the future and makes no provision for a financial crisis or an epidemic."
+    },
+    {
+     "id": "D6.6",
+     "marks": 3,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "6.6 With reference to stress testing provide a (i) detailed description of the Monte Carlo simulation and Historical simulation and (ii) to which instruments each is applicable.  [3]",
+     "memo": "6.6.1 Monte Carlo - Simulating random scenarios. Historical simulation - Reliving history.\n\n6.6.2 Both simulations are applicable to linear and non-linear instruments."
+    },
+    {
+     "id": "D6.7",
+     "marks": 2,
+     "topics": [
+      "b-risk"
+     ],
+     "required": "6.7 Provide an example of an operational risk event that results in a profit. You are not allowed to use the examples provided in class.  [2]",
+     "memo": "Coke was not intentionally designed for it's use today but it has resulted in a conglomerate with a reputation worth billions."
+    }
+   ]
+  },
+  {
+   "id": "Q10",
+   "title": "Section D, Question 7 — Two-share portfolio",
+   "marks": 14,
+   "scenario": "Provided the data in the table, please answer the following questions. Please round only your final answer to two decimal places.\n\nShare A  |  p  |  HR\nRecession  |  0,3  |  -5,00%\nSlow growth  |  0,25  |  -1,00%\nNormal growth  |  0,25  |  3,00%\nEconomic boom  |  0,2  |  10,00%\n\nShare B  |  p  |  HR\nRecession  |  0,3  |  -1,00%\nSlow growth  |  0,25  |  1,00%\nNormal growth  |  0,25  |  5,00%\nEconomic boom  |  0,2  |  9,00%",
+   "parts": [
+    {
+     "id": "D7.1",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "7.1 Calculate the expected return for both shares.  [2]",
+     "memo": "Share A - 1%; Share B - 3%.\n\nWorkings: A = 0.3(-5) + 0.25(-1) + 0.25(3) + 0.2(10) = 1.00%; B = 0.3(-1) + 0.25(1) + 0.25(5) + 0.2(9) = 3.00%."
+    },
+    {
+     "id": "D7.2",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "7.2 Calculate the standard deviation for both shares.  [2]",
+     "memo": "Printed memo: Share A - 4.83%; Share B - 5.39%.\n\nNote: these printed figures do not reconcile with the data. Recomputed: A variance = 0.3(36) + 0.25(4) + 0.25(4) + 0.2(81) = 29.0, so standard deviation = 5.39%; B variance = 0.3(16) + 0.25(4) + 0.25(4) + 0.2(36) = 14.0, so standard deviation = 3.74%."
+    },
+    {
+     "id": "D7.3",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "7.3 Calculate the coefficient of variation for both shares.  [2]",
+     "memo": "Printed memo: Share A - 3.17; Share B - 5.36.\n\nNote: using the recomputed standard deviations, CV = standard deviation / expected return: Share A = 5.39 / 1 = 5.39; Share B = 3.74 / 3 = 1.25."
+    },
+    {
+     "id": "D7.4",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "7.4 Given the answers for questions 1, 2, and 3, which share would be best for a risk seeker and why?  [2]",
+     "memo": "Share A as it has a higher standard deviation which means the investor has a change of making a higher return."
+    },
+    {
+     "id": "D7.5",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "7.5 Calculate the expected return for a portfolio consisting 30% in share A and 70% in share B. Assume the total value of your portfolio is R150 000.  [2]",
+     "memo": "2.4%\n\nWorkings: 0.3(1%) + 0.7(3%) = 2.40% (R3 600 on R150 000)."
+    },
+    {
+     "id": "D7.6",
+     "marks": 4,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "7.6 Calculate the standard deviation for a portfolio consisting 30% in share A and 70% in share B. Assume the total value of your portfolio is R150 000.  [4]",
+     "memo": "4.23%\n\nWorkings: Cov(A,B) = 0.3(-6)(-4) + 0.25(-2)(-2) + 0.25(2)(2) + 0.2(9)(6) = 20.0, so correlation = 20 / (5.385 x 3.742) = 0.993. Variance = 0.3^2(29) + 0.7^2(14) + 2(0.3)(0.7)(20) = 2.61 + 6.86 + 8.40 = 17.87, so standard deviation = 4.23%."
+    }
+   ]
+  },
+  {
+   "id": "Q11",
+   "title": "Section D, Question 8 — Macaulay duration",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D8",
+     "marks": 6,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Suppose a bond matures in six years, with a coupon rate of 6%, a yield to maturity of 12%, and a face value of R 12 250. The bond pays coupons annually. Make use of the Macaulay's formula to calculate the duration of the bond. Round your final answer to three decimal places.  [6]",
+     "memo": "t  |  CFt  |  DFt  |  CF * DF  |  CF * DF * t\n1  |  R 735,00  |  R 0,89  |  R 656,25  |  R 656,25\n2  |  R 735,00  |  R 0,80  |  R 585,94  |  R 1 171,88\n3  |  R 735,00  |  R 0,71  |  R 523,16  |  R 1 569,48\n4  |  R 735,00  |  R 0,64  |  R 467,11  |  R 1 868,42\n5  |  R 735,00  |  R 0,57  |  R 417,06  |  R 2 085,29\n6  |  R 12 985,00  |  R 0,51  |  R 6 578,61  |  R 39 471,63\nTotal  |    |    |  R 9 228,12  |  R 46 822,95\n\nDuration = 46 822,95 / 9 228,12 = 5.074 years"
+    }
+   ]
+  },
+  {
+   "id": "Q12",
+   "title": "Section D, Question 9 — Return on assets per rand lent",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D9",
+     "marks": 4,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Suppose a bank does the following:\n\nSet the loan rate on a prospective loan at 13% where the base rate is 7% and the risk premium is 4%. The bank charges a 0.3% loan origination fee to the borrower. Imposes a 12% compensating balance requirement to be held as non-interest-bearing demand deposits. Set aside reserves, as a rate of 9% of deposits, held at the South African Reserve Bank. Using the information, calculate the Return on Assets per rand lent of the loan, and interpret the answer. Round your final answer to two decimal places.  [4]",
+     "memo": "ROA = 11.30 / 0.8908 = 12.69%\n\nWorkings: numerator = 0.3% fee + 7% base rate + 4% risk premium = 11.30%; denominator = 1 - 0.12(1 - 0.09) = 0.8908.\n\nInterpretation: the fee and the compensating balance (net of the 9% reserves that must be held on it) lift the bank's promised return from 11% to 12.69% per rand actually lent."
+    }
+   ]
+  },
+  {
+   "id": "Q13",
+   "title": "Section D, Question 10 — RAROC",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D10",
+     "marks": 4,
+     "topics": [
+      "b-risk",
+      "b-credit"
+     ],
+     "required": "Suppose a bank wants to evaluate the credit risk of a R3 325 000 loan with a duration of 8 years to a AAA borrower. Assume there are currently 350 publicly traded bonds in that class. The expected maximum change in the loan rate is 4% while the current average level of rates on AAA bonds is 13%. Given a projected spread of 0.6% and fees of 0.8%, calculate the risk adjusted return on capital (RAROC) for the loan. Round your final answer to two decimal places.  [4]",
+     "memo": "R46 550 / R941 592.92 = 4.94%\n\nWorkings: net income = (0.6% + 0.8%) x R3 325 000 = R46 550; capital at risk = 8 x R3 325 000 x 0.04 / 1.13 = R941 592.92."
+    }
+   ]
+  }
+ ]
+}

@@ -355,8 +355,74 @@ def _q(item):
 QUIZ_JSON = json.dumps({k: [_q(x) for x in v] for k, v in BANK.items()}, ensure_ascii=False).replace("</", "<\\/")
 print("quiz bank:", {k: len(v) for k, v in BANK.items()}, "total", sum(len(v) for v in BANK.values()))
 
-TOPICS_JSON = json.dumps([{"id": k, "name": n} for k, n in TOPICS], ensure_ascii=False)
+# ================= Banking (FTX4087S): papers are JSON files in source/banking =================
+import glob, importlib.util
+BANK_DIR = os.path.join(HERE, "banking")
+B_TOPICS = [
+  ("b-intro", "Introduction to banking & business models"),
+  ("b-fin", "Bank financial statements & ratios"),
+  ("b-val", "Bank valuation"),
+  ("b-treas", "Corporate treasury & working capital"),
+  ("b-mnc", "Multinational treasury (FX, hedging, netting)"),
+  ("b-money", "Banks, money creation & monetary policy"),
+  ("b-reg", "Bank regulation (Basel, capital, liquidity)"),
+  ("b-fail", "Bank failures"),
+  ("b-risk", "Risk overview, RAROC & operational risk"),
+  ("b-credit", "Credit risk"),
+  ("b-irr", "Interest rate risk (gap, duration)"),
+  ("b-mkt", "Market risk (VaR, portfolio theory)"),
+]
+_bvalid = {k for k, _ in B_TOPICS}
+_fs = os.path.join(BANK_DIR, "formula_sheet.txt")
+B_FORMULAS = open(_fs, encoding="utf-8").read().strip() if os.path.exists(_fs) else ""
+_KIND = {"test": 0, "exam": 1, "workshop": 2}
+b_papers = []
+for _f in sorted(glob.glob(os.path.join(BANK_DIR, "b-*.json"))):
+    _p = json.load(open(_f, encoding="utf-8"))
+    assert _p["id"].startswith("b-") and _p["kind"] in _KIND, _f
+    _tot = 0
+    for _bq in _p["questions"]:
+        _bq.setdefault("scenario", "")
+        _qt = 0
+        for _pt in _bq["parts"]:
+            assert _pt["required"].strip() and _pt["memo"].strip(), (_f, _pt["id"])
+            _pt["topics"] = [t for t in _pt.get("topics", []) if t in _bvalid]
+            assert _pt["topics"], f"untagged {_p['id']} {_pt['id']}"
+            _qt += _pt["marks"]
+        if _qt != _bq["marks"]: print("  note:", _p["id"], _bq["id"], "parts", _qt, "declared", _bq["marks"], "-> using parts total")
+        _bq["marks"] = _qt; _tot += _qt
+    assert len({pt["id"] for q in _p["questions"] for pt in q["parts"]}) == sum(len(q["parts"]) for q in _p["questions"]), f"duplicate part ids in {_f}"
+    if _tot != _p["marks"]: print("  note:", _p["id"], "total", _tot, "declared", _p["marks"], "-> using parts total")
+    _p["marks"] = _tot
+    _p.setdefault("memoNote", "Memo from the course material.")
+    _p["tables"] = B_FORMULAS
+    b_papers.append(_p)
+    print(_p["id"], _p["kind"], _p["marks"], "marks", sum(len(q["parts"]) for q in _p["questions"]), "parts")
+def _year(p):
+    m = re.search(r"20\d\d", p["title"]); return -int(m.group()) if m else 0
+b_papers.sort(key=lambda p: (_KIND[p["kind"]], _year(p), p["title"]))
+b_quiz = {}
+_qb = os.path.join(BANK_DIR, "quiz_bank.py")
+if os.path.exists(_qb):
+    _spec = importlib.util.spec_from_file_location("bank_quiz_bank", _qb); _mod = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+    assert set(_mod.BANK) <= _bvalid, set(_mod.BANK) - _bvalid
+    b_quiz = {k: [_q(x) for x in v] for k, v in _mod.BANK.items()}
+    print("banking quiz bank:", {k: len(v) for k, v in b_quiz.items()}, "total", sum(len(v) for v in b_quiz.values()))
+_ids = [p["id"] for p in papers + b_papers]
+assert len(_ids) == len(set(_ids)), "paper ids must be unique across courses"
 
-data = json.dumps(papers, ensure_ascii=False).replace("</", "<\\/")
-open(out, "w", encoding="utf-8").write(tpl.replace("/*__DATA__*/null", data).replace("/*__TOPICS__*/null", TOPICS_JSON).replace("/*__QUIZ__*/null", QUIZ_JSON))
+courses = [
+  {"id": "tax2", "name": "Tax II", "code": "ACC3004W", "crumb": "ACC3004W past papers",
+   "subject": "UCT ACC3004W Taxation II (South African tax) exam", "tablesLabel": "Tax tables", "minPerMark": 180 / 113,
+   "papers": papers, "topics": [{"id": k, "name": n} for k, n in TOPICS], "quiz": {k: [_q(x) for x in v] for k, v in BANK.items()}},
+]
+if b_papers:
+    courses.append(
+  {"id": "bank", "name": "Banking", "code": "FTX4087S", "crumb": "FTX4087S past tests, exams and workshops",
+   "subject": "UCT FTX4087S Topics in Banking and Treasury Management test or exam", "tablesLabel": "Formula sheet", "minPerMark": 1.2,
+   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz})
+
+data = json.dumps(courses, ensure_ascii=False).replace("</", "<\\/")
+assert "/*__COURSES__*/null" in tpl
+open(out, "w", encoding="utf-8").write(tpl.replace("/*__COURSES__*/null", data))
 print("wrote", out, os.path.getsize(out))

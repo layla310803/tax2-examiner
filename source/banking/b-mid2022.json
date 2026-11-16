@@ -1,0 +1,93 @@
+{
+ "id": "b-mid2022",
+ "title": "2022 Mid-Term Test (20 September 2022)",
+ "short": "Mid 2022",
+ "kind": "test",
+ "marks": 65,
+ "minutes": 90,
+ "unofficial": false,
+ "memoNote": "The lecturer's own marking comments and workings printed in the paper itself; the paper's printed mark totals (58 for Question 1, 70 overall) exceed the sum of its part marks (53 and 65).",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1 — XeroBank financial analysis",
+   "marks": 53,
+   "scenario": "Financial statement information has been provided for XeroBank for the last three years, in the appendix attached at the end of your paper. You are required to use this information in answering the following questions.\n\nAppendix: XeroBank Income Statement and Balance Sheet\n\nConsolidated Income Statement (Rm)  |  2023  |  2022  |  2021\nNet Interest Income  |  33025  |  30551  |  32167\n- Interest Income  |  49609  |  40995  |  42414\n- Interest Expense  |  -19120  |  -12819  |  -12601\nNon-Interest Revenue  |  23291  |  23269  |  18153\nTotal Income  |  56316  |  53820  |  50320\nCredit Impairment Charges  |  -1767  |  -1769  |  -3400\nNet Income Before Operating Expenses  |  54549  |  52051  |  46920\nOperating Expenses  |  -34659  |  -34884  |  -39808\n- Employee Compensation and Benefits  |  -17373  |  -17315  |  -18089\n- Overhead Costs  |  -15353  |  -15707  |  -19713\n- Depreciation and impairment of PPE  |  -1119  |  -1166  |  -1229\n- Amortisation and impairment of intangible assets  |  -814  |  -696  |  -777\nOperating Profit  |  19890  |  17167  |  7112\nTax Expense  |  -4865  |  -5288  |  -3666\nProfit for the year  |  15025  |  11879  |  3446\n\nConsolidated Balance Sheet (Rm)  |  2023  |  2022  |  2021\nAssets\nCash and balances at central banks (note 1)  |  168630  |  187249  |  187252\nGovernment Bonds  |  35859  |  34186  |  34186\nTrading Assets  |  238130  |  254410  |  287 995\nFinancial Assets  |  41111  |  39746  |  29 464\nDerivatives  |  207825  |  219818  |  219818\nLoans and advances to Banks  |  72167  |  82559  |  90393\nLoans and advances to Customers  |  981696  |  949737  |  962964\nProperty, Plant and Equipment  |  407433  |  383499  |  389076\nOther Assets  |  353375  |  316330  |  268744\nCurrent Tax Assets  |  684  |  1006  |  1006\nGoodwill and Intangible Assets  |  46764  |  45176  |  46197\nDeferred Tax Assets  |  4450  |  4714  |  4676\nTotal Assets  |  2558124  |  2518430  |  2521771\n\nNote 1: The bank does not earn interest on these balances.\n\nLiabilities and Equity (Rm)  |  2023  |  2022  |  2021\nDeposits by banks  |  92190  |  98678  |  104108\nDeposits by customers  |  1362643  |  1360227  |  1364462\nTrading Liabilities  |  278393  |  243577  |  341039\nDerivatives  |  148505  |  144006  |  94429\nDebt securities in issue  |  291177  |  283357  |  281367\nOther Liabilities  |  184710  |  185524  |  131574\nCurrent tax liabilities  |  718  |  928  |  928\nProvisions  |  2920  |  4295  |  4011\nDeferred tax liabilities  |  2619  |  1614  |  1982\nTotal Liabilities  |  2363875  |  2322206  |  2323900\nOrdinary Share Capital  |  10180  |  10160  |  10160\nShare Premium  |  13609  |  10177  |  10177\nPreference Shares  |  22367  |  22250  |  22250\nCapital Reserves  |  1906  |  6643  |  7664\nRetained Earnings  |  138191  |  139414  |  139999\nTotal Shareholder's Equity  |  186253  |  188644  |  190250\nNon-Controlling Interests  |  7996  |  7580  |  7621\nTotal Equity  |  194249  |  196224  |  197871\nTotal liabilities and equity  |  2558124  |  2518430  |  2521771\n\nRatios  |  2023  |  2022  |  2021\nCost-to-Income Ratio  |  61,5%  |  64,8%  |  79,1%\nLoan-to-deposits Ratio  |  72,4%  |  70,8%  |  71,7%\nCredit Loss Ratio  |  0,17%  |  0,17%  |  0.32%\nLiquidity Coverage Ratio (LCR)  |  1,2  |  0,9  |",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 11,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Calculate the bank's net interest margin (NIM) for all three years. Briefly discuss the trend in NIM for the bank and what is driving the changes.",
+     "memo": "Lecturer's answer. First, we need the earning assets:\n\nRm  |  2023  |  2022  |  2021\nGovernment Bonds  |  35859  |  34186  |  34186\nTrading Assets  |  238130  |  254410  |  287995\nFinancial Assets  |  41111  |  39746  |  29464\nDerivatives  |  207825  |  219818  |  219818\nLoans and advances to Banks  |  72167  |  82559  |  90393\nLoans and advances to Customers  |  981696  |  949737  |  962964\nTotal  |  1576788  |  1580456  |  1624820\n\n[2 marks per year for the earning assets]\n\nThen the NIM is NII / Earning Assets:\n\n|  2023  |  2022  |  2021\nNII  |  33025  |  30551  |  32167\nEarning assets  |  1576788  |  1580456  |  1624820\nNIM  |  2,09%  |  1,93%  |  1,98%\n\n[1 mark per year for the NIM]\n\nNIM has been fairly consistent over time with only a minor decline in 2022 followed by a small increase in 2023. The decline in 2022 was due to a decrease in NII while the increase in 2023 followed both an increase in NII and a decrease in earning assets meaning the bank improved both aspects of the measure. [2 marks]"
+    },
+    {
+     "id": "1.2",
+     "marks": 30,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Provide a full analysis of the ROA and ROE of XeroBank, using the decomposition of asset utilization, profit margin and leverage, over all three financial years. Comment on how both ROA and ROE have changed over this period and what the drivers have been for both.",
+     "memo": "Lecturer's answer.\n\n|  2023  |  2022  |  2021\nROA = NPAT / Total Assets: NPAT  |  15025  |  11879  |  3446\nTotal assets  |  2558124  |  2518430  |  2521771\nROA  |  0,59%  |  0,47%  |  0,14%\nROE = NPAT / Equity: Equity  |  194249  |  196224  |  197871\nROE  |  7,73%  |  6,05%  |  1,74%\nProfit Margin = NPAT / (NII + NIR): NII + NIR  |  56316  |  53820  |  50320\nProfit margin  |  26,68%  |  22,07%  |  6,85%\nAsset utilisation (AU) = (NII + NIR) / Total Assets  |  2,20%  |  2,14%  |  2,00%\nLeverage = Total Assets / Equity  |  13,17  |  12,83  |  12,74\n\n[1 mark for each ratio per year]\n\nROA has seen a significant increase over time, with a big jump from 2021 to 2022. This is driven in most part by the increase in NPAT over the period, following reduced credit impairments and operating expenses, particularly in overhead costs. Overall though, the ROA is still small as the bank has a significant proportion of non-earning assets on its books, particularly PPE. This suggests that it is an older bank focused on in-branch customer service which may now be facing the hard task of transitioning to digitization. This will likely come with significant investment and cost in the near future which might mean that it will be some time before the bank can improve its ROA meaningfully. [3 marks]\n\nROE is simply ROA that has been levered up so the pattern is the same. The bank's leverage has increased slightly over time though and that small incremental change does reflect in a slightly higher increase in ROE over the three years. Despite the significant leverage, the bank's ROE is small due to the small ROA. Given that the bank's current leverage already carries significant risk, the best way for the bank to improve its ROE going forward is therefore to increase its ROA. [3 marks]\n\nThe bank's profit margin reflects the significant impact of the cost savings on the bank's bottom line as it shows a sharp increase from 2021 to 2022 and then again from 2022 to 2023. The increase in 2022 was already discussed but the latest improvement is due to total income increasing in 2023 while both operating expenses and credit impairments declined marginally. Cost controls therefore seem to be yielding results. [3 marks]\n\nAsset utilization has also seen marginal increases as total income has been increasing faster than the asset base. In particular, there has been a decrease in non-interest earning assets such as deferred tax assets and cash and balances with the central bank while the bank has increased its earning assets such as loans and advances to customers and government bonds. [3 marks]\n\nThe bank's leverage has increased steadily over time. This is a result of a combination of increasing assets coupled with declining equity. This increased leverage contributes both to the bank's improved ROE over time as well as increasing its risk. As noted above, the leverage is quite high by normal standards and so the bank likely has very little flexibility in this regard going forward. Any further improvements in profitability measures will have to come from profit margin and asset utilization. [3 marks]"
+    },
+    {
+     "id": "1.3",
+     "marks": 10,
+     "topics": [
+      "b-fin",
+      "b-reg",
+      "b-credit"
+     ],
+     "required": "You have been provided with the Cost-to-Income Ratio, Loan-to-Deposit ratio, Credit Loss Ratio and Liquidity Coverage ratio in the appendix. For each of these ratios, discuss the trend and analyse what they mean for XeroBank (note: Do not recalculate the ratios yourself. Use the ones provided in the appendix).",
+     "memo": "Lecturer's answer.\n\nThe bank's cost-to-income ratio has improved steadily since 2016 but is still well above the ideal benchmark of 50%. The bank's biggest costs are employee benefits, and these are typically difficult to shift without reducing their reliance on physical branches - changes there have therefore not been large over time. The biggest improvements have therefore been in general admin costs, which makes sense, but further improvement will be required here to bring the ratio down further. [3 marks]\n\nThe bank's loan to deposits ratio has moved in a narrow band between 71% and 72,5%. This is well below the ideal range of 80% to 90%. Banks derive their primary revenue from loans. Any proportion of deposits that are not channelled into loans are typically invested in financial instruments which may generate higher returns but also carry higher risk. This may therefore be a deliberate attempt from the bank to improve interest earned on its earning assets in order to improve its ROA and ROE. [3 marks]\n\nThe bank's credit loss ratio is well below 0,5% and decreasing further over time. This speaks to the quality of the loans issued and/or client's being loaned to. The ratio is well below the accepted norm of 1% to 3%. [2 marks]\n\nThe bank's liquidity coverage ratio has increased slightly year-on-year (only two figures provided) but is above the required ratio of 1. This suggests the bank would have no difficulty fulfilling its cash outflows over a 30-day period in a crisis situation, given the quality of its assets. It was marginally below this mark in 2022 which would have been a cause for concern at the time. [2 marks]"
+    },
+    {
+     "id": "1.4",
+     "marks": 2,
+     "topics": [
+      "b-val"
+     ],
+     "required": "Assume that the bank has a cost of equity of 6.5%. Is the bank creating or destroying value? Why?",
+     "memo": "Lecturer's answer. The CoE is less than the ROE in the most recent period indicating that the bank is creating value. It was destroying value in 2022 and 2021 though. [2 marks]"
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2 — Working capital",
+   "marks": 12,
+   "scenario": "Information for 2.2 and 2.3: you have been provided with the following information for Kay's Cakes: Average inventory: R1 543 245; Cost of Sales: R5 216 354; DIO: 108 days.",
+   "parts": [
+    {
+     "id": "2.1",
+     "marks": 5,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "Companies are increasingly focusing on optimizing working capital as a way of unlocking value. What is the trade-off between risk and profitability for firms when deciding on how much (or how little) to invest in working capital?",
+     "memo": "Lecturer's answer. Could we be using this cash more productively elsewhere? A firm's productive assets are its long-term assets. We therefore have this trade-off between risk and profitability: The greater the firm's net working capital, the lower the risk but the lower the firm's profitability. Lower net working capital, on the other hand, increases profitability but also increases risk. Every firm will want to optimize their working capital - wanting the ideal of not having excess working capital surplus to its needs (opportunity cost) but also not having a shortage (risk). Both are dangerous, but the latter is potentially more damaging for the firm. [5 marks]"
+    },
+    {
+     "id": "2.2",
+     "marks": 4,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "Assuming that Kay's Cakes could reduce its DIO by 32 days, how much value could it free up?",
+     "memo": "Lecturer's answer. DIO = Average inventory / (Cost of sales / 365) = 1543245 / (5216354 / 365) = 108 days.\n\nTherefore new DIO = 108 days - 32 days = 76 days.\n\nTherefore cash freed up is 1543245 - (5216354 / 365) x 76 = R457 100. [4 marks]"
+    },
+    {
+     "id": "2.3",
+     "marks": 3,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "What are the risks and costs to Kay's Cakes of holding so much stock on hand and not reducing its DIO?",
+     "memo": "Lecturer's answer.\n\nOpportunity costs: Cost of having significant cash tied up in inventory. [1 mark]\n\nHolding costs: The cost of storage, insurance, security, transport, etc. [1 mark]\n\nContingent costs: costs associated with redundancy, loss due to changes in customer demand, new production methods, etc. [1 mark]"
+    }
+   ]
+  }
+ ]
+}

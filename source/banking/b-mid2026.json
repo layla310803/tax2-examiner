@@ -1,0 +1,119 @@
+{
+ "id": "b-mid2026",
+ "title": "2026 Mid-Term Test",
+ "short": "Mid 2026",
+ "kind": "test",
+ "marks": 50,
+ "minutes": 60,
+ "unofficial": true,
+ "memoNote": "The written Question 2 memo is the lecturer's own (printed in the paper); the lecturer gave no answer key for the MCQs in Question 1, so those answers come from the student compilation 'Intro to Banking & Treasury Past Paper Questions & Answers' and the 'Why' reasons are worked from it.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1 — MCQ Questions",
+   "marks": 15,
+   "scenario": "3 Marks per question; NO negative marking.\n\nQuestions 1.1 to 1.3 use the following information.\n\nCompany ABC is reviewing its working capital management. Management believes that excessive working capital is tying up cash that could potentially be deployed more productively elsewhere. The company’s current working capital position is as follows:\n\n•  Days Sales Outstanding (DSO): 45 days\n•  Days Inventory Outstanding (DIO): 60 days\n•  Days Payables Outstanding (DPO): 30 days\n\nManagement is considering a programme that would:\n•  reduce DSO by 10 days;\n•  increase DIO by 10 days; and\n•  reduce DPO by 10 days.",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 3,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "1.1 Which of the following most accurately describes the effect of the proposed changes on Company ABC’s cash conversion cycle?\n\na) The CCC would decrease from 135 days to 125 days, meaning that the period for which the company needs to finance its cash conversion cycle would be reduced by 10 days.\nb) The CCC would increase from 75 days to 85 days, because cash is trapped in the cash conversion cycle for longer.\nc) The CCC would decrease from 75 days to 45 days, but the company would need to provide additional financing because the reduction in DSO and DPO increases its working-capital requirements.\nd) The CCC would increase from 135 days to 145 days because the decrease in DPO indicates that suppliers are being paid quicker.",
+     "memo": "b) The CCC would increase from 75 days to 85 days, because cash is trapped in the cash conversion cycle for longer.\n\nWhy: CCC = DSO + DIO − DPO. Now: 45 + 60 − 30 = 75 days. After the programme: 35 + 70 − 20 = 85 days. The 10-day DSO gain is cancelled by the 10-day DIO rise, and paying suppliers 10 days sooner adds 10 days. (a and d wrongly add DPO to get 135 days.)"
+    },
+    {
+     "id": "1.2",
+     "marks": 3,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "1.2 Company ABC’s average accounts payable is R13 million and its cost of goods sold is R158 million. If the company implements the proposed decrease in DPO from 30 to 20 days, what is the approximate cashflow effect of this change?\n\na) Approximately R4.34 million of additional cash would be required, because the company is paying its suppliers quicker.\nb) Approximately R4.34 million of cash would be released, because the company would defer payment to suppliers for an additional 10 days.\nc) Approximately R8.66 million of additional cash would be required, because the company's CCC would increase by 10 days.\nd) Approximately R8.66 million of cash would be released, because the company’s CCC would decrease by 30 days.",
+     "memo": "a) Approximately R4.34 million of additional cash would be required, because the company is paying its suppliers quicker.\n\nWhy: Current DPO = 13 ÷ 158 × 365 = 30.0 days. Payables at 20 days = 158 ÷ 365 × 20 = R8.66m. Cash effect = 13.00 − 8.66 = R4.34m of extra cash needed (equivalently 158 ÷ 365 × 10 = R4.33m). Paying suppliers sooner uses cash. (R8.66m is the new payables balance, not the change.)"
+    },
+    {
+     "id": "1.3",
+     "marks": 3,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "1.3 Although management is attracted to the prospect of freeing up cash through working-capital changes, the treasury manager cautions that the objective should not simply be to minimise the CCC. Which of the following best explains this concern?\n\na) Reducing the CCC will generally reduce profitability because lower working capital means that less cash is available for investment.\nb) Increasing DPO increases liquidity risk but reducing DSO and DIO does not affect operating risk because both improve the speed at which cash is collected.\nc) The CCC should always be reduced as far as possible because a shorter CCC simultaneously reduces liquidity risk, increases profitability and strengthens supplier relationships.\nd) Reducing the CCC can release cash and potentially improve profitability, but pursuing reductions too aggressively can increase risk through tighter customer credit terms, insufficient inventory or strained supplier relationships.",
+     "memo": "d) Reducing the CCC can release cash and potentially improve profitability, but pursuing reductions too aggressively can increase risk through tighter customer credit terms, insufficient inventory or strained supplier relationships.\n\nWhy: Working capital is a trade-off between liquidity, risk and profitability; the aim is optimal working capital, not the minimum. (a is backwards: lower working capital generally raises profitability but raises risk. b is wrong: tighter credit terms can lose customers and low stock risks stock-outs. c is wrong: \"always\" minimising ignores the risk of not meeting obligations and damage to supplier relationships.)"
+    },
+    {
+     "id": "1.4",
+     "marks": 3,
+     "topics": [
+      "b-intro"
+     ],
+     "required": "1.4 A bank accepts deposits from many customers, provides loans to businesses, and assesses the creditworthiness of potential borrowers before granting those loans. Which combination of functions is being illustrated?\n\na) Pooling, information processing and financial intermediation.\nb) Maturity intermediation, direct finance and risk elimination.\nc) Liquidity provision, direct finance and maturity matching.\nd) Risk diversification, direct finance and elimination of information asymmetry.",
+     "memo": "a) Pooling, information processing and financial intermediation.\n\nWhy: Accepting deposits from many savers to make large loans is pooling; checking borrowers’ creditworthiness is collecting and processing information; and standing between savers and borrowers (issuing deposits, acquiring loans) is indirect finance, i.e. financial intermediation. (b, c and d wrongly call it \"direct finance\", which is when borrowers sell securities directly to lenders.)"
+    },
+    {
+     "id": "1.5",
+     "marks": 3,
+     "topics": [
+      "b-val"
+     ],
+     "required": "1.5 Two banks have identical book values of equity and are subject to the same regulatory environment. Investors require a 12% return on equity from both banks.\n\n•  Bank A is expected to generate an ROE of 9% in perpetuity.\n•  Bank B is expected to generate an ROE of 15% in perpetuity.\n\nAssuming the other valuation assumptions are comparable, which of the following statements is most correct?\n\na) Bank A should trade at a higher P/BV ratio because its lower ROE indicates that it is taking less risk.\nb) Both banks should trade at approximately 1× book value because book value provides an objective measure of the capital invested in the bank.\nc) Bank A would be expected to trade below book value, while Bank B would be expected to trade above book value, because their expected ROEs are respectively below and above their cost of equity.\nd) Both banks should trade above book value because banks' assets are marked to market and therefore book value generally approximates market value.",
+     "memo": "c) Bank A would be expected to trade below book value, while Bank B would be expected to trade above book value, because their expected ROEs are respectively below and above their cost of equity.\n\nWhy: Implied P/BV = (ROE − g) ÷ (CoE − g) is above 1 when ROE exceeds the cost of equity and below 1 when it is lower. With g = 0: Bank A = 9% ÷ 12% = 0.75; Bank B = 15% ÷ 12% = 1.25."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2 — Written Questions",
+   "marks": 35,
+   "scenario": "You have been provided with the financial information and excerpts for Bank XYZ in the appendixes. The bank does not receive interest on balances they hold with their central bank. Use the information provided to answer the following questions and make use of appropriate benchmarks to provide context in your ratio analysis.\n\nAppendix 1: Financial Statements for Bank XYZ\n\nIncome statements (Year ended 28 February 2025)  R’000  |  2025  |  2024  |  2023\nNet interest income  |  20 185 648  |  16 463 987  |  14 206 572\nNon-interest income  |  23 881 729  |  19 578 852  |  15 545 048\nTotal Income  |  44 067 377  |  36 042 839  |  29 751 620\nCredit impairments  |  (8 258 386)  |  (8 725 334)  |  (6 329 385)\nIncome from operations after credit impairments  |  35 808 991  |  27 317 505  |  23 422 235\nOperating expenses  |  (18 099 565)  |  (13 940 885)  |  (11 876 702)\n    IT Expenses  |  (2 559 376)  |  (1 897 851)  |  (1 485 580)\n    Staff Costs  |  (9 665 818)  |  (7 177 285)  |  (6 227 934)\n    Overheads  |  (1 008 639)  |  (571 437)  |  (411 643)\n    Other expenses  |  (4 865 732)  |  (4 294 312)  |  (3 751 545)\nShare of net profit of associates and joint ventures  |  30 239  |  71 124  |  97 750\nOperating profit before tax  |  17 739 665  |  13 447 744  |  11 643 283\nIncome tax expense  |  (3 990 549)  |  (2 880 807)  |  (2 491 811)\nProfit for the year  |  13 749 116  |  10 566 937  |  9 151 472\n\nStatements of financial position (As at 28 February 2025)  R’000  |  2025  |  2024  |  2023\nAssets  |    |    |  \nCash and equivalents  |  44 563 334  |  34 856 386  |  34 018 677\nFinancial Investments  |  83 232 196  |  76 455 998  |  64 951 450\nLoans and advances  |  89 145 478  |  80 551 697  |  78 167 803\nInsurance contract assets  |  10 329 249  |  5 532 648  |  3 769 260\nDerivative assets  |  38 994  |  33 604  |  33 555\nEquity instruments  |  81 886  |  82 415  |  73 880\nInterests in associates and joint ventures  |  285 341  |  727 056  |  640 769\nPropery and Equipment  |  3 978 491  |  3 511 330  |  3 291 918\nIntangible assets including goodwill  |  3 455 950  |  3 258 590  |  3 257 044\nDeferred tax assets  |  3 352 753  |  2 568 902  |  2 431 699\nTotal assets  |  238 463 672  |  207 578 626  |  190 636 055\nLiabilities  |    |    |  \nDerivative liabilities  |  21 140  |  20 602  |  23 683\nCurrent income tax liability  |  377 124  |  251 977  |  -\nDeposits  |  172 635 487  |  152 994 134  |  144 059 409\nBorrowing from banks and other financial instutitions  |  2 905 615  |  3 020 834  |  2 438 794\nLease liabilities  |  2 367 195  |  2 383 183  |  2 305 062\nEmployee benefits liabilities  |  10 770  |  12 370  |  14 622\nOther liabilities  |  9 233 046  |  5 364 933  |  3 874 119\nTotal liabilties  |  187 550 377  |  164 048 033  |  152 715 689\nEquity  |    |    |  \nEquity attributable to ordinary shareholders  |  50 840 517  |  43 487 333  |  37 871 442\nOrdinary share capital  |  5 475 346  |  5 456 540  |  5 406 108\nRetained income  |  44 890 964  |  37 423 827  |  31 895 742\nShare option reserve  |  515 809  |  515 809  |  515 809\nOther reserves  |  (41 602)  |  91 157  |  53 783\nPreference shares  |  41 848  |  43 260  |  48 924\nEquity attributable to non-controlling interests  |  30 930  |    |  \nTotal equity  |  50 913 295  |  43 530 593  |  37 920 366\nTotal equity and liabilities  |  238 463 672  |  207 578 626  |  190 636 055\n\nAppendix 2: Key ratios and other information for Bank XYZ  |  2025  |  2024  |  2023\nCredit loss ratio  |  9,1%  |  10,1%  |  8,0%\nLiquidity Coverage Ratio  |  3,09  |  2,40  |  2.19\nCET1 ratio  |  37,2%  |  35,5%  |  34,0%\nROA  |  5,8%  |  5,1%  |  4,8%\nProfit Margin  |  31,20%  |  29,32%  |  30,76%\nAsset Utilization  |  0,185  |  0,174  |  0,156\nLeverage  |  4,68  |  4,77  |  5,03",
+   "parts": [
+    {
+     "id": "2.1",
+     "marks": 5,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "2.1 Calculate the NIM for Bank XYZ over the three years and discuss what is driving the changes in the ratio over time.",
+     "memo": "Earning assets (calculation worth ✓✓✓, 3 marks):\n\nR’000  |  2025  |  2024  |  2023\nFinancial Investments  |  83 232 196  |  76 455 998  |  64 951 450\nLoans and advances  |  89 145 478  |  80 551 697  |  78 167 803\nInsurance contract assets  |  10 329 249  |  5 532 648  |  3 769 260\nDerivative assets  |  38 994  |  33 604  |  33 555\nEquity instruments  |  81 886  |  82 415  |  73 880\nTotal assets (earning assets)  |  182 827 803  |  162 656 362  |  146 995 948\nNIM  |  11,04%  |  10,12%  |  9,66%\n\nI was fine with you excluding insurance contract assets from the above. Some of you included cash despite the information saying the central bank was not paying interest on reserves. Some of you noted this but then assumed this was normal cash on hand at the bank but that also does not earn interest as it either sits in ATMs or vaults. I also had some students including Interests in associates and joint ventures despite me highlighting in both lectures and workshops that this falls outside of earning assets as it is not disclosed as part of either NII or NIM. In terms of discussion, I was looking for the observation that NII was increasing faster than TIEA and then something around the composition of the earning assets and how that had changed over time and may have impacted the NII being earned. (discussion ✓✓, 2 marks)"
+    },
+    {
+     "id": "2.2",
+     "marks": 13,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "2.2 Critically discuss the key performance metrics for Bank XYZ over the three years. What is driving the bank’s performance? Use the financial information and ratios provided in the Appendices and any additional calculations required to motivate your answer.",
+     "memo": "I needed a full discussion here of ROA and its components, leverage and then ROE which you needed to calculate (for ✓✓).\n\n  |  2025  |  2024  |  2023\nROE  |  27%  |  24,30%  |  24,10%\n\nMany of you focused too much on the changes in the figures from year to year, often repeating the same explanation for each ratio multiple times. e.g. \"ROA increased from 4,8% in 2023 to 5,1% in 2024. This was because asset utilization increased… ROA then increased from 5.1% in 2024 to 5.8% in 2025. This was due to…\" I was looking for your discussion to include some insight into the underlying drivers and to contrast the trends over time. And then, critically, to try to unpack what the numbers meant. For example, these figures are very different to what we’ve been discussing in class over the semester. The ROA is exceedingly high compared to the norm as is the asset utilization, while the leverage is very, very low. We know that low leverage is a drag on ROE so it’s actually a negative but clearly this bank didn’t need to rely on leverage to prop up its ROE exactly because it’s ROA was already so high. Having said that, any bank with an ROA that high would have a very strong incentive to have a higher leverage to push ROE even higher but this one did not. Why? The only good answer is that it was already carrying significant risk and therefore needed to moderate that where possible. Many of you got the core of the process correct (talking about trends and the changes over time) but it was the nuances around why the numbers were so different that most of you didn’t pick up on."
+    },
+    {
+     "id": "2.3",
+     "marks": 6,
+     "topics": [
+      "b-fin",
+      "b-reg"
+     ],
+     "required": "2.3 Critically discuss the key risk metrics and changes in Bank XYZ’s financial position over the three years. What, if any, areas of concern do you identify?",
+     "memo": "The key ratios to discuss here were credit loss ratio, liquidity coverage ratio and CET1. The credit loss ratio is obviously very high, far exceeding the usual benchmark we discussed of 1-3%. It also increased in 2024 although we then saw a small decrease in 2025. This brings in to the question the credit quality of the banks’ customers. And this is the key point that links back to 2.2 This bank clearly has very significant credit risk and so it makes sense that it is attempting to mitigate its risk elsewhere which explains the low leverage to some extent.\n\nWe see this aversion to risk in the CET1 ratio and LCR too as both significantly exceed the Basel requirements (you should have stated the benchmarks for each in your response). While this reduces the bank’s risk though, they both come with trade-offs. LCR being too high means that liquidity risk is lower but since liquid assets also yield the lowest returns there is some trade-off with return. You can actually see one of the reasons the ratio is so high by noting their high cash balance. It’s almost half of their loans figure. CET 1 similarly is a trade-off between lower risk and being overcapitalized (which is also reflected to some extent in in the low leverage ratio we spoke about earlier). Very importantly, please be careful when talking about the kind of risk each of these ratios is reflecting. LCR is a buffer against short-term/liquidity risk. CET1 is a buffer against losses the bank faces from its core operations and relates to things like credit risk, market risk, operational risk, etc."
+    },
+    {
+     "id": "2.4",
+     "marks": 5,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "2.4 Evaluate the bank’s operating efficiency over the period. What does the financial information suggest about the bank’s ability to control costs as it grows?",
+     "memo": "You needed to calculate the cost-to-income ratio to answer this question (✓✓):\n\n  |  2025  |  2024  |  2023\nCost-to-income ratio  |  41,1%  |  38,7%  |  39,9%\n\nSome key observations are that the bank is currently operating well below the 50% benchmark typically used to evaluate the ratio, which speaks to excellent cost controls, assuming that it is not having to compromise on customer service in order to do so. We do note that the ratio has worsened slightly in the last period which implies that operating expenses in the most recent year increased faster than total income. This worsening cost control is supported by the jaws in 2025 which was -7,2%. Staff costs make up the biggest component of the cost base and drove most of the increase in costs for the year although Overheads had the biggest percentage increase in costs over that period."
+    },
+    {
+     "id": "2.5",
+     "marks": 6,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "2.5 Comment on the bank’s loans-to-deposit ratio. What does it suggest about the bank’s operations and how does it compare with what is generally considered normal for most banks?",
+     "memo": "First, you needed to calculate the loans-to-deposit ratio:\n\n  |  2025  |  2024  |  2023\nLoans-to-deposits ratio  |  0,52  |  0,53  |  0,54\n\nTraditional theory says most banks will have an LDR of roughly 80-90% given that lending constitutes their core earnings activity. A ratio this low means the bank has only allocated roughly 50% of their deposits to lending which means the remainder has been allocated to other asset classes. If we look at their mix, we see a significant cash balance as mentioned earlier, as well as large investments in financial assets as well as insurance contract assets. Note that insurance contracts are not policies the bank has taken out but policies it has sold that are recognised on its books as their expected future value is forecast to be positive (i.e. future premiums exceed expected payouts). The shift from loans to other assets here could signify a couple of things. First, there’s the obvious lower risk of the significant cash holdings which would improve their risk-based ratios. This may be especially important given their high credit risk that we observed. At the same time, that high credit risk makes it important for them to diversify their earning streams so having investments spread into other financial assets provides diversification of their earning risk."
+    }
+   ]
+  }
+ ]
+}

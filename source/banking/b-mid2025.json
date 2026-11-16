@@ -1,0 +1,99 @@
+{
+ "id": "b-mid2025",
+ "title": "2025 Mid-Term Test",
+ "short": "Mid 2025",
+ "kind": "test",
+ "marks": 70,
+ "minutes": 90,
+ "unofficial": false,
+ "memoNote": "The lecturer's own memo, printed in the paper (with the lecturer's marking comments).",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1",
+   "marks": 46,
+   "scenario": "You have been provided with the financial information and excerpts for Bank A, and its primary competitor, Bank B, in the appendices. You may assume that the banks receive interest on balances they hold with their central bank.\n\nAppendix 1: Bank A Income Statement and Balance Sheet\n\nStatement of Comprehensive Income for the year ended 31 December 2023  |  2025  |  2024  |  2023\nInterest income  |  1427948  |  1405039  |  1278674\nInterest expense  |  -790543  |  -750026  |  -586689\nNET INTEREST INCOME  |  637405  |  655013  |  691985\nNon-Interest Revenue  |  148721  |  151445  |  150367\nOPERATING INCOME  |  786 126  |  806 458  |  842352\nCredit impairment losses  |  (126 663)  |  (150 816)  |  (182 677)\nOperating expenses  |  (242 155)  |  (238 698)  |  (239 351)\nOPERATING PROFIT  |  417 308  |  416 944  |  420 324\nShare of results of associates and joint ventures  |  4 519  |  5 022  |  4 396\nPROFIT BEFORE TAXATION  |  421 827  |  421 966  |  424 720\nIncome tax expense  |  (54 881)  |  (56 850)  |  (62 610)\nPROFIT FOR THE YEAR  |  366 946  |  365 116  |  362 110\nProfit for the year attributable to:  |    |    |  \nEquity holders of the parent company  |  365 863  |  363 993  |  361 132\nNon-controlling interests  |  1 083  |  1 123  |  978\nPROFIT FOR THE YEAR  |  366 946  |  365 116  |  362 110\nEARNINGS PER SHARE – Basic (RMB yuan)  |  98,00  |  98,00  |  97,00\nEARNINGS PER SHARE – Diluted (RMB yuan)  |  98,00  |  98,00  |  97,00\n\nStatement of Financial Position as at 31 December 2023  |  2025  |  2024  |  2023\nASSETS  |    |    |  \nCash and balances with central banks  |  3 322 911  |  4 042 293  |  3427892\nDue from banks and other financial institutions  |  1 219 876  |  1 116 717  |  1192532\nDerivative financial assets  |  222 361  |  75 339  |  87205\nGovernment Bonds  |  1 210 217  |  1 224 257  |  864122\nLoans and advances to customers  |  27 613 781  |  25 386 933  |  22591676\nFinancial investments  |  14 153 576  |  11 849 668  |  10533702\nInvestments in associates and joint ventures  |  73 357  |  64 778  |  65790\nProperty and equipment  |  302 387  |  298 878  |  293887\nDeferred tax assets  |  90 047  |  104 669  |  101117\nOther assets  |  613 233  |  533 547  |  452223\nTOTAL ASSETS  |  48 821 746  |  44 697 079  |  39610146\nLIABILITIES  |    |    |  \nDue to central banks  |  169 622  |  231 374  |  145781\nDue to banks and other financial institutions  |  4 590 965  |  3 369 858  |  3187712\nFinancial liabilities measured at fair value through profit or loss  |  76 056  |  62 859  |  64287\nDerivative financial liabilities  |  197 795  |  76 251  |  96350\nRepurchase agreements  |  1 523 555  |  1 018 106  |  574778\nCertificates of deposit  |  445 419  |  385 198  |  375452\nDue to customers  |  34 836 973  |  33 521 174  |  29870491\nIncome tax payable  |  31 880  |  63 322  |  85581\nDebt securities issued  |  2 028 722  |  1 369 777  |  905953\nDeferred tax liabilities  |  4 278  |  3 930  |  3950\nOther liabilities  |  929 215  |  818 642  |  784392\nTOTAL LIABILITIES  |  44 834 480  |  40 920 491  |  36 094 727\nEQUITY  |    |    |  \nShare capital  |  356 407  |  356 407  |  356 407\nOther equity instruments  |  324 344  |  354 331  |  354 331\nReserves  |  1 275 004  |  1 134 082  |  1 013 624\nRetained profits  |  2 014 086  |  1 912 067  |  1 771 747\nEquity attributable to equity holders of the parent company  |  3 969 841  |  3 756 887  |  3 496 109\nNon-controlling interests  |  17 425  |  19 701  |  19 310\nTOTAL EQUITY  |  3 987 266  |  3 776 588  |  3 515 419\nTOTAL EQUITY AND LIABILITIES  |  48 821 746  |  44 697 079  |  39 610 146\n\nAppendix 2: Bank B Key Ratios  |  2024  |  2023  |  2022\nROA  |  0,7%  |  0,8%  |  0,9%\nROE  |  8,6%  |  8,9%  |  9,6%\n  Profit Margin  |  39,9%  |  39,5%  |  42,0%\n  Asset Utilization  |  0,02  |  0,02  |  0,02\n  Equity Multiplier  |  11,87  |  11,76  |  11,27\nCost-to-Income  |  37,3%  |  35,7%  |  34,0%\nLoan to Deposits  |  87,0%  |  80,5%  |  84,7%\nCredit Loss Ratio  |  0,29%  |  0,33%  |  0,34%",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 8,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.1 Calculate the NIM for Bank A over the three years and discuss what is driving the changes in the ratio over time.",
+     "memo": "(The paper labels the columns of this table 2024, 2023 and 2022; they are the 2025, 2024 and 2023 columns of Appendix 1.)\n\nASSETS  |  2024  |  2023  |  2022\nCash and balances with central banks  |  3 322 911  |  4 042 293  |  3427892\nDue from banks and other financial institutions  |  1 219 876  |  1 116 717  |  1192532\nDerivative financial assets  |  222 361  |  75 339  |  87205\nGovernment bonds  |  1 210 217  |  1 224 257  |  864122\nLoans and advances to customers  |  27 613 781  |  25 386 933  |  22591676\nFinancial investments  |  14 153 576  |  11 849 668  |  10533702\nTotal earning assets (✓ each)  |  47 742 722  |  43 695 207  |  38 697 129\nTherefore NIM = (✓ each)  |  1,34%  |  1,50%  |  1,79%\n\nNIM is clearly declining over time. There’s been quit a few changes in the asset mix, with cash decreasing substantially from 2023 while loans are showing steady growth. The biggest change is the increase in financial investments – this was likely done to attempt to arrest the downward pressure on NIM but appears to have backfired. (✓✓)"
+    },
+    {
+     "id": "1.2",
+     "marks": 33,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.2 Compare and contrast the performance of Bank A versus its competitor over the three years. Where has Bank A excelled and where has it underperformed? Motivate your answer using appropriate ratios and analysis of the financials.",
+     "memo": "The focus here is on ROA and ROE (given that NIM was already covered above).\n\n  |  2025  |  2024  |  2023\nROA  |  0,75%  |  0,82%  |  0,91%\nROE  |  9,2%  |  9,7%  |  10,3%\n  Profit Margin  |  46,7%  |  45,3%  |  43,0%\n  Asset Utilization  |  0,016  |  0,018  |  0,021\n  Equity Multiplier  |  12,24  |  11,84  |  11,27\n\n1 marks per calculation (15 marks total)\n\nROA has been declining steadily over time. This is consistent with the same trend in the ROA of Bank B but Bank A’s ROA is slightly higher over the three years. The drivers are a combination of the profits being flat (growth of only 0,8% in 2024 and 0,5% in 2025) and total assets growing significantly faster over the same period (12,8% in 2024 and 9,2% in 2025), This is worrying because we would expect the bank’s profits to at least keep pace with its asset growth but this has not been the case. This suggests that either the bank’s revenue is not growing fast enough, or that its growth in costs are outpacing its revenue, or its mix of earning assets is not yielding the revenue it would expect.\n\nBreaking this down, we see that Bank A’s profit margin has been increasing steadily over the period while its asset utilization has been decreasing. The increasing profit margin is interesting as the bank’s operating income has been declining over the period indicating lower revenue-generation. Despite this, the bank’s profits have increased slightly over the same time. This is largely a function of the bank’s significant decreases in credit impairments over the three years, although it has managed some control of its costs with operating expenses decreasing in 2024 and then only increasing slightly in 2025. Still, without the lower impairments, the bank’s profit margins would actually have decreased over the period.\n\nThe worsening asset utilization ties in with what we observed with the worsening NIM earlier. Comparing with Bank B though, Bank B’s profit margin is consistently below that of Bank A and is down from the levels it had in 2022. Both Banks have declining asset utilization but the impact on Bank A has been more significant. The worsening ROA is therefore due to the worsening asset efficiency for both banks, driven for Bank A by its declining operating income. Given that the bank’s assets are increasing consistently over time, but operating income is down, there may be some concerns around the current mix of the bank’s assets and whether it needs to change this mix to better generate revenue in future.\n\nMoving to ROE, this has been declining for both banks, consistent with the decrease in ROA. This is despite the leverage for both banks increasing which would have increased ROE. This again illustrates what I mentioned in lectures where a small change in a small value can have a disproportionate impact on the overall equation. It would appear that both banks need to improve their asset efficiency while Bank B also appears to have had some recent issues with its profit margins (although there has been a marginal improvement in 2024). The leverage increasing is both a concern in terms of increasing risk, but perhaps also necessary as a way to improve ROE given the currently-low ROA.\n\n3 marks per ratio discussed (5 x 3 = 15 marks) plus 3 additional marks for additional insightful commentary and structure/organisation."
+    },
+    {
+     "id": "1.3",
+     "marks": 5,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.3 Comment on the cost controls and efficiencies of Bank A relative to Bank B, using an appropriate ratio.",
+     "memo": "  |  2025  |  2024  |  2023\nCost-to-income ratio (✓ each)  |  30,8%  |  29,6%  |  28,4%\n\nThe cost-to-income ratio being below 50% shows good cost controls (given that this is a Chinese bank). Bank A’s cost-to-income ratio is significantly better than that of Bank B which suggest its cost controls are better. (✓✓)"
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2",
+   "marks": 11,
+   "scenario": "Company XYZ had sales of R24 million in 2025, and a cost of goods sold of R16 million. A simplified balance sheet for the firm appears below:\n\nAssets (R '000)  |  2025  |  2024  |  Liabilities and Equity (R '000)  |  2025  |  2024\nCash  |  R2 500  |  R1 800  |  Accounts Payable  |  R1 200  |  R1 500\nAccounts Receivable  |  R3 450  |  R3 200  |  Short-term Borrowings  |  R1 700  |  R2 200\nInventory  |  R1 200  |  R1 500  |  Deferred Tax Liabilities  |  R650  |  R650\nTotal current assets  |  R7 150  |  R6 500  |  Total Current Liabilities  |  R3 550  |  R4 350\n  |    |    |  Long-Term Borrowings  |  R4 000  |  R4 800\n  |    |    |  Total Liabilities  |  R7 550  |  R9 150\nNet PPE  |  R7 750  |  R6 800  |  Share Capital  |  R7 350  |  R4 150\nTotal Assets  |  R14 900  |  R13 300  |  Total Liabilities and Equity  |  R14 900  |  R13 300",
+   "parts": [
+    {
+     "id": "2.1",
+     "marks": 7,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "2.1 Calculate the cash conversion cycle of XYZ in 2025.",
+     "memo": "DIO  |  31 days  (average (1,2+1,5)/16m*365) ✓✓\nDSO  |  51 days  (average (3,45+3,2)/24m*365) ✓✓\nDPO  |  31 days  (average (1,2+1,5)/16 *365) ✓✓\nCCC  |  51 days ✓"
+    },
+    {
+     "id": "2.2",
+     "marks": 4,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "2.2 The industry average days sales outstanding is 35 days. How much cash could XYZ have freed up in 2025 had it matched the industry average for accounts receivable days?",
+     "memo": "((average (3,45+3,2)-24000)/365*35 ✓✓✓\n= R1 024 ✓\n\n(That is: average receivables of R3 325 thousand less the receivables implied by 35 days, 24 000/365 × 35 = R2 301 thousand, gives about R1 024 thousand.)"
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Question 3",
+   "marks": 13,
+   "scenario": "Twinkle Twinkle (Pty) Ltd. is a company headquartered in South Africa. It has mostly exhausted growth in the local market due to limited demand for its products as it struggles to compete with cheaper products from competitors. It therefore wishes to expand into new markets overseas and is also considering bringing in cheaper raw materials from international suppliers in order to help bring costs down and make it more competitive locally.",
+   "parts": [
+    {
+     "id": "3.1",
+     "marks": 9,
+     "topics": [
+      "b-mnc"
+     ],
+     "required": "3.1 What would you consider to be the three biggest risks Twinkle will have to contend with if it plans to expand its supply chain overseas? Your answer should focus on both the supplier and customer side.",
+     "memo": "Any of the three issues or something close would be fine (these are straight from the slides) – max 3 marks each.\n\nDirect foreign exchange risks are now borne by the firm. Operating in multiple markets gives rise to forex risk due to the risk of volatility between foreign currencies. The current International Monetary System is a combination of floating and managed exchange rate policies. The variation in exchange rates affects the profitability of firms and all MNCs must understand foreign exchange risks in order to anticipate increased competition from imports or value-increasing opportunities from exports.\n\nPolitical Risk now becomes a greater concern. Political risk is the risk of loss (or gain) from unforeseen government actions or other political events. MNCs must assess the political risk not only in countries where they currently operate but also where they expect to establish subsidiaries. This risk is often greater in emerging economies which can offer higher growth opportunities, potentially untapped markets and other benefits which need to be traded off against higher risks including political.\n\nThe evaluation of credit risk of foreign buyers and sellers is now key as reducing the possibility of non-payment for exports and non-delivery of imports is vital to the firm’s operations.\n\nThere are also market imperfections. There are significant differences among nations’ laws, tax systems, business practices and general cultural environments. Though there are risks and costs in coping with these market imperfections, they also offer managers of international firms’ opportunities"
+    },
+    {
+     "id": "3.2",
+     "marks": 4,
+     "topics": [
+      "b-mnc"
+     ],
+     "required": "3.2 Twinkle does not have a large capex budget available and therefore would not be able to invest significantly into a new overseas operation. Provide two alternative options it has for selling its products overseas without having to make a significant investment abroad.",
+     "memo": "Any of the following would be acceptable – the key being that they need to be options that do not require significant investment. 2 marks each.\n\nLicensing: A firm in one country licenses the use of some or all of its intellectual property (patents, trademarks, copyrights, brand names) to a firm of some other country in exchange for fees or some royalty payment. Licensing enables a firm to use its technology in foreign markets without a substantial investment in those countries.\n\nFranchising: A firm in one country authorising a firm in another country to utilise its brand names, logos etc. in return for royalty payments. This differs from licensing in that the franchisor typically also offers know-how and access to a business system.\n\nManagement contracts: A firm in one country agrees to operate facilities or provide other management services to a firm in another country for an agreed upon fee.\n\nJoint ventures: A corporate entity or partnership that is jointly owned and operated by two or more firms is known as a joint venture. Joint ventures allow two firms to apply their respective comparative advantage in a given project."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,92 @@
+{
+ "id": "b-makeup2024",
+ "title": "2024 Make-Up Test",
+ "short": "Make-up 2024",
+ "kind": "test",
+ "marks": 70,
+ "minutes": 90,
+ "unofficial": false,
+ "memoNote": "The lecturer's own memo, printed in the paper (both extracts are identical and both carry the memo).",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1",
+   "marks": 60,
+   "scenario": "You have been provided with the financial information and excerpts for Take1 Bank, and its primary competitor, Bank2, in the appendices.\n\nAppendix 1: Take1 Bank - Statement of Financial Position as at 31 December 2023 (Rm)  |  2023  |  2022  |  2021\nAssets  |    |    |  \nCash and balances with central banks  |  137 787  |  114 483  |  91 169\nDerivative assets  |  97 419  |  74 410  |  63 688\nTrading assets  |  316 515  |  314 918  |  285 020\nPledged assets  |  20 210  |  19 308  |  14 178\nDisposal of group assets held for sale  |  235  |  555  |  1 025\nFinancial investments  |  758 776  |  722 494  |  724 700\nCurrent and deferred tax assets  |  9 784  |  9 585  |  7 612\nLoans and advances  |  1 608 846  |  1 504 940  |  1 424 328\nInsurance contract assets  |  1 631  |  1 830  |  2 868\nReinsurance contract assets  |  5 422  |  5 522  |  —\nReceivables and other assets  |  33 482  |  39 647  |  36 432\nInterest in associates and joint ventures  |  12 173  |  9 956  |  7 280\nInvestment property  |  30 444  |  29 289  |  29 985\nProperty, equipment and right of use asset  |  20 298  |  20 340  |  20 619\nGoodwill and other intangible assets  |  12 723  |  15 120  |  16 913\nTotal assets  |  3 065 745  |  2 882 397  |  2 725 817\nEquity and liabilities  |    |    |  \nEquity  |  276 920  |  258 866  |  242 849\nEquity attributable to ordinary shareholders  |  236 445  |  218 197  |  198 832\nEquity attributable to other equity holders  |  24 167  |  19 667  |  16 052\nPreference shares  |  5 503  |  5 503  |  5 503\nAdditional tier 1 capital  |  18 664  |  14 164  |  10 549\nEquity attributable to non-controlling interests  |  16 308  |  21 002  |  27 965\nLiabilities  |  2 788 825  |  2 623 531  |  2 482 968\nDerivative liabilities  |  103 373  |  85 049  |  67 259\nTrading liabilities  |  94 468  |  109 928  |  81 484\nCurrent and deferred tax liabilities  |  10 093  |  9 666  |  10 277\nDeposits and debt funding  |  2 001 646  |  1 889 099  |  1 776 615\nFinancial liabilities under investment contracts  |  151 035  |  136 309  |  —\nInsurance contract liabilities  |  251 389  |  231 849  |  363 023\nSubordinated debt  |  32 227  |  31 744  |  30 430\nProvisions and other liabilities  |  144 594  |  129 887  |  153 784\nTotal equity and liabilities  |  3 065 745  |  2 882 397  |  2 725 817\n\nConsolidated income statement for the yead ended 31 December 2023 (Rm)  |  2023  |  2022  |  2021\nNet interest income  |  98 188  |  78 391  |  62 436\nNon-interest revenue  |  79 428  |  69 726  |  50 862\nNet fee and commission revenue  |  35 187  |  32 621  |  30 355\nTrading revenue  |  20 617  |  17 046  |  14 842\nOther revenue  |  3 464  |  2 861  |  3 648\nOther gains and losses on financial instruments  |  2 735  |  2 437  |  2 017\nInsurance inter-BU attribution  |  17 425  |  14761  |  0\nTotal income  |  177 616  |  148 117  |  113 298\nCredit impairment charges  |  (16 261)  |  (13 344)  |  (9 873)\nNet income before operating expenses  |  161 355  |  134 773  |  103 425\nOperating expenses  |  (94 749)  |  (83 532)  |  (65 477)\nCommunication  |  (1 294)  |  (1 353)  |  (1 242)\nInformation technology  |  (12 749)  |  (11 048)  |  (9 743)\nMarketing and advertising  |  (1 947)  |  (2 375)  |  (2 026)\nOverheads  |  (7 796)  |  (7 496)  |  (1 938)\nStaff Costs  |  (53 465)  |  (45 802)  |  (36 642)\nOther  |  (17 498)  |  (15 458)  |  (13 886)\nNet income before capital items  |  66 606  |  51 241  |  37 948\nNon-trading and capital related items  |  1 487  |  328  |  (119)\nNet income before equity accounting earnings  |  68 093  |  51 569  |  37 829\nShare of profits from associates and joint ventures  |  1 648  |  2 265  |  620\nProfit before indirect taxation  |  69 741  |  53 834  |  38 449\nIndirect taxation  |  (3 373)  |  (3 077)  |  (2 310)\nProfit before direct taxation  |  66 368  |  50 757  |  36 139\nDirect taxation  |  (16 065)  |  (11 717)  |  (8 083)\nProfit for the period  |  50 303  |  39 040  |  28 056\n\nAppendix 2: Take1 Bank NIM Calculation and Other Key Ratios - Assets  |  2023  |  2022  |  2021\nDerivative assets  |  97 419  |  74 410  |  63 688\nFinancial investments  |  758 776  |  722 494  |  724 700\nLoans and advances  |  1 608 846  |  1 504 940  |  1 424 328\nTotal Earning Assets  |  2 465 041  |  2 301 844  |  2 212 716\nNIM  |  3,98%  |  3,41%  |  2,82%\nLiquidity Coverage Ratio  |  1,291  |  1,468  |  1,443\nCET1 Ratio  |  13,70%  |  13,40%  |  13,80%\nLoans-to-Deposits Ratio  |  0,804  |  0,797  |  0,802\nCredit Loss Ratio  |  1,01%  |  0,89%  |  0,69%\nPrice-to-Book Ratio  |  1,24  |  1,07  |  0,82\nCost of Equity  |  13,50%  |  14,20%  |  14,75%\n\nAppendix 3: Competitor Information – Bank2 - Key Line Items  |  2023  |  2022  |  2021\nNet Income  |  25 851  |  25477  |  17 631\nNII  |  54 512  |  48 962  |  47 815\nNIR  |  41 638  |  38 582  |  35 549\nCredit Impairments  |  -8 413  |  -5 891  |  -11 115\nOperating Expenses  |  -53 200  |  -47 644  |  -44 990\nDeposits  |  1 381 773  |  1 220 025  |  1 135 585\nLoans and Advances  |  1 066 891  |  944 087  |  857 955\nTotal Assets  |  1 654 964  |  1 507 347  |  1 415 029\nEquity  |  104 361  |  106 554  |  105 253\nKey Ratios  |    |    |  \nROE  |  24,8%  |  23,9%  |  16,8%\nProfit Margins  |  26,9%  |  29,1%  |  21,1%\nAsset Utilization  |  0,06  |  0,06  |  0,06\nLeverage  |  15,86  |  14,15  |  13,44\nLoans -to-Deposits  |  0,772  |  0,774  |  0,756\nCost-to-Income  |  55,3%  |  54,4%  |  54,0%\nCredit Loss Ratio  |  0,79%  |  0,62%  |  1,30%\nNIM  |  4,70%  |  4,74%  |  4,37%\nLiquidity Coverage Ratio  |  1,29  |  1,24  |  1,17\nCET1 Ratio  |  12,60%  |  14,20%  |  14,50%\nPrice-to-Book Ratio  |  1,96  |  1,89  |  1,22\nCost of Equity  |  14,65%  |  14,25%  |  15%",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 4,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.1 Discuss the trend in NIM for Take1 Bank and what is driving the changes and compare it with that of its competitor. Use the NIM for Take1 Bank provided in Appendix 2 rather than calculating your own.",
+     "memo": "Given:\n\nNIM  |  2023  |  2022  |  2021\n  |  3,98%  |  3,41%  |  2,82%\n\nNIM has clearly been increasing steadily since 2021, indicating that growth in NII is outpacing growth in earning assets (i.e. the bank is using earning assets more effectively to generate NII). This is evidently driven primarily by the significant and consistent growth in loans and advances. This makes sense given that rates globally have been high due to inflation concerns and so it was an ideal time to take advantage with higher rates on lending. Take1 Bank lags behind the performance of its competitor though as its NIM is well behind in all three years. Bank 2 is clearly smaller than Take1 Bank both in terms of NII and total assets. It simply seems to be generating its NII more efficiently off the back of its smaller asset base."
+    },
+    {
+     "id": "1.2",
+     "marks": 30,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.2 Compare and contrast the performance of Take1 Bank versus its competitor over the three years. Where has Take1 Bank excelled and where has it underperformed? Motivate your answer using appropriate ratios and analysis of the financials.",
+     "memo": "  |  2023  |  2022  |  2021\nROE  |  18,2%  |  15,1%  |  11,6%\nProfit Margins  |  28,3%  |  26,4%  |  24,8%\nAsset Utilization  |  0,058  |  0,051  |  0,042\nLeverage  |  11,07  |  11,13  |  11,22\n\n1,5 marks each\n3 marks for discussion and comparison of each ratio:\n\nROE has improved significantly from year to year. This appears to be driven by improvements in both profit margin and asset utilization, as leverage has in fact decreased slightly over the three years. Unfortunately, like with the NIM, Take1 Bank’s ROE lags significantly behind that of Bank 2.\n\nThe two banks have largely similar profit margins, with Take1 Bank actually slightly ahead in 2023. Interestingly, Bank2 has seen a decline in its profit margin in 2023. Given that it’s NIM increased, this would suggest that it may have an issue with cost controls between 2022 and 2023. The steadily increasing Profit Margin for Take1 Bank again paints a picture of consistency, much like the NIM analysis before.\n\nSimilarly, Take1 Bank’s asset utilization has improved consistently over the three years. This contrasts with Bank2 which has had the same, albeit higher, asset utilization over the period. Given how much larger Take1 Bank appears to be in terms of total assets, it is noteworthy that its asset utilization compares this favourably and the improving trend is a good sign given how many large banks struggle with asset utilization due to their legacy of higher proportions of non-earning assets (typically PPE).\n\nFinally, the big differentiator between the banks is the leverage. Take1 Bank’s leverage has been declining slightly over the period while Bank2’s leverage has not only increased but is much higher. This would explain the large disparity in ROE between Take1 Bank and Bank 2. It suggests that Take1 Bank is performing better in terms of profit margins, slightly behind with regards to asset utilization and much lower leverage. So even though Take1’s ROE is lagging, it is achieving its performance with significantly lower risk than Bank2."
+    },
+    {
+     "id": "1.3",
+     "marks": 6,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.3 Cost controls have been a significant issue faced by mature banks in recent years. Analyse and comment on the cost controls and efficiencies of Take1 Bank relative to Bank2, using an appropriate ratio.",
+     "memo": "Cost-to-Income  |  2023  |  2022  |  2021\n  |  53,3%  |  56,4%  |  57,8%\n\nTake1 Bank has been driving improvements in cost efficiencies during the period, as evidenced by the declining cost-to-income ratio over time. This is driven by the growth in total income exceeding the growth in operating expenses. This speaks to good cost controls on the part of Take1 Bank. The biggest drivers of costs remain staff costs, which has increased by more than 45% over the period. This is concerning. Overheads (300%) and other expenses (26%) have also seen significant increases. We do also see IT costs (30%) increasing which are necessary for the bank’s strategy and competitiveness going forward. Overall, the bank’s operating costs are up 45% over the period while total income is up 57%. The concern would be if the banks income growth started to slow going forward, e.g. as interest rates in the market came down and NII was affected. Given the high growth rate in costs, Take1 needs to do something to bring those under control going forward. Bank 2’s cost efficiencies have been worsening by comparison – they were actually better in 2021 and 2022 but have gone backwards in 2023."
+    },
+    {
+     "id": "1.4",
+     "marks": 8,
+     "topics": [
+      "b-fin",
+      "b-reg"
+     ],
+     "required": "1.4 Comment on the bank’s risk profile using the information provided. Is it riskier or less risky than Bank2? Why?",
+     "memo": "  |  2023  |  2022  |  2021\nLiquidity Coverage Ratio  |  1,291  |  1,468  |  1,443\nCET1 Ratio  |  13,70%  |  13,40%  |  13,80%\nLoans-to-Deposits Ratio  |  0,804  |  0,797  |  0,802\nCredit Loss Ratio  |  1,01%  |  0,89%  |  0,69%\nCost of Equity  |  13,50%  |  14,20%  |  14,75%\n\nThe key ratios here were CET1 ratio, LCR and Credit loss ratio. I would then have been happy with either Cost of Equity or Loans-to-deposits as the 4th. Given that all the ratios were given, 2 marks for discussing each of the 4.\n\nTake1 Bank’s LCR has consistently been above the required 1. The fact that it’s decreasing is not necessarily bad, particularly given that there’s an opportunity cost for it being too high. It makes sense that it was higher immediately coming out of Covid and that the bank is now reducing the ratio as it is able to take on a little more risk. It’s still well above the benchmark requirement.\n\nThe CET1 ratio is also consistently well above the 4,5% requirement and has been largely unchanged over the period. The credit loss ratio has been worsening over the period, however. This is likely due to the higher interest rates prevailing globally as central banks attempt to rein in surging inflation following QE during the Covid pandemic. Finally, the cost of equity has been decreasing which speaks well of the banks market risk declining over time (likely tied to the declining leverage ratio from 1.2).\n\nThe credit loss ratio for Take1 has been increasing over time but is still well within the accepted benchmark range of 1% to 3%. The increase is likely due to the impact of higher interest rates in the market as this increase has been a consequence of post-Covid monetary policy changes for most banks around the world in 2023. It will likely decrease in future as interest rates are decreased by central banks. Interestingly, Bank2 has only had a small increase in CLR in 2023 by comparison but the difference between the two banks is not significant.\n\nComparing the above to Bank2, we see that Take1’s ratios are all better than that of Bank2, except for credit loss. This gels with our earlier finding about Take1 Bank having a lower risk than Bank2 when observing their leverage ratios."
+    },
+    {
+     "id": "1.5",
+     "marks": 6,
+     "topics": [
+      "b-val"
+     ],
+     "required": "1.5 Has Take1 Bank been creating or destroying value over the three years? How does it compare with Bank2 in this regard?",
+     "memo": "Take1 Bank\n\n  |  2023  |  2022  |  2021\nROE  |  18,2%  |  15,1%  |  11,6%\nCost of Equity  |  13,50%  |  14,20%  |  14,75%\n\nBank2\n\n  |  2023  |  2022  |  2021\nROE  |  24,8%  |  23,9%  |  16,8%\nCost of Equity  |  14,65%  |  14,25%  |  15%\n\nThe best indicator of value creation is to compare ROE with CoE. For Take1 Bank, we clearly see that Take1 Bank destroyed value in 2021 but has turned things around in 2022 and 2023. What is noteworthy is that it’s ROE has been steadily increasing over time while it’s CoE has been decreasing, which means that both measures have been moving in the right direction, which bodes well for the future.\n\nIn contrast, Bank2 has created value in all three years. The concern here is that it’s ROE is propped up mostly through extremely leverage. This means much higher risk and, could be a problem in future, especially since it’s CoE has been increasing in the most recent period.\n\nThis is also reflected in the price-to-book ratios for both banks where Take1’s PB ratio is above 1 in 2022 and 2023 and similarly Bank2’s ratios are above 1 for all years it is provided. The fact that Bank2’s ratio is so much higher than that of Take1 speaks to a much higher value perceived in the market."
+    },
+    {
+     "id": "1.6",
+     "marks": 6,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.6 Based on your analysis above as well as the other information presented, what would you say are the bank’s key challenges going forward?",
+     "memo": "I was fairly lenient here but the main issues are taking on more risk to continue to improve performance. Watching the CLR ratio that has been increasing. Continuing to improve cost efficiencies while balancing the need for continued investment in IT infrastructure to remain competitive. Increased competition from digital banks. Declining interest rates impacting NII. Etc."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2",
+   "marks": 10,
+   "scenario": "Assume that you are a relationship manager at Take1 Bank. You have a client that is a large clothing retailer and you have identified the following information from their financials:\n\nClient  |  Competitor\nDIO – 85 days  |  DIO – 65 days\nDSO – 30 days  |  DSO – 33 days\nDPO – 60 days  |  DPO – 40 days\nCCC – 55 days  |  CCC – 58 days",
+   "parts": [
+    {
+     "id": "2",
+     "marks": 10,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "Advise your client on the concerns you have regarding their liquidity/cash cycle position relative to their competitor. Suggest some ways in which they may consider improving their cash cycle. Finally, advise them on why managing their liquidity is important not only from a working capital perspective but can also improve company value.",
+     "memo": "Firstly, the calculation above indicates that the client has a marginally better CCC than the competitor. This is largely due to its greater DPO. Having said that, it’s DIO is significantly higher which can pose a risk given the seasonal nature of the clothing industry. So even though the client may have a shorter CCC, it may be struggling with obsolescence. The excess days metric is a key indicator for retail customers (DIO-DPO) and this is 25 days for both companies indicating again that the Client is not that much better off than its competitor.\n\nThe big differences between the two are clearly the DIO and DPO. DSO is very similar so probably represents an industry standard. Trying to improve this metric may well end up chasing customers to the competitor. Of the other two, only the DIO looks like it requires improvement so the focus will be on improving there. Given how much better the DPO already is, it’s unlikely the client will be able to improve this without damaging the relationship with its supplier(s). The biggest issues here are seasonality, potentially long lead-times for acquiring stock and the risk of obsolescence. The best approach may be to attempt to transfer some of the risk to their suppliers via JIT delivery systems, consignment deliveries and direct delivery.\n\nFinally, on the value side, the discussion here would involve the fact that working capital is a component of both ROA and the free cash flow calculation. Reducing working capital both increases ROA and free cash flows."
+    }
+   ]
+  }
+ ]
+}

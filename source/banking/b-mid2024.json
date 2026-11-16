@@ -1,0 +1,112 @@
+{
+ "id": "b-mid2024",
+ "title": "2024 Mid-Term Test",
+ "short": "Mid 2024",
+ "kind": "test",
+ "marks": 70,
+ "minutes": 90,
+ "unofficial": false,
+ "memoNote": "The lecturer's own memo, printed in the paper (taken from the complete 'questions only' copy, which also holds the full Question 1.5 and the appendices).",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1",
+   "marks": 56,
+   "scenario": "You have just sat in on the 2023 annual results presentation for XYZ Bank. You are required to use the information provided in the appendices to answer the questions below. You should reference any relevant ratios (those provided and your own calculations) and insights regarding market conditions and trends in the banking industry in order to provide context to your answers.\n\nAppendix 1: XYZ Bank Income Statement and Balance Sheet\n\nConsolidated income statement for the year ended 31 December 2023  |  2023 ($m)  |  2022 ($m)  |  2021 ($m)  |  2020 ($m)\nNet interest income  |  35796  |  30377  |  26489  |  27578\nNon-Interest Revenue  |  30262  |  20243  |  37451  |  35496\nTotal operating income  |  66058  |  50620  |  63940  |  63074\nChange in expected credit losses and other credit impairment charges  |  -3447  |  -3584  |  -13460  |  -21462\nNet operating income  |  62611  |  47036  |  50480  |  41612\nTotal operating expenses  |  -32070  |  -32701  |  -34620  |  -34432\nEmployee compensation and benefits  |  -18220  |  -18003  |  -18742  |  -18076\nGeneral and administrative expenses  |  -10383  |  -10848  |  -11592  |  -11115\nDepreciation and impairment of property, plant and equipment and right-of-use assets  |  -1640  |  -2149  |  -2261  |  -2681\nAmortisation and impairment of intangible assets  |  -1827  |  -1701  |  -1438  |  -2519\nGoodwill impairment  |  —  |  —  |  -587  |  -41\nOperating profit  |  30541  |  14335  |  15860  |  7180\nShare of profit in associates and joint ventures  |  2807  |  2723  |  3046  |  1597\nImpairment of interest in associate  |  -3000  |  —  |  —  |  —\nProfit before tax  |  30348  |  17058  |  18906  |  8777\nTax expense  |  -5789  |  -809  |  -4213  |  -2678\nProfit for the year  |  24559  |  16249  |  14693  |  6099\nBasic earnings per ordinary share ($)  |  1.15  |  0.72  |  0.62  |  0.19\nDiluted earnings per ordinary share ($)  |  1.14  |  0.72  |  0.62  |  0.19\n\nNote: the sharp decline in non-interest revenue in 2022 was due to trading losses suffered on investments in that year.\n\nConsolidated balance sheet at 31 December 2023: Assets  |  2023 ($m)  |  2022 ($m)  |  2021 ($m)  |  2020 ($m)\nCash and balances at central banks (the bank earns interest on these balances)  |  334234  |  386717  |  403018  |  304481\nTrading assets  |  289159  |  218093  |  248842  |  231990\nFinancial assets  |  553406  |  464827  |  496078  |  536246\nDerivatives  |  229714  |  284159  |  196882  |  307726\nLoans and advances to banks and customers  |  1051437  |  1028036  |  1128950  |  1119603\nReverse repurchase agreements – non-trading  |  252217  |  253754  |  241648  |  230628\nOther Assets  |  328510  |  313700  |  242521  |  253490\nTotal assets  |  3038677  |  2949286  |  2957939  |  2984164\nLiabilities  |    |    |    |  \nDeposits by banks  |  115187  |  110509  |  101152  |  82080\nDeposits by customers  |  1611647  |  1570303  |  1710574  |  1642780\nRepurchase agreements – non-trading  |  172100  |  127747  |  126670  |  111901\nTrading liabilities  |  80445  |  80217  |  84904  |  75266\nFinancial liabilities designated at fair value  |  141426  |  127321  |  145502  |  157439\nDerivatives  |  234772  |  285762  |  191064  |  303001\nDebt securities in issue  |  93917  |  78149  |  78557  |  95492\nInsurance contract liabilities  |  120851  |  108816  |  112745  |  107191\nOther Liabilities  |  275722  |  275265  |  199994  |  204019\nTotal liabilities  |  2846067  |  2764089  |  2751162  |  2779169\nEquity  |    |    |    |  \nCalled up share capital  |  9631  |  10147  |  10316  |  10347\nShare premium account  |  14738  |  14664  |  14602  |  14277\nOther equity instruments  |  17719  |  19746  |  22414  |  22414\nOther reserves  |  -8907  |  -9133  |  6460  |  8833\nRetained earnings  |  152148  |  142409  |  144458  |  140572\nTotal shareholders’ equity  |  185329  |  177833  |  198250  |  196443\nNon-controlling interests  |  7281  |  7364  |  8527  |  8552\nTotal equity  |  192610  |  185197  |  206777  |  204995\nTotal liabilities and equity  |  3038677  |  2949286  |  2957939  |  2984164\n\nAppendix 2: XYZ Bank Key Ratios  |  2023 ($m)  |  2022 ($m)  |  2021 ($m)  |  2020 ($m)\nProfit Margin  |  37%  |  32%  |  23%  |  10%\nAsset Utilization  |  0,022  |  0,017  |  0,022  |  0,021\nLeverage  |  15,776  |  15,925  |  14,305  |  14,557\nCredit Loss Ratio  |  0,3%  |  0,3%  |  1,2%  |  1,9%\nLoans-to-Deposits Ratio  |  0,61  |  0,61  |  0,62  |  0,65\nCET1 Ratio  |  14,80%  |  14,20%  |  15,80%  |  15,90%\nLiquidity Coverage Ratio  |  1,36  |  1,32  |  1,384  |  1,391\nCost of Equity  |  7,6%  |  8,1%  |  5,9%  |  3,5%",
+   "parts": [
+    {
+     "id": "1.1",
+     "marks": 12,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.1 Calculate the bank’s net interest margin (NIM) for the last three years. Briefly discuss the trend in NIM for the bank and what is driving the changes.",
+     "memo": "Ratios  |  2023 ($m)  |  2022 ($m)  |  2021 ($m)  |  2020 ($m)\nCash and balances at central banks  |  334 234  |  386 717  |  403 018  |  304 481\nTrading assets  |  289 159  |  218 093  |  248 842  |  231 990\nFinancial assets  |  553 406  |  464 827  |  496 078  |  536 246\nDerivatives  |  229 714  |  284 159  |  196 882  |  307 726\nLoans and advances to banks and customers  |  1 051 437  |  1 028 036  |  1 128 950  |  1 119 603\nEarnings Assets  |  2 457 950  |  2 381 832  |  2 473 770  |  2 500 046\nNIM  |  1,46%  |  1,28%  |  1,07%  |  1,10%\n\nNIM has been improving relatively consistently over the period observed, apart from a small dip in 2021. This is driven in large part due to NII increasing at a faster rate (30%) than Earning Assets (10%) over the period. This higher NII is likely a result of higher interest rates globally following the Covid pandemic, as central banks have sought to bring inflation under control. We would expect to see that shrinking going forward, which will impact negatively on NIM. This is particularly concerning as NIR is also at levels below 2020/2021 (decreased by 15% over the period) which is a concern for overall revenue growth. So, the bank may need to find ways to improve its NIR in future if NII is expected to be under pressure. In terms of the earning assets breakdown, the bank has clearly had a decrease in derivates since 2020 which makes sense as much of that investment would have been for risk management reasons during the pandemic. Since then, more money has shifted into trading and financial assets, likely to take advantage of higher market returns as markets have bounced back. What is interesting is the decrease in loans over the period. The bank would likely have wanted to maximize its loans given the higher rates in the market but may be struggling to find borrowers given the higher rates making them less attractive and more difficult to afford."
+    },
+    {
+     "id": "1.2a",
+     "marks": 10,
+     "topics": [
+      "b-fin",
+      "b-val"
+     ],
+     "required": "1.2 The bank’s presenter made the following comments that caught your attention:\n\na) \"The bank has continued to outperform shareholder expectations and create value throughout the Covid pandemic and the subsequent market recovery.\" Do you agree with this statement based on the information provided? Why or why not? Show all calculations.",
+     "memo": "I was looking for a both a comment on performance and on value creation here, so you needed to discuss both the ROE breakdown provided for you and then calculate ROE to compare it to cost of equity to establish whether the bank has been creating or destroying value.\n\nRatios  |  2023 ($m)  |  2022 ($m)  |  2021 ($m)  |  2020 ($m)\nROE  |  12,8%  |  8,8%  |  7,1%  |  3,0%\nCost of Equity  |  7,6%  |  8,1%  |  5,9%  |  3,5%\n\nWe clearly see ROE improving consistently every year over the period. Looking at the breakdown provided in the appendix, this appears to be due to improvements in profit margins over the period, as well as higher leverage. The profit margins have seen almost 300% growth since 2020 which appears significant, but is largely driven by improvements in credit impairments, while net income is only up 5% over the period versus a 7% decline in operating income. Asset utilization has been largely consistent over time apart from a brief decline in 2022 but is very low. This negates some of the big improvements in the profit margins and means the banks ROA is quite low. Leverage is very high which may be a concern going forward – unfortunately, it needs to be that high in order to compensate for the low ROA and thereby provide a reasonable ROE.\n\nLooking at value creation, ROE exceeded Cost of Equity in every year except for 2020. There are two positive signs in this regard. Firstly, the gap between RoE and Cost of Equity has widened over time. Secondly, the cost of equity has come down in the most recent year."
+    },
+    {
+     "id": "1.2b",
+     "marks": 10,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "b) \"Cost controls remain a key focus bus also a challenge for the bank. We have seen a sharp improvement in our cost efficiencies in 2023, however, which bodes well for the future.\" Do you agree with this statement. Why or why not? Show all calculations.",
+     "memo": "Ratios  |  2023 ($m)  |  2022 ($m)  |  2021 ($m)  |  2020 ($m)\nCost-to-Income Ratio  |  49%  |  65%  |  54%  |  55%\n\nThe bank’s cost-to-income ratio has largely been improving over time. We note that the ratio is not much above the standard benchmark expectations in 2020 and 2021 (50%). There is a strong decline in efficiency in 2022 though - even though operating expenses decreased. The reason is the sharp decline in NIR due to the trading losses (see the footnote in the appendixes), so the worsening ratio was not due to cost management as that actually improved. Many of you missed this and simply commented that there had been a significant worsening in 2022.\n\nThere was then a massive improvement in the ratio in 2023 though as NIR bounced back. Having said that, the operating costs were basically unchanged in 2023. Overall, the bank has definitely been improving cost efficiencies over time as the only issue it had (in 2023) was because of a revenue decline rather than a cost increase but it has plateaued in 2023. The primary cost savings over the period seem to have been for depreciation and amortization which suggests the bank has been able to reduce its non-earning assets over the period. At the same time it has managed to keep staff costs largely unchanged, which actually suggests a decrease over time given that these would usually increase over time with inflation. General and administrative costs are also down slightly over the period, suggesting better control of overhead costs."
+    },
+    {
+     "id": "1.3",
+     "marks": 8,
+     "topics": [
+      "b-fin",
+      "b-reg"
+     ],
+     "required": "1.3 You have been provided with the Loan-to-Deposit ratio, Credit Loss Ratio, CET1 Ratio and Liquidity Coverage ratio in the appendix. For each of these ratios, discuss the trend and analyse what they mean for XYZ Bank (Do not recalculate the ratios. Use the ones provided in the appendix).",
+     "memo": "Ratios  |  2023 ($m)  |  2022 ($m)  |  2021 ($m)  |  2020 ($m)\nCredit Loss Ratio  |  0,3%  |  0,3%  |  1,2%  |  1,9%\nLoans-to-Deposits Ratio  |  0,61  |  0,61  |  0,62  |  0,65\nCET1 Ratio  |  14,80%  |  14,20%  |  15,80%  |  15,90%\nLiquidity Coverage Ratio  |  1,36  |  1,32  |  1,384  |  1,391\n\nThe credit loss ratio has improved steadily over time and is well below the benchmark range of 1% to 3%. The higher ratios in 2020 and 2021 make sense given that this was during the Covid period where banks experienced much higher impairments. The CLR in the two most recent years are more likely reflective of the banks normal CLR and speaks to the high quality of its loans.\n\nThe Loan to deposits ratio is consistently below the 80%-90% range that is typically considered normal. This implies the bank is investing a significant portion of its funds in investments other than loans. Looking at the balance sheet it appears the biggest shifts have been in trading assets and other assets. This of course, comes with higher risk.\n\nThe CET1 ratio is significantly above the 4,5% Basel requirement. It was higher during the pandemic which makes sense as banks would want to be prudent during such a high-risk period and we would expect that to come down as that risk abates. The main thing to keep in mind is that there is a trade-off here between risk and return. The higher the ratio is, the less risk the bank has but there is an opportunity cost in terms of potential lost revenue. So, it is not correct to state that a higher CET1 ratio is always better or that the higher the CET1 ratio, the more beneficial it is for the bank.\n\nThe same principle applies to the liquidity coverage ratio. The LCR needs to be above 1 in order to meet Basel requirements and this is the case for all years. Like the CET1 ratio, the LCR has come down slightly over time. It is important for the bank to manage the trade-off between having sufficient liquid assets while at the same time not having too much, as liquid assets also tend to have lower returns."
+    },
+    {
+     "id": "1.4",
+     "marks": 6,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.4 Based on your analysis above as well as the other information presented, what would you say are the bank’s key challenges going forward?",
+     "memo": "I was quite lenient here. I was happy to accept a few general banking challenge points such as competition, digitalisation, etc. But I did also need a few points specific to this bank based on your analysis. Concerns around the potential decline in NII going forward and increased reliance on NIR, which is below 2022 levels. The fact that operating expenses have stagnated in the most recent year. The excessive equity and liquid assets being a potential drag on revenue going forward. Etc."
+    },
+    {
+     "id": "1.5a",
+     "marks": 4,
+     "topics": [
+      "b-val"
+     ],
+     "required": "1.5 Assume the bank’s expected net income growth rate going forward is 6%. It estimates it will have an ROE of 12% going forward and it will be investing a further $1bn in equity in future years. The bank expects its Cost of Equity to remain constant at 8%.\n\na) What would be the market value of its equity using the excess return model?",
+     "memo": "Value of equity:\n\nCurrent value  |  185329\nFuture value (ROE - CoE) x Current Value  |  40\nMarket Value  |  185369\n\nI was fine with the total equity figure being used as well."
+    },
+    {
+     "id": "1.5b",
+     "marks": 6,
+     "topics": [
+      "b-val"
+     ],
+     "required": "b) What is the implied price-to-book value ratio? What does this mean for the bank?",
+     "memo": "(12% - 6%) / (8% - 6%) = 3\n\nYour discussion here had to make mention of value and ideally something around undervalued/overvalued. In this instance, the bank is clearly creating value which matches the earlier discussion. At the same time, if the expectation is for a slightly higher cost of equity and slightly lower ROE going forward, the bank is likely slightly overvalued right now."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2",
+   "marks": 14,
+   "scenario": "Procter & Gamble is a consumer goods company that offers a wide range of products, including cleaning supplies, personal care items, and health and beauty. Their products are sourced from over 75,000 suppliers worldwide and sold in approximately 180 countries and territories. P&G has operations in approximately 70 countries and therefore has multiple banking relationships. For example, it has supply chain finance arrangements with 3 global banks - Citi, Deutsche Bank and JP Morgan.",
+   "parts": [
+    {
+     "id": "2.1",
+     "marks": 6,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "2.1 What is supply chain finance? How does it work (provide a basic example) and what are the benefits to the participants in the supply chain?",
+     "memo": "This was straight from the discussion in class. Many of you got the basic principle – a client arranging cheaper finance for its supplier by leveraging its better standing with the banks (due to being larger, having a better credit rating, etc). What the majority of you failed to get though was the actual mechanism and just described a basic loan.\n\nThey key fact is that the client is not arranging a loan for the supplier. The client has arranged the loan with the bank but the bank pays the supplier directly after being provided with an invoice. The final repayment is then still for the client to make once the agreed period has lapsed."
+    },
+    {
+     "id": "2.2",
+     "marks": 8,
+     "topics": [
+      "b-mnc",
+      "b-treas"
+     ],
+     "required": "2.2 Cash pooling is a critical function provided by many banks. Explain how pooling works and what the likely challenges would be for a company like P&G in implementing a pooling system.",
+     "memo": "This was a standard pooling question and was well answered for the most part. A few key things – I needed some discussion around what pooling is and how it works (notional vs physical, types, etc.). I then also needed you to discuss the challenges with specific reference to P&G. Given its large size and the fact that it operates in so many markets, pooling is likely to be very complicated and involve differences in exchange rates, regulations and laws between countries. At the same time, it has multiple banks, and pooling is usually something done with just one bank. The above would all mean that in the unlikely event it managed to convince its banks to provide the service, it would most likely require some kind of physical pooling in-country and then notional across countries – which would probably not work given that notional is pretty much only done within one bank."
+    }
+   ]
+  }
+ ]
+}

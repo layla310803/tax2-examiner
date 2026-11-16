@@ -1,0 +1,605 @@
+{
+ "id": "b-exam2021",
+ "title": "2021 Final Exam",
+ "short": "Exam 2021",
+ "kind": "exam",
+ "marks": 140,
+ "minutes": 180,
+ "unofficial": false,
+ "memoNote": "Lecturer's memo printed in the paper (the 'Final Exam' PDF shows it in red; the 'questions only' PDF carries the same memo as hidden white text); the 'Why:' reasons for the MCQs, some workings and the corrected Section D Question 4 duration were added from the course slides and recomputation.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Section A — Multiple Choice Questions",
+   "marks": 30,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "A1",
+     "marks": 3,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "1. Which of the following is not a variant of sweeping\n\na) One way sweeping generally means that only credit balances are swept to the master account and that balances are not returned to the sub accounts the following morning\nb) Two-way sweeping means that funds are moved to the master account and then only returned to sub accounts that previously had negative balances to reduce interest expenses\nc) Target balance sweeping leaves a small balance in the sub account as set by treasury\nd) A reverse sweep option means that the funds are returned to the sub account the following morning to ensure the operating entities have funds for their daily operations",
+     "memo": "b) Two-way sweeping means that funds are moved to the master account and then only returned to sub accounts that previously had negative balances to reduce interest expenses (3 marks)\n\nWhy: the sweeping variants are one-way, target balance and reverse sweeping (a, c and d). Returning swept funds only to accounts that had negative balances is not a sweeping option; negative balances are funded from the master account by the sweep itself."
+    },
+    {
+     "id": "A2",
+     "marks": 3,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "2. Tutuka Limited is a small retailer that trades with all its customers and suppliers on credit. The following figures are drawn from their financial statements for the year:\n\nSales for the year: R1,095,000\nCost of sales for the year: R693,500\nAverage Inventory: R91,200\nAverage Trade receivables: R105,000\nAverage Trade payables: R95,000\n\nWhat is Tutuka Limited's cash conversion cycle?\n\na) - 37 days\nb) + 37 days\nc) + 33 days\nd) - 33 days",
+     "memo": "c) + 33 days (3 marks)\n\nWhy: DSO = 105 000 / 1 095 000 x 365 = 35.0 days; DIO = 91 200 / 693 500 x 365 = 48.0 days; DPO = 95 000 / 693 500 x 365 = 50.0 days. CCC = DSO + DIO - DPO = 35 + 48 - 50 = +33 days."
+    },
+    {
+     "id": "A3",
+     "marks": 3,
+     "topics": [
+      "b-fail",
+      "b-intro"
+     ],
+     "required": "3. The following extract, taken from Moneyweb on 26 October 2021, relates to Absa, one of South Africa's largest banks:\n\n\"The announcement followed after Absa's lead independent director, Sipho Pityana, served court papers on the Prudential Authority of the Reserve Bank, claiming his nomination to become the bank's chairman had been unfairly blocked.\n\nHe claims his nomination was blocked after Maria Ramos informally informed the Prudential Authority's head, Kuben Naidoo, of a sexual harassment incident and investigation involving Pityana while he was the chairman of AngloGold Ashanti.\"\n\nThe following is not true about the incident:\n\na) A bank is very sensitive to rumors and, thus, must carefully guard its reputation.\nb) A lead independent director is not automatically the next chair of the bank's board.\nc) The management of a bank is not fully in control of the affairs of the bank.\nd) There is no case as the common good, protected by the Prudential Authority of the Reserve Bank, trumps individual rights.",
+     "memo": "d) There is no case as the common good, protected by the Prudential Authority of the Reserve Bank, trumps individual rights. (3 marks)\n\nWhy: the director took the Prudential Authority to court, so there is a case; the regulator's veto over directors is a statutory power that must be exercised lawfully and is open to review, and the common good does not automatically override individual rights. (a), (b) and (c) are true: banks run on confidence, the board and regulator choose the chair, and the regulator limits management's control."
+    },
+    {
+     "id": "A4",
+     "marks": 3,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "4. Weak management was the primary reason for the failure of the following bank/s:\n\na) Banks that failed during the Great Depression.\nb) Saambou Bank.\nc) VBS Bank.\nd) Investec Bank.",
+     "memo": "c) VBS Bank. (3 marks)\n\nWhy: VBS failed because of fraud and weak governance and underwriting (weak, dishonest management). Saambou was solvent and fell to a liquidity run; Great Depression failures were mainly runs and contagion; Investec did not fail."
+    },
+    {
+     "id": "A5",
+     "marks": 3,
+     "topics": [
+      "b-intro",
+      "b-reg"
+     ],
+     "required": "5. The primary way in which investors can protect themselves against a bad investment in a bank is by:\n\na) Asking for assistance from bank regulators.\nb) Selling the shares and investing somewhere else.\nc) Voting their shares at the AGM of the bank.\nd) Pursuing a legal process against the bank to force a substantial dividend payment.",
+     "memo": "b) Selling the shares and investing somewhere else. (3 marks)\n\nWhy: bank shareholders have little control because the regulator and board hold the real power, so the practical protection is to exit. The regulator protects depositors and the system, a minority vote cannot change the bank's risks, and a dividend cannot be forced once it is not declared."
+    },
+    {
+     "id": "A6",
+     "marks": 3,
+     "topics": [
+      "b-money"
+     ],
+     "required": "6. The following is not 'money' included in the money supply:\n\na) Bitcoin.\nb) Bank deposits.\nc) Physical notes and coin.\nd) Cheques.",
+     "memo": "a) Bitcoin. (3 marks)\n\nWhy: Bitcoin is a private crypto-asset outside the central bank's control and outside official money-supply statistics. Bank deposits (the largest part of broad money), notes and coin, and cheques (instructions to move deposits) are all counted."
+    },
+    {
+     "id": "A7",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-credit"
+     ],
+     "required": "7. Which of the following is true?\n\ni. Legal risk is a type of financial risk\nii. Unexpected losses that pertain to credit risk cannot be made provision for, since they are outside the control of the bank\niii. Banks make provision for expected losses by means of the interest rate they charge their clients\niv. Market risk is the risk incurred when market variables, such as interest rates and commodity prices, change when trading assets and liabilities\n\na) i, ii, iii\nb) ii, iii\nc) iii, iv\nd) i, iii",
+     "memo": "c) iii, iv (3 marks)\n\nWhy: (iii) expected loss is a cost of lending that is priced into the loan rate through the risk premium; (iv) is the definition of market risk. (i) is false because legal risk is part of operational risk, and (ii) is false because unexpected losses are covered by capital."
+    },
+    {
+     "id": "A8",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-risk",
+      "b-irr"
+     ],
+     "required": "8. Which of the following is true?\n\ni. Violation of employee health and safety is an example of operational risk\nii. When interest rates rise above a certain level, the additional expected return earned by a bank will be offset by a higher probability of default on loans\niii. A bank is required by the Basel Committee on Banking Supervision, by means of the Basel III Capital Accord, to have sufficient High Quality Liquidity Assets to survive a stress scenario of 25 days\niv. In terms of interest rate risk, a feature of Duration as a method of calculating cash flows, is that Duration decreases as the coupon or interest payment increases\n\na) i, ii, iv\nb) ii, iii, iv\nc) iii, iv\nd) i, ii, iii",
+     "memo": "a) i, ii, iv (3 marks)\n\nWhy: (i) is a Basel operational risk event type (employment practices and workplace safety); (ii) is the backward-bending loan supply curve; (iv) holds because a higher coupon returns value earlier. (iii) is false because the LCR stress scenario is 30 days, not 25."
+    },
+    {
+     "id": "A9",
+     "marks": 3,
+     "topics": [
+      "b-irr",
+      "b-mkt"
+     ],
+     "required": "9. Which of the following is true?\n\ni. The interest elasticity of a security's price to small interest rate changes is viewed as a definition of Duration\nii. Relative Value at Risk as one of three related Value at Risk calculations for market risk, is relevant to investment managers and mutual funds as their performance is often compared to a target benchmark\niii. The main difference between the Monte Carlo simulation method and the Historical simulation method as a methodology to measure market risk, is that Monte Carlo simulation takes actual past movements, while the Historical simulation method generates random hypothetical scenarios\niv. There are four parameters to specify before calculating Value at Risk for market risk. These include the confidence level, the forecast horizon, the base currency, and the volatility\n\na) i, ii\nb) ii, iii, iv\nc) iii, iv\nd) i, ii, iv",
+     "memo": "a) i, ii (3 marks)\n\nWhy: (i) and (ii) are true. (iii) has the two methods swapped (Historical simulation uses actual past movements; Monte Carlo generates random hypothetical scenarios) and (iv) is false because volatility is estimated from the data, not chosen beforehand."
+    },
+    {
+     "id": "A10",
+     "marks": 3,
+     "topics": [
+      "b-risk",
+      "b-mkt"
+     ],
+     "required": "10. Which of the following is true?\n\ni. The fundamental problem with the definition of operational risk according to the Basel III Capital Accord, is that is does not make provision for reputation risk\nii. Relative Value at Risk as one of three related Value at Risk calculations for market risk, is relevant to investment managers and mutual funds as their performance is often compared to a target benchmark\niii. Macro-prudential stress testing is one of the monitoring tools that the South African Reserve Bank uses to assess the financial system's resilience to unexpected disruptions resulting from operational risk\niv. The Advanced Measurement Approach, as prescribed by the Basel III Capital Accord, was criticised for being too complex and reliant on statistical models\n\na) i, ii\nb) ii, iii, iv\nc) iii, iv\nd) i, ii, iv",
+     "memo": "b) ii, iii, iv (3 marks)\n\nWhy: (ii) relative VaR is measured against a benchmark; (iii) the SARB uses macro-prudential stress tests; (iv) the AMA was criticised as complex and model-dependent. (i) is not true as stated: the Basel definition does exclude reputational risk, but deliberately, because it cannot be reliably measured."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Section B, Question 1 — Bank A versus Bank B, 2020 to 2021",
+   "marks": 24,
+   "scenario": "You have been provided with information for two competing local banks, Bank A and bank B. Relevant financial information for both banks has been provided in Appendix A.\n\nAppendix A\n\n  |  Bank A 2021  |  Bank A 2020  |  Bank B 2021  |  Bank B 2020\nStatement of comprehensive income (Rm)  |    |    |    |\nNet interest income  |  25 585  |  24 072  |  47 815  |  46 484\nNon-interest income  |  15 625  |  16 006  |  35 549  |  34 447\nTotal income  |  41 210  |  40 078  |  83 364  |  80 931\nImpairment losses  |  -4 702  |  -14 661  |  -11 115  |  -18 269\nOperating expenses  |  -22 605  |  -21 613  |  -44 990  |  -44 343\nOther expenses  |  -1 032  |  -1 043  |  -1 008  |  -810\nShare of post-tax results of associates and joint ventures  |  40  |  -8  |  0  |  0\nOperating profit before income tax  |  12 911  |  2 753  |  26 251  |  17 509\nTax expenses  |  -3 511  |  -718  |  -6 694  |  -3 118\nProfit for the reporting period  |  9 400  |  2 035  |  19 557  |  14 391\nOperating performance (%)  |    |    |    |\nNet interest margin  |  4,41%  |  4,23%  |  4,72%  |  4,65%\nNon-interest income as % of total income  |  37,9%  |  39,9%  |  42,6%  |  42,6%\nEffective tax rate  |  27,20%  |  26,10%  |  25,50%  |  17,80%\nIncome growth  |  2,82%  |  3%  |  2,86%  |  1,15%\nOperating expenses growth  |  4,59%  |  -2,10%  |  1,46%  |  2,15%\nStatement of financial position (Rm)  |    |    |    |\nLoans and advances to banks and customers  |  1 036 603  |  1 045 461  |  730 591  |  773 554\nInvestment securities  |  182 623  |  156 665  |  218 297  |  165 742\nOther assets  |  357 336  |  358 870  |  307799  |  267405\nTotal assets  |  1 576 562  |  1 560 996  |  1 256 687  |  1 206 701\nDeposits due to customers  |  1 009 954  |  919 620  |  760250  |  668 898\nDebt securities in issue  |  129 601  |  178 795  |  272 008  |  326 705\nOther liabilities  |  302 697  |  336 401  |  114 296  |  107 217\nTotal liabilities  |  1 442 252  |  1 434 816  |  1 146 554  |  1 102 820\nTotal equity  |  134 310  |  126180  |  110 133  |  103 881\nTotal equity and liabilities  |  1 576 562  |  1 560 996  |  1 256 687  |  1 206 701\nKey performance ratios (%)  |    |    |    |\nReturn on Assets (RoA)  |  0,60%  |  0,13%  |  1,56%  |  1,19%\nReturn on Equity (RoE)  |  7,00%  |  1,61%  |  17,76%  |  13,85%\nProfit Margin  |  22,81%  |  5,08%  |  23,46%  |  17,78%\nLeverage  |  11,74  |  12,37  |  11,41  |  11,62\nCET1 Ratio  |  12,40%  |  11%  |  14,50%  |  12,30%\nLiquidity Coverage Ratio  |  1,24  |  1,27  |  1,17  |  1,24",
+   "parts": [
+    {
+     "id": "B1",
+     "marks": 24,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Compare and contrast the performance of the two banks over the period 2020 to 2021, using the information provided and any additional calculations or ratios you believe are appropriate.\n\nYour comparison should include the following categories: Bank Profitability, Efficiency, Asset Quality and Solvency/Risk.  [24]",
+     "memo": "For a question like this, I would expect the following ratios to be discussed for each category:\nBank Profitability - NIM, ROA (decomposed into asset utilization and profit margin), ROE (and leverage)\nEfficiency - Asset utilization above and cost-to-income ratio\nAsset Quality - Credit Loss Ratio\nSolvency/Risk - LCR and CET1 Ratio and the Loans-to-deposits ratio for risk\n\nThe majority of these have been provided in the appendix but students need to calculate asset utilization, credit loss ratio and cost-to-income ratio themselves. They will also need to calculate the loans-to-deposits ratio if they want to discuss it (and it is actually a very interesting ratio to discuss in the context of this question).\n\nLooking at performance, Bank A and Bank B have very similar NIMs, with A's marginally smaller than B's. This speaks a little to B being able to use its earning assets more efficiently than A or its margins being bigger. Bank A has clearly been underperforming Bank B in terms of both raw ROA and ROE. Both banks have seen improvements in these ratios from 2020 to 2021 which likely speaks to improved profitability thanks to lower credit impairments in 2021 as banks come out of the worst impact of the Covid pandemic. Strictly speaking, Bank A has the biggest improvement in percentage terms but this is off a very low base whereas Bank B has significantly higher ROAs and ROEs in absolute terms.\n\nLooking at the breakdown between the two, Bank A's profit margin in 2021 has improved dramatically from its lows in 2020 and is almost on par with that of Bank B. Their leverage ratios are also almost identical, which points to the missing ratio (asset utilization) as being the factor responsible for the big difference in their ROEs. This is borne out if students calculate the asset utilization ratios as A's is a third of B's (2,61% for A in 2021 vs 6,63% for B). This indicates that Bank B is using its assets far more efficiently in generating returns. The ratios for both banks are largely stable between 2020 and 2021 indicating that this is not a once-off effect.\n\nFor Efficiency, we already know that B is using its assets significantly more efficiently than A, as indicated above. If students calculate the cost-to-income ratio, they will find that they are virtually identical - both banks have ratios around 54%. This is close to the ideal level of 50% and indicates that they both have a reasonably good handle on their cost controls. The only concern, perhaps, lies with the change in operating expenses for A over time. They managed to decrease operating costs in 2020 but it increased significantly (by comparison) in 2021. Bank B, on the other hand, managed to slow its growth in operating expenses between 2020 and 2021.\n\nIn terms of asset quality, both banks exhibited high credit loss ratios in 2020 which was to be expected given the impact of the Covid pandemic on the ability of borrowers to repay their loans. Comparing the two, however, Bank A exhibited far lower levels of credit impairments over both periods suggesting that its borrowers were less affected and that its loan book quality was better, by extension. Despite this, both banks' ratios are well within the 1-3% benchmark generally considered to be acceptable.\n\nFinally, for Solvency/Risk, both banks are maintaining CET1 and LCR ratios well above suggested minimums (1 for LCR and 4,5% to 6% for CET 1 ratio). This is in line with typical practice locally as our banks are usually over-capitalized and therefore present minimal solvency risk.\n\nIf students calculate the loans-to-deposits ratio, however, they'll observe something interesting. The LDR ratio is typically expected to be in the region of 80% to 90% as most banks use a portion of their funding to invest in investment assets or other income-generating assets other than loans. Both banks, however, were well above this ratio in 2020, suggesting that both were borrowing actively in order to fund their additional investments in 2020 - which is surprising given the high risk during this period. This is true again for Bank A in 2021, but Bank B dipped below the 100% mark in 2021 although the ratio is still high. This does represent a higher risk to both banks by definition.\n\nMark allocation: 8 marks for calculating the ratios (2 marks per ratio), 16 marks for the discussion."
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Section C, Question 1 — The yield curve",
+   "marks": 10,
+   "scenario": "The yield curve is normally upwards sloping. However, during a crisis (like the Global Financial Crisis), the yield curve often inverts, with short maturity instruments more expensive than long maturity instruments.",
+   "parts": [
+    {
+     "id": "C1a",
+     "marks": 1,
+     "topics": [
+      "b-money",
+      "b-irr"
+     ],
+     "required": "a) True or false: The yield curve includes credit risk, with more risky instruments demanding a higher interest rate.  (1 mark)",
+     "memo": "False. The yield curve is a credit-risk free curve that indicates the relationship between interest rates and different maturities."
+    },
+    {
+     "id": "C1b",
+     "marks": 3,
+     "topics": [
+      "b-money",
+      "b-irr"
+     ],
+     "required": "b) Explain why the yield curve is normally upward sloping. Start by indicating what the yield curve is.  (3 marks)",
+     "memo": "The yield curve is a credit-risk free curve that indicates the relationship between interest rates and different maturities (1). An upward sloping yield curve implies that longer maturity interest rates are higher than short maturity interest rates (1). This can be understood in terms of risk and uncertainty. The future further out is more uncertain than time closer to the present and a higher return is demanded (1)."
+    },
+    {
+     "id": "C1c",
+     "marks": 3,
+     "topics": [
+      "b-money",
+      "b-irr"
+     ],
+     "required": "c) Explain why the yield curve tends to invert during a crisis.  (3 marks)",
+     "memo": "Cash is the safest asset to hold during a crisis and has no maturity (1). Thus, demand for cash and other short maturity assets increase during a crisis in the flight to safety (1), increasing the price or interest rate required to hold those assets (1). At the same time people do not want to hold as many risky assets, increasing supply of longer maturity assets, and driving its price or interest rate down (1). Thus, an inverted yield curve is where the interest rate on short maturity instruments is higher than the interest rate on long maturity instruments (1)."
+    },
+    {
+     "id": "C1d",
+     "marks": 2,
+     "topics": [
+      "b-money",
+      "b-intro"
+     ],
+     "required": "d) Explain how a bank can profit by utilizing the upwards sloping yield curve.  (2 marks)",
+     "memo": "The bank can fund itself by raising deposits at the short end of the yield curve for a lower interest rate (1) and then make loans at the long end of the yield curve for a higher interest rate (1). The interest earned on loans less the interest paid on deposits earns the banks an interest margin (1)."
+    },
+    {
+     "id": "C1e",
+     "marks": 1,
+     "topics": [
+      "b-reg",
+      "b-irr"
+     ],
+     "required": "e) However, the interest margin possibility discussed in d) above exposes a bank to risk. What risk?  (1 mark)",
+     "memo": "Liquidity risk."
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "title": "Section C, Question 2 — Housing finance and loan interest rates",
+   "marks": 10,
+   "scenario": "I lecture on the \"Housing Finance Course for Sub-Saharan Africa\" course offered by Warton University. The objective of the course is to increase housing supply in Africa by increasing the amount of finance available for housing and reducing the cost of that finance.",
+   "parts": [
+    {
+     "id": "C2a1",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Please indicate whether an increase or a decrease in the average loan interest rate charged by an African bank (Bank X) can be expected when the following events take place (consider the events separately and do not combine them):  (8 x 1 mark)\n\n1. The central bank's benchmark interest rate is increased.",
+     "memo": "All banks in the system will increase their loan rates - increase"
+    },
+    {
+     "id": "C2a2",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Please indicate whether an increase or a decrease in the average loan interest rate charged by an African bank (Bank X) can be expected when the following events take place (consider the events separately and do not combine them):  (8 x 1 mark)\n\n2. Loan transaction volumes at Bank X decrease significantly.",
+     "memo": "Cost per loan will increase and thus a higher return per loan is required - increase"
+    },
+    {
+     "id": "C2a3",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Please indicate whether an increase or a decrease in the average loan interest rate charged by an African bank (Bank X) can be expected when the following events take place (consider the events separately and do not combine them):  (8 x 1 mark)\n\n3. The income tax rate in the country that Bank X operates in decreases.",
+     "memo": "Less tax is to be paid, thus, less expenses, thus, less return is needed - decrease"
+    },
+    {
+     "id": "C2a4",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Please indicate whether an increase or a decrease in the average loan interest rate charged by an African bank (Bank X) can be expected when the following events take place (consider the events separately and do not combine them):  (8 x 1 mark)\n\n4. The regulator determines that Bank X should keep more cash on hand.",
+     "memo": "Cash earns no return and other assets need to return more as a result - increase"
+    },
+    {
+     "id": "C2a5",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Please indicate whether an increase or a decrease in the average loan interest rate charged by an African bank (Bank X) can be expected when the following events take place (consider the events separately and do not combine them):  (8 x 1 mark)\n\n5. Operational costs at Bank X gets slightly out of control and increases beyond the increase justified by transaction volumes.",
+     "memo": "Return needs to be higher to pay the higher costs - increase"
+    },
+    {
+     "id": "C2a6",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Please indicate whether an increase or a decrease in the average loan interest rate charged by an African bank (Bank X) can be expected when the following events take place (consider the events separately and do not combine them):  (8 x 1 mark)\n\n6. Bank X improves its risk monitoring systems as a result the amount of risk-weighted assets (RWAs) decreases.",
+     "memo": "Less capital is required, thus leverage increase, thus lower interest rate is needed - decrease"
+    },
+    {
+     "id": "C2a7",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Please indicate whether an increase or a decrease in the average loan interest rate charged by an African bank (Bank X) can be expected when the following events take place (consider the events separately and do not combine them):  (8 x 1 mark)\n\n7. The country that Bank X operates in improves its property ownership records at the deeds office and title becomes surer.",
+     "memo": "Credit risk decreases as property rights now more secure - decrease"
+    },
+    {
+     "id": "C2a8",
+     "marks": 1,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "a) Please indicate whether an increase or a decrease in the average loan interest rate charged by an African bank (Bank X) can be expected when the following events take place (consider the events separately and do not combine them):  (8 x 1 mark)\n\n8. The regulator prohibits Bank X from paying a dividend for a few years.",
+     "memo": "Capital accumulates, leverage decreases and higher return is needed to maintain ROE - increase"
+    },
+    {
+     "id": "C2b",
+     "marks": 2,
+     "topics": [
+      "b-intro",
+      "b-money"
+     ],
+     "required": "b) How will decreasing interest rates on loans lead to an increase in the supply of houses?  (2 marks)",
+     "memo": "Decreased interest rates mean that more people can afford to pay back a loan (1), all else equal, and thus with more loans more houses can be built (1)."
+    }
+   ]
+  },
+  {
+   "id": "Q5",
+   "title": "Section C, Question 3 — Capital ratio, cash reserves and dividends",
+   "marks": 14,
+   "scenario": "The following is the balance sheet of Bank X on 1 July 2021:\n\nASSETS  |    |  LIABILITIES & EQUITY  |\nCash and cash equivalents  |  17 983  |  Derivative financial instruments  |  65 670\nDerivative financial instruments  |  66 799  |  Amounts owed to depositors  |  907 678\nMandatory reserve deposits with central banks  |  25 676  |  Provisions and other liabilities  |  23 811\nGovernment securities  |  103 464  |  Sub-ordinated debt instruments that are Basel 3 compliant  |  1 234\nLoans and advances to clients  |  876 441  |  Long-term debt instruments  |  55 970\nTaxation assets  |  2 330  |  TOTAL LIABILITIES  |  1 054 363\nInvestment securities  |  22 412  |  Ordinary share capital  |  789\nProperty and physical assets  |  8 450  |  Ordinary share premium  |  18 582\nCapitalised software expenses  |  10 232  |  Appropriated retained income  |  39 835\nGoodwill  |  5 786  |  Unappropriated retained income  |  5 337\n  |    |  Other reserves  |  8 945\n  |    |  Holders of perpetual preference shares  |  4 872\n  |    |  Holders of additional tier 1 capital instruments  |  6 850\n  |    |  TOTAL EQUITY  |  85 210\nTOTAL  |  1 139 573  |  TOTAL  |  1 139 573\n\nAdditional information:\n- The regulator is of the opinion that the provision for bad debt that was applied by Bank X to the item \"Loans and advances to clients\" was overly aggressive by an amount of 2 376.\n- 50% of the item \"Taxation assets\" relates to money owed to Bank X by the Receiver of Revenue and the other 50% relates to a deferred tax asset that is dependent on future taxable income for realization.\n- Total off-balance sheet liabilities are estimated at 256 756.\n- The total of risk-weighted assets, inclusive of credit, market, and operational risk, is 987 561.",
+   "parts": [
+    {
+     "id": "C3a",
+     "marks": 3,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "a) Please explain why regulators put so much emphasis on the minimum capital that a bank should hold?  (3 marks)",
+     "memo": "Insolvency is the ultimate form of bank failure and capital puts a buffer between the bank and insolvency (1). Regulators do not want banks to fail due to the extreme public cost involved (1). More capital means a larger buffer and less chance of insolvency (1). Capital is there to protect a bank against unforeseen events (1)."
+    },
+    {
+     "id": "C3b",
+     "marks": 1,
+     "topics": [
+      "b-reg",
+      "b-risk"
+     ],
+     "required": "b) How should a bank protect itself against known risks?  (1 mark)",
+     "memo": "By charging for it."
+    },
+    {
+     "id": "C3c",
+     "marks": 5,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "c) Please calculate the total capital ratio for Bank X. Start the calculation with Total Equity of 85 210.  (5 marks)",
+     "memo": "TOTAL EQUITY  |  85 210  |\nSub-ordinated debt instruments that are Basel 3 compliant  |  1 234  |  (1/2)\nOver-provision  |  2 376  |  (1/2)\nLess: Taxation assets dependent on future profits  |  (2 330/2 = 1 165)  |  (1)\nLess: Capitalised software expenses  |  (10 232)  |  (1/2)\nLess: goodwill  |  (5 786)  |  (1/2)\nCAPITAL  |  71 637  |\n\nTCR = 71637/987561 * 100 = 7.25%  (2 marked through)"
+    },
+    {
+     "id": "C3d",
+     "marks": 3,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "d) What is the cash reserve ratio of Bank X calculated according to method explained in the SARB reading? Deal with off-balance sheet liabilities as if they are on-balance sheet liabilities.  (3 marks)",
+     "memo": "Total cash resources = 17 983 + 25 676 = 43 659 (1/2 + 1/2 = 1)\n\nTotal liabilities = 1 054 363 + 256 756 = 1 311 119 (1/2 + 1/2 = 1)\n\nCash reserve ratio = 43 659 / 1 311 119 * 100 = 3.33% (1)"
+    },
+    {
+     "id": "C3e",
+     "marks": 2,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "e) Can Bank X afford to pay a dividend of 500 if the bank must maintain a total capital ratio of at least 8% and a cash reserve ratio of at least 3%?  (2 marks)",
+     "memo": "Bank X does not have enough capital to afford the dividend as TCR < 8% (1) and enough liquidity as (3.33% - 3%) * 1311119 = 4326 (1)."
+    }
+   ]
+  },
+  {
+   "id": "Q6",
+   "title": "Section C, Question 4 — Bank failures",
+   "marks": 9,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "C4a1",
+     "marks": 2,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "a) Give the immediate reason, and the underlying, longer-term reason, why each of the following banks failed: Saambou Bank, African Bank, VBS Bank.  (2 marks x 3)\n\nBank: Saambou Bank",
+     "memo": "Saambou Bank: Cash flow problems (immediate); Cash flow problems (long-term)"
+    },
+    {
+     "id": "C4a2",
+     "marks": 2,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "a) Give the immediate reason, and the underlying, longer-term reason, why each of the following banks failed: Saambou Bank, African Bank, VBS Bank.  (2 marks x 3)\n\nBank: African Bank",
+     "memo": "African Bank: Cash flow problems (immediate); bad investments + weak management (long-term)"
+    },
+    {
+     "id": "C4a3",
+     "marks": 2,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "a) Give the immediate reason, and the underlying, longer-term reason, why each of the following banks failed: Saambou Bank, African Bank, VBS Bank.  (2 marks x 3)\n\nBank: VBS Bank",
+     "memo": "VBS Bank: Cash flow problem (immediate); fraud + weak underwriting (long-term)"
+    },
+    {
+     "id": "C4b",
+     "marks": 3,
+     "topics": [
+      "b-fail",
+      "b-reg"
+     ],
+     "required": "b) What is the possible role of the bank regulator in the Saambou Bank failure?  (3 marks)",
+     "memo": "Saambou was never insolvent (1) and should have received emergency liquidity from the central bank (1). No bank has enough liquidity to pay all of its deposits at once and thus relies on central bank support (1). The mistake made by the regulator was demonstrated when they stepped in to save the next largest bank, BOE Bank (1). Any other valid point (1)."
+    }
+   ]
+  },
+  {
+   "id": "Q7",
+   "title": "Section D, Question 1 — Distinguishing risk concepts",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D1.1",
+     "marks": 2,
+     "topics": [
+      "b-irr",
+      "b-risk"
+     ],
+     "required": "1.1. Mismatch risk and disintermediation risk\n\nBy making use of practical examples, distinguish between the following:  (2 marks)",
+     "memo": "Mismatch risk is the mismatch in timing between assets and liability cash flow streams. Disintermediation risk arises when options are available to expose banks to financial anti-selection."
+    },
+    {
+     "id": "D1.2",
+     "marks": 2,
+     "topics": [
+      "b-credit",
+      "b-risk"
+     ],
+     "required": "1.2. Syndicated loan and a spot loan\n\nBy making use of practical examples, distinguish between the following:  (2 marks)",
+     "memo": "A syndicated loan is a loan provided by a group of banks as opposed to a single lender. A spot loan is a loan made by a bank where the borrower uses the entire loan amount immediately."
+    },
+    {
+     "id": "D1.3",
+     "marks": 2,
+     "topics": [
+      "b-risk"
+     ],
+     "required": "1.3. Risk reduction and risk sharing\n\nBy making use of practical examples, distinguish between the following:  (2 marks)",
+     "memo": "Risk reduction is when a bank aims to reduce the probability and severity of the risk. Risk sharing is when a bank takes out insurance against a certain risk."
+    }
+   ]
+  },
+  {
+   "id": "Q8",
+   "title": "Section D, Question 2 — Logit model and stress testing",
+   "marks": 9,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D2.1",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "2.1. Explain why it is impractical to fit a linear regression model to the data when calculating the probability of default of a client on a loan.  (2 marks)",
+     "memo": "A Linear Regression Model cannot be fitted to binary data."
+    },
+    {
+     "id": "D2.2",
+     "marks": 1,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "2.2. Which model will best fit the data from question 2.1.  (1 mark)",
+     "memo": "Multivariate Logistic Regression Model"
+    },
+    {
+     "id": "D2.3",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "2.3. When fitting the correct model to the data, explain what the slope coefficient represents.  (2 marks)",
+     "memo": "The slope coefficient represents a change in logit corresponding to a one unit change in the independent variable(s)"
+    },
+    {
+     "id": "D2.4",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "2.4. What is the ultimate goal, given the data, of fitting the best model? (What end result is desired?)  (2 marks)",
+     "memo": "Fitting the best model to describe the relationship between one or more variables"
+    },
+    {
+     "id": "D2.5",
+     "marks": 1,
+     "topics": [
+      "b-credit",
+      "b-mkt"
+     ],
+     "required": "2.5. What is one of the major drawbacks of the best fitted model?  (1 mark)",
+     "memo": "It assumes the past is an accurate prediction of the future and makes no provision for a financial crisis or an epidemic"
+    },
+    {
+     "id": "D2.6",
+     "marks": 1,
+     "topics": [
+      "b-credit",
+      "b-mkt"
+     ],
+     "required": "2.6. What is the solution to the answer in 2.5?  (1 mark)",
+     "memo": "Stress testing"
+    }
+   ]
+  },
+  {
+   "id": "Q9",
+   "title": "Section D, Question 3 — Two-share portfolio",
+   "marks": 12,
+   "scenario": "Given the data in the table below, answer the questions to follow. Please round only the final answer to two decimal places. Please show all your workings.\n\nShare A  |  Probability  |  Historical Return\nRecession  |  0,25  |  -23,00%\nSlow growth  |  0,25  |  1,00%\nNormal growth  |  0,25  |  6,00%\nEconomic boom  |  0,25  |  18,00%\n\nShare B  |  Probability  |  Historical Return\nRecession  |  0,5  |  -5,00%\nSlow growth  |  0,1  |  2,00%\nNormal growth  |  0,1  |  4,00%\nEconomic boom  |  0,3  |  9,00%",
+   "parts": [
+    {
+     "id": "D3.1",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "1.1. Calculate the expected return for both shares  (2 marks)",
+     "memo": "Share A = 0.50%\nShare B = 0.80%\n\nWorkings: A = 0.25(-23 + 1 + 6 + 18) = 0.50%; B = 0.5(-5) + 0.1(2) + 0.1(4) + 0.3(9) = 0.80%."
+    },
+    {
+     "id": "D3.2",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "1.2. Calculate the expected risk for both shares  (2 marks)",
+     "memo": "Share A = 14.91%\nShare B = 6.18%\n\nWorkings: A variance = 0.25[(-23.5)^2 + 0.5^2 + 5.5^2 + 17.5^2] = 222.25, so standard deviation = 14.91%; B variance = 0.5(-5.8)^2 + 0.1(1.2)^2 + 0.1(3.2)^2 + 0.3(8.2)^2 = 38.16, so standard deviation = 6.18%."
+    },
+    {
+     "id": "D3.3",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "1.3. Calculate the coefficient of variation for both shares  (2 marks)",
+     "memo": "Share A = 29.82%\nShare B = 7.72%\n\n(Standard deviation / expected return: A = 14.91 / 0.50; B = 6.18 / 0.80; these are ratios, written as percentages in the memo.)"
+    },
+    {
+     "id": "D3.4",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "1.4. Interpret the answers of questions 1.1, 1.2, and 1.3, and indicate which share would be best to invest in.  (2 marks)",
+     "memo": "The expected return for share B is higher than that of share A. In addition to this share B also has a much lower risk as evidenced by the expected risk and coefficient of variation. (1) Therefore, share B would be the best choice. (1)"
+    },
+    {
+     "id": "D3.5",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "1.5. Calculate the expected return of a portfolio made up of 25% of share A and 75% of share B  (2 marks)",
+     "memo": "0.73%\n\nWorkings: 0.25(0.50%) + 0.75(0.80%) = 0.725%."
+    },
+    {
+     "id": "D3.6",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "1.6. Calculate the expected risk of a portfolio made up of 25% of share A and 75% of share B  (2 marks)",
+     "memo": "Covariance = 0.007450\nCorrelation = 0.808968\nPortfolio standard deviation = 7.96%\n\nWorkings: variance = 0.25^2(222.25) + 0.75^2(38.16) + 2(0.25)(0.75)(74.5) = 13.89 + 21.47 + 27.94 = 63.30, so standard deviation = 7.96%. (The memo pairs the states and weights each pair by 0.25 to get the covariance.)"
+    }
+   ]
+  },
+  {
+   "id": "Q10",
+   "title": "Section D, Question 4 — Macaulay duration",
+   "marks": 8,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D4",
+     "marks": 8,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Suppose a bond matures in six years, with a coupon rate of 7.5%, a yield to maturity of 14%, and a face value of R 1 250. The bond pays coupons annually. Make use of the Macaulay's formula to calculate the duration of the bond.  [8]",
+     "memo": "t  |  CFt  |  DFt  |  CF * DF  |  CF * DF * t\n1  |  R 93,75  |  R 0,88  |  R 82,24  |  R 82,24\n2  |  R 93,75  |  R 0,77  |  R 72,14  |  R 144,28\n3  |  R 93,75  |  R 0,67  |  R 63,28  |  R 189,84\n4  |  R 93,75  |  R 0,59  |  R 55,51  |  R 222,03\n5  |  R 93,75  |  R 0,52  |  R 48,69  |  R 243,45\n6  |  R 1 343,75  |  R 0,46  |  R 612,19  |  R 3 673,17\nTotal  |    |    |  R 934,05  |  R 4 555,00\n\nPrinted memo: Duration = R4 555 / 934.05 = 1.866 years\n\nNote: the printed division is an arithmetic slip. 4 555.00 / 934.05 = 4.877 years, which is the correct duration (a 6-year coupon bond cannot have a duration below 2 years)."
+    }
+   ]
+  },
+  {
+   "id": "Q11",
+   "title": "Section D, Question 5 — Return on assets per rand lent",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D5",
+     "marks": 4,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Suppose a bank does the following: Set the loan rate on a prospective loan at 7.5% where the base rate is 4% and the risk premium is 3.5%. The bank charges a 0.2% loan origination fee to the borrower. Imposes a 10% compensating balance requirement to be held as non-interest bearing demand deposits. Set aside reserves, as a rate of 8% of deposits, held at the South African Reserve Bank. Using the information, calculate the Return on Assets per rand lent of the loan, and interpret the answer.  [4]",
+     "memo": "ROA = 7.70 / 0.908 = 8.48%\n\nWorkings: numerator = 0.2% fee + 4% base rate + 3.5% risk premium = 7.70%; denominator = 1 - 0.10(1 - 0.08) = 0.908.\n\nInterpretation: the fee and the compensating balance (net of the 8% reserves held on it) lift the bank's promised return from 7.5% to 8.48% per rand actually lent."
+    }
+   ]
+  },
+  {
+   "id": "Q12",
+   "title": "Section D, Question 6 — RAROC",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D6",
+     "marks": 4,
+     "topics": [
+      "b-risk",
+      "b-credit"
+     ],
+     "required": "Suppose a bank wants to evaluate the credit risk of a R2.5 million loan with a duration of 4.5 years to a AAA borrower. Assume there are currently 550 publicly traded bonds in that class. The expected minimum change in the loan rate is 1.4% while the current average level of rates on AAA bonds is 4.9%. Given a projected spread of 0.3% and fees of 0.2%, calculate the risk adjusted return on capital (RAROC) for the loan.  [4]",
+     "memo": "RAROC = R12 500 / R150 142.99 = 8.33%\n\nWorkings: net income = (0.3% + 0.2%) x R2 500 000 = R12 500; capital at risk = 4.5 x R2 500 000 x 0.014 / 1.049 = R150 142.99."
+    }
+   ]
+  }
+ ]
+}

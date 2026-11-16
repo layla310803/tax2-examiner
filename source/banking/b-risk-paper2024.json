@@ -1,0 +1,243 @@
+{
+ "id": "b-risk-paper2024",
+ "title": "Risk Management Past Paper (2024)",
+ "short": "Risk Paper 2024",
+ "kind": "workshop",
+ "unofficial": false,
+ "memoNote": "Lecturer's own Past Paper Solution (2024) (the MCQ answers are the highlighted options in the solution file); a few workings and the graph description were added by the converter and are marked as added.",
+ "questions": [
+  {
+   "id": "A",
+   "title": "Section A: Multiple choice questions",
+   "marks": 12,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "A1",
+     "marks": 3,
+     "topics": [
+      "b-risk"
+     ],
+     "required": "Which of the following statements are true?\ni. Legal risk is a type of operational financial risk.\nii. Unexpected losses that pertain to credit risk cannot be made provision for, since it's outside the control of the bank.\niii. Banks make provision for expected losses by means using multivariate logistic regression.\niv. Market risk is risk incurred when market variables, such as interest rates and commodity prices, change when trading assets and liabilities.\na) i, ii, iii\nb) i, iii, iv\nc) i, iii\nd) i, iv",
+     "memo": "d) i, iv\n\nWhy: only (i) and (iv) are true. (i) Basel's definition of operational risk includes legal risk; (iv) is the definition of market risk. (ii) is false because unexpected losses are covered by holding capital (and tested through stress testing); (iii) is false because logistic regression is a model used to estimate the probability of default, not the means by which provisions are made."
+    },
+    {
+     "id": "A2",
+     "marks": 3,
+     "topics": [
+      "b-risk"
+     ],
+     "required": "Which of the following statements are false?\ni. A person deliberately causing damage to a company's reputation is an example of operational risk.\nii. A bank is required by the Basel Committee on Banking Supervision, by means of the Basel III Capital Accord, to have sufficient High Quality Liquidity Assets to survive a stress scenario of 25 days.\niii. When interest rates rise above a certain level, the additional expected return earned by a bank will be offset by a higher probability of default on loans.\niv. In terms of interest rate risk, a feature of Duration as a method of calculating cash flows, is that Duration decreases as the coupon- or interest payment increases.\na) i, ii\nb) ii, iii, iv\nc) ii, iv\nd) i, ii, iii",
+     "memo": "a) i, ii\n\nWhy: (i) is false because the Basel definition of operational risk excludes strategic and reputational risk; (ii) is false because the LCR requires enough high-quality liquid assets to survive a 30-day (not 25-day) stress scenario. (iii) and (iv) are true."
+    },
+    {
+     "id": "A3",
+     "marks": 3,
+     "topics": [
+      "b-risk"
+     ],
+     "required": "Which of the following statements are false?\ni. The interest elasticity of a security's price to small interest rate changes is viewed as a definition of Duration.\nii. Relative Value at Risk, as one of three related Value at Risk calculations for market risk, is relevant to investment managers and mutual funds as their performance is often compared to a target benchmark.\niii. The main difference between the Monte Carlo simulation method and the Historical simulation method as a methodology to measure market risk, is that Monte Carlo simulation takes actual past movements, while the Historical simulation method generates random hypothetical scenarios.\niv. There are four parameters to specify before calculating Value at Risk for market risk. These include the confidence level, the forecast horizon, the base currency, and the volatility.\na) i, ii\nb) ii, iii, iv\nc) iii, iv\nd) i, ii, iv",
+     "memo": "c) iii, iv\n\nWhy: (iii) is false because the two methods are the wrong way round: Historical simulation takes actual past movements while Monte Carlo generates random hypothetical scenarios. (iv) is false because the parameters to specify are the confidence level, the forecast horizon and the base currency (volatility is not a specified parameter). (i) and (ii) are true."
+    },
+    {
+     "id": "A4",
+     "marks": 3,
+     "topics": [
+      "b-risk"
+     ],
+     "required": "Which of the following statements is false?\ni. The fundamental problem with the definition of operational risk according to the Basel III Capital Accord, is that is does not make provision for damage to physical property.\nii. Relative Value at Risk as one of three related Value at Risk calculations for market risk, is relevant to investment managers and mutual funds as their performance is often compared to a target benchmark.\niii. Macro-prudential stress testing is one of the monitoring tools that the South African Reserve Bank uses to assess the financial system's resilience to unexpected disruptions resulting from operational risk.\niv. The Advanced Measurement Approach, as prescribed by the Basel III Capital Accord, was criticised for being too complex and reliant on statistical models.\na) i\nb) ii\nc) iii\nd) iv",
+     "memo": "a) i\n\nWhy: (i) is false because the Basel definition of operational risk (losses from inadequate or failed internal processes, people and systems, or from external events) does cover damage to physical assets; its weakness is rather that it excludes strategic and reputational risk. (ii), (iii) and (iv) are true."
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": "Section B: Theory",
+   "marks": 15,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "B1",
+     "marks": 4,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Explain, by means of a graph, why it is impractical to fit a linear regression model to the binary data when calculating unexpected loss (UL) for credit risk.",
+     "memo": "When using Linear Regression, the output will provide data which is to be used to fit a straight line through to determine if there is any correlation or relationship, however with binary data, there would only be two possible outcomes, and fitting a straight line through the data would be impossible.\n\n(Graph, added: plot default = 1 / no default = 0 against a ratio such as debt-to-equity; the observations lie on two horizontal lines at 0 and 1, and a straight regression line through them fits poorly and predicts values below 0 and above 1, which are not valid probabilities.)"
+    },
+    {
+     "id": "B2",
+     "marks": 1,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "Which model will best fit binary data when calculating UL for credit risk.",
+     "memo": "Multivariate Logistic Regression Model"
+    },
+    {
+     "id": "B3",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "When fitting the correct model binary data when calculating UL for credit risk, explain what the slope coefficient represents.",
+     "memo": "The slope coefficient represents a change in logit corresponding to a one unit change in the independent variable(s)."
+    },
+    {
+     "id": "B4",
+     "marks": 2,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "What is the ultimate goal, given binary data and calculating UL for credit risk, of fitting the best model?",
+     "memo": "Fitting the best model to describe the relationship between one or more variables."
+    },
+    {
+     "id": "B5",
+     "marks": 1,
+     "topics": [
+      "b-mkt",
+      "b-risk"
+     ],
+     "required": "Name one drawback of using the Monte Carlo simulation as a method of stress testing.",
+     "memo": "It assumes the past is an accurate prediction of the future and makes no provision for a financial crisis or an epidemic."
+    },
+    {
+     "id": "B6",
+     "marks": 3,
+     "topics": [
+      "b-mkt",
+      "b-risk"
+     ],
+     "required": "With reference to stress testing provide a (i) detailed description of the Monte Carlo simulation and Historical simulation and (ii) to which instruments each is applicable.",
+     "memo": "Monte Carlo - Simulating random scenarios. Historical simulation - Reliving history.\n\nBoth simulations are applicable to linear and non-linear instruments."
+    },
+    {
+     "id": "B7",
+     "marks": 2,
+     "topics": [
+      "b-risk"
+     ],
+     "required": "Provide an example of an operational risk event that results in a profit. You are not allowed to use the examples provided in class.",
+     "memo": "Coke was not intentionally designed for its use today but it has resulted in a conglomerate with a reputation worth billions."
+    }
+   ]
+  },
+  {
+   "id": "C1",
+   "title": "Section C, Question 1: Modern portfolio theory",
+   "marks": 14,
+   "scenario": "Share A  |  P  |  HR\nRecession  |  0,3  |  -5,00%\nSlow growth  |  0,25  |  -1,00%\nNormal growth  |  0,25  |  3,00%\nEconomic boom  |  0,2  |  10,00%\n\nShare B  |  P  |  HR\nRecession  |  0,3  |  -1,00%\nSlow growth  |  0,25  |  1,00%\nNormal growth  |  0,25  |  5,00%\nEconomic boom  |  0,2  |  9,00%\n\nProvided the data in the tables, please answer the following questions. Please round only your final answer to two decimal places.",
+   "parts": [
+    {
+     "id": "C1.1",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Calculate the expected return for both shares.",
+     "memo": "Share A - 1%; Share B - 3%.\n\nWorkings: A = 0,3(-5%) + 0,25(-1%) + 0,25(3%) + 0,2(10%) = 1%; B = 0,3(-1%) + 0,25(1%) + 0,25(5%) + 0,2(9%) = 3%."
+    },
+    {
+     "id": "C1.2",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Calculate the standard deviation for both shares.",
+     "memo": "Share A - 5.39%; Share B - 3.74%\n\nWorkings (sum of p(R - E)^2, then square root, in % units):\nScenario  |  p  |  A: p x R  |  A: p(R - E)^2  |  B: p x R  |  B: p(R - E)^2\nRecession  |  0.3  |  -1.50%  |  10.80  |  -0.30%  |  4.80\nSlow growth  |  0.25  |  -0.25%  |  1.00  |  0.25%  |  1.00\nNormal growth  |  0.25  |  0.75%  |  1.00  |  1.25%  |  1.00\nEconomic boom  |  0.2  |  2.00%  |  16.20  |  1.80%  |  7.20\nTotal  |  1  |  1.00%  |  29.00  |  3.00%  |  14.00\n\nShare A: variance = 29, sd = 5.39%; Share B: variance = 14, sd = 3.74%."
+    },
+    {
+     "id": "C1.3",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Calculate the coefficient of variation for both shares.",
+     "memo": "Share A - 5.39; Share B - 1.25\n\nWorkings: CV = standard deviation / expected return: A = 5.39 / 1 = 5.39; B = 3.74 / 3 = 1.25."
+    },
+    {
+     "id": "C1.4",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Given the answers for questions 1, 2, and 3, which share would be best for a risk seeker and why?",
+     "memo": "Share A is preferable for an investor seeking potential higher returns, as it has a higher standard deviation. This increased standard deviation indicates that Share A has greater volatility, meaning the returns are more spread out, providing a wider range of possible outcomes. As a result, the investor has the chance to earn a higher return, but they are also exposed to a greater risk of loss. Specifically, the expected return on Share A could range from a gain of 6.39% to a loss of 4.39%, reflecting both the potential rewards and risks associated with this share."
+    },
+    {
+     "id": "C1.5",
+     "marks": 2,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Calculate the expected return for a portfolio consisting 30% in share A and 70% in share B. Assume the total value of your portfolio is R150 000.",
+     "memo": "2.4%\n\nWorkings: weights R45 000 in A and R105 000 in B; 0,3(1%) + 0,7(3%) = 2.4%."
+    },
+    {
+     "id": "C1.6",
+     "marks": 4,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "Calculate the standard deviation for a portfolio consisting 30% in share A and 70% in share B. Assume the total value of your portfolio is R150 000.",
+     "memo": "4.23%\n\nWorkings (units of %^2): covariance = sum p(R_A - E_A)(R_B - E_B) = 20; portfolio variance = 0,3^2(29) + 0,7^2(14) + 2(0,3)(0,7)(20) = 17.87; portfolio sd = square root of 17.87 = 4.23%."
+    }
+   ]
+  },
+  {
+   "id": "C2",
+   "title": "Section C, Question 2: Macaulay's duration",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "C2",
+     "marks": 6,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "Suppose a bond matures in six years, with a coupon rate of 6%, a yield to maturity of 12%, and a face value of R 12 250. The bond pays coupons annually. Make use of the Macaulay's formula to calculate the duration of the bond. Round your final answer to three decimal places.",
+     "memo": "t  |  CFt  |  DFt  |  CF x DF  |  CF x DF x t\n1  |  R735.00  |  0.89  |  R656.25  |  R656.25\n2  |  R735.00  |  0.80  |  R585.94  |  R1,171.88\n3  |  R735.00  |  0.71  |  R523.16  |  R1,569.48\n4  |  R735.00  |  0.64  |  R467.11  |  R1,868.42\n5  |  R735.00  |  0.57  |  R417.06  |  R2,085.29\n6  |  R12,985.00  |  0.51  |  R6,578.61  |  R39,471.63\nSum  |    |    |  R9,228.12  |  R46,822.95\n\nDuration = R46,822.95 / R9,228.12 = 5.074 years\n\n(Workings: coupon = 6% x R12 250 = R735; year 6 cash flow = R12 250 + R735 = R12 985; DF = 1/(1,12)^t.)"
+    }
+   ]
+  },
+  {
+   "id": "C3",
+   "title": "Section C, Question 3: Return on assets of a loan",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "C3",
+     "marks": 4,
+     "topics": [
+      "b-risk",
+      "b-credit"
+     ],
+     "required": "Suppose a bank does the following: Set the loan rate on a prospective loan at 13% where the base rate is 7% and the risk premium is 4%. The bank charges a 0.3% loan origination fee to the borrower. Imposes a 12% compensating balance requirement to be held as non-interest-bearing demand deposits. Set aside reserves, as a rate of 9% of deposits, held at the South African Reserve Bank. Using the information, calculate the Return on Assets per rand lent of the loan, and interpret the answer. Round your final answer to two decimal places.",
+     "memo": "ROA = 11.30 / 0.8908 = 12.69%\n\nWorkings (added): the return on the loan per R100 lent is the base rate 7% + risk premium 4% + origination fee 0.3% = 11.30%. The funds the bank actually has to provide per rand lent are 1 - 0,12(1 - 0,09) = 1 - 0,12 + 0,0108 = 0.8908, because the compensating balance (12%) is redeposited with the bank, less the 9% of it that must be held as reserves at the SARB. ROA = 11.30% / 0.8908 = 12.69%.\n\nInterpretation (added): the effective return per rand actually lent (12.69%) is higher than the 11.30% quoted return because the compensating balance reduces the net funds the bank has to provide; the bank should compare this with its cost of funds and required return before pricing the loan."
+    }
+   ]
+  },
+  {
+   "id": "C4",
+   "title": "Section C, Question 4: RAROC",
+   "marks": 4,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "C4",
+     "marks": 4,
+     "topics": [
+      "b-risk",
+      "b-credit"
+     ],
+     "required": "Suppose a bank wants to evaluate the credit risk of a R3 325 000 loan with a duration of 8 years to a AAA borrower. Assume there are currently 350 publicly traded bonds in that class. The expected maximum change in the loan rate is 4% while the current average level of rates on AAA bonds is 13%. Given a projected spread of 0.6% and fees of 0.8%, calculate the risk adjusted return on capital (RAROC) for the loan. Round your final answer to two decimal places.",
+     "memo": "R46 550 / R941 592.92 = 4.94%\n\nWorkings (added): net income = (0.6% + 0.8%) x R3 325 000 = R46 550; capital at risk = 8 x R3 325 000 x (4% / 1.13) = R941 592.92; RAROC = 46 550 / 941 592.92 = 4.94%."
+    }
+   ]
+  }
+ ],
+ "marks": 55
+}

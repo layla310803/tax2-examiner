@@ -1,0 +1,94 @@
+{
+ "id": "b-mid2023",
+ "title": "2023 Mid-Term Class Test (5 October 2023)",
+ "short": "Mid 2023",
+ "kind": "test",
+ "marks": 70,
+ "minutes": 90,
+ "unofficial": true,
+ "memoNote": "The lecturer's marking comments and answer tables are printed in the paper; where they are only a marking guide, a worked answer from the student Q&A compilation is added and labelled as a supplement.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Question 1 — CDE Bank financial analysis",
+   "marks": 61,
+   "scenario": "Consider the financial statement information provided in the appendices for South African-based CDE Bank.\n\nAppendix: Financial Information for CDE Bank\n\nConsolidated Income Statement (Rm)  |  2023  |  2022  |  2021\nNet interest income  |  30 489  |  28 176  |  26 813\nNon-interest revenue  |  23 291  |  23 269  |  21 153\nTotal income  |  53 780  |  51 445  |  47 966\nCredit impairment charges  |  (1 767)  |  (1 769)  |  (3 400)\nNet income before operating expenses  |  52 013  |  49 676  |  44 566\nOperating expenses  |  (34 659)  |  (34 884)  |  (39 808)\nStaff costs  |  (17 373)  |  (17 315)  |  (18 089)\nDepreciation  |  (1 119)  |  (1 166)  |  (1 229)\nOther operating expenses  |  (16 167)  |  (16 403)  |  (20 490)\nNet income before non-trading and capital related items  |  17 354  |  14 792  |  4 758\nShare of profit from associates and joint ventures  |  2 536  |  2 375  |  2 354\nProfit before tax  |  19 890  |  17 167  |  7 112\nTax expense  |  (4 865)  |  (5 288)  |  (3 666)\nProfit for the year  |  15 025  |  11 879  |  3 446\n\nConsolidated Statement of Financial Position (Rm)  |  2023  |  2022  |  2021\nAssets\nCash and balances with central banks  |  162 843  |  210 624  |  128 009\nTrading assets  |  238 130  |  257 995  |  235 125\nDerivative assets  |  207 825  |  219 818  |  290 872\nFinancial investments  |  407 433  |  389 076  |  436 797\nLoans and advances  |  1 053 863  |  1 053 357  |  949 630\nLoans and advances to banks  |  72 167  |  90 393  |  88 126\nLoans and advances to customers  |  981 696  |  962 964  |  861 504\nOther assets  |  204 115  |  159 884  |  148 823\nGoodwill and other intangible assets  |  242 804  |  201 553  |  160 974\nProperty and equipment  |  41 111  |  29 464  |  24 756\nTotal assets  |  2 558 124  |  2 521 771  |  2 374 986\nEquity  |  194 249  |  197 871  |  182 578\nEquity attributable to ordinary shareholders  |  186 253  |  190 250  |  175 386\nEquity attributable to non-controlling interests  |  7 996  |  7 621  |  7 192\nLiabilities  |  2 363 875  |  2 323 900  |  2 192 408\nDerivative liabilities  |  205 835  |  216 821  |  279 819\nTrading liabilities  |  250 315  |  314 363  |  242 649\nFinancial liabilities  |  148 505  |  94 429  |  86 832\nDeposits and debt funding  |  1 418 974  |  1 434 384  |  1 332 325\nDeposits from banks  |  56 331  |  69 922  |  59 939\nDeposits from customers  |  1 362 643  |  1 364 462  |  1 272 386\nSubordinated debt  |  85 342  |  64 546  |  65 915\nProvisions and other liabilities  |  87 330  |  85 667  |  75 273\nOther liabilities  |  167 574  |  113 690  |  109 595\nTotal equity and liabilities  |  2 558 124  |  2 521 771  |  2 374 986\n\nOther useful ratios  |  2023  |  2022  |  2021\nCET1  |  12,50%  |  13,80%  |  14,50%\nLCR  |  1,35  |  1,44  |  1,67\nPrice-to-book ratio  |  1,06  |  0,95  |  0,88\nCost of Equity  |  6,80%  |  6,90%  |  8,50%",
+   "parts": [
+    {
+     "id": "1a",
+     "marks": 9,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Calculate and analyse the bank's net interest margin for each year.",
+     "memo": "Lecturer's marking guide: 6 marks for the calculations. I was quite flexible here in terms of what you could include as long as it made sense. 3 marks for discussing the increasing trend over time and what was driving it. One of those marks required you to discuss the SARB hiking interest rates and the impact that had on NII.\n\nEarning assets (Rm)  |  2023  |  2022  |  2021\nTrading assets  |  238 130  |  257 995  |  235 125\nDerivative assets  |  207 825  |  219 818  |  290 872\nFinancial investments  |  407 433  |  389 076  |  436 797\nLoans and advances  |  1 053 863  |  1 053 357  |  949 630\nTotal earning assets  |  1 907 251  |  1 920 246  |  1 912 424\nNIM  |  1,60%  |  1,47%  |  1,40%\n\nSupplement (from the compiled Q&A, not the lecturer's): NIM = NII / earning assets. NIM rises every year because NII grew (+5.1% in 2022, +8.2% in 2023) while earning assets were almost flat. The key context is the SARB hiking the repo rate in 2022-2023: higher rates widen the spread on a loan book funded partly by low-cost deposits, lifting NII."
+    },
+    {
+     "id": "1b-i",
+     "marks": 26,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Provide an analysis of the following areas of the bank's performance from 2021 to 2023 based on the information in the appendices. Show all your calculations. Contextualize your analysis relative to events in the current South African banking environment.\n\ni. The bank's profitability",
+     "memo": "Lecturer's marking guide: 12 marks for calculations, 3 per category. 12 marks for discussion, 3 per category. 2 extra marks for general discussion and/or context. I wasn't just looking for you to tell me which ratios went up and which went down, but also what was driving those changes. As per the test prep video I gave you, the focus was on ROE rather than ROA.\n\n|  2023  |  2022  |  2021\nROE  |  7,7%  |  6,0%  |  1,9%\nProfit Margin  |  27,9%  |  23,1%  |  7,2%\nAsset Utilization  |  0,02  |  0,02  |  0,02\nEquity Multiplier  |  13,17  |  12,74  |  13,01\n\nSupplement (from the compiled Q&A, not the lecturer's): ROE = profit / equity; profit margin = profit / total income; asset utilisation = total income / total assets (2,10%, 2,04%, 2,02%); equity multiplier = total assets / equity; ROA = profit margin x asset utilisation (0,59%, 0,47%, 0,15%). ROE recovered strongly from 1,9% to 7,7%, almost entirely through the profit margin: credit impairments halved after 2021 (Covid provisions released) and operating costs fell by R5bn in 2022 (other operating expenses -20%), while income grew with higher rates. Asset utilisation is very low (about 2%) and only creeping up: the bank carries large non-earning assets (goodwill and intangibles R243bn, other assets R204bn), so ROA is only 0,6%. Leverage of about 13 is typical of SA banks; it dipped in 2022 and rose in 2023, adding a little to ROE. Even at 7,7%, ROE is low by SA standards (Standard Bank about 18%)."
+    },
+    {
+     "id": "1b-ii",
+     "marks": 6,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Provide an analysis of the following areas of the bank's performance from 2021 to 2023 based on the information in the appendices. Show all your calculations. Contextualize your analysis relative to events in the current South African banking environment.\n\nii. The bank's cost efficiencies",
+     "memo": "Lecturer's marking guide: The key ratios to discuss here are cost-to-income ratio and/or jaws. 3 marks for the calculations and 3 marks for the discussion; 1 mark for discussing the declining trend, 1 mark for contextualizing that relative to the benchmark (50%) and/or South African norm and then 1 mark for discussing what's been driving the change.\n\n|  2023  |  2022  |  2021\nCost-to-income  |  64%  |  68%  |  83%\n\nSupplement (from the compiled Q&A, not the lecturer's): cost-to-income = operating expenses / total income = 64,4%, 67,8%, 83,0%. Jaws = income growth - expense growth: 2023 = 4,54% - (-0,64%) = +5,2%; 2022 = 7,25% - (-12,37%) = +19,6%. The ratio is falling sharply (positive jaws: income up, costs down), driven by the cut in other operating expenses. But at 64% it is still well above the 50% benchmark and above the SA norm of about 55%-57%, so efficiency remains a weakness."
+    },
+    {
+     "id": "1b-iii",
+     "marks": 9,
+     "topics": [
+      "b-fin",
+      "b-reg",
+      "b-credit"
+     ],
+     "required": "Provide an analysis of the following areas of the bank's performance from 2021 to 2023 based on the information in the appendices. Show all your calculations. Contextualize your analysis relative to events in the current South African banking environment.\n\niii. The bank's risk",
+     "memo": "Lecturer's marking guide: The key ratios for discussion here were Credit Loss Ratio (CLR), Liquidity Coverage Ratio (LCR) and CET1 Ratio. 3 marks for the calculation of CLR. 2 marks each for discussing CLR, LCR and CET1 ratio with specific mention of the benchmarks that are normal for each (1-3% for CLR, 4,5% for CET1 and >=1 for LCR).\n\n|  2023  |  2022  |  2021\nCLR  |  0,2%  |  0,2%  |  0,4%\n\nSupplement (from the compiled Q&A, not the lecturer's): CLR = credit impairment charges / loans and advances = 0,17%, 0,17%, 0,36%. CLR is very low and falling, far below the 1%-3% band: a high-quality loan book (perhaps a conservative one). LCR fell from 1,67 to 1,35: still above the minimum of 1 but falling, as the bank releases liquidity built up during Covid. CET1 fell from 14,5% to 12,5%: well above the 4,5% minimum but falling; the bank is using capital more actively (leverage up in 2023)."
+    },
+    {
+     "id": "1c",
+     "marks": 6,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "Based on your analysis above as well as the information presented, what would you say are the bank's key challenges going into 2024?",
+     "memo": "Lecturer's marking guide: Ideally, you would have given me a mix of challenges specific to the bank based on your analysis in a) and b) and then the more general challenges banks face (digitalisation, competition, etc.).\n\nSupplement (from the compiled Q&A, not the lecturer's): Bank-specific: very low asset utilisation and ROA (large non-earning assets); a cost-to-income ratio still far above 50%; NII depends on high rates, which will fall; falling CET1 and LCR buffers. General: competition from digital banks, the cost of digitalisation, and a weak SA economy."
+    },
+    {
+     "id": "1d",
+     "marks": 5,
+     "topics": [
+      "b-val"
+     ],
+     "required": "You have been considering buying shares in CDE bank. Based on the ratios provided in the appendices, would now be a good time? Motivate your answer.",
+     "memo": "Lecturer's marking guide: The two key factors here were P/B ratio and ROE vs CoE. Obviously, the bank has been destroying value for the past few years as both variables have been below requirements but in the most recent year, P/B has been above 1 and ROE > CoE. The indicators are therefore that the bank is creating value again. A brief explanation of what factors are responsible for this change or some kind of motivation for whether you think this is accurate and sustainable would have secured the last few marks.\n\nSupplement (from the compiled Q&A, not the lecturer's): In 2021 and 2022 the bank destroyed value: P/B below 1 (0,88, 0,95) and ROE below CoE (1,9% vs 8,5%; 6,0% vs 6,9%). In 2023 both turned: P/B 1,06 and ROE 7,7% above CoE 6,8%. So the bank is creating value again, and buying now looks reasonable if the improvement is sustainable. The recovery came from lower impairments and cost cuts while rates were high. The margin of ROE over CoE is thin (0,9 percentage points), and a fall in NII as rates drop could reverse it."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Question 2 — Cash concentration",
+   "marks": 9,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "2a",
+     "marks": 9,
+     "topics": [
+      "b-treas",
+      "b-mnc"
+     ],
+     "required": "Cash concentration is one of the ways banks assist companies with multiple subsidiaries to manage their cash. Discuss how physical pooling works and what the different options are that companies have in this regard. What are the challenges faced by multinational companies in implementing pooling strategies?",
+     "memo": "Lecturer's marking guide: This is straight from your slides. I was looking for an explanation of physical pooling, the three options (one-way, reverse and target balance) and then a discussion of issues facing companies with subs in multiple countries - i.e. exchange rate complications, the difficulties with pooling across multiple banks, regulatory issues where some countries tax inter-company loans, etc.\n\nSupplement (from the compiled Q&A, not the lecturer's): How it works: the bank sweeps each subsidiary's account to zero daily (end-of-day electronic closing) and concentrates the net balance in a master account. Surpluses fund deficits (internal funding is cheaper than external), interest earned is maximised and overdraft interest is avoided. Options: one-way sweeping (only credit balances are swept; they are not returned next morning); reverse sweep (funds are returned next morning so units can operate); target balance sweeping (a small balance set by treasury is left in each sub-account). Multinational challenges: different currencies (cross-currency sweeping is costly and creates exchange-rate risk); time-zone differences (a reverse sweep is hard to time); multiple banks in different countries (true end-of-day zero balancing is not possible across banks and execution is delayed); regulation and tax (some countries such as China tax intercompany loans and interest, and some have exchange controls), so sweeps must be minimised. Solutions: two-stage sweeping (each country to a regional master account, then to the global master) and notional pooling for the cross-currency step."
+    }
+   ]
+  }
+ ]
+}
