@@ -206,6 +206,34 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   .left{border-right:0;border-bottom:1px solid var(--rule);max-height:55vh}
   .pane{padding:16px}
 }
+.fc{width:100%;max-width:640px;min-height:240px;margin:12px auto;padding:28px 24px;border:1px solid var(--rule);border-radius:14px;background:var(--sheet);color:inherit;font:inherit;font-size:1.15rem;line-height:1.5;text-align:center;cursor:pointer;display:flex;align-items:center;justify-content:center;white-space:pre-wrap}
+.fc.back{border-color:var(--accent)}.fc small{display:block;opacity:.6;font-size:.8rem;margin-bottom:10px}
+.fcbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0}
+.mg label.f{display:block;margin:12px 0 4px;font-weight:500}
+.mg input:not([type=file]),.mg select,.mg textarea,.nb input,.nb textarea{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);font:inherit}
+.mg textarea.big{min-height:380px;font-family:ui-monospace,Consolas,monospace;font-size:.88rem;line-height:1.45}
+.mgrow{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule)}
+.mgrow.off{opacity:.55}.mgrow .row{margin:0}
+.mg pre.help{white-space:pre-wrap;background:var(--sheet);border:1px dashed var(--rule);border-radius:8px;padding:10px;font-size:.85rem}
+.mg details{margin:12px 0}.mg summary{cursor:pointer;font-weight:500}
+.nb textarea{min-height:160px;margin-top:8px}
+.nbadd input{flex:1;min-width:160px}
+.nblinks{margin:6px 0;padding-left:18px}.nblinks li{margin:4px 0}
+.nbtext{white-space:pre-wrap;margin:6px 0}
+.err{color:var(--pen)}
+.setwrap{position:relative}
+.setpanel{position:fixed;right:8px;top:60px;max-height:calc(100vh - 80px);overflow:auto;z-index:50;width:min(320px,92vw);background:var(--sheet);color:var(--ink);border:1px solid var(--rule);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:8px}
+.setpanel .srow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 6px;border-bottom:1px solid var(--rule)}
+.setpanel .srow:last-child{border-bottom:0}
+.setpanel .srow small{display:block;color:var(--muted);font-size:.78rem;line-height:1.3;margin-top:2px}
+.setpanel .toggle{min-width:52px}
+.setpanel .toggle::after{content:"Off"}.setpanel .toggle[aria-pressed="true"]::after{content:"On"}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;z-index:100;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--sheet);border-radius:999px;padding:10px 12px 10px 18px;box-shadow:0 8px 24px rgba(0,0,0,.3);transition:opacity .2s,transform .2s;max-width:92vw}
+.toast.show{opacity:1;transform:translateX(-50%);pointer-events:auto}
+.toast.bad{background:var(--pen)}
+.toast span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.toast button{flex:none;background:transparent;color:inherit;border:1px solid currentColor;border-radius:999px;padding:4px 10px;cursor:pointer;font:inherit;font-size:.85rem}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}
 </style>
 </head>
 <body>
@@ -213,10 +241,14 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <h1 id="appName">Examiner</h1>
   <span class="crumb" id="crumb">Pick a course</span>
   <span class="spacer"></span>
-  <button class="btn small toggle" id="paperBtn" hidden aria-pressed="true">Scenario panel</button>
-  <button class="btn small toggle" id="timerBtn" hidden aria-pressed="false">Timer</button>
-  <button class="btn small toggle" id="layoutBtn" hidden aria-pressed="false" title="When off, only the content is marked: any format is fine and communication marks are given automatically.">Mark layout</button>
-  <button class="btn small" id="keyBtn" hidden>AI key</button>
+  <span class="setwrap"><button class="btn small" id="setBtn" aria-expanded="false" aria-controls="setPanel">Settings</button>
+  <div class="setpanel" id="setPanel" hidden>
+    <div class="srow"><span>Mark in the background<small>Submit, move straight on to the next required, and get a quick "done marking" note when it's finished.</small></span><button class="btn small toggle" id="bgBtn" aria-pressed="true" aria-label="Mark in the background"></button></div>
+    <div class="srow"><span>Scenario panel<small>Show the scenario, memo and notes beside your answer.</small></span><button class="btn small toggle" id="paperBtn" aria-pressed="true" aria-label="Scenario panel"></button></div>
+    <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
+    <div class="srow"><span>Mark layout<small>When off, only the content is marked: any format is fine and communication marks are given automatically.</small></span><button class="btn small toggle" id="layoutBtn" aria-pressed="false" aria-label="Mark layout"></button></div>
+    <div class="srow" id="keyRow"><span>AI key<small>Use your own Gemini or Claude key for marking.</small></span><button class="btn small" id="keyBtn">Open</button></div>
+  </div></span>
   <button class="btn small" id="homeBtn" hidden>All papers</button>
 </header>
 <dialog id="keyDlg" aria-labelledby="keyTitle">
@@ -231,6 +263,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <div id="keyStatus" role="status"></div>
 </dialog>
 <main id="app"></main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 const COURSES = /*__COURSES__*/null;   // every course: {id, name, code, crumb, subject, papers, topics, quiz, minPerMark, tablesLabel} (source/build.py)
@@ -240,8 +273,9 @@ const courseOfTopic = tid => COURSES.find(c => c.topics.some(x => x.id === tid))
 const courseOfPaper = pid => COURSES.find(c => c.papers.some(p => p.id === pid));
 const paperMins = p => p.minutes || Math.round(p.marks * MIN_PER_MARK);
 function setHome(label, target){ const b = document.getElementById("homeBtn"); b.hidden = !label; b.textContent = label || ""; b.dataset.go = target || ""; }
-const KINDS = [["test", "Tests"], ["exam", "Exams"], ["workshop", "Workshops and section practice"]];
-function paperGroups(){ return PAPERS.some(p => p.kind) ? KINDS.map(([k, l]) => [l, PAPERS.filter(p => p.kind === k)]).filter(g => g[1].length) : [["Full papers", PAPERS]]; }   // quick-quiz question bank, by section id (source/quiz_bank.py)
+const KINDS = [["past", "Past papers"], ["test", "Tests"], ["exam", "Exams"], ["workshop", "Workshops and section practice"], ["tut", "Tutorials"], ["other", "Other practice"]];
+const kindOf = p => p.kind || "past";
+function paperGroups(){ return PAPERS.some(p => p.kind) ? KINDS.map(([k, l]) => [l, PAPERS.filter(p => kindOf(p) === k)]).filter(g => g[1].length) : [["Full papers", PAPERS]]; }   // quick-quiz question bank, by section id (source/quiz_bank.py)
 const topicName = id => (TOPICS.find(x => x.id === id) || {}).name || id;
 function topicItems(tid){ const out = []; PAPERS.forEach(p => p.questions.forEach((q, qi) => q.parts.forEach((pt, pi) => { if ((pt.topics || []).includes(tid)) out.push({ p, qi, pi, pt }); }))); return out; }
 // Section test order: shortest required first, building up to the longest
@@ -257,6 +291,22 @@ try { store = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch { sto
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch {} }
 const prefs = store._prefs || (store._prefs = { timer: false, showPaper: true, leftw: 50 });
 if (prefs.markLayout === undefined) prefs.markLayout = false;
+
+/* ---------- your own courses, sections and papers (store._custom), merged into COURSES ---------- */
+const BASE = COURSES.map(c => ({ c, papers: c.papers.slice(), topics: c.topics.slice() }));
+const rid = () => Math.random().toString(36).slice(2, 8);
+function custom(){ const cu = store._custom || (store._custom = {}); cu.courses ||= []; cu.papers ||= []; cu.hidden ||= {}; cu.topics ||= {}; cu.books ||= {}; return cu; }
+function applyCustom(){
+  const cu = custom();
+  for (let i = COURSES.length - 1; i >= 0; i--) if (COURSES[i].user) COURSES.splice(i, 1);
+  BASE.forEach(b => { b.c.papers = b.papers.slice(); b.c.topics = b.topics.slice(); });
+  cu.courses.forEach(uc => COURSES.push(Object.assign({}, uc, { user: true, papers: [], topics: [], quiz: {} })));
+  COURSES.forEach(c => (cu.topics[c.id] || []).forEach(t => { if (!c.topics.some(x => x.id === t.id)) c.topics.push(t); }));
+  cu.papers.forEach(p => { const c = COURSES.find(c => c.id === p.course); if (c) c.papers.push(p); });
+  COURSES.forEach(c => { c.every = c.papers; c.papers = c.papers.filter(p => !cu.hidden[p.id]); });
+  setCourse(COURSES.find(c => c.id === COURSE.id) || COURSES[0]);
+}
+applyCustom();
 const pkey = (paper, part) => paper.id + ":" + part.id;
 function st(paper, part){ const k = pkey(paper, part); return store[k] || (store[k] = {answer:"", attempts:[]}); }
 function best(paper, part){ const a = st(paper, part).attempts; return a.length ? Math.max(...a.map(x => +x.score || 0)) : null; }
@@ -289,7 +339,7 @@ const onWeb = /^https?:$/.test(location.protocol) && !window.claude;
     try { const r = await fetch("api/health"); if (r.ok){ const h = await r.json(); if (h.ok && h.keySet) api = h; } } catch {}
   }
   if (!onWeb) { try { if (window.claude?.use) sample = await window.claude.use("sample"); } catch { sample = null; } }
-  sampleReady = true; $("#keyBtn").hidden = !!sample;
+  sampleReady = true; $("#keyRow").hidden = !!sample;
   if (view.paper && document.getElementById("right")) renderRight();
 })();
 const backend = () => sample ? "claude-artifact" : byok ? "byok" : api ? "api" : null;
@@ -384,7 +434,12 @@ function openKeyDlg(){
   $("#keyStatus").textContent = byok ? "A key is saved in this browser." : ""; $("#keyStatus").className = "";
   d.showModal();
 }
-$("#keyBtn").onclick = openKeyDlg;
+$("#keyBtn").onclick = () => { closeSettings(); openKeyDlg(); };
+$("#bgBtn").onclick = () => { prefs.bgMark = prefs.bgMark === false; save(); applyLayout(); };
+function closeSettings(){ $("#setPanel").hidden = true; $("#setBtn").setAttribute("aria-expanded", "false"); }
+$("#setBtn").onclick = e => { e.stopPropagation(); const open = $("#setPanel").hidden, r = $("#setBtn").getBoundingClientRect(), pnl = $("#setPanel"); pnl.hidden = !open; pnl.style.top = (r.bottom + 6) + "px"; pnl.style.right = Math.max(8, Math.min(innerWidth - r.right, innerWidth - pnl.offsetWidth - 8)) + "px"; $("#setBtn").setAttribute("aria-expanded", String(open)); };
+document.addEventListener("click", e => { if (!$("#setPanel").hidden && !e.target.closest(".setwrap")) closeSettings(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#setPanel").hidden){ closeSettings(); $("#setBtn").focus(); } });
 $("#keyClose").onclick = () => $("#keyDlg").close();
 $("#keyRemove").onclick = () => { byok = null; setByok(null); $("#keyIn").value = ""; $("#modelIn").value = "";
   const st = $("#keyStatus"); st.className = ""; st.textContent = "Removed. Marking falls back to the site's shared key (or self-marking).";
@@ -428,6 +483,7 @@ function renderDoc(text){
     let l = raw.trimEnd();
     if (/^(QUESTION \d|STACKED)/.test(l)) l = l.split("  |  ").join(" ");
     if (l.includes("  |  ")) { rows.push(l.split("  |  ").map(s => s.trim())); continue; }
+    if (/^\s*\|.*\|\s*$/.test(l)) { if (!/^[\s|:-]+$/.test(l)) rows.push(l.trim().slice(1, -1).split("|").map(s => s.trim())); continue; }   // | a | b | rows (papers you add)
     flush();
     if (!l.trim()) { html += '<div class="gap"></div>'; continue; }
     const head = /^(QUESTION|Question|Part [AB]|REQUIRED|Notes?$|Additional [Ii]nformation|[A-Z][A-Za-z &'’\-]{2,40}$)/.test(l.trim()) && l.trim().length < 60 && !/[.,;]$/.test(l.trim());
@@ -442,6 +498,9 @@ function go(hash){ if (location.hash !== "#" + hash) location.hash = hash; else 
 function route(){
   const parts = location.hash.slice(1).split("/");
   view.quiz = null;
+  if (parts[0] === "manage"){ view.paper = null; view.topic = null; if (parts[1]) renderManageCourse(parts[1]); else renderManage(); return; }
+  if (parts[0] === "edit"){ view.paper = null; view.topic = null; renderEdit(parts[1], parts[2]); return; }
+  if (parts[0] === "cards"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c || !c.cards){ renderCourses(); return; } setCourse(c); renderCards(parts[2] || null); return; }
   if (parts[0] === "c"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderHome(); return; }
   { const c = (parts[0] === "quiz" || parts[0] === "topic") ? courseOfTopic(parts[1]) : courseOfPaper(parts[0]); if (c) setCourse(c); }
   if (parts[0] === "quiz" && TOPICS.some(x => x.id === parts[1])){ view.paper = null; view.topic = parts[1]; renderQuiz(parts[1]); return; }
@@ -471,7 +530,7 @@ $("#layoutBtn").onclick = () => { prefs.markLayout = !prefs.markLayout; save(); 
 $("#timerBtn").onclick = () => { prefs.timer = !prefs.timer; save(); if (!prefs.timer) resetTimer(); applyLayout(); if (view.paper) tickTimer(Math.round(cur().pt.marks * MIN_PER_MARK)); };
 function applyLayout(){
   const app = $("#app"); const inExam = !!view.paper;
-  $("#paperBtn").hidden = !inExam; $("#timerBtn").hidden = !inExam; $("#layoutBtn").hidden = !inExam;
+  $("#bgBtn").setAttribute("aria-pressed", String(prefs.bgMark !== false));
   $("#layoutBtn").setAttribute("aria-pressed", String(!!prefs.markLayout));
   $("#paperBtn").setAttribute("aria-pressed", String(prefs.showPaper));
   $("#timerBtn").setAttribute("aria-pressed", String(prefs.timer));
@@ -503,6 +562,7 @@ function renderCourses(){
   $("#app").innerHTML = `<div class="home">
     <div class="intro"><p>Pick a course. Each one has its past papers to work through one required at a time, quick quizzes on the theory, and a list of your weakest sections.</p></div>
     <h2 class="sec">Courses</h2>
+    <div class="row"><button class="btn small" id="mgAll">Add a course, or add and remove papers</button></div>
     <div class="cards">${COURSES.map(c => {
       let got = 0, tot = 0, done = 0, n = 0;
       c.papers.forEach(p => p.questions.forEach(q => q.parts.forEach(pt => { n++; tot += pt.marks; const b = best(p, pt); if (b !== null){ done++; got += b; } })));
@@ -516,6 +576,7 @@ function renderCourses(){
       </button>`; }).join("")}</div>
   </div>`;
   document.querySelectorAll(".card").forEach(b => b.onclick = () => go("c/" + b.dataset.c));
+  $("#mgAll").onclick = () => go("manage");
 }
 
 function renderHome(){
@@ -526,7 +587,9 @@ function renderHome(){
       <p>Pick a paper. You get <strong>one required at a time</strong>, with the full scenario beside it. Type your answer the way you would in the exam script, then submit it. The examiner marks it against the memo, shows <strong>where you lost marks and why</strong>, and tells you which section to revise. You can then fix your answer and resubmit, or ask follow-up questions about the feedback.</p>
       <p>Your answers and scores are saved in this browser.</p>
     </div>
+    <div class="row"><button class="btn small" id="mgCourse">Add or remove papers, tuts, workshops and sections</button></div>
     ${weakHTML()}
+    ${cardsHTML()}
     <section class="topics" aria-labelledby="topicsH">
       <h2 id="topicsH">Practise by section</h2>
       <div class="hint">Pick a section for a quick quiz on the rules, then every required on it across all the papers, shortest first.</div>
@@ -545,8 +608,338 @@ function renderHome(){
       </button>`;}).join("")}</div>`).join("")}
   </div>`;
   document.querySelectorAll(".card").forEach(c => c.onclick = () => go(c.dataset.id));
+  $("#mgCourse").onclick = () => go("manage/" + COURSE.id);
   document.querySelectorAll(".tbtn, .wrow").forEach(b => b.onclick = () => go("topic/" + b.dataset.t));
+  document.querySelectorAll("[data-cards]").forEach(b => b.onclick = () => go("cards/" + COURSE.id + (b.dataset.cards ? "/" + b.dataset.cards : "")));
 }
+
+/* ---------- section notebook: your notes and links (Between the Lines, Drive, anything) ---------- */
+function noteRec(tid){ const n = store._notes || (store._notes = {}); return n[tid] || { text: "", links: [] }; }
+function noteSave(tid, rec){ const n = store._notes || (store._notes = {}); n[tid] = rec; save(); }
+const safeUrl = u => /^https?:\/\/\S+$/i.test(u) ? u : null;
+const linkify = t => esc(t).replace(/https?:\/\/[^\s<]+/g, u => `<a href="${u}" target="_blank" rel="noopener">${u.length > 70 ? u.slice(0, 67) + "..." : u}</a>`);
+function booksFor(tid){ const c = courseOfTopic(tid) || COURSE; return [...(c.books || []), ...(custom().books[c.id] || [])].filter(b => (b.topics || []).includes(tid)); }
+function booksHTML(tid){ const b = booksFor(tid); return b.length ? `<ul class="nblinks">${b.map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a> <span class="hint">· course notebook</span></li>`).join("")}</ul>` : ""; }
+function linksHTML(tid, edit){ return noteRec(tid).links.map((l, i) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a>${edit ? ` <button class="btn small" data-rmlink="${i}">Remove</button>` : ""}</li>`).join(""); }
+function notebookHTML(tid){
+  const n = noteRec(tid);
+  return `<section class="topics nb"><h2 class="sec">Notebook</h2>
+    <div class="hint">Your notes for this section, and links to your Between the Lines notebook or any other page. They show up beside every required on this section, under the "My notes" tab.</div>
+    ${booksHTML(tid)}
+    ${n.links.length ? `<ul class="nblinks">${linksHTML(tid, true)}</ul>` : ""}
+    <div class="row nbadd"><input id="nbLabel" placeholder="Label, e.g. Between the Lines, pages 12 to 18" aria-label="Link label"><input id="nbUrl" placeholder="https://..." inputmode="url" aria-label="Link address"><button class="btn small" id="nbAdd">Add link</button></div>
+    <div id="nbMsg" class="err" role="status"></div>
+    <textarea id="nbText" aria-label="Notes for this section" placeholder="Your notes. Any link you paste here becomes clickable beside the questions.">${esc(n.text)}</textarea></section>`;
+}
+function wireNotebook(tid){
+  const n = noteRec(tid);
+  $("#nbText").oninput = e => { n.text = e.target.value; noteSave(tid, n); };
+  $("#nbAdd").onclick = () => {
+    const url = safeUrl($("#nbUrl").value.trim());
+    if (!url){ $("#nbMsg").textContent = "Paste a full web address starting with https://"; $("#nbUrl").focus(); return; }
+    n.links.push({ label: $("#nbLabel").value.trim(), url }); noteSave(tid, n); renderTopic(tid);
+  };
+  document.querySelectorAll("[data-rmlink]").forEach(b => b.onclick = () => { n.links.splice(+b.dataset.rmlink, 1); noteSave(tid, n); renderTopic(tid); });
+}
+function notesForPart(pt){
+  const tids = pt.topics || [];
+  if (!tids.length) return `<p class="hint">This required isn't tagged to a section, so there are no notes to show.</p>`;
+  return tids.map(t => { const n = noteRec(t), has = n.text.trim() || n.links.length || booksFor(t).length;
+    return `<div class="qtitle">${esc(topicName(t))}</div>
+      ${booksHTML(t)}
+      ${n.links.length ? `<ul class="nblinks">${linksHTML(t, false)}</ul>` : ""}
+      ${n.text.trim() ? `<div class="nbtext">${linkify(n.text)}</div>` : ""}
+      ${has ? "" : `<p class="hint">No notes or links for this section yet.</p>`}
+      <button class="btn small" data-go="topic/${t}">${has ? "Edit" : "Add"} notes for this section</button>`; }).join("<hr>");
+}
+
+/* ---------- managing courses and papers ---------- */
+function msg(t, err){ const m = $("#mgMsg"); if (m){ m.className = err ? "err" : "hint"; m.textContent = t; } }
+function renderManage(){
+  setHome("All courses", ""); $("#crumb").textContent = "Courses and papers"; $("#appName").textContent = "Examiner"; applyLayout();
+  $("#app").className = "";
+  $("#app").innerHTML = `<div class="home mg">
+    <h2 class="sec">Courses</h2>
+    <div>${COURSES.map(c => `<div class="mgrow"><span><strong>${esc(c.name)}</strong> ${esc(c.code || "")} <span class="hint">· ${c.every.length} papers${c.user ? " · added by you" : ""}</span></span>
+      <span class="row"><button class="btn small" data-mc="${c.id}">Papers and sections</button>${c.user ? `<button class="btn small" data-delc="${c.id}">Delete course</button>` : ""}</span></div>`).join("")}</div>
+    <h2 class="sec">Add a course</h2>
+    <label class="f" for="ncName">Course name</label><input id="ncName" placeholder="e.g. Portfolio Management">
+    <label class="f" for="ncCode">Course code</label><input id="ncCode" placeholder="e.g. FTX4086F">
+    <label class="f" for="ncTopics">Sections, one per line (you can add more later)</label><textarea id="ncTopics" rows="6" placeholder="Asset allocation&#10;Performance measurement"></textarea>
+    <label class="f" for="ncMins">Exam minutes per mark</label><input id="ncMins" type="number" step="0.1" min="0.2" value="1.5">
+    <div class="row"><button class="btn primary" id="ncAdd">Add course</button></div>
+    <h2 class="sec">Backup</h2>
+    <div class="hint">Courses, papers, hidden papers and notes you add are saved in this browser only. Download a backup to move them to another device and restore it there. You can also send the backup file to have it built into the site for good.</div>
+    <div class="row"><button class="btn" id="bkDown">Download backup</button><button class="btn" id="bkUp">Restore a backup</button><input id="bkIn" type="file" accept=".json,application/json" hidden></div>
+    <div id="mgMsg" role="status"></div>
+  </div>`;
+  const cu = custom();
+  document.querySelectorAll("[data-mc]").forEach(b => b.onclick = () => go("manage/" + b.dataset.mc));
+  document.querySelectorAll("[data-delc]").forEach(b => b.onclick = () => {
+    const c = COURSES.find(x => x.id === b.dataset.delc);
+    if (!confirm(`Delete ${c.name} and the ${c.every.length} papers you added to it? This can't be undone (unless you have a backup).`)) return;
+    cu.courses = cu.courses.filter(x => x.id !== c.id); cu.papers = cu.papers.filter(p => p.course !== c.id); delete cu.topics[c.id];
+    save(); applyCustom(); renderManage();
+  });
+  $("#ncAdd").onclick = () => {
+    const name = $("#ncName").value.trim(), code = $("#ncCode").value.trim();
+    if (!name){ msg("Give the course a name.", true); $("#ncName").focus(); return; }
+    const id = "u-" + rid();
+    cu.courses.push({ id, name, code, crumb: (code ? code + " " : "") + "past papers", subject: `UCT ${code ? code + " " : ""}${name} test or exam`, minPerMark: Math.max(0.2, +$("#ncMins").value || 1.5), tablesLabel: "Formula sheet" });
+    cu.topics[id] = $("#ncTopics").value.split("\n").map(x => x.trim()).filter(Boolean).map(n => ({ id: "u" + rid(), name: n }));
+    save(); applyCustom(); go("manage/" + id);
+  };
+  $("#bkDown").onclick = () => {
+    const blob = new Blob([JSON.stringify({ app: "past-paper-examiner", saved: new Date().toISOString(), custom: store._custom || {}, notes: store._notes || {} }, null, 1)], { type: "application/json" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "examiner-backup-" + new Date().toISOString().slice(0, 10) + ".json"; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  };
+  $("#bkUp").onclick = () => $("#bkIn").click();
+  $("#bkIn").onchange = async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try {
+      const d = JSON.parse(await f.text());
+      if (!d || d.app !== "past-paper-examiner" || typeof d.custom !== "object") throw 0;
+      if (!confirm("Replace your added courses, papers and hidden papers with the ones in this backup? Notes in the backup are added to yours.")) return;
+      store._custom = d.custom; store._notes = Object.assign(store._notes || {}, d.notes || {}); save(); applyCustom(); renderManage(); msg("Backup restored.");
+    } catch { msg("That file isn't a backup from this site.", true); }
+  };
+}
+function renderManageCourse(cid){
+  const c = COURSES.find(x => x.id === cid); if (!c){ renderManage(); return; }
+  setCourse(c); setHome("All courses", "manage"); $("#crumb").textContent = c.name + " · papers and sections"; applyLayout();
+  $("#app").className = "";
+  const cu = custom(), mine = new Set((cu.topics[c.id] || []).map(t => t.id)), label = k => (KINDS.find(x => x[0] === k) || [k, k])[1];
+  $("#app").innerHTML = `<div class="home mg">
+    <div class="row"><button class="btn primary" id="npAdd">Add a paper, test, tut or workshop</button><button class="btn" id="mgOpen">Open ${esc(c.name)}</button></div>
+    <h2 class="sec">Papers</h2>
+    <div class="hint">Hide a paper to take it off the course page and out of the section practice (your marks on it are kept). Papers you added can also be edited or deleted.</div>
+    <div>${c.every.map(p => { const off = !!cu.hidden[p.id];
+      return `<div class="mgrow ${off ? "off" : ""}"><span>${esc(p.title)} <span class="hint">· ${esc(label(kindOf(p)))} · ${p.marks} marks${p.user ? " · added by you" : ""}${off ? " · hidden" : ""}</span></span>
+        <span class="row">${p.user ? `<button class="btn small" data-edit="${p.id}">Edit</button>` : ""}<button class="btn small" data-hide="${p.id}">${off ? "Show" : "Hide"}</button>${p.user ? `<button class="btn small" data-del="${p.id}">Delete</button>` : ""}</span></div>`; }).join("") || `<div class="hint">No papers yet.</div>`}</div>
+    <h2 class="sec">Sections</h2>
+    <div class="hint">Requireds are tagged to these sections. The numbers are what you type in a paper's {braces}.</div>
+    <div>${c.topics.map((t, i) => `<div class="mgrow"><span>${i + 1}. ${esc(t.name)}</span>${mine.has(t.id) ? `<span class="row"><button class="btn small" data-rmt="${t.id}">Remove</button></span>` : ""}</div>`).join("")}</div>
+    <div class="row nbadd"><input id="ntName" placeholder="New section name" aria-label="New section name"><button class="btn small" id="ntAdd">Add section</button></div>
+    <h2 class="sec">Course notebooks</h2>
+    <div class="hint">A notebook that covers several sections, like a NotebookLM notebook or a Between the Lines file. It is linked automatically on every section it covers and beside every required on those sections.</div>
+    <div>${[...(c.books || []).map(b => [b, false]), ...(cu.books[c.id] || []).map(b => [b, true])].map(([b, mineB], i) => `<div class="mgrow"><span><a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.label)}</a> <span class="hint">· ${b.topics.map(topicName).map(esc).join(", ")}</span></span>${mineB ? `<span class="row"><button class="btn small" data-rmb="${(cu.books[c.id] || []).indexOf(b)}">Remove</button></span>` : ""}</div>`).join("") || `<div class="hint">None yet.</div>`}</div>
+    <label class="f" for="nbkLabel">Name</label><input id="nbkLabel" placeholder="e.g. NotebookLM: Regulation and risk">
+    <label class="f" for="nbkUrl">Link</label><input id="nbkUrl" inputmode="url" placeholder="https://notebooklm.google.com/notebook/...">
+    <div class="hint" style="margin-top:8px">Sections it covers:</div>
+    <div>${c.topics.map(t => `<label style="display:block;margin:4px 0"><input type="checkbox" class="nbkT" value="${t.id}"> ${esc(t.name)}</label>`).join("")}</div>
+    <div class="row"><button class="btn small" id="nbkAdd">Add notebook</button></div>
+    <div id="mgMsg" role="status"></div>
+  </div>`;
+  $("#npAdd").onclick = () => go(`edit/${c.id}/new`);
+  $("#mgOpen").onclick = () => go("c/" + c.id);
+  document.querySelectorAll("[data-edit]").forEach(b => b.onclick = () => go(`edit/${c.id}/${b.dataset.edit}`));
+  document.querySelectorAll("[data-hide]").forEach(b => b.onclick = () => { const id = b.dataset.hide; if (cu.hidden[id]) delete cu.hidden[id]; else cu.hidden[id] = true; save(); applyCustom(); renderManageCourse(cid); });
+  document.querySelectorAll("[data-del]").forEach(b => b.onclick = () => {
+    const p = c.every.find(x => x.id === b.dataset.del);
+    if (!confirm(`Delete "${p.title}"? This can't be undone (unless you have a backup).`)) return;
+    cu.papers = cu.papers.filter(x => x.id !== p.id); delete cu.hidden[p.id]; save(); applyCustom(); renderManageCourse(cid);
+  });
+  document.querySelectorAll("[data-rmt]").forEach(b => b.onclick = () => {
+    const id = b.dataset.rmt, used = cu.papers.filter(p => p.questions.some(q => q.parts.some(pt => pt.topics.includes(id)))).length;
+    if (!confirm(`Remove this section?${used ? ` It is tagged on requireds in ${used} of your papers; those tags will be dropped.` : ""}`)) return;
+    cu.topics[c.id] = (cu.topics[c.id] || []).filter(t => t.id !== id);
+    cu.papers.forEach(p => p.questions.forEach(q => q.parts.forEach(pt => { pt.topics = pt.topics.filter(x => x !== id); })));
+    save(); applyCustom(); renderManageCourse(cid);
+  });
+  document.querySelectorAll("[data-rmb]").forEach(b => b.onclick = () => { cu.books[c.id].splice(+b.dataset.rmb, 1); save(); renderManageCourse(cid); });
+  $("#nbkAdd").onclick = () => {
+    const url = safeUrl($("#nbkUrl").value.trim()), label = $("#nbkLabel").value.trim(), topics = [...document.querySelectorAll(".nbkT:checked")].map(x => x.value);
+    if (!label || !url || !topics.length){ msg("Give the notebook a name, a full link starting with https://, and tick at least one section.", true); return; }
+    (cu.books[c.id] ||= []).push({ label, url, topics }); save(); renderManageCourse(cid);
+  };
+  $("#ntAdd").onclick = () => { const n = $("#ntName").value.trim(); if (!n){ $("#ntName").focus(); return; } (cu.topics[c.id] ||= []).push({ id: "u" + rid(), name: n }); save(); applyCustom(); renderManageCourse(cid); };
+}
+
+// A paper as editable text:  "# Question title", scenario lines, "## 1.1 [5] {1, 3}", required lines, "--- memo", memo lines
+function paperToText(p, c){
+  const num = id => c.topics.findIndex(t => t.id === id) + 1;
+  return p.questions.map(q => `# ${q.title}\n${q.scenario || ""}\n` + q.parts.map(pt => {
+    const tags = (pt.topics || []).map(num).filter(Boolean);
+    return `## ${pt.id} [${pt.marks}]${tags.length ? " {" + tags.join(", ") + "}" : ""}\n${pt.required}\n--- memo\n${pt.memo}`; }).join("\n")).join("\n\n");
+}
+function textToQuestions(text, c){
+  const qs = []; let q = null, pt = null, inMemo = false;
+  const tag = x => /^\d+$/.test(x) ? (c.topics[+x - 1] || {}).id : (c.topics.find(t => t.id === x || t.name.toLowerCase() === x.toLowerCase()) || {}).id;
+  for (const line of String(text).replace(/\r/g, "").split("\n")){
+    let m;
+    if ((m = line.match(/^#(?!#)\s*(.*)$/))){ q = { title: m[1].trim() || "Question " + (qs.length + 1), scenario: "", parts: [] }; qs.push(q); pt = null; inMemo = false; continue; }
+    if ((m = line.match(/^##\s*(\S+)\s*\[\s*(\d+(?:[.,]\d+)?)\s*\]\s*(?:\{([^}]*)\})?\s*(.*)$/))){
+      if (!q){ q = { title: "Question " + (qs.length + 1), scenario: "", parts: [] }; qs.push(q); }
+      pt = { id: m[1], marks: +m[2].replace(",", "."), topics: [...new Set((m[3] || "").split(",").map(x => x.trim()).filter(Boolean).map(tag).filter(Boolean))], required: m[4] ? m[4] + "\n" : "", memo: "" };
+      q.parts.push(pt); inMemo = false; continue;
+    }
+    if (pt && /^-{3,}\s*memo\s*$/i.test(line.trim())){ inMemo = true; continue; }
+    if (pt){ if (inMemo) pt.memo += line + "\n"; else pt.required += line + "\n"; }
+    else if (q) q.scenario += line + "\n";
+  }
+  qs.forEach((q, i) => { q.id = "Q" + (i + 1); q.scenario = q.scenario.trim(); q.parts.forEach(p => { p.required = p.required.trim(); p.memo = p.memo.trim(); }); q.marks = q.parts.reduce((a, p) => a + p.marks, 0); });
+  return qs.filter(q => q.parts.length);
+}
+const PAPER_HELP = `# Question 1: title of the question
+Scenario or background (as many lines as you like; lines with | between cells become a table).
+## 1.1 [5] {1}
+The required, as it is in the paper.
+--- memo
+The memo answer for 1.1.
+## 1.2 [10] {2, 3}
+Next required. {2, 3} tags it to sections 2 and 3 (numbers from the list below).
+--- memo
+Memo for 1.2.
+
+# Question 2: next question
+...`;
+function renderEdit(cid, pid){
+  const c = COURSES.find(x => x.id === cid); if (!c){ renderManage(); return; }
+  setCourse(c);
+  const cu = custom(), p = cu.papers.find(x => x.id === pid && x.course === cid) || null;
+  setHome("Back to papers", "manage/" + c.id); $("#crumb").textContent = c.name + " · " + (p ? "edit paper" : "add a paper"); applyLayout();
+  $("#app").className = "";
+  $("#app").innerHTML = `<div class="home mg">
+    <label class="f" for="epTitle">Title</label><input id="epTitle" value="${esc(p ? p.title : "")}" placeholder="e.g. Tutorial 4: Interest rate risk (2026)">
+    <label class="f" for="epShort">Short name for lists (optional)</label><input id="epShort" value="${esc(p ? p.short : "")}" placeholder="e.g. Tut 4 IRR">
+    <label class="f" for="epKind">Type</label><select id="epKind">${KINDS.filter(k => k[0] !== "past").map(([k, l]) => `<option value="${k}" ${(p ? p.kind : "tut") === k ? "selected" : ""}>${l}</option>`).join("")}</select>
+    <label class="f" for="epMins">Time allowed in minutes (optional; blank uses the course's minutes per mark)</label><input id="epMins" type="number" min="1" value="${p && p.minutes ? p.minutes : ""}">
+    <label class="f" for="epNote">Where the memo comes from (optional)</label><input id="epNote" value="${esc(p ? p.memoNote : "")}" placeholder="e.g. Lecturer's tut solution">
+    <details ${p ? "" : "open"}><summary>Paste the paper and memo and let the AI lay it out</summary>
+      <div class="hint">Paste the text of the questions and of the memo (from the PDF or Word file). The AI splits it into requireds with marks and section tags and puts the result in the box below for you to check. For a long paper, do one question at a time. Uses the same AI as the marking.</div>
+      <label class="f" for="aiPaper">Question text</label><textarea id="aiPaper" rows="7"></textarea>
+      <label class="f" for="aiMemo">Memo text</label><textarea id="aiMemo" rows="7"></textarea>
+      <div class="row"><button class="btn" id="aiGo">Lay it out with AI</button><label><input type="checkbox" id="aiAppend" ${p ? "checked" : ""}> Add to what's already in the box</label></div>
+    </details>
+    <label class="f" for="epText">The paper</label>
+    <textarea id="epText" class="big" spellcheck="false" placeholder="${esc(PAPER_HELP)}">${esc(p ? paperToText(p, c) : "")}</textarea>
+    <div class="hint" id="epSum"></div>
+    <details><summary>How to write it, and the section numbers</summary><pre class="help">${esc(PAPER_HELP)}</pre>
+      <div class="hint">Sections: ${c.topics.map((t, i) => `${i + 1}. ${esc(t.name)}`).join(" · ") || "none yet (add them on the papers page)"}</div></details>
+    <div class="row"><button class="btn primary" id="epSave">Save paper</button><button class="btn" id="epCancel">Cancel</button></div>
+    <div id="mgMsg" role="status"></div>
+  </div>`;
+  const sum = () => { const qs = textToQuestions($("#epText").value, c), n = qs.reduce((a, q) => a + q.parts.length, 0), m = qs.reduce((a, q) => a + q.marks, 0), untagged = qs.reduce((a, q) => a + q.parts.filter(x => !x.topics.length).length, 0);
+    $("#epSum").textContent = `${qs.length} question${qs.length === 1 ? "" : "s"} · ${n} required${n === 1 ? "" : "s"} · ${m} marks${untagged ? ` · ${untagged} not tagged to a section (they won't show in section practice)` : ""}`; };
+  $("#epText").oninput = sum; sum();
+  $("#epCancel").onclick = () => go("manage/" + c.id);
+  $("#aiGo").onclick = async () => {
+    const paper = $("#aiPaper").value.trim(), memo = $("#aiMemo").value.trim();
+    if (!paper){ msg("Paste the question text first.", true); return; }
+    if (!canMark()){ msg("No AI is set up on this device. Add your own key with \"Use my own key\" on any required, or lay the paper out by hand.", true); return; }
+    if (backend() === "api" && api.codeRequired && !getCode()){ askCode(); return; }
+    const btn = $("#aiGo"); btn.disabled = true; msg("Laying it out... this can take up to a minute.");
+    const prompt = `Convert this ${c.name} ${$("#epKind").selectedOptions[0].textContent.toLowerCase()} and its memo into JSON for a practice website.
+
+Sections of the course, numbered:
+${c.topics.map((t, i) => `${i + 1}. ${t.name}`).join("\n") || "(none)"}
+
+Rules:
+- One entry per question; "scenario" is the background text shared by its requireds (empty string if none).
+- One part per required (1.1, 1.2, (a), ...). "required" is the wording of the required, copied faithfully. "memo" is the matching memo answer, copied faithfully with its workings; write "(no memo given)" if the memo has nothing for it.
+- "marks" is a number. If the paper gives none for a required, estimate it from the memo.
+- "sections" lists the numbers of the course sections the required tests (one or two).
+- Keep tables as lines with | between cells. Plain text, no markdown headings.
+
+Reply with only: {"questions":[{"title":"Question 1: ...","scenario":"...","parts":[{"id":"1.1","marks":5,"sections":[1],"required":"...","memo":"..."}]}]}
+
+QUESTION PAPER:
+<<<
+${paper}
+>>>
+
+MEMO:
+<<<
+${memo || "(none pasted)"}
+>>>`;
+    try {
+      const out = await markJSON(prompt);
+      const qs = (out.questions || []).map((q, i) => ({ title: String(q.title || `Question ${i + 1}`).replace(/\n/g, " "), scenario: String(q.scenario || ""),
+        parts: (q.parts || []).map(x => ({ id: String(x.id || "?").replace(/\s+/g, ""), marks: +x.marks || 0, topics: (x.sections || []).map(n => (c.topics[+n - 1] || {}).id).filter(Boolean), required: String(x.required || ""), memo: String(x.memo || "") })) })).filter(q => q.parts.length);
+      if (!qs.length) throw 0;
+      const txt = paperToText({ questions: qs }, c), box = $("#epText");
+      box.value = $("#aiAppend").checked && box.value.trim() ? box.value.trimEnd() + "\n\n" + txt : txt; sum();
+      msg("Done. Check the marks, wording and section tags in the box, then save.");
+    } catch (e) { msg("The AI couldn't lay that out" + (e && e.code ? ` (${e.code})` : "") + ". Try one question at a time.", true); }
+    btn.disabled = false;
+  };
+  $("#epSave").onclick = () => {
+    const title = $("#epTitle").value.trim(), qs = textToQuestions($("#epText").value, c);
+    if (!title){ msg("Give the paper a title.", true); $("#epTitle").focus(); return; }
+    if (!qs.length){ msg("Add at least one required: a line like ## 1.1 [5] followed by the required, then --- memo and the memo.", true); return; }
+    const ids = qs.flatMap(q => q.parts.map(x => x.id)), dup = ids.find((x, i) => ids.indexOf(x) !== i);
+    if (dup){ msg(`Two requireds are both numbered ${dup}. Give each a different number.`, true); return; }
+    const bad = qs.flatMap(q => q.parts).filter(x => !x.required || !x.memo || !(x.marks > 0)).map(x => x.id);
+    if (bad.length){ msg(`These requireds are missing their wording, memo or marks: ${bad.join(", ")}.`, true); return; }
+    const marks = qs.reduce((a, q) => a + q.marks, 0), mins = +$("#epMins").value;
+    const obj = { id: p ? p.id : "u-" + rid(), course: c.id, user: true, title, short: $("#epShort").value.trim() || title.slice(0, 28), kind: $("#epKind").value,
+      memoNote: $("#epNote").value.trim() || "Memo you added.", tables: (BASE.find(b => b.c.id === c.id)?.papers.find(x => x.tables) || {}).tables || "", questions: qs, marks, ...(mins > 0 ? { minutes: mins } : {}) };
+    const i = cu.papers.findIndex(x => x.id === obj.id); if (i >= 0) cu.papers[i] = obj; else cu.papers.push(obj);
+    save(); applyCustom(); go("manage/" + c.id);
+  };
+}
+
+/* ---------- flash cards (courses that define COURSE.cards = {topicId: [[front, back], ...]}) ---------- */
+const cardKey = (tid, i) => COURSE.id + ":" + tid + ":" + i;
+const cardsKnown = () => store._cards || (store._cards = {});
+function cardsHTML(){
+  if (!COURSE.cards) return "";
+  const tot = Object.values(COURSE.cards).reduce((a, v) => a + v.length, 0), k = cardsKnown();
+  const known = Object.entries(COURSE.cards).reduce((a, [t, v]) => a + v.filter((_, i) => k[cardKey(t, i)]).length, 0);
+  return `<section class="topics"><h2 class="sec">Flash cards</h2>
+    <div class="hint">${tot} cards to memorise: definitions, formulas, cases and exam traps. ${known} marked as known so far. Each deck shows the cards you don't know yet first.</div>
+    <div class="row"><button class="btn primary" data-cards="">All cards (shuffled)</button></div>
+    <div class="topicgrid">${TOPICS.filter(tp => COURSE.cards[tp.id]).map(tp => { const v = COURSE.cards[tp.id];
+      return `<button class="tbtn" data-cards="${tp.id}">${esc(tp.name)} <span class="n">${v.filter((_, i) => k[cardKey(tp.id, i)]).length}/${v.length}</span></button>`; }).join("")}</div></section>`;
+}
+let deck = null;
+function buildDeck(tid){
+  const k = cardsKnown(), all = [];
+  Object.keys(COURSE.cards).filter(t => !tid || t === tid).forEach(t => COURSE.cards[t].forEach((c, i) => all.push({ t, i, f: c[0], b: c[1] })));
+  all.sort(() => Math.random() - .5);
+  all.sort((a, b) => (k[cardKey(a.t, a.i)] ? 1 : 0) - (k[cardKey(b.t, b.i)] ? 1 : 0));   // unknown first, shuffled within each group
+  deck = { key: tid || "", cid: COURSE.id, cards: all, n: 0, flip: false, got: 0 };
+}
+function renderCards(tid){
+  if (tid && !COURSE.cards[tid]) tid = null;
+  setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = (tid ? topicName(tid) : "All sections") + " · flash cards"; applyLayout();
+  $("#app").className = "";
+  if (!deck || deck.key !== (tid || "") || deck.cid !== COURSE.id) buildDeck(tid);
+  const d = deck, c = d.cards[d.n], k = cardsKnown();
+  if (!c){
+    const left = d.cards.filter(x => !k[cardKey(x.t, x.i)]).length;
+    $("#app").innerHTML = `<div class="home"><h2 class="sec">Deck finished</h2><div class="hint">You knew ${d.got} of ${d.cards.length} this round. ${left} still marked as not known.</div>
+      <div class="fcbar"><button class="btn primary" id="fcAgain">${left ? "Go through the unknown ones" : "Shuffle and go again"}</button><button class="btn" id="fcBack">Back to course</button></div></div>`;
+    $("#fcAgain").onclick = () => { deck = null; renderCards(tid); window.scrollTo(0, 0); };
+    $("#fcBack").onclick = () => go("c/" + COURSE.id);
+    return;
+  }
+  const kn = k[cardKey(c.t, c.i)];
+  $("#app").innerHTML = `<div class="home">
+    <div class="hint" style="text-align:center">Card ${d.n + 1} of ${d.cards.length} · ${esc(topicName(c.t))}${kn ? " · marked known" : ""}</div>
+    <button class="fc ${d.flip ? "back" : ""}" id="fcCard" aria-live="polite"><span><small>${d.flip ? "Answer" : "Tap to flip (or press space)"}</small>${esc(d.flip ? c.b : c.f)}</span></button>
+    <div class="fcbar">${d.flip
+      ? `<button class="btn" id="fcNo">Again</button><button class="btn primary" id="fcYes">Got it</button>`
+      : `<button class="btn primary" id="fcShow">Show answer</button>`}</div>
+    <div class="fcbar"><button class="btn small" id="fcPrev">← Previous</button><button class="btn small" id="fcSkip">Skip →</button><button class="btn small" id="fcShuf">Shuffle</button><button class="btn small" id="fcBack">Back to course</button></div>
+  </div>`;
+  const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
+  const redraw = () => renderCards(tid);
+  const flip = () => { d.flip = !d.flip; redraw(); };
+  const mark = ok => { k[cardKey(c.t, c.i)] = ok; if (ok) d.got++; save(); d.n++; d.flip = false; redraw(); window.scrollTo(0, 0); };
+  on("#fcCard", flip); on("#fcShow", flip); on("#fcYes", () => mark(true)); on("#fcNo", () => mark(false));
+  on("#fcPrev", () => { if (d.n > 0){ d.n--; d.flip = false; redraw(); } });
+  on("#fcSkip", () => { d.n++; d.flip = false; redraw(); });
+  on("#fcShuf", () => { deck = null; redraw(); });
+  on("#fcBack", () => go("c/" + COURSE.id));
+}
+document.addEventListener("keydown", e => {
+  if (!location.hash.startsWith("#cards/") || /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
+  if (e.key === " "){ e.preventDefault(); const b = $("#fcCard"); if (b) b.click(); }
+  else if (e.key === "ArrowRight"){ const b = $("#fcYes") || $("#fcSkip"); if (b) b.click(); }
+  else if (e.key === "ArrowLeft"){ const b = $("#fcNo") || $("#fcPrev"); if (b) b.click(); }
+});
 
 function weakHTML(){
   const rows = TOPICS.map(tp => ({ tp, s: topicStats(tp.id) }));
@@ -577,6 +970,7 @@ function renderTopic(tid){
       <div class="hint">${items.length} requireds · ${tot} marks · best so far <span class="mono">${fmt(got)} / ${tot}</span>. ${(s => s.pct === null ? "" : ` Section score <span class="mono">${Math.round(s.pct * 100)}%</span>.`)(topicStats(tid))}</div>
       <div class="hint">Section test: start with the quick quiz (short type-in questions on the rules, not taken from the papers), then work up from the shortest required to the longest. Or pick any required below.</div></div>
     <div class="row"><button class="btn primary" id="tquiz">Quick quiz</button><button class="btn" id="tlong">Longer questions, shortest first</button><button class="btn" id="tstart">Paper order</button><button class="btn" id="tback">All sections</button></div>
+    ${notebookHTML(tid)}
     <div class="tlist">${items.map((x, i) => { const b = best(x.p, x.pt);
       return `<button class="titem" data-i="${i}"><span class="src">${esc(x.p.short)} · ${esc(x.pt.id)}</span><span class="req">${esc(x.pt.required.replace(/\s*\n\s*/g, " "))}</span>
         <span class="sc">${b === null ? `${x.pt.marks} marks` : `<span class="${band(b, x.pt.marks)}">${fmt(b)}</span> / ${x.pt.marks}`}</span>
@@ -588,6 +982,7 @@ function renderTopic(tid){
   $("#tquiz").onclick = () => go("quiz/" + tid);
   $("#tlong").onclick = () => startLong(tid);
   $("#tback").onclick = () => go("c/" + COURSE.id);
+  wireNotebook(tid);
 }
 
 /* ---------- quick quiz: short type-in questions from the question bank ---------- */
@@ -604,14 +999,17 @@ function autoMark(item, ans){
   const a = String(ans || "").trim();
   if (!a) return false;
   if (item.n === undefined) return item.k.every(p => new RegExp(p, "i").test(a));
-  const tol = item.n >= 10000 ? item.n * 0.001 : 0.0011;
-  return numsIn(a, item.n >= 1e6).some(x => Math.abs(x - item.n) <= tol);
+  const tol = Math.abs(item.n) >= 10000 ? Math.abs(item.n) * 0.001 : 0.0011;
+  return numsIn(a, Math.abs(item.n) >= 1e6).some(x => Math.abs(x - Math.abs(item.n)) <= Math.abs(tol));
 }
+const hasHard = tid => (QUIZ[tid] || []).some(x => x.h);
+const quizHard = tid => hasHard(tid) && prefs.quizLevel !== "quick";   // exam level is the default where it exists
 function newQuiz(tid){
   const rec = quizRec(tid), seen = rec.seen || (rec.seen = {});
   const rank = i => seen[i] === undefined ? 0 : seen[i] ? 2 : 1;   // not yet asked first, then last answered wrong, then right
-  const ids = (QUIZ[tid] || []).map((_, i) => i).sort(() => Math.random() - .5).sort((a, b) => rank(a) - rank(b)).slice(0, QUIZ_LEN);
-  rec.set = { ids, ans: [], ok: [], done: false }; save();
+  const all = QUIZ[tid] || [], hard = quizHard(tid);
+  const ids = all.map((_, i) => i).filter(i => !!all[i].h === hard).sort(() => Math.random() - .5).sort((a, b) => rank(a) - rank(b)).slice(0, hard ? Math.min(5, QUIZ_LEN) : QUIZ_LEN);
+  rec.set = { ids, ans: [], ok: [], done: false, hard }; save();
 }
 function renderQuiz(tid){
   view.quiz = tid; view.byMarks = false;
@@ -619,15 +1017,18 @@ function renderQuiz(tid){
   $("#app").className = "";
   const bank = QUIZ[tid] || [], rec = quizRec(tid);
   if (rec.set && (!Array.isArray(rec.set.ids) || rec.set.ids.some(i => !bank[i]))) rec.set = null;   // older or stale quiz
+  if (rec.set && hasHard(tid) && !!rec.set.hard !== quizHard(tid)) rec.set = null;   // level was switched
   if (!rec.set && bank.length) newQuiz(tid);
-  const set = rec.set, known = Object.values(rec.seen || {}).filter(Boolean).length;
+  const hard = quizHard(tid), pool = bank.map((_, i) => i).filter(i => !!bank[i].h === hard);
+  const set = rec.set, known = pool.filter(i => (rec.seen || {})[i]).length;
+  const levels = hasHard(tid) ? `<div class="row"><button class="btn small ${hard ? "primary" : ""}" data-lvl="exam">Exam level</button><button class="btn small ${hard ? "" : "primary"}" data-lvl="quick">Quick recall</button></div>` : "";
   const nav = `<button class="btn" id="qzLong">Longer questions, shortest first →</button><button class="btn" id="qzBack">Back to section</button>`;
   let body;
   if (!set) body = `<div class="notice">There are no quick-quiz questions for this section yet.</div><div class="row">${nav}</div>`;
   else {
     const right = set.ok.filter(Boolean).length, n = set.ids.length;
     body = `${set.done ? `<div class="row"><span class="pill ${band(right, n)}">${right} / ${n}</span><span>Check the model answers. If the automatic marking got one wrong, change it with the button under that question.</span></div>` : ""}
-    <ol class="quiz">${set.ids.map((id, i) => { const it = bank[id], a = set.ans[i] || "";
+    ${levels}<ol class="quiz">${set.ids.map((id, i) => { const it = bank[id], a = set.ans[i] || "";
       return `<li><div class="qq">${esc(it.q)}</div>${!set.done
         ? `<input class="qa" data-i="${i}" type="text" autocomplete="off" placeholder="Type your answer" aria-label="Answer ${i + 1}" value="${esc(a)}">`
         : `<div class="yours ${set.ok[i] ? "ok" : "bad"}">${a.trim() ? "Your answer: " + esc(a) : "No answer"}</div>
@@ -636,9 +1037,10 @@ function renderQuiz(tid){
     <div class="row">${set.done ? `<button class="btn primary" id="qzNew">New quiz</button>` : `<button class="btn primary" id="qzCheck">Check my answers</button>`}${nav}</div>`;
   }
   $("#app").innerHTML = `<div class="home"><div><h2 class="sec">${esc(topicName(tid))}: quick quiz</h2>
-    <div class="hint">Short type-in questions on the rules and how to apply them. They are not taken from the past papers. ${bank.length ? `You have ${known} of the ${bank.length} questions in this section right so far; each quiz starts with the ones you haven't seen or got wrong.` : ""}</div></div>${body}</div>`;
+    <div class="hint">${hard ? "Exam-level questions: multi-step calculations and applied scenarios. Work on paper, then type the final answer." : "Short type-in questions on the rules and how to apply them."} They are not taken from the past papers. ${pool.length ? `You have ${known} of the ${pool.length} questions at this level right so far; each quiz starts with the ones you haven't seen or got wrong.` : ""}</div></div>${body}</div>`;
   const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
   on("#qzLong", () => startLong(tid));
+  document.querySelectorAll("[data-lvl]").forEach(b => b.onclick = () => { prefs.quizLevel = b.dataset.lvl; save(); renderQuiz(tid); });
   on("#qzBack", () => go("topic/" + tid));
   on("#qzNew", () => { newQuiz(tid); renderQuiz(tid); window.scrollTo(0, 0); });
   on("#qzCheck", () => {
@@ -695,16 +1097,18 @@ function renderLeft(){
   const paper = view.paper, {q, pt} = cur();
   const s = st(paper, pt);
   const memoOpen = s.attempts.length > 0 || s.memoUnlocked;
-  const tabs = [["scenario","Scenario"], ...(paper.tables ? [["tables", COURSE.tablesLabel]] : []), ["memo","Memo " + pt.id]];
+  const tabs = [["scenario","Scenario"], ...(paper.tables ? [["tables", COURSE.tablesLabel]] : []), ["memo","Memo " + pt.id], ["notes","My notes"]];
   let body = "";
   if (view.tab === "scenario") body = `<div class="qtitle">${esc(q.title)} · ${q.marks} marks</div>` + renderDoc(q.scenario);
   else if (view.tab === "tables") body = renderDoc(paper.tables);
+  else if (view.tab === "notes") body = notesForPart(pt);
   else body = memoOpen
     ? `<p class="hint">${esc(paper.memoNote)}</p>` + renderDoc(pt.memo)
     : `<div class="locked"><p>The memo for ${esc(pt.id)} opens after your first attempt, so you aren't tempted to peek.</p><button class="btn small" id="peek">Open it anyway</button></div>`;
   $("#left").innerHTML = `<div class="tabs" role="tablist">${tabs.map(([k,l]) => `<button class="tab" role="tab" aria-selected="${view.tab===k}" data-k="${k}">${l}</button>`).join("")}</div><div class="doc">${body}</div>`;
   document.querySelectorAll(".tab").forEach(t => t.onclick = () => { view.tab = t.dataset.k; renderLeft(); });
   const pk = $("#peek"); if (pk) pk.onclick = () => { s.memoUnlocked = true; save(); renderLeft(); };
+  document.querySelectorAll("#left [data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
 }
 
 let timerInt = null, timerStart = null;
@@ -744,6 +1148,7 @@ function renderRight(){
   $("#prev").onclick = () => move(idx - 1, all);
   $("#next").onclick = () => move(idx + 1, all);
   $("#submit").onclick = () => submit();
+  if (marking[pkey(paper, pt)]){ $("#submit").disabled = true; $("#fbSlot").innerHTML = `<div class="fb"><div class="busy"><span class="dot"></span><span>Still marking this answer in the background. You'll get a note when it's done.</span></div></div>`; }
   wireFeedback();
   const cb = $("#codeBtn"); if (cb) cb.onclick = askCode;
   const kb = $("#keyBtn2"); if (kb) kb.onclick = openKeyDlg;
@@ -879,9 +1284,10 @@ async function submit(){
   const paper = view.paper, {q, pt} = cur(), s = st(paper, pt);
   const answer = $("#answer").value.trim();
   s.answer = $("#answer").value; save();
-  if (!answer){ $("#fbSlot").innerHTML = `<div class="notice">Write an answer first. Even a partial attempt gets useful feedback.</div>`; return; }
+  if (!answer){ selfMark(paper, pt, s); return; }
   if (!canMark()){ selfMark(paper, pt, s); return; }
   if (backend() === "api" && api.codeRequired && !getCode()){ askCode(); return; }
+  if (prefs.bgMark !== false){ markInBackground(paper, q, pt, s, answer); return; }
   const btn = $("#submit"); btn.disabled = true;
   const t0 = Date.now();
   $("#fbSlot").innerHTML = `<div class="fb"><div class="busy"><span class="dot"></span><span id="busyTxt">Marking against the memo… this usually takes 30–90 seconds.</span></div><div class="row"><button class="btn small" id="stop">Stop</button></div></div>`;
@@ -913,6 +1319,44 @@ async function submit(){
   } finally { clearInterval(iv); const b = $("#submit"); if (b) b.disabled = false; }
 }
 
+/* ---------- background marking: submit, move on, get a short note when it's done (never the mark) ---------- */
+const marking = {};
+let toastT = null;
+function toast(text, opts = {}){
+  const t = $("#toast"); clearTimeout(toastT);
+  t.className = "toast show" + (opts.bad ? " bad" : "");
+  t.innerHTML = `<span>${esc(text)}</span>${opts.go ? `<button id="toastGo">View</button>` : ""}`;
+  if (opts.go) $("#toastGo").onclick = () => { t.className = "toast"; go(opts.go); };
+  toastT = setTimeout(() => { t.className = "toast"; }, opts.bad ? 7000 : 3500);
+}
+function nextTarget(){
+  const all = view.topic ? navItems() : (() => { const a = []; view.paper.questions.forEach((qq, qi) => qq.parts.forEach((pp, pi) => a.push({ p: view.paper, qi, pi }))); return a; })();
+  const i = all.findIndex(x => (x.p || view.paper) === view.paper && x.qi === view.q && x.pi === view.p);
+  return all[i + 1] ? { all, i: i + 1 } : null;
+}
+async function markInBackground(paper, q, pt, s, answer){
+  const k = pkey(paper, pt), where = `${paper.id}/${paper.questions.indexOf(q)}/${q.parts.indexOf(pt)}`;
+  marking[k] = true;
+  const nx = nextTarget();
+  if (nx){ const x = nx.all[nx.i]; if (x.p && x.p !== view.paper) go(`${x.p.id}/${x.qi}/${x.pi}`); else move(nx.i, nx.all); } else renderRight();
+  toast(`Marking ${pt.id} in the background${nx ? ". On to the next one." : "."}`);
+  try {
+    const f = await markJSON(markingPrompt(paper, q, pt, answer));
+    let score = Math.max(0, Math.min(pt.marks, Number(f?.score) || 0));
+    score = Math.round(score * 2) / 2;
+    s.attempts.push({ score, feedback: f, answer, at: Date.now() });
+    s.memoUnlocked = true; save();
+    toast(`Done marking ${paper.short || paper.title} ${pt.id}`, { go: where });
+  } catch (e) {
+    if (e?.code === "not_granted") sample = null;
+    if (e?.code === "access_code") setCode("");
+    toast(`Couldn't mark ${pt.id}${e?.code === "rate_limited" ? " (usage limit)" : ""}. Open it and submit again.`, { bad: true, go: where });
+  } finally {
+    delete marking[k];
+    if (view.paper === paper && cur().pt === pt){ renderRight(); renderLeft(); }
+  }
+}
+
 function askCode(){
   const slot = $("#fbSlot");
   slot.innerHTML = `<div class="fb"><div>This site's marking is protected by an access code (the ACCESS_CODE you set in Vercel).</div>
@@ -922,7 +1366,7 @@ function askCode(){
 
 function selfMark(paper, pt, s){
   s.memoUnlocked = true; prefs.showPaper = true; save(); applyLayout(); view.tab = "memo"; renderLeft();
-  $("#fbSlot").innerHTML = `<div class="fb"><div>Compare your answer with the memo on the left, then record your mark.</div>
+  $("#fbSlot").innerHTML = `<div class="fb"><div>${s.answer.trim() ? "Compare your answer with the memo, then record your mark." : "The memo is open. Record a mark if you worked it out on paper, or just move on."}</div>
     <div class="selfmark"><label for="selfScore">My mark</label><input id="selfScore" type="number" min="0" max="${pt.marks}" step="0.5"><span>/ ${pt.marks}</span><button class="btn small primary" id="saveSelf">Save</button></div></div>`;
   $("#saveSelf").onclick = () => {
     const v = Math.max(0, Math.min(pt.marks, +$("#selfScore").value || 0));

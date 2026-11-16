@@ -407,7 +407,17 @@ if os.path.exists(_qb):
     _spec = importlib.util.spec_from_file_location("bank_quiz_bank", _qb); _mod = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_mod)
     assert set(_mod.BANK) <= _bvalid, set(_mod.BANK) - _bvalid
     b_quiz = {k: [_q(x) for x in v] for k, v in _mod.BANK.items()}
+    for k, v in getattr(_mod, "HARD", {}).items():   # exam-level tier, appended so existing indices stay put
+        assert k in _bvalid, k
+        b_quiz.setdefault(k, []).extend(dict(_q(x), h=1) for x in v)
     print("banking quiz bank:", {k: len(v) for k, v in b_quiz.items()}, "total", sum(len(v) for v in b_quiz.values()))
+b_cards = None
+_fc = os.path.join(BANK_DIR, "flashcards.py")
+if os.path.exists(_fc):
+    _spec = importlib.util.spec_from_file_location("bank_flashcards", _fc); _fmod = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_fmod)
+    assert set(_fmod.CARDS) <= _bvalid, set(_fmod.CARDS) - _bvalid
+    b_cards = {k: [[f.strip(), b.strip()] for f, b in v] for k, v in _fmod.CARDS.items()}
+    print("banking flash cards:", {k: len(v) for k, v in b_cards.items()}, "total", sum(len(v) for v in b_cards.values()))
 _ids = [p["id"] for p in papers + b_papers]
 assert len(_ids) == len(set(_ids)), "paper ids must be unique across courses"
 
@@ -420,7 +430,7 @@ if b_papers:
     courses.append(
   {"id": "bank", "name": "Banking", "code": "FTX4087S", "crumb": "FTX4087S past tests, exams and workshops",
    "subject": "UCT FTX4087S Topics in Banking and Treasury Management test or exam", "tablesLabel": "Formula sheet", "minPerMark": 1.2,
-   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz})
+   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, **({"cards": b_cards} if b_cards else {})})
 
 data = json.dumps(courses, ensure_ascii=False).replace("</", "<\\/")
 assert "/*__COURSES__*/null" in tpl
