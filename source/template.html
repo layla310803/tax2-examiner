@@ -94,6 +94,8 @@ h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:
 .exam.noleft{grid-template-columns:minmax(0,1fr)}
 .exam.noleft .left,.exam.noleft .split{display:none}
 .exam.noleft .right{max-width:920px;width:100%;justify-self:center}
+.tabx{margin-left:auto;border:0;background:none;color:var(--muted);font-size:1.4rem;line-height:1;padding:4px 10px;cursor:pointer;border-radius:8px}.tabx:hover{color:inherit;background:var(--rule)}
+.leftopen{display:none;position:fixed;left:12px;bottom:16px;z-index:5}.exam.noleft .leftopen{display:inline-flex}
 .split{cursor:col-resize;background:var(--rule);position:relative;touch-action:none}
 .split::after{content:"";position:absolute;top:50%;left:2px;width:4px;height:40px;margin-top:-20px;border-radius:2px;background:var(--muted);opacity:.5}
 .split:hover,.split.drag{background:var(--accent)}
@@ -278,6 +280,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <div class="setpanel" id="setPanel" hidden>
     <div class="srow"><span>Mark in the background<small>Submit, move straight on to the next required, and get a quick "done marking" note when it's finished.</small></span><button class="btn small toggle" id="bgBtn" aria-pressed="true" aria-label="Mark in the background"></button></div>
     <div class="srow"><span>Scenario panel<small>Show the scenario, memo and notes beside your answer.</small></span><button class="btn small toggle" id="paperBtn" aria-pressed="true" aria-label="Scenario panel"></button></div>
+    <div class="srow"><span>Close button on the scenario panel<small>Show an X on the scenario panel so you can close it there.</small></span><button class="btn small toggle" id="paperXBtn" aria-pressed="true" aria-label="Close button on the scenario panel"></button></div>
     <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
     <div class="srow"><span>Mark layout<small>When off, only the content is marked: any format is fine and communication marks are given automatically.</small></span><button class="btn small toggle" id="layoutBtn" aria-pressed="false" aria-label="Mark layout"></button></div>
     <div class="srow" id="fsRow"><span>Formula sheet<small>Show the exam formula sheet in a panel beside your work.</small></span><button class="btn small toggle" id="fsBtn" aria-pressed="false" aria-label="Formula sheet"></button></div>
@@ -569,6 +572,7 @@ function route(){
 window.addEventListener("hashchange", route);
 $("#homeBtn").onclick = () => go($("#homeBtn").dataset.go || "");
 $("#paperBtn").onclick = () => { prefs.showPaper = !prefs.showPaper; save(); applyLayout(); };
+$("#paperXBtn").onclick = () => { prefs.paperX = prefs.paperX === false; save(); applyLayout(); if (view.paper && $("#left")) renderLeft(); };
 $("#layoutBtn").onclick = () => { prefs.markLayout = !prefs.markLayout; save(); applyLayout(); if (view.paper) renderRight(); };
 $("#timerBtn").onclick = () => { prefs.timer = !prefs.timer; save(); if (!prefs.timer) resetTimer(); applyLayout(); if (view.paper) tickTimer(Math.round(cur().pt.marks * MIN_PER_MARK)); };
 function applyLayout(){
@@ -577,6 +581,7 @@ function applyLayout(){
   $("#bgBtn").setAttribute("aria-pressed", String(prefs.bgMark !== false));
   $("#layoutBtn").setAttribute("aria-pressed", String(!!prefs.markLayout));
   $("#paperBtn").setAttribute("aria-pressed", String(prefs.showPaper));
+  $("#paperXBtn").setAttribute("aria-pressed", String(prefs.paperX !== false));
   $("#timerBtn").setAttribute("aria-pressed", String(prefs.timer));
   if (!inExam) return;
   app.classList.toggle("noleft", !prefs.showPaper);
@@ -1184,7 +1189,8 @@ function renderExam(){
   const paper = view.paper;
   setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = view.topic ? `${topicName(view.topic)} · ${paper.short}` : paper.title;
   $("#app").className = "exam";
-  $("#app").innerHTML = `<section class="pane left" id="left" aria-label="Question paper"></section><div class="split" id="split" role="separator" aria-orientation="vertical" aria-label="Resize scenario panel" tabindex="0"></div><section class="pane right" id="right" aria-label="Answer"></section>`;
+  $("#app").innerHTML = `<section class="pane left" id="left" aria-label="Question paper"></section><div class="split" id="split" role="separator" aria-orientation="vertical" aria-label="Resize scenario panel" tabindex="0"></div><section class="pane right" id="right" aria-label="Answer"></section><button class="btn small leftopen" id="leftOpen">Show scenario</button>`;
+  $("#leftOpen").onclick = () => { prefs.showPaper = true; save(); applyLayout(); };
   renderLeft(); renderRight(); applyLayout(); wireSplit();
 }
 
@@ -1200,8 +1206,9 @@ function renderLeft(){
   else body = memoOpen
     ? `<p class="hint">${esc(paper.memoNote)}</p>` + renderDoc(pt.memo)
     : `<div class="locked"><p>The memo for ${esc(pt.id)} opens after your first attempt, so you aren't tempted to peek.</p><button class="btn small" id="peek">Open it anyway</button></div>`;
-  $("#left").innerHTML = `<div class="tabs" role="tablist">${tabs.map(([k,l]) => `<button class="tab" role="tab" aria-selected="${view.tab===k}" data-k="${k}">${l}</button>`).join("")}</div><div class="doc">${body}</div>`;
+  $("#left").innerHTML = `<div class="tabs" role="tablist">${tabs.map(([k,l]) => `<button class="tab" role="tab" aria-selected="${view.tab===k}" data-k="${k}">${l}</button>`).join("")}${prefs.paperX !== false ? `<button class="tabx" id="leftClose" aria-label="Close scenario panel" title="Close scenario panel">&times;</button>` : ""}</div><div class="doc">${body}</div>`;
   document.querySelectorAll(".tab").forEach(t => t.onclick = () => { view.tab = t.dataset.k; renderLeft(); });
+  const lc = $("#leftClose"); if (lc) lc.onclick = () => { prefs.showPaper = false; save(); applyLayout(); };
   const pk = $("#peek"); if (pk) pk.onclick = () => { s.memoUnlocked = true; save(); renderLeft(); };
   document.querySelectorAll("#left [data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
 }
