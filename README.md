@@ -33,7 +33,29 @@ The past papers are UCT/Studocu material. Keep this repo private, and don't shar
 
 ### Where the site deploys from
 
-The code lives in two private repos: `layla310803/tax2-examiner` and `YLP-Games/ylp-exam-desk`. Vercel deploys from the personal one. They do not sync on their own, so push every change to both.
+The code lives in two private repos:
+
+- `layla310803/tax2-examiner` (remote `personal`): the full edition with the built-in Tax II and Banking courses. Vercel deploys from it. Push here: `git push personal HEAD:main`.
+- `YLP-Games/ylp-exam-desk` (remote `origin`): the **content-free edition**. It has no built-in courses or course material; each user adds their own course and uploads their own notes, slides, past papers and memos, which stay in their browser. Don't push main to `origin`. After pushing to `personal`, run:
+
+  ```bash
+  bash tools/sync_ylp.sh
+  ```
+
+  It keeps a git worktree at `C:/Users/layo1/exam-desk-ylp` on a local branch `ylp`, copies every committed file from main except the course content (`source/t2`, `source/t3`, `source/banking`, `source/generated`, `source/jan26_q*.txt`, `source/quiz_bank.py`) and `index.html`, removes files main no longer has, builds `index.html` with `--edition ylp`, commits "Sync from tax2-examiner <sha>" and pushes `ylp` to `origin/main` (a normal fast-forward push).
+
+## Editions
+
+`python source/build.py index.html` builds the full edition. `python source/build.py index.html --edition ylp` builds with no built-in courses and doesn't read the content folders. The page gets an `EDITION` constant; code between `/*FULL{*/` and `/*}FULL*/` in `template.html` (the Tax II marking prompt, for example) is left out of the ylp edition.
+
+## Your own source material
+
+On a course's "Papers and sections" page (both editions), **Source material** takes PDF, Word (.docx), PowerPoint (.pptx) and text files, or pasted text, tagged as Notes, Slides, Past paper or Memo. The file readers (pdf.js, mammoth, JSZip) load from a CDN the first time they're needed.
+
+- Notes and slides are split into sections (Word headings, one per slide, groups of PDF pages) and kept in the browser's IndexedDB. They become the course's notes, so **Summarise** on the Revisit page works from them.
+- A past paper or memo is read into **Lay it out with AI** on a new paper.
+- **Make flash cards and quiz from my material** has the AI write flash cards and quick-quiz questions for each section from the uploaded notes only (proposing sections from the headings if the course has none).
+- The backup on the courses page includes the uploaded material.
 
 ## Section tests and weakest sections
 

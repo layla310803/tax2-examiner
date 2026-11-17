@@ -6,6 +6,30 @@ T3 = os.path.join(S, "t3")
 TOOLS = HERE
 GEN = os.path.join(HERE, "generated")
 
+# ---- command line: build.py OUT.html [--edition full|ylp] ----
+_args = sys.argv[1:]
+EDITION = "full"
+if "--edition" in _args:
+    _i = _args.index("--edition"); EDITION = _args[_i + 1]; del _args[_i:_i + 2]
+assert EDITION in ("full", "ylp"), "edition must be full or ylp"
+OUT = _args[0]
+
+def finish(tpl, courses_json):
+    """Inject the courses and the edition. /*FULL{*/ ... /*}FULL*/ marks code only the full edition keeps."""
+    if EDITION == "full":
+        tpl = tpl.replace("/*FULL{*/", "").replace("/*}FULL*/", "")
+    else:
+        tpl = re.sub(r"/\*FULL\{\*/.*?/\*\}FULL\*/", "", tpl, flags=re.S)
+    assert "/*__COURSES__*/null" in tpl and '/*__EDITION__*/"full"' in tpl
+    tpl = tpl.replace('/*__EDITION__*/"full"', json.dumps(EDITION)).replace("/*__COURSES__*/null", courses_json)
+    open(OUT, "w", encoding="utf-8").write(tpl)
+    print("wrote", OUT, EDITION, os.path.getsize(OUT))
+
+if EDITION == "ylp":
+    # Content-free edition: no built-in courses, and none of the course content folders are read.
+    finish(open(os.path.join(TOOLS, "template.html"), encoding="utf-8").read(), "[]")
+    sys.exit(0)
+
 def load(name, d=None):
     return open(os.path.join(d or T2, name + ".txt"), encoding="utf-8").read().split("\n")
 
@@ -294,7 +318,6 @@ for p in papers:
         for pt in q["parts"]:
             print("     ", pt["id"], "memo:", pt["memo"][:70].replace("\n", " / "), "...", pt["memo"][-50:].replace("\n", " / "))
 
-out = sys.argv[1]
 tpl = open(os.path.join(TOOLS, "template.html"), encoding="utf-8").read()
 
 # ================= topic tags (for "Practise by topic") =================
@@ -532,6 +555,4 @@ if b_papers:
    "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], "notes": B_NOTES, **({"cards": b_cards} if b_cards else {})})
 
 data = json.dumps(courses, ensure_ascii=False).replace("</", "<\\/")
-assert "/*__COURSES__*/null" in tpl
-open(out, "w", encoding="utf-8").write(tpl.replace("/*__COURSES__*/null", data))
-print("wrote", out, os.path.getsize(out))
+finish(tpl, data)

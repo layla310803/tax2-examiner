@@ -319,8 +319,11 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 
 <script>
 const COURSES = /*__COURSES__*/null;   // every course: {id, name, code, crumb, subject, papers, topics, quiz, minPerMark, tablesLabel} (source/build.py)
-let COURSE = COURSES[0], PAPERS = COURSE.papers, TOPICS = COURSE.topics, QUIZ = COURSE.quiz, MIN_PER_MARK = COURSE.minPerMark;
-function setCourse(c){ COURSE = c; PAPERS = c.papers; TOPICS = c.topics; QUIZ = c.quiz; MIN_PER_MARK = c.minPerMark; document.getElementById("appName").textContent = "Exam Desk · " + c.name; if (typeof syncFs === "function") queueMicrotask(syncFs); }
+const EDITION = /*__EDITION__*/"full";   // "full" (built-in courses) or "ylp" (no built-in courses: you add your own)
+// stands in for the current course when there are no courses yet, so nothing has to check for null
+const NO_COURSE = { id: "", name: "", code: "", crumb: "", subject: "course", papers: [], every: [], topics: [], quiz: {}, minPerMark: 1.5 };
+let COURSE = COURSES[0] || NO_COURSE, PAPERS = COURSE.papers, TOPICS = COURSE.topics, QUIZ = COURSE.quiz, MIN_PER_MARK = COURSE.minPerMark;
+function setCourse(c){ COURSE = c; PAPERS = c.papers; TOPICS = c.topics; QUIZ = c.quiz; MIN_PER_MARK = c.minPerMark; document.getElementById("appName").textContent = c.name ? "Exam Desk · " + c.name : "Exam Desk"; if (typeof syncFs === "function") queueMicrotask(syncFs); }
 const courseOfTopic = tid => COURSES.find(c => c.topics.some(x => x.id === tid));
 const courseOfPaper = pid => COURSES.find(c => c.papers.some(p => p.id === pid));
 const paperMins = p => p.minutes || Math.round(p.marks * MIN_PER_MARK);
@@ -373,19 +376,165 @@ function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch
 const prefs = store._prefs || (store._prefs = { markBg: false, showPaper: false, paperX: true, timer: false, markLayout: false, fsOpen: false, leftw: 50 });
 if (prefs.markLayout === undefined) prefs.markLayout = false;
 
+/* ---------- your source material (notes, slides) per course, kept in IndexedDB: localStorage is too small ---------- */
+// record: { id, course, name, type: "notes" | "slides", sections: [{h, x}], chars, added }
+let MAT = {};   // course id -> [records], loaded before the first render
+const MAT_DB = "exam-desk-material", MAT_STORE = "material";
+let matDbP = null;
+function matDb(){
+  if (!matDbP) matDbP = new Promise((res, rej) => {
+    if (!window.indexedDB) return rej(new Error("no IndexedDB"));
+    const r = indexedDB.open(MAT_DB, 1);
+    r.onupgradeneeded = () => { const s = r.result.createObjectStore(MAT_STORE, { keyPath: "id" }); s.createIndex("course", "course"); };
+    r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error);
+  });
+  return matDbP;
+}
+async function matTx(mode, fn){
+  const db = await matDb();
+  return new Promise((res, rej) => { const tx = db.transaction(MAT_STORE, mode), s = tx.objectStore(MAT_STORE); let out; const r = fn(s); if (r) r.onsuccess = () => { out = r.result; }; tx.oncomplete = () => res(out); tx.onerror = () => rej(tx.error); tx.onabort = () => rej(tx.error); });
+}
+const matAll = () => matTx("readonly", s => s.getAll()).then(v => v || []);
+const matPut = rec => matTx("readwrite", s => s.put(rec));
+const matDel = id => matTx("readwrite", s => s.delete(id));
+const matClear = () => matTx("readwrite", s => s.clear());
+async function matDelCourse(cid){ const ids = (MAT[cid] || []).map(r => r.id); for (const id of ids) await matDel(id); delete MAT[cid]; }
+async function loadMaterial(){
+  try {
+    const all = await Promise.race([matAll(), new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), 4000))]);
+    MAT = {}; all.sort((a, b) => a.added - b.added).forEach(r => (MAT[r.course] ||= []).push(r));
+  } catch {}
+}
+/* reading files: pdf.js, mammoth and JSZip come from a CDN, only when a file of that kind is first read */
+const LIBS = {
+  pdf: ["https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js", () => window.pdfjsLib],
+  docx: ["https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js", () => window.mammoth],
+  zip: ["https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js", () => window.JSZip],
+};
+const libP = {};
+function loadLib(k){
+  const [src, get] = LIBS[k];
+  if (get()) return Promise.resolve(get());
+  return libP[k] ||= new Promise((res, rej) => {
+    const s = document.createElement("script"); s.src = src; s.crossOrigin = "anonymous"; s.async = true;
+    s.onload = () => { const lib = get(); if (!lib){ rej(new Error("the file reader didn't load")); return; } if (k === "pdf") lib.GlobalWorkerOptions.workerSrc = src.replace("pdf.min.js", "pdf.worker.min.js"); res(lib); };
+    s.onerror = () => { delete libP[k]; rej(new Error("couldn't load the file reader (are you offline?)")); };
+    document.head.appendChild(s);
+  });
+}
+const clip = (s, n) => s.length > n ? s.slice(0, n - 1).trimEnd() + "…" : s;
+const tidy = s => String(s || "").replace(/\r/g, "").replace(/[ \t ]+/g, " ").replace(/ *\n */g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+// long sections are cut at paragraph breaks into parts of about 6000 characters
+function capSections(secs){
+  const out = [];
+  secs.forEach(s => {
+    const x = tidy(s.x); if (!x) return;
+    if (x.length <= 7000){ out.push({ h: s.h, x }); return; }
+    let buf = "", n = 1;
+    x.split(/\n\n+/).forEach(par => { if (buf && buf.length + par.length > 6000){ out.push({ h: `${s.h} (part ${n++})`, x: buf }); buf = ""; } buf += (buf ? "\n\n" : "") + par; });
+    if (buf) out.push({ h: n > 1 ? `${s.h} (part ${n})` : s.h, x: buf });
+  });
+  return out;
+}
+// plain text: split at markdown headings if it has them, otherwise into chunks headed by their first line
+function textSections(text, name){
+  const t = tidy(text); if (!t) return [];
+  const lines = t.split("\n");
+  if (lines.filter(l => /^#{1,3}\s+\S/.test(l)).length >= 2){
+    const secs = []; let cur = { h: name, x: "" };
+    lines.forEach(l => { const m = l.match(/^#{1,3}\s+(.*)$/); if (m){ if (cur.x.trim()) secs.push(cur); cur = { h: m[1].trim(), x: "" }; } else cur.x += l + "\n"; });
+    if (cur.x.trim()) secs.push(cur);
+    return capSections(secs);
+  }
+  const secs = []; let buf = "";
+  t.split(/\n\n+/).forEach(par => { if (buf && buf.length + par.length > 3500){ secs.push(buf); buf = ""; } buf += (buf ? "\n\n" : "") + par; });
+  if (buf) secs.push(buf);
+  return capSections(secs.map(x => ({ h: secs.length > 1 ? `${name}: ${clip(x.split("\n")[0], 70)}` : name, x })));
+}
+async function readPdf(file){
+  const lib = await loadLib("pdf"), doc = await lib.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise, pages = [];
+  for (let i = 1; i <= doc.numPages; i++){
+    const tc = await (await doc.getPage(i)).getTextContent();
+    pages.push(tidy(tc.items.map(it => (it.str || "") + (it.hasEOL ? "\n" : " ")).join("")));
+  }
+  return pages;
+}
+// PDF notes: groups of pages, up to 5 pages or about 4000 characters, headed by the group's first line
+function pdfSections(pages, name){
+  const secs = []; let g = null;
+  pages.forEach((p, i) => {
+    if (g && (i - g.from >= 5 || g.x.length + p.length > 4000)){ secs.push(g); g = null; }
+    if (!g) g = { from: i, to: i, x: "" };
+    g.to = i; g.x += (g.x ? "\n\n" : "") + p;
+  });
+  if (g) secs.push(g);
+  return capSections(secs.filter(s => s.x.trim()).map(s => { const first = (s.x.split("\n").find(l => l.trim().length > 2) || name).trim();
+    return { h: `${clip(first, 70)} (${s.from === s.to ? "page " + (s.from + 1) : "pages " + (s.from + 1) + "–" + (s.to + 1)})`, x: s.x }; }));
+}
+async function readDocxHtml(file){ const m = await loadLib("docx"); return (await m.convertToHtml({ arrayBuffer: await file.arrayBuffer() })).value; }
+// Word: a new section at every heading (h1 to h3)
+function docxSections(html, name){
+  const body = new DOMParser().parseFromString(html, "text/html").body, secs = []; let cur = { h: name, x: "" };
+  const text = el => el.tagName === "TABLE" ? [...el.rows].map(r => [...r.cells].map(c => c.textContent.trim()).join(" | ")).join("\n")
+    : /^(UL|OL)$/.test(el.tagName) ? [...el.children].map(li => "- " + li.textContent.trim()).join("\n") : el.textContent.trim();
+  [...body.children].forEach(el => {
+    if (/^H[1-3]$/.test(el.tagName)){ if (cur.x.trim()) secs.push(cur); cur = { h: el.textContent.trim() || name, x: "" }; return; }
+    const t = text(el); if (t) cur.x += t + "\n\n";
+  });
+  if (cur.x.trim()) secs.push(cur);
+  return capSections(secs);
+}
+const docxText = html => docxSections(html, "").map(s => (s.h ? s.h + "\n" : "") + s.x).join("\n\n");
+// PowerPoint: one section per slide, in slide order; the slide's first line is its heading
+async function readPptx(file){
+  const JSZip = await loadLib("zip"), zip = await JSZip.loadAsync(await file.arrayBuffer());
+  const num = n => +n.match(/(\d+)\.xml$/)[1];
+  const names = Object.keys(zip.files).filter(n => /^ppt\/slides\/slide\d+\.xml$/.test(n)).sort((a, b) => num(a) - num(b));
+  const slides = [];
+  for (const n of names){
+    const xml = new DOMParser().parseFromString(await zip.file(n).async("string"), "application/xml");
+    slides.push([...xml.getElementsByTagName("a:p")].map(p => [...p.getElementsByTagName("a:t")].map(t => t.textContent).join("").trim()).filter(Boolean));
+  }
+  return slides;
+}
+const pptxSections = slides => capSections(slides.map((p, i) => ({ h: `Slide ${i + 1}${p.length ? ": " + clip(p[0], 70) : ""}`, x: p.slice(1).join("\n") || p[0] || "" })));
+const extOf = f => (f.name.match(/\.([a-z0-9]+)$/i) || [, ""])[1].toLowerCase();
+// read a file as sections (notes and slides) or as plain text (papers and memos)
+async function readMaterial(file, asText){
+  const ext = extOf(file), name = file.name.replace(/\.[^.]+$/, "");
+  if (ext === "pdf"){ const pages = await readPdf(file); if (!pages.join("").trim()) throw new Error("no text found in it (a scanned PDF needs OCR first)"); return asText ? pages.join("\n\n") : pdfSections(pages, name); }
+  if (ext === "docx"){ const html = await readDocxHtml(file); return asText ? docxText(html) : docxSections(html, name); }
+  if (ext === "pptx"){ const sl = await readPptx(file); return asText ? sl.map(p => p.join("\n")).join("\n\n") : pptxSections(sl); }
+  if (ext === "txt" || ext === "md" || /^text\//.test(file.type)){ const t = await file.text(); return asText ? tidy(t) : textSections(t, name); }
+  throw new Error("this kind of file can't be read here; use PDF, Word (.docx), PowerPoint (.pptx) or text");
+}
+let layoutPrefill = null;   // {course, paper, memo}: text read from an uploaded past paper or memo, waiting for "Lay it out with AI"
+
 /* ---------- your own courses, sections and papers (store._custom), merged into COURSES ---------- */
-const BASE = COURSES.map(c => ({ c, papers: c.papers.slice(), topics: c.topics.slice() }));
+const copyBank = o => o ? Object.fromEntries(Object.entries(o).map(([k, v]) => [k, v.slice()])) : o;
+const BASE = COURSES.map(c => ({ c, papers: c.papers.slice(), topics: c.topics.slice(), notes: c.notes ? c.notes.slice() : null, quiz: copyBank(c.quiz), cards: copyBank(c.cards) }));
 const rid = () => Math.random().toString(36).slice(2, 8);
-function custom(){ const cu = store._custom || (store._custom = {}); cu.courses ||= []; cu.papers ||= []; cu.hidden ||= {}; cu.topics ||= {}; cu.books ||= {}; return cu; }
+function custom(){ const cu = store._custom || (store._custom = {}); cu.courses ||= []; cu.papers ||= []; cu.hidden ||= {}; cu.topics ||= {}; cu.books ||= {}; cu.gen ||= {}; return cu; }
 function applyCustom(){
   const cu = custom();
   for (let i = COURSES.length - 1; i >= 0; i--) if (COURSES[i].user) COURSES.splice(i, 1);
-  BASE.forEach(b => { b.c.papers = b.papers.slice(); b.c.topics = b.topics.slice(); });
+  BASE.forEach(b => { b.c.papers = b.papers.slice(); b.c.topics = b.topics.slice(); b.c.quiz = copyBank(b.quiz) || {}; if (b.cards) b.c.cards = copyBank(b.cards); else delete b.c.cards; if (b.notes) b.c.notes = b.notes.slice(); else delete b.c.notes; });
   cu.courses.forEach(uc => COURSES.push(Object.assign({}, uc, { user: true, papers: [], topics: [], quiz: {} })));
+  COURSES.forEach(c => {
+    // your uploaded notes and slides (IndexedDB, loaded into MAT) become the course's notes; AI-made cards and quiz questions join its own
+    const up = (MAT[c.id] || []).filter(r => r.type === "notes" || r.type === "slides").flatMap(r => r.sections.map(s => ({ d: r.name, h: s.h, x: s.x })));
+    if (up.length) c.notes = (c.notes || []).concat(up);
+    const g = cu.gen[c.id];
+    if (g){
+      Object.entries(g.quiz || {}).forEach(([t, v]) => { c.quiz[t] = (c.quiz[t] || []).concat(v); });
+      const cards = Object.entries(g.cards || {}).filter(([, v]) => v.length);
+      if (cards.length){ c.cards ||= {}; cards.forEach(([t, v]) => { c.cards[t] = (c.cards[t] || []).concat(v); }); }
+    }
+  });
   COURSES.forEach(c => (cu.topics[c.id] || []).forEach(t => { if (!c.topics.some(x => x.id === t.id)) c.topics.push(t); }));
   cu.papers.forEach(p => { const c = COURSES.find(c => c.id === p.course); if (c) c.papers.push(p); });
   COURSES.forEach(c => { c.every = c.papers; c.papers = c.papers.filter(p => !cu.hidden[p.id]); });
-  setCourse(COURSES.find(c => c.id === COURSE.id) || COURSES[0]);
+  setCourse(COURSES.find(c => c.id === COURSE.id) || COURSES[0] || NO_COURSE);
 }
 applyCustom();
 const pkey = (paper, part) => paper.id + ":" + part.id;
@@ -588,7 +737,7 @@ function route(){
   if (parts[0] === "edit"){ view.paper = null; view.topic = null; renderEdit(parts[1], parts[2]); return; }
   if (parts[0] === "formulas"){ const c = COURSES.find(c => c.id === parts[1]) || COURSE; if (c.formulaSheet){ prefs.fsOpen = true; save(); } location.replace("#c/" + c.id); route(); return; }
   if (parts[0] === "cards"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c || !c.cards){ renderCourses(); return; } setCourse(c); renderCards(parts[2] || null); return; }
-  if (parts[0] === "revisit"){ const c = COURSES.find(c => c.id === parts[1]) || COURSE; view.paper = null; view.topic = null; setCourse(c); renderRevisit(); return; }
+  if (parts[0] === "revisit"){ const c = COURSES.find(c => c.id === parts[1]) || (COURSE.id ? COURSE : null); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderRevisit(); return; }
   if (parts[0] === "c"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderHome(); return; }
   { const c = (parts[0] === "quiz" || parts[0] === "topic") ? courseOfTopic(parts[1]) : courseOfPaper(parts[0]); if (c) setCourse(c); }
   if (parts[0] === "quiz" && TOPICS.some(x => x.id === parts[1])){ view.paper = null; view.topic = parts[1]; renderQuiz(parts[1]); return; }
@@ -613,7 +762,7 @@ function route(){
 }
 window.addEventListener("hashchange", route);
 $("#homeBtn").onclick = () => go($("#homeBtn").dataset.go || "");
-$("#revTop").onclick = () => go("revisit/" + COURSE.id);
+$("#revTop").onclick = () => go(COURSE.id ? "revisit/" + COURSE.id : "");
 $("#paperBtn").onclick = () => { prefs.showPaper = !prefs.showPaper; save(); applyLayout(); };
 $("#paperXBtn").onclick = () => { prefs.paperX = prefs.paperX === false; save(); applyLayout(); if (view.paper && $("#left")) renderLeft(); };
 $("#layoutBtn").onclick = () => { prefs.markLayout = !prefs.markLayout; save(); applyLayout(); if (view.paper) renderRight(); };
@@ -652,6 +801,15 @@ function paperProgress(paper){
 function renderCourses(){
   setHome("", ""); $("#crumb").textContent = "Pick a course"; $("#appName").textContent = "Exam Desk"; applyLayout();
   $("#app").className = "";
+  if (!COURSES.length){
+    $("#app").innerHTML = `<div class="home">
+      <div class="intro"><p><strong>Exam Desk</strong> turns your own course material into exam practice. Add a course, upload your notes, slides, past papers and memos, and practise one required at a time with AI marking, flash cards, quick quizzes and topic summaries.</p>
+      <p>Everything you add stays in this browser. Download a backup from the courses page to move it to another device.</p></div>
+      <div class="row"><button class="btn primary" id="mgAll">Add your first course</button></div>
+    </div>`;
+    $("#mgAll").onclick = () => go("manage");
+    return;
+  }
   $("#app").innerHTML = `<div class="home">
     <div class="intro"><p>Pick a course. Each one has its past papers to work through one required at a time, quick quizzes on the theory, and a list of your weakest sections.</p></div>
     <h2 class="sec">Courses</h2>
@@ -713,7 +871,7 @@ function renderHome(){
 function rv(cid){ const r = store._revisit || (store._revisit = {}); const k = cid || COURSE.id; return r[k] || (r[k] = { items: [], notes: "" }); }
 const rvHas = id => rv().items.some(x => x.id === id);
 function rvToggle(item){ const r = rv(); const i = r.items.findIndex(x => x.id === item.id); if (i >= 0) r.items.splice(i, 1); else r.items.unshift(Object.assign({ added: Date.now() }, item)); save(); syncRevTop(); return i < 0; }
-function syncRevTop(){ const b = $("#revTop"); if (!b) return; const h = location.hash.replace(/^#/, ""); b.hidden = !h; const n = h ? rv().items.length : 0; b.textContent = n ? `Revisit (${n})` : "Revisit"; }
+function syncRevTop(){ const b = $("#revTop"); if (!b) return; const h = location.hash.replace(/^#/, ""); b.hidden = !h || !COURSE.id; const n = h && COURSE.id ? rv().items.length : 0; b.textContent = n ? `Revisit (${n})` : "Revisit"; }
 function qItem(paper, pt){
   let go = paper.id; paper.questions.forEach((q, qi) => q.parts.forEach((pp, pi) => { if (pp === pt) go = `${paper.id}/${qi}/${pi}`; }));
   return { id: "q:" + paper.id + ":" + pt.id, kind: "q", label: `${paper.title}: Required ${pt.id} (${pt.marks} marks)`, sub: pt.required.length > 220 ? pt.required.slice(0, 217) + "..." : pt.required, go };
@@ -939,7 +1097,7 @@ function renderManage(){
   $("#app").className = "";
   $("#app").innerHTML = `<div class="home mg">
     <h2 class="sec">Courses</h2>
-    <div>${COURSES.map(c => `<div class="mgrow"><span><strong>${esc(c.name)}</strong> ${esc(c.code || "")} <span class="hint">· ${c.every.length} papers${c.user ? " · added by you" : ""}</span></span>
+    <div>${COURSES.length ? "" : `<div class="hint">No courses yet. Add one below.</div>`}${COURSES.map(c => `<div class="mgrow"><span><strong>${esc(c.name)}</strong> ${esc(c.code || "")} <span class="hint">· ${c.every.length} papers${c.user ? " · added by you" : ""}</span></span>
       <span class="row"><button class="btn small" data-mc="${c.id}">Papers and sections</button>${c.user ? `<button class="btn small" data-delc="${c.id}">Delete course</button>` : ""}</span></div>`).join("")}</div>
     <h2 class="sec">Add a course</h2>
     <label class="f" for="ncName">Course name</label><input id="ncName" placeholder="e.g. Portfolio Management">
@@ -948,7 +1106,7 @@ function renderManage(){
     <label class="f" for="ncMins">Exam minutes per mark</label><input id="ncMins" type="number" step="0.1" min="0.2" value="1.5">
     <div class="row"><button class="btn primary" id="ncAdd">Add course</button></div>
     <h2 class="sec">Backup</h2>
-    <div class="hint">Courses, papers, hidden papers and notes you add are saved in this browser only. Download a backup to move them to another device and restore it there. You can also send the backup file to have it built into the site for good.</div>
+    <div class="hint">Courses, papers, hidden papers, notes and the source material you upload are saved in this browser only. Download a backup to move them to another device and restore it there.${EDITION === "full" ? " You can also send the backup file to have it built into the site for good." : ""}</div>
     <div class="row"><button class="btn" id="bkDown">Download backup</button><button class="btn" id="bkUp">Restore a backup</button><input id="bkIn" type="file" accept=".json,application/json" hidden></div>
     <div id="mgMsg" role="status"></div>
   </div>`;
@@ -956,20 +1114,21 @@ function renderManage(){
   document.querySelectorAll("[data-mc]").forEach(b => b.onclick = () => go("manage/" + b.dataset.mc));
   document.querySelectorAll("[data-delc]").forEach(b => b.onclick = () => {
     const c = COURSES.find(x => x.id === b.dataset.delc);
-    if (!confirm(`Delete ${c.name} and the ${c.every.length} papers you added to it? This can't be undone (unless you have a backup).`)) return;
-    cu.courses = cu.courses.filter(x => x.id !== c.id); cu.papers = cu.papers.filter(p => p.course !== c.id); delete cu.topics[c.id];
-    save(); applyCustom(); renderManage();
+    if (!confirm(`Delete ${c.name}, the ${c.every.length} papers you added to it and its uploaded material? This can't be undone (unless you have a backup).`)) return;
+    cu.courses = cu.courses.filter(x => x.id !== c.id); cu.papers = cu.papers.filter(p => p.course !== c.id); delete cu.topics[c.id]; delete cu.gen[c.id]; delete cu.books[c.id];
+    save(); matDelCourse(c.id).catch(() => {}).finally(() => { applyCustom(); renderManage(); });
   });
   $("#ncAdd").onclick = () => {
     const name = $("#ncName").value.trim(), code = $("#ncCode").value.trim();
     if (!name){ msg("Give the course a name.", true); $("#ncName").focus(); return; }
     const id = "u-" + rid();
-    cu.courses.push({ id, name, code, crumb: (code ? code + " " : "") + "past papers", subject: `UCT ${code ? code + " " : ""}${name} test or exam`, minPerMark: Math.max(0.2, +$("#ncMins").value || 1.5), tablesLabel: "Formula sheet" });
+    cu.courses.push({ id, name, code, crumb: (code ? code + " " : "") + "past papers", subject: `${name}${code ? " (" + code + ")" : ""} test or exam`, minPerMark: Math.max(0.2, +$("#ncMins").value || 1.5), tablesLabel: "Formula sheet" });
     cu.topics[id] = $("#ncTopics").value.split("\n").map(x => x.trim()).filter(Boolean).map(n => ({ id: "u" + rid(), name: n }));
     save(); applyCustom(); go("manage/" + id);
   };
-  $("#bkDown").onclick = () => {
-    const blob = new Blob([JSON.stringify({ app: "past-paper-examiner", saved: new Date().toISOString(), custom: store._custom || {}, notes: store._notes || {} }, null, 1)], { type: "application/json" });
+  $("#bkDown").onclick = async () => {
+    let material = []; try { material = await matAll(); } catch { msg("Couldn't read your uploaded material, so the backup leaves it out.", true); }
+    const blob = new Blob([JSON.stringify({ app: "past-paper-examiner", saved: new Date().toISOString(), custom: store._custom || {}, notes: store._notes || {}, material }, null, 1)], { type: "application/json" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "examiner-backup-" + new Date().toISOString().slice(0, 10) + ".json"; a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 5000);
   };
@@ -979,8 +1138,11 @@ function renderManage(){
     try {
       const d = JSON.parse(await f.text());
       if (!d || d.app !== "past-paper-examiner" || typeof d.custom !== "object") throw 0;
-      if (!confirm("Replace your added courses, papers and hidden papers with the ones in this backup? Notes in the backup are added to yours.")) return;
-      store._custom = d.custom; store._notes = Object.assign(store._notes || {}, d.notes || {}); save(); applyCustom(); renderManage(); msg("Backup restored.");
+      const hasMat = Array.isArray(d.material);
+      if (!confirm(`Replace your added courses, papers and hidden papers${hasMat ? ", and all your uploaded material," : ""} with the ones in this backup? Notes in the backup are added to yours.`)) return;
+      store._custom = d.custom; store._notes = Object.assign(store._notes || {}, d.notes || {}); save();
+      if (hasMat){ await matClear(); for (const r of d.material) if (r && r.id && r.course && Array.isArray(r.sections)) await matPut(r); await loadMaterial(); }
+      applyCustom(); renderManage(); msg("Backup restored.");
     } catch { msg("That file isn't a backup from this site.", true); }
   };
 }
@@ -991,6 +1153,7 @@ function renderManageCourse(cid){
   const cu = custom(), mine = new Set((cu.topics[c.id] || []).map(t => t.id)), label = k => (KINDS.find(x => x[0] === k) || [k, k])[1];
   $("#app").innerHTML = `<div class="home mg">
     <div class="row"><button class="btn primary" id="npAdd">Add a paper, test, tut or workshop</button><button class="btn" id="mgOpen">Open ${esc(c.name)}</button></div>
+    ${materialHTML(c)}
     <h2 class="sec">Papers</h2>
     <div class="hint">Hide a paper to take it off the course page and out of the section practice (your marks on it are kept). Papers you added can also be edited or deleted.</div>
     <div>${c.every.map(p => { const off = !!cu.hidden[p.id];
@@ -1033,6 +1196,179 @@ function renderManageCourse(cid){
     (cu.books[c.id] ||= []).push({ label, url, topics }); save(); renderManageCourse(cid);
   };
   $("#ntAdd").onclick = () => { const n = $("#ntName").value.trim(); if (!n){ $("#ntName").focus(); return; } (cu.topics[c.id] ||= []).push({ id: "u" + rid(), name: n }); save(); applyCustom(); renderManageCourse(cid); };
+  wireMaterial(c, cid);
+}
+
+/* ---------- source material on a course: upload, list, and make flash cards and quiz questions from it ---------- */
+const MAT_TYPES = [["notes", "Notes"], ["slides", "Slides"], ["paper", "Past paper"], ["memo", "Memo"]];
+let smNote = null;   // {cid, text, err}: a message to show after the page is drawn again
+const upMaterial = cid => (MAT[cid] || []).filter(r => r.type === "notes" || r.type === "slides");
+function materialHTML(c){
+  const recs = MAT[c.id] || [], g = custom().gen[c.id], tl = k => (MAT_TYPES.find(x => x[0] === k) || [k, k])[1];
+  const nCards = g ? Object.values(g.cards || {}).reduce((a, v) => a + v.length, 0) : 0, nQuiz = g ? Object.values(g.quiz || {}).reduce((a, v) => a + v.length, 0) : 0;
+  const pf = layoutPrefill && layoutPrefill.course === c.id ? layoutPrefill : null;
+  const note = smNote && smNote.cid === c.id ? smNote : null; smNote = null;
+  return `<h2 class="sec">Source material</h2>
+    <div class="hint">Upload your notes, lecture slides, past papers and memos: PDF, Word (.docx), PowerPoint (.pptx) or text files. Notes and slides are split into sections, and topic summaries, flash cards and quiz questions are written from them. A past paper or memo is read into <strong>Lay it out with AI</strong> so it becomes a paper you can answer. It all stays in this browser; the backup on the courses page includes it.</div>
+    <div>${recs.map(r => `<div class="mgrow"><span>${esc(r.name)} <span class="hint">· ${esc(tl(r.type))} · ${r.sections.length} section${r.sections.length === 1 ? "" : "s"}</span></span><span class="row"><button class="btn small" data-mdel="${esc(r.id)}" aria-label="Delete ${esc(r.name)}">Delete</button></span></div>`).join("") || `<div class="hint">No material uploaded yet.</div>`}</div>
+    <div class="row nbadd"><label for="smType">This is</label><select id="smType">${MAT_TYPES.map(([k, l]) => `<option value="${k}">${l}</option>`).join("")}</select><button class="btn small primary" id="smPick">Upload files</button><input id="smIn" type="file" multiple accept=".pdf,.docx,.pptx,.txt,.md,text/plain,text/markdown" hidden></div>
+    <details><summary>Or paste text</summary>
+      <label class="f" for="smName">Name</label><input id="smName" placeholder="e.g. Week 3 notes">
+      <label class="f" for="smText">Text (lines starting with # become section headings)</label><textarea id="smText" rows="6"></textarea>
+      <div class="row"><button class="btn small" id="smPaste">Add pasted text</button></div></details>
+    ${pf ? `<div class="notice">Ready to lay out: ${pf.paper ? `question paper (${pf.paper.length.toLocaleString()} characters)` : "no question paper yet"} · ${pf.memo ? `memo (${pf.memo.length.toLocaleString()} characters)` : "no memo yet (choose Memo and upload it, or go ahead without)"}.
+      <div class="row"><button class="btn small primary" id="pfGo"${pf.paper ? "" : " disabled"}>Lay it out with AI</button><button class="btn small" id="pfClear">Discard</button></div></div>` : ""}
+    <div id="smMsg" class="${note && note.err ? "err" : "hint"}" role="status">${note ? esc(note.text) : ""}</div>
+    <h2 class="sec">Flash cards and quiz from your material</h2>
+    <div class="hint">The AI writes flash cards and short quiz questions for each section of the course, using only your uploaded notes and slides.${c.topics.length ? "" : " The course has no sections yet, so it proposes them from your headings first."} ${g ? `You have ${nCards} cards and ${nQuiz} quiz questions made on ${new Date(g.at).toLocaleDateString()}; making them again replaces them.` : ""}</div>
+    <div class="row"><button class="btn" id="genGo">Make flash cards and quiz from my material</button>${g ? `<button class="btn small" id="genRm">Remove them</button>` : ""}</div>
+    <div id="genMsg" role="status"></div>`;
+}
+function wireMaterial(c, cid){
+  const show = (text, err) => { const m = $("#smMsg"); if (m){ m.className = err ? "err" : "hint"; m.textContent = text; } };
+  const again = (text, err) => { smNote = { cid, text, err }; applyCustom(); renderManageCourse(cid); };
+  const addRec = async (name, type, sections) => {
+    const rec = { id: "m-" + Date.now().toString(36) + rid(), course: c.id, name, type, sections, chars: sections.reduce((a, s) => a + s.x.length, 0), added: Date.now() };
+    await matPut(rec); (MAT[c.id] ||= []).push(rec); return rec;
+  };
+  $("#smPick").onclick = () => $("#smIn").click();
+  $("#smIn").onchange = async e => {
+    const files = [...e.target.files], type = $("#smType").value; e.target.value = "";
+    if (!files.length) return;
+    const done = [], bad = [];
+    for (const f of files){
+      show(`Reading ${f.name}…`);
+      try {
+        if (type === "paper" || type === "memo"){
+          const text = await readMaterial(f, true); if (!text.trim()) throw new Error("no text found in it");
+          if (!layoutPrefill || layoutPrefill.course !== c.id) layoutPrefill = { course: c.id, paper: "", memo: "" };
+          layoutPrefill[type] = (layoutPrefill[type] ? layoutPrefill[type] + "\n\n" : "") + text;
+          done.push(`${f.name} (read for laying out)`);
+        } else {
+          const secs = await readMaterial(f, false); if (!secs.length) throw new Error("no text found in it");
+          await addRec(f.name, type, secs); done.push(`${f.name} (${secs.length} section${secs.length === 1 ? "" : "s"})`);
+        }
+      } catch (err) { bad.push(`${f.name}: ${err?.message || err}`); }
+    }
+    again([done.length ? "Added " + done.join(", ") + "." : "", bad.length ? "Couldn't read " + bad.join("; ") + "." : ""].filter(Boolean).join(" "), !done.length);
+  };
+  $("#smPaste").onclick = async () => {
+    const text = $("#smText").value, name = $("#smName").value.trim() || "Pasted text", type = $("#smType").value;
+    if (!text.trim()){ show("Paste some text first.", true); $("#smText").focus(); return; }
+    if (type === "paper" || type === "memo"){
+      if (!layoutPrefill || layoutPrefill.course !== c.id) layoutPrefill = { course: c.id, paper: "", memo: "" };
+      layoutPrefill[type] = (layoutPrefill[type] ? layoutPrefill[type] + "\n\n" : "") + tidy(text); again("Read the pasted text for laying out."); return;
+    }
+    try { const secs = textSections(text, name); await addRec(name, type, secs); again(`Added ${name} (${secs.length} section${secs.length === 1 ? "" : "s"}).`); }
+    catch (err) { show("Couldn't save it: " + (err?.message || err), true); }
+  };
+  document.querySelectorAll("[data-mdel]").forEach(b => b.onclick = async () => {
+    const r = (MAT[c.id] || []).find(x => x.id === b.dataset.mdel); if (!r) return;
+    if (!confirm(`Delete ${r.name} from this course's material? This can't be undone (unless you have a backup).`)) return;
+    try { await matDel(r.id); MAT[c.id] = MAT[c.id].filter(x => x.id !== r.id); again(`Deleted ${r.name}.`); } catch (err) { show("Couldn't delete it: " + (err?.message || err), true); }
+  });
+  const pg = $("#pfGo"); if (pg) pg.onclick = () => go(`edit/${c.id}/new`);
+  const pc = $("#pfClear"); if (pc) pc.onclick = () => { layoutPrefill = null; renderManageCourse(cid); };
+  const gr = $("#genRm"); if (gr) gr.onclick = () => { if (!confirm("Remove the flash cards and quiz questions made from your material?")) return; delete custom().gen[c.id]; save(); again("Removed."); };
+  $("#genGo").onclick = () => genFromMaterial(c.id);
+}
+const AI_ERR = { access_code: "This site's AI needs the access code. Open any required, press Submit and enter it, then try again.", rate_limited: "You've hit a usage limit. Wait a bit, then try again.", bad_key: "Your AI key was rejected. Check it under AI key in Settings." };
+const reEsc = s => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function genQuizItem(x){
+  const q = String(x?.q || "").trim(), a = String(x?.a || "").trim(); if (!q || !a) return null;
+  const n = typeof x.number === "number" ? x.number : typeof x.number === "string" && /^-?[\d.]+$/.test(x.number.trim()) ? +x.number : NaN;
+  if (isFinite(n)) return { q, a, n };
+  const k = (Array.isArray(x.keywords) ? x.keywords : []).map(kw => String(kw).split("|").map(s => s.trim()).filter(Boolean).map(reEsc).join("|")).filter(Boolean).slice(0, 3);
+  try { k.forEach(p => new RegExp(p, "i")); } catch { return null; }
+  return k.length ? { q, a, k } : null;
+}
+async function genFromMaterial(cid){
+  let c = COURSES.find(x => x.id === cid); if (!c) return;
+  const out = (t, err) => { const m = $("#genMsg"); if (m) m.innerHTML = err ? `<div class="notice">${esc(t)}</div>` : `<div class="busy"><span class="dot"></span><span>${esc(t)}</span></div>`; };
+  const secs = upMaterial(c.id).flatMap(r => r.sections.map(s => ({ d: r.name, h: s.h, x: s.x })));
+  if (!secs.length){ out("Upload notes or slides first (choose Notes or Slides, then Upload files).", true); return; }
+  if (!canMark()){ out("Flash cards and quizzes are written by the AI marker, which isn't set up in this browser. Add your own AI key in Settings (a free Gemini key works).", true); return; }
+  if (backend() === "api" && api.codeRequired && !getCode()){ askCode(); return; }
+  const btn = $("#genGo"); if (btn) btn.disabled = true;
+  const cu = custom(), fail = e => { out(AI_ERR[e?.code] || "Couldn't make them" + (e?.message ? ": " + e.message : "") + ". Try again.", true); if (btn) btn.disabled = false; };
+  const heads = secs.map((s, i) => `${i + 1}. ${clip(s.h.replace(/\s+/g, " "), 100)}`).join("\n").slice(0, 30000);
+  // 1. which notes sections belong to which course section (proposing the sections first if the course has none)
+  let byTopic = {};
+  try {
+    if (!c.topics.length){
+      out("Reading your headings and proposing sections for the course…");
+      const r = await markJSON(`These are the numbered headings of a student's notes and slides for the course "${c.name}". Group them into 4 to 12 revision sections for the course, in the order the material covers them, using only topics the headings show. Give each section a short name (2 to 6 words) and list the numbers of the headings that belong to it; every heading goes in one section.
+
+Reply with only: {"sections":[{"name":"...","headings":[1,2,3]}]}
+
+HEADINGS:
+${heads}`);
+      const list = (r.sections || []).map(s => ({ name: String(s.name || "").trim(), hs: (s.headings || []).map(Number) })).filter(s => s.name);
+      if (!list.length) throw { code: "invalid_json", message: "no sections came back" };
+      cu.topics[c.id] = list.map(s => ({ id: "u" + rid(), name: clip(s.name, 60) })); save(); applyCustom(); c = COURSES.find(x => x.id === cid);
+      list.forEach((s, i) => { byTopic[cu.topics[cid][i].id] = s.hs; });
+    } else {
+      out("Matching your notes to the course's sections…");
+      const r = await markJSON(`A student's course "${c.name}" has these numbered sections:
+${c.topics.map((t, i) => `${i + 1}. ${t.name}`).join("\n")}
+
+These are the numbered headings of their notes and slides. Say which section each heading belongs to (0 if none fits).
+
+Reply with only: {"map":[[headingNumber, sectionNumber]]}
+
+HEADINGS:
+${heads}`);
+      (r.map || []).forEach(m => { const t = c.topics[+(m || [])[1] - 1]; if (t) (byTopic[t.id] ||= []).push(+m[0]); });
+    }
+  } catch (e) {
+    if (AI_ERR[e?.code]) return fail(e);
+    byTopic = {};
+  }
+  // fallback when the AI's matching fails or misses a section: shared words between the section name and the heading and text
+  c.topics.forEach(t => {
+    if ((byTopic[t.id] || []).some(n => secs[n - 1])) return;
+    const w = new Set(sumWords(t.name)); if (!w.size) return;
+    byTopic[t.id] = secs.map((s, i) => [i + 1, sumWords(s.h).filter(x => w.has(x)).length * 3 + new Set(sumWords(s.x).filter(x => w.has(x))).size]).filter(x => x[1] >= 2).sort((a, b) => b[1] - a[1]).slice(0, 8).map(x => x[0]);
+  });
+  // 2. cards and quiz questions for each section, from its own material only
+  const gen = { cards: {}, quiz: {}, at: Date.now() }, skipped = [];
+  let nC = 0, nQ = 0, errs = 0;
+  const todo = c.topics.filter(t => (byTopic[t.id] || []).some(n => secs[n - 1]));
+  c.topics.filter(t => !todo.includes(t)).forEach(t => skipped.push(t.name));
+  if (!todo.length){ out("None of your material matched the course's sections. Check the section names, or upload more notes.", true); if (btn) btn.disabled = false; return; }
+  for (let i = 0; i < todo.length; i++){
+    const t = todo[i];
+    out(`Section ${i + 1} of ${todo.length}: ${t.name}… (${nC} cards and ${nQ} quiz questions so far)`);
+    let mat = "";
+    for (const n of [...new Set(byTopic[t.id])].sort((a, b) => a - b)){ const s = secs[n - 1]; if (!s) continue; const piece = `[${s.h}]\n${s.x}\n\n`; if (mat.length + piece.length > 16000){ if (!mat) mat = piece.slice(0, 16000); break; } mat += piece; }
+    try {
+      const r = await markJSON(`You are writing revision material for a student's course "${c.name}", section "${t.name}".
+
+Use ONLY the student's material below. Do not add facts, figures, rules or examples that are not in it. If the material is thin, write fewer items.
+
+Write:
+- "cards": 6 to 12 flash cards. "front" is a short question or term; "back" is the answer in 1 to 3 sentences, taken from the material.
+- "quiz": 4 to 8 short type-in questions, each with one clear answer. "a" is the model answer in one or two sentences (with the working for a calculation). If the answer is a single number, put it in "number" as a plain number (no units, spaces or commas; a percentage like 12.5); otherwise "number" is null and "keywords" lists 1 to 3 short words a correct answer must contain, with "|" between acceptable alternatives (e.g. "liquidity|liquid").
+
+Reply with only: {"cards":[{"front":"...","back":"..."}],"quiz":[{"q":"...","a":"...","number":null,"keywords":["..."]}]}
+
+MATERIAL:
+<<<
+${mat}
+>>>`);
+      const cards = (r.cards || []).map(x => [String(x?.front || "").trim(), String(x?.back || "").trim()]).filter(x => x[0] && x[1]);
+      const quiz = (r.quiz || []).map(genQuizItem).filter(Boolean);
+      if (cards.length){ gen.cards[t.id] = cards; nC += cards.length; }
+      if (quiz.length){ gen.quiz[t.id] = quiz; nQ += quiz.length; }
+    } catch (e) {
+      if (AI_ERR[e?.code]){ if (nC + nQ){ cu.gen[cid] = gen; save(); applyCustom(); } return fail(e); }
+      errs++;
+    }
+  }
+  if (!nC && !nQ){ out("The AI didn't return any cards or questions. Try again.", true); if (btn) btn.disabled = false; return; }
+  cu.gen[cid] = gen; save(); applyCustom();
+  smNote = { cid, text: `Made ${nC} flash cards and ${nQ} quiz questions across ${todo.length - errs} section${todo.length - errs === 1 ? "" : "s"}.${errs ? ` ${errs} section${errs === 1 ? "" : "s"} failed; make them again to retry.` : ""}${skipped.length ? ` No material matched: ${skipped.join(", ")}.` : ""} Open the course to use them.` };
+  if (location.hash === "#manage/" + cid) renderManageCourse(cid);
 }
 
 // A paper as editable text:  "# Question title", scenario lines, "## 1.1 [5] {1, 3}", required lines, "--- memo", memo lines
@@ -1088,7 +1424,9 @@ function renderEdit(cid, pid){
     <details ${p ? "" : "open"}><summary>Paste the paper and memo and let the AI lay it out</summary>
       <div class="hint">Paste the text of the questions and of the memo (from the PDF or Word file). The AI splits it into requireds with marks and section tags and puts the result in the box below for you to check. For a long paper, do one question at a time. Uses the same AI as the marking.</div>
       <label class="f" for="aiPaper">Question text</label><textarea id="aiPaper" rows="7"></textarea>
+      <div class="row"><button class="btn small" data-fill="aiPaper">Read the question paper from a file</button></div>
       <label class="f" for="aiMemo">Memo text</label><textarea id="aiMemo" rows="7"></textarea>
+      <div class="row"><button class="btn small" data-fill="aiMemo">Read the memo from a file</button><input id="fillIn" type="file" accept=".pdf,.docx,.pptx,.txt,.md,text/plain" hidden></div>
       <div class="row"><button class="btn" id="aiGo">Lay it out with AI</button><label><input type="checkbox" id="aiAppend" ${p ? "checked" : ""}> Add to what's already in the box</label></div>
     </details>
     <label class="f" for="epText">The paper</label>
@@ -1102,6 +1440,14 @@ function renderEdit(cid, pid){
   const sum = () => { const qs = textToQuestions($("#epText").value, c), n = qs.reduce((a, q) => a + q.parts.length, 0), m = qs.reduce((a, q) => a + q.marks, 0), untagged = qs.reduce((a, q) => a + q.parts.filter(x => !x.topics.length).length, 0);
     $("#epSum").textContent = `${qs.length} question${qs.length === 1 ? "" : "s"} · ${n} required${n === 1 ? "" : "s"} · ${m} marks${untagged ? ` · ${untagged} not tagged to a section (they won't show in section practice)` : ""}`; };
   $("#epText").oninput = sum; sum();
+  if (!p && layoutPrefill && layoutPrefill.course === c.id){ $("#aiPaper").value = layoutPrefill.paper || ""; $("#aiMemo").value = layoutPrefill.memo || ""; layoutPrefill = null; msg("Your uploaded question paper and memo are in the boxes below. Press Lay it out with AI."); }
+  let fillTo = null;
+  document.querySelectorAll("[data-fill]").forEach(b => b.onclick = () => { fillTo = b.dataset.fill; $("#fillIn").click(); });
+  $("#fillIn").onchange = async e => {
+    const f = e.target.files[0]; e.target.value = ""; if (!f || !fillTo) return;
+    msg(`Reading ${f.name}…`);
+    try { $("#" + fillTo).value = await readMaterial(f, true); msg(`Read ${f.name}.`); } catch (err) { msg(`Couldn't read ${f.name}: ${err?.message || err}`, true); }
+  };
   $("#epCancel").onclick = () => go("manage/" + c.id);
   $("#aiGo").onclick = async () => {
     const paper = $("#aiPaper").value.trim(), memo = $("#aiMemo").value.trim();
@@ -1195,7 +1541,7 @@ function fsHtml(){
     return `<div class="fssec${isNx ? " nx" : ""}">${sc.h ? `<p class="head">${esc(sc.h)}${isNx ? ` <span class="pill w">Not examined</span>` : ""}</p>` : ""}${renderDoc(sc.l.join("\n"))}</div>`;
   }).join("");
   return `${COURSE.formulaLabel ? `<div class="hint">${esc(COURSE.formulaLabel)}</div>` : ""}
-    ${COURSE.id === "tax2" ? `<div class="notice">Not on the sheet: CGT inclusion rates and exclusions, the VAT rate, fringe benefit rates, the official interest rate, estate duty and donations tax rates, and the company rate. These come from the question itself or your open-book legislation handbook.</div>` : ""}
+    /*FULL{*/${COURSE.id === "tax2" ? `<div class="notice">Not on the sheet: CGT inclusion rates and exclusions, the VAT rate, fringe benefit rates, the official interest rate, estate duty and donations tax rates, and the company rate. These come from the question itself or your open-book legislation handbook.</div>` : ""}/*}FULL*/
     <div class="doc">${body}</div>`;
 }
 var fsShown = null;
@@ -1527,7 +1873,7 @@ function wireFeedback(){
 
 /* ---------- marking ---------- */
 function genericPrompt(paper, q, pt, answer){
-  return `You are an experienced examiner marking a ${COURSE.subject} script. Mark the student's answer to ONE required against the suggested solution, the way a real UCT marker would, then give feedback that teaches.
+  return `You are an experienced examiner marking a ${COURSE.subject} script. Mark the student's answer to ONE required against the suggested solution, the way a real ${EDITION === "full" ? "UCT" : "university"} marker would, then give feedback that teaches.
 
 MARKING RULES
 - Total for this required: ${pt.marks} marks. Never award more than ${pt.marks}.
@@ -1573,7 +1919,7 @@ Reply with only one JSON object in exactly this shape:
 }
 function markingPrompt(paper, q, pt, answer){
   if (COURSE.id !== "tax2") return genericPrompt(paper, q, pt, answer);
-  return `You are an experienced examiner marking a UCT ACC3004W Taxation II (South African tax) exam script. Mark the student's answer to ONE required against the suggested solution, the way a real UCT marker would, then give feedback that teaches.
+  /*FULL{*/return `You are an experienced examiner marking a UCT ACC3004W Taxation II (South African tax) exam script. Mark the student's answer to ONE required against the suggested solution, the way a real UCT marker would, then give feedback that teaches.
 
 MARKING RULES
 - Total for this required: ${pt.marks} marks. Never award more than ${pt.marks}.
@@ -1616,7 +1962,7 @@ ${answer}
 >>>
 
 Reply with only one JSON object in exactly this shape:
-{"score": number, "overall": "2-3 sentence verdict", "errors": [{"what": "...", "fix": "...", "why": "..."}], "missed": [{"point": "...", "marks": number}], "correct": ["..."], "improve": ["..."], "revise": ["..."], "examTip": "..."}`;
+{"score": number, "overall": "2-3 sentence verdict", "errors": [{"what": "...", "fix": "...", "why": "..."}], "missed": [{"point": "...", "marks": number}], "correct": ["..."], "improve": ["..."], "revise": ["..."], "examTip": "..."}`;/*}FULL*/
 }
 
 let markCtl = null;
@@ -1724,7 +2070,7 @@ function openChat(){
   const draw = () => {
     box.innerHTML = ch.map(m => `<div class="msg ${m.role === "user" ? "u" : "a"}">${m.role === "user" ? esc(m.content) : mdHtml(m.content)}</div>`).join("") +
       `<label class="hint" for="askIn">Ask about your mark, a section, or why the memo treats something a certain way.</label>
-       <textarea id="askIn" placeholder="${COURSE.id === "tax2" ? "e.g. Why is para 7(7) not applied for employees' tax?" : "e.g. Why does a negative gap hurt NII when rates rise?"}"></textarea>
+       <textarea id="askIn" placeholder="${/*FULL{*/COURSE.id === "tax2" ? "e.g. Why is para 7(7) not applied for employees' tax?" : COURSE.id === "bank" ? "e.g. Why does a negative gap hurt NII when rates rise?" : /*}FULL*/"e.g. Why did I lose the marks on the second point?"}"></textarea>
        <div class="row"><button class="btn primary small" id="askSend">Ask</button></div>`;
     $("#askSend").onclick = send;
     box.querySelectorAll(".msg.a").forEach(mathify);
@@ -1750,7 +2096,7 @@ SCENARIO:\n${q.scenario}\n\nREQUIRED ${pt.id} (${pt.marks} marks):\n${pt.require
   draw(); $("#askIn").focus();
 }
 
-route();
+loadMaterial().finally(() => { applyCustom(); route(); });
 </script>
 </body>
 </html>
