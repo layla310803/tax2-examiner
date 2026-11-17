@@ -33,7 +33,7 @@ The past papers are UCT/Studocu material. Keep this repo private, and don't shar
 
 ### Where the site deploys from
 
-The code lives in two private repos: `layla310803/tax2-examiner` and `YLP-Games/tax2-examiner`. Vercel deploys from the personal one. They do not sync on their own, so push every change to both.
+The code lives in two private repos: `layla310803/tax2-examiner` and `YLP-Games/ylp-exam-desk`. Vercel deploys from the personal one. They do not sync on their own, so push every change to both.
 
 ## Section tests and weakest sections
 
