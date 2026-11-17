@@ -950,7 +950,7 @@ function toggleFs(on){
   if (!COURSE || !COURSE.formulaSheet) return;
   prefs.fsOpen = on === undefined ? !prefs.fsOpen : !!on; save(); closeSettings(); syncFs();
 }
-const fsIsHead = l => { const t = l.trim(), u = t.replace(/\(.*?\)/g, "").trim(); return t.length < 70 && !t.includes("|") && (u.match(/[A-Z]/g) || []).length >= 4 && !/[a-z]/.test(u) && !/[.;,:]$/.test(t) && !/\d{3}/.test(u); };
+const fsIsHead = l => { const t = l.trim(), u = t.replace(/\(.*?\)/g, "").trim(); return t.length < 70 && !t.includes("|") && !t.includes("=") && (u.match(/[A-Z]/g) || []).length >= 4 && !/[a-z]/.test(u) && !/[.;,:]$/.test(t) && !/\d{3}/.test(u); };
 const fsNorm = t => t.replace(/\(.*?\)/g, "").replace(/\s+/g, " ").trim().toUpperCase();
 function fsHtml(){
   const f = COURSE.formulaSheet, nx = (COURSE.formulaNotExamined || []).map(fsNorm);
