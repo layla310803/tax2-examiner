@@ -1,0 +1,513 @@
+{
+ "id": "b-exam2025",
+ "title": "2025 Final Exam",
+ "short": "Exam 2025",
+ "kind": "exam",
+ "marks": 140,
+ "minutes": 180,
+ "unofficial": false,
+ "memoNote": "Lecturer's memo printed inline in the paper (red answer key for the MCQs, worked answers and mark ticks for Sections B to D); the MCQ 'Why:' reasons, the missing 2 marks of reasoning in 1.3, the example and benefits in 2.2, a few short workings and a note that the appendix year headers run opposite to the memo's reading were added.",
+ "questions": [
+  {
+   "id": "Q1",
+   "title": "Section A — Multiple Choice (1–2)",
+   "marks": 6,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "A1",
+     "marks": 3,
+     "topics": [
+      "b-intro",
+      "b-fail"
+     ],
+     "required": "1. Which of the following was not a consequence of the COVID pandemic on the banking sector?\n\na) increased credit impairments leading to a significant reduction in profits\nb) lower CET1 ratios as banks attempted to offset reduced profits by holding less equity\nc) the provision of payment holidays to customers who were unable to meet their loan obligations\nd) switching to more liquid financial investments to reduce their risk",
+     "memo": "b) lower CET1 ratios as banks attempted to offset reduced profits by holding less equity (3 marks)\n\nWhy: banks did not deliberately run down equity to offset lower profits - they conserved capital (dividends were suspended or cut) and any dip in CET1 came from losses and impairments, not a choice to hold less equity. Higher credit impairments (a), payment holidays for struggling borrowers (c) and a shift into more liquid investments (d) were all real consequences."
+    },
+    {
+     "id": "A2",
+     "marks": 3,
+     "topics": [
+      "b-intro"
+     ],
+     "required": "2. All of the following are characteristics of mutual banks except:\n\na) Mutual banks are regulated by the SARB.\nb) Like commercial banks, mutual banks have a board of directors and can be capitalised by other juristic persons.\nc) Mutual banks are constituted according to a common bond between members rather than for profit maximisation.\nd) Mutual banks tend to focus mostly on savings, and many don't offer credit facilities",
+     "memo": "b) and c) - both answers allowed (3 marks)\n\nWhy: a mutual bank is owned by its members (depositors), so it cannot be capitalised by other juristic persons the way a commercial bank can (b is not a characteristic). A common bond between members is the defining feature of co-operative banks rather than mutual banks, so (c) was also accepted. Mutual banks are SARB-regulated (a) and are savings-focused, with many not offering credit (d)."
+    }
+   ]
+  },
+  {
+   "id": "Q2",
+   "title": "Section A — Multiple Choice (3–5): Bank X",
+   "marks": 9,
+   "scenario": "The following Statement of Financial Position for Bank X, and additional information, are given.\n\nAssets  |  Amount (R million)  |  Liabilities and Equity  |  Amount (R million)\nCash and Cash Equivalents  |  5 000  |  Deposits from Customers  |  130 000\nReserve Balances at SARB  |  10 000  |  Borrowings from Other Banks  |  15 000\nLoans and Advances to Customers  |  120 000  |  Derivative Liabilities  |  2 000\nInvestment Securities  |  30 000  |  Other Liabilities  |  3 000\nTrading Assets  |  8 000  |  Deferred Tax Liabilities  |  1 000\nProperty and Equipment  |  3 000  |  Ordinary Share Capital  |  10 000\nDerivative Assets  |  2 000  |  Retained Earnings  |  15 000\nDeferred Tax Assets  |  2 000  |  Other Reserves  |  2 000\nGoodwill  |  1 000  |  Preference Shares  |  1 000\nCapitalised Software Expenses  |  1 000  |  Non-controlling Interests  |  4 000\nTotal Assets  |  183 000  |  Total Liabilities and Equity  |  183 000\n\nBank X's risk-weighted asset number is R 90 000 million. R 800 million of Deferred Tax Assets are due to assessed tax losses. The Non-controlling Interests are related to non-bank subsidiaries and should not be counted as capital.",
+   "parts": [
+    {
+     "id": "A3",
+     "marks": 3,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "3. Bank X has a loan-to-deposit ratio of 108%. Which of the following statements is incorrect?\n\na) Such a high ratio indicates liquidity risk.\nb) The loan-to-deposit ratio is in fact 92%.\nc) Such a high ratio indicates lower potential profits.\nd) Regulators would not be happy with such a high ratio.",
+     "memo": "c) Such a high ratio indicates lower potential profits. (3 marks)\n\nWhy: a high loan-to-deposit ratio means more of the deposit base is lent out at higher (loan) rates, so it signals higher potential profits, together with more liquidity risk (a) and regulatory concern (d). Statement (b) is in fact correct: 120 000 / 130 000 = 92,3%."
+    },
+    {
+     "id": "A4",
+     "marks": 3,
+     "topics": [
+      "b-reg",
+      "b-fin"
+     ],
+     "required": "4. Bank X's CET1 capital ratio is as follows:\n\na) (10 000+15 000+2 000+1 000-(2 000-800)-1 000-1 000)/90 000\nb) (10 000+15 000+2 000+1 000-(2 000-800)-1 000-1 000)/(90 000-800-1 000-1 000)\nc) (10 000+15 000+2 000+1 000+4 000-800-1 000-1 000)/90 000\nd) (10 000+15 000+2 000-800-1 000-1 000)/90 000",
+     "memo": "d) (10 000+15 000+2 000-800-1 000-1 000)/90 000 (3 marks)\n\nWhy: CET1 = ordinary share capital 10 000 + retained earnings 15 000 + other reserves 2 000, less the deferred tax asset arising from assessed tax losses (800), goodwill (1 000) and capitalised software (1 000) = 24 200; 24 200 / 90 000 = 26,9%. Preference shares (1 000) are not CET1 and the non-controlling interests are excluded (so a, b and c are wrong); (a) also deducts the wrong part of the DTA, (b) changes the RWA denominator and (c) adds the NCI."
+    },
+    {
+     "id": "A5",
+     "marks": 3,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "5. If Bank X fails to meet minimum capital requirements, which of the following actions would worsen the situation?\n\na) Stop paying dividends until the capital standard is met.\nb) Buy back the shares of Bank X.\nc) Issue new shares to the market.\nd) Sell risky assets.",
+     "memo": "b) Buy back the shares of Bank X. (3 marks)\n\nWhy: a share buy-back pays cash out to shareholders and reduces CET1 capital, lowering the capital ratio further. Retaining dividends (a) and issuing shares (c) raise capital, and selling risky assets (d) reduces risk-weighted assets."
+    }
+   ]
+  },
+  {
+   "id": "Q3",
+   "title": "Section A — Multiple Choice (6–10)",
+   "marks": 15,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "A6",
+     "marks": 3,
+     "topics": [
+      "b-money"
+     ],
+     "required": "6. \"Reserves\" is a critical concept with multiple meanings in banking. The following is not true as it relates to reserves:\n\na) Bank reserves are a highly liquid asset of commercial banks.\nb) The Gold and Foreign Exchange Contingency Reserve Account is equity of the SARB.\nc) Gold held by the SARB would be an example of a reserve asset of the SARB.\nd) Deposits at the SARB by commercial banks are liabilities of the SARB.",
+     "memo": "b) The Gold and Foreign Exchange Contingency Reserve Account is equity of the SARB. (3 marks)\n\nWhy: the GFECRA records the valuation gains and losses on the gold and foreign exchange reserves that accrue to government (National Treasury), so it is not SARB equity. Bank reserves are highly liquid assets of the commercial banks (a) and at the same time liabilities of the SARB (d); gold is one of the SARB's reserve assets (c)."
+    },
+    {
+     "id": "A7",
+     "marks": 3,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "7. Which of the following statements is true?\n\na) When interest sensitive assets exceed interest sensitive liabilities, banks are vulnerable to losses if rates decline.\nb) Reinvestment risk arises when a bank holds longer-term assets relative to liabilities\nc) When interest sensitive liabilities exceed interest sensitive assets, losses can occur if rates decrease.\nd) Refinancing risk arises when a bank holds longer-term liabilities relative to assets.",
+     "memo": "a) When interest sensitive assets exceed interest sensitive liabilities, banks are vulnerable to losses if rates decline. (3 marks)\n\nWhy: with a positive repricing gap (RSA > RSL) a fall in rates cuts interest income by more than interest expense, so NII falls. (c) is the reverse - a negative gap loses when rates rise. (b) and (d) are swapped: longer-term assets than liabilities create refinancing risk, and longer-term liabilities than assets create reinvestment risk."
+    },
+    {
+     "id": "A8",
+     "marks": 3,
+     "topics": [
+      "b-fin",
+      "b-risk"
+     ],
+     "required": "8. Given the following information:\n\nRatio  |  Bank A  |  Bank B\nBorrowed funds to total assets  |  6,60%  |  7,98%\nLoans to deposits  |  34,70%  |  65,83%\nCore deposits to total assets  |  69,00%  |  33,53%\nCommitments to lend to total assets  |  31,13%  |  44,89%\n\nWhich of the following statements is true?\n\na) Bank A has higher liquidity risk than Bank B because of its lower ratio of commitments to lend to total assets.\nb) Bank A has higher liquidity risk than Bank B because of its lower ratio of borrowed funds to total assets.\nc) Bank A has lower liquidity risk than Bank B because of its higher ratio of core deposits to total assets.\nd) Bank A has higher liquidity risk than Bank B because of its lower ratio of loans to deposits.",
+     "memo": "c) Bank A has lower liquidity risk than Bank B because of its higher ratio of core deposits to total assets. (3 marks)\n\nWhy: core deposits are a stable funding source, so a higher core-deposit ratio means lower liquidity risk. Bank A's lower borrowed funds, lower loans-to-deposits and lower commitments to lend also all point to lower (not higher) liquidity risk, so (a), (b) and (d) reverse the logic."
+    },
+    {
+     "id": "A9",
+     "marks": 3,
+     "topics": [
+      "b-irr",
+      "b-risk"
+     ],
+     "required": "9. Which of the following situations best illustrates interest rate risk for a bank?\n\na) The bank's trading desk suffers losses due to a sudden drop in foreign exchange rates.\nb) A mismatch between the repricing of loans and deposits causes a decline in the bank's net interest income when market rates rise.\nc) A cyberattack disrupts the bank's payment system for several hours.\nd) A borrower defaults on a large loan, causing the bank to record a loss.",
+     "memo": "b) A mismatch between the repricing of loans and deposits causes a decline in the bank's net interest income when market rates rise. (3 marks)\n\nWhy: a repricing mismatch hitting NII is the classic (repricing/income) form of interest rate risk. (a) is market (FX) risk, (c) is operational risk and (d) is credit risk."
+    },
+    {
+     "id": "A10",
+     "marks": 3,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "10. Which of the following statements regarding the use of credit forwards to manage credit risk is true?\n\na) If the borrower's credit spread increases above the spread agreed in the contract, the bank receives (ϕT − ϕF) × D* × A.\nb) If the borrower's credit spread decreases below the spread agreed in the contract, the bank receives (ϕF − ϕT) × D* × A.\nc) If the borrower's credit spread increases above the spread agreed in the contract, the bank pays (ϕT − ϕF) × D* × A.\nd) If the borrower's credit spread decreases below the spread agreed in the contract, the bank receives (ϕF − ϕT) × D* × A.",
+     "memo": "a) If the borrower's credit spread increases above the spread agreed in the contract, the bank receives (ϕT − ϕF) × D* × A. (3 marks)\n\nWhy: the lending bank sells the credit forward to hedge. If the spread widens (ϕT > ϕF) the loan loses value and the counterparty pays the bank (ϕT − ϕF) × MD × A, offsetting the loss. If the spread narrows (ϕT < ϕF) it is the bank that pays (ϕF − ϕT) × MD × A, so (b), (c) and (d) are wrong."
+    }
+   ]
+  },
+  {
+   "id": "Q4",
+   "title": "Section B, Question 1 — Comparative analysis of Banks A and B",
+   "marks": 15,
+   "scenario": "You have been provided with the financials and key ratios for two banks, A and B, in the annexures at the end of this paper.\n\nProvide a comparative analysis of their performance over the four-year period 2022 to 2025. Your discussion should focus on trends in the ratios over time and whatever additional insights you can provide using the information provided.\n\nYou should specifically (and only) address:\n\nAppendices - Bank A\n\n  |  2022  |  2023  |  2024  |  2025\nNIM  |  3,8%  |  3,8%  |  4,1%  |  4,0%\nROA  |  1,48%  |  1,52%  |  1,52%  |  1,43%\nROE  |  15,4%  |  15,8%  |  15,6%  |  15,2%\nProfit Margin  |  24,6%  |  24,5%  |  23,6%  |  22,1%\nAsset Utilization  |  6,0%  |  6,2%  |  6,43%  |  6,47%\nJAWS  |  1,1%  |  -2,4%  |  1,0%  |\nLoans-to-Deposits  |  82%  |  82%  |  83%  |  87%\nCredit Loss Ratio  |  0,67%  |  0,58%  |  0,90%  |  0,89%\nCET1 Ratio  |  11,5%  |  11,5%  |  10%  |  10%\nCost of Equity  |  13,3%  |    |    |\n  |\nNet interest income  |  62919  |  59505  |  60125  |  56892\nNon-interest revenue  |  47542  |  45826  |  43037  |  42965\nTotal Income  |  110461  |  105331  |  103162  |  99857\n  |\nOperating Expenses  |  62335  |  60084  |  57512  |  56235\nStaff Costs  |  34554  |  33773  |  31672  |  30976\nOther operating expenses  |  27781  |  26311  |  25840  |  25259\n  |\nCredit Impairment Charges  |  7964  |  6489  |  9410  |  9533\n  |\nCash and balances with central banks  |  75288  |  85145  |  75310  |  77474\nDerivative assets  |  66825  |  48429  |  72629  |  61752\nTrading assets  |  220409  |  178327  |  159798  |  128098\nPledged assets  |  17800  |  7218  |  8879  |  3313\nFinancial investments  |  204703  |  206501  |  180104  |  154630\nCurrent tax assets  |  1192  |  0  |  1773  |  2109\nLoans and advances  |  1181067  |  1119547  |  1048027  |  1065628\nOther assets  |  25546  |  17531  |  12995  |  12530\nInterest in associates and joint ventures  |  2502  |  2122  |  1816  |  1489\nProperty and equipment  |  19608  |  16509  |  13539  |  13450\nGoodwill and other intangible assets  |  21712  |  23006  |  23098  |  23285\nTotal Assets  |  1836652  |  1704335  |  1597968  |  1543758\n  |\nEquity  |  176521  |  163429  |  155233  |  145319\n  |\nDerivative liabilities  |  64724  |  49586  |  73657  |  68037\nTrading liabilities  |  83717  |  61267  |  63577  |  48109\nDeposits  |  1446080  |  1371919  |  1258359  |  1228993\nSubordinated debt  |  23319  |  20819  |  18966  |  22138\nProvisions and other liabilities  |  42291  |  37315  |  28176  |  31162\nTotal Liabilities  |  1660131  |  1540906  |  1442735  |  1398439\n\nAppendices - Bank B\n\n  |  2022  |  2023  |  2024  |  2025\nNIM  |  3,1%  |  3,3%  |  3,0%  |  3,3%\nROA  |  1,07%  |  0,99%  |  1,04%  |  0,95%\nROE  |  12,57%  |  11,60%  |  12,49%  |  11,79%\nProfit Margin  |  23,28%  |  20,95%  |  23,09%  |  21,55%\nAsset Utilization  |  4,6%  |  4,7%  |  4,5%  |  4,4%\nJAWS  |  -1,0%  |  7,8%  |  13,9%  |\nLoans-to-Deposits  |  70%  |  72%  |  69%  |  65%\nCredit Loss Ratio  |  0,27%  |  0,18%  |  0,18%  |  0,40%\nCET1 Ratio  |  12%  |  12%  |  13,5%  |  13,5%\nCost of Equity  |  15,2%  |    |    |\n  |\nNet interest income  |  60924  |  60978  |  56352  |  59626\nNon-interest revenue  |  51272  |  46582  |  46538  |  36306\nTotal Income  |  112196  |  107560  |  102890  |  95932\n  |\nOperating Expenses  |  57225  |  54315  |  56140  |  60118\nStaff Costs  |  28875  |  26554  |  27256  |  28523\nOther operating expenses  |  28350  |  27762  |  28884  |  31595\n  |\nCredit Impairment Charges  |  2756  |  1767  |  1769  |  3400\n  |\nCash and balances with central banks  |  154099  |  162843  |  180624  |  128009\nDerivative assets  |  242995  |  207825  |  219818  |  288476\nTrading assets  |  254271  |  238130  |  287995  |  235125\nPledged assets  |  69203  |  72167  |  90393  |  88126\nFinancial investments  |  443312  |  407433  |  389076  |  436797\nLoans and advances  |  1036743  |  981696  |  962964  |  851504\nOther assets  |  46008  |  40823  |  31976,8  |  29764,6\nInterest in associates and joint ventures  |  57510  |  51028,75  |  39971  |  37205,75\nProperty and equipment  |  80514  |  71440,25  |  55959,4  |  52088,05\nGoodwill and other intangible assets  |  41407,2  |  36740,7  |  28779,12  |  26788,14\nDeferred tax assets  |  4600,8  |  4082,3  |  3197,68  |  2976,46\nTotal Assets  |  2430663  |  2274209  |  2290754  |  2176860\n  |\nEquity  |  192668  |  194249  |  190250  |  175386\n  |\nDerivative liabilities  |  239470  |  205835  |  216821  |  279819\nTrading liabilities  |  223514  |  250315  |  314363  |  242649\nDeposits  |  1475580  |  1370893  |  1391084  |  1303496\nSubordinated debt  |  104555  |  85342  |  64546  |  65915\nProvisions and other liabilities  |  194876  |  167575  |  113690  |  109595\nTotal Liabilities  |  2237995  |  2079960  |  2100504  |  2001474",
+   "parts": [
+    {
+     "id": "B1.1",
+     "marks": 6,
+     "topics": [
+      "b-fin"
+     ],
+     "required": "1.1 Bank efficiency.  [6]",
+     "memo": "The big ratio here is the cost-to-income ratio.\n\nCost-to-income  |  2025  |  2024  |  2023  |  2022\nBank A  |  56,43%  |  57,04%  |  55,75%  |  56,32%\nBank B  |  51,00%  |  50,50%  |  54,56%  |  62,67%\n(table correct: 1 mark per bank)\n\nBoth have fluctuated quite a bit from year to year but Bank B is obviously significantly better than A, being much lower and closer to the ideal benchmark. It's also shown the most improvement over the four years coming off a much higher base in 2022. (2 marks)\n\nStudents can then also discuss the Jaws ratio or the asset utilization ratio for the remaining two marks. You can mark leniently for those two. (2 marks)\n\nWorkings (added): cost-to-income = operating expenses / total income, e.g. Bank A 62 335 / 110 461 = 56,43%; Bank B 57 225 / 112 196 = 51,00% and 60 118 / 95 932 = 62,67%.\n\nNote on the appendix (added): the appendix headers run 2022, 2023, 2024, 2025 from left to right, but the memo treats the first column as 2025 (e.g. Bank A cost-to-income 62 335/110 461 = 56,43% is labelled 2025). The data agree with the memo's reading: the JAWS ratio is blank in the last column (no prior year to compare to) and total assets grow towards the first column. Read the first column as 2025 and the last as 2022."
+    },
+    {
+     "id": "B1.2",
+     "marks": 6,
+     "topics": [
+      "b-fin",
+      "b-reg"
+     ],
+     "required": "1.2 Bank risk.  [6]",
+     "memo": "CET 1: Both well above benchmark requirements but B higher than A showing less risk (but also bigger opportunity cost for lost returns potential). (3 marks)\n\nCredit Loss ratio: Again, B significantly lower than A but both well below the benchmark. So both good and low risk, speaking to good credit quality of clients but B's is lower. This again represents a trade-off though - better credit quality means a lower credit risk premium on loans for the bank so lower return. (3 marks)\n\nStudents could also mention here that B has a much higher cost of equity than A so that could indicate higher overall risk."
+    },
+    {
+     "id": "B1.3",
+     "marks": 3,
+     "topics": [
+      "b-fin",
+      "b-val"
+     ],
+     "required": "1.3 Are the banks creating value? Why or why not?  [3]",
+     "memo": "Bank A is creating value (ROE > COE) (1/2)\nBank B is destroying value (ROE < COE) (1/2)\n\n[Added: the memo only allocates 1 of the 3 marks] Supporting reasoning: value is created when ROE exceeds the cost of equity, i.e. excess equity return = (ROE - COE) x equity > 0. Bank A's ROE of 15,2%-15,8% is above its 13,3% cost of equity in every year, so it earns a positive spread. Bank B's ROE of 11,60%-12,57% is below its 15,2% cost of equity in every year, so it earns a negative spread (roughly -2,6% to -3,6%) and destroys shareholder value despite its better efficiency and lower risk; this would also show up as a P/BV below 1."
+    }
+   ]
+  },
+  {
+   "id": "Q5",
+   "title": "Section B, Question 2 — Netting and supply chain financing",
+   "marks": 9,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "B2.1",
+     "marks": 4,
+     "topics": [
+      "b-mnc"
+     ],
+     "required": "2.1 Briefly explain the process of netting by MNCs in order to reduce transaction costs. Your response should explain the difference between bilateral netting systems and multinational netting systems.  [4]",
+     "memo": "Netting is a technique of optimising cash flow movements between subsidiaries via the elimination of counter payments. This means that only net amount is paid. (1)\n\nFor example, if the parent company is to receive R6 million from its subsidiary and if the same subsidiary is to receive R2 million from the parent company, these two transactions can be netted to one transaction where the subsidiary will transfer R4 million to the parent company. If the amount of these two payments is equal, there will be no movements of funds, and transaction cost will reduce to zero. (1)\n\nA bilateral netting system involves transactions between the parent and a subsidiary or between two subsidiaries. (1)\n\nUnder multinational netting systems each affiliate nets all its inter-affiliate receipts against all its disbursements. It then transfers or receives the balance, depending on whether it is a net receiver or a payer. (1)"
+    },
+    {
+     "id": "B2.2",
+     "marks": 5,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "2.2 Provide an example of supply chain financing and explain how it works. What is the benefit to the supplier and the buyer in this arrangement?  [5]",
+     "memo": "This was straight from the discussion in class. Many of you got the basic principle - a client arranging cheaper finance for its supplier by leveraging its better standing with the banks (due to being larger, having a better credit rating, etc). The key fact is that the client is not arranging a loan for the supplier. The client has arranged the loan with the bank but the bank pays the supplier directly after being provided with an invoice. The final repayment is then still for the client to make once the agreed period has lapsed.\n\n[Added: the memo gives no example or explicit benefits/mark split] Example: a large retailer buys stock from a small manufacturer on 90-day terms. The retailer sets up a supply chain finance facility with its bank; once the retailer approves the manufacturer's invoice, the bank pays the manufacturer early (less a small discount priced off the retailer's credit rating), and the retailer pays the bank the full invoice amount on day 90.\nBenefit to the supplier: it is paid early, improving its cash flow and working capital, at a cheaper rate than it could borrow at itself, and without taking on debt.\nBenefit to the buyer: it keeps (or can extend) its payment terms, so its own working capital/cash conversion cycle improves, and it supports a financially healthier, more reliable supply chain."
+    }
+   ]
+  },
+  {
+   "id": "Q6",
+   "title": "Section C, Question 3 — Loan pricing, money market accounts and SARB liquidity",
+   "marks": 16,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "C3.1",
+     "marks": 4,
+     "topics": [
+      "b-credit",
+      "b-intro"
+     ],
+     "required": "3.1 The interest rate that a bank charges on an individual loan has several constituent parts. Choose four invalid interest rate components from the following list:  [4]\n\n• The bank's bad debt write-off from the previous year.\n• Inflation premium.\n• Maturity risk premium.\n• Bank's operational costs.\n• Foreign exchange risk premium.\n• Real risk-free rate.\n• Bank's profit margin.\n• The expected capital gains tax payable by the bank.\n• Default risk premium (based on the credit worthiness and credit history of the borrower).\n• The race of the borrower.",
+     "memo": "The bank's bad debt write-off from the previous year.\nForeign exchange risk premium.\nThe expected capital gains tax payable by the bank.\nThe race of the borrower.\n(1 mark each)"
+    },
+    {
+     "id": "C3.2",
+     "marks": 2,
+     "topics": [
+      "b-credit",
+      "b-intro"
+     ],
+     "required": "3.2 Which two of the items in 3.1, when combined, makes up the bank's cost of capital if you assume no credit risk for the bank itself?  [2]",
+     "memo": "Real risk-free rate.\nInflation premium.\n(1 mark each)"
+    },
+    {
+     "id": "C3.3",
+     "marks": 1,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "3.3 Which of the items listed in 3.1 can you influence as treasury manager by offering the bank security for a loan?  [1]",
+     "memo": "Default risk premium (based on the credit worthiness and credit history of the borrower). (1)"
+    },
+    {
+     "id": "C3.4",
+     "marks": 1,
+     "topics": [
+      "b-reg",
+      "b-money"
+     ],
+     "required": "3.4 \"The ABSA Money Market Account is an investment solution that invests in a unit trust fund that is fully invested in money market instruments at all times\". True or false - A money market account at ABSA is guaranteed up to R100k.  [1]",
+     "memo": "False - CODI does not guarantee money market accounts. (1)"
+    },
+    {
+     "id": "C3.5",
+     "marks": 1,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3.5 Why are money market accounts sometimes preferred above normal deposit or savings accounts?  [1]",
+     "memo": "Higher risk implies higher return. Some clients chase the higher return. (1)"
+    },
+    {
+     "id": "C3.6",
+     "marks": 6,
+     "topics": [
+      "b-money"
+     ],
+     "required": "3.6 How can the South African Reserve Bank suck liquidity out of the banking system? Give and explain three possible ways.  [3 x 2]",
+     "memo": "Increase the repo rate. This discourages lending and reduces the amount of money circulating in the economy. (2)\n\nIncrease the minimum reserve requirement for banks. This reduces the amount of money banks can lend out, thereby tightening liquidity. (2)\n\nThe SARB sells assets to the banks. When banks buy these securities, they pay SARB, which reduces the cash (liquidity) available in the banking system. (2)\n\nAny other reasonable answer well explained."
+    },
+    {
+     "id": "C3.7",
+     "marks": 1,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "3.7 What risk weight should a bank assign to cash on hand or reserve balances held at the South African Reserve Bank (SARB) when calculating risk-weighted assets?  [1]",
+     "memo": "Nil (0%). (1)"
+    }
+   ]
+  },
+  {
+   "id": "Q7",
+   "title": "Section C, Question 4 — Treasury management and the SARB repo facility",
+   "marks": 14,
+   "scenario": "Treasury management looks to be a promising and future-proof career.",
+   "parts": [
+    {
+     "id": "C4.1",
+     "marks": 1,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "4.1 Give one reason why the claim above might be true.  [1]",
+     "memo": "Any reasonable answer (1).\n\n[Added example] e.g. every bank and large company must manage liquidity, funding and financial risk, and growing regulation (Basel III liquidity rules) and market volatility keep increasing the demand for treasury skills."
+    },
+    {
+     "id": "C4.2",
+     "marks": 1,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "4.2 What is the main issue that the treasury manager needs to worry about?  [1]",
+     "memo": "Liquidity management (1)."
+    },
+    {
+     "id": "C4.3",
+     "marks": 4,
+     "topics": [
+      "b-money",
+      "b-treas"
+     ],
+     "required": "4.3 Your bank is forecast to be short of funds in the following week, and you have decided to raise the necessary funds at the South African Reserve Bank's repurchase facility at the repo rate. Your bank has unencumbered bond assets available as security for the transaction of R250 million market value. These bonds were originally issued as 15-year bonds, and they have 3.5 years to go before the capital will be repaid.\n\nWhat is the maximum amount of liquidity (rounded to the nearest Rand) that can be raised if the holding period is 5 days and:\na) the discount factor for bonds with residual maturity > 10 years is 1.035.\nb) the discount factor for bonds with residual maturity between 1 and 10 years is 1.025.\nc) the discount factor for bonds with maturity < 1 year is 1.010.  [4]",
+     "memo": "Repo rate is 7% (1).\nUse 360 days convention as no information given (1).\nDiscount factor applicable is 1.025 (residual maturity of 3.5 years, not the original 15 years).\nX = amount that can be raised\n\nX(1 + 7%/12 x 5/30) = 250 000 000/1.025 (1 mark through for correct formula ignoring 360-day convention and correct repo rate)\n[i.e. X(1 + 0.07 x 5/360) = 243 902 439]\n\nX = R243 665 542 (1 mark)\n\nNote (added): the repo rate is not given in the question; the memo uses the prevailing 7% repo rate and credits the assumption."
+    },
+    {
+     "id": "C4.4",
+     "marks": 1,
+     "topics": [
+      "b-money",
+      "b-treas"
+     ],
+     "required": "4.4 How much interest would you be paying on the transaction rounded to the nearest Rand?  [1]",
+     "memo": "250 000 000/1.025 - 243 665 542 from above = R236 897 (1 mark through with whatever answer in 4.3)"
+    },
+    {
+     "id": "C4.5",
+     "marks": 2,
+     "topics": [
+      "b-treas"
+     ],
+     "required": "4.5 What would you do different if you had multiple months advance knowledge of the liquidity shortage?  [2]",
+     "memo": "The Repo rate is a high rate at which to raise funds (1). I would try and find cheaper sources of liquidity like retail depositors (1) or other banks (1).\n(maximum 2)"
+    },
+    {
+     "id": "C4.6",
+     "marks": 2,
+     "topics": [
+      "b-money"
+     ],
+     "required": "4.6 How can the same transaction be a repo and a reverse repo at the same time?  [2]",
+     "memo": "For the seller of the security (you) it is a repo (1). For the buyer of the security (SARB) it is a reverse repo (1)."
+    },
+    {
+     "id": "C4.7",
+     "marks": 3,
+     "topics": [
+      "b-money"
+     ],
+     "required": "4.7 Argue why a name change for the South African Reserve Bank's benchmark interest rate is perhaps necessary?  [3]",
+     "memo": "The SARB's monetary framework has changed away from collateralized lending operations (1). Repo lending volume has shrunk to negligible levels (2). Today, the rate functions more broadly as a signal of monetary stance, not just a rate on repo transactions (1). The rate is mostly paid on bank deposits at the SARB beyond the minimum required reserve level and below the quota (1).\n(maximum 3)"
+    }
+   ]
+  },
+  {
+   "id": "Q8",
+   "title": "Section C, Question 5 — Credit Suisse and the AT1 write-off",
+   "marks": 13,
+   "scenario": "On 19 March 2023, Credit Suisse's AT1 (Additional Tier 1) bondholders experienced a complete write-off of their investments as part of the bank's emergency takeover by UBS.\n\nIn October 2025 a Swiss court ruled that the write-off of 16.5 billion Swiss francs was unlawful. The court found that Credit Suisse was sufficiently capitalized and met regulatory requirements at the time of the write-off. The property rights of bond holders were seriously interfered with.\n\n(Given before 5.3:) Assume that CET1 (Common Equity Tier 1) capital was 20 billion Swiss francs just before the failure and risk-weighted assets totalled 176 billion Swiss francs. Additional Tier 1 capital consisted of 5 billion Swiss franc of preferred share capital and the hybrid securities already mentioned.",
+   "parts": [
+    {
+     "id": "C5.1",
+     "marks": 3,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "5.1 Why did Credit Suisse fail? Was it: insolvency; running out of liquidity; or regulatory overreach? Please comment on each option.  [3]",
+     "memo": "Insolvency - it is given above that the bank was not insolvent (1). However, it was on a long-term decline and had weak profitability (1).\n\nLiquidity - Deposits were fleeing (1). A major shareholder (Saudi National Bank) indicated that they would not inject more capital (1). A 120 billion Swiss franc emergency liquidity facility did not stabilise the situation (1).\n\nRegulatory overreach - A G-SIB's failure will sink the global banking system (1). Thus, regulators will be prone to try and resolve the problem quickly (1). In hindsight the write-off was overreach (1) as it is implied from the information given but the forced merger was not overreach (1).\n(maximum 3)"
+    },
+    {
+     "id": "C5.2",
+     "marks": 2,
+     "topics": [
+      "b-fail"
+     ],
+     "required": "5.2 Name two underlying (longer-term) problems at Credit Suisse that contributed towards the failure.  [2]",
+     "memo": "Any two (1 each):\n• Reputational damage from repeated scandals.\n• Strategic mismanagement leading to low profitability.\n• Loss of client, market and regulator confidence.\n• Regulatory gaps and delayed intervention.\n• Other reasonable arguments."
+    },
+    {
+     "id": "C5.3",
+     "marks": 2,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "5.3 What was Credit Suisse's Tier 1 capital ratio at this point?  [2]",
+     "memo": "Tier 1 capital ratio = (20 + 5 + 16.5)/176 x 100 = 23.58% (2)"
+    },
+    {
+     "id": "C5.4",
+     "marks": 2,
+     "topics": [
+      "b-reg"
+     ],
+     "required": "5.4 If the write-off of the hybrid securities were booked as a one-off gain, then what was Credit Suisse's CET1 capital ratio after the write-off?  [2]",
+     "memo": "CET1 ratio = (20 + 16.5)/176 x 100 = 20.74% (2)"
+    },
+    {
+     "id": "C5.5",
+     "marks": 1,
+     "topics": [
+      "b-reg",
+      "b-fail"
+     ],
+     "required": "5.5 Complete the following sentence: The price of global AT1 bonds ……. after the Credit Suisse write-off.  [1]",
+     "memo": "Fell/decreased (1)"
+    },
+    {
+     "id": "C5.6",
+     "marks": 2,
+     "topics": [
+      "b-reg",
+      "b-fail"
+     ],
+     "required": "5.6 Why did the market react like it did in 5.5?  [2]",
+     "memo": "Because bondholders are supposed to suffer losses only after shareholders have been wiped out (1). The Credit Suisse surprise caused great uncertainty about the value of AT1 securities (1)."
+    },
+    {
+     "id": "C5.7",
+     "marks": 1,
+     "topics": [
+      "b-reg",
+      "b-fail"
+     ],
+     "required": "5.7 What is the implication of \"The court found that Credit Suisse was sufficiently capitalized and met regulatory requirements at the time of the write-off\"?  [1]",
+     "memo": "That there was no valid trigger event for the hybrid securities making the write-off invalid (1)."
+    }
+   ]
+  },
+  {
+   "id": "Q9",
+   "title": "Section D, Question 6 — Default probabilities and RAROC",
+   "marks": 15,
+   "scenario": "A bank is assessing a BBB-rated borrower for a R1 million loan. The bank has a benchmark RAROC of 10% on loans of this kind.",
+   "parts": [
+    {
+     "id": "D6.1",
+     "marks": 9,
+     "topics": [
+      "b-credit"
+     ],
+     "required": "6.1 From the Treasury strip yield curve, the current required yields on 1- and 2-year Treasuries are i1 = 3.12% and i2 = 4.3%. Further, the current yield curve indicates that comparative corporate 1-year discount bonds are yielding k1 = 9.35% and 2-year bonds are yielding k2 = 10.55%. Calculate the probability that the client will default over the next year and also over the next two years.  [9]",
+     "memo": "p1 = (1 + i1)/(1 + k1) = 1.0312/1.0935 = 0.943027 (2)\nSo, the probability of default over one year is 5,7% (1)\n\n(1 + f1) = (1.043)^2/1.0312 = 1.0549\nf1 = 5.49% (2)\n\n(1 + c1) = (1.1055)^2/1.0935 = 1.1176\nc1 = 11.76% (2)\n\np2 = (1.0549)/(1.1176) = 0,9439 (1)\n\nCp = 1 - [(p1)(p2)]\nSo, the probability of default over two years = 1 - (0.943027 x 0.9439) = 10.99% (1)"
+    },
+    {
+     "id": "D6.2",
+     "marks": 6,
+     "topics": [
+      "b-credit",
+      "b-risk"
+     ],
+     "required": "6.2 Suppose the duration of the loan is 3.5 years and the expected maximum change in the loan rate due to a change in credit premium is 1.6%. The current average level of rates on BBB bonds is 9.5%. The projected (one-year) spread is 0.4% and the bank charges 0.2% in fees. What is the bank's RAROC? Should the bank approve the loan? Why or why not?  [6]",
+     "memo": "ΔLN = -DLN x LN x ΔR/(1 + R)\nΔLN = -3.5 x R1m x 1.6%/1.095 (2)\nΔLN = -R51 141.55 (1)\nIncome = (0.4% spread + 0.2% fees = 0.6%) x R1m = R6 000 (1)\nThe loan's RAROC = 6 000/51 142 = 0.1173 = 11.73% (1)\n\nThe RAROC is greater than the bank's benchmark (10%) and so the loan should be approved. (1)"
+    }
+   ]
+  },
+  {
+   "id": "Q10",
+   "title": "Section D, Question 7 — Leverage-adjusted duration gap: Bank YYY",
+   "marks": 15,
+   "scenario": "You have been provided with the balance sheet for Bank YYY (all amounts are in thousands of rands):\n\n  |  Amount  |  Duration\nTreasury Bills  |  R135  |  0,8\nTreasury Bonds  |  R270  |  4,55\nLoans  |  R3 405  |  8,2\nDeposits  |  R2 615  |  1,2\nBorrowed Funds  |  R266  |  0,02\nEquity  |  ?  |  ",
+   "parts": [
+    {
+     "id": "D7.1",
+     "marks": 7,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "7.1 Calculate the leverage-adjusted duration gap for the bank. Show all calculations.  [7]",
+     "memo": "Total Assets = R3 810\nTotal Liabilities = R2 881\n\nDA = (135/3 810 x 0.8) + (270/3 810 x 4.55) + (3 405/3 810 x 8.2) = 7.679 years (3)\nDL = (2 615/2 881 x 1.2) + (266/2 881 x 0.02) = 1.091 years (2)\n\nLADGAP = DA - DL x k, where k = L/A\nLADGAP = 7.679 - (2 881/3 810) x 1.091 = 6.854 years (2)"
+    },
+    {
+     "id": "D7.2",
+     "marks": 5,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "7.2 Assume the current interest rate in the market is 5% and rates increase by 1.5%. What is the forecasted impact on the market value of the bank's equity?  [5]",
+     "memo": "ΔMVE = -DGAP x A x ΔR/(1 + R)\nΔMVE = -6.854 x (R3 810) x (0,015/(1 + 0,05)) = -R373.06 thousand = -R373 060 (3)\nEquity = R3 810 - R2 881 = R929 thousand (1), so the market value of equity will decrease by R373k to R555 940. (1)"
+    },
+    {
+     "id": "D7.3",
+     "marks": 3,
+     "topics": [
+      "b-irr"
+     ],
+     "required": "7.3 List three difficulties in practically applying the duration model used above.  [3]",
+     "memo": "Duration Matching Can Be Costly (1)\nImmunization Is a Dynamic Problem (1)\nLarge Interest Rate Changes and Convexity (1)"
+    }
+   ]
+  },
+  {
+   "id": "Q11",
+   "title": "Section D, Question 8 — VaR, CVaR, liquidity index and risk types",
+   "marks": 13,
+   "scenario": "",
+   "parts": [
+    {
+     "id": "D8.1",
+     "marks": 3,
+     "topics": [
+      "b-mkt"
+     ],
+     "required": "8.1 What is the difference between VAR and CVAR? How does CVAR enhance a bank's understanding of its market risk?  [3]",
+     "memo": "Value at Risk (VaR): Estimates the maximum expected loss on a portfolio over a given time horizon at a specified confidence level, due to adverse market movements.\n\nCVAR/Expected Shortfall (ES): A measure of the average of all potential losses exceeding the VaR at a given confidence level, which makes up for VaR's shortcomings in capturing the risk of extreme losses (ie tail risk)."
+    },
+    {
+     "id": "D8.2",
+     "marks": 3,
+     "topics": [
+      "b-risk"
+     ],
+     "required": "8.2 What is the liquidity index measure and how does it help banks measure their liquidity risk?  [3]",
+     "memo": "• It measures the potential losses from fire-sale prices relative to fair market value established under normal market (sale) conditions.\n• The greater the differences between immediate fire-sale asset prices (Pi) and fair market prices (P*i) the less liquid is the bank's portfolio of assets.\n\nFormula (added): I = Σ wi x (Pi/P*i), where wi is the weight of asset i in the portfolio; I lies between 0 and 1, and the lower it is, the higher the liquidity risk."
+    },
+    {
+     "id": "D8.3",
+     "marks": 7,
+     "topics": [
+      "b-risk",
+      "b-irr",
+      "b-mkt"
+     ],
+     "required": "8.3 For each of the following statements, indicate what kind of risk the bank is exposed to.  [7 x 1]\n\na) A sudden fall in the value of the bank's bond portfolio due to rising government bond yields.\nb) A major trading loss caused by unexpected changes in foreign exchange rates.\nc) A system failure prevents the bank from processing customer transactions for several hours.\nd) An increase in interest rates causes the bank's fixed-rate loan portfolio to lose value.\ne) A rogue trader exceeds trading limits and causes large losses for the bank.\nf) The value of the bank's equity holdings declines sharply due to a stock market downturn.\ng) A mismatch between the repricing dates of assets and liabilities reduces the bank's net interest income when rates change.",
+     "memo": "a) Interest Rate Risk - The loss is caused by changes in interest rates affecting bond values. (1)\nb) Market Risk - Loss arises from fluctuations in market prices (exchange rates). (1)\nc) Operational Risk - Results from failure of internal systems or processes. (1)\nd) Interest Rate Risk - The bank's assets decline in value because their fixed returns are less attractive as rates rise. (1)\ne) Operational Risk - Stems from internal control failures and human misconduct. (1)\nf) Market Risk - Arises from adverse movements in market prices (equities). (1)\ng) Interest Rate Risk - Caused by timing differences in rate adjustments between assets and liabilities. (1)"
+    }
+   ]
+  }
+ ]
+}
