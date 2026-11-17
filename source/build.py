@@ -425,6 +425,8 @@ B_SCOPE = {
     {"id": "market", "topics": ["b-risk", "b-irr", "b-credit", "b-reg"], "pattern": r"value at risk|\bVaR\b|market risk(?!\s*premium)", "reason": "Market risk is not examined (Huang)"},
     {"id": "operational", "topics": ["b-risk"], "pattern": r"operational risk|\bop(?:erational)?\.?\s*risk|event types?|internal fraud|external fraud", "reason": "Operational risk is not examined (Huang)"},
     {"id": "liquidity", "topics": ["b-risk"], "pattern": r"liquidity risk|funding liquidity|market liquidity", "reason": "Liquidity risk (Risk Management slides) is not examined (Huang)"},
+    {"id": "durgap", "topics": ["b-irr"], "pattern": r"duration gap|leverage[- ]adjusted|immunis|market value of (the bank's )?equity|change in (the )?(bank's )?equity|MVE", "reason": "Not in the 2026 Risk Management slides (Huang): duration gap model"},
+    {"id": "stress", "topics": ["b-risk", "b-credit", "b-irr"], "pattern": r"stress[- ]test", "reason": "Not in the 2026 Risk Management slides outside the excluded market risk pages (Huang): stress testing"},
     {"id": "ddm", "topics": ["b-val"], "pattern": r"dividend discount|\bDDM\b|gordon growth", "reason": "Dividend discount model slides are not examinable (Kruger)"},
   ],
   "focus": [
@@ -437,6 +439,7 @@ B_SCOPE = {
     "Market risk, slide set 3 pages 18-36 (Huang, email)",
     "Liquidity risk, slide set 1 pages 13-17 (Huang, email)",
     "Operational risk, slide set 1 pages 7-9 (Huang, email)",
+    "Duration gap model, and stress testing outside the excluded market risk pages: not in the 2026 Risk Management slides (checked against the slides)",
     "Dividend discount model slides in Topic 3 Bank Valuations (Kruger, Amathuba 26 Oct)",
     "L7 SARB report on Africa bank summary; PhD Lessons from South African bank failures; VBS Mutual Bank, The Great Bank Heist: the slides are enough (De Jager, Amathuba 11 Nov)",
   ],

@@ -188,6 +188,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 .revise{display:flex;flex-wrap:wrap;gap:6px}
 .revise span,.revise button{background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:3px 9px;font-size:13.5px;border:1px solid transparent;font-family:inherit}
 .revise button{cursor:pointer}.revise button:hover{border-color:var(--accent)}.revise button i{font-style:normal;margin-left:6px;opacity:.85}
+.imp{border-left:3px solid var(--accent);padding:4px 0 4px 10px}.imp::before{content:"92  ";color:var(--accent)}
 .revise-h{display:flex;align-items:baseline;gap:8px}.revise-h small{color:var(--muted);font-size:12.5px}
 .rvbtn{margin-left:10px}.rvbtn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
 .rvrow{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--rule)}.rvtext{flex:1;min-width:0}.rvtext small{display:block;color:var(--muted);margin-top:3px;white-space:pre-wrap}
@@ -1328,6 +1329,7 @@ function renderFeedback(a, pt){
     ${f.overall ? `<div>${esc(f.overall)}</div>` : ""}
     ${L(f.errors).length ? `<div><h3>Where you went wrong</h3><div class="list">${L(f.errors).map(e => `<div class="err"><div><b>✗</b> ${esc(e.what)}</div><div class="fix">${esc(e.fix)}</div>${e.why ? `<div class="why">${esc(e.why)}</div>` : ""}</div>`).join("")}</div></div>` : ""}
     ${L(f.missed).length ? `<div><h3>Marks you left on the table</h3><div class="list">${L(f.missed).map(m => `<div class="miss"><span class="m">${esc(fmt(+m.marks || 0))}</span><span>${esc(m.point)}</span></div>`).join("")}</div></div>` : ""}
+    ${L(f.improve).length ? `<div><h3>How to get full marks</h3><div class="list">${L(f.improve).map(x => `<div class="imp">${esc(x)}</div>`).join("")}</div></div>` : ""}
     ${L(f.revise).length ? `<div><div class="revise-h"><h3>Revise this</h3><small>Tap a topic to add it to your revisit list.</small></div><div class="revise">${L(f.revise).map(r => { const on = rvHas(topicItem(r).id); return `<button data-rv="${esc(r)}" aria-pressed="${on}" title="${on ? "Remove from" : "Add to"} your revisit list">${esc(r)}<i>${on ? "★" : "+"}</i></button>`; }).join("")}</div></div>` : ""}
     ${L(f.correct).length ? `<details><summary><h3 style="display:inline">What earned marks (${L(f.correct).length})</h3></summary><div class="list" style="margin-top:8px">${L(f.correct).map(c => `<div class="ok">${esc(c)}</div>`).join("")}</div></details>` : ""}
     ${f.examTip ? `<div class="tip"><strong>Exam technique:</strong> ${esc(f.examTip)}</div>` : ""}
@@ -1354,6 +1356,7 @@ MARKING RULES
 - Discussion questions: award marks for valid points that the memo does not list if they are correct, relevant and applied to the facts given. No marks for vague statements or theory that is not applied to the case.
 - Accept any layout: bullet points, shorthand and abbreviations are fine.
 - This memo is a suggested solution${paper.unofficial ? " that is partly or wholly unofficial and may contain errors" : ""}. If it is clearly wrong in theory or arithmetic, mark according to the correct answer and say so in your feedback.
+- METHOD MARKS: mark the method, not just the final answer. In a calculation, give a mark for each correct step (right formula or approach, right inputs, correct substitution, sensible conclusion from the student's own figure) even if the final number is wrong; carry the student's own wrong figure forward and penalise an error only once. In a written answer, give part marks for the right idea even if it is incomplete or loosely worded, in proportion to how much of the memo point it captures. Never give 0 for a required where the student showed a correct approach.
 - Be strict but fair. Half marks are allowed.
 
 FEEDBACK RULES
@@ -1361,6 +1364,7 @@ FEEDBACK RULES
 - "missed": memo points the student did not address, each with the marks it carried.
 - "correct": short list of points that earned marks.
 - "revise": 2-5 specific topics to revise from their notes, phrased like "Repricing gap: effect of a rate rise on NII when the gap is negative".
+- "improve": 1-4 concrete steps that would turn THIS answer into a full-marks answer, even where method marks were given or the score is already high (e.g. "State the formula before substituting", "Finish by saying whether the bank should accept the loan"). Empty only if the answer is already a model answer.
 - "examTip": one practical exam-technique tip based on this script.
 - If the answer is blank or irrelevant, score 0 and explain what the required wanted.
 - Plain language. Rands written like R12 345.
@@ -1384,7 +1388,7 @@ ${answer}
 >>>
 
 Reply with only one JSON object in exactly this shape:
-{"score": number, "overall": "2-3 sentence verdict", "errors": [{"what": "...", "fix": "...", "why": "..."}], "missed": [{"point": "...", "marks": number}], "correct": ["..."], "revise": ["..."], "examTip": "..."}`;
+{"score": number, "overall": "2-3 sentence verdict", "errors": [{"what": "...", "fix": "...", "why": "..."}], "missed": [{"point": "...", "marks": number}], "correct": ["..."], "improve": ["..."], "revise": ["..."], "examTip": "..."}`;
 }
 function markingPrompt(paper, q, pt, answer){
   if (COURSE.id !== "tax2") return genericPrompt(paper, q, pt, answer);
@@ -1399,6 +1403,7 @@ MARKING RULES
 - No marks for vague statements, a section number with no application to the facts, or a correct number with no reason when the required says "with reasons".
 ${prefs.markLayout ? `- Communication/critical thinking marks (X1, Y1, etc.) are awarded only if the answer is well structured and argued as the required asks (e.g. memo format, a table layout).` : `- CONTENT-ONLY MARKING (the student chose this): mark only the tax substance: the correct treatment, amounts, workings, sections and the reason for each item, and conclusions. Accept ANY format: plain lines, bullet points, shorthand, abbreviations, no tables, no columns, no headings, no letter/memo/report format. A short reason in any form counts as the reason. Never deduct for layout, presentation, structure or format, even if the required asks for a specific layout.\n- Award communication/critical thinking/presentation marks (X1, Y1, etc.) in full automatically, as long as the answer makes a genuine attempt at the content.\n- Do not mention layout, format or presentation anywhere in the feedback or the exam tip.`}
 - This memo is a suggested solution${paper.unofficial ? " from an unofficial source and may contain errors" : ""}. If the memo is clearly wrong in law or arithmetic, mark according to the correct law and say so in your feedback.
+- METHOD MARKS: mark the method, not just the final answer. In a calculation, give a mark for each correct step (right formula or approach, right inputs, correct substitution, sensible conclusion from the student's own figure) even if the final number is wrong; carry the student's own wrong figure forward and penalise an error only once. In a written answer, give part marks for the right idea even if it is incomplete or loosely worded, in proportion to how much of the memo point it captures. Never give 0 for a required where the student showed a correct approach.
 - Be strict but fair. Half marks are allowed.
 
 FEEDBACK RULES
@@ -1406,6 +1411,7 @@ FEEDBACK RULES
 - "missed": memo points the student did not address, each with the marks it carried.
 - "correct": short list of points that earned marks.
 - "revise": 2–5 specific topics to revise from their notes, phrased like "Seventh Schedule para 7(7)/(8): not applied for employees' tax".
+- "improve": 1-4 concrete steps that would turn THIS answer into a full-marks answer, even where method marks were given or the score is already high (e.g. "State the formula before substituting", "Finish by saying whether the bank should accept the loan"). Empty only if the answer is already a model answer.
 - "examTip": one practical exam-technique tip based on this script.
 - If the answer is blank or irrelevant, score 0 and explain what the required wanted.
 - Plain language, South African tax terminology, Rands written like R12 345.
@@ -1429,7 +1435,7 @@ ${answer}
 >>>
 
 Reply with only one JSON object in exactly this shape:
-{"score": number, "overall": "2-3 sentence verdict", "errors": [{"what": "...", "fix": "...", "why": "..."}], "missed": [{"point": "...", "marks": number}], "correct": ["..."], "revise": ["..."], "examTip": "..."}`;
+{"score": number, "overall": "2-3 sentence verdict", "errors": [{"what": "...", "fix": "...", "why": "..."}], "missed": [{"point": "...", "marks": number}], "correct": ["..."], "improve": ["..."], "revise": ["..."], "examTip": "..."}`;
 }
 
 let markCtl = null;
