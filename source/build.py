@@ -513,6 +513,9 @@ B_BTL = [
 ]
 b_books = [{"label": f"Between the Lines: {lec}, pages {p0} to {p1}", "url": f"{BTL_APP}#nb={nid}&page={p0}", "topics": tids}
            for _name, nid, lecs in B_BTL for lec, p0, p1, tids in lecs]
+# The student's own notes (Word docs in Drive), split by heading; refresh with banking/extract_notes.py. Used for topic summaries.
+_nf = os.path.join(BANK_DIR, "notes.json")
+B_NOTES = json.load(open(_nf, encoding="utf-8")) if os.path.exists(_nf) else []
 _ids = [p["id"] for p in papers + b_papers]
 assert len(_ids) == len(set(_ids)), "paper ids must be unique across courses"
 
@@ -526,7 +529,7 @@ if b_papers:
     courses.append(
   {"id": "bank", "name": "Banking", "code": "FTX4087S", "crumb": "FTX4087S past tests, exams and workshops",
    "subject": "UCT FTX4087S Topics in Banking and Treasury Management test or exam", "tablesLabel": "Formula sheet", "minPerMark": 1.2,
-   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], **({"cards": b_cards} if b_cards else {})})
+   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], "notes": B_NOTES, **({"cards": b_cards} if b_cards else {})})
 
 data = json.dumps(courses, ensure_ascii=False).replace("</", "<\\/")
 assert "/*__COURSES__*/null" in tpl

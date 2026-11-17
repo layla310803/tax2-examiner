@@ -196,6 +196,8 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 .rvbtn{margin-left:10px}.rvbtn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
 .rvrow{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--rule)}.rvtext{flex:1;min-width:0}.rvtext small{display:block;color:var(--muted);margin-top:3px;white-space:pre-wrap}
 .rvin{flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:inherit;font:inherit}
+.rvsum{margin:2px 0 14px;padding:14px 18px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);line-height:1.55}.rvsum p{margin:0 0 8px}.rvsum ul,.rvsum ol{margin:0 0 10px;padding-left:22px}.rvsum li{margin:3px 0}.rvsum .hint{margin-top:8px}.rvsum details{margin-top:6px}.rvsum details li{font-size:13px;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--accent);cursor:pointer;font:inherit;padding:0;text-decoration:underline}
 .rvnotes{width:100%;min-height:220px;resize:vertical;border:1px solid var(--rule);border-radius:10px;padding:12px;background:var(--sheet);color:inherit;font:inherit;line-height:1.5}
 .tip{border-top:1px solid var(--rule);padding-top:10px;font-size:14px}
 .history{font-size:13px;color:var(--muted)}
@@ -724,10 +726,10 @@ function renderRevisit(){
   setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = "Revisit list"; $("#app").className = ""; applyLayout();
   const r = rv(); const by = k => r.items.filter(x => x.kind === k);
   const qBest = x => { const m = x.id.match(/^q:([^:]+):(.+)$/); const pp = m && PAPERS.find(p => p.id === m[1]); const pt = pp && pp.questions.flatMap(q => q.parts).find(t => t.id === m[2]); const b = pt ? best(pp, pt) : null; return b === null ? "" : ` · best ${fmt(b)}/${pt.marks}`; };
-  const row = x => `<div class="rvrow"><div class="rvtext"><b>${esc(x.label)}</b>${x.kind === "q" ? `<span class="hint">${qBest(x)}</span>` : ""}${x.kind === "card" ? `<details><summary class="hint">Show answer</summary><small>${esc(x.sub)}</small></details>` : x.sub ? `<small>${esc(x.sub)}</small>` : ""}</div>${x.go ? `<button class="btn small" data-go="${esc(x.go)}">Open</button>` : ""}<button class="btn small" data-rm="${esc(x.id)}" aria-label="Remove ${esc(x.label)}">Remove</button></div>`;
+  const row = x => `<div class="rvrow"><div class="rvtext"><b>${esc(x.label)}</b>${x.kind === "q" ? `<span class="hint">${qBest(x)}</span>` : ""}${x.kind === "card" ? `<details><summary class="hint">Show answer</summary><small>${esc(x.sub)}</small></details>` : x.sub ? `<small>${esc(x.sub)}</small>` : ""}</div>${x.kind === "topic" ? `<button class="btn small" data-sum="${esc(x.id)}" aria-expanded="${rvOpen.has(x.id)}">${x.summary ? (rvOpen.has(x.id) ? "Hide summary" : "Summary") : "Summarise"}</button>` : ""}${x.go ? `<button class="btn small" data-go="${esc(x.go)}">Open</button>` : ""}<button class="btn small" data-rm="${esc(x.id)}" aria-label="Remove ${esc(x.label)}">Remove</button></div>${x.kind === "topic" ? `<div class="rvsum" data-sumbox="${esc(x.id)}"${x.summary && rvOpen.has(x.id) ? "" : " hidden"}>${x.summary ? sumHtml(x) : ""}</div>` : ""}`;
   const sec = (title, list, empty) => `<h2 class="sec" style="margin-top:22px">${title}</h2>${list.length ? list.map(row).join("") : `<div class="hint">${empty}</div>`}`;
   $("#app").innerHTML = `<div class="home">
-    <div class="intro"><p>Questions and topics you want to come back to. Save a required with <strong>Save to revisit</strong> next to its topics, a topic from <strong>Revise this</strong> after marking, or a flash card while you go through the deck.</p></div>
+    <div class="intro"><p>Questions and topics you want to come back to. Save a required with <strong>Save to revisit</strong> next to its topics, a topic from <strong>Revise this</strong> after marking, or a flash card while you go through the deck. <strong>Summarise</strong> on a topic writes a short revision summary from ${COURSE.notes ? "your notes, " : ""}the flash cards, quiz questions and past-paper memos on it.</p></div>
     <div class="row"><input id="rvAdd" class="rvin" placeholder="Add a topic or question to revisit..." aria-label="Add a topic or question to revisit"><button class="btn primary small" id="rvAddBtn">Add</button></div>
     ${sec("Questions", by("q"), "No questions saved yet.")}
     ${sec("Topics", by("topic"), "No topics saved yet.")}
@@ -741,6 +743,83 @@ function renderRevisit(){
   $("#rvNotes").oninput = e => { r.notes = e.target.value; save(); };
   document.querySelectorAll("#app [data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
   document.querySelectorAll("#app [data-rm]").forEach(b => b.onclick = () => { const i = r.items.findIndex(x => x.id === b.dataset.rm); if (i >= 0){ r.items.splice(i, 1); save(); } renderRevisit(); });
+  document.querySelectorAll("#app [data-sum]").forEach(b => b.onclick = () => {
+    const x = r.items.find(i => i.id === b.dataset.sum); if (!x) return;
+    if (x.summary){ if (rvOpen.has(x.id)) rvOpen.delete(x.id); else rvOpen.add(x.id); renderRevisit(); return; }
+    runSummary(x);
+  });
+  wireSummaries();
+}
+function wireSummaries(){
+  document.querySelectorAll("#app [data-sumbox]").forEach(box => {
+    if (!box.hidden) mathify(box);
+    const re = box.querySelector("[data-resum]"); if (re) re.onclick = () => { const x = rv().items.find(i => i.id === box.dataset.sumbox); if (x) runSummary(x); };
+  });
+}
+
+/* ---------- topic summaries: the student's notes + flash cards + quiz + past-paper memos on a topic, written up by the marker AI ---------- */
+const rvOpen = new Set();
+const SUM_STOP = new Set("the and for with from that this than into its their using use role purpose rather including excluding between about what when which how why vs per are was were has have not only also more less".split(" "));
+const sumWords = s => String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").split(" ").filter(w => w.length > 2 && !SUM_STOP.has(w)).map(w => w.length > 4 ? w.replace(/(ies|es|s)$/, "") : w);
+function gatherSources(topic){
+  const qs = [...new Set(sumWords(topic))], docs = [];
+  (COURSE.notes || []).forEach(n => docs.push({ kind: "note", label: n.h, text: n.x, head: n.h }));
+  Object.values(COURSE.cards || {}).forEach(v => v.forEach(c => docs.push({ kind: "card", label: c[0], text: c[0] + "\n" + c[1] })));
+  Object.values(QUIZ || {}).forEach(v => v.forEach(x => docs.push({ kind: "quiz", label: x.q, text: x.q + "\n" + x.a })));
+  PAPERS.forEach(p => p.questions.forEach(q => q.parts.forEach(pt => { if (!pt.nx && pt.memo) docs.push({ kind: "paper", label: `${p.title}, Required ${pt.id} (${pt.marks} marks)`, text: pt.required + "\nMEMO: " + pt.memo }); })));
+  const df = {};
+  docs.forEach(d => { d.w = new Set(sumWords(d.text)); d.hw = new Set(sumWords(d.head || d.label)); qs.forEach(w => { if (d.w.has(w)) df[w] = (df[w] || 0) + 1; }); });
+  const N = docs.length || 1;
+  docs.forEach(d => { d.s = qs.reduce((a, w) => a + (d.w.has(w) ? Math.log(N / df[w]) * (d.hw.has(w) ? 2 : 1) : 0), 0) / (d.kind === "note" ? Math.sqrt(Math.max(1, d.text.length / 2000)) : 1); });
+  const top = (k, n) => { const v = docs.filter(d => d.kind === k && d.s > 0).sort((a, b) => b.s - a.s); const cut = v.length ? v[0].s * 0.35 : 0; return v.filter(d => d.s >= cut).slice(0, n); };
+  return { note: top("note", 4), card: top("card", 10), quiz: top("quiz", 8), paper: top("paper", 4) };
+}
+function summaryPrompt(topic, S){
+  const block = (title, arr, f) => arr.length ? `\n\n=== ${title} ===\n` + arr.map(f).join("\n---\n") : "";
+  const nx = COURSE.scope && COURSE.scope.notExamined ? `\nNot examinable this year, so leave it out even if the material mentions it: ${COURSE.scope.notExamined.join("; ")}.` : "";
+  return `You are a tutor helping a student revise for the ${COURSE.subject}. Write a revision summary of this topic:
+"${topic}"
+
+Use only the student's own material below: their notes, flash cards, quiz questions and past-paper memos. Do not add facts that are not in it. If the material barely covers the topic, say so in one line and summarise what is there.${nx}
+
+Format, in this order (leave out a part that has nothing to say):
+**In short**: 2 to 3 sentences on what it is and why it matters.
+**Key points**: 4 to 8 bullets, the concepts the exam rewards. Explain the idea, not a list of buzzwords.
+**Formulas**: only formulas the topic uses, each on its own line in LaTeX ($$...$$), with what each symbol means. Write percent as \\%.
+**How it is examined**: what the past papers asked about it, with marks, and what earned the marks.
+Short paragraphs and bullets, **bold** for key terms, no headings other than the bold labels above, under 400 words.${block("NOTES", S.note, d => `[${d.label}]\n${d.text.slice(0, 4500)}`)}${block("FLASH CARDS", S.card, d => d.text)}${block("QUIZ QUESTIONS", S.quiz, d => d.text)}${block("PAST-PAPER QUESTIONS AND MEMOS", S.paper, d => `[${d.label}]\n${d.text.slice(0, 1800)}`)}`;
+}
+function sumHtml(x){
+  const sm = x.summary, src = sm.src || {};
+  const n = (k, one, many) => (src[k] || []).length ? `${src[k].length} ${src[k].length === 1 ? one : many}` : "";
+  const parts = [n("note", "notes section", "notes sections"), n("card", "flash card", "flash cards"), n("quiz", "quiz question", "quiz questions"), n("paper", "past-paper part", "past-paper parts")].filter(Boolean);
+  const list = Object.entries(src).flatMap(([k, v]) => v.map(l => `<li>${esc({ note: "Notes", card: "Card", quiz: "Quiz", paper: "Past paper" }[k])}: ${esc(l.length > 140 ? l.slice(0, 137) + "..." : l)}</li>`)).join("");
+  return `<div class="sumtext">${mdHtml(sm.text)}</div><div class="hint">Written from ${parts.length ? parts.join(", ") : "the course material"} on ${new Date(sm.at).toLocaleDateString()}. Check anything that looks off against your notes. <button class="linkbtn" data-resum="1">Write it again</button></div>${list ? `<details><summary class="hint">What it was written from</summary><ul>${list}</ul></details>` : ""}`;
+}
+async function runSummary(x){
+  const box = document.querySelector(`#app [data-sumbox="${CSS.escape(x.id)}"]`), btn = document.querySelector(`#app [data-sum="${CSS.escape(x.id)}"]`);
+  if (!box) return;
+  box.hidden = false;
+  if (!canMark()){ box.innerHTML = `<div class="notice">Summaries are written by the AI marker, which isn't set up in this browser. Add your own AI key in Settings (a free Gemini key works).</div>`; return; }
+  const S = gatherSources(x.label);
+  if (!S.note.length && !S.card.length && !S.quiz.length && !S.paper.length){ box.innerHTML = `<div class="notice">Nothing in ${COURSE.notes ? "your notes, " : ""}the flash cards, quiz or past papers matches this topic's wording. Try rewording it.</div>`; return; }
+  if (btn) btn.disabled = true;
+  const t0 = Date.now();
+  const what = [S.note.length && S.note.length + " notes sections", S.card.length && S.card.length + " flash cards", S.quiz.length && S.quiz.length + " quiz questions", S.paper.length && S.paper.length + " past-paper parts"].filter(Boolean).join(", ");
+  box.innerHTML = `<div class="busy"><span class="dot"></span><span class="sumbusy">Reading ${what} and writing a summary…</span></div>`;
+  const iv = setInterval(() => { const el = box.querySelector(".sumbusy"); if (el) el.textContent = `Reading ${what} and writing a summary… ${Math.floor((Date.now() - t0) / 1000)}s`; }, 1000);
+  try {
+    const text = await chatText([{ role: "user", content: summaryPrompt(x.label, S) }], () => {});
+    if (!String(text || "").trim()) throw { code: "upstream_error", message: "empty reply" };
+    x.summary = { text: String(text).trim(), at: Date.now(), src: Object.fromEntries(Object.entries(S).map(([k, v]) => [k, v.map(d => d.label)])) };
+    save(); rvOpen.add(x.id);
+  } catch (e) {
+    clearInterval(iv); if (btn) btn.disabled = false;
+    box.innerHTML = `<div class="notice">${esc({ access_code: "This site's AI needs the access code. Open any required, press Submit and enter it, then try again.", rate_limited: "You've hit a usage limit. Wait a bit, then try again.", bad_key: "Your AI key was rejected. Check it under AI key in Settings." }[e?.code] || "Couldn't write the summary" + (e?.message ? ": " + e.message : "") + ". Try again.")}</div>`;
+    return;
+  }
+  clearInterval(iv);
+  if (location.hash.replace(/^#/, "").startsWith("revisit/")) renderRevisit();
 }
 
 /* ---------- section notebook: your notes and links (Between the Lines, Drive, anything) ---------- */
