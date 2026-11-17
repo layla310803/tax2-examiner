@@ -474,10 +474,20 @@ b_quiz = _scope_filter("quiz", b_quiz, lambda x: x["q"], lambda x: x["q"] + " " 
 print("quiz (quick, exam) before -> after:", {k: (_qb_before[k], (sum(1 for x in v if not x.get("h")), sum(1 for x in v if x.get("h")))) for k, v in b_quiz.items() if k in ("b-risk", "b-val", "b-mkt")})
 if b_cards: b_cards = _scope_filter("card", b_cards, lambda x: x[0], lambda x: x[0] + " " + x[1])
 _nxparts = {}
+# Hand-checked scope decisions per part (scope_overrides.json): "nx" flags a part, "examined" clears a wrong regex flag.
+_ovf = os.path.join(BANK_DIR, "scope_overrides.json")
+_ov = json.load(open(_ovf, encoding="utf-8")) if os.path.exists(_ovf) else {}
+_ovnx, _ovex = _ov.get("nx", {}), _ov.get("examined", {})
+_ids = {p["id"]: {pt["id"] for q in p["questions"] for pt in q["parts"]} for p in b_papers}
+for _k, _d in list(_ovnx.items()) + list(_ovex.items()):
+    assert _k in _ids, f"scope_overrides: unknown paper {_k}"
+    assert set(_d) <= _ids[_k], f"scope_overrides: unknown parts {set(_d) - _ids[_k]} in {_k}"
 for _p in b_papers:
     for _bq in _p["questions"]:
         for _pt in _bq["parts"]:
             why = _nx_reason(_pt["topics"], _pt["required"])
+            if _pt["id"] in _ovex.get(_p["id"], {}): why = None
+            if _pt["id"] in _ovnx.get(_p["id"], {}): why = _ovnx[_p["id"]][_pt["id"]]
             if why: _pt["nx"] = why; _count(("part", _p["id"], why)); _nxparts.setdefault(_p["id"], []).append(_pt["id"])
 print("papers, parts marked nx:", _nxparts)
 print("excluded counts:", {" / ".join(k): v for k, v in sorted(_nxc.items())})
