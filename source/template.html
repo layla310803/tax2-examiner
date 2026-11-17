@@ -7,6 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous" onload="mathReady()"></script>
 <style>
 /* Layout idea: an exam desk. Question paper on the left, answer script on the right, marker's red pen for feedback. */
 :root{
@@ -199,7 +202,8 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 .chat{display:grid;gap:10px}
 .msg{padding:10px 12px;border-radius:10px;white-space:pre-wrap;font-size:14px}
 .msg.u{background:var(--accent-soft);justify-self:end;max-width:85%}
-.msg.a{background:var(--paper);border:1px solid var(--rule)}
+.msg.a{background:var(--paper);border:1px solid var(--rule);white-space:normal}.msg.a p{margin:0 0 8px}.msg.a p:last-child{margin-bottom:0}.msg.a ul,.msg.a ol{margin:0 0 8px;padding-left:22px}.msg.a li{margin:2px 0}
+.katex{font-size:1.08em}.katex-display{margin:8px 0;overflow-x:auto;overflow-y:hidden;padding:2px 0}.fsbody .katex-display{text-align:left}.fsbody .katex-display>.katex{text-align:left}
 .chat textarea{width:100%;min-height:60px;border:1px solid var(--rule);border-radius:8px;padding:8px;background:var(--sheet)}
 .busy{display:flex;align-items:center;gap:10px;color:var(--muted)}
 .dot{width:10px;height:10px;border-radius:50%;background:var(--pen);animation:pulse 1.2s infinite}
@@ -331,6 +335,33 @@ function testItems(tid){ return topicItems(tid).slice().sort((a, b) => a.pt.mark
 function navItems(){ return view.byMarks ? testItems(view.topic) : topicItems(view.topic); }
 const $ = (s, el=document) => el.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+/* ---------- maths (KaTeX, loaded from a CDN) and light markdown for examiner replies ---------- */
+const MATH_DELIMS = [{left: "$$", right: "$$", display: true}, {left: "\\[", right: "\\]", display: true}, {left: "\\(", right: "\\)", display: false}, {left: "$", right: "$", display: false}];
+let mathQ = [];
+function mathify(el){
+  if (!el) return;
+  if (!window.renderMathInElement){ mathQ.push(el); return; }
+  try { renderMathInElement(el, { delimiters: MATH_DELIMS, throwOnError: false, ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code", "option"] }); } catch {}
+}
+function mathReady(){ const q = mathQ; mathQ = []; q.forEach(el => { if (document.contains(el)) mathify(el); }); }
+function mdHtml(src){
+  const keep = [];
+  let t = String(src ?? "").replace(/\$\$[\s\S]+?\$\$|\\\[[\s\S]+?\\\]|\\\([\s\S]+?\\\)|\$[^$\n]+?\$/g, m => { keep.push(m); return "\u0000" + (keep.length - 1) + "\u0000"; });
+  t = esc(t);
+  const inline = x => x.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/(^|[^*\w])\*([^*\n]+?)\*(?![*\w])/g, "$1<em>$2</em>").replace(/`([^`]+)`/g, "<code>$1</code>");
+  const out = []; let list = null, type = "";
+  const close = () => { if (list){ out.push(`<${type}>${list.join("")}</${type}>`); list = null; } };
+  for (const line of t.split("\n")){
+    const m = line.match(/^\s*([*-]|\d+[.)])\s+(.*)$/);
+    if (m){ const ty = /\d/.test(m[1]) ? "ol" : "ul"; if (list && ty !== type) close(); if (!list){ list = []; type = ty; } list.push(`<li>${inline(m[2])}</li>`); continue; }
+    close();
+    const h = line.match(/^#{1,4}\s+(.*)$/);
+    if (h) out.push(`<p><strong>${inline(h[1])}</strong></p>`);
+    else if (line.trim()) out.push(`<p>${inline(line)}</p>`);
+  }
+  close();
+  return out.join("").replace(/\u0000(\d+)\u0000/g, (_, i) => esc(keep[+i]));
+}
 
 /* ---------- storage ---------- */
 const KEY = "tax2-examiner-v1";
@@ -1028,7 +1059,7 @@ function syncFs(){
   if (prefs.fsw){ pn.style.setProperty("--fsw", prefs.fsw + "px"); document.body.style.setProperty("--fsw", prefs.fsw + "px"); }
   const bar = document.querySelector("header.bar"); pn.style.setProperty("--fstop", Math.round(bar.getBoundingClientRect().bottom) + "px");
   if (open && fsShown !== COURSE.id){
-    fsShown = COURSE.id; $("#fsTitle").textContent = COURSE.name + " formula sheet"; $("#fsBody").innerHTML = fsHtml(); $("#fsBody").scrollTop = 0;
+    fsShown = COURSE.id; $("#fsTitle").textContent = COURSE.name + " formula sheet"; $("#fsBody").innerHTML = fsHtml(); mathify($("#fsBody")); $("#fsBody").scrollTop = 0;
   }
 }
 window.addEventListener("resize", syncFs);
@@ -1256,6 +1287,7 @@ function renderLeft(){
     ? `<p class="hint">${esc(paper.memoNote)}</p>` + renderDoc(pt.memo)
     : `<div class="locked"><p>The memo for ${esc(pt.id)} opens after your first attempt, so you aren't tempted to peek.</p><button class="btn small" id="peek">Open it anyway</button></div>`;
   $("#left").innerHTML = `<div class="tabs" role="tablist">${tabs.map(([k,l]) => `<button class="tab" role="tab" aria-selected="${view.tab===k}" data-k="${k}">${l}</button>`).join("")}${prefs.paperX !== false ? `<button class="tabx" id="leftClose" aria-label="Close scenario panel" title="Close scenario panel">&times;</button>` : ""}</div><div class="doc">${body}</div>`;
+  if (view.tab === "tables") mathify($("#left .doc"));
   document.querySelectorAll(".tab").forEach(t => t.onclick = () => { view.tab = t.dataset.k; renderLeft(); });
   const lc = $("#leftClose"); if (lc) lc.onclick = () => { prefs.showPaper = false; save(); applyLayout(); };
   const pk = $("#peek"); if (pk) pk.onclick = () => { s.memoUnlocked = true; save(); renderLeft(); };
@@ -1367,7 +1399,7 @@ FEEDBACK RULES
 - "improve": 1-4 concrete steps that would turn THIS answer into a full-marks answer, even where method marks were given or the score is already high (e.g. "State the formula before substituting", "Finish by saying whether the bank should accept the loan"). Empty only if the answer is already a model answer.
 - "examTip": one practical exam-technique tip based on this script.
 - If the answer is blank or irrelevant, score 0 and explain what the required wanted.
-- Plain language. Rands written like R12 345.
+- Plain language and plain text: no markdown or LaTeX; write working inline like 0.3% + 7% + 4% = 11.3%. Rands written like R12 345.
 
 === ${paper.title} — ${q.title} ===
 SCENARIO:
@@ -1414,7 +1446,7 @@ FEEDBACK RULES
 - "improve": 1-4 concrete steps that would turn THIS answer into a full-marks answer, even where method marks were given or the score is already high (e.g. "State the formula before substituting", "Finish by saying whether the bank should accept the loan"). Empty only if the answer is already a model answer.
 - "examTip": one practical exam-technique tip based on this script.
 - If the answer is blank or irrelevant, score 0 and explain what the required wanted.
-- Plain language, South African tax terminology, Rands written like R12 345.
+- Plain language, South African tax terminology, plain text (no markdown or LaTeX), Rands written like R12 345.
 
 === ${paper.title} — ${q.title} ===
 SCENARIO:
@@ -1541,13 +1573,14 @@ function openChat(){
   const ch = chats[k] || (chats[k] = []);
   const box = $("#chat"); box.hidden = false;
   const draw = () => {
-    box.innerHTML = ch.map(m => `<div class="msg ${m.role === "user" ? "u" : "a"}">${esc(m.content)}</div>`).join("") +
+    box.innerHTML = ch.map(m => `<div class="msg ${m.role === "user" ? "u" : "a"}">${m.role === "user" ? esc(m.content) : mdHtml(m.content)}</div>`).join("") +
       `<label class="hint" for="askIn">Ask about your mark, a section, or why the memo treats something a certain way.</label>
        <textarea id="askIn" placeholder="${COURSE.id === "tax2" ? "e.g. Why is para 7(7) not applied for employees' tax?" : "e.g. Why does a negative gap hurt NII when rates rise?"}"></textarea>
        <div class="row"><button class="btn primary small" id="askSend">Ask</button></div>`;
     $("#askSend").onclick = send;
+    box.querySelectorAll(".msg.a").forEach(mathify);
   };
-  const rules = `You are the ${COURSE.subject} examiner who just marked this student's answer. Answer their follow-up questions about the marking and the ${COURSE.id === "tax2" ? "tax law involved: concise, specific to this scenario, cite the relevant section/paragraph" : "theory and calculations involved: concise, specific to this scenario"}, and use worked figures where helpful. If they argue for a mark, judge it fairly against the memo${COURSE.id === "tax2" ? " and law" : ""}.
+  const rules = `You are the ${COURSE.subject} examiner who just marked this student's answer. Answer their follow-up questions about the marking and the ${COURSE.id === "tax2" ? "tax law involved: concise, specific to this scenario, cite the relevant section/paragraph" : "theory and calculations involved: concise, specific to this scenario"}, and use worked figures where helpful. Format: short paragraphs; **bold** and bullet lists are fine; write any formula or working in LaTeX, $...$ inline or $$...$$ on its own line, with \\% for percent (e.g. $0.3\\% + 7\\% + 4\\% = 11.3\\%$). If they argue for a mark, judge it fairly against the memo${COURSE.id === "tax2" ? " and law" : ""}.
 
 SCENARIO:\n${q.scenario}\n\nREQUIRED ${pt.id} (${pt.marks} marks):\n${pt.required}\n\nMEMO:\n${pt.memo}\n\nSTUDENT'S ANSWER:\n${a?.answer || s.answer}\n\nYOUR MARKING (score ${a?.score}/${pt.marks}):\n${JSON.stringify(a?.feedback || {})}`;
   async function send(){

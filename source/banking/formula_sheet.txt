@@ -2,70 +2,70 @@ RISK MANAGEMENT EXAM FORMULA SHEET (Huang, 2026 exam)
 This is the sheet you get for the Risk Management section. Transcribed from Risk Management/Formula Sheet.pdf.
 
 Z-SCORE
-Z = 1.2 X1 + 1.4 X2 + 3.3 X3 + 0.6 X4 + 1.0 X5
-X1 = Net working capital / total assets
-X2 = Retained earnings / total assets
-X3 = Earnings before interest and taxes / total assets
-X4 = Market value of equity / book value of total liabilities
-X5 = Sales / total assets
+$$Z = 1.2X_1 + 1.4X_2 + 3.3X_3 + 0.6X_4 + 1.0X_5$$
+$X_1$ = Net working capital / total assets
+$X_2$ = Retained earnings / total assets
+$X_3$ = Earnings before interest and taxes / total assets
+$X_4$ = Market value of equity / book value of total liabilities
+$X_5$ = Sales / total assets
 
 LOGIT PROBABILITY OF DEFAULT
-PD_i = 1 / (1 + exp(-Y_i))
+$$PD_i = \frac{1}{1 + e^{-Y_i}}$$
 
 DURATION AND CAPITAL AT RISK
-Modified duration = D / (1 + R)
-ΔL = -D* × L × ΔR
-(φ_T - φ_F) × D* × A
+$$D^* = \frac{D}{1 + R} \quad \text{(modified duration)}$$
+$$\Delta L = -D^* \times L \times \Delta R$$
+$$(\varphi_T - \varphi_F) \times D^* \times A$$
 
 RAROC (RISK SHEET)
-RAROC = Net income / Capital at risk
+$$\text{RAROC} = \frac{\text{Net income}}{\text{Capital at risk}}$$
 
 DEFAULT PROBABILITIES FROM YIELDS
-p(1 + k) = (1 + i)
-1 + f_1,1 = (1 + i_2)^2 / (1 + i_1)
-p_2 = (1 + f_1,1) / (1 + c_1,1)
-CP = 1 - [(p_1)(p_2)]
+$$p(1 + k) = 1 + i$$
+$$1 + f_{1,1} = \frac{(1 + i_2)^2}{1 + i_1}$$
+$$p_2 = \frac{1 + f_{1,1}}{1 + c_{1,1}}$$
+$$CP = 1 - (p_1 \times p_2)$$
 
 
 EARLIER COURSE SHEET (2024 scan)
 Not confirmed for the 2026 exam. Shown for reference for the other lecturers' sections.
 
 CAPITAL AND LIQUIDITY
-CET1 Ratio = Common Equity Tier 1 Capital / Risk-weighted Assets
-LCR = High Quality Liquid Asset Amount (HQLA) / Total Net Cash Outflows over next 30 days
+$$\text{CET1 ratio} = \frac{\text{Common Equity Tier 1 capital}}{\text{Risk-weighted assets}}$$
+$$\text{LCR} = \frac{\text{High-quality liquid assets (HQLA)}}{\text{Total net cash outflows over the next 30 days}}$$
 
 RAROC
-RAROC = (ROA - Expected Loss / Earning Assets) x (Earning Assets / Total Assets) x (Total Assets / Risk-Required Capital)
-RAROC = One year net income on a loan / Capital at risk
+$$\text{RAROC} = \left(\text{ROA} - \frac{\text{Expected loss}}{\text{Earning assets}}\right) \times \frac{\text{Earning assets}}{\text{Total assets}} \times \frac{\text{Total assets}}{\text{Risk-required capital}}$$
+$$\text{RAROC} = \frac{\text{One-year net income on a loan}}{\text{Capital at risk}}$$
 
 DURATION (page 1)
-D(perpetuity) = (1 + y) / y
-D(annuity) = (1 + y) / y - T / ((1 + y)^T - 1)
-D (coupon bond) = (1 + y) / y - ((1 + y) + T x (c - y)) / (c x ((1 + y)^T - 1) + y)
-D(par bond) = ((1 + y) / y) x [1 - 1 / (1 + y)^T]
-where y = yield, c = coupon rate, T = years to maturity
+$$D_{\text{perpetuity}} = \frac{1 + y}{y}$$
+$$D_{\text{annuity}} = \frac{1 + y}{y} - \frac{T}{(1 + y)^T - 1}$$
+$$D_{\text{coupon bond}} = \frac{1 + y}{y} - \frac{(1 + y) + T(c - y)}{c\left[(1 + y)^T - 1\right] + y}$$
+$$D_{\text{par bond}} = \frac{1 + y}{y}\left[1 - \frac{1}{(1 + y)^T}\right]$$
+where $y$ = yield, $c$ = coupon rate, $T$ = years to maturity
 
 DURATION (page 2)
-D = (Sum for t = 1 to N of CF x DF x T) / (Sum for t = 1 to N of CF x DF) = (Sum for t = 1 to N of PV x T) / (Sum for t = 1 to N of PV)
-D (semi-annual cash flows) = (Sum for t = 1/2 to N of [CF_t x t / (1 + R/2)^(2t)]) / (Sum for t = 1/2 to N of [CF_t / (1 + R/2)^(2t)])
+$$D = \frac{\sum_{t=1}^{N} CF_t \times DF_t \times t}{\sum_{t=1}^{N} CF_t \times DF_t} = \frac{\sum_{t=1}^{N} PV_t \times t}{\sum_{t=1}^{N} PV_t}$$
+$$D_{\text{semi-annual}} = \frac{\sum_{t=1/2}^{N} CF_t \times t \,/\, (1 + R/2)^{2t}}{\sum_{t=1/2}^{N} CF_t \,/\, (1 + R/2)^{2t}}$$
 
 ALTMAN Z-SCORE
-Z = 1.2 X1 + 1.4 X2 + 3.3 X3 + 0.6 X4 + 1.0 X5
-X1 = Working capital / Total assets ratio
-X2 = Retained earnings / Total assets ratio
-X3 = Earnings before interest and taxes / Total assets ratio
-X4 = Market value of equity / Book value of total liabilities
-X5 = Sales / Total assets ratio
+$$Z = 1.2X_1 + 1.4X_2 + 3.3X_3 + 0.6X_4 + 1.0X_5$$
+$X_1$ = Working capital / total assets
+$X_2$ = Retained earnings / total assets
+$X_3$ = Earnings before interest and taxes / total assets
+$X_4$ = Market value of equity / book value of total liabilities
+$X_5$ = Sales / total assets
 
 MARKET RISK AND PORTFOLIO THEORY
-R_i = Sum for i = 1 to N of P_i x HR_i      (expected return: probability x holding-period return)
-sigma_i = sqrt(sigma_i^2)
-R_p = Sum for i = 1 to N of X_i x HR_i      (portfolio return: weight x holding-period return)
-sigma_p = sqrt(X_i^2 x sigma_i^2 + X_j^2 x sigma_j^2 + 2 x X_i x X_j x sigma_i x sigma_j x rho_ij)
-        (as printed on the sheet: sqrt(X^2_i sigma^2_i + X^2_j sigma^2_j b^2 + 2 Ki Kj sigma_i sigma_j rho_ij); the stray "b^2" and "K" are typos for the standard two-asset formula above)
-rho_ij = sigma_ij / (sigma_i x sigma_j)
-CV = sigma / mu      (coefficient of variation: standard deviation / mean)
+$$\bar{R}_i = \sum_{i=1}^{N} P_i \times HR_i \quad \text{(expected return)}$$
+$$\sigma_i = \sqrt{\sigma_i^2}$$
+$$\bar{R}_p = \sum_{i=1}^{N} X_i \times HR_i \quad \text{(portfolio return)}$$
+$$\sigma_p = \sqrt{X_i^2\sigma_i^2 + X_j^2\sigma_j^2 + 2X_iX_j\sigma_i\sigma_j\rho_{ij}}$$
+(The printed sheet has typos here, a stray "b²" and "K" for X; the formula above is the standard two-asset one.)
+$$\rho_{ij} = \frac{\sigma_{ij}}{\sigma_i \sigma_j}$$
+$$CV = \frac{\sigma}{\mu} \quad \text{(coefficient of variation)}$$
 
 LOAN PRICING
-1 + k = 1 + (of + (BR + phi)) / (1 - [b x (1 - RR)])
-where of = origination fee, BR = base lending rate, phi = risk premium, b = compensating balance requirement, RR = reserve requirement
+$$1 + k = 1 + \frac{of + (BR + \varphi)}{1 - [b(1 - RR)]}$$
+where $of$ = origination fee, $BR$ = base lending rate, $\varphi$ = risk premium, $b$ = compensating balance requirement, $RR$ = reserve requirement
