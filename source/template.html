@@ -238,6 +238,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   .pane{padding:16px}
 }
 .fc{width:100%;max-width:640px;min-height:240px;margin:12px auto;padding:28px 24px;border:1px solid var(--rule);border-radius:14px;background:var(--sheet);color:inherit;font:inherit;font-size:1.15rem;line-height:1.5;text-align:center;cursor:pointer;display:flex;align-items:center;justify-content:center;white-space:pre-wrap}
+.fc{transition:transform .17s ease-in,border-color .2s}.fc.turning{transform:perspective(900px) rotateY(90deg)}.fc.flipin{animation:fcIn .2s ease-out}.fc.nextin{animation:fcNext .22s ease-out}@keyframes fcIn{from{transform:perspective(900px) rotateY(-90deg)}to{transform:none}}@keyframes fcNext{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.fc,.fc.flipin,.fc.nextin{transition:none;animation:none}.fc.turning{transform:none}}
 .fc.back{border-color:var(--accent)}.fc small{display:block;opacity:.6;font-size:.8rem;margin-bottom:10px}
 .fcbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0}
 .mg label.f{display:block;margin:12px 0 4px;font-weight:500}
@@ -995,19 +996,26 @@ function renderCards(tid){
   const kn = k[cardKey(c.t, c.i)];
   $("#app").innerHTML = `<div class="home">
     <div class="hint" style="text-align:center">Card ${d.n + 1} of ${d.cards.length} · ${esc(topicName(c.t))}${kn ? " · marked known" : ""}</div>
-    <button class="fc ${d.flip ? "back" : ""}" id="fcCard" aria-live="polite"><span><small>${d.flip ? "Answer" : "Tap to flip (or press space)"}</small>${esc(d.flip ? c.b : c.f)}</span></button>
+    <button class="fc ${d.flip ? "back" : ""} ${d.anim || ""}" id="fcCard" aria-live="polite"><span><small>${d.flip ? "Answer" : "Tap to flip (or press space)"}</small>${esc(d.flip ? c.b : c.f)}</span></button>
     <div class="fcbar">${d.flip
       ? `<button class="btn" id="fcNo">Again</button><button class="btn primary" id="fcYes">Got it</button>`
       : `<button class="btn primary" id="fcShow">Show answer</button>`}</div>
     <div class="fcbar"><button class="btn small" id="fcPrev">← Previous</button><button class="btn small" id="fcSkip">Skip →</button><button class="btn small" id="fcShuf">Shuffle</button><button class="btn small" id="fcBack">Back to course</button></div>
   </div>`;
   const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
-  const redraw = () => renderCards(tid);
-  const flip = () => { d.flip = !d.flip; redraw(); };
-  const mark = ok => { k[cardKey(c.t, c.i)] = ok; if (ok) d.got++; save(); d.n++; d.flip = false; redraw(); window.scrollTo(0, 0); };
+  d.anim = "";
+  const redraw = (anim) => { d.anim = anim || ""; renderCards(tid); };
+  const flip = () => {
+    const el = $("#fcCard");
+    if (!el || d.turning) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) { d.flip = !d.flip; redraw(); return; }
+    d.turning = true; el.classList.add("turning");
+    setTimeout(() => { d.turning = false; d.flip = !d.flip; redraw("flipin"); }, 170);
+  };
+  const mark = ok => { k[cardKey(c.t, c.i)] = ok; if (ok) d.got++; save(); d.n++; d.flip = false; redraw("nextin"); window.scrollTo(0, 0); };
   on("#fcCard", flip); on("#fcShow", flip); on("#fcYes", () => mark(true)); on("#fcNo", () => mark(false));
-  on("#fcPrev", () => { if (d.n > 0){ d.n--; d.flip = false; redraw(); } });
-  on("#fcSkip", () => { d.n++; d.flip = false; redraw(); });
+  on("#fcPrev", () => { if (d.n > 0){ d.n--; d.flip = false; redraw("nextin"); } });
+  on("#fcSkip", () => { d.n++; d.flip = false; redraw("nextin"); });
   on("#fcShuf", () => { deck = null; redraw(); });
   on("#fcBack", () => go("c/" + COURSE.id));
 }
