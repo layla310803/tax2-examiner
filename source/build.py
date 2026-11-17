@@ -513,7 +513,7 @@ if b_papers:
     courses.append(
   {"id": "bank", "name": "Banking", "code": "FTX4087S", "crumb": "FTX4087S past tests, exams and workshops",
    "subject": "UCT FTX4087S Topics in Banking and Treasury Management test or exam", "tablesLabel": "Formula sheet", "minPerMark": 1.2,
-   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, **({"cards": b_cards} if b_cards else {})})
+   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], **({"cards": b_cards} if b_cards else {})})
 
 data = json.dumps(courses, ensure_ascii=False).replace("</", "<\\/")
 assert "/*__COURSES__*/null" in tpl

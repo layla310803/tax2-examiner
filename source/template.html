@@ -211,6 +211,21 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 .scope ul{margin:0;padding-left:16px;display:grid;gap:3px}
 .scope .line{color:var(--muted)}.scope .line strong{color:var(--ink)}
 .home.wide{max-width:none}
+/* formula sheet side panel */
+:root{--fsw:min(46vw,640px)}
+.fsp{position:fixed;right:0;bottom:0;top:var(--fstop,60px);width:var(--fsw);max-width:100vw;background:var(--sheet);border-left:1px solid var(--rule);box-shadow:-8px 0 24px rgba(0,0,0,.18);z-index:4;display:flex;flex-direction:column}
+.fsp[hidden]{display:none}
+.fsp .fshd{display:flex;align-items:center;gap:10px;padding:10px 16px;border-bottom:1px solid var(--rule)}
+.fsp .fshd h2{font-size:16px;flex:1}
+.fsp .fsbody{overflow:auto;flex:1;padding:12px 18px 28px}
+.fsp .doc{font-size:14px;max-width:none}
+.fsp .doc .head{font-weight:700;margin-top:10px}
+.fsp .fssec.nx{opacity:.55}
+.fsp .fssec .pill{margin-left:8px;font-weight:600;font-size:11px;padding:1px 8px;vertical-align:middle}
+.fsp .fsgrip{position:absolute;left:-4px;top:0;bottom:0;width:8px;cursor:col-resize}
+.fsp .fsgrip:hover{background:var(--accent-soft)}
+@media (min-width:1101px){body.fsopen #app{padding-right:var(--fsw)}.fsp{box-shadow:none}}
+@media (max-width:1100px){.fsp .fsgrip{display:none}}
 .sheetdoc{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px 22px}
 .notice{font-size:13px;padding:10px 12px;border-radius:8px;background:var(--warn-soft);color:var(--warn)}
 .selfmark{display:flex;gap:8px;align-items:center}
@@ -257,13 +272,14 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <h1 id="appName">Examiner</h1>
   <span class="crumb" id="crumb">Pick a course</span>
   <span class="spacer"></span>
+  <button class="btn small toggle" id="fsTop" aria-pressed="false" aria-controls="fsPanel" hidden>Formula sheet</button>
   <span class="setwrap"><button class="btn small" id="setBtn" aria-expanded="false" aria-controls="setPanel">Settings</button>
   <div class="setpanel" id="setPanel" hidden>
     <div class="srow"><span>Mark in the background<small>Submit, move straight on to the next required, and get a quick "done marking" note when it's finished.</small></span><button class="btn small toggle" id="bgBtn" aria-pressed="true" aria-label="Mark in the background"></button></div>
     <div class="srow"><span>Scenario panel<small>Show the scenario, memo and notes beside your answer.</small></span><button class="btn small toggle" id="paperBtn" aria-pressed="true" aria-label="Scenario panel"></button></div>
     <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
     <div class="srow"><span>Mark layout<small>When off, only the content is marked: any format is fine and communication marks are given automatically.</small></span><button class="btn small toggle" id="layoutBtn" aria-pressed="false" aria-label="Mark layout"></button></div>
-    <div class="srow" id="fsRow"><span>Formula sheet<small>The exam formula sheet for this course.</small></span><button class="btn small" id="fsBtn">Open</button></div>
+    <div class="srow" id="fsRow"><span>Formula sheet<small>Show the exam formula sheet in a panel beside your work.</small></span><button class="btn small toggle" id="fsBtn" aria-pressed="false" aria-label="Formula sheet"></button></div>
     <div class="srow" id="keyRow"><span>AI key<small>Use your own Gemini or Claude key for marking.</small></span><button class="btn small" id="keyBtn">Open</button></div>
   </div></span>
   <button class="btn small" id="homeBtn" hidden>All papers</button>
@@ -280,12 +296,13 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <div id="keyStatus" role="status"></div>
 </dialog>
 <main id="app"></main>
+<aside class="fsp" id="fsPanel" aria-label="Formula sheet" hidden><div class="fsgrip" id="fsGrip"></div><div class="fshd"><h2 id="fsTitle"></h2><button class="btn small" id="fsClose" aria-label="Close formula sheet">&times;</button></div><div class="fsbody" id="fsBody"></div></aside>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 const COURSES = /*__COURSES__*/null;   // every course: {id, name, code, crumb, subject, papers, topics, quiz, minPerMark, tablesLabel} (source/build.py)
 let COURSE = COURSES[0], PAPERS = COURSE.papers, TOPICS = COURSE.topics, QUIZ = COURSE.quiz, MIN_PER_MARK = COURSE.minPerMark;
-function setCourse(c){ COURSE = c; PAPERS = c.papers; TOPICS = c.topics; QUIZ = c.quiz; MIN_PER_MARK = c.minPerMark; document.getElementById("appName").textContent = c.name + " Examiner"; }
+function setCourse(c){ COURSE = c; PAPERS = c.papers; TOPICS = c.topics; QUIZ = c.quiz; MIN_PER_MARK = c.minPerMark; document.getElementById("appName").textContent = c.name + " Examiner"; if (typeof syncFs === "function") syncFs(); }
 const courseOfTopic = tid => COURSES.find(c => c.topics.some(x => x.id === tid));
 const courseOfPaper = pid => COURSES.find(c => c.papers.some(p => p.id === pid));
 const paperMins = p => p.minutes || Math.round(p.marks * MIN_PER_MARK);
@@ -454,7 +471,11 @@ function openKeyDlg(){
   d.showModal();
 }
 $("#keyBtn").onclick = () => { closeSettings(); openKeyDlg(); };
-$("#fsBtn").onclick = () => { closeSettings(); go("formulas/" + COURSE.id); };
+$("#fsBtn").onclick = () => { toggleFs(); };
+$("#fsTop").onclick = () => toggleFs();
+$("#fsClose").onclick = () => toggleFs(false);
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#fsPanel").hidden && $("#setPanel").hidden && !document.querySelector("dialog[open]")) toggleFs(false); });
+$("#fsGrip").onpointerdown = e => { e.preventDefault(); const mv = ev => { prefs.fsw = Math.round(Math.min(innerWidth * .8, Math.max(320, innerWidth - ev.clientX))); $("#fsPanel").style.setProperty("--fsw", prefs.fsw + "px"); document.body.style.setProperty("--fsw", prefs.fsw + "px"); }; const up = () => { removeEventListener("pointermove", mv); removeEventListener("pointerup", up); save(); }; addEventListener("pointermove", mv); addEventListener("pointerup", up); };
 $("#bgBtn").onclick = () => { prefs.bgMark = prefs.bgMark === false; save(); applyLayout(); };
 function closeSettings(){ $("#setPanel").hidden = true; $("#setBtn").setAttribute("aria-expanded", "false"); }
 $("#setBtn").onclick = e => { e.stopPropagation(); const open = $("#setPanel").hidden, r = $("#setBtn").getBoundingClientRect(), pnl = $("#setPanel"); pnl.hidden = !open; pnl.style.top = (r.bottom + 6) + "px"; pnl.style.right = Math.max(8, Math.min(innerWidth - r.right, innerWidth - pnl.offsetWidth - 8)) + "px"; $("#setBtn").setAttribute("aria-expanded", String(open)); };
@@ -520,7 +541,7 @@ function route(){
   view.quiz = null;
   if (parts[0] === "manage"){ view.paper = null; view.topic = null; if (parts[1]) renderManageCourse(parts[1]); else renderManage(); return; }
   if (parts[0] === "edit"){ view.paper = null; view.topic = null; renderEdit(parts[1], parts[2]); return; }
-  if (parts[0] === "formulas"){ const c = COURSES.find(c => c.id === parts[1]) || COURSE; view.paper = null; view.topic = null; setCourse(c); renderFormulas(); return; }
+  if (parts[0] === "formulas"){ const c = COURSES.find(c => c.id === parts[1]) || COURSE; if (c.formulaSheet){ prefs.fsOpen = true; save(); } location.replace("#c/" + c.id); route(); return; }
   if (parts[0] === "cards"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c || !c.cards){ renderCourses(); return; } setCourse(c); renderCards(parts[2] || null); return; }
   if (parts[0] === "c"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderHome(); return; }
   { const c = (parts[0] === "quiz" || parts[0] === "topic") ? courseOfTopic(parts[1]) : courseOfPaper(parts[0]); if (c) setCourse(c); }
@@ -551,6 +572,7 @@ $("#layoutBtn").onclick = () => { prefs.markLayout = !prefs.markLayout; save(); 
 $("#timerBtn").onclick = () => { prefs.timer = !prefs.timer; save(); if (!prefs.timer) resetTimer(); applyLayout(); if (view.paper) tickTimer(Math.round(cur().pt.marks * MIN_PER_MARK)); };
 function applyLayout(){
   const app = $("#app"); const inExam = !!view.paper;
+  syncFs();
   $("#bgBtn").setAttribute("aria-pressed", String(prefs.bgMark !== false));
   $("#layoutBtn").setAttribute("aria-pressed", String(!!prefs.markLayout));
   $("#paperBtn").setAttribute("aria-pressed", String(prefs.showPaper));
@@ -924,14 +946,38 @@ function buildDeck(tid){
   all.sort((a, b) => (k[cardKey(a.t, a.i)] ? 1 : 0) - (k[cardKey(b.t, b.i)] ? 1 : 0));   // unknown first, shuffled within each group
   deck = { key: tid || "", cid: COURSE.id, cards: all, n: 0, flip: false, got: 0 };
 }
-function renderFormulas(){
-  setHome("Back", "c/" + COURSE.id); $("#crumb").textContent = COURSE.code + " · formula sheet"; applyLayout();
-  $("#app").className = "";
-  const f = COURSE.formulaSheet;
-  $("#app").innerHTML = `<div class="home wide"><div><h2 class="sec">Exam formula sheet</h2>${COURSE.formulaLabel ? `<div class="hint">${esc(COURSE.formulaLabel)}</div>` : ""}</div>
-    ${COURSE.id === "tax2" ? `<div class="notice">Not on the sheet: CGT inclusion rates and exclusions, the VAT rate, fringe benefit rates, the official interest rate, estate duty and donations tax rates, and the company rate. These come from the question itself or your open-book legislation handbook.</div>` : ""}
-    ${f ? `<div class="sheetdoc doc">${renderDoc(f)}</div>` : `<div class="notice">There is no formula sheet for this course.</div>`}</div>`;
+function toggleFs(on){
+  if (!COURSE || !COURSE.formulaSheet) return;
+  prefs.fsOpen = on === undefined ? !prefs.fsOpen : !!on; save(); closeSettings(); syncFs();
 }
+const fsIsHead = l => { const t = l.trim(), u = t.replace(/\(.*?\)/g, "").trim(); return t.length < 70 && !t.includes("|") && (u.match(/[A-Z]/g) || []).length >= 4 && !/[a-z]/.test(u) && !/[.;,:]$/.test(t) && !/\d{3}/.test(u); };
+const fsNorm = t => t.replace(/\(.*?\)/g, "").replace(/\s+/g, " ").trim().toUpperCase();
+function fsHtml(){
+  const f = COURSE.formulaSheet, nx = (COURSE.formulaNotExamined || []).map(fsNorm);
+  const secs = [{ h: null, l: [] }];
+  f.split("\n").forEach(l => { if (fsIsHead(l)) secs.push({ h: l.trim(), l: [] }); else secs[secs.length - 1].l.push(l); });
+  const body = secs.map(sc => {
+    const isNx = sc.h && nx.includes(fsNorm(sc.h));
+    return `<div class="fssec${isNx ? " nx" : ""}">${sc.h ? `<p class="head">${esc(sc.h)}${isNx ? ` <span class="pill w">Not examined</span>` : ""}</p>` : ""}${renderDoc(sc.l.join("\n"))}</div>`;
+  }).join("");
+  return `${COURSE.formulaLabel ? `<div class="hint">${esc(COURSE.formulaLabel)}</div>` : ""}
+    ${COURSE.id === "tax2" ? `<div class="notice">Not on the sheet: CGT inclusion rates and exclusions, the VAT rate, fringe benefit rates, the official interest rate, estate duty and donations tax rates, and the company rate. These come from the question itself or your open-book legislation handbook.</div>` : ""}
+    <div class="doc">${body}</div>`;
+}
+let fsShown = null;
+function syncFs(){
+  const has = !!(COURSE && COURSE.formulaSheet), open = has && !!prefs.fsOpen, pn = $("#fsPanel");
+  $("#fsTop").hidden = !has; $("#fsRow").hidden = !has;
+  [$("#fsTop"), $("#fsBtn")].forEach(b => b.setAttribute("aria-pressed", String(open)));
+  pn.hidden = !open; document.body.classList.toggle("fsopen", open);
+  if (!has && prefs.fsOpen){ prefs.fsOpen = false; save(); }
+  if (prefs.fsw){ pn.style.setProperty("--fsw", prefs.fsw + "px"); document.body.style.setProperty("--fsw", prefs.fsw + "px"); }
+  const bar = document.querySelector("header.bar"); pn.style.setProperty("--fstop", Math.round(bar.getBoundingClientRect().bottom) + "px");
+  if (open && fsShown !== COURSE.id){
+    fsShown = COURSE.id; $("#fsTitle").textContent = COURSE.name + " formula sheet"; $("#fsBody").innerHTML = fsHtml(); $("#fsBody").scrollTop = 0;
+  }
+}
+window.addEventListener("resize", syncFs);
 function renderCards(tid){
   if (tid && !(COURSE.cards[tid] || []).length) tid = null;
   setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = (tid ? topicName(tid) : "All sections") + " · flash cards"; applyLayout();
