@@ -370,7 +370,7 @@ const KEY = "tax2-examiner-v1";
 let store = {};
 try { store = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch { store = {}; }
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch {} }
-const prefs = store._prefs || (store._prefs = { timer: false, showPaper: true, leftw: 50 });
+const prefs = store._prefs || (store._prefs = { markBg: false, showPaper: false, paperX: true, timer: false, markLayout: false, fsOpen: false, leftw: 50 });
 if (prefs.markLayout === undefined) prefs.markLayout = false;
 
 /* ---------- your own courses, sections and papers (store._custom), merged into COURSES ---------- */
