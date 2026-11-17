@@ -1,6 +1,6 @@
-# Tax II Examiner
+# Exam Desk
 
-An interactive past-paper examiner for UCT ACC3004W Taxation II. Pick a paper, answer one required at a time, and get it marked against the memo. You see where you lost marks, the correct treatment and what to revise. You can then revise your answer and get it re-marked, or ask follow-up questions.
+An interactive past-paper examiner for UCT courses (Taxation II, Banking & Treasury Management). Pick a paper, answer one required at a time, and get it marked against the memo. You see where you lost marks, the correct treatment and what to revise. You can then revise your answer and get it re-marked, or ask follow-up questions.
 
 ## Papers
 
@@ -33,7 +33,7 @@ The past papers are UCT/Studocu material. Keep this repo private, and don't shar
 
 ### Where the site deploys from
 
-The code lives in two private repos: `layla310803/tax2-examiner` and `YLP-Games/tax2-examiner`. Vercel deploys from the personal one, so push there for a change to reach the site. They do not sync on their own.
+The code lives in two private repos: `layla310803/tax2-examiner` and `YLP-Games/tax2-examiner`. Vercel deploys from the personal one. They do not sync on their own, so push every change to both.
 
 ## Section tests and weakest sections
 
