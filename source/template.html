@@ -302,7 +302,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 <script>
 const COURSES = /*__COURSES__*/null;   // every course: {id, name, code, crumb, subject, papers, topics, quiz, minPerMark, tablesLabel} (source/build.py)
 let COURSE = COURSES[0], PAPERS = COURSE.papers, TOPICS = COURSE.topics, QUIZ = COURSE.quiz, MIN_PER_MARK = COURSE.minPerMark;
-function setCourse(c){ COURSE = c; PAPERS = c.papers; TOPICS = c.topics; QUIZ = c.quiz; MIN_PER_MARK = c.minPerMark; document.getElementById("appName").textContent = c.name + " Examiner"; if (typeof syncFs === "function") syncFs(); }
+function setCourse(c){ COURSE = c; PAPERS = c.papers; TOPICS = c.topics; QUIZ = c.quiz; MIN_PER_MARK = c.minPerMark; document.getElementById("appName").textContent = c.name + " Examiner"; if (typeof syncFs === "function") queueMicrotask(syncFs); }
 const courseOfTopic = tid => COURSES.find(c => c.topics.some(x => x.id === tid));
 const courseOfPaper = pid => COURSES.find(c => c.papers.some(p => p.id === pid));
 const paperMins = p => p.minutes || Math.round(p.marks * MIN_PER_MARK);
