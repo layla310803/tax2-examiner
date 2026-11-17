@@ -290,7 +290,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <button class="btn small toggle" id="fsTop" aria-pressed="false" aria-controls="fsPanel" hidden>Formula sheet</button>
   <span class="setwrap"><button class="btn small" id="setBtn" aria-expanded="false" aria-controls="setPanel">Settings</button>
   <div class="setpanel" id="setPanel" hidden>
-    <div class="srow"><span>Mark in the background<small>Submit, move straight on to the next required, and get a quick "done marking" note when it's finished.</small></span><button class="btn small toggle" id="bgBtn" aria-pressed="true" aria-label="Mark in the background"></button></div>
+    <div class="srow"><span>Mark in the background<small>Off by default. When on, pressing Mark moves you straight on to the next required and you get a quick "done marking" note when it is finished.</small></span><button class="btn small toggle" id="bgBtn" aria-pressed="false" aria-label="Mark in the background"></button></div>
     <div class="srow"><span>Scenario panel<small>Show the scenario, memo and notes beside your answer.</small></span><button class="btn small toggle" id="paperBtn" aria-pressed="true" aria-label="Scenario panel"></button></div>
     <div class="srow"><span>Close button on the scenario panel<small>Show an X on the scenario panel so you can close it there.</small></span><button class="btn small toggle" id="paperXBtn" aria-pressed="true" aria-label="Close button on the scenario panel"></button></div>
     <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
@@ -519,7 +519,7 @@ $("#fsTop").onclick = () => toggleFs();
 $("#fsClose").onclick = () => toggleFs(false);
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#fsPanel").hidden && $("#setPanel").hidden && !document.querySelector("dialog[open]")) toggleFs(false); });
 $("#fsGrip").onpointerdown = e => { e.preventDefault(); const mv = ev => { prefs.fsw = Math.round(Math.min(innerWidth * .8, Math.max(320, innerWidth - ev.clientX))); $("#fsPanel").style.setProperty("--fsw", prefs.fsw + "px"); document.body.style.setProperty("--fsw", prefs.fsw + "px"); }; const up = () => { removeEventListener("pointermove", mv); removeEventListener("pointerup", up); save(); }; addEventListener("pointermove", mv); addEventListener("pointerup", up); };
-$("#bgBtn").onclick = () => { prefs.bgMark = prefs.bgMark === false; save(); applyLayout(); };
+$("#bgBtn").onclick = () => { prefs.markBg = !prefs.markBg; save(); applyLayout(); };
 function closeSettings(){ $("#setPanel").hidden = true; $("#setBtn").setAttribute("aria-expanded", "false"); }
 $("#setBtn").onclick = e => { e.stopPropagation(); const open = $("#setPanel").hidden, r = $("#setBtn").getBoundingClientRect(), pnl = $("#setPanel"); pnl.hidden = !open; pnl.style.top = (r.bottom + 6) + "px"; pnl.style.right = Math.max(8, Math.min(innerWidth - r.right, innerWidth - pnl.offsetWidth - 8)) + "px"; $("#setBtn").setAttribute("aria-expanded", String(open)); };
 document.addEventListener("click", e => { if (!$("#setPanel").hidden && !e.target.closest(".setwrap")) closeSettings(); });
@@ -619,7 +619,7 @@ $("#timerBtn").onclick = () => { prefs.timer = !prefs.timer; save(); if (!prefs.
 function applyLayout(){
   const app = $("#app"); const inExam = !!view.paper;
   syncFs();
-  $("#bgBtn").setAttribute("aria-pressed", String(prefs.bgMark !== false));
+  $("#bgBtn").setAttribute("aria-pressed", String(!!prefs.markBg));
   $("#layoutBtn").setAttribute("aria-pressed", String(!!prefs.markLayout));
   $("#paperBtn").setAttribute("aria-pressed", String(prefs.showPaper));
   syncRevTop();
@@ -1478,7 +1478,7 @@ async function submit(){
   if (!answer){ selfMark(paper, pt, s); return; }
   if (!canMark()){ selfMark(paper, pt, s); return; }
   if (backend() === "api" && api.codeRequired && !getCode()){ askCode(); return; }
-  if (prefs.bgMark !== false){ markInBackground(paper, q, pt, s, answer); return; }
+  if (prefs.markBg){ markInBackground(paper, q, pt, s, answer); return; }
   const btn = $("#submit"); btn.disabled = true;
   const t0 = Date.now();
   $("#fbSlot").innerHTML = `<div class="fb"><div class="busy"><span class="dot"></span><span id="busyTxt">Marking against the memo… this usually takes 30–90 seconds.</span></div><div class="row"><button class="btn small" id="stop">Stop</button></div></div>`;
