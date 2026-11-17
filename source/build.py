@@ -418,19 +418,102 @@ if os.path.exists(_fc):
     assert set(_fmod.CARDS) <= _bvalid, set(_fmod.CARDS) - _bvalid
     b_cards = {k: [[f.strip(), b.strip()] for f, b in v] for k, v in _fmod.CARDS.items()}
     print("banking flash cards:", {k: len(v) for k, v in b_cards.items()}, "total", sum(len(v) for v in b_cards.values()))
+# ---- Banking exam scope (FTX4087S final, Nov 2026): lecturer guidance. Rules match the question / card front / required text only (not answers, which may mention VaR in passing) ----
+B_SCOPE = {
+  "notExaminedTopics": ["b-mkt"],
+  "rules": [
+    {"id": "market", "topics": ["b-risk", "b-irr", "b-credit", "b-reg"], "pattern": r"value at risk|\bVaR\b|market risk(?!\s*premium)", "reason": "Market risk is not examined (Huang)"},
+    {"id": "operational", "topics": ["b-risk"], "pattern": r"operational risk|\bop(?:erational)?\.?\s*risk|event types?|internal fraud|external fraud", "reason": "Operational risk is not examined (Huang)"},
+    {"id": "liquidity", "topics": ["b-risk"], "pattern": r"liquidity risk|funding liquidity|market liquidity", "reason": "Liquidity risk (Risk Management slides) is not examined (Huang)"},
+    {"id": "ddm", "topics": ["b-val"], "pattern": r"dividend discount|\bDDM\b|gordon growth", "reason": "Dividend discount model slides are not examinable (Kruger)"},
+  ],
+  "focus": [
+    "Know the slides and the workshop questions well (all three lecturers)",
+    "Read \"Bank Governance Lessons Still Not Learned\" (De Jager, Amathuba 11 Nov)",
+    "Everything else in Kruger's work, including Topic 5 Multinational Corporations, now fully examinable (Kruger, Amathuba 26 Oct)",
+    "Prior-year exams are good practice, though not set by Huang (Huang, email)",
+  ],
+  "notExamined": [
+    "Market risk, slide set 3 pages 18-36 (Huang, email)",
+    "Liquidity risk, slide set 1 pages 13-17 (Huang, email)",
+    "Operational risk, slide set 1 pages 7-9 (Huang, email)",
+    "Dividend discount model slides in Topic 3 Bank Valuations (Kruger, Amathuba 26 Oct)",
+    "L7 SARB report on Africa bank summary; PhD Lessons from South African bank failures; VBS Mutual Bank, The Great Bank Heist: the slides are enough (De Jager, Amathuba 11 Nov)",
+  ],
+  "background": [
+    "A new framework for implementing Monetary Policy in South Africa (De Jager, Amathuba 11 Nov)",
+    "Bank capital and RoE erroneous beliefs and financial instability (De Jager, Amathuba 11 Nov)",
+  ],
+  "format": "Final exam: 140 marks, 3 hours. Kruger 30 marks, De Jager 55, Huang 55.",
+}
+_NXT = set(B_SCOPE["notExaminedTopics"])
+for _r in B_SCOPE["rules"]: _r["_re"] = re.compile(_r["pattern"], re.I); assert set(_r["topics"]) <= _bvalid
+def _nx_reason(topics, text, full=None):
+    full = text if full is None else full
+    topics = set(topics)
+    if topics and topics <= _NXT: return "Not examined (topic excluded)"
+    for r in B_SCOPE["rules"]:
+        if r["id"] == "market" and re.search(r"market value risk", text, re.I): continue   # interest rate risk (banking book), still examined
+        if topics <= set(r["topics"]) and r["_re"].search(full if r["id"] == "ddm" else text): return r["reason"]   # DDM also matches in the answer: a question whose answer is the DDM is a DDM question
+    return None
+_nxc = {}
+def _count(key): _nxc[key] = _nxc.get(key, 0) + 1
+def _scope_filter(label, d, textof, fullof):
+    before = {k: len(v) for k, v in d.items()}; out = {}
+    for k, items in d.items():
+        keep = []
+        for it in items:
+            why = _nx_reason([k], textof(it), fullof(it))
+            if why: _count((label, k, why)); print("  excluded", label, k, "|", textof(it)[:110].replace("\n", " "), "|", why)
+            else: keep.append(it)
+        out[k] = keep
+    print(label, "before/after by topic:", {k: (before[k], len(out[k])) for k in d if before[k] != len(out[k])})
+    return out
+_qb_before = {k: (sum(1 for x in v if not x.get("h")), sum(1 for x in v if x.get("h"))) for k, v in b_quiz.items()}
+b_quiz = _scope_filter("quiz", b_quiz, lambda x: x["q"], lambda x: x["q"] + " " + x["a"])
+print("quiz (quick, exam) before -> after:", {k: (_qb_before[k], (sum(1 for x in v if not x.get("h")), sum(1 for x in v if x.get("h")))) for k, v in b_quiz.items() if k in ("b-risk", "b-val", "b-mkt")})
+if b_cards: b_cards = _scope_filter("card", b_cards, lambda x: x[0], lambda x: x[0] + " " + x[1])
+_nxparts = {}
+for _p in b_papers:
+    for _bq in _p["questions"]:
+        for _pt in _bq["parts"]:
+            why = _nx_reason(_pt["topics"], _pt["required"])
+            if why: _pt["nx"] = why; _count(("part", _p["id"], why)); _nxparts.setdefault(_p["id"], []).append(_pt["id"])
+print("papers, parts marked nx:", _nxparts)
+print("excluded counts:", {" / ".join(k): v for k, v in sorted(_nxc.items())})
+B_SCOPE["rules"] = [{k: v for k, v in r.items() if k != "_re"} for r in B_SCOPE["rules"]]
+B_SCOPE_PUBLIC = {k: B_SCOPE[k] for k in ("notExaminedTopics", "rules", "focus", "notExamined", "background", "format")}
+# Between the Lines notebooks (the student's annotated slides), linked by lecture from each section they cover.
+# Links open the hosted app with the notebook id and page: #nb=<id>&page=<n>
+BTL_APP = "https://ylp-games.github.io/Between-the-lines/"
+B_BTL = [
+  ("Bank Regulation & Failure Slides", "dmvy0wgdagt7z", [
+    ("L1 Introduction", 2, 33, ["b-money", "b-reg"]),
+    ("L2 Banks and money", 34, 62, ["b-money"]),
+    ("L3 Monetary policy", 63, 90, ["b-money"]),
+    ("L4 Introduction to bank regulation", 91, 123, ["b-reg"]),
+    ("L5 Specifics of bank regulation", 124, 165, ["b-reg"]),
+    ("L6 Introduction to bank failure", 166, 195, ["b-fail"]),
+    ("L7 South African bank failures", 196, 228, ["b-fail"]),
+    ("L8 SVB, Credit Suisse and conclusion", 229, 266, ["b-fail"]),
+  ]),
+]
+b_books = [{"label": f"Between the Lines: {lec}, pages {p0} to {p1}", "url": f"{BTL_APP}#nb={nid}&page={p0}", "topics": tids}
+           for _name, nid, lecs in B_BTL for lec, p0, p1, tids in lecs]
 _ids = [p["id"] for p in papers + b_papers]
 assert len(_ids) == len(set(_ids)), "paper ids must be unique across courses"
 
 courses = [
   {"id": "tax2", "name": "Tax II", "code": "ACC3004W", "crumb": "ACC3004W past papers",
    "subject": "UCT ACC3004W Taxation II (South African tax) exam", "tablesLabel": "Tax tables", "minPerMark": 180 / 113,
+   "formulaLabel": "2025 sheet (Nov 2025 & Jan 2026 exams)", "formulaSheet": next((p["tables"] for p in papers if p["id"] == "nov2025"), ""),
    "papers": papers, "topics": [{"id": k, "name": n} for k, n in TOPICS], "quiz": {k: [_q(x) for x in v] for k, v in BANK.items()}},
 ]
 if b_papers:
     courses.append(
   {"id": "bank", "name": "Banking", "code": "FTX4087S", "crumb": "FTX4087S past tests, exams and workshops",
    "subject": "UCT FTX4087S Topics in Banking and Treasury Management test or exam", "tablesLabel": "Formula sheet", "minPerMark": 1.2,
-   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, **({"cards": b_cards} if b_cards else {})})
+   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, **({"cards": b_cards} if b_cards else {})})
 
 data = json.dumps(courses, ensure_ascii=False).replace("</", "<\\/")
 assert "/*__COURSES__*/null" in tpl

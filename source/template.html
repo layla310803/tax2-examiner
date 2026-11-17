@@ -196,6 +196,22 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 .dot{width:10px;height:10px;border-radius:50%;background:var(--pen);animation:pulse 1.2s infinite}
 @keyframes pulse{50%{opacity:.25}}
 @media (prefers-reduced-motion: reduce){.dot{animation:none}}
+.pill.nx{margin-left:6px;font-size:11px;padding:1px 8px;vertical-align:middle;white-space:nowrap}
+.tbtn.nxt{opacity:.62;border-style:dashed}
+.tbtn.nxt .pill{font-size:11px;padding:0 7px}
+.chip.nxc{border-style:dashed;opacity:.7}
+.nxnote{font-size:13px;margin:0 0 8px;color:var(--warn)}
+.scope{border:1px solid var(--rule);border-radius:10px;background:var(--sheet);padding:12px 14px;display:grid;gap:8px;font-size:13.5px}
+.scope>h2{font-size:15px;margin:0}
+.scopegrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.scopegrid{grid-template-columns:1fr}}
+.scope h3{font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;margin:0 0 4px;font-weight:700}
+.scope .fo{border-left:3px solid var(--good);padding-left:10px}.scope .fo h3{color:var(--good)}
+.scope .nxs{border-left:3px solid var(--warn);padding-left:10px}.scope .nxs h3{color:var(--warn)}
+.scope ul{margin:0;padding-left:16px;display:grid;gap:3px}
+.scope .line{color:var(--muted)}.scope .line strong{color:var(--ink)}
+.home.wide{max-width:none}
+.sheetdoc{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px 22px}
 .notice{font-size:13px;padding:10px 12px;border-radius:8px;background:var(--warn-soft);color:var(--warn)}
 .selfmark{display:flex;gap:8px;align-items:center}
 .selfmark input{width:70px;padding:5px;border:1px solid var(--rule);border-radius:6px;background:var(--sheet)}
@@ -247,6 +263,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
     <div class="srow"><span>Scenario panel<small>Show the scenario, memo and notes beside your answer.</small></span><button class="btn small toggle" id="paperBtn" aria-pressed="true" aria-label="Scenario panel"></button></div>
     <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
     <div class="srow"><span>Mark layout<small>When off, only the content is marked: any format is fine and communication marks are given automatically.</small></span><button class="btn small toggle" id="layoutBtn" aria-pressed="false" aria-label="Mark layout"></button></div>
+    <div class="srow" id="fsRow"><span>Formula sheet<small>The exam formula sheet for this course.</small></span><button class="btn small" id="fsBtn">Open</button></div>
     <div class="srow" id="keyRow"><span>AI key<small>Use your own Gemini or Claude key for marking.</small></span><button class="btn small" id="keyBtn">Open</button></div>
   </div></span>
   <button class="btn small" id="homeBtn" hidden>All papers</button>
@@ -277,7 +294,9 @@ const KINDS = [["past", "Past papers"], ["test", "Tests"], ["exam", "Exams"], ["
 const kindOf = p => p.kind || "past";
 function paperGroups(){ return PAPERS.some(p => p.kind) ? KINDS.map(([k, l]) => [l, PAPERS.filter(p => kindOf(p) === k)]).filter(g => g[1].length) : [["Full papers", PAPERS]]; }   // quick-quiz question bank, by section id (source/quiz_bank.py)
 const topicName = id => (TOPICS.find(x => x.id === id) || {}).name || id;
-function topicItems(tid){ const out = []; PAPERS.forEach(p => p.questions.forEach((q, qi) => q.parts.forEach((pt, pi) => { if ((pt.topics || []).includes(tid)) out.push({ p, qi, pi, pt }); }))); return out; }
+const nxTopic = tid => !!(COURSE.scope && COURSE.scope.notExaminedTopics.includes(tid));
+// Parts the lecturers said are not examined (pt.nx) are left out, except on a section that is wholly not examined (kept so it can still be viewed).
+function topicItems(tid){ const out = [], all = nxTopic(tid); PAPERS.forEach(p => p.questions.forEach((q, qi) => q.parts.forEach((pt, pi) => { if ((pt.topics || []).includes(tid) && (all || !pt.nx)) out.push({ p, qi, pi, pt }); }))); return out; }
 // Section test order: shortest required first, building up to the longest
 function testItems(tid){ return topicItems(tid).slice().sort((a, b) => a.pt.marks - b.pt.marks); }
 function navItems(){ return view.byMarks ? testItems(view.topic) : topicItems(view.topic); }
@@ -435,6 +454,7 @@ function openKeyDlg(){
   d.showModal();
 }
 $("#keyBtn").onclick = () => { closeSettings(); openKeyDlg(); };
+$("#fsBtn").onclick = () => { closeSettings(); go("formulas/" + COURSE.id); };
 $("#bgBtn").onclick = () => { prefs.bgMark = prefs.bgMark === false; save(); applyLayout(); };
 function closeSettings(){ $("#setPanel").hidden = true; $("#setBtn").setAttribute("aria-expanded", "false"); }
 $("#setBtn").onclick = e => { e.stopPropagation(); const open = $("#setPanel").hidden, r = $("#setBtn").getBoundingClientRect(), pnl = $("#setPanel"); pnl.hidden = !open; pnl.style.top = (r.bottom + 6) + "px"; pnl.style.right = Math.max(8, Math.min(innerWidth - r.right, innerWidth - pnl.offsetWidth - 8)) + "px"; $("#setBtn").setAttribute("aria-expanded", String(open)); };
@@ -500,6 +520,7 @@ function route(){
   view.quiz = null;
   if (parts[0] === "manage"){ view.paper = null; view.topic = null; if (parts[1]) renderManageCourse(parts[1]); else renderManage(); return; }
   if (parts[0] === "edit"){ view.paper = null; view.topic = null; renderEdit(parts[1], parts[2]); return; }
+  if (parts[0] === "formulas"){ const c = COURSES.find(c => c.id === parts[1]) || COURSE; view.paper = null; view.topic = null; setCourse(c); renderFormulas(); return; }
   if (parts[0] === "cards"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c || !c.cards){ renderCourses(); return; } setCourse(c); renderCards(parts[2] || null); return; }
   if (parts[0] === "c"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderHome(); return; }
   { const c = (parts[0] === "quiz" || parts[0] === "topic") ? courseOfTopic(parts[1]) : courseOfPaper(parts[0]); if (c) setCourse(c); }
@@ -588,13 +609,15 @@ function renderHome(){
       <p>Your answers and scores are saved in this browser.</p>
     </div>
     <div class="row"><button class="btn small" id="mgCourse">Add or remove papers, tuts, workshops and sections</button></div>
+    ${scopeHTML()}
     ${weakHTML()}
     ${cardsHTML()}
     <section class="topics" aria-labelledby="topicsH">
       <h2 id="topicsH">Practise by section</h2>
       <div class="hint">Pick a section for a quick quiz on the rules, then every required on it across all the papers, shortest first.</div>
       <div class="topicgrid">${TOPICS.map(tp => { const items = topicItems(tp.id); const done = items.filter(x => best(x.p, x.pt) !== null).length;
-        return `<button class="tbtn" data-t="${tp.id}">${esc(tp.name)} <span class="n">${done}/${items.length}</span></button>`; }).join("")}</div>
+        return nxTopic(tp.id) ? `<button class="tbtn nxt" data-t="${tp.id}" title="Not examined this year. You can still view it.">${esc(tp.name)} <span class="pill w">Not examined</span></button>`
+          : `<button class="tbtn" data-t="${tp.id}">${esc(tp.name)} <span class="n">${done}/${items.length}</span></button>`; }).join("")}</div>
     </section>
     ${paperGroups().map(([label, ps]) => `<h2 class="sec">${label}</h2>
     <div class="cards">${ps.map(p => {
@@ -619,7 +642,7 @@ function noteSave(tid, rec){ const n = store._notes || (store._notes = {}); n[ti
 const safeUrl = u => /^https?:\/\/\S+$/i.test(u) ? u : null;
 const linkify = t => esc(t).replace(/https?:\/\/[^\s<]+/g, u => `<a href="${u}" target="_blank" rel="noopener">${u.length > 70 ? u.slice(0, 67) + "..." : u}</a>`);
 function booksFor(tid){ const c = courseOfTopic(tid) || COURSE; return [...(c.books || []), ...(custom().books[c.id] || [])].filter(b => (b.topics || []).includes(tid)); }
-function booksHTML(tid){ const b = booksFor(tid); return b.length ? `<ul class="nblinks">${b.map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a> <span class="hint">· course notebook</span></li>`).join("")}</ul>` : ""; }
+function booksHTML(tid){ const b = booksFor(tid); return b.length ? `<ul class="nblinks">${b.map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.label)}</a></li>`).join("")}</ul>` : ""; }
 function linksHTML(tid, edit){ return noteRec(tid).links.map((l, i) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label || l.url)}</a>${edit ? ` <button class="btn small" data-rmlink="${i}">Remove</button>` : ""}</li>`).join(""); }
 function notebookHTML(tid){
   const n = noteRec(tid);
@@ -890,7 +913,7 @@ function cardsHTML(){
   return `<section class="topics"><h2 class="sec">Flash cards</h2>
     <div class="hint">${tot} cards to memorise: definitions, formulas, cases and exam traps. ${known} marked as known so far. Each deck shows the cards you don't know yet first.</div>
     <div class="row"><button class="btn primary" data-cards="">All cards (shuffled)</button></div>
-    <div class="topicgrid">${TOPICS.filter(tp => COURSE.cards[tp.id]).map(tp => { const v = COURSE.cards[tp.id];
+    <div class="topicgrid">${TOPICS.filter(tp => (COURSE.cards[tp.id] || []).length).map(tp => { const v = COURSE.cards[tp.id];
       return `<button class="tbtn" data-cards="${tp.id}">${esc(tp.name)} <span class="n">${v.filter((_, i) => k[cardKey(tp.id, i)]).length}/${v.length}</span></button>`; }).join("")}</div></section>`;
 }
 let deck = null;
@@ -901,8 +924,16 @@ function buildDeck(tid){
   all.sort((a, b) => (k[cardKey(a.t, a.i)] ? 1 : 0) - (k[cardKey(b.t, b.i)] ? 1 : 0));   // unknown first, shuffled within each group
   deck = { key: tid || "", cid: COURSE.id, cards: all, n: 0, flip: false, got: 0 };
 }
+function renderFormulas(){
+  setHome("Back", "c/" + COURSE.id); $("#crumb").textContent = COURSE.code + " · formula sheet"; applyLayout();
+  $("#app").className = "";
+  const f = COURSE.formulaSheet;
+  $("#app").innerHTML = `<div class="home wide"><div><h2 class="sec">Exam formula sheet</h2>${COURSE.formulaLabel ? `<div class="hint">${esc(COURSE.formulaLabel)}</div>` : ""}</div>
+    ${COURSE.id === "tax2" ? `<div class="notice">Not on the sheet: CGT inclusion rates and exclusions, the VAT rate, fringe benefit rates, the official interest rate, estate duty and donations tax rates, and the company rate. These come from the question itself or your open-book legislation handbook.</div>` : ""}
+    ${f ? `<div class="sheetdoc doc">${renderDoc(f)}</div>` : `<div class="notice">There is no formula sheet for this course.</div>`}</div>`;
+}
 function renderCards(tid){
-  if (tid && !COURSE.cards[tid]) tid = null;
+  if (tid && !(COURSE.cards[tid] || []).length) tid = null;
   setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = (tid ? topicName(tid) : "All sections") + " · flash cards"; applyLayout();
   $("#app").className = "";
   if (!deck || deck.key !== (tid || "") || deck.cid !== COURSE.id) buildDeck(tid);
@@ -941,8 +972,17 @@ document.addEventListener("keydown", e => {
   else if (e.key === "ArrowLeft"){ const b = $("#fcNo") || $("#fcPrev"); if (b) b.click(); }
 });
 
+function scopeHTML(){
+  const sc = COURSE.scope; if (!sc) return "";
+  const li = a => a.map(x => `<li>${esc(x)}</li>`).join("");
+  return `<section class="scope" aria-labelledby="scopeH"><h2 id="scopeH">Exam scope</h2>
+    <div class="scopegrid"><div class="fo"><h3>Focus on</h3><ul>${li(sc.focus)}</ul></div><div class="nxs"><h3>Not examined</h3><ul>${li(sc.notExamined)}</ul></div></div>
+    ${(sc.background || []).length ? `<div class="line"><strong>Background only:</strong> ${sc.background.map(esc).join("; ")}</div>` : ""}
+    ${sc.format ? `<div class="line"><strong>Format:</strong> ${esc(sc.format)}</div>` : ""}
+    <div class="hint">Not-examined questions and cards are left out of the quizzes and flash cards, and not-examined requireds are skipped in the section lists.</div></section>`;
+}
 function weakHTML(){
-  const rows = TOPICS.map(tp => ({ tp, s: topicStats(tp.id) }));
+  const rows = TOPICS.filter(tp => !nxTopic(tp.id)).map(tp => ({ tp, s: topicStats(tp.id) }));
   const tested = rows.filter(r => r.s.pct !== null).sort((a, b) => a.s.pct - b.s.pct), untested = rows.filter(r => r.s.pct === null);
   if (!tested.length) return `<section class="topics"><h2 class="sec">Your weakest sections</h2>
     <div class="hint">Nothing marked yet. Do a quick quiz or a required in any section and your weakest sections will show up here.</div></section>`;
@@ -969,10 +1009,11 @@ function renderTopic(tid){
     <div><h2 class="sec">${esc(topicName(tid))}</h2>
       <div class="hint">${items.length} requireds · ${tot} marks · best so far <span class="mono">${fmt(got)} / ${tot}</span>. ${(s => s.pct === null ? "" : ` Section score <span class="mono">${Math.round(s.pct * 100)}%</span>.`)(topicStats(tid))}</div>
       <div class="hint">Section test: start with the quick quiz (short type-in questions on the rules, not taken from the papers), then work up from the shortest required to the longest. Or pick any required below.</div></div>
+    ${nxTopic(tid) ? `<div class="notice">This section is not examined this year. Its requireds are listed for reference only and it is left out of your weakest sections.</div>` : ""}
     <div class="row"><button class="btn primary" id="tquiz">Quick quiz</button><button class="btn" id="tlong">Longer questions, shortest first</button><button class="btn" id="tstart">Paper order</button><button class="btn" id="tback">All sections</button></div>
     ${notebookHTML(tid)}
     <div class="tlist">${items.map((x, i) => { const b = best(x.p, x.pt);
-      return `<button class="titem" data-i="${i}"><span class="src">${esc(x.p.short)} · ${esc(x.pt.id)}</span><span class="req">${esc(x.pt.required.replace(/\s*\n\s*/g, " "))}</span>
+      return `<button class="titem" data-i="${i}"><span class="src">${esc(x.p.short)} · ${esc(x.pt.id)}</span><span class="req">${esc(x.pt.required.replace(/\s*\n\s*/g, " "))}${x.pt.nx ? ` <span class="pill w nx" title="${esc(x.pt.nx)}">Not examined</span>` : ""}</span>
         <span class="sc">${b === null ? `${x.pt.marks} marks` : `<span class="${band(b, x.pt.marks)}">${fmt(b)}</span> / ${x.pt.marks}`}</span>
         <span class="tags">${x.pt.topics.filter(t => t !== tid).map(topicName).map(esc).join(" · ")}</span></button>`; }).join("")}</div>
   </div>`;
@@ -1123,9 +1164,10 @@ function renderRight(){
   $("#right").innerHTML = `${topicNav()}
     <nav class="partnav" aria-label="Requireds">${all.map(x => {
       const b = best(paper, x.pp); const cls = (x.qi===view.q && x.pi===view.p) ? "cur" : b===null ? "" : band(b, x.pp.marks);
-      return `<button class="chip ${cls}" data-qi="${x.qi}" data-pi="${x.pi}" title="${b===null ? "Not attempted" : "Best: " + fmt(b) + "/" + x.pp.marks}">${esc(x.pp.id)}</button>`;}).join("")}</nav>
+      return `<button class="chip ${cls}${x.pp.nx ? " nxc" : ""}" data-qi="${x.qi}" data-pi="${x.pi}" title="${(x.pp.nx ? "Not examined: " + x.pp.nx + ". " : "") + (b===null ? "Not attempted" : "Best: " + fmt(b) + "/" + x.pp.marks)}">${esc(x.pp.id)}</button>`;}).join("")}</nav>
     <div class="qhead"><h2>Required ${esc(pt.id)}</h2><span class="marks">${pt.marks} marks · ${mins} min</span></div>
     <div class="tagline">Topics: ${(pt.topics || []).map(topicName).map(esc).join(" · ")}</div>
+    ${pt.nx ? `<div class="nxnote"><span class="pill w">Not examined</span> ${esc(pt.nx)}. Kept here as practice only.</div>` : ""}
     <div class="required">${esc(pt.required)}</div>
     <label for="answer" class="hint">Your answer.${prefs.markLayout ? ` Set calculations out like the exam: <span class="mono">Item | Reason/working | Amount</span>, one line each.` : ""}</label>
     ${prefs.markLayout ? "" : `<div class="hint" style="margin-bottom:6px">Content-only marking: write it any way you like (lines, bullets, shorthand). Layout isn't marked.</div>`}
