@@ -964,7 +964,7 @@ function fsHtml(){
     ${COURSE.id === "tax2" ? `<div class="notice">Not on the sheet: CGT inclusion rates and exclusions, the VAT rate, fringe benefit rates, the official interest rate, estate duty and donations tax rates, and the company rate. These come from the question itself or your open-book legislation handbook.</div>` : ""}
     <div class="doc">${body}</div>`;
 }
-let fsShown = null;
+var fsShown = null;
 function syncFs(){
   const has = !!(COURSE && COURSE.formulaSheet), open = has && !!prefs.fsOpen, pn = $("#fsPanel");
   $("#fsTop").hidden = !has; $("#fsRow").hidden = !has;
