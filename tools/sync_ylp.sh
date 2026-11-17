@@ -64,3 +64,9 @@ else
   echo "Committed $(git -C "$WT" rev-parse --short HEAD)."
 fi
 git -C "$WT" push origin ylp:main
+
+# Deploy the YLP site (ylp-exam-desk.vercel.app) from the worktree with the Vercel CLI.
+# The worktree is linked to the Vercel project ylp-exam-desk (.vercel/, git-ignored). Set SKIP_DEPLOY=1 to skip.
+if [ -z "$SKIP_DEPLOY" ] && [ -f "$WT/.vercel/project.json" ]; then
+  (cd "$WT" && npx --yes vercel@latest deploy --prod --yes >/dev/null) && echo "Deployed to https://ylp-exam-desk.vercel.app" || { echo "Vercel deploy failed (run 'npx vercel login' if logged out)." >&2; exit 1; }
+fi
