@@ -186,7 +186,13 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 .ok{display:flex;gap:8px}
 .ok::before{content:"✓";color:var(--good);font-weight:700}
 .revise{display:flex;flex-wrap:wrap;gap:6px}
-.revise span{background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:3px 9px;font-size:13.5px}
+.revise span,.revise button{background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:3px 9px;font-size:13.5px;border:1px solid transparent;font-family:inherit}
+.revise button{cursor:pointer}.revise button:hover{border-color:var(--accent)}.revise button i{font-style:normal;margin-left:6px;opacity:.85}
+.revise-h{display:flex;align-items:baseline;gap:8px}.revise-h small{color:var(--muted);font-size:12.5px}
+.rvbtn{margin-left:10px}.rvbtn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+.rvrow{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--rule)}.rvtext{flex:1;min-width:0}.rvtext small{display:block;color:var(--muted);margin-top:3px;white-space:pre-wrap}
+.rvin{flex:1;min-width:200px;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:inherit;font:inherit}
+.rvnotes{width:100%;min-height:220px;resize:vertical;border:1px solid var(--rule);border-radius:10px;padding:12px;background:var(--sheet);color:inherit;font:inherit;line-height:1.5}
 .tip{border-top:1px solid var(--rule);padding-top:10px;font-size:14px}
 .history{font-size:13px;color:var(--muted)}
 .chat{display:grid;gap:10px}
@@ -275,6 +281,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <h1 id="appName">Examiner</h1>
   <span class="crumb" id="crumb">Pick a course</span>
   <span class="spacer"></span>
+  <button class="btn small" id="revTop" hidden>Revisit</button>
   <button class="btn small toggle" id="fsTop" aria-pressed="false" aria-controls="fsPanel" hidden>Formula sheet</button>
   <span class="setwrap"><button class="btn small" id="setBtn" aria-expanded="false" aria-controls="setPanel">Settings</button>
   <div class="setpanel" id="setPanel" hidden>
@@ -547,6 +554,7 @@ function route(){
   if (parts[0] === "edit"){ view.paper = null; view.topic = null; renderEdit(parts[1], parts[2]); return; }
   if (parts[0] === "formulas"){ const c = COURSES.find(c => c.id === parts[1]) || COURSE; if (c.formulaSheet){ prefs.fsOpen = true; save(); } location.replace("#c/" + c.id); route(); return; }
   if (parts[0] === "cards"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c || !c.cards){ renderCourses(); return; } setCourse(c); renderCards(parts[2] || null); return; }
+  if (parts[0] === "revisit"){ const c = COURSES.find(c => c.id === parts[1]) || COURSE; view.paper = null; view.topic = null; setCourse(c); renderRevisit(); return; }
   if (parts[0] === "c"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderHome(); return; }
   { const c = (parts[0] === "quiz" || parts[0] === "topic") ? courseOfTopic(parts[1]) : courseOfPaper(parts[0]); if (c) setCourse(c); }
   if (parts[0] === "quiz" && TOPICS.some(x => x.id === parts[1])){ view.paper = null; view.topic = parts[1]; renderQuiz(parts[1]); return; }
@@ -571,6 +579,7 @@ function route(){
 }
 window.addEventListener("hashchange", route);
 $("#homeBtn").onclick = () => go($("#homeBtn").dataset.go || "");
+$("#revTop").onclick = () => go("revisit/" + COURSE.id);
 $("#paperBtn").onclick = () => { prefs.showPaper = !prefs.showPaper; save(); applyLayout(); };
 $("#paperXBtn").onclick = () => { prefs.paperX = prefs.paperX === false; save(); applyLayout(); if (view.paper && $("#left")) renderLeft(); };
 $("#layoutBtn").onclick = () => { prefs.markLayout = !prefs.markLayout; save(); applyLayout(); if (view.paper) renderRight(); };
@@ -581,6 +590,7 @@ function applyLayout(){
   $("#bgBtn").setAttribute("aria-pressed", String(prefs.bgMark !== false));
   $("#layoutBtn").setAttribute("aria-pressed", String(!!prefs.markLayout));
   $("#paperBtn").setAttribute("aria-pressed", String(prefs.showPaper));
+  syncRevTop();
   $("#paperXBtn").setAttribute("aria-pressed", String(prefs.paperX !== false));
   $("#timerBtn").setAttribute("aria-pressed", String(prefs.timer));
   if (!inExam) return;
@@ -636,7 +646,7 @@ function renderHome(){
       <p>Pick a paper. You get <strong>one required at a time</strong>, with the full scenario beside it. Type your answer the way you would in the exam script, then submit it. The examiner marks it against the memo, shows <strong>where you lost marks and why</strong>, and tells you which section to revise. You can then fix your answer and resubmit, or ask follow-up questions about the feedback.</p>
       <p>Your answers and scores are saved in this browser.</p>
     </div>
-    <div class="row"><button class="btn small" id="mgCourse">Add or remove papers, tuts, workshops and sections</button></div>
+    <div class="row"><button class="btn small" id="mgCourse">Add or remove papers, tuts, workshops and sections</button><button class="btn small" id="rvHome">Revisit list (${rv().items.length})</button></div>
     ${scopeHTML()}
     ${weakHTML()}
     ${cardsHTML()}
@@ -660,8 +670,45 @@ function renderHome(){
   </div>`;
   document.querySelectorAll(".card").forEach(c => c.onclick = () => go(c.dataset.id));
   $("#mgCourse").onclick = () => go("manage/" + COURSE.id);
+  $("#rvHome").onclick = () => go("revisit/" + COURSE.id);
   document.querySelectorAll(".tbtn, .wrow").forEach(b => b.onclick = () => go("topic/" + b.dataset.t));
   document.querySelectorAll("[data-cards]").forEach(b => b.onclick = () => go("cards/" + COURSE.id + (b.dataset.cards ? "/" + b.dataset.cards : "")));
+}
+
+/* ---------- revisit list: saved questions, topics, cards and a notepad, per course ---------- */
+function rv(cid){ const r = store._revisit || (store._revisit = {}); const k = cid || COURSE.id; return r[k] || (r[k] = { items: [], notes: "" }); }
+const rvHas = id => rv().items.some(x => x.id === id);
+function rvToggle(item){ const r = rv(); const i = r.items.findIndex(x => x.id === item.id); if (i >= 0) r.items.splice(i, 1); else r.items.unshift(Object.assign({ added: Date.now() }, item)); save(); syncRevTop(); return i < 0; }
+function syncRevTop(){ const b = $("#revTop"); if (!b) return; const h = location.hash.replace(/^#/, ""); b.hidden = !h; const n = h ? rv().items.length : 0; b.textContent = n ? `Revisit (${n})` : "Revisit"; }
+function qItem(paper, pt){
+  let go = paper.id; paper.questions.forEach((q, qi) => q.parts.forEach((pp, pi) => { if (pp === pt) go = `${paper.id}/${qi}/${pi}`; }));
+  return { id: "q:" + paper.id + ":" + pt.id, kind: "q", label: `${paper.title}: Required ${pt.id} (${pt.marks} marks)`, sub: pt.required.length > 220 ? pt.required.slice(0, 217) + "..." : pt.required, go };
+}
+function topicItem(text){
+  const tp = TOPICS.find(t => t.name.toLowerCase() === text.trim().toLowerCase());
+  return { id: "t:" + text.trim().toLowerCase(), kind: "topic", label: text.trim(), go: tp ? "topic/" + tp.id : "" };
+}
+function renderRevisit(){
+  setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = "Revisit list"; $("#app").className = ""; applyLayout();
+  const r = rv(); const by = k => r.items.filter(x => x.kind === k);
+  const qBest = x => { const m = x.id.match(/^q:([^:]+):(.+)$/); const pp = m && PAPERS.find(p => p.id === m[1]); const pt = pp && pp.questions.flatMap(q => q.parts).find(t => t.id === m[2]); const b = pt ? best(pp, pt) : null; return b === null ? "" : ` · best ${fmt(b)}/${pt.marks}`; };
+  const row = x => `<div class="rvrow"><div class="rvtext"><b>${esc(x.label)}</b>${x.kind === "q" ? `<span class="hint">${qBest(x)}</span>` : ""}${x.kind === "card" ? `<details><summary class="hint">Show answer</summary><small>${esc(x.sub)}</small></details>` : x.sub ? `<small>${esc(x.sub)}</small>` : ""}</div>${x.go ? `<button class="btn small" data-go="${esc(x.go)}">Open</button>` : ""}<button class="btn small" data-rm="${esc(x.id)}" aria-label="Remove ${esc(x.label)}">Remove</button></div>`;
+  const sec = (title, list, empty) => `<h2 class="sec" style="margin-top:22px">${title}</h2>${list.length ? list.map(row).join("") : `<div class="hint">${empty}</div>`}`;
+  $("#app").innerHTML = `<div class="home">
+    <div class="intro"><p>Questions and topics you want to come back to. Save a required with <strong>Save to revisit</strong> next to its topics, a topic from <strong>Revise this</strong> after marking, or a flash card while you go through the deck.</p></div>
+    <div class="row"><input id="rvAdd" class="rvin" placeholder="Add a topic or question to revisit..." aria-label="Add a topic or question to revisit"><button class="btn primary small" id="rvAddBtn">Add</button></div>
+    ${sec("Questions", by("q"), "No questions saved yet.")}
+    ${sec("Topics", by("topic"), "No topics saved yet.")}
+    ${by("card").length ? sec("Flash cards", by("card"), "") : ""}
+    <h2 class="sec" style="margin-top:22px">Notepad</h2>
+    <textarea id="rvNotes" class="rvnotes" placeholder="Anything else to come back to...">${esc(r.notes)}</textarea>
+    <div class="hint">Saved in this browser as you type.</div>
+  </div>`;
+  const add = () => { const v = $("#rvAdd").value.trim(); if (!v) return; if (!rvHas(topicItem(v).id)) rvToggle(topicItem(v)); renderRevisit(); };
+  $("#rvAddBtn").onclick = add; $("#rvAdd").onkeydown = e => { if (e.key === "Enter") add(); };
+  $("#rvNotes").oninput = e => { r.notes = e.target.value; save(); };
+  document.querySelectorAll("#app [data-go]").forEach(b => b.onclick = () => go(b.dataset.go));
+  document.querySelectorAll("#app [data-rm]").forEach(b => b.onclick = () => { const i = r.items.findIndex(x => x.id === b.dataset.rm); if (i >= 0){ r.items.splice(i, 1); save(); } renderRevisit(); });
 }
 
 /* ---------- section notebook: your notes and links (Between the Lines, Drive, anything) ---------- */
@@ -1005,7 +1052,7 @@ function renderCards(tid){
     <div class="fcbar">${d.flip
       ? `<button class="btn" id="fcNo">Again</button><button class="btn primary" id="fcYes">Got it</button>`
       : `<button class="btn primary" id="fcShow">Show answer</button>`}</div>
-    <div class="fcbar"><button class="btn small" id="fcPrev">← Previous</button><button class="btn small" id="fcSkip">Skip →</button><button class="btn small" id="fcShuf">Shuffle</button><button class="btn small" id="fcBack">Back to course</button></div>
+    <div class="fcbar"><button class="btn small" id="fcPrev">← Previous</button><button class="btn small" id="fcSkip">Skip →</button><button class="btn small" id="fcSave" aria-pressed="${rvHas("c:" + c.t + ":" + c.i)}">${rvHas("c:" + c.t + ":" + c.i) ? "★ Saved" : "☆ Save to revisit"}</button><button class="btn small" id="fcShuf">Shuffle</button><button class="btn small" id="fcBack">Back to course</button></div>
   </div>`;
   const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
   d.anim = "";
@@ -1022,6 +1069,7 @@ function renderCards(tid){
   on("#fcPrev", () => { if (d.n > 0){ d.n--; d.flip = false; redraw("nextin"); } });
   on("#fcSkip", () => { d.n++; d.flip = false; redraw("nextin"); });
   on("#fcShuf", () => { deck = null; redraw(); });
+  on("#fcSave", () => { const on = rvToggle({ id: "c:" + c.t + ":" + c.i, kind: "card", label: c.f, sub: c.b, go: "" }); const b = $("#fcSave"); b.setAttribute("aria-pressed", String(on)); b.textContent = on ? "★ Saved" : "☆ Save to revisit"; });
   on("#fcBack", () => go("c/" + COURSE.id));
 }
 document.addEventListener("keydown", e => {
@@ -1227,7 +1275,7 @@ function renderRight(){
       const b = best(paper, x.pp); const cls = (x.qi===view.q && x.pi===view.p) ? "cur" : b===null ? "" : band(b, x.pp.marks);
       return `<button class="chip ${cls}${x.pp.nx ? " nxc" : ""}" data-qi="${x.qi}" data-pi="${x.pi}" title="${(x.pp.nx ? "Not examined: " + x.pp.nx + ". " : "") + (b===null ? "Not attempted" : "Best: " + fmt(b) + "/" + x.pp.marks)}">${esc(x.pp.id)}</button>`;}).join("")}</nav>
     <div class="qhead"><h2>Required ${esc(pt.id)}</h2><span class="marks">${pt.marks} marks · ${mins} min</span></div>
-    <div class="tagline">Topics: ${(pt.topics || []).map(topicName).map(esc).join(" · ")}</div>
+    <div class="tagline">Topics: ${(pt.topics || []).map(topicName).map(esc).join(" · ")}${(() => { const on = rvHas(qItem(paper, pt).id); return `<button class="btn small rvbtn" id="rvQ" aria-pressed="${on}">${on ? "★ Saved to revisit" : "☆ Save to revisit"}</button>`; })()}</div>
     ${pt.nx ? `<div class="nxnote"><span class="pill w">Not examined</span> ${esc(pt.nx)}. Kept here as practice only.</div>` : ""}
     <div class="required">${esc(pt.required)}</div>
     <label for="answer" class="hint">Your answer.${prefs.markLayout ? ` Set calculations out like the exam: <span class="mono">Item | Reason/working | Amount</span>, one line each.` : ""}</label>
@@ -1245,6 +1293,7 @@ function renderRight(){
     ${sampleReady && !canMark() ? `<div class="notice">Automatic marking isn't set up in this browser. <button class="btn small" id="keyBtn2">Add your own AI key</button> (free Gemini key) or submit and self-mark against the memo.</div>` : ""}
     ${backend() === "byok" || backend() === "api" ? `<div class="hint">${markerLabel()} <button class="btn small" id="keyBtn2">${byok ? "Change" : "Use my own"} key</button>${backend() === "api" && api.codeRequired ? ` <button class="btn small" id="codeBtn">${getCode() ? "Change" : "Enter"} access code</button>` : ""}</div>` : ""}
   `;
+  const rq = $("#rvQ"); if (rq) rq.onclick = () => { const on = rvToggle(qItem(paper, pt)); rq.setAttribute("aria-pressed", String(on)); rq.textContent = on ? "★ Saved to revisit" : "☆ Save to revisit"; };
   const ta = $("#answer");
   ta.oninput = () => { s.answer = ta.value; save(); if (prefs.timer) startTimer(mins); };
   document.querySelectorAll(".chip").forEach(c => c.onclick = () => { view.q = +c.dataset.qi; view.p = +c.dataset.pi; view.tab = "scenario"; resetTimer(); renderLeft(); renderRight(); $("#right").scrollTop = 0; });
@@ -1279,7 +1328,7 @@ function renderFeedback(a, pt){
     ${f.overall ? `<div>${esc(f.overall)}</div>` : ""}
     ${L(f.errors).length ? `<div><h3>Where you went wrong</h3><div class="list">${L(f.errors).map(e => `<div class="err"><div><b>✗</b> ${esc(e.what)}</div><div class="fix">${esc(e.fix)}</div>${e.why ? `<div class="why">${esc(e.why)}</div>` : ""}</div>`).join("")}</div></div>` : ""}
     ${L(f.missed).length ? `<div><h3>Marks you left on the table</h3><div class="list">${L(f.missed).map(m => `<div class="miss"><span class="m">${esc(fmt(+m.marks || 0))}</span><span>${esc(m.point)}</span></div>`).join("")}</div></div>` : ""}
-    ${L(f.revise).length ? `<div><h3>Revise this</h3><div class="revise">${L(f.revise).map(r => `<span>${esc(r)}</span>`).join("")}</div></div>` : ""}
+    ${L(f.revise).length ? `<div><div class="revise-h"><h3>Revise this</h3><small>Tap a topic to add it to your revisit list.</small></div><div class="revise">${L(f.revise).map(r => { const on = rvHas(topicItem(r).id); return `<button data-rv="${esc(r)}" aria-pressed="${on}" title="${on ? "Remove from" : "Add to"} your revisit list">${esc(r)}<i>${on ? "★" : "+"}</i></button>`; }).join("")}</div></div>` : ""}
     ${L(f.correct).length ? `<details><summary><h3 style="display:inline">What earned marks (${L(f.correct).length})</h3></summary><div class="list" style="margin-top:8px">${L(f.correct).map(c => `<div class="ok">${esc(c)}</div>`).join("")}</div></details>` : ""}
     ${f.examTip ? `<div class="tip"><strong>Exam technique:</strong> ${esc(f.examTip)}</div>` : ""}
     <div class="row"><button class="btn" id="toMemo">Open the memo</button><button class="btn pen" id="askBtn">Ask the examiner about this</button></div>
@@ -1288,6 +1337,7 @@ function renderFeedback(a, pt){
 }
 
 function wireFeedback(){
+  document.querySelectorAll(".revise [data-rv]").forEach(b => b.onclick = () => { const on = rvToggle(topicItem(b.dataset.rv)); b.setAttribute("aria-pressed", String(on)); b.querySelector("i").textContent = on ? "★" : "+"; b.title = (on ? "Remove from" : "Add to") + " your revisit list"; });
   const tm = $("#toMemo"); if (tm) tm.onclick = () => { view.tab = "memo"; prefs.showPaper = true; save(); applyLayout(); renderLeft(); };
   const ab = $("#askBtn"); if (ab) ab.onclick = () => openChat();
 }
