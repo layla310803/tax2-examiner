@@ -80,6 +80,7 @@ h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:
 .tbtn:hover{border-color:var(--accent);color:var(--accent)}
 .tbtn .n{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
 .tlist{display:grid;gap:8px}
+.tgh{font-size:.95rem;font-weight:600;margin:16px 0 8px}.tgh span{font-weight:400;opacity:.65;font-size:.85rem}
 .titem{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;cursor:pointer;text-align:left;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
 .titem:hover{border-color:var(--accent)}
 .titem .src{font-weight:600;white-space:nowrap}
@@ -866,9 +867,9 @@ function renderHome(){
     <section class="topics" aria-labelledby="topicsH">
       <h2 id="topicsH">Practise by section</h2>
       <div class="hint">Pick a section for a quick quiz on the rules, then every required on it across all the papers, shortest first.</div>
-      <div class="topicgrid">${TOPICS.map(tp => { const items = topicItems(tp.id); const done = items.filter(x => best(x.p, x.pt) !== null).length;
+      ${topicGroups(TOPICS, tp => { const items = topicItems(tp.id); const done = items.filter(x => best(x.p, x.pt) !== null).length;
         return nxTopic(tp.id) ? `<button class="tbtn nxt" data-t="${tp.id}" title="Not examined this year. You can still view it.">${esc(tp.name)} <span class="pill w">Not examined</span></button>`
-          : `<button class="tbtn" data-t="${tp.id}">${esc(tp.name)} <span class="n">${done}/${items.length}</span></button>`; }).join("")}</div>
+          : `<button class="tbtn" data-t="${tp.id}">${esc(tp.name)} <span class="n">${done}/${items.length}</span></button>`; })}
     </section>
     ${paperGroups().map(([label, ps]) => `<h2 class="sec">${label}</h2>
     <div class="cards">${ps.map(p => {
@@ -1529,6 +1530,15 @@ ${memo || "(none pasted)"}
 /* ---------- flash cards (courses that define COURSE.cards = {topicId: [[front, back], ...]}) ---------- */
 const cardKey = (tid, i) => COURSE.id + ":" + tid + ":" + i;
 const cardsKnown = () => store._cards || (store._cards = {});
+// Topic buttons, grouped under each lecturer's section when the course defines COURSE.topicGroups ({name, note, topics: [ids]}).
+function topicGroups(list, btn){
+  const gs = COURSE.topicGroups;
+  if (!gs || !gs.length) return `<div class="topicgrid">${list.map(btn).join("")}</div>`;
+  const used = new Set(gs.flatMap(g => g.topics)), rest = list.filter(tp => !used.has(tp.id));
+  return [...gs.map(g => ({ g, ts: g.topics.map(id => list.find(tp => tp.id === id)).filter(Boolean) })), { g: { name: "Other sections" }, ts: rest }]
+    .filter(x => x.ts.length)
+    .map(({ g, ts }) => `<h3 class="tgh">${esc(g.name)}${g.note ? ` <span>${esc(g.note)}</span>` : ""}</h3><div class="topicgrid">${ts.map(btn).join("")}</div>`).join("");
+}
 function cardsHTML(){
   if (!COURSE.cards) return "";
   const tot = Object.values(COURSE.cards).reduce((a, v) => a + v.length, 0), k = cardsKnown();
@@ -1536,8 +1546,8 @@ function cardsHTML(){
   return `<section class="topics"><h2 class="sec">Flash cards</h2>
     <div class="hint">${tot} cards to memorise: definitions, formulas, cases and exam traps. ${known} marked as known so far. Each deck shows the cards you don't know yet first.</div>
     <div class="row"><button class="btn primary" data-cards="">All cards (shuffled)</button></div>
-    <div class="topicgrid">${TOPICS.filter(tp => (COURSE.cards[tp.id] || []).length).map(tp => { const v = COURSE.cards[tp.id];
-      return `<button class="tbtn" data-cards="${tp.id}">${esc(tp.name)} <span class="n">${v.filter((_, i) => k[cardKey(tp.id, i)]).length}/${v.length}</span></button>`; }).join("")}</div></section>`;
+    ${topicGroups(TOPICS.filter(tp => (COURSE.cards[tp.id] || []).length), tp => { const v = COURSE.cards[tp.id];
+      return `<button class="tbtn" data-cards="${tp.id}">${esc(tp.name)} <span class="n">${v.filter((_, i) => k[cardKey(tp.id, i)]).length}/${v.length}</span></button>`; })}</section>`;
 }
 let deck = null;
 function buildDeck(tid){

@@ -578,7 +578,11 @@ if b_papers:
     courses.append(
   {"id": "bank", "name": "Banking", "code": "FTX4087S", "crumb": "FTX4087S past tests, exams and workshops",
    "subject": "UCT FTX4087S Topics in Banking and Treasury Management test or exam", "tablesLabel": "Formula sheet", "minPerMark": 1.2,
-   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], "notes": B_NOTES, **({"cards": b_cards} if b_cards else {}), **({"rates": B_RATES} if B_RATES else {})})
+   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], "notes": B_NOTES, **({"cards": b_cards} if b_cards else {}), **({"rates": B_RATES} if B_RATES else {}),
+   "topicGroups": [
+     {"name": "Ryan Kruger", "note": "Intro to banking, financials, valuation and treasury · 30 exam marks", "topics": ["b-intro", "b-fin", "b-val", "b-treas", "b-mnc"]},
+     {"name": "Philip De Jager", "note": "Money, regulation and bank failure · 55 exam marks", "topics": ["b-money", "b-reg", "b-fail"]},
+     {"name": "Chun-Sung Huang", "note": "Risk management for banks · 55 exam marks", "topics": ["b-risk", "b-credit", "b-irr", "b-mkt"]}]})
 
 data = json.dumps(courses, ensure_ascii=False).replace("</", "<\\/")
 finish(tpl, data)
