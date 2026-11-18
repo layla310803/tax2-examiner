@@ -421,6 +421,32 @@ for _f in sorted(glob.glob(os.path.join(BANK_DIR, "b-*.json"))):
     _p["tables"] = B_FORMULAS
     b_papers.append(_p)
     print(_p["id"], _p["kind"], _p["marks"], "marks", sum(len(q["parts"]) for q in _p["questions"]), "parts")
+# ---- Old interest rates: rates.json gives, per question, a current-rate version (Settings > Use current interest rates) and the notes ----
+_rf = os.path.join(BANK_DIR, "rates.json")
+B_RATES = None
+if os.path.exists(_rf):
+    _R = json.load(open(_rf, encoding="utf-8"))
+    B_RATES = {"asAt": _R["asAt"], "repo": _R["repo"], "prime": _R["prime"]}
+    _now = f"Today's rates (as at {_R['asAt']}): repo {_R['repo']}, prime {_R['prime']}."
+    def _subs(txt, pairs, where):
+        for a, b in pairs:
+            assert txt.count(a) == 1, f"rates.json: {a!r} not found once in {where}"
+            txt = txt.replace(a, b)
+        return txt
+    _byid = {p["id"]: p for p in b_papers}
+    for it in _R["items"]:
+        _p = _byid[it["paper"]]
+        _pts = {pt["id"]: (q, pt) for q in _p["questions"] for pt in q["parts"]}
+        if it.get("scenario"):
+            _rq = next(q for q in _p["questions"] if q["id"] == it["question"])
+            _rq["rates"] = {"scenario": _subs(_rq["scenario"], it["scenario"], f"{_p['id']} {_rq['id']} scenario")}
+        for pid in it["parts"]:
+            _pt = _pts[pid][1]
+            cur = {f: _subs(_pt[f], pairs, f"{_p['id']} {pid} {f}") for f, pairs in it.get("sub", {}).get(pid, {}).items()}
+            _pt["rates"] = {**cur,
+                "notePaper": f"Paper's rates: this question uses {it['old']}. {_now} Turn on 'Use current interest rates' in Settings to see it with today's rates.",
+                "noteNow": f"Current rates: this question has been updated to today's rates (as at {_R['asAt']}: repo {_R['repo']}, prime {_R['prime']}). The original paper used {it['old']}." + (" " + it["nowExtra"] if it.get("nowExtra") else "")}
+    print("banking rates:", sum(len(it["parts"]) for it in _R["items"]), "parts with current-rate versions")
 def _year(p):
     m = re.search(r"20\d\d", p["title"]); return -int(m.group()) if m else 0
 b_papers.sort(key=lambda p: (_KIND[p["kind"]], _year(p), p["title"]))
@@ -552,7 +578,7 @@ if b_papers:
     courses.append(
   {"id": "bank", "name": "Banking", "code": "FTX4087S", "crumb": "FTX4087S past tests, exams and workshops",
    "subject": "UCT FTX4087S Topics in Banking and Treasury Management test or exam", "tablesLabel": "Formula sheet", "minPerMark": 1.2,
-   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], "notes": B_NOTES, **({"cards": b_cards} if b_cards else {})})
+   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], "notes": B_NOTES, **({"cards": b_cards} if b_cards else {}), **({"rates": B_RATES} if B_RATES else {})})
 
 data = json.dumps(courses, ensure_ascii=False).replace("</", "<\\/")
 finish(tpl, data)

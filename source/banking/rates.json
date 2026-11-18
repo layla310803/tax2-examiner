@@ -1,0 +1,22 @@
+{
+ "_about": "Current SARB rates and the past-paper questions that use rates. Settings > 'Use current interest rates' swaps in the 'sub' versions below; otherwise the paper's own rates are shown with a note. When the SARB changes rates, update repo/prime/asAt and recompute the 'sub' answers.",
+ "asAt": "18 November 2026",
+ "repo": "7.25%",
+ "prime": "10.75%",
+ "items": [
+  {"paper": "b-ws-reg", "parts": ["1.10"], "old": "repo 8% (so prime 11.5%), the workshop's example rate",
+   "sub": {"1.10": {"required": [["The repo rate changes to 8%.", "The repo rate is 7.25%."]],
+                    "memo": [["8% + 3.5% = 11.5%", "7.25% + 3.5% = 10.75%"], ["11.5% / 12 = 0.958% per month", "10.75% / 12 = 0.896% per month"]]}}},
+  {"paper": "b-exam2025", "parts": ["C4.3", "C4.4"], "old": "repo 7%, the rate when the paper was set (the question doesn't give the rate, so you're expected to know the current one)",
+   "sub": {"C4.3": {"memo": [["Repo rate is 7% (1).", "Repo rate is 7.25% (1)."], ["7%/12 x 5/30", "7.25%/12 x 5/30"], ["0.07 x 5/360", "0.0725 x 5/360"], ["R243 665 542", "R243 657 090"], ["the memo uses the prevailing 7% repo rate", "the memo uses the prevailing repo rate"]]},
+           "C4.4": {"memo": [["243 665 542 from above = R236 897", "243 657 090 from above = R245 349"]]}}},
+  {"paper": "b-exam2023", "parts": ["C3.5", "C3.6"], "old": "a benchmark (repo) rate of 8.25%, the rate when the paper was set",
+   "sub": {"C3.5": {"required": [["benchmark interest rate of 8.25%", "benchmark interest rate of 7.25%"]],
+                    "memo": [["8.25/12/100", "7.25/12/100"], ["R97.4939485202m", "R97.5020681m"]]},
+           "C3.6": {"memo": [["97 560 975.61 - 97 493 948.52 = R67 027.09", "97 560 975.61 - 97 502 068.11 = R58 907.50"]]}}},
+  {"paper": "b-exam2019", "question": "Q8", "parts": ["D5.1"], "old": "prime 10% and repo 6.5% (and 12-month JIBAR 7.67%), 2019 rates",
+   "nowExtra": "JIBAR stays at the paper's 7.67%: the answer doesn't use it, and JIBAR is being replaced by ZARONIA.",
+   "scenario": [["the prime rate is 10% and the repo rate is 6.5%", "the prime rate is 10.75% and the repo rate is 7.25%"]],
+   "sub": {"D5.1": {"memo": [["(10% + (0.8% + 4%)) / (1 - 2.5%) = 15.18%", "(10.75% + (0.8% + 4%)) / (1 - 2.5%) = 15.95%"]]}}}
+ ]
+}

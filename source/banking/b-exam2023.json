@@ -232,7 +232,7 @@
       "b-reg"
      ],
      "required": "3.5 Please provide the maximum amount of liquidity that a bank can raise from the SARB, given the following information?  [5]\n\nSARB's market value adjustment table:\nDESCRIPTION  |  FACTOR\nBonds with residual maturity > 10 years  |  1.035\nBonds with residual maturity between 1 and 10 years  |  1.025\nBonds, debentures, and Treasury Bills with residual maturity < 10 years  |  1.010\n\nThe bank has available R100 million market value of R2030 (will mature in 2030) government bonds to give as security for a three-day loan at the benchmark interest rate of 8.25%.",
-     "memo": "Value of security after haircut: R100m / 1.025 (bond has seven years of maturity left) = 97.560976m\n\nFormula: X.(1 + 8.25/12/100 x 3/30) = 97.560976 for rest of formula\n\nSolve: X = R97.4939485202m liquidity can be raised.\n\n[Rate note] The 8.25% benchmark (repo) rate in this question is the rate when the paper was set, not today's. As at 18 November 2026 the SARB repo rate is 7.25% and prime is 10.75% (prime = repo + 3.5 percentage points; the SARB can change these at each MPC meeting, so check the current figures). In a test, use the rate the question gives; the method stays the same."
+     "memo": "Value of security after haircut: R100m / 1.025 (bond has seven years of maturity left) = 97.560976m\n\nFormula: X.(1 + 8.25/12/100 x 3/30) = 97.560976 for rest of formula\n\nSolve: X = R97.4939485202m liquidity can be raised."
     },
     {
      "id": "C3.6",

@@ -129,6 +129,7 @@ h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:
 .qhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 .qhead h2{font-size:22px}
 .marks{font-family:var(--font-mono);font-size:14px;color:var(--muted)}
+.ratenote{margin:8px 0 4px;padding:8px 12px;border-left:3px solid var(--accent);background:var(--sheet);border-radius:6px}
 .required{background:var(--sheet);border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;white-space:pre-wrap}
 .qtitle{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 textarea#answer{width:100%;min-height:340px;resize:vertical;border:1px solid var(--rule);border-radius:10px;padding:14px;background:var(--sheet);
@@ -297,6 +298,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
     <div class="srow"><span>Close button on the scenario panel<small>Show an X on the scenario panel so you can close it there.</small></span><button class="btn small toggle" id="paperXBtn" aria-pressed="true" aria-label="Close button on the scenario panel"></button></div>
     <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
     <div class="srow"><span>Mark layout<small>When off, only the content is marked: any format is fine and communication marks are given automatically.</small></span><button class="btn small toggle" id="layoutBtn" aria-pressed="false" aria-label="Mark layout"></button></div>
+    <div class="srow" id="ratesRow" hidden><span>Use current interest rates<small>Past papers with old repo or prime rates are shown with today's rates and the answers reworked. When off, you see the paper's own rates, with a note on the question.</small></span><button class="btn small toggle" id="ratesBtn" aria-pressed="false" aria-label="Use current interest rates"></button></div>
     <div class="srow" id="fsRow"><span>Formula sheet<small>Show the exam formula sheet in a panel beside your work.</small></span><button class="btn small toggle" id="fsBtn" aria-pressed="false" aria-label="Formula sheet"></button></div>
     <div class="srow" id="keyRow"><span>AI key<small>Use your own Gemini or Claude key for marking.</small></span><button class="btn small" id="keyBtn">Open</button></div>
   </div></span>
@@ -766,6 +768,17 @@ $("#revTop").onclick = () => go(COURSE.id ? "revisit/" + COURSE.id : "");
 $("#paperBtn").onclick = () => { prefs.showPaper = !prefs.showPaper; save(); applyLayout(); };
 $("#paperXBtn").onclick = () => { prefs.paperX = prefs.paperX === false; save(); applyLayout(); if (view.paper && $("#left")) renderLeft(); };
 $("#layoutBtn").onclick = () => { prefs.markLayout = !prefs.markLayout; save(); applyLayout(); if (view.paper) renderRight(); };
+// Old interest rates: swap each affected question to its current-rate version (from rates.json) or back to the paper's own text.
+function applyRates(){
+  COURSES.forEach(c => (c.papers || []).forEach(p => p.questions.forEach(q => {
+    if (q.rates){ q._o = q._o || { scenario: q.scenario }; q.scenario = prefs.curRates ? q.rates.scenario : q._o.scenario; }
+    q.parts.forEach(pt => { if (!pt.rates) return; pt._o = pt._o || { required: pt.required, memo: pt.memo };
+      ["required", "memo"].forEach(f => { pt[f] = prefs.curRates && pt.rates[f] ? pt.rates[f] : pt._o[f]; }); });
+  })));
+}
+function rateNote(pt){ return pt && pt.rates ? `<div class="hint ratenote">${esc(prefs.curRates ? pt.rates.noteNow : pt.rates.notePaper)}</div>` : ""; }
+applyRates();
+$("#ratesBtn").onclick = () => { prefs.curRates = !prefs.curRates; save(); applyRates(); applyLayout(); if (view.paper && $("#left")){ renderLeft(); renderRight(); } };
 $("#timerBtn").onclick = () => { prefs.timer = !prefs.timer; save(); if (!prefs.timer) resetTimer(); applyLayout(); if (view.paper) tickTimer(Math.round(cur().pt.marks * MIN_PER_MARK)); };
 function applyLayout(){
   const app = $("#app"); const inExam = !!view.paper;
@@ -1548,6 +1561,7 @@ var fsShown = null;
 function syncFs(){
   const has = !!(COURSE && COURSE.formulaSheet), open = has && !!prefs.fsOpen, pn = $("#fsPanel");
   $("#fsTop").hidden = !has; $("#fsRow").hidden = !has;
+  $("#ratesRow").hidden = !(COURSE && COURSE.rates); $("#ratesBtn").setAttribute("aria-pressed", String(!!prefs.curRates));
   [$("#fsTop"), $("#fsBtn")].forEach(b => b.setAttribute("aria-pressed", String(open)));
   pn.hidden = !open; document.body.classList.toggle("fsopen", open);
   if (!has && prefs.fsOpen){ prefs.fsOpen = false; save(); }
@@ -1775,11 +1789,11 @@ function renderLeft(){
   const memoOpen = s.attempts.length > 0 || s.memoUnlocked;
   const tabs = [["scenario","Scenario"], ...(paper.tables ? [["tables", COURSE.tablesLabel]] : []), ["memo","Memo " + pt.id], ["notes","My notes"]];
   let body = "";
-  if (view.tab === "scenario") body = `<div class="qtitle">${esc(q.title)} · ${q.marks} marks</div>` + renderDoc(q.scenario);
+  if (view.tab === "scenario") body = `<div class="qtitle">${esc(q.title)} · ${q.marks} marks</div>` + renderDoc(q.scenario) + (q.rates ? rateNote(q.parts.find(x => x.rates)) : "");
   else if (view.tab === "tables") body = renderDoc(paper.tables);
   else if (view.tab === "notes") body = notesForPart(pt);
   else body = memoOpen
-    ? `<p class="hint">${esc(paper.memoNote)}</p>` + renderDoc(pt.memo)
+    ? `<p class="hint">${esc(paper.memoNote)}</p>` + rateNote(pt) + renderDoc(pt.memo)
     : `<div class="locked"><p>The memo for ${esc(pt.id)} opens after your first attempt, so you aren't tempted to peek.</p><button class="btn small" id="peek">Open it anyway</button></div>`;
   $("#left").innerHTML = `<div class="tabs" role="tablist">${tabs.map(([k,l]) => `<button class="tab" role="tab" aria-selected="${view.tab===k}" data-k="${k}">${l}</button>`).join("")}${prefs.paperX !== false ? `<button class="tabx" id="leftClose" aria-label="Close scenario panel" title="Close scenario panel">&times;</button>` : ""}</div><div class="doc">${body}</div>`;
   if (view.tab === "tables") mathify($("#left .doc"));
@@ -1806,6 +1820,7 @@ function renderRight(){
     <div class="tagline">Topics: ${(pt.topics || []).map(topicName).map(esc).join(" · ")}${(() => { const on = rvHas(qItem(paper, pt).id); return `<button class="btn small rvbtn" id="rvQ" aria-pressed="${on}">${on ? "★ Saved to revisit" : "☆ Save to revisit"}</button>`; })()}</div>
     ${pt.nx ? `<div class="nxnote"><span class="pill w">Not examined</span> ${esc(pt.nx)}. Kept here as practice only.</div>` : ""}
     <div class="required">${esc(pt.required)}</div>
+    ${rateNote(pt)}
     <label for="answer" class="hint">Your answer.${prefs.markLayout ? ` Set calculations out like the exam: <span class="mono">Item | Reason/working | Amount</span>, one line each.` : ""}</label>
     ${prefs.markLayout ? "" : `<div class="hint" style="margin-bottom:6px">Content-only marking: write it any way you like (lines, bullets, shorthand). Layout isn't marked.</div>`}
     <textarea id="answer" spellcheck="true" placeholder="Start writing…">${esc(s.answer)}</textarea>
