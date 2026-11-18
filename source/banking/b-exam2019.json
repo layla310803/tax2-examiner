@@ -308,7 +308,7 @@
       "b-credit"
      ],
      "required": "1. If DDT bank is to approve this loan to Unathi Ltd, what interest rate should they charge? Show your workings.  [3]",
-     "memo": "Interest rate = (10% + (0.8% + 4%)) / (1 - 2.5%) = 15.18% [3]\n\n- It's a long-term loan, use the prime as the base lending rate\n- It's a risky borrower, hence students should make an adjustment for a credit risk premium, any basis points of their choice."
+     "memo": "Interest rate = (10% + (0.8% + 4%)) / (1 - 2.5%) = 15.18% [3]\n\n- It's a long-term loan, use the prime as the base lending rate\n- It's a risky borrower, hence students should make an adjustment for a credit risk premium, any basis points of their choice.\n\n[Rate note] The JIBAR (7.67%), prime (10%) and repo (6.5%) rates in this question are 2019 rates, not today's. As at 18 November 2026 the SARB repo rate is 7.25% and prime is 10.75% (prime = repo + 3.5 percentage points; the SARB can change these at each MPC meeting, so check the current figures). In a test, always use the rates the question gives; the method above stays the same."
     },
     {
      "id": "D5.2",
