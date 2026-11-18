@@ -74,6 +74,9 @@ h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:
 .card ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
 .meter{height:6px;border-radius:3px;background:var(--rule);overflow:hidden}
 .meter>i{display:block;height:100%;background:var(--accent)}
+.progbar{flex-basis:100%;display:flex;align-items:center;gap:12px;font-size:13px;color:var(--muted)}
+.progbar .meter{flex:1;height:8px;max-width:520px}
+.progbar b{color:var(--ink);font-weight:600}
 .topics h2,.home h2.sec{font-family:var(--font-display);font-size:20px;margin:0 0 4px}
 .topicgrid{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .tbtn{border:1px solid var(--rule);background:var(--sheet);border-radius:999px;padding:7px 14px;cursor:pointer;font-size:14px;display:inline-flex;gap:8px;align-items:center}
@@ -309,6 +312,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
     <div class="srow"><span>Mark in the background<small>Off by default. When on, pressing Mark moves you straight on to the next required and you get a quick "done marking" note when it is finished.</small></span><button class="btn small toggle" id="bgBtn" aria-pressed="false" aria-label="Mark in the background"></button></div>
     <div class="srow"><span>Scenario panel<small>Show the scenario, memo and notes beside your answer.</small></span><button class="btn small toggle" id="paperBtn" aria-pressed="true" aria-label="Scenario panel"></button></div>
     <div class="srow"><span>Close button on the scenario panel<small>Show an X on the scenario panel so you can close it there.</small></span><button class="btn small toggle" id="paperXBtn" aria-pressed="true" aria-label="Close button on the scenario panel"></button></div>
+    <div class="srow"><span>Overall progress bar<small>Show a bar under the top bar with how much of the course you have done: requireds answered across every paper, and your best marks out of the total.</small></span><button class="btn small toggle" id="progBtn" aria-pressed="false" aria-label="Overall progress bar"></button></div>
     <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
     <div class="srow"><span>Mark layout<small>When off, only the content is marked: any format is fine and communication marks are given automatically.</small></span><button class="btn small toggle" id="layoutBtn" aria-pressed="false" aria-label="Mark layout"></button></div>
     <div class="srow" id="ratesRow" hidden><span>Use current interest rates<small>Past papers with old repo or prime rates are shown with today's rates and the answers reworked. When off, you see the paper's own rates, with a note on the question.</small></span><button class="btn small toggle" id="ratesBtn" aria-pressed="false" aria-label="Use current interest rates"></button></div>
@@ -317,6 +321,7 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
     <div class="srow" id="keyRow"><span>AI key<small>Use your own Gemini or Claude key for marking.</small></span><button class="btn small" id="keyBtn">Open</button></div>
   </div></span>
   <button class="btn small" id="homeBtn" hidden>All papers</button>
+  <div class="progbar" id="progBar" hidden></div>
 </header>
 <dialog id="keyDlg" aria-labelledby="keyTitle">
   <h3 id="keyTitle">Use your own AI key</h3>
@@ -388,7 +393,7 @@ function mdHtml(src){
 const KEY = "tax2-examiner-v1";
 let store = {};
 try { store = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch { store = {}; }
-function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch {} }
+function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch {} if (typeof syncProg === "function") syncProg(); }
 const prefs = store._prefs || (store._prefs = { markBg: false, showPaper: false, paperX: true, timer: false, markLayout: false, fsOpen: false, leftw: 50 });
 if (prefs.markLayout === undefined) prefs.markLayout = false;
 if (!prefs.scenOn){ prefs.showPaper = true; prefs.scenOn = 1; }   // full edition: scenario panel on by default (set once, so turning it off in Settings sticks)
@@ -690,6 +695,17 @@ document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#fsPan
 $("#fsGrip").onpointerdown = e => { e.preventDefault(); const mv = ev => { prefs.fsw = Math.round(Math.min(innerWidth * .8, Math.max(320, innerWidth - ev.clientX))); $("#fsPanel").style.setProperty("--fsw", prefs.fsw + "px"); document.body.style.setProperty("--fsw", prefs.fsw + "px"); }; const up = () => { removeEventListener("pointermove", mv); removeEventListener("pointerup", up); save(); }; addEventListener("pointermove", mv); addEventListener("pointerup", up); };
 $("#bgBtn").onclick = () => { prefs.markBg = !prefs.markBg; save(); applyLayout(); };
 $("#btlAutoBtn").onclick = () => { prefs.btlAuto = !prefs.btlAuto; save(); applyLayout(); };
+$("#progBtn").onclick = () => { prefs.progBar = !prefs.progBar; save(); applyLayout(); };
+function syncProg(){
+  const bar = document.getElementById("progBar"); if (!bar) return;
+  const pb = document.getElementById("progBtn"); if (pb) pb.setAttribute("aria-pressed", String(!!prefs.progBar));
+  const on = !!prefs.progBar && !!location.hash.replace(/^#/, "") && !!COURSE.id && PAPERS.length > 0;
+  bar.hidden = !on; if (!on) return;
+  let done = 0, n = 0, got = 0, tot = 0;
+  for (const p of PAPERS){ const pr = paperProgress(p); done += pr.done; n += pr.n; got += pr.got; for (const q of p.questions) for (const pt of q.parts) tot += +pt.marks || 0; }
+  const pct = n ? done / n * 100 : 0, mp = tot ? got / tot * 100 : 0;
+  bar.innerHTML = `<span>Overall progress</span><div class="meter" role="progressbar" aria-label="Requireds answered" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${done}"><i style="width:${pct.toFixed(1)}%"></i></div><span><b>${done}/${n}</b> requireds answered (${Math.round(pct)}%) · best marks <b class="mono">${fmt(got)}/${tot}</b> (${Math.round(mp)}%)</span>`;
+}
 function closeSettings(){ $("#setPanel").hidden = true; $("#setBtn").setAttribute("aria-expanded", "false"); }
 $("#setBtn").onclick = e => { e.stopPropagation(); const open = $("#setPanel").hidden, r = $("#setBtn").getBoundingClientRect(), pnl = $("#setPanel"); pnl.hidden = !open; pnl.style.top = (r.bottom + 6) + "px"; pnl.style.right = Math.max(8, Math.min(innerWidth - r.right, innerWidth - pnl.offsetWidth - 8)) + "px"; $("#setBtn").setAttribute("aria-expanded", String(open)); };
 document.addEventListener("click", e => { if (!$("#setPanel").hidden && !e.target.closest(".setwrap")) closeSettings(); });
@@ -802,6 +818,7 @@ function applyLayout(){
   syncFs();
   $("#bgBtn").setAttribute("aria-pressed", String(!!prefs.markBg));
   $("#btlAutoBtn").setAttribute("aria-pressed", String(!!prefs.btlAuto));
+  syncProg();
   $("#layoutBtn").setAttribute("aria-pressed", String(!!prefs.markLayout));
   $("#paperBtn").setAttribute("aria-pressed", String(prefs.showPaper));
   syncRevTop();
