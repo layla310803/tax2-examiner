@@ -1900,13 +1900,14 @@ const SYMS = {delta:"Δ", Delta:"Δ", ddelta:"δ", sum:"Σ", Sigma:"Σ", sigma:"
   sqrt:"√", times:"×", div:"÷", pm:"±", le:"≤", ge:"≥", ne:"≠", approx:"≈", inf:"∞", to:"→", up:"↑", down:"↓", sq:"²", cube:"³", half:"½", deg:"°", therefore:"∴"};
 function SYM_LIST(){ return Object.entries(SYMS).map(([k,v]) => `<span class="mono">/${k}</span> ${v}`).join(" · "); }
 function symExpand(ta, e){
-  if (!e || e.inputType !== "insertText" && e.inputType !== "insertLineBreak") return;
+  if (!e || !/^insert(Text|LineBreak|FromPaste)$/.test(e.inputType)) return;
   const end = ta.selectionStart; if (end !== ta.selectionEnd) return;
-  const m = ta.value.slice(0, end).match(/(^|[\s(\[])\/([A-Za-z]+)([\s.,;:)\]])$/);
-  if (!m || !SYMS[m[2]]) return;
-  const from = end - m[2].length - 1 - m[3].length;
+  const before = ta.value.slice(0, end);
+  const after = before.replace(/(^|[\s(\[])\/([A-Za-z]+)(?=[\s.,;:)\]])/g, (m, p, w) => SYMS[w] ? p + SYMS[w] : m);
+  if (after === before) return;
+  let from = 0; while (before[from] === after[from]) from++;
   ta.setSelectionRange(from, end);
-  if (!document.execCommand("insertText", false, SYMS[m[2]] + m[3])) ta.setRangeText(SYMS[m[2]] + m[3], from, end, "end");
+  if (!document.execCommand("insertText", false, after.slice(from))) ta.setRangeText(after.slice(from), from, end, "end");
 }
 function move(i, all){ const x = all[i]; if (!x) return; view.q = x.qi; view.p = x.pi; view.tab = "scenario"; resetTimer(); renderLeft(); renderRight(); $("#right").scrollTop = 0; $("#left").scrollTop = 0; }
 function startTimer(mins){ if (timerStart) return; timerStart = Date.now(); timerInt = setInterval(() => tickTimer(mins), 1000); }
