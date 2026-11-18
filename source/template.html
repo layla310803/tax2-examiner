@@ -80,7 +80,12 @@ h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:
 .tbtn:hover{border-color:var(--accent);color:var(--accent)}
 .tbtn .n{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
 .tlist{display:grid;gap:8px}
-.tgh{font-size:.95rem;font-weight:600;margin:16px 0 8px}.tgh span{font-weight:400;opacity:.65;font-size:.85rem}
+.tgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:12px;align-items:start}
+.tgroup{border:1px solid var(--rule);border-radius:12px;padding:12px 12px 10px;background:var(--sheet)}
+.tgh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:600;font-size:14px}.tgh .mono{font-weight:400;font-size:12px;color:var(--muted)}
+.tgsub{font-size:12.5px;color:var(--muted);margin:2px 0 10px}
+.tglist{display:grid;gap:6px}.tglist .tbtn{width:100%;justify-content:space-between;border-radius:8px;text-align:left;padding:7px 10px;background:transparent}
+.tglist .tbtn:hover{background:var(--paper, rgba(127,127,127,.08))}
 .titem{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;cursor:pointer;text-align:left;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline}
 .titem:hover{border-color:var(--accent)}
 .titem .src{font-weight:600;white-space:nowrap}
@@ -1535,9 +1540,9 @@ function topicGroups(list, btn){
   const gs = COURSE.topicGroups;
   if (!gs || !gs.length) return `<div class="topicgrid">${list.map(btn).join("")}</div>`;
   const used = new Set(gs.flatMap(g => g.topics)), rest = list.filter(tp => !used.has(tp.id));
-  return [...gs.map(g => ({ g, ts: g.topics.map(id => list.find(tp => tp.id === id)).filter(Boolean) })), { g: { name: "Other sections" }, ts: rest }]
+  return `<div class="tgroups">${[...gs.map(g => ({ g, ts: g.topics.map(id => list.find(tp => tp.id === id)).filter(Boolean) })), { g: { name: "Other sections" }, ts: rest }]
     .filter(x => x.ts.length)
-    .map(({ g, ts }) => `<h3 class="tgh">${esc(g.name)}${g.note ? ` <span>${esc(g.note)}</span>` : ""}</h3><div class="topicgrid">${ts.map(btn).join("")}</div>`).join("");
+    .map(({ g, ts }) => `<div class="tgroup"><div class="tgh"><span>${esc(g.name)}</span>${g.marks ? `<span class="mono">${esc(g.marks)}</span>` : ""}</div>${g.note ? `<div class="tgsub">${esc(g.note)}</div>` : ""}<div class="tglist">${ts.map(btn).join("")}</div></div>`).join("")}</div>`;
 }
 function cardsHTML(){
   if (!COURSE.cards) return "";
