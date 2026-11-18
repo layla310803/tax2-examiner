@@ -46,8 +46,7 @@
      "marks": 9,
      "topics": [
       "b-fin",
-      "b-reg",
-      "b-credit"
+      "b-reg"
      ],
      "required": "Provide an analysis of the following areas of the bank's performance from 2021 to 2023 based on the information in the appendices. Show all your calculations. Contextualize your analysis relative to events in the current South African banking environment.\n\niii. The bank's risk",
      "memo": "Lecturer's marking guide: The key ratios for discussion here were Credit Loss Ratio (CLR), Liquidity Coverage Ratio (LCR) and CET1 Ratio. 3 marks for the calculation of CLR. 2 marks each for discussing CLR, LCR and CET1 ratio with specific mention of the benchmarks that are normal for each (1-3% for CLR, 4,5% for CET1 and >=1 for LCR).\n\n|  2023  |  2022  |  2021\nCLR  |  0,2%  |  0,2%  |  0,4%\n\nSupplement (from the compiled Q&A, not the lecturer's): CLR = credit impairment charges / loans and advances = 0,17%, 0,17%, 0,36%. CLR is very low and falling, far below the 1%-3% band: a high-quality loan book (perhaps a conservative one). LCR fell from 1,67 to 1,35: still above the minimum of 1 but falling, as the bank releases liquidity built up during Covid. CET1 fell from 14,5% to 12,5%: well above the 4,5% minimum but falling; the bank is using capital more actively (leverage up in 2023)."
