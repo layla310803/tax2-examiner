@@ -1807,6 +1807,9 @@ let timerInt = null, timerStart = null;
 function renderRight(){
   const paper = view.paper; if (!paper || !$("#right")) return;
   const {q, pt} = cur(); const s = st(paper, pt);
+  // If you're typing in the answer box when the panel redraws (e.g. marking finishes), keep the cursor where it was.
+  const fa = document.activeElement, keep = fa && fa.id === "answer" && fa.dataset.k === pkey(paper, pt) ? { a: fa.selectionStart, b: fa.selectionEnd, dir: fa.selectionDirection, top: fa.scrollTop, val: fa.value } : null;
+  if (keep && keep.val !== s.answer){ s.answer = keep.val; save(); }
   const all = []; paper.questions.forEach((qq, qi) => qq.parts.forEach((pp, pi) => all.push({qi, pi, pp})));
   const idx = all.findIndex(x => x.qi === view.q && x.pi === view.p);
   const mins = Math.round(pt.marks * MIN_PER_MARK);
@@ -1837,7 +1840,8 @@ function renderRight(){
     ${backend() === "byok" || backend() === "api" ? `<div class="hint">${markerLabel()} <button class="btn small" id="keyBtn2">${byok ? "Change" : "Use my own"} key</button>${backend() === "api" && api.codeRequired ? ` <button class="btn small" id="codeBtn">${getCode() ? "Change" : "Enter"} access code</button>` : ""}</div>` : ""}
   `;
   const rq = $("#rvQ"); if (rq) rq.onclick = () => { const on = rvToggle(qItem(paper, pt)); rq.setAttribute("aria-pressed", String(on)); rq.textContent = on ? "★ Saved to revisit" : "☆ Save to revisit"; };
-  const ta = $("#answer");
+  const ta = $("#answer"); ta.dataset.k = pkey(paper, pt);
+  if (keep){ ta.focus({ preventScroll: true }); ta.setSelectionRange(keep.a, keep.b, keep.dir); ta.scrollTop = keep.top; }
   ta.oninput = () => { s.answer = ta.value; save(); if (prefs.timer) startTimer(mins); };
   document.querySelectorAll(".chip").forEach(c => c.onclick = () => { view.q = +c.dataset.qi; view.p = +c.dataset.pi; view.tab = "scenario"; resetTimer(); renderLeft(); renderRight(); $("#right").scrollTop = 0; });
   $("#prev").onclick = () => move(idx - 1, all);
