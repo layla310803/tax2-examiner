@@ -142,6 +142,7 @@ textarea#answer{width:100%;min-height:340px;resize:vertical;border:1px solid var
   font-family:var(--font-mono);font-size:14px;line-height:24px;
   background-image:linear-gradient(var(--sheet),var(--sheet)),repeating-linear-gradient(transparent 0 23px,var(--rule) 23px 24px);
   background-clip:padding-box,content-box;background-origin:padding-box,content-box;background-blend-mode:normal}
+.symkeys{margin:6px 0 2px;font-size:12.5px;color:var(--muted,#666)}.symkeys summary{cursor:pointer}.symkeys div{margin-top:6px;line-height:1.9}
 textarea#answer{background-image:repeating-linear-gradient(transparent 0 23px,var(--rule) 23px 24px);background-attachment:local;background-position:0 14px}
 .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .weak{display:grid;gap:6px;margin-top:10px}
@@ -1867,6 +1868,7 @@ function renderRight(){
     <label for="answer" class="hint">Your answer.${prefs.markLayout ? ` Set calculations out like the exam: <span class="mono">Item | Reason/working | Amount</span>, one line each.` : ""}</label>
     ${prefs.markLayout ? "" : `<div class="hint" style="margin-bottom:6px">Content-only marking: write it any way you like (lines, bullets, shorthand). Layout isn't marked.</div>`}
     <textarea id="answer" spellcheck="true" placeholder="Start writing…">${esc(s.answer)}</textarea>
+    <details class="symkeys"><summary>Symbol shortcuts: type <span class="mono">/delta</span> then a space for Δ</summary><div>${SYM_LIST()}</div></details>
     <div class="row">
       <button class="btn primary" id="submit">${s.attempts.length ? "Re-mark my revised answer" : "Submit for marking"}</button>
       <button class="btn" id="prev" ${idx<=0?"disabled":""}>← Previous</button>
@@ -1882,7 +1884,7 @@ function renderRight(){
   const rq = $("#rvQ"); if (rq) rq.onclick = () => { const on = rvToggle(qItem(paper, pt)); rq.setAttribute("aria-pressed", String(on)); rq.textContent = on ? "★ Saved to revisit" : "☆ Save to revisit"; };
   const ta = $("#answer"); ta.dataset.k = pkey(paper, pt);
   if (keep){ ta.focus({ preventScroll: true }); ta.setSelectionRange(keep.a, keep.b, keep.dir); ta.scrollTop = keep.top; }
-  ta.oninput = () => { s.answer = ta.value; save(); if (prefs.timer) startTimer(mins); };
+  ta.oninput = e => { symExpand(ta, e); s.answer = ta.value; save(); if (prefs.timer) startTimer(mins); };
   document.querySelectorAll(".chip").forEach(c => c.onclick = () => { view.q = +c.dataset.qi; view.p = +c.dataset.pi; view.tab = "scenario"; resetTimer(); renderLeft(); renderRight(); $("#right").scrollTop = 0; });
   $("#prev").onclick = () => move(idx - 1, all);
   $("#next").onclick = () => move(idx + 1, all);
@@ -1893,6 +1895,18 @@ function renderRight(){
   const kb = $("#keyBtn2"); if (kb) kb.onclick = openKeyDlg;
   wireTopicNav();
   tickTimer(mins);
+}
+const SYMS = {delta:"Δ", Delta:"Δ", ddelta:"δ", sum:"Σ", Sigma:"Σ", sigma:"σ", alpha:"α", beta:"β", gamma:"γ", lambda:"λ", mu:"μ", rho:"ρ", pi:"π", theta:"θ", omega:"ω", epsilon:"ε",
+  sqrt:"√", times:"×", div:"÷", pm:"±", le:"≤", ge:"≥", ne:"≠", approx:"≈", inf:"∞", to:"→", up:"↑", down:"↓", sq:"²", cube:"³", half:"½", deg:"°", therefore:"∴"};
+function SYM_LIST(){ return Object.entries(SYMS).map(([k,v]) => `<span class="mono">/${k}</span> ${v}`).join(" · "); }
+function symExpand(ta, e){
+  if (!e || e.inputType !== "insertText" && e.inputType !== "insertLineBreak") return;
+  const end = ta.selectionStart; if (end !== ta.selectionEnd) return;
+  const m = ta.value.slice(0, end).match(/(^|[\s(\[])\/([A-Za-z]+)([\s.,;:)\]])$/);
+  if (!m || !SYMS[m[2]]) return;
+  const from = end - m[2].length - 1 - m[3].length;
+  ta.setSelectionRange(from, end);
+  if (!document.execCommand("insertText", false, SYMS[m[2]] + m[3])) ta.setRangeText(SYMS[m[2]] + m[3], from, end, "end");
 }
 function move(i, all){ const x = all[i]; if (!x) return; view.q = x.qi; view.p = x.pi; view.tab = "scenario"; resetTimer(); renderLeft(); renderRight(); $("#right").scrollTop = 0; $("#left").scrollTop = 0; }
 function startTimer(mins){ if (timerStart) return; timerStart = Date.now(); timerInt = setInterval(() => tickTimer(mins), 1000); }
