@@ -285,7 +285,11 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 .setwrap{position:relative}
 .setpanel{position:fixed;right:8px;top:60px;max-height:calc(100vh - 80px);overflow:auto;z-index:50;width:min(320px,92vw);background:var(--sheet);color:var(--ink);border:1px solid var(--rule);border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.25);padding:8px}
 .setpanel .srow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 6px;border-bottom:1px solid var(--rule)}
-.setpanel .srow:last-child{border-bottom:0}
+.setpanel .srow:last-child,.setpanel .srow:has(+ .sgrp){border-bottom:0}
+.setpanel .sgrp{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:10px 6px 2px}
+.setpanel .sgrp:first-child{padding-top:4px}
+.fb .memoin{border-top:1px solid var(--rule);padding-top:10px}
+.fb .memoin .doc{padding:0}
 .setpanel .srow small{display:block;color:var(--muted);font-size:.78rem;line-height:1.3;margin-top:2px}
 .setpanel .toggle{min-width:52px}
 .setpanel .toggle::after{content:"Off"}.setpanel .toggle[aria-pressed="true"]::after{content:"On"}
@@ -306,15 +310,18 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
   <button class="btn small toggle" id="fsTop" aria-pressed="false" aria-controls="fsPanel" hidden>Formula sheet</button>
   <span class="setwrap"><button class="btn small" id="setBtn" aria-expanded="false" aria-controls="setPanel">Settings</button>
   <div class="setpanel" id="setPanel" hidden>
-    <div class="srow"><span>Mark in the background<small>Off by default. When on, pressing Mark moves you straight on to the next required and you get a quick "done marking" note when it is finished.</small></span><button class="btn small toggle" id="bgBtn" aria-pressed="false" aria-label="Mark in the background"></button></div>
+    <div class="sgrp">Marking</div>
+    <div class="srow"><span>Mark in the background<small>Pressing Mark moves you straight on to the next required; you get a note when marking is done.</small></span><button class="btn small toggle" id="bgBtn" aria-pressed="false" aria-label="Mark in the background"></button></div>
+    <div class="srow"><span>Mark layout<small>When off, only the content is marked: any format is fine and communication marks are given automatically.</small></span><button class="btn small toggle" id="layoutBtn" aria-pressed="false" aria-label="Mark layout"></button></div>
+    <div class="srow"><span>Show model answer after marking<small>Once a required is marked, a "Show model answer" button under your mark opens the memo for it right there.</small></span><button class="btn small toggle" id="memoBtnPref" aria-pressed="true" aria-label="Show model answer after marking"></button></div>
+    <div class="srow"><span>Send to Between the Lines<small>File each marked answer, its mark and feedback in Between the Lines (a notebook per paper). Press "Send to Between the Lines" under a marked answer once to open it in a tab; after that answers go there by themselves while that tab is open.</small></span><button class="btn small toggle" id="btlAutoBtn" aria-pressed="false" aria-label="Send to Between the Lines"></button></div>
+    <div class="srow" id="keyRow"><span>AI key<small>Use your own Gemini or Claude key for marking.</small></span><button class="btn small" id="keyBtn">Open</button></div>
+    <div class="sgrp">While you answer</div>
     <div class="srow"><span>Scenario panel<small>Show the scenario, memo and notes beside your answer.</small></span><button class="btn small toggle" id="paperBtn" aria-pressed="true" aria-label="Scenario panel"></button></div>
     <div class="srow"><span>Close button on the scenario panel<small>Show an X on the scenario panel so you can close it there.</small></span><button class="btn small toggle" id="paperXBtn" aria-pressed="true" aria-label="Close button on the scenario panel"></button></div>
-    <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
-    <div class="srow"><span>Mark layout<small>When off, only the content is marked: any format is fine and communication marks are given automatically.</small></span><button class="btn small toggle" id="layoutBtn" aria-pressed="false" aria-label="Mark layout"></button></div>
-    <div class="srow" id="ratesRow" hidden><span>Use current interest rates<small>Past papers with old repo or prime rates are shown with today's rates and the answers reworked. When off, you see the paper's own rates, with a note on the question.</small></span><button class="btn small toggle" id="ratesBtn" aria-pressed="false" aria-label="Use current interest rates"></button></div>
-    <div class="srow"><span>Send to Between the Lines<small>After each marking, file your answer, mark and feedback in Between the Lines: a folder for the course and a notebook for each paper. Press "Send to Between the Lines" under a marked answer once to open it in a tab; after that answers go there by themselves while that tab is open.</small></span><button class="btn small toggle" id="btlAutoBtn" aria-pressed="false" aria-label="Send to Between the Lines automatically"></button></div>
     <div class="srow" id="fsRow"><span>Formula sheet<small>Show the exam formula sheet in a panel beside your work.</small></span><button class="btn small toggle" id="fsBtn" aria-pressed="false" aria-label="Formula sheet"></button></div>
-    <div class="srow" id="keyRow"><span>AI key<small>Use your own Gemini or Claude key for marking.</small></span><button class="btn small" id="keyBtn">Open</button></div>
+    <div class="srow"><span>Timer<small>Count down the exam time for each required.</small></span><button class="btn small toggle" id="timerBtn" aria-pressed="false" aria-label="Timer"></button></div>
+    <div class="srow" id="ratesRow" hidden><span>Use current interest rates<small>Past papers with old repo or prime rates are shown with today's rates and the answers reworked. When off, you see the paper's own rates, with a note on the question.</small></span><button class="btn small toggle" id="ratesBtn" aria-pressed="false" aria-label="Use current interest rates"></button></div>
   </div></span>
   <button class="btn small" id="homeBtn" hidden>All papers</button>
 </header>
@@ -690,6 +697,7 @@ document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#fsPan
 $("#fsGrip").onpointerdown = e => { e.preventDefault(); const mv = ev => { prefs.fsw = Math.round(Math.min(innerWidth * .8, Math.max(320, innerWidth - ev.clientX))); $("#fsPanel").style.setProperty("--fsw", prefs.fsw + "px"); document.body.style.setProperty("--fsw", prefs.fsw + "px"); }; const up = () => { removeEventListener("pointermove", mv); removeEventListener("pointerup", up); save(); }; addEventListener("pointermove", mv); addEventListener("pointerup", up); };
 $("#bgBtn").onclick = () => { prefs.markBg = !prefs.markBg; save(); applyLayout(); };
 $("#btlAutoBtn").onclick = () => { prefs.btlAuto = !prefs.btlAuto; save(); applyLayout(); };
+$("#memoBtnPref").onclick = () => { prefs.memoBtn = prefs.memoBtn === false; save(); applyLayout(); if (view.paper) renderRight(); };
 function closeSettings(){ $("#setPanel").hidden = true; $("#setBtn").setAttribute("aria-expanded", "false"); }
 $("#setBtn").onclick = e => { e.stopPropagation(); const open = $("#setPanel").hidden, r = $("#setBtn").getBoundingClientRect(), pnl = $("#setPanel"); pnl.hidden = !open; pnl.style.top = (r.bottom + 6) + "px"; pnl.style.right = Math.max(8, Math.min(innerWidth - r.right, innerWidth - pnl.offsetWidth - 8)) + "px"; $("#setBtn").setAttribute("aria-expanded", String(open)); };
 document.addEventListener("click", e => { if (!$("#setPanel").hidden && !e.target.closest(".setwrap")) closeSettings(); });
@@ -802,6 +810,7 @@ function applyLayout(){
   syncFs();
   $("#bgBtn").setAttribute("aria-pressed", String(!!prefs.markBg));
   $("#btlAutoBtn").setAttribute("aria-pressed", String(!!prefs.btlAuto));
+  $("#memoBtnPref").setAttribute("aria-pressed", String(prefs.memoBtn !== false));
   $("#layoutBtn").setAttribute("aria-pressed", String(!!prefs.markLayout));
   $("#paperBtn").setAttribute("aria-pressed", String(prefs.showPaper));
   syncRevTop();
@@ -1926,7 +1935,7 @@ function tickTimer(mins){
 }
 
 function renderFeedback(a, pt){
-  if (a.self) return `<div class="fb"><div class="score"><span class="big">${fmt(a.score)}<small> / ${pt.marks}</small></span><span class="pill ${band(a.score, pt.marks)}">Self-marked</span></div><div class="row"><button class="btn" id="btlBtn" title="File this answer and its mark in Between the Lines, in a notebook for this paper">Send to Between the Lines</button></div></div>`;
+  if (a.self) return `<div class="fb"><div class="score"><span class="big">${fmt(a.score)}<small> / ${pt.marks}</small></span><span class="pill ${band(a.score, pt.marks)}">Self-marked</span></div><div class="row">${memoBtnHtml()}<button class="btn" id="btlBtn" title="File this answer and its mark in Between the Lines, in a notebook for this paper">Send to Between the Lines</button></div>${memoInHtml(pt)}</div>`;
   const f = a.feedback || {};
   const L = x => Array.isArray(x) ? x : [];
   return `<div class="fb">
@@ -1939,13 +1948,18 @@ function renderFeedback(a, pt){
     ${L(f.revise).length ? `<div><div class="revise-h"><h3>Revise this</h3><small>Tap a topic to add it to your revisit list.</small></div><div class="revise">${L(f.revise).map(r => { const on = rvHas(topicItem(r).id); return `<button data-rv="${esc(r)}" aria-pressed="${on}" title="${on ? "Remove from" : "Add to"} your revisit list">${esc(r)}<i>${on ? "★" : "+"}</i></button>`; }).join("")}</div></div>` : ""}
     ${L(f.correct).length ? `<details><summary><h3 style="display:inline">What earned marks (${L(f.correct).length})</h3></summary><div class="list" style="margin-top:8px">${L(f.correct).map(c => `<div class="ok">${esc(c)}</div>`).join("")}</div></details>` : ""}
     ${f.examTip ? `<div class="tip"><strong>Exam technique:</strong> ${esc(f.examTip)}</div>` : ""}
-    <div class="row"><button class="btn" id="toMemo">Open the memo</button><button class="btn pen" id="askBtn">Ask the examiner about this</button><button class="btn" id="btlBtn" title="File this answer, its mark and the feedback in Between the Lines, in a notebook for this paper">Send to Between the Lines</button></div>
+    <div class="row">${memoBtnHtml()}<button class="btn" id="toMemo">Open the memo</button><button class="btn pen" id="askBtn">Ask the examiner about this</button><button class="btn" id="btlBtn" title="File this answer, its mark and the feedback in Between the Lines, in a notebook for this paper">Send to Between the Lines</button></div>
+    ${memoInHtml(pt)}
     <div class="chat" id="chat" hidden></div>
   </div>`;
 }
+// "Show model answer": only under a marked answer (renderFeedback is only called for an attempt), and only with the setting on.
+const memoBtnHtml = () => prefs.memoBtn === false ? "" : `<button class="btn" id="memoInBtn" aria-expanded="false" aria-controls="memoIn">Show model answer</button>`;
+const memoInHtml = pt => prefs.memoBtn === false ? "" : `<div class="memoin" id="memoIn" hidden><h3>Model answer ${esc(pt.id)}</h3>${view.paper && view.paper.memoNote ? `<p class="hint">${esc(view.paper.memoNote)}</p>` : ""}${rateNote(pt)}<div class="doc">${pt.memo ? renderDoc(pt.memo) : `<p class="hint">No memo for this required.</p>`}</div></div>`;
 
 function wireFeedback(){
   document.querySelectorAll(".revise [data-rv]").forEach(b => b.onclick = () => { const on = rvToggle(topicItem(b.dataset.rv)); b.setAttribute("aria-pressed", String(on)); b.querySelector("i").textContent = on ? "★" : "+"; b.title = (on ? "Remove from" : "Add to") + " your revisit list"; });
+  const mb = $("#memoInBtn"), mi = $("#memoIn"); if (mb && mi) mb.onclick = () => { mi.hidden = !mi.hidden; mb.setAttribute("aria-expanded", String(!mi.hidden)); mb.textContent = mi.hidden ? "Show model answer" : "Hide model answer"; if (!mi.hidden) mi.scrollIntoView({ block: "nearest", behavior: "smooth" }); };
   const tm = $("#toMemo"); if (tm) tm.onclick = () => { view.tab = "memo"; prefs.showPaper = true; save(); applyLayout(); renderLeft(); };
   const ab = $("#askBtn"); if (ab) ab.onclick = () => openChat();
   const bb = $("#btlBtn"); if (bb) bb.onclick = () => { const paper = view.paper, {q, pt} = cur(), s = st(paper, pt), a = s.attempts[s.attempts.length - 1]; if (a) btlSend(paper, q, pt, a, true); };
