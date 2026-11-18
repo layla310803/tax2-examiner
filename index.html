@@ -383,6 +383,8 @@ try { store = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch { sto
 function save(){ try { localStorage.setItem(KEY, JSON.stringify(store)); } catch {} }
 const prefs = store._prefs || (store._prefs = { markBg: false, showPaper: false, paperX: true, timer: false, markLayout: false, fsOpen: false, leftw: 50 });
 if (prefs.markLayout === undefined) prefs.markLayout = false;
+if (!prefs.scenOn){ prefs.showPaper = true; prefs.scenOn = 1; }   // full edition: scenario panel on by default (set once, so turning it off in Settings sticks)
+
 
 /* ---------- your source material (notes, slides) per course, kept in IndexedDB: localStorage is too small ---------- */
 // record: { id, course, name, type: "notes" | "slides", sections: [{h, x}], chars, added }
