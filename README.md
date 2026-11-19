@@ -83,4 +83,8 @@ The site opens on a course picker. Each course has its own papers, sections, qui
 - **Tax II (ACC3004W)**: papers are defined in `source/build.py`, quiz questions in `source/quiz_bank.py`.
 - **Banking (FTX4087S)**: everything is in `source/banking/`. One `b-*.json` file per paper (`kind` is `test`, `exam` or `workshop`), `formula_sheet.txt` (shown as the "Formula sheet" tab) and `quiz_bank.py`. To add a paper, drop in another JSON file with the same shape and rebuild.
 
+Banking also has `formula_drill.py`: the formulas in Ryan Kruger's section that aren't on the exam formula sheet. On the course page, **Formulas not on the formula sheet** tests you on them: write each formula from memory (checked for key terms) and use it in a short calculation. The dividend discount model is left out because it isn't examinable.
+
+**Explain** on a flash card (after you flip it) has the AI explain the card, with an example, an exam trap and a follow-up box. **How to calculate** on any calculation in a quick quiz or the formula drill shows the formula and the steps without giving away the answer. AI replies are cached in the browser.
+
 Papers marked `"unofficial": true` have a memo that is partly from a student compilation or a suggested answer, not the lecturer. To add another course, add its entry to the `courses` list at the end of `source/build.py`; paper and section ids must be unique across courses.

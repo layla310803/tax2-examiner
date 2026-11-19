@@ -467,6 +467,17 @@ if os.path.exists(_fc):
     assert set(_fmod.CARDS) <= _bvalid, set(_fmod.CARDS) - _bvalid
     b_cards = {k: [[f.strip(), b.strip()] for f, b in v] for k, v in _fmod.CARDS.items()}
     print("banking flash cards:", {k: len(v) for k, v in b_cards.items()}, "total", sum(len(v) for v in b_cards.values()))
+b_fx = None
+_fxf = os.path.join(BANK_DIR, "formula_drill.py")
+if os.path.exists(_fxf):
+    _spec = importlib.util.spec_from_file_location("bank_formula_drill", _fxf); _xmod = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_xmod)
+    b_fx = _xmod.FORMULAS
+    assert len({f["id"] for f in b_fx}) == len(b_fx), "formula drill ids must be unique"
+    for f in b_fx:
+        assert f["t"] in _bvalid, f["t"]
+        for pat in f["k"]: re.compile(pat)
+        assert isinstance(f["un"], (int, float)), f["id"]
+    print("banking formula drill:", len(b_fx), "formulas")
 # ---- Banking exam scope (FTX4087S final, Nov 2026): lecturer guidance. Rules match the question / card front / required text only (not answers, which may mention VaR in passing) ----
 B_SCOPE = {
   "notExaminedTopics": ["b-mkt"],
@@ -525,6 +536,10 @@ _qb_before = {k: (sum(1 for x in v if not x.get("h")), sum(1 for x in v if x.get
 b_quiz = _scope_filter("quiz", b_quiz, lambda x: x["q"], lambda x: x["q"] + " " + x["a"])
 print("quiz (quick, exam) before -> after:", {k: (_qb_before[k], (sum(1 for x in v if not x.get("h")), sum(1 for x in v if x.get("h")))) for k, v in b_quiz.items() if k in ("b-risk", "b-val", "b-mkt")})
 if b_cards: b_cards = _scope_filter("card", b_cards, lambda x: x[0], lambda x: x[0] + " " + x[1])
+if b_fx:
+    _fxn = len(b_fx)
+    b_fx = [f for f in b_fx if not _nx_reason([f["t"]], f["name"] + " " + f["uq"], f["name"] + " " + f["uq"] + " " + f["ua"])]
+    print("formula drill after scope:", _fxn, "->", len(b_fx))
 _nxparts = {}
 # Hand-checked scope decisions per part (scope_overrides.json): "nx" flags a part, "examined" clears a wrong regex flag.
 _ovf = os.path.join(BANK_DIR, "scope_overrides.json")
@@ -578,7 +593,7 @@ if b_papers:
     courses.append(
   {"id": "bank", "name": "Banking", "code": "FTX4087S", "crumb": "FTX4087S past tests, exams and workshops",
    "subject": "UCT FTX4087S Topics in Banking and Treasury Management test or exam", "tablesLabel": "Formula sheet", "minPerMark": 1.2,
-   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], "notes": B_NOTES, **({"cards": b_cards} if b_cards else {}), **({"rates": B_RATES} if B_RATES else {}),
+   "papers": b_papers, "topics": [{"id": k, "name": n} for k, n in B_TOPICS], "quiz": b_quiz, "books": b_books, "scope": B_SCOPE_PUBLIC, "formulaLabel": "Formula sheet", "formulaSheet": B_FORMULAS, "formulaNotExamined": ["MARKET RISK AND PORTFOLIO THEORY"], "notes": B_NOTES, **({"cards": b_cards} if b_cards else {}), **({"fx": {"title": "Formulas not on the formula sheet", "who": "Ryan Kruger", "note": "Kruger's section (intro, financials, valuation, treasury) has no formulas on the exam sheet, so these must be memorised. The dividend discount model is left out: not examinable.", "items": b_fx}} if b_fx else {}), **({"rates": B_RATES} if B_RATES else {}),
    "topicGroups": [
      {"name": "Ryan Kruger", "marks": "30 marks", "note": "Intro to banking, financials, valuation and treasury", "topics": ["b-intro", "b-fin", "b-val", "b-treas", "b-mnc"]},
      {"name": "Philip De Jager", "marks": "55 marks", "note": "Money, regulation and bank failure", "topics": ["b-money", "b-reg", "b-fail"]},

@@ -269,6 +269,10 @@ dialog#keyDlg::backdrop{background:rgba(0,0,0,.45)}
 .fchint{text-align:center;font-size:.85rem;opacity:.6;margin-bottom:4px}
 .fc{transition:transform .17s ease-in,border-color .2s}.fc.turning{transform:perspective(900px) rotateY(90deg)}.fc.flipin{animation:fcIn .2s ease-out}.fc.nextin{animation:fcNext .22s ease-out}@keyframes fcIn{from{transform:perspective(900px) rotateY(-90deg)}to{transform:none}}@keyframes fcNext{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}@media (prefers-reduced-motion:reduce){.fc,.fc.flipin,.fc.nextin{transition:none;animation:none}.fc.turning{transform:none}}
 .fc.back{border-color:var(--accent)}
+.aibox{box-sizing:border-box;max-width:720px;margin:10px auto;padding:14px 18px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);line-height:1.55;text-align:left}.aibox p{margin:0 0 8px}.aibox ul,.aibox ol{margin:0 0 10px;padding-left:22px}.aibox li{margin:3px 0}.aibox .row{margin-top:8px}.aibox input{flex:1;min-width:180px}
+.aibox .askq{margin:10px 0 4px;font-weight:600}
+.quiz .howbox{max-width:none;margin:8px 0}
+.fxref h3{margin:16px 0 6px;font-size:15px}.fxref .fxf{padding:8px 0;border-bottom:1px solid var(--rule)}.fxref .fxf b{display:block;margin-bottom:2px}.fxref .fxf .hint{margin-top:2px}
 .fcbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0}
 .mg label.f{display:block;margin:12px 0 4px;font-weight:500}
 .mg input:not([type=file]),.mg select,.mg textarea,.nb input,.nb textarea{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--ink);font:inherit}
@@ -764,6 +768,7 @@ function route(){
   if (parts[0] === "edit"){ view.paper = null; view.topic = null; renderEdit(parts[1], parts[2]); return; }
   if (parts[0] === "formulas"){ const c = COURSES.find(c => c.id === parts[1]) || COURSE; if (c.formulaSheet){ prefs.fsOpen = true; save(); } location.replace("#c/" + c.id); route(); return; }
   if (parts[0] === "cards"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c || !c.cards){ renderCourses(); return; } setCourse(c); renderCards(parts[2] || null); return; }
+  if (parts[0] === "fx"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c || !c.fx){ renderCourses(); return; } setCourse(c); renderFx(); return; }
   if (parts[0] === "revisit"){ const c = COURSES.find(c => c.id === parts[1]) || (COURSE.id ? COURSE : null); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderRevisit(); return; }
   if (parts[0] === "c"){ const c = COURSES.find(c => c.id === parts[1]); view.paper = null; view.topic = null; if (!c){ renderCourses(); return; } setCourse(c); renderHome(); return; }
   { const c = (parts[0] === "quiz" || parts[0] === "topic") ? courseOfTopic(parts[1]) : courseOfPaper(parts[0]); if (c) setCourse(c); }
@@ -882,6 +887,7 @@ function renderHome(){
     ${scopeHTML()}
     ${weakHTML()}
     ${cardsHTML()}
+    ${fxHTML()}
     <section class="topics" aria-labelledby="topicsH">
       <h2 id="topicsH">Practise by section</h2>
       <div class="hint">Pick a section for a quick quiz on the rules, then every required on it across all the papers, shortest first.</div>
@@ -905,6 +911,7 @@ function renderHome(){
   $("#rvHome").onclick = () => go("revisit/" + COURSE.id);
   document.querySelectorAll(".tbtn, .wrow").forEach(b => b.onclick = () => go("topic/" + b.dataset.t));
   document.querySelectorAll("[data-cards]").forEach(b => b.onclick = () => go("cards/" + COURSE.id + (b.dataset.cards ? "/" + b.dataset.cards : "")));
+  document.querySelectorAll("[data-fx]").forEach(b => b.onclick = () => { prefs.fxMode = b.dataset.fx; save(); if (COURSE.fx) fxRec().set = null; go("fx/" + COURSE.id); });
 }
 
 /* ---------- revisit list: saved questions, topics, cards and a notepad, per course ---------- */
@@ -1644,8 +1651,9 @@ function renderCards(tid){
       : `<div class="fcq">${esc(c.f)}</div>`}</div>
     <div class="fchint">${d.flip ? "Did you know it?" : "Tap the card or press space to see the answer"}</div>
     <div class="fcbar">${d.flip
-      ? `<button class="btn" id="fcNo">Again</button><button class="btn primary" id="fcYes">Got it</button>`
+      ? `<button class="btn" id="fcNo">Again</button><button class="btn" id="fcExp" aria-expanded="${fcxOpen.has(cardKey(c.t, c.i))}">Explain</button><button class="btn primary" id="fcYes">Got it</button>`
       : `<button class="btn primary" id="fcShow">Show answer</button>`}</div>
+    ${d.flip ? `<div class="aibox" id="fcxBox"${fcxOpen.has(cardKey(c.t, c.i)) ? "" : " hidden"}></div>` : ""}
     <div class="fcbar"><button class="btn small" id="fcPrev">← Previous</button><button class="btn small" id="fcSkip">Skip →</button><button class="btn small" id="fcSave" aria-pressed="${rvHas("c:" + c.t + ":" + c.i)}">${rvHas("c:" + c.t + ":" + c.i) ? "★ Saved" : "☆ Save to revisit"}</button><button class="btn small" id="fcShuf">Shuffle</button><button class="btn small" id="fcBack">Back to course</button></div>
   </div>`;
   const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
@@ -1665,6 +1673,8 @@ function renderCards(tid){
   on("#fcShuf", () => { deck = null; redraw(); });
   on("#fcSave", () => { const on = rvToggle({ id: "c:" + c.t + ":" + c.i, kind: "card", label: c.f, sub: c.b, go: "" }); const b = $("#fcSave"); b.setAttribute("aria-pressed", String(on)); b.textContent = on ? "★ Saved" : "☆ Save to revisit"; });
   on("#fcBack", () => go("c/" + COURSE.id));
+  on("#fcExp", () => { const key = cardKey(c.t, c.i); if (fcxOpen.has(key)){ fcxOpen.delete(key); $("#fcxBox").hidden = true; $("#fcExp").setAttribute("aria-expanded", "false"); return; } fcxOpen.add(key); $("#fcExp").setAttribute("aria-expanded", "true"); explainCard(c); });
+  if (d.flip && fcxOpen.has(cardKey(c.t, c.i))) explainCard(c);
 }
 document.addEventListener("keydown", e => {
   if (!location.hash.startsWith("#cards/") || /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
@@ -1672,6 +1682,161 @@ document.addEventListener("keydown", e => {
   else if (e.key === "ArrowRight"){ const b = $("#fcYes") || $("#fcSkip"); if (b) b.click(); }
   else if (e.key === "ArrowLeft"){ const b = $("#fcNo") || $("#fcPrev"); if (b) b.click(); }
 });
+
+/* ---------- AI helpers: explain a flash card, show how to work a calculation (answers cached in this browser) ---------- */
+const aiCache = () => store._ai || (store._ai = {});
+const fcxOpen = new Set(), howOpen = new Set(), fcxChat = {};
+const aiErrText = (e, what) => ({ access_code: "This site's AI needs the access code. Open any required, press Submit and enter it, then try again.", rate_limited: "You've hit a usage limit. Wait a bit, then try again.", bad_key: "Your AI key was rejected. Check it under AI key in Settings." }[e?.code] || `Couldn't ${what}` + (e?.message ? ": " + e.message : "") + ". Try again.");
+const NO_AI = "This is written by the AI marker, which isn't set up in this browser. Add your own AI key in Settings (a free Gemini key works).";
+async function aiInto(box, key, prompt, busy, what){
+  const cache = aiCache();
+  if (cache[key]) { box.innerHTML = mdHtml(cache[key].text); mathify(box); return cache[key].text; }
+  if (!canMark()){ box.innerHTML = `<div class="notice">${NO_AI}</div>`; return null; }
+  box.innerHTML = `<div class="busy"><span class="dot"></span><span>${esc(busy)}</span></div>`;
+  try {
+    const text = String(await chatText([{ role: "user", content: prompt }], () => {}) || "").trim();
+    if (!text) throw { code: "upstream_error", message: "empty reply" };
+    cache[key] = { text, at: Date.now() }; save();
+    if (document.contains(box)){ box.innerHTML = mdHtml(text); mathify(box); }
+    return text;
+  } catch (e) { if (document.contains(box)) box.innerHTML = `<div class="notice">${esc(aiErrText(e, what))}</div>`; return null; }
+}
+function explainPrompt(c){
+  const notes = (COURSE.notes ? gatherSources(c.f + " " + c.b).note.slice(0, 2) : []).map(d => `[${d.label}]\n${d.text.slice(0, 3000)}`).join("\n---\n");
+  return `You are a tutor helping a student revise for the ${COURSE.subject}. They are going through flash cards and want this one explained so they understand it, not just memorise it.
+
+Section: ${topicName(c.t)}
+FRONT: ${c.f}
+BACK: ${c.b}
+${notes ? `\nThe student's own notes on this (use them; don't contradict them):\n${notes}\n` : ""}
+Explain it:
+**What it means**: the idea in plain words, 2 to 4 sentences.
+**Why**: the reasoning or intuition behind it.
+**Example**: a short concrete example${/[=\/×x]\s*\d|ratio|formula|rate|%/i.test(c.b) ? " with numbers worked through" : ""}.
+**Exam trap**: one mistake students make with it, if there is one.
+**Memory hook**: a one-line way to remember it.
+Stay consistent with the card. Formulas in LaTeX ($$...$$), percent as \\%. Short paragraphs and bullets, under 250 words.`;
+}
+async function explainCard(c){
+  const box = $("#fcxBox"); if (!box) return;
+  box.hidden = false;
+  const key = "fcx:" + cardKey(c.t, c.i);
+  const draw = () => {
+    const cached = aiCache()[key]; if (!cached) return;
+    const chat = fcxChat[key] || [];
+    box.innerHTML = mdHtml(cached.text) + chat.map(m => m.role === "user" ? `<div class="askq">${esc(m.content)}</div>` : mdHtml(m.content)).join("")
+      + `<div class="row"><input type="text" id="fcxAsk" placeholder="Ask a follow-up about this card" aria-label="Ask a follow-up about this card"><button class="btn small" id="fcxGo">Ask</button><button class="btn small" id="fcxRedo" title="Write a fresh explanation">Redo</button></div>`;
+    mathify(box);
+    const ask = async () => {
+      const q = $("#fcxAsk").value.trim(); if (!q) return;
+      const turns = [{ role: "user", content: explainPrompt(c) }, { role: "assistant", content: cached.text }, ...chat, { role: "user", content: q + "\n\n(Answer briefly, under 150 words, consistent with the card.)" }];
+      chat.push({ role: "user", content: q }); fcxChat[key] = chat;
+      $("#fcxGo").disabled = true; $("#fcxAsk").disabled = true;
+      try { const a = String(await chatText(turns, () => {}) || "").trim(); chat.push({ role: "assistant", content: a || "(No reply.)" }); }
+      catch (e) { chat.push({ role: "assistant", content: aiErrText(e, "answer") }); }
+      if (document.contains(box)) draw();
+    };
+    $("#fcxGo").onclick = ask; $("#fcxAsk").onkeydown = e => { if (e.key === "Enter"){ e.preventDefault(); ask(); } };
+    $("#fcxRedo").onclick = async () => { delete aiCache()[key]; delete fcxChat[key]; save(); if (await aiInto(box, key, explainPrompt(c), "Explaining this card…", "explain the card")) draw(); };
+  };
+  if (await aiInto(box, key, explainPrompt(c), "Explaining this card…", "explain the card")) draw();
+}
+function howPrompt(it){
+  return `You are a tutor helping a student revise for the ${COURSE.subject}. They are stuck on this calculation and want to know HOW to work it out, without being given the answer.
+
+QUESTION: ${it.q}
+
+Model answer, for your reference only. Do NOT reveal its final number or any result that gives it away: ${it.a}
+
+Write:
+**Formula**: the formula(s) needed, in LaTeX ($$...$$), with what each symbol means.
+**Steps**: numbered steps saying which figures from the question go where, in the same method as the model answer. Do not carry out the arithmetic for the final step and do not state the final answer.
+**Watch out**: the trap in this question, if there is one (e.g. which figure is a distractor, grow ROE by (1 + g), use cost of sales not sales).
+Percent as \\%. Under 180 words.`;
+}
+async function howToCalc(it, key, box, btn, quiet){
+  if (!box) return;
+  if (!quiet && howOpen.has(key)){ howOpen.delete(key); box.hidden = true; btn.textContent = "How to calculate"; return; }
+  howOpen.add(key); box.hidden = false; btn.textContent = "Hide method";
+  const k = "how:" + key;
+  if (!aiCache()[k] && !canMark()){
+    box.innerHTML = `<div class="notice">${NO_AI}</div><details><summary class="hint">Show the full worked answer instead (gives the answer away)</summary><p>${esc(it.a)}</p></details>`; return;
+  }
+  await aiInto(box, k, howPrompt(it), "Working out the method…", "write the method");
+}
+
+/* ---------- formula drill: formulas that are not on the exam formula sheet (COURSE.fx = {title, who, note, items}) ---------- */
+const FX_LEN = 8;
+function fxRec(){ const a = store._fx || (store._fx = {}); return a[COURSE.id] || (a[COURSE.id] = { seen: {}, set: null, runs: [] }); }
+const fxMode = () => ["write", "use"].includes(prefs.fxMode) ? prefs.fxMode : "mix";
+function fxHTML(){
+  const fx = COURSE.fx; if (!fx || !fx.items.length) return "";
+  const r = fxRec(), n = fx.items.length * 2, right = Object.values(r.seen).filter(Boolean).length;
+  return `<section class="topics"><h2 class="sec">${esc(fx.title)}${fx.who ? ` <span class="hint">(${esc(fx.who)})</span>` : ""}</h2>
+    <div class="hint">${esc(fx.note)} ${fx.items.length} formulas: write each one from memory, then use it in a short calculation. ${right} of ${n} questions right so far.</div>
+    <div class="row"><button class="btn primary" data-fx="mix">Test me (mixed)</button><button class="btn" data-fx="write">Write the formulas</button><button class="btn" data-fx="use">Use them (calculations)</button></div></section>`;
+}
+function fxItem(key){
+  const [id, kind] = key.split(":"), f = (COURSE.fx.items || []).find(x => x.id === id);
+  if (!f) return null;
+  return kind === "w"
+    ? { f, kind, q: `Write the formula for: ${f.name}.`, k: f.k, a: f.tex }
+    : { f, kind, q: f.uq, n: f.un, a: f.ua };
+}
+function newFx(){
+  const r = fxRec(), mode = fxMode(), seen = r.seen;
+  const rank = k => seen[k] === undefined ? 0 : seen[k] ? 2 : 1;
+  let keys = COURSE.fx.items.flatMap(f => mode === "write" ? [f.id + ":w"] : mode === "use" ? [f.id + ":u"] : [f.id + ":w", f.id + ":u"]);
+  keys = keys.sort(() => Math.random() - .5).sort((a, b) => rank(a) - rank(b));
+  const used = new Set(), ids = [];
+  keys.forEach(k => { const id = k.split(":")[0]; if (ids.length < FX_LEN && !used.has(id)){ used.add(id); ids.push(k); } });
+  r.set = { ids, ans: [], ok: [], done: false, mode }; save();
+}
+function renderFx(){
+  const fx = COURSE.fx, r = fxRec(), mode = fxMode();
+  setHome("All papers", "c/" + COURSE.id); $("#crumb").textContent = fx.title; applyLayout();
+  $("#app").className = "";
+  if (r.set && (r.set.mode !== mode || r.set.ids.some(k => !fxItem(k)))) r.set = null;
+  if (!r.set) newFx();
+  const set = r.set, items = set.ids.map(fxItem), right = set.ok.filter(Boolean).length;
+  const byTopic = TOPICS.map(tp => ({ tp, fs: fx.items.filter(f => f.t === tp.id) })).filter(x => x.fs.length);
+  const formula = f => `<div class="fxf"><b>${esc(f.name)}</b>${renderDoc(f.tex)}<div class="hint">${esc(f.where)}</div></div>`;
+  $("#app").innerHTML = `<div class="home"><div><h2 class="sec">${esc(fx.title)}</h2>
+    <div class="hint">${esc(fx.note)} <strong>Write</strong> questions: type the formula in words or symbols (e.g. NIM = NII / interest-earning assets); it's checked for the key terms, and you can overrule the marking. <strong>Use</strong> questions: type the number; percent as the number (12.5 for 12.5%). Each test starts with the ones you haven't done or got wrong.</div></div>
+    <div class="row"><button class="btn small ${mode === "mix" ? "primary" : ""}" data-fxm="mix">Mixed</button><button class="btn small ${mode === "write" ? "primary" : ""}" data-fxm="write">Write the formulas</button><button class="btn small ${mode === "use" ? "primary" : ""}" data-fxm="use">Use them</button></div>
+    ${set.done ? `<div class="row"><span class="pill ${band(right, items.length)}">${right} / ${items.length}</span><span>Check the answers. If the automatic marking got one wrong, change it with the button under that question.</span></div>` : ""}
+    <ol class="quiz">${items.map((it, i) => { const a = set.ans[i] || "";
+      return `<li><div class="hint">${esc(topicName(it.f.t))} · ${it.kind === "w" ? "write it" : "use it"}</div><div class="qq">${esc(it.q)}</div>${!set.done
+        ? `<input class="qa" data-i="${i}" type="text" autocomplete="off" placeholder="${it.kind === "w" ? "Type the formula" : "Type your answer"}" aria-label="Answer ${i + 1}" value="${esc(a)}">${it.kind === "u" ? `<div class="row"><button class="btn small" data-fxhow="${i}">How to calculate</button></div><div class="aibox howbox" data-fxhowbox="${i}" hidden><p><strong>Formula:</strong> ${esc(it.f.name)}</p>${renderDoc(it.f.tex)}<p class="hint">${esc(it.f.where)}</p><p class="hint">Find each input in the question, put it into the formula, then work it out. Percent answers: type the number.</p></div>` : ""}`
+        : `<div class="yours ${set.ok[i] ? "ok" : "bad"}">${a.trim() ? "Your answer: " + esc(a) : "No answer"}</div>
+           <div class="why"><strong>${set.ok[i] ? "Correct." : "Not quite."}</strong> ${it.kind === "u" ? esc(it.a) : ""}${renderDoc(it.f.tex)}<span class="hint">${esc(it.f.where)}</span></div>
+           <button class="btn small flip" data-flip="${i}">${set.ok[i] ? "Mark as wrong" : "Mark as right"}</button>`}</li>`; }).join("")}</ol>
+    <div class="row">${set.done ? `<button class="btn primary" id="fxNew">New test</button>` : `<button class="btn primary" id="fxCheck">Check my answers</button>`}<button class="btn" id="fxBack">Back to course</button></div>
+    <details class="fxref"><summary class="btn small">All ${fx.items.length} formulas (look them up)</summary>${byTopic.map(x => `<h3>${esc(x.tp.name)}</h3>${x.fs.map(formula).join("")}`).join("")}</details>
+  </div>`;
+  mathify($("#app"));
+  const on = (sel, fn) => { const el = $(sel); if (el) el.onclick = fn; };
+  document.querySelectorAll("[data-fxm]").forEach(b => b.onclick = () => { prefs.fxMode = b.dataset.fxm; save(); r.set = null; renderFx(); });
+  on("#fxBack", () => go("c/" + COURSE.id));
+  on("#fxNew", () => { newFx(); renderFx(); window.scrollTo(0, 0); });
+  on("#fxCheck", () => {
+    set.ok = items.map((it, i) => autoMark(it, set.ans[i])); set.done = true;
+    set.ids.forEach((k, i) => { r.seen[k] = set.ok[i]; });
+    r.runs.push({ at: Date.now(), right: set.ok.filter(Boolean).length, n: items.length }); r.runs = r.runs.slice(-10); save();
+    renderFx(); window.scrollTo(0, 0);
+  });
+  document.querySelectorAll("[data-fxhow]").forEach(b => b.onclick = () => { const box = document.querySelector(`[data-fxhowbox="${b.dataset.fxhow}"]`); box.hidden = !box.hidden; b.textContent = box.hidden ? "How to calculate" : "Hide method"; });
+  const inputs = [...document.querySelectorAll(".quiz .qa")];
+  inputs.forEach((el, i) => {
+    el.oninput = () => { set.ans[+el.dataset.i] = el.value; save(); };
+    el.onkeydown = e => { if (e.key === "Enter"){ e.preventDefault(); (inputs[i + 1] || $("#fxCheck")).focus(); } };
+  });
+  document.querySelectorAll(".quiz .flip").forEach(b => b.onclick = () => {
+    const i = +b.dataset.flip; set.ok[i] = !set.ok[i]; r.seen[set.ids[i]] = set.ok[i];
+    if (r.runs.length) r.runs[r.runs.length - 1].right = set.ok.filter(Boolean).length;
+    save(); renderFx();
+  });
+}
 
 function scopeHTML(){
   const sc = COURSE.scope; if (!sc) return "";
@@ -1772,7 +1937,7 @@ function renderQuiz(tid){
     body = `${set.done ? `<div class="row"><span class="pill ${band(right, n)}">${right} / ${n}</span><span>Check the model answers. If the automatic marking got one wrong, change it with the button under that question.</span></div>` : ""}
     ${levels}<ol class="quiz">${set.ids.map((id, i) => { const it = bank[id], a = set.ans[i] || "";
       return `<li><div class="qq">${esc(it.q)}</div>${!set.done
-        ? `<input class="qa" data-i="${i}" type="text" autocomplete="off" placeholder="Type your answer" aria-label="Answer ${i + 1}" value="${esc(a)}">`
+        ? `<input class="qa" data-i="${i}" type="text" autocomplete="off" placeholder="Type your answer" aria-label="Answer ${i + 1}" value="${esc(a)}">${it.n !== undefined ? `<div class="row"><button class="btn small" data-how="${id}">How to calculate</button></div><div class="aibox howbox" data-howbox="${id}" hidden></div>` : ""}`
         : `<div class="yours ${set.ok[i] ? "ok" : "bad"}">${a.trim() ? "Your answer: " + esc(a) : "No answer"}</div>
            <div class="why"><strong>${set.ok[i] ? "Correct." : "Not quite."}</strong> ${esc(it.a)}</div>
            <button class="btn small flip" data-flip="${i}">${set.ok[i] ? "Mark as wrong" : "Mark as right"}</button>`}</li>`; }).join("")}</ol>
@@ -1793,6 +1958,9 @@ function renderQuiz(tid){
     rec.runs = rec.runs.slice(-10); save();
     renderQuiz(tid); window.scrollTo(0, 0);
   });
+  document.querySelectorAll("[data-how]").forEach(b => { const id = +b.dataset.how, box = document.querySelector(`[data-howbox="${id}"]`), key = COURSE.id + ":" + tid + ":" + id;
+    b.onclick = () => howToCalc(bank[id], key, box, b);
+    if (howOpen.has(key)) howToCalc(bank[id], key, box, b, true); });
   const inputs = [...document.querySelectorAll(".quiz .qa")];
   inputs.forEach((el, i) => {
     el.oninput = () => { set.ans[+el.dataset.i] = el.value; save(); };
